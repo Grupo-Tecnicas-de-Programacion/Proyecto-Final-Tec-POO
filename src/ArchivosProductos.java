@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import javax.swing.JFileChooser;
 
 
-public class ArchivosGestorProductos {
+public class ArchivosProductos {
 
     public void guardarProductos(ArrayList<Producto> productos) {
         
