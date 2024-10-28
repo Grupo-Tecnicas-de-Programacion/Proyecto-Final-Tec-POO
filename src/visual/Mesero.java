@@ -40,6 +40,7 @@ public class Mesero extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
 
         jMenu5.setText("jMenu5");
 
@@ -47,7 +48,6 @@ public class Mesero extends javax.swing.JFrame {
 
         jMenu9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesero.png"))); // NOI18N
         jMenu9.setText("Mesero");
-        jMenu9.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jMenu9.setPreferredSize(new java.awt.Dimension(122, 50));
 
         jMenuItem1.setText("Cargar mesas");
@@ -63,7 +63,6 @@ public class Mesero extends javax.swing.JFrame {
 
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesa.png"))); // NOI18N
         jMenu1.setText("Mesas");
-        jMenu1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jMenu1.setPreferredSize(new java.awt.Dimension(122, 50));
 
         jCheckBoxMenuItem1.setSelected(true);
@@ -74,7 +73,6 @@ public class Mesero extends javax.swing.JFrame {
 
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/producto.png"))); // NOI18N
         jMenu2.setText("Productos");
-        jMenu2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jMenu2.setPreferredSize(new java.awt.Dimension(122, 50));
 
         jCheckBoxMenuItem2.setSelected(true);
@@ -94,6 +92,11 @@ public class Mesero extends javax.swing.JFrame {
         jMenu2.add(jMenuItem7);
 
         jMenuBar2.add(jMenu2);
+
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/recibo.png"))); // NOI18N
+        jMenu3.setText("Recibo");
+        jMenu3.setPreferredSize(new java.awt.Dimension(122, 50));
+        jMenuBar2.add(jMenu3);
 
         setJMenuBar(jMenuBar2);
 
@@ -151,6 +154,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar2;
