@@ -33,14 +33,15 @@ public class Mesero extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        jMenuItem8 = new javax.swing.JMenuItem();
 
         jMenu5.setText("jMenu5");
 
@@ -50,13 +51,19 @@ public class Mesero extends javax.swing.JFrame {
         jMenu9.setText("Mesero");
         jMenu9.setPreferredSize(new java.awt.Dimension(122, 50));
 
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargarmesas.png"))); // NOI18N
         jMenuItem1.setText("Cargar mesas");
+        jMenuItem1.setPreferredSize(new java.awt.Dimension(180, 40));
         jMenu9.add(jMenuItem1);
 
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargarProductos.png"))); // NOI18N
         jMenuItem2.setText("Cargar productos");
+        jMenuItem2.setPreferredSize(new java.awt.Dimension(180, 40));
         jMenu9.add(jMenuItem2);
 
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerrar sesion.png"))); // NOI18N
         jMenuItem3.setText("Cerrar sesión");
+        jMenuItem3.setPreferredSize(new java.awt.Dimension(180, 40));
         jMenu9.add(jMenuItem3);
 
         jMenuBar2.add(jMenu9);
@@ -65,9 +72,10 @@ public class Mesero extends javax.swing.JFrame {
         jMenu1.setText("Mesas");
         jMenu1.setPreferredSize(new java.awt.Dimension(122, 50));
 
-        jCheckBoxMenuItem1.setSelected(true);
-        jCheckBoxMenuItem1.setText("Gestionar mesas");
-        jMenu1.add(jCheckBoxMenuItem1);
+        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gestionarmesa.png"))); // NOI18N
+        jMenuItem9.setText("Gestionar mesas");
+        jMenuItem9.setPreferredSize(new java.awt.Dimension(180, 40));
+        jMenu1.add(jMenuItem9);
 
         jMenuBar2.add(jMenu1);
 
@@ -75,27 +83,47 @@ public class Mesero extends javax.swing.JFrame {
         jMenu2.setText("Productos");
         jMenu2.setPreferredSize(new java.awt.Dimension(122, 50));
 
-        jCheckBoxMenuItem2.setSelected(true);
-        jCheckBoxMenuItem2.setText("Modificar producto");
-        jMenu2.add(jCheckBoxMenuItem2);
+        jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificarproducto.png"))); // NOI18N
+        jMenuItem10.setText("Modificar producto");
+        jMenuItem10.setPreferredSize(new java.awt.Dimension(180, 40));
+        jMenu2.add(jMenuItem10);
 
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar producto.png"))); // NOI18N
         jMenuItem4.setText("BuscarProducto");
+        jMenuItem4.setPreferredSize(new java.awt.Dimension(180, 40));
         jMenu2.add(jMenuItem4);
 
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminarProducto.png"))); // NOI18N
         jMenuItem5.setText("Eliminar producto");
+        jMenuItem5.setPreferredSize(new java.awt.Dimension(180, 40));
         jMenu2.add(jMenuItem5);
 
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
         jMenuItem6.setText("Productos disponibles");
+        jMenuItem6.setPreferredSize(new java.awt.Dimension(180, 40));
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem6);
 
+        jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productoAgotado.png"))); // NOI18N
         jMenuItem7.setText("Productos agotados");
+        jMenuItem7.setPreferredSize(new java.awt.Dimension(180, 40));
         jMenu2.add(jMenuItem7);
 
         jMenuBar2.add(jMenu2);
 
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/recibo.png"))); // NOI18N
         jMenu3.setText("Recibo");
-        jMenu3.setPreferredSize(new java.awt.Dimension(122, 50));
+        jMenu3.setPreferredSize(new java.awt.Dimension(180, 40));
+
+        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/generarRecibo.png"))); // NOI18N
+        jMenuItem8.setText("Generar recibo");
+        jMenuItem8.setPreferredSize(new java.awt.Dimension(180, 30));
+        jMenu3.add(jMenuItem8);
+
         jMenuBar2.add(jMenu3);
 
         setJMenuBar(jMenuBar2);
@@ -113,6 +141,10 @@ public class Mesero extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,8 +182,6 @@ public class Mesero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -159,11 +189,14 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     // End of variables declaration//GEN-END:variables
 }
