@@ -27,90 +27,90 @@ public class Administrador extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu9 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem8 = new javax.swing.JMenuItem();
+        jInventario = new javax.swing.JMenu();
+        jEliminarProductos = new javax.swing.JMenuItem();
+        jAgregarProductos = new javax.swing.JMenuItem();
+        jStock = new javax.swing.JMenu();
+        JPDroductosAgotados = new javax.swing.JMenuItem();
+        jProductosDisponibles = new javax.swing.JMenuItem();
+        jUsuarios = new javax.swing.JMenu();
+        jEliminarUsuario = new javax.swing.JMenuItem();
+        jAgregarUsuario = new javax.swing.JMenuItem();
+        jModificarUsuario = new javax.swing.JMenuItem();
+        jVisualizarUsuarios = new javax.swing.JMenuItem();
+        jPermisos = new javax.swing.JMenu();
+        jAsignarPermisos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargarProductos.png"))); // NOI18N
-        jMenu9.setText("Inventario");
-        jMenu9.setPreferredSize(new java.awt.Dimension(122, 50));
+        jInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargarProductos.png"))); // NOI18N
+        jInventario.setText("Inventario");
+        jInventario.setPreferredSize(new java.awt.Dimension(122, 50));
 
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminarProducto.png"))); // NOI18N
-        jMenuItem1.setText("Eliminar Producto");
-        jMenuItem1.setPreferredSize(new java.awt.Dimension(180, 40));
-        jMenu9.add(jMenuItem1);
+        jEliminarProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminarProducto.png"))); // NOI18N
+        jEliminarProductos.setText("Eliminar Producto");
+        jEliminarProductos.setPreferredSize(new java.awt.Dimension(180, 40));
+        jInventario.add(jEliminarProductos);
 
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
-        jMenuItem2.setText("Agregar Producto");
-        jMenuItem2.setPreferredSize(new java.awt.Dimension(180, 40));
-        jMenu9.add(jMenuItem2);
+        jAgregarProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
+        jAgregarProductos.setText("Agregar Producto");
+        jAgregarProductos.setPreferredSize(new java.awt.Dimension(180, 40));
+        jInventario.add(jAgregarProductos);
 
-        jMenuBar2.add(jMenu9);
+        jMenuBar2.add(jInventario);
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar producto.png"))); // NOI18N
-        jMenu1.setText("Stock");
-        jMenu1.setPreferredSize(new java.awt.Dimension(122, 50));
+        jStock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar producto.png"))); // NOI18N
+        jStock.setText("Stock");
+        jStock.setPreferredSize(new java.awt.Dimension(122, 50));
 
-        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productoAgotado.png"))); // NOI18N
-        jMenuItem9.setText("Productos Agotados");
-        jMenuItem9.setPreferredSize(new java.awt.Dimension(180, 40));
-        jMenu1.add(jMenuItem9);
+        JPDroductosAgotados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productoAgotado.png"))); // NOI18N
+        JPDroductosAgotados.setText("Productos Agotados");
+        JPDroductosAgotados.setPreferredSize(new java.awt.Dimension(180, 40));
+        jStock.add(JPDroductosAgotados);
 
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
-        jMenuItem3.setText("Productos Disponibles");
-        jMenuItem3.setPreferredSize(new java.awt.Dimension(180, 40));
-        jMenu1.add(jMenuItem3);
+        jProductosDisponibles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
+        jProductosDisponibles.setText("Productos Disponibles");
+        jProductosDisponibles.setPreferredSize(new java.awt.Dimension(180, 40));
+        jStock.add(jProductosDisponibles);
 
-        jMenuBar2.add(jMenu1);
+        jMenuBar2.add(jStock);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar producto.png"))); // NOI18N
-        jMenu2.setText("Usuarios");
-        jMenu2.setPreferredSize(new java.awt.Dimension(122, 50));
+        jUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar producto.png"))); // NOI18N
+        jUsuarios.setText("Usuarios");
+        jUsuarios.setPreferredSize(new java.awt.Dimension(122, 50));
 
-        jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminarProducto.png"))); // NOI18N
-        jMenuItem10.setText("Eliminar Usuario");
-        jMenuItem10.setPreferredSize(new java.awt.Dimension(180, 40));
-        jMenu2.add(jMenuItem10);
+        jEliminarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminarProducto.png"))); // NOI18N
+        jEliminarUsuario.setText("Eliminar Usuario");
+        jEliminarUsuario.setPreferredSize(new java.awt.Dimension(180, 40));
+        jUsuarios.add(jEliminarUsuario);
 
-        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificarproducto.png"))); // NOI18N
-        jMenuItem4.setText("Agregar Usuario");
-        jMenuItem4.setPreferredSize(new java.awt.Dimension(180, 40));
-        jMenu2.add(jMenuItem4);
+        jAgregarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificarproducto.png"))); // NOI18N
+        jAgregarUsuario.setText("Agregar Usuario");
+        jAgregarUsuario.setPreferredSize(new java.awt.Dimension(180, 40));
+        jUsuarios.add(jAgregarUsuario);
 
-        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
-        jMenuItem5.setText("Modificar Usuario");
-        jMenuItem5.setPreferredSize(new java.awt.Dimension(180, 40));
-        jMenu2.add(jMenuItem5);
+        jModificarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
+        jModificarUsuario.setText("Modificar Usuario");
+        jModificarUsuario.setPreferredSize(new java.awt.Dimension(180, 40));
+        jUsuarios.add(jModificarUsuario);
 
-        jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesero.png"))); // NOI18N
-        jMenuItem11.setText("Visualizar Usuarios");
-        jMenuItem11.setPreferredSize(new java.awt.Dimension(180, 30));
-        jMenu2.add(jMenuItem11);
+        jVisualizarUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesero.png"))); // NOI18N
+        jVisualizarUsuarios.setText("Visualizar Usuarios");
+        jVisualizarUsuarios.setPreferredSize(new java.awt.Dimension(180, 30));
+        jUsuarios.add(jVisualizarUsuarios);
 
-        jMenuBar2.add(jMenu2);
+        jMenuBar2.add(jUsuarios);
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificarproducto.png"))); // NOI18N
-        jMenu3.setText("Permisos");
-        jMenu3.setPreferredSize(new java.awt.Dimension(180, 40));
+        jPermisos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificarproducto.png"))); // NOI18N
+        jPermisos.setText("Permisos");
+        jPermisos.setPreferredSize(new java.awt.Dimension(180, 40));
 
-        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
-        jMenuItem8.setText("Asignar Permisos");
-        jMenuItem8.setPreferredSize(new java.awt.Dimension(180, 30));
-        jMenu3.add(jMenuItem8);
+        jAsignarPermisos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
+        jAsignarPermisos.setText("Asignar Permisos");
+        jAsignarPermisos.setPreferredSize(new java.awt.Dimension(180, 30));
+        jPermisos.add(jAsignarPermisos);
 
-        jMenuBar2.add(jMenu3);
+        jMenuBar2.add(jPermisos);
 
         setJMenuBar(jMenuBar2);
 
@@ -164,19 +164,19 @@ public class Administrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu9;
+    private javax.swing.JMenuItem JPDroductosAgotados;
+    private javax.swing.JMenuItem jAgregarProductos;
+    private javax.swing.JMenuItem jAgregarUsuario;
+    private javax.swing.JMenuItem jAsignarPermisos;
+    private javax.swing.JMenuItem jEliminarProductos;
+    private javax.swing.JMenuItem jEliminarUsuario;
+    private javax.swing.JMenu jInventario;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem jModificarUsuario;
+    private javax.swing.JMenu jPermisos;
+    private javax.swing.JMenuItem jProductosDisponibles;
+    private javax.swing.JMenu jStock;
+    private javax.swing.JMenu jUsuarios;
+    private javax.swing.JMenuItem jVisualizarUsuarios;
     // End of variables declaration//GEN-END:variables
 }
