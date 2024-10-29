@@ -4,6 +4,8 @@
  */
 package visual;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author DELL
@@ -15,6 +17,18 @@ public class Administrador extends javax.swing.JFrame {
      */
     public Administrador() {
         initComponents();
+        //jPanelMostrarAdmin.add(panelEliminarProducto, "panelEliminarProducto");
+        /*jPanelMostrarAdmin.add(panelAgregarProducto, "panelAgregarProducto");
+        jPanelMostrarAdmin.add(panelProductosAgotados, "panelProductosAgotados");
+        jPanelMostrarAdmin.add(panelProductosDisponilbes, "panelProductosDisponilbes");
+        jPanelMostrarAdmin.add(panelEliminarUsuarios, "panelEliminarUsuarios");
+        jPanelMostrarAdmin.add(panelAgregarUsuarios, "panelAgregarUsuarios");
+        jPanelMostrarAdmin.add(panelModificarUsuarios, "panelModificarUsuarios");
+        jPanelMostrarAdmin.add(panelGestionarsuarios, "panelGestionarsuarios");
+        jPanelMostrarAdmin.add(panelAsignarPermisos, "panelAsignarPermisos");
+        jPanelMostrarAdmin.add(panelReporteVentas, "panelReporteVentas");
+        jPanelMostrarAdmin.add(panelVerHistorial, "panelVerHistorial");
+        jPanelMostrarAdmin.add(panelCerrarSesion, "panelCerrarSesion");*/
     }
 
     /**
@@ -26,107 +40,275 @@ public class Administrador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar2 = new javax.swing.JMenuBar();
-        jInventario = new javax.swing.JMenu();
-        jEliminarProductos = new javax.swing.JMenuItem();
-        jAgregarProductos = new javax.swing.JMenuItem();
-        jStock = new javax.swing.JMenu();
-        JPDroductosAgotados = new javax.swing.JMenuItem();
-        jProductosDisponibles = new javax.swing.JMenuItem();
-        jUsuarios = new javax.swing.JMenu();
-        jEliminarUsuario = new javax.swing.JMenuItem();
-        jAgregarUsuario = new javax.swing.JMenuItem();
-        jModificarUsuario = new javax.swing.JMenuItem();
-        jVisualizarUsuarios = new javax.swing.JMenuItem();
-        jPermisos = new javax.swing.JMenu();
-        jAsignarPermisos = new javax.swing.JMenuItem();
+        jPanelMostrarAdmin = new javax.swing.JPanel();
+        jMenuAdmin = new javax.swing.JMenuBar();
+        menuInventario = new javax.swing.JMenu();
+        menItemEliminarProductos = new javax.swing.JMenuItem();
+        menItemAgregarProductos = new javax.swing.JMenuItem();
+        menuStock = new javax.swing.JMenu();
+        menItemProductosAgotados = new javax.swing.JMenuItem();
+        menItemProductosDisponibles = new javax.swing.JMenuItem();
+        menuUsuarios = new javax.swing.JMenu();
+        menItemEliminarUsuario = new javax.swing.JMenuItem();
+        menItemAgregarUsuario = new javax.swing.JMenuItem();
+        menItemModificarUsuario = new javax.swing.JMenuItem();
+        menItemGestionarUsuarios = new javax.swing.JMenuItem();
+        menuPermisos = new javax.swing.JMenu();
+        menItemAsignarPermisos = new javax.swing.JMenuItem();
+        menuReportes = new javax.swing.JMenu();
+        menItemReporteVentas = new javax.swing.JMenuItem();
+        menuHistorial = new javax.swing.JMenu();
+        menItemVerHistorial = new javax.swing.JMenuItem();
+        menuCerrar = new javax.swing.JMenu();
+        menItemCerrarSecsion = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargarProductos.png"))); // NOI18N
-        jInventario.setText("Inventario");
-        jInventario.setPreferredSize(new java.awt.Dimension(122, 50));
+        jPanelMostrarAdmin.setLayout(new java.awt.CardLayout());
 
-        jEliminarProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminarProducto.png"))); // NOI18N
-        jEliminarProductos.setText("Eliminar Producto");
-        jEliminarProductos.setPreferredSize(new java.awt.Dimension(180, 40));
-        jInventario.add(jEliminarProductos);
+        menuInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargarProductos.png"))); // NOI18N
+        menuInventario.setText("Inventario");
+        menuInventario.setPreferredSize(new java.awt.Dimension(122, 50));
 
-        jAgregarProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
-        jAgregarProductos.setText("Agregar Producto");
-        jAgregarProductos.setPreferredSize(new java.awt.Dimension(180, 40));
-        jInventario.add(jAgregarProductos);
+        menItemEliminarProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminarProducto.png"))); // NOI18N
+        menItemEliminarProductos.setText("Eliminar Producto");
+        menItemEliminarProductos.setPreferredSize(new java.awt.Dimension(180, 40));
+        menItemEliminarProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemEliminarProductosActionPerformed(evt);
+            }
+        });
+        menuInventario.add(menItemEliminarProductos);
 
-        jMenuBar2.add(jInventario);
+        menItemAgregarProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
+        menItemAgregarProductos.setText("Agregar Producto");
+        menItemAgregarProductos.setPreferredSize(new java.awt.Dimension(180, 40));
+        menItemAgregarProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemAgregarProductosActionPerformed(evt);
+            }
+        });
+        menuInventario.add(menItemAgregarProductos);
 
-        jStock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar producto.png"))); // NOI18N
-        jStock.setText("Stock");
-        jStock.setPreferredSize(new java.awt.Dimension(122, 50));
+        jMenuAdmin.add(menuInventario);
 
-        JPDroductosAgotados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productoAgotado.png"))); // NOI18N
-        JPDroductosAgotados.setText("Productos Agotados");
-        JPDroductosAgotados.setPreferredSize(new java.awt.Dimension(180, 40));
-        jStock.add(JPDroductosAgotados);
+        menuStock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar producto.png"))); // NOI18N
+        menuStock.setText("Stock");
+        menuStock.setPreferredSize(new java.awt.Dimension(122, 50));
 
-        jProductosDisponibles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
-        jProductosDisponibles.setText("Productos Disponibles");
-        jProductosDisponibles.setPreferredSize(new java.awt.Dimension(180, 40));
-        jStock.add(jProductosDisponibles);
+        menItemProductosAgotados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agotado.png"))); // NOI18N
+        menItemProductosAgotados.setText("Productos Agotados");
+        menItemProductosAgotados.setPreferredSize(new java.awt.Dimension(180, 40));
+        menItemProductosAgotados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemProductosAgotadosActionPerformed(evt);
+            }
+        });
+        menuStock.add(menItemProductosAgotados);
 
-        jMenuBar2.add(jStock);
+        menItemProductosDisponibles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
+        menItemProductosDisponibles.setText("Productos Disponibles");
+        menItemProductosDisponibles.setPreferredSize(new java.awt.Dimension(180, 40));
+        menItemProductosDisponibles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemProductosDisponiblesActionPerformed(evt);
+            }
+        });
+        menuStock.add(menItemProductosDisponibles);
 
-        jUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar producto.png"))); // NOI18N
-        jUsuarios.setText("Usuarios");
-        jUsuarios.setPreferredSize(new java.awt.Dimension(122, 50));
+        jMenuAdmin.add(menuStock);
 
-        jEliminarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminarProducto.png"))); // NOI18N
-        jEliminarUsuario.setText("Eliminar Usuario");
-        jEliminarUsuario.setPreferredSize(new java.awt.Dimension(180, 40));
-        jUsuarios.add(jEliminarUsuario);
+        menuUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuarios.png"))); // NOI18N
+        menuUsuarios.setText("Usuarios");
+        menuUsuarios.setPreferredSize(new java.awt.Dimension(122, 50));
 
-        jAgregarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificarproducto.png"))); // NOI18N
-        jAgregarUsuario.setText("Agregar Usuario");
-        jAgregarUsuario.setPreferredSize(new java.awt.Dimension(180, 40));
-        jUsuarios.add(jAgregarUsuario);
+        menItemEliminarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminarProducto.png"))); // NOI18N
+        menItemEliminarUsuario.setText("Eliminar Usuario");
+        menItemEliminarUsuario.setPreferredSize(new java.awt.Dimension(180, 40));
+        menItemEliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemEliminarUsuarioActionPerformed(evt);
+            }
+        });
+        menuUsuarios.add(menItemEliminarUsuario);
 
-        jModificarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
-        jModificarUsuario.setText("Modificar Usuario");
-        jModificarUsuario.setPreferredSize(new java.awt.Dimension(180, 40));
-        jUsuarios.add(jModificarUsuario);
+        menItemAgregarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificarproducto.png"))); // NOI18N
+        menItemAgregarUsuario.setText("Agregar Usuario");
+        menItemAgregarUsuario.setPreferredSize(new java.awt.Dimension(180, 40));
+        menItemAgregarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemAgregarUsuarioActionPerformed(evt);
+            }
+        });
+        menuUsuarios.add(menItemAgregarUsuario);
 
-        jVisualizarUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesero.png"))); // NOI18N
-        jVisualizarUsuarios.setText("Visualizar Usuarios");
-        jVisualizarUsuarios.setPreferredSize(new java.awt.Dimension(180, 30));
-        jUsuarios.add(jVisualizarUsuarios);
+        menItemModificarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
+        menItemModificarUsuario.setText("Modificar Usuario");
+        menItemModificarUsuario.setPreferredSize(new java.awt.Dimension(180, 40));
+        menItemModificarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemModificarUsuarioActionPerformed(evt);
+            }
+        });
+        menuUsuarios.add(menItemModificarUsuario);
 
-        jMenuBar2.add(jUsuarios);
+        menItemGestionarUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/configuracion.png"))); // NOI18N
+        menItemGestionarUsuarios.setText("Gestionar Usuarios");
+        menItemGestionarUsuarios.setPreferredSize(new java.awt.Dimension(180, 30));
+        menItemGestionarUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemGestionarUsuariosActionPerformed(evt);
+            }
+        });
+        menuUsuarios.add(menItemGestionarUsuarios);
 
-        jPermisos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificarproducto.png"))); // NOI18N
-        jPermisos.setText("Permisos");
-        jPermisos.setPreferredSize(new java.awt.Dimension(180, 40));
+        jMenuAdmin.add(menuUsuarios);
 
-        jAsignarPermisos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
-        jAsignarPermisos.setText("Asignar Permisos");
-        jAsignarPermisos.setPreferredSize(new java.awt.Dimension(180, 30));
-        jPermisos.add(jAsignarPermisos);
+        menuPermisos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificarproducto.png"))); // NOI18N
+        menuPermisos.setText("Permisos");
+        menuPermisos.setPreferredSize(new java.awt.Dimension(180, 40));
 
-        jMenuBar2.add(jPermisos);
+        menItemAsignarPermisos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
+        menItemAsignarPermisos.setText("Asignar Permisos");
+        menItemAsignarPermisos.setPreferredSize(new java.awt.Dimension(180, 30));
+        menItemAsignarPermisos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemAsignarPermisosActionPerformed(evt);
+            }
+        });
+        menuPermisos.add(menItemAsignarPermisos);
 
-        setJMenuBar(jMenuBar2);
+        jMenuAdmin.add(menuPermisos);
+
+        menuReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargarProductos.png"))); // NOI18N
+        menuReportes.setText("Reportes");
+        menuReportes.setPreferredSize(new java.awt.Dimension(180, 40));
+
+        menItemReporteVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
+        menItemReporteVentas.setText("Reporte Ventas");
+        menItemReporteVentas.setPreferredSize(new java.awt.Dimension(180, 30));
+        menItemReporteVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemReporteVentasActionPerformed(evt);
+            }
+        });
+        menuReportes.add(menItemReporteVentas);
+
+        jMenuAdmin.add(menuReportes);
+
+        menuHistorial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificarproducto.png"))); // NOI18N
+        menuHistorial.setText("Historial");
+        menuHistorial.setPreferredSize(new java.awt.Dimension(180, 40));
+
+        menItemVerHistorial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
+        menItemVerHistorial.setText("Ver  Historial");
+        menItemVerHistorial.setPreferredSize(new java.awt.Dimension(180, 30));
+        menItemVerHistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemVerHistorialActionPerformed(evt);
+            }
+        });
+        menuHistorial.add(menItemVerHistorial);
+
+        jMenuAdmin.add(menuHistorial);
+
+        menuCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerrar sesion.png"))); // NOI18N
+        menuCerrar.setText("Cerrar");
+        menuCerrar.setPreferredSize(new java.awt.Dimension(180, 40));
+
+        menItemCerrarSecsion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerrar sesion.png"))); // NOI18N
+        menItemCerrarSecsion.setText("Cerrar Sesion");
+        menItemCerrarSecsion.setPreferredSize(new java.awt.Dimension(180, 30));
+        menItemCerrarSecsion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemCerrarSecsionActionPerformed(evt);
+            }
+        });
+        menuCerrar.add(menItemCerrarSecsion);
+
+        jMenuAdmin.add(menuCerrar);
+
+        setJMenuBar(jMenuAdmin);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 749, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1041, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 356, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(332, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menItemCerrarSecsionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemCerrarSecsionActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
+        layout.show(jPanelMostrarAdmin, "panelCerrarSesion");
+    }//GEN-LAST:event_menItemCerrarSecsionActionPerformed
+
+    private void menItemEliminarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemEliminarProductosActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
+        layout.show(jPanelMostrarAdmin, "panelEliminarProducto");
+    }//GEN-LAST:event_menItemEliminarProductosActionPerformed
+
+    private void menItemReporteVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemReporteVentasActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
+        layout.show(jPanelMostrarAdmin, "panelReporteVentas");
+    }//GEN-LAST:event_menItemReporteVentasActionPerformed
+
+    private void menItemAgregarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemAgregarProductosActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
+        layout.show(jPanelMostrarAdmin, "panelAgregarProducto");
+    }//GEN-LAST:event_menItemAgregarProductosActionPerformed
+
+    private void menItemProductosAgotadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemProductosAgotadosActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
+        layout.show(jPanelMostrarAdmin, "panelProductosAgotados");
+    }//GEN-LAST:event_menItemProductosAgotadosActionPerformed
+
+    private void menItemProductosDisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemProductosDisponiblesActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
+        layout.show(jPanelMostrarAdmin, "panelProductosDisponilbes");
+    }//GEN-LAST:event_menItemProductosDisponiblesActionPerformed
+
+    private void menItemEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemEliminarUsuarioActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
+        layout.show(jPanelMostrarAdmin, "panelEliminarUsuarios");
+    }//GEN-LAST:event_menItemEliminarUsuarioActionPerformed
+
+    private void menItemAgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemAgregarUsuarioActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
+        layout.show(jPanelMostrarAdmin, "panelAgregarUsuarios");
+    }//GEN-LAST:event_menItemAgregarUsuarioActionPerformed
+
+    private void menItemModificarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemModificarUsuarioActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
+        layout.show(jPanelMostrarAdmin, "panelModificarUsuarios");
+    }//GEN-LAST:event_menItemModificarUsuarioActionPerformed
+
+    private void menItemGestionarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemGestionarUsuariosActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
+        layout.show(jPanelMostrarAdmin, "panelGestionarsuarios");
+    }//GEN-LAST:event_menItemGestionarUsuariosActionPerformed
+
+    private void menItemAsignarPermisosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemAsignarPermisosActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
+        layout.show(jPanelMostrarAdmin, "panelAsignarPermisos");
+    }//GEN-LAST:event_menItemAsignarPermisosActionPerformed
+
+    private void menItemVerHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemVerHistorialActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
+        layout.show(jPanelMostrarAdmin, "panelVerHistorial");
+    }//GEN-LAST:event_menItemVerHistorialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,19 +346,26 @@ public class Administrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem JPDroductosAgotados;
-    private javax.swing.JMenuItem jAgregarProductos;
-    private javax.swing.JMenuItem jAgregarUsuario;
-    private javax.swing.JMenuItem jAsignarPermisos;
-    private javax.swing.JMenuItem jEliminarProductos;
-    private javax.swing.JMenuItem jEliminarUsuario;
-    private javax.swing.JMenu jInventario;
-    private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jModificarUsuario;
-    private javax.swing.JMenu jPermisos;
-    private javax.swing.JMenuItem jProductosDisponibles;
-    private javax.swing.JMenu jStock;
-    private javax.swing.JMenu jUsuarios;
-    private javax.swing.JMenuItem jVisualizarUsuarios;
+    private javax.swing.JMenuBar jMenuAdmin;
+    private javax.swing.JPanel jPanelMostrarAdmin;
+    private javax.swing.JMenuItem menItemAgregarProductos;
+    private javax.swing.JMenuItem menItemAgregarUsuario;
+    private javax.swing.JMenuItem menItemAsignarPermisos;
+    private javax.swing.JMenuItem menItemCerrarSecsion;
+    private javax.swing.JMenuItem menItemEliminarProductos;
+    private javax.swing.JMenuItem menItemEliminarUsuario;
+    private javax.swing.JMenuItem menItemGestionarUsuarios;
+    private javax.swing.JMenuItem menItemModificarUsuario;
+    private javax.swing.JMenuItem menItemProductosAgotados;
+    private javax.swing.JMenuItem menItemProductosDisponibles;
+    private javax.swing.JMenuItem menItemReporteVentas;
+    private javax.swing.JMenuItem menItemVerHistorial;
+    private javax.swing.JMenu menuCerrar;
+    private javax.swing.JMenu menuHistorial;
+    private javax.swing.JMenu menuInventario;
+    private javax.swing.JMenu menuPermisos;
+    private javax.swing.JMenu menuReportes;
+    private javax.swing.JMenu menuStock;
+    private javax.swing.JMenu menuUsuarios;
     // End of variables declaration//GEN-END:variables
 }
