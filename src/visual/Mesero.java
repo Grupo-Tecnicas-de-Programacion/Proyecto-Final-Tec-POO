@@ -276,6 +276,28 @@ public class Mesero extends javax.swing.JFrame {
         btnVerPedidosMesa12 = new javax.swing.JButton();
         jLabel59 = new javax.swing.JLabel();
         panelModProducto = new javax.swing.JPanel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        txtNombreProductoModificar = new javax.swing.JTextField();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        txtCantidadProductoActual = new javax.swing.JTextField();
+        txtNombreProductoActual = new javax.swing.JTextField();
+        txtCategoriaProductoActual = new javax.swing.JTextField();
+        txtPrecioProductoActual = new javax.swing.JTextField();
+        jLabel67 = new javax.swing.JLabel();
+        jLabel68 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel69 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel70 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel71 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         panelBuscProducto = new javax.swing.JPanel();
         panelElimProducto = new javax.swing.JPanel();
         panelProducDisponibles = new javax.swing.JPanel();
@@ -1303,16 +1325,100 @@ public class Mesero extends javax.swing.JFrame {
 
         jPanelMostrar.add(panelGestionarMesas, "card5");
 
-        javax.swing.GroupLayout panelModProductoLayout = new javax.swing.GroupLayout(panelModProducto);
-        panelModProducto.setLayout(panelModProductoLayout);
-        panelModProductoLayout.setHorizontalGroup(
-            panelModProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 959, Short.MAX_VALUE)
-        );
-        panelModProductoLayout.setVerticalGroup(
-            panelModProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 443, Short.MAX_VALUE)
-        );
+        panelModProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel60.setText("Modificar un producto");
+        panelModProducto.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 147, 40));
+
+        jLabel61.setText("Ingresar nombre del producto");
+        panelModProducto.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 98, 184, 35));
+        panelModProducto.add(txtNombreProductoModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 104, 290, -1));
+
+        jLabel62.setText("Datos del producto");
+        panelModProducto.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 122, 30));
+
+        jLabel63.setText("Cantidad del producto");
+        panelModProducto.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 146, 33));
+
+        jLabel64.setText("Nombre del producto");
+        panelModProducto.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 146, 33));
+
+        jLabel65.setText("Categoría del producto");
+        panelModProducto.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 146, 33));
+
+        jLabel66.setText("Precio del producto");
+        panelModProducto.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 146, 33));
+
+        txtCantidadProductoActual.setEditable(false);
+        txtCantidadProductoActual.setText("Cantidad del producto");
+        txtCantidadProductoActual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantidadProductoActualActionPerformed(evt);
+            }
+        });
+        panelModProducto.add(txtCantidadProductoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, 160, 30));
+
+        txtNombreProductoActual.setEditable(false);
+        txtNombreProductoActual.setText("Nombre del producto");
+        panelModProducto.add(txtNombreProductoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 160, 30));
+
+        txtCategoriaProductoActual.setEditable(false);
+        txtCategoriaProductoActual.setText("Categoría del producto");
+        panelModProducto.add(txtCategoriaProductoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 160, 30));
+
+        txtPrecioProductoActual.setEditable(false);
+        txtPrecioProductoActual.setText("Precio del producto");
+        panelModProducto.add(txtPrecioProductoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 160, 30));
+
+        jLabel67.setText("Datos del nuevo producto");
+        panelModProducto.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, 160, 30));
+
+        jLabel68.setText("Nombre del nuevo producto");
+        panelModProducto.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 170, 33));
+
+        jTextField5.setEditable(false);
+        jTextField5.setText("Nombre nuevo");
+        panelModProducto.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 200, 160, 30));
+
+        jLabel69.setText("Categoría del nuevo producto");
+        panelModProducto.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, 170, 33));
+
+        jTextField6.setEditable(false);
+        jTextField6.setText("Categoría nueva");
+        panelModProducto.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 160, 30));
+
+        jLabel70.setText("Precio del nuevo producto");
+        panelModProducto.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 170, 33));
+
+        jTextField7.setEditable(false);
+        jTextField7.setText("Precio nuevo ");
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
+            }
+        });
+        panelModProducto.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, 160, 30));
+
+        jLabel71.setText("Cantidad del nuevo producto");
+        panelModProducto.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 170, 33));
+
+        jTextField8.setEditable(false);
+        jTextField8.setText("Cantidad nueva");
+        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField8ActionPerformed(evt);
+            }
+        });
+        panelModProducto.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, 160, 30));
+
+        jButton1.setText("Modificar producto");
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        panelModProducto.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 230, 150, 120));
 
         jPanelMostrar.add(panelModProducto, "card6");
 
@@ -1648,6 +1754,22 @@ public class Mesero extends javax.swing.JFrame {
         layout.show(jPanelMostrar, "panelGenerarRecibo");
     }//GEN-LAST:event_menItemGenerarReciboActionPerformed
 
+    private void txtCantidadProductoActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProductoActualActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCantidadProductoActualActionPerformed
+
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1786,6 +1908,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JButton btnVerPedidosMesa7;
     private javax.swing.JButton btnVerPedidosMesa8;
     private javax.swing.JButton btnVerPedidosMesa9;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1842,7 +1965,19 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar2;
@@ -1872,6 +2007,10 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
     private javax.swing.JList<String> listaPedidosMesa1;
     private javax.swing.JList<String> listaPedidosMesa10;
     private javax.swing.JList<String> listaPedidosMesa11;
@@ -1946,10 +2085,15 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JTextField txtCantidadPersonasMesa7;
     private javax.swing.JTextField txtCantidadPersonasMesa8;
     private javax.swing.JTextField txtCantidadPersonasMesa9;
+    private javax.swing.JTextField txtCantidadProductoActual;
+    private javax.swing.JTextField txtCategoriaProductoActual;
     private javax.swing.JTextField txtCodigoGenerado;
     private javax.swing.JTextField txtEstadoArchivo;
     private javax.swing.JTextField txtEstadoArchivoProductos;
     private javax.swing.JTextField txtIngresarCodigo;
+    private javax.swing.JTextField txtNombreProductoActual;
+    private javax.swing.JTextField txtNombreProductoModificar;
+    private javax.swing.JTextField txtPrecioProductoActual;
     private javax.swing.JTextField txtRutaArchivo;
     private javax.swing.JTextField txtRutaPrductos;
     // End of variables declaration//GEN-END:variables
