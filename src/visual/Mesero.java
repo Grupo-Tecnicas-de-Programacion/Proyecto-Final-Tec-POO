@@ -29,10 +29,7 @@ public class Mesero extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenu5 = new javax.swing.JMenu();
         jPanelMostrar = new javax.swing.JPanel();
-        panelCargarMesas = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         panelCargarProductos = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         panelCerrarSesion = new javax.swing.JPanel();
@@ -44,6 +41,13 @@ public class Mesero extends javax.swing.JFrame {
         panelProducDisponibles = new javax.swing.JPanel();
         panelProducAgotados = new javax.swing.JPanel();
         panelGenerarRecibo = new javax.swing.JPanel();
+        panelCargarMesas = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btnBuscarRuta = new javax.swing.JButton();
+        txtRutaArchivo = new javax.swing.JTextField();
+        btnCargarMesas = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        txtEstadoArchivo = new javax.swing.JTextField();
         jMenuBar2 = new javax.swing.JMenuBar();
         menuMesero = new javax.swing.JMenu();
         menItemCargarMesas = new javax.swing.JMenuItem();
@@ -60,33 +64,10 @@ public class Mesero extends javax.swing.JFrame {
         menuRecibo = new javax.swing.JMenu();
         menItemGenerarRecibo = new javax.swing.JMenuItem();
 
-        jMenu5.setText("jMenu5");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanelMostrar.setVerifyInputWhenFocusTarget(false);
         jPanelMostrar.setLayout(new java.awt.CardLayout());
-
-        jLabel1.setText("CARGAR MESAS");
-
-        javax.swing.GroupLayout panelCargarMesasLayout = new javax.swing.GroupLayout(panelCargarMesas);
-        panelCargarMesas.setLayout(panelCargarMesasLayout);
-        panelCargarMesasLayout.setHorizontalGroup(
-            panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelCargarMesasLayout.createSequentialGroup()
-                .addGap(262, 262, 262)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(494, Short.MAX_VALUE))
-        );
-        panelCargarMesasLayout.setVerticalGroup(
-            panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCargarMesasLayout.createSequentialGroup()
-                .addContainerGap(284, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(112, 112, 112))
-        );
-
-        jPanelMostrar.add(panelCargarMesas, "card2");
 
         jLabel2.setText("CARGAR PRODUCTOS");
 
@@ -221,10 +202,70 @@ public class Mesero extends javax.swing.JFrame {
 
         jPanelMostrar.add(panelGenerarRecibo, "card11");
 
+        jLabel1.setText("CARGAR MESAS");
+
+        btnBuscarRuta.setText("Buscar archivo mesas.txt");
+
+        txtRutaArchivo.setEditable(false);
+
+        btnCargarMesas.setText("Cargar mesas");
+
+        jLabel4.setText("Estado del archivo");
+
+        txtEstadoArchivo.setEditable(false);
+
+        javax.swing.GroupLayout panelCargarMesasLayout = new javax.swing.GroupLayout(panelCargarMesas);
+        panelCargarMesas.setLayout(panelCargarMesasLayout);
+        panelCargarMesasLayout.setHorizontalGroup(
+            panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCargarMesasLayout.createSequentialGroup()
+                .addGroup(panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCargarMesasLayout.createSequentialGroup()
+                        .addGap(362, 362, 362)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelCargarMesasLayout.createSequentialGroup()
+                        .addGroup(panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelCargarMesasLayout.createSequentialGroup()
+                                .addGap(75, 75, 75)
+                                .addComponent(btnBuscarRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelCargarMesasLayout.createSequentialGroup()
+                                .addGap(97, 97, 97)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtRutaArchivo)
+                            .addComponent(txtEstadoArchivo, javax.swing.GroupLayout.DEFAULT_SIZE, 592, Short.MAX_VALUE)))
+                    .addGroup(panelCargarMesasLayout.createSequentialGroup()
+                        .addGap(347, 347, 347)
+                        .addComponent(btnCargarMesas, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+        panelCargarMesasLayout.setVerticalGroup(
+            panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCargarMesasLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBuscarRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtRutaArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEstadoArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(62, 62, 62)
+                .addComponent(btnCargarMesas, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(127, Short.MAX_VALUE))
+        );
+
+        jPanelMostrar.add(panelCargarMesas, "card2");
+
         menuMesero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesero.png"))); // NOI18N
         menuMesero.setText("Mesero");
+        menuMesero.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menuMesero.setPreferredSize(new java.awt.Dimension(122, 50));
 
+        menItemCargarMesas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         menItemCargarMesas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargarmesas.png"))); // NOI18N
         menItemCargarMesas.setText("Cargar mesas");
         menItemCargarMesas.setPreferredSize(new java.awt.Dimension(180, 40));
@@ -235,6 +276,7 @@ public class Mesero extends javax.swing.JFrame {
         });
         menuMesero.add(menItemCargarMesas);
 
+        menItemCargarProductos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         menItemCargarProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargarProductos.png"))); // NOI18N
         menItemCargarProductos.setText("Cargar productos");
         menItemCargarProductos.setPreferredSize(new java.awt.Dimension(180, 40));
@@ -245,6 +287,7 @@ public class Mesero extends javax.swing.JFrame {
         });
         menuMesero.add(menItemCargarProductos);
 
+        menItemCerrarSesion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         menItemCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerrar sesion.png"))); // NOI18N
         menItemCerrarSesion.setText("Cerrar sesión");
         menItemCerrarSesion.setPreferredSize(new java.awt.Dimension(180, 40));
@@ -259,8 +302,10 @@ public class Mesero extends javax.swing.JFrame {
 
         menuMesas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesa.png"))); // NOI18N
         menuMesas.setText("Mesas");
+        menuMesas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menuMesas.setPreferredSize(new java.awt.Dimension(122, 50));
 
+        menItemGestionarMesas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         menItemGestionarMesas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gestionarmesa.png"))); // NOI18N
         menItemGestionarMesas.setText("Gestionar mesas");
         menItemGestionarMesas.setPreferredSize(new java.awt.Dimension(180, 40));
@@ -270,23 +315,28 @@ public class Mesero extends javax.swing.JFrame {
 
         menuProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/producto.png"))); // NOI18N
         menuProductos.setText("Productos");
+        menuProductos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menuProductos.setPreferredSize(new java.awt.Dimension(122, 50));
 
+        menItemModProducto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         menItemModProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificarproducto.png"))); // NOI18N
         menItemModProducto.setText("Modificar producto");
         menItemModProducto.setPreferredSize(new java.awt.Dimension(180, 40));
         menuProductos.add(menItemModProducto);
 
+        menItemBuscProducto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         menItemBuscProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar producto.png"))); // NOI18N
         menItemBuscProducto.setText("BuscarProducto");
         menItemBuscProducto.setPreferredSize(new java.awt.Dimension(180, 40));
         menuProductos.add(menItemBuscProducto);
 
+        menItemElimProducto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         menItemElimProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminarProducto.png"))); // NOI18N
         menItemElimProducto.setText("Eliminar producto");
         menItemElimProducto.setPreferredSize(new java.awt.Dimension(180, 40));
         menuProductos.add(menItemElimProducto);
 
+        menItemProducDisponibles.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         menItemProducDisponibles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
         menItemProducDisponibles.setText("Productos disponibles");
         menItemProducDisponibles.setPreferredSize(new java.awt.Dimension(180, 40));
@@ -297,6 +347,7 @@ public class Mesero extends javax.swing.JFrame {
         });
         menuProductos.add(menItemProducDisponibles);
 
+        menItemProducDAgotados.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         menItemProducDAgotados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productoAgotado.png"))); // NOI18N
         menItemProducDAgotados.setText("Productos agotados");
         menItemProducDAgotados.setPreferredSize(new java.awt.Dimension(180, 40));
@@ -306,8 +357,10 @@ public class Mesero extends javax.swing.JFrame {
 
         menuRecibo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/recibo.png"))); // NOI18N
         menuRecibo.setText("Recibo");
+        menuRecibo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menuRecibo.setPreferredSize(new java.awt.Dimension(180, 40));
 
+        menItemGenerarRecibo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         menItemGenerarRecibo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/generarRecibo.png"))); // NOI18N
         menItemGenerarRecibo.setText("Generar recibo");
         menItemGenerarRecibo.setPreferredSize(new java.awt.Dimension(180, 30));
@@ -386,10 +439,12 @@ public class Mesero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscarRuta;
+    private javax.swing.JButton btnCargarMesas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenu jMenu5;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanelMostrar;
     private javax.swing.JMenuItem menItemBuscProducto;
@@ -416,5 +471,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JPanel panelModProducto;
     private javax.swing.JPanel panelProducAgotados;
     private javax.swing.JPanel panelProducDisponibles;
+    private javax.swing.JTextField txtEstadoArchivo;
+    private javax.swing.JTextField txtRutaArchivo;
     // End of variables declaration//GEN-END:variables
 }
