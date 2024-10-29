@@ -28,103 +28,103 @@ public class Mesero extends javax.swing.JFrame {
 
         jMenu5 = new javax.swing.JMenu();
         jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu9 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem8 = new javax.swing.JMenuItem();
+        menuMesero = new javax.swing.JMenu();
+        menItemCargarMesas = new javax.swing.JMenuItem();
+        menItemCargarProductos = new javax.swing.JMenuItem();
+        menItemCerrarSesion = new javax.swing.JMenuItem();
+        menuMesas = new javax.swing.JMenu();
+        menItemGestionarMesas = new javax.swing.JMenuItem();
+        menuProductos = new javax.swing.JMenu();
+        menItemModProducto = new javax.swing.JMenuItem();
+        menItemBuscProducto = new javax.swing.JMenuItem();
+        menItemElimProducto = new javax.swing.JMenuItem();
+        menItemProducDisponibles = new javax.swing.JMenuItem();
+        menItemProducDAgotados = new javax.swing.JMenuItem();
+        menuRecibo = new javax.swing.JMenu();
+        menItemGenerarRecibo = new javax.swing.JMenuItem();
 
         jMenu5.setText("jMenu5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesero.png"))); // NOI18N
-        jMenu9.setText("Mesero");
-        jMenu9.setPreferredSize(new java.awt.Dimension(122, 50));
+        menuMesero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesero.png"))); // NOI18N
+        menuMesero.setText("Mesero");
+        menuMesero.setPreferredSize(new java.awt.Dimension(122, 50));
 
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargarmesas.png"))); // NOI18N
-        jMenuItem1.setText("Cargar mesas");
-        jMenuItem1.setPreferredSize(new java.awt.Dimension(180, 40));
-        jMenu9.add(jMenuItem1);
+        menItemCargarMesas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargarmesas.png"))); // NOI18N
+        menItemCargarMesas.setText("Cargar mesas");
+        menItemCargarMesas.setPreferredSize(new java.awt.Dimension(180, 40));
+        menuMesero.add(menItemCargarMesas);
 
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargarProductos.png"))); // NOI18N
-        jMenuItem2.setText("Cargar productos");
-        jMenuItem2.setPreferredSize(new java.awt.Dimension(180, 40));
-        jMenu9.add(jMenuItem2);
+        menItemCargarProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargarProductos.png"))); // NOI18N
+        menItemCargarProductos.setText("Cargar productos");
+        menItemCargarProductos.setPreferredSize(new java.awt.Dimension(180, 40));
+        menuMesero.add(menItemCargarProductos);
 
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerrar sesion.png"))); // NOI18N
-        jMenuItem3.setText("Cerrar sesión");
-        jMenuItem3.setPreferredSize(new java.awt.Dimension(180, 40));
-        jMenu9.add(jMenuItem3);
+        menItemCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerrar sesion.png"))); // NOI18N
+        menItemCerrarSesion.setText("Cerrar sesión");
+        menItemCerrarSesion.setPreferredSize(new java.awt.Dimension(180, 40));
+        menuMesero.add(menItemCerrarSesion);
 
-        jMenuBar2.add(jMenu9);
+        jMenuBar2.add(menuMesero);
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesa.png"))); // NOI18N
-        jMenu1.setText("Mesas");
-        jMenu1.setPreferredSize(new java.awt.Dimension(122, 50));
+        menuMesas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesa.png"))); // NOI18N
+        menuMesas.setText("Mesas");
+        menuMesas.setPreferredSize(new java.awt.Dimension(122, 50));
 
-        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gestionarmesa.png"))); // NOI18N
-        jMenuItem9.setText("Gestionar mesas");
-        jMenuItem9.setPreferredSize(new java.awt.Dimension(180, 40));
-        jMenu1.add(jMenuItem9);
+        menItemGestionarMesas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gestionarmesa.png"))); // NOI18N
+        menItemGestionarMesas.setText("Gestionar mesas");
+        menItemGestionarMesas.setPreferredSize(new java.awt.Dimension(180, 40));
+        menuMesas.add(menItemGestionarMesas);
 
-        jMenuBar2.add(jMenu1);
+        jMenuBar2.add(menuMesas);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/producto.png"))); // NOI18N
-        jMenu2.setText("Productos");
-        jMenu2.setPreferredSize(new java.awt.Dimension(122, 50));
+        menuProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/producto.png"))); // NOI18N
+        menuProductos.setText("Productos");
+        menuProductos.setPreferredSize(new java.awt.Dimension(122, 50));
 
-        jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificarproducto.png"))); // NOI18N
-        jMenuItem10.setText("Modificar producto");
-        jMenuItem10.setPreferredSize(new java.awt.Dimension(180, 40));
-        jMenu2.add(jMenuItem10);
+        menItemModProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificarproducto.png"))); // NOI18N
+        menItemModProducto.setText("Modificar producto");
+        menItemModProducto.setPreferredSize(new java.awt.Dimension(180, 40));
+        menuProductos.add(menItemModProducto);
 
-        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar producto.png"))); // NOI18N
-        jMenuItem4.setText("BuscarProducto");
-        jMenuItem4.setPreferredSize(new java.awt.Dimension(180, 40));
-        jMenu2.add(jMenuItem4);
+        menItemBuscProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar producto.png"))); // NOI18N
+        menItemBuscProducto.setText("BuscarProducto");
+        menItemBuscProducto.setPreferredSize(new java.awt.Dimension(180, 40));
+        menuProductos.add(menItemBuscProducto);
 
-        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminarProducto.png"))); // NOI18N
-        jMenuItem5.setText("Eliminar producto");
-        jMenuItem5.setPreferredSize(new java.awt.Dimension(180, 40));
-        jMenu2.add(jMenuItem5);
+        menItemElimProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminarProducto.png"))); // NOI18N
+        menItemElimProducto.setText("Eliminar producto");
+        menItemElimProducto.setPreferredSize(new java.awt.Dimension(180, 40));
+        menuProductos.add(menItemElimProducto);
 
-        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
-        jMenuItem6.setText("Productos disponibles");
-        jMenuItem6.setPreferredSize(new java.awt.Dimension(180, 40));
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+        menItemProducDisponibles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
+        menItemProducDisponibles.setText("Productos disponibles");
+        menItemProducDisponibles.setPreferredSize(new java.awt.Dimension(180, 40));
+        menItemProducDisponibles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
+                menItemProducDisponiblesActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem6);
+        menuProductos.add(menItemProducDisponibles);
 
-        jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productoAgotado.png"))); // NOI18N
-        jMenuItem7.setText("Productos agotados");
-        jMenuItem7.setPreferredSize(new java.awt.Dimension(180, 40));
-        jMenu2.add(jMenuItem7);
+        menItemProducDAgotados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productoAgotado.png"))); // NOI18N
+        menItemProducDAgotados.setText("Productos agotados");
+        menItemProducDAgotados.setPreferredSize(new java.awt.Dimension(180, 40));
+        menuProductos.add(menItemProducDAgotados);
 
-        jMenuBar2.add(jMenu2);
+        jMenuBar2.add(menuProductos);
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/recibo.png"))); // NOI18N
-        jMenu3.setText("Recibo");
-        jMenu3.setPreferredSize(new java.awt.Dimension(180, 40));
+        menuRecibo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/recibo.png"))); // NOI18N
+        menuRecibo.setText("Recibo");
+        menuRecibo.setPreferredSize(new java.awt.Dimension(180, 40));
 
-        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/generarRecibo.png"))); // NOI18N
-        jMenuItem8.setText("Generar recibo");
-        jMenuItem8.setPreferredSize(new java.awt.Dimension(180, 30));
-        jMenu3.add(jMenuItem8);
+        menItemGenerarRecibo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/generarRecibo.png"))); // NOI18N
+        menItemGenerarRecibo.setText("Generar recibo");
+        menItemGenerarRecibo.setPreferredSize(new java.awt.Dimension(180, 30));
+        menuRecibo.add(menItemGenerarRecibo);
 
-        jMenuBar2.add(jMenu3);
+        jMenuBar2.add(menuRecibo);
 
         setJMenuBar(jMenuBar2);
 
@@ -142,9 +142,9 @@ public class Mesero extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+    private void menItemProducDisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemProducDisponiblesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
+    }//GEN-LAST:event_menItemProducDisponiblesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,21 +182,21 @@ public class Mesero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem menItemBuscProducto;
+    private javax.swing.JMenuItem menItemCargarMesas;
+    private javax.swing.JMenuItem menItemCargarProductos;
+    private javax.swing.JMenuItem menItemCerrarSesion;
+    private javax.swing.JMenuItem menItemElimProducto;
+    private javax.swing.JMenuItem menItemGenerarRecibo;
+    private javax.swing.JMenuItem menItemGestionarMesas;
+    private javax.swing.JMenuItem menItemModProducto;
+    private javax.swing.JMenuItem menItemProducDAgotados;
+    private javax.swing.JMenuItem menItemProducDisponibles;
+    private javax.swing.JMenu menuMesas;
+    private javax.swing.JMenu menuMesero;
+    private javax.swing.JMenu menuProductos;
+    private javax.swing.JMenu menuRecibo;
     // End of variables declaration//GEN-END:variables
 }
