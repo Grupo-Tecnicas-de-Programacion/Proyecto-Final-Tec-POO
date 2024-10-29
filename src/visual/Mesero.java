@@ -17,7 +17,13 @@ public class Mesero extends javax.swing.JFrame {
         jPanelMostrar.add(panelCargarMesas, "panelCargarMesas");
         jPanelMostrar.add(panelCargarProductos, "panelCargarProductos");
         jPanelMostrar.add(panelCerrarSesion, "panelCerrarSesion");
-
+        jPanelMostrar.add(panelGestionarMesas, "panelGestionarMesas");
+        jPanelMostrar.add(panelModProducto, "panelModProducto");
+        jPanelMostrar.add(panelElimProducto, "panelElimProducto");
+        jPanelMostrar.add(panelBuscProducto, "panelBuscProducto");
+        jPanelMostrar.add(panelGenerarRecibo, "panelGenerarRecibo");
+        jPanelMostrar.add(panelProducAgotados, "panelProducAgotados");
+        jPanelMostrar.add(panelProducDisponibles, "panelProducDisponibles");
     }
 
     /**
@@ -64,7 +70,11 @@ public class Mesero extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         mDisponible = new javax.swing.JButton();
         mOcupada = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        jPanelMostrarMesa = new javax.swing.JPanel();
+        panelMesa1 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        panelMesa2 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
         panelModProducto = new javax.swing.JPanel();
         panelBuscProducto = new javax.swing.JPanel();
         panelElimProducto = new javax.swing.JPanel();
@@ -110,6 +120,11 @@ public class Mesero extends javax.swing.JFrame {
         txtEstadoArchivoProductos.setEditable(false);
 
         btnCargarProductos.setText("Cargar Productos");
+        btnCargarProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargarProductosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelCargarProductosLayout = new javax.swing.GroupLayout(panelCargarProductos);
         panelCargarProductos.setLayout(panelCargarProductosLayout);
@@ -234,6 +249,30 @@ public class Mesero extends javax.swing.JFrame {
 
         jLabel9.setText("Gestionar Mesas");
 
+        btnMesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+
+        btnMesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+
+        btnMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+
+        btnMesa4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+
+        btnMesa5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+
+        btnMesa6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+
+        btnMesa7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+
+        btnMesa8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+
+        btnMesa9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+
+        btnMesa10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+
+        btnMesa11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+
+        btnMesa12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+
         jLabel10.setText("Ocupada");
 
         jLabel11.setText("Disponible");
@@ -242,16 +281,49 @@ public class Mesero extends javax.swing.JFrame {
 
         mOcupada.setEnabled(false);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 575, Short.MAX_VALUE)
+        jPanelMostrarMesa.setLayout(new java.awt.CardLayout());
+
+        jLabel12.setText("tamo en la mesa 1");
+
+        javax.swing.GroupLayout panelMesa1Layout = new javax.swing.GroupLayout(panelMesa1);
+        panelMesa1.setLayout(panelMesa1Layout);
+        panelMesa1Layout.setHorizontalGroup(
+            panelMesa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelMesa1Layout.createSequentialGroup()
+                .addGap(126, 126, 126)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(270, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        panelMesa1Layout.setVerticalGroup(
+            panelMesa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelMesa1Layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(165, Short.MAX_VALUE))
         );
+
+        jPanelMostrarMesa.add(panelMesa1, "card2");
+
+        jLabel13.setText("tamo en la mesa 2");
+
+        javax.swing.GroupLayout panelMesa2Layout = new javax.swing.GroupLayout(panelMesa2);
+        panelMesa2.setLayout(panelMesa2Layout);
+        panelMesa2Layout.setHorizontalGroup(
+            panelMesa2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelMesa2Layout.createSequentialGroup()
+                .addGap(218, 218, 218)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(206, Short.MAX_VALUE))
+        );
+        panelMesa2Layout.setVerticalGroup(
+            panelMesa2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelMesa2Layout.createSequentialGroup()
+                .addGap(111, 111, 111)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(161, Short.MAX_VALUE))
+        );
+
+        jPanelMostrarMesa.add(panelMesa2, "card3");
 
         javax.swing.GroupLayout panelGestionarMesasLayout = new javax.swing.GroupLayout(panelGestionarMesas);
         panelGestionarMesas.setLayout(panelGestionarMesasLayout);
@@ -290,8 +362,8 @@ public class Mesero extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addGroup(panelGestionarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(46, Short.MAX_VALUE))
+                    .addComponent(jPanelMostrarMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         panelGestionarMesasLayout.setVerticalGroup(
             panelGestionarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -335,7 +407,7 @@ public class Mesero extends javax.swing.JFrame {
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGestionarMesasLayout.createSequentialGroup()
                                     .addGap(7, 7, 7)
                                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanelMostrarMesa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
@@ -527,6 +599,11 @@ public class Mesero extends javax.swing.JFrame {
         menItemGestionarMesas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gestionarmesa.png"))); // NOI18N
         menItemGestionarMesas.setText("Gestionar mesas");
         menItemGestionarMesas.setPreferredSize(new java.awt.Dimension(180, 40));
+        menItemGestionarMesas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemGestionarMesasActionPerformed(evt);
+            }
+        });
         menuMesas.add(menItemGestionarMesas);
 
         jMenuBar2.add(menuMesas);
@@ -540,18 +617,33 @@ public class Mesero extends javax.swing.JFrame {
         menItemModProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificarproducto.png"))); // NOI18N
         menItemModProducto.setText("Modificar producto");
         menItemModProducto.setPreferredSize(new java.awt.Dimension(180, 40));
+        menItemModProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemModProductoActionPerformed(evt);
+            }
+        });
         menuProductos.add(menItemModProducto);
 
         menItemBuscProducto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         menItemBuscProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar producto.png"))); // NOI18N
         menItemBuscProducto.setText("BuscarProducto");
         menItemBuscProducto.setPreferredSize(new java.awt.Dimension(180, 40));
+        menItemBuscProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemBuscProductoActionPerformed(evt);
+            }
+        });
         menuProductos.add(menItemBuscProducto);
 
         menItemElimProducto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         menItemElimProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminarProducto.png"))); // NOI18N
         menItemElimProducto.setText("Eliminar producto");
         menItemElimProducto.setPreferredSize(new java.awt.Dimension(180, 40));
+        menItemElimProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemElimProductoActionPerformed(evt);
+            }
+        });
         menuProductos.add(menItemElimProducto);
 
         menItemProducDisponibles.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -569,6 +661,11 @@ public class Mesero extends javax.swing.JFrame {
         menItemProducDAgotados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productoAgotado.png"))); // NOI18N
         menItemProducDAgotados.setText("Productos agotados");
         menItemProducDAgotados.setPreferredSize(new java.awt.Dimension(180, 40));
+        menItemProducDAgotados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemProducDAgotadosActionPerformed(evt);
+            }
+        });
         menuProductos.add(menItemProducDAgotados);
 
         jMenuBar2.add(menuProductos);
@@ -582,6 +679,11 @@ public class Mesero extends javax.swing.JFrame {
         menItemGenerarRecibo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/generarRecibo.png"))); // NOI18N
         menItemGenerarRecibo.setText("Generar recibo");
         menItemGenerarRecibo.setPreferredSize(new java.awt.Dimension(180, 30));
+        menItemGenerarRecibo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemGenerarReciboActionPerformed(evt);
+            }
+        });
         menuRecibo.add(menItemGenerarRecibo);
 
         jMenuBar2.add(menuRecibo);
@@ -603,7 +705,8 @@ public class Mesero extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menItemProducDisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemProducDisponiblesActionPerformed
-        // TODO add your handling code here:
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "panelProducDisponibles");
     }//GEN-LAST:event_menItemProducDisponiblesActionPerformed
 
     private void menItemCargarMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemCargarMesasActionPerformed
@@ -620,6 +723,40 @@ public class Mesero extends javax.swing.JFrame {
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "panelCerrarSesion");
     }//GEN-LAST:event_menItemCerrarSesionActionPerformed
+
+    private void btnCargarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarProductosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCargarProductosActionPerformed
+
+    private void menItemGestionarMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemGestionarMesasActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "panelGestionarMesas");
+    }//GEN-LAST:event_menItemGestionarMesasActionPerformed
+
+    private void menItemModProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemModProductoActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "panelModProducto");
+    }//GEN-LAST:event_menItemModProductoActionPerformed
+
+    private void menItemBuscProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemBuscProductoActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "panelBuscProducto");
+    }//GEN-LAST:event_menItemBuscProductoActionPerformed
+
+    private void menItemElimProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemElimProductoActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "panelElimProducto");
+    }//GEN-LAST:event_menItemElimProductoActionPerformed
+
+    private void menItemProducDAgotadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemProducDAgotadosActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "panelProducAgotados");
+    }//GEN-LAST:event_menItemProducDAgotadosActionPerformed
+
+    private void menItemGenerarReciboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemGenerarReciboActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "panelGenerarRecibo");
+    }//GEN-LAST:event_menItemGenerarReciboActionPerformed
 
     /**
      * @param args the command line arguments
@@ -678,6 +815,8 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -687,8 +826,8 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelMostrar;
+    private javax.swing.JPanel jPanelMostrarMesa;
     private javax.swing.JButton mDisponible;
     private javax.swing.JButton mOcupada;
     private javax.swing.JMenuItem menItemBuscProducto;
@@ -712,6 +851,8 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JPanel panelElimProducto;
     private javax.swing.JPanel panelGenerarRecibo;
     private javax.swing.JPanel panelGestionarMesas;
+    private javax.swing.JPanel panelMesa1;
+    private javax.swing.JPanel panelMesa2;
     private javax.swing.JPanel panelModProducto;
     private javax.swing.JPanel panelProducAgotados;
     private javax.swing.JPanel panelProducDisponibles;
