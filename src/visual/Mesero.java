@@ -1,8 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package visual;
+
+import java.awt.CardLayout;
 
 /**
  *
@@ -15,6 +14,10 @@ public class Mesero extends javax.swing.JFrame {
      */
     public Mesero() {
         initComponents();
+        jPanelMostrar.add(panelCargarMesas, "panelCargarMesas");
+        jPanelMostrar.add(panelCargarProductos, "panelCargarProductos");
+        jPanelMostrar.add(panelCerrarSesion, "panelCerrarSesion");
+
     }
 
     /**
@@ -27,6 +30,20 @@ public class Mesero extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenu5 = new javax.swing.JMenu();
+        jPanelMostrar = new javax.swing.JPanel();
+        panelCargarMesas = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        panelCargarProductos = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        panelCerrarSesion = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        panelGestionarMesas = new javax.swing.JPanel();
+        panelModProducto = new javax.swing.JPanel();
+        panelBuscProducto = new javax.swing.JPanel();
+        panelElimProducto = new javax.swing.JPanel();
+        panelProducDisponibles = new javax.swing.JPanel();
+        panelProducAgotados = new javax.swing.JPanel();
+        panelGenerarRecibo = new javax.swing.JPanel();
         jMenuBar2 = new javax.swing.JMenuBar();
         menuMesero = new javax.swing.JMenu();
         menItemCargarMesas = new javax.swing.JMenuItem();
@@ -47,6 +64,163 @@ public class Mesero extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanelMostrar.setVerifyInputWhenFocusTarget(false);
+        jPanelMostrar.setLayout(new java.awt.CardLayout());
+
+        jLabel1.setText("CARGAR MESAS");
+
+        javax.swing.GroupLayout panelCargarMesasLayout = new javax.swing.GroupLayout(panelCargarMesas);
+        panelCargarMesas.setLayout(panelCargarMesasLayout);
+        panelCargarMesasLayout.setHorizontalGroup(
+            panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCargarMesasLayout.createSequentialGroup()
+                .addGap(262, 262, 262)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(494, Short.MAX_VALUE))
+        );
+        panelCargarMesasLayout.setVerticalGroup(
+            panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCargarMesasLayout.createSequentialGroup()
+                .addContainerGap(284, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(112, 112, 112))
+        );
+
+        jPanelMostrar.add(panelCargarMesas, "card2");
+
+        jLabel2.setText("CARGAR PRODUCTOS");
+
+        javax.swing.GroupLayout panelCargarProductosLayout = new javax.swing.GroupLayout(panelCargarProductos);
+        panelCargarProductos.setLayout(panelCargarProductosLayout);
+        panelCargarProductosLayout.setHorizontalGroup(
+            panelCargarProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCargarProductosLayout.createSequentialGroup()
+                .addGap(116, 116, 116)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(647, Short.MAX_VALUE))
+        );
+        panelCargarProductosLayout.setVerticalGroup(
+            panelCargarProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCargarProductosLayout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(355, Short.MAX_VALUE))
+        );
+
+        jPanelMostrar.add(panelCargarProductos, "card3");
+
+        jLabel3.setText("CERRAR SESION");
+
+        javax.swing.GroupLayout panelCerrarSesionLayout = new javax.swing.GroupLayout(panelCerrarSesion);
+        panelCerrarSesion.setLayout(panelCerrarSesionLayout);
+        panelCerrarSesionLayout.setHorizontalGroup(
+            panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCerrarSesionLayout.createSequentialGroup()
+                .addContainerGap(473, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(303, 303, 303))
+        );
+        panelCerrarSesionLayout.setVerticalGroup(
+            panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCerrarSesionLayout.createSequentialGroup()
+                .addGap(125, 125, 125)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(273, Short.MAX_VALUE))
+        );
+
+        jPanelMostrar.add(panelCerrarSesion, "card4");
+
+        javax.swing.GroupLayout panelGestionarMesasLayout = new javax.swing.GroupLayout(panelGestionarMesas);
+        panelGestionarMesas.setLayout(panelGestionarMesasLayout);
+        panelGestionarMesasLayout.setHorizontalGroup(
+            panelGestionarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 901, Short.MAX_VALUE)
+        );
+        panelGestionarMesasLayout.setVerticalGroup(
+            panelGestionarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 443, Short.MAX_VALUE)
+        );
+
+        jPanelMostrar.add(panelGestionarMesas, "card5");
+
+        javax.swing.GroupLayout panelModProductoLayout = new javax.swing.GroupLayout(panelModProducto);
+        panelModProducto.setLayout(panelModProductoLayout);
+        panelModProductoLayout.setHorizontalGroup(
+            panelModProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 901, Short.MAX_VALUE)
+        );
+        panelModProductoLayout.setVerticalGroup(
+            panelModProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 443, Short.MAX_VALUE)
+        );
+
+        jPanelMostrar.add(panelModProducto, "card6");
+
+        javax.swing.GroupLayout panelBuscProductoLayout = new javax.swing.GroupLayout(panelBuscProducto);
+        panelBuscProducto.setLayout(panelBuscProductoLayout);
+        panelBuscProductoLayout.setHorizontalGroup(
+            panelBuscProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 901, Short.MAX_VALUE)
+        );
+        panelBuscProductoLayout.setVerticalGroup(
+            panelBuscProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 443, Short.MAX_VALUE)
+        );
+
+        jPanelMostrar.add(panelBuscProducto, "card7");
+
+        javax.swing.GroupLayout panelElimProductoLayout = new javax.swing.GroupLayout(panelElimProducto);
+        panelElimProducto.setLayout(panelElimProductoLayout);
+        panelElimProductoLayout.setHorizontalGroup(
+            panelElimProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 901, Short.MAX_VALUE)
+        );
+        panelElimProductoLayout.setVerticalGroup(
+            panelElimProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 443, Short.MAX_VALUE)
+        );
+
+        jPanelMostrar.add(panelElimProducto, "card8");
+
+        javax.swing.GroupLayout panelProducDisponiblesLayout = new javax.swing.GroupLayout(panelProducDisponibles);
+        panelProducDisponibles.setLayout(panelProducDisponiblesLayout);
+        panelProducDisponiblesLayout.setHorizontalGroup(
+            panelProducDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 901, Short.MAX_VALUE)
+        );
+        panelProducDisponiblesLayout.setVerticalGroup(
+            panelProducDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 443, Short.MAX_VALUE)
+        );
+
+        jPanelMostrar.add(panelProducDisponibles, "card9");
+
+        javax.swing.GroupLayout panelProducAgotadosLayout = new javax.swing.GroupLayout(panelProducAgotados);
+        panelProducAgotados.setLayout(panelProducAgotadosLayout);
+        panelProducAgotadosLayout.setHorizontalGroup(
+            panelProducAgotadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 901, Short.MAX_VALUE)
+        );
+        panelProducAgotadosLayout.setVerticalGroup(
+            panelProducAgotadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 443, Short.MAX_VALUE)
+        );
+
+        jPanelMostrar.add(panelProducAgotados, "card10");
+
+        javax.swing.GroupLayout panelGenerarReciboLayout = new javax.swing.GroupLayout(panelGenerarRecibo);
+        panelGenerarRecibo.setLayout(panelGenerarReciboLayout);
+        panelGenerarReciboLayout.setHorizontalGroup(
+            panelGenerarReciboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 901, Short.MAX_VALUE)
+        );
+        panelGenerarReciboLayout.setVerticalGroup(
+            panelGenerarReciboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 443, Short.MAX_VALUE)
+        );
+
+        jPanelMostrar.add(panelGenerarRecibo, "card11");
+
         menuMesero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesero.png"))); // NOI18N
         menuMesero.setText("Mesero");
         menuMesero.setPreferredSize(new java.awt.Dimension(122, 50));
@@ -54,16 +228,31 @@ public class Mesero extends javax.swing.JFrame {
         menItemCargarMesas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargarmesas.png"))); // NOI18N
         menItemCargarMesas.setText("Cargar mesas");
         menItemCargarMesas.setPreferredSize(new java.awt.Dimension(180, 40));
+        menItemCargarMesas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemCargarMesasActionPerformed(evt);
+            }
+        });
         menuMesero.add(menItemCargarMesas);
 
         menItemCargarProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargarProductos.png"))); // NOI18N
         menItemCargarProductos.setText("Cargar productos");
         menItemCargarProductos.setPreferredSize(new java.awt.Dimension(180, 40));
+        menItemCargarProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemCargarProductosActionPerformed(evt);
+            }
+        });
         menuMesero.add(menItemCargarProductos);
 
         menItemCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerrar sesion.png"))); // NOI18N
         menItemCerrarSesion.setText("Cerrar sesión");
         menItemCerrarSesion.setPreferredSize(new java.awt.Dimension(180, 40));
+        menItemCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemCerrarSesionActionPerformed(evt);
+            }
+        });
         menuMesero.add(menItemCerrarSesion);
 
         jMenuBar2.add(menuMesero);
@@ -132,11 +321,11 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 901, Short.MAX_VALUE)
+            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 481, Short.MAX_VALUE)
+            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -145,6 +334,21 @@ public class Mesero extends javax.swing.JFrame {
     private void menItemProducDisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemProducDisponiblesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_menItemProducDisponiblesActionPerformed
+
+    private void menItemCargarMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemCargarMesasActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "panelCargarMesas");
+    }//GEN-LAST:event_menItemCargarMesasActionPerformed
+
+    private void menItemCargarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemCargarProductosActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "panelCargarProductos");
+    }//GEN-LAST:event_menItemCargarProductosActionPerformed
+
+    private void menItemCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemCerrarSesionActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "panelCerrarSesion");
+    }//GEN-LAST:event_menItemCerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,8 +386,12 @@ public class Mesero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JPanel jPanelMostrar;
     private javax.swing.JMenuItem menItemBuscProducto;
     private javax.swing.JMenuItem menItemCargarMesas;
     private javax.swing.JMenuItem menItemCargarProductos;
@@ -198,5 +406,15 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JMenu menuMesero;
     private javax.swing.JMenu menuProductos;
     private javax.swing.JMenu menuRecibo;
+    private javax.swing.JPanel panelBuscProducto;
+    private javax.swing.JPanel panelCargarMesas;
+    private javax.swing.JPanel panelCargarProductos;
+    private javax.swing.JPanel panelCerrarSesion;
+    private javax.swing.JPanel panelElimProducto;
+    private javax.swing.JPanel panelGenerarRecibo;
+    private javax.swing.JPanel panelGestionarMesas;
+    private javax.swing.JPanel panelModProducto;
+    private javax.swing.JPanel panelProducAgotados;
+    private javax.swing.JPanel panelProducDisponibles;
     // End of variables declaration//GEN-END:variables
 }
