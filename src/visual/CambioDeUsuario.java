@@ -42,7 +42,7 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         setBackground(new java.awt.Color(153, 0, 51));
 
         iblCambioDeUsuario.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        iblCambioDeUsuario.setForeground(new java.awt.Color(255, 0, 0));
+        iblCambioDeUsuario.setForeground(new java.awt.Color(51, 51, 51));
         iblCambioDeUsuario.setText("Cambio De Usuario");
 
         jLabel1.setText("Nombre De Usuario: ");
