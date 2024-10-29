@@ -1,1 +1,1 @@
-# Proyecto Final del curos Técnicas de Programación Orienteda a Onjetos
+# Proyecto Final del curos Técnicas de Programación Orienteda a Objetos
