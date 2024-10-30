@@ -182,8 +182,13 @@ public class Administrador extends javax.swing.JFrame {
         jList19 = new javax.swing.JList<>();
         panelCerrarSesion = new javax.swing.JPanel();
         jLabel86 = new javax.swing.JLabel();
-        jButton34 = new javax.swing.JButton();
-        jButton35 = new javax.swing.JButton();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jTextField16 = new javax.swing.JTextField();
+        jLabel43 = new javax.swing.JLabel();
+        jTextField19 = new javax.swing.JTextField();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         panelAgregarProducto = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -1332,15 +1337,29 @@ public class Administrador extends javax.swing.JFrame {
         panelCerrarSesion.setBackground(new java.awt.Color(102, 102, 102));
         panelCerrarSesion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel86.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        jLabel86.setText("Estas seguro de cerrar sesion ?");
+        jLabel86.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
+        jLabel86.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel86.setText("CERRAR SESION");
 
-        jButton34.setBackground(new java.awt.Color(0, 153, 0));
-        jButton34.setForeground(new java.awt.Color(255, 255, 255));
-        jButton34.setText("Si");
+        jLabel29.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel29.setText("Ingresar el codigo generado :");
 
-        jButton35.setBackground(new java.awt.Color(153, 0, 0));
-        jButton35.setText("No");
+        jLabel31.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel31.setText("Codigo generado :");
+
+        jLabel43.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel43.setText("Ingresar codigo :");
+
+        jButton9.setBackground(new java.awt.Color(51, 102, 0));
+        jButton9.setText("Comprobar");
+        jButton9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jButton10.setBackground(new java.awt.Color(204, 0, 0));
+        jButton10.setText("Cerrar sesion");
+        jButton10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout panelCerrarSesionLayout = new javax.swing.GroupLayout(panelCerrarSesion);
         panelCerrarSesion.setLayout(panelCerrarSesionLayout);
@@ -1349,25 +1368,47 @@ public class Administrador extends javax.swing.JFrame {
             .addGroup(panelCerrarSesionLayout.createSequentialGroup()
                 .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelCerrarSesionLayout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jButton34)
-                        .addGap(92, 92, 92)
-                        .addComponent(jButton35))
+                        .addGap(304, 304, 304)
+                        .addComponent(jLabel86))
                     .addGroup(panelCerrarSesionLayout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addComponent(jLabel86)))
-                .addContainerGap(446, Short.MAX_VALUE))
+                        .addGap(155, 155, 155)
+                        .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel29)
+                            .addGroup(panelCerrarSesionLayout.createSequentialGroup()
+                                .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel31))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 333, Short.MAX_VALUE)
+                                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(panelCerrarSesionLayout.createSequentialGroup()
+                        .addGap(281, 281, 281)
+                        .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(146, 146, 146))
         );
         panelCerrarSesionLayout.setVerticalGroup(
             panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCerrarSesionLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(42, 42, 42)
                 .addComponent(jLabel86)
-                .addGap(33, 33, 33)
-                .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton34)
-                    .addComponent(jButton35))
-                .addContainerGap(343, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addComponent(jLabel29)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCerrarSesionLayout.createSequentialGroup()
+                        .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel43)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         jPanelMostrarAdmin.add(panelCerrarSesion, "card13");
@@ -1653,7 +1694,7 @@ public class Administrador extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 472, Short.MAX_VALUE)
+                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1783,6 +1824,7 @@ public class Administrador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton15;
@@ -1798,13 +1840,12 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton32;
     private javax.swing.JButton jButton33;
-    private javax.swing.JButton jButton34;
-    private javax.swing.JButton jButton35;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1826,8 +1867,10 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
@@ -1840,6 +1883,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
@@ -1909,8 +1953,10 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
+    private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField22;
