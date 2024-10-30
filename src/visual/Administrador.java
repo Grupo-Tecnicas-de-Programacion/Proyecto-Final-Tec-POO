@@ -174,7 +174,6 @@ public class Administrador extends javax.swing.JFrame {
         jList18 = new javax.swing.JList<>();
         jLabel83 = new javax.swing.JLabel();
         jButton30 = new javax.swing.JButton();
-        jButton31 = new javax.swing.JButton();
         jButton32 = new javax.swing.JButton();
         jButton33 = new javax.swing.JButton();
         jLabel84 = new javax.swing.JLabel();
@@ -1199,95 +1198,124 @@ public class Administrador extends javax.swing.JFrame {
         panelReporteVentas.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel79.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
+        jLabel79.setForeground(new java.awt.Color(0, 0, 0));
         jLabel79.setText("REPORTE DE VENTAS");
 
-        jLabel80.setText("Ingrese fecha : ");
+        jLabel80.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel80.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel80.setText("Rango de fecha para ver los reportes :");
 
+        jLabel81.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel81.setForeground(new java.awt.Color(0, 0, 0));
         jLabel81.setText("Desde :");
 
+        jLabel82.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel82.setForeground(new java.awt.Color(0, 0, 0));
         jLabel82.setText("Hasta :");
 
+        jList18.setBackground(new java.awt.Color(255, 204, 51));
         jScrollPane18.setViewportView(jList18);
 
+        jLabel83.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel83.setForeground(new java.awt.Color(0, 0, 0));
         jLabel83.setText("Tabla de ventas :");
 
+        jButton30.setBackground(new java.awt.Color(0, 51, 153));
         jButton30.setText("Agrupar por fecha.");
 
-        jButton31.setText("Agrupar por vendedor : ");
-
+        jButton32.setBackground(new java.awt.Color(0, 153, 51));
         jButton32.setText("Agrupar por categoría :");
 
+        jButton33.setBackground(new java.awt.Color(102, 102, 0));
         jButton33.setText("Obtener resultados :");
 
-        jLabel84.setText("Seleccione una opcion : ");
+        jLabel84.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel84.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel84.setText("Opciones para visualizar el reporte :");
 
-        jLabel85.setText("Detalle de ventas : ");
+        jLabel85.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel85.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel85.setText("Visualizacion del reporte seleccionado :");
 
+        jList19.setBackground(new java.awt.Color(204, 204, 0));
         jScrollPane19.setViewportView(jList19);
 
         javax.swing.GroupLayout panelReporteVentasLayout = new javax.swing.GroupLayout(panelReporteVentas);
         panelReporteVentas.setLayout(panelReporteVentasLayout);
         panelReporteVentasLayout.setHorizontalGroup(
             panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                .addGap(109, 109, 109)
-                .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(jLabel80))
-                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton31)
-                            .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                                .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelReporteVentasLayout.createSequentialGroup()
-                                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel82)
-                                            .addComponent(jLabel81))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTextField30)
-                                            .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel83)
-                                            .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                                        .addGap(42, 42, 42)
-                                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButton30)
-                                            .addComponent(jButton33)
-                                            .addComponent(jButton32))
-                                        .addGap(4, 4, 4))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelReporteVentasLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel84)))))
-                        .addGap(50, 50, 50)
-                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel85)
-                            .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(108, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelReporteVentasLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel79, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(274, 274, 274))
+            .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                .addGap(97, 97, 97)
+                .addComponent(jLabel80)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                .addGap(103, 103, 103)
+                .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelReporteVentasLayout.createSequentialGroup()
+                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel82)
+                            .addComponent(jLabel81))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField30)
+                            .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel83)
+                        .addGap(62, 62, 62))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelReporteVentasLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                                .addGap(48, 48, 48)
+                                .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton30)
+                                    .addComponent(jButton33)
+                                    .addComponent(jButton32)))
+                            .addComponent(jLabel84))
+                        .addGap(40, 40, 40)
+                        .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelReporteVentasLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 254, Short.MAX_VALUE)
+                        .addComponent(jLabel85)
+                        .addGap(14, 14, 14))))
         );
         panelReporteVentasLayout.setVerticalGroup(
             panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelReporteVentasLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel79)
-                .addGap(27, 27, 27)
-                .addComponent(jLabel80)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel81)
-                    .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel85))
+                .addComponent(jLabel80)
                 .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                            .addGap(119, 119, 119)
+                            .addComponent(jLabel84)
+                            .addGap(32, 32, 32)
+                            .addComponent(jButton30)
+                            .addGap(18, 18, 18)
+                            .addComponent(jButton32)
+                            .addGap(18, 18, 18)
+                            .addComponent(jButton33)
+                            .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelReporteVentasLayout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                            .addComponent(jLabel85)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel81)
+                            .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel82)
@@ -1295,23 +1323,8 @@ public class Administrador extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addComponent(jLabel83)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel84)
-                                .addGap(26, 26, 26)
-                                .addComponent(jButton30)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton31)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton32)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton33))))
-                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         jPanelMostrarAdmin.add(panelReporteVentas, "card11");
@@ -1783,7 +1796,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton31;
     private javax.swing.JButton jButton32;
     private javax.swing.JButton jButton33;
     private javax.swing.JButton jButton34;
