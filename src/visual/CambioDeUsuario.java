@@ -28,153 +28,125 @@ public class CambioDeUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         iblCambioDeUsuario = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jLabel98 = new javax.swing.JLabel();
         txtNombreDeUsuaario = new javax.swing.JTextField();
+        jLabel99 = new javax.swing.JLabel();
         txtContraseña = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel100 = new javax.swing.JLabel();
         NuevoNombreDeUsuario = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(102, 102, 102));
+        setBackground(new java.awt.Color(204, 204, 204));
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         iblCambioDeUsuario.setBackground(new java.awt.Color(204, 204, 204));
         iblCambioDeUsuario.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         iblCambioDeUsuario.setForeground(new java.awt.Color(51, 51, 51));
         iblCambioDeUsuario.setText("CAMBIAR NOMBRE DE USUARIO");
+        jPanel1.add(iblCambioDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, -1, 60));
 
-        jLabel1.setText("Ingrese nombre de usuario :");
-
-        jLabel2.setText("Ingrese su contraseña :");
-
-        jButton2.setBackground(new java.awt.Color(0, 0, 153));
-        jButton2.setText("Actualizar usuario");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setBackground(new java.awt.Color(153, 0, 0));
-        jButton3.setText("Cancelar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
+        jLabel98.setText("Ingrese nombre de usuario :");
+        jPanel1.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
 
         txtNombreDeUsuaario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreDeUsuaarioActionPerformed(evt);
             }
         });
+        jPanel1.add(txtNombreDeUsuaario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 400, -1));
 
-        jLabel3.setText("Ingrese su nuevo nombre de usuario :");
+        jLabel99.setText("Ingrese su contraseña :");
+        jPanel1.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
+        jPanel1.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 400, -1));
+
+        jLabel100.setText("Ingrese su nuevo nombre de usuario :");
+        jPanel1.add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
 
         NuevoNombreDeUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NuevoNombreDeUsuarioActionPerformed(evt);
             }
         });
+        jPanel1.add(NuevoNombreDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 400, -1));
 
-        jButton1.setText("Salir");
+        jButton3.setBackground(new java.awt.Color(0, 0, 153));
+        jButton3.setText("Actualizar usuario");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
+
+        jButton4.setBackground(new java.awt.Color(153, 0, 0));
+        jButton4.setText("Cancelar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, -1, -1));
+
+        jButton5.setText("Salir");
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(43, 43, 43)
-                        .addComponent(jButton3)
-                        .addGap(92, 92, 92)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(NuevoNombreDeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1)
-                        .addComponent(iblCambioDeUsuario)
-                        .addComponent(jLabel2)
-                        .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3)
-                        .addComponent(txtNombreDeUsuaario, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(iblCambioDeUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addGap(12, 12, 12)
-                .addComponent(txtNombreDeUsuaario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(NuevoNombreDeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))
-                        .addGap(27, 27, 27))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
-                        .addContainerGap())))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void txtNombreDeUsuaarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreDeUsuaarioActionPerformed
-       String texto = txtNombreDeUsuaario.getText();
-    
-    // Verificar si contiene algún número
-    if (!texto.matches("[a-zA-Z]+")) { // Verifica que solo haya letras
-        // Mostrar mensaje de advertencia
-        JOptionPane.showMessageDialog(null, "Por favor, ingresa solo letras.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        
-        // Eliminar cualquier carácter no permitido
-        texto = texto.replaceAll("[^a-zA-Z]", ""); // Quita todo lo que no sea letra
-        txtNombreDeUsuaario.setText(texto);
-        return; // Salir del método si se encuentra un número
-    }
+        String texto = txtNombreDeUsuaario.getText();
 
-    // Verificar si la longitud del texto es mayor a 8 caracteres
-    if (texto.length() >8) {
-        // Mostrar mensaje de advertencia
-        JOptionPane.showMessageDialog(null, "muy pocos caracteres. El minimo permitido es 8.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        
-        // Limitar el texto a los primeros 15 caracteres
-        txtNombreDeUsuaario.setText(texto.substring(0, 15));
-    }
+        // Verificar si contiene algún número
+        if (!texto.matches("[a-zA-Z]+")) { // Verifica que solo haya letras
+            // Mostrar mensaje de advertencia
+            JOptionPane.showMessageDialog(null, "Por favor, ingresa solo letras.", "Advertencia", JOptionPane.WARNING_MESSAGE);
 
+            // Eliminar cualquier carácter no permitido
+            texto = texto.replaceAll("[^a-zA-Z]", ""); // Quita todo lo que no sea letra
+            txtNombreDeUsuaario.setText(texto);
+            return; // Salir del método si se encuentra un número
+        }
+
+        // Verificar si la longitud del texto es mayor a 8 caracteres
+        if (texto.length() >8) {
+            // Mostrar mensaje de advertencia
+            JOptionPane.showMessageDialog(null, "muy pocos caracteres. El minimo permitido es 8.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+
+            // Limitar el texto a los primeros 15 caracteres
+            txtNombreDeUsuaario.setText(texto.substring(0, 15));
+        }
     }//GEN-LAST:event_txtNombreDeUsuaarioActionPerformed
 
     private void NuevoNombreDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevoNombreDeUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NuevoNombreDeUsuarioActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,12 +186,13 @@ public class CambioDeUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField NuevoNombreDeUsuario;
     private javax.swing.JLabel iblCambioDeUsuario;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtContraseña;
     private javax.swing.JTextField txtNombreDeUsuaario;
     // End of variables declaration//GEN-END:variables
