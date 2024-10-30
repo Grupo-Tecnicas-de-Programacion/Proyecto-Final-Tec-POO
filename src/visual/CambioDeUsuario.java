@@ -37,28 +37,30 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         txtContraseña = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         NuevoNombreDeUsuario = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(153, 0, 51));
+        setBackground(new java.awt.Color(102, 102, 102));
 
-        iblCambioDeUsuario.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        iblCambioDeUsuario.setBackground(new java.awt.Color(204, 204, 204));
+        iblCambioDeUsuario.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         iblCambioDeUsuario.setForeground(new java.awt.Color(51, 51, 51));
-        iblCambioDeUsuario.setText("Cambio De Usuario");
+        iblCambioDeUsuario.setText("CAMBIAR NOMBRE DE USUARIO");
 
-        jLabel1.setText("Nombre De Usuario: ");
+        jLabel1.setText("Ingrese nombre de usuario :");
 
-        jLabel2.setText("Contraseña: ");
+        jLabel2.setText("Ingrese su contraseña :");
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 0));
-        jButton2.setText("cambiar nombre de usuario");
+        jButton2.setBackground(new java.awt.Color(0, 0, 153));
+        jButton2.setText("Actualizar usuario");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 0));
-        jButton3.setText("volver atras");
+        jButton3.setBackground(new java.awt.Color(153, 0, 0));
+        jButton3.setText("Cancelar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -71,7 +73,7 @@ public class CambioDeUsuario extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Nuevo Nombre De Usuario");
+        jLabel3.setText("Ingrese su nuevo nombre de usuario :");
 
         NuevoNombreDeUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,63 +81,59 @@ public class CambioDeUsuario extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Salir");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(210, 210, 210)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(iblCambioDeUsuario)
-                                        .addGap(51, 51, 51))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addGap(147, 147, 147))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(320, 320, 320)
-                                .addComponent(jLabel2)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNombreDeUsuaario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
-                            .addComponent(txtContraseña, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(NuevoNombreDeUsuario, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(282, 282, 282)
-                        .addComponent(jLabel3)))
-                .addContainerGap(144, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(24, 24, 24))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jButton2)
+                        .addGap(43, 43, 43)
+                        .addComponent(jButton3)
+                        .addGap(92, 92, 92)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(NuevoNombreDeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1)
+                        .addComponent(iblCambioDeUsuario)
+                        .addComponent(jLabel2)
+                        .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3)
+                        .addComponent(txtNombreDeUsuaario, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(iblCambioDeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 36, Short.MAX_VALUE)
+                .addGap(12, 12, 12)
+                .addComponent(iblCambioDeUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNombreDeUsuaario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addComponent(txtNombreDeUsuaario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(NuevoNombreDeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addGap(27, 27, 27))
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(NuevoNombreDeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2)
+                            .addComponent(jButton3))
+                        .addGap(27, 27, 27))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)
+                        .addContainerGap())))
         );
 
         pack();
@@ -216,6 +214,7 @@ public class CambioDeUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField NuevoNombreDeUsuario;
     private javax.swing.JLabel iblCambioDeUsuario;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
