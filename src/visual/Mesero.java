@@ -23,6 +23,7 @@ public class Mesero extends javax.swing.JFrame {
         jPanelMostrar.add(panelBuscProducto, "panelBuscProducto");
         jPanelMostrar.add(panelProducAgotados, "panelProducAgotados");
         jPanelMostrar.add(panelProducDisponibles, "panelProducDisponibles");
+        jPanelMostrar.add(panelAgreProducto, "panelAgreProducto");
         jPanelMostrarMesa.add(panelMesa1, "panelMesa1");
         jPanelMostrarMesa.add(panelMesa2, "panelMesa2");
         jPanelMostrarMesa.add(panelMesa3, "panelMesa3");
@@ -293,6 +294,19 @@ public class Mesero extends javax.swing.JFrame {
         btnBorrarPedidoMesa12 = new javax.swing.JButton();
         btnVerPedidosMesa12 = new javax.swing.JButton();
         jLabel59 = new javax.swing.JLabel();
+        panelAgreProducto = new javax.swing.JPanel();
+        jLabel98 = new javax.swing.JLabel();
+        jLabel99 = new javax.swing.JLabel();
+        jLabel100 = new javax.swing.JLabel();
+        txtPrecioNuevoProducto = new javax.swing.JTextField();
+        txtCantidadNuevoProducto = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jLabel102 = new javax.swing.JLabel();
+        txtCategoriaNuevoProducto = new javax.swing.JTextField();
+        txtNombreNuevoProducto = new javax.swing.JTextField();
+        jLabel103 = new javax.swing.JLabel();
+        jLabel104 = new javax.swing.JLabel();
         panelModProducto = new javax.swing.JPanel();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
@@ -379,6 +393,7 @@ public class Mesero extends javax.swing.JFrame {
         menuMesas = new javax.swing.JMenu();
         menItemGestionarMesas = new javax.swing.JMenuItem();
         menuProductos = new javax.swing.JMenu();
+        menItemAgreProducto = new javax.swing.JMenuItem();
         menItemModProducto = new javax.swing.JMenuItem();
         menItemBuscProducto = new javax.swing.JMenuItem();
         menItemElimProducto = new javax.swing.JMenuItem();
@@ -1549,6 +1564,41 @@ public class Mesero extends javax.swing.JFrame {
 
         jPanelMostrar.add(panelGestionarMesas, "card5");
 
+        panelAgreProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel98.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jLabel98.setText("AGREGAR  PRODUCTO A LA CARTA");
+        panelAgreProducto.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
+
+        jLabel99.setText("Complete la información del nuevo producto");
+        panelAgreProducto.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, -1, 20));
+
+        jLabel100.setText("Nombre del plato ");
+        panelAgreProducto.add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
+        panelAgreProducto.add(txtPrecioNuevoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 150, 110, -1));
+        panelAgreProducto.add(txtCantidadNuevoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 210, 110, -1));
+
+        jButton3.setBackground(new java.awt.Color(0, 153, 0));
+        jButton3.setText("Agregar Plato");
+        panelAgreProducto.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, -1, 60));
+
+        jButton5.setBackground(new java.awt.Color(153, 0, 0));
+        jButton5.setText("Cancelar");
+        panelAgreProducto.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, 100, 60));
+
+        jLabel102.setText("Precio");
+        panelAgreProducto.add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, -1, -1));
+        panelAgreProducto.add(txtCategoriaNuevoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 200, -1));
+        panelAgreProducto.add(txtNombreNuevoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 200, -1));
+
+        jLabel103.setText("Cantidad");
+        panelAgreProducto.add(jLabel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 210, 80, -1));
+
+        jLabel104.setText("Categoría");
+        panelAgreProducto.add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, -1));
+
+        jPanelMostrar.add(panelAgreProducto, "card11");
+
         panelModProducto.setBackground(new java.awt.Color(204, 204, 204));
         panelModProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1957,6 +2007,16 @@ public class Mesero extends javax.swing.JFrame {
         menuProductos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menuProductos.setPreferredSize(new java.awt.Dimension(122, 50));
 
+        menItemAgreProducto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menItemAgreProducto.setText("Agregar producto");
+        menItemAgreProducto.setPreferredSize(new java.awt.Dimension(180, 40));
+        menItemAgreProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemAgreProductoActionPerformed(evt);
+            }
+        });
+        menuProductos.add(menItemAgreProducto);
+
         menItemModProducto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         menItemModProducto.setText("Modificar producto");
         menItemModProducto.setPreferredSize(new java.awt.Dimension(180, 40));
@@ -2160,6 +2220,11 @@ public class Mesero extends javax.swing.JFrame {
         showPanel("panelMesa12");
     }//GEN-LAST:event_btnMesa12ActionPerformed
 
+    private void menItemAgreProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemAgreProductoActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "panelAgreProducto");
+    }//GEN-LAST:event_menItemAgreProductoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2302,8 +2367,14 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JButton btnVerPedidosMesa8;
     private javax.swing.JButton btnVerPedidosMesa9;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel104;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -2399,6 +2470,8 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel95;
     private javax.swing.JLabel jLabel96;
     private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
     private javax.swing.JMenuBar jMenuBar2;
@@ -2444,6 +2517,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JList<String> listaPedidosMesa9;
     private javax.swing.JButton mDisponible;
     private javax.swing.JButton mOcupada;
+    private javax.swing.JMenuItem menItemAgreProducto;
     private javax.swing.JMenuItem menItemBuscProducto;
     private javax.swing.JMenuItem menItemCargarMesas;
     private javax.swing.JMenuItem menItemCargarProductos;
@@ -2456,6 +2530,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JMenu menuMesas;
     private javax.swing.JMenu menuMesero;
     private javax.swing.JMenu menuProductos;
+    private javax.swing.JPanel panelAgreProducto;
     private javax.swing.JPanel panelBuscProducto;
     private javax.swing.JPanel panelCargarMesas;
     private javax.swing.JPanel panelCargarProductos;
@@ -2489,6 +2564,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JList<String> productosPedidoMesa7;
     private javax.swing.JList<String> productosPedidoMesa8;
     private javax.swing.JList<String> productosPedidoMesa9;
+    private javax.swing.JTextField txtCantidadNuevoProducto;
     private javax.swing.JTextField txtCantidadPersonasMesa1;
     private javax.swing.JTextField txtCantidadPersonasMesa10;
     private javax.swing.JTextField txtCantidadPersonasMesa11;
@@ -2507,6 +2583,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JTextField txtCantidadProductoBuscado1;
     private javax.swing.JTextField txtCantidadProductoBuscado2;
     private javax.swing.JTextField txtCantidadProductoNuevo;
+    private javax.swing.JTextField txtCategoriaNuevoProducto;
     private javax.swing.JTextField txtCategoriaProductoActual;
     private javax.swing.JTextField txtCategoriaProductoAgotado;
     private javax.swing.JTextField txtCategoriaProductoBuscado;
@@ -2517,6 +2594,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JTextField txtEstadoArchivo;
     private javax.swing.JTextField txtEstadoArchivoProductos;
     private javax.swing.JTextField txtIngresarCodigo;
+    private javax.swing.JTextField txtNombreNuevoProducto;
     private javax.swing.JTextField txtNombreProductoActual;
     private javax.swing.JTextField txtNombreProductoAgotado;
     private javax.swing.JTextField txtNombreProductoBuscado;
@@ -2526,6 +2604,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombreProductoBuscar1;
     private javax.swing.JTextField txtNombreProductoModificar;
     private javax.swing.JTextField txtNombreProductoNuevo;
+    private javax.swing.JTextField txtPrecioNuevoProducto;
     private javax.swing.JTextField txtPrecioProductoActual;
     private javax.swing.JTextField txtPrecioProductoAgotado;
     private javax.swing.JTextField txtPrecioProductoBuscado;
