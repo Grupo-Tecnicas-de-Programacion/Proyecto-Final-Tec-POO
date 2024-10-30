@@ -229,7 +229,6 @@ public class Administrador extends javax.swing.JFrame {
         panelAgregarProducto = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -243,6 +242,7 @@ public class Administrador extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
+        jTextField3 = new javax.swing.JTextField();
         jMenuAdmin = new javax.swing.JMenuBar();
         menuInventario = new javax.swing.JMenu();
         menItemEliminarProductos = new javax.swing.JMenuItem();
@@ -325,7 +325,7 @@ public class Administrador extends javax.swing.JFrame {
                     .addGroup(panelEliminarProductoLayout.createSequentialGroup()
                         .addGap(156, 156, 156)
                         .addComponent(jLabel4)))
-                .addContainerGap(439, Short.MAX_VALUE))
+                .addContainerGap(295, Short.MAX_VALUE))
         );
         panelEliminarProductoLayout.setVerticalGroup(
             panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -427,7 +427,7 @@ public class Administrador extends javax.swing.JFrame {
                     .addGroup(panelProductosAgotadosLayout.createSequentialGroup()
                         .addGap(211, 211, 211)
                         .addComponent(jLabel12)))
-                .addContainerGap(293, Short.MAX_VALUE))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
         panelProductosAgotadosLayout.setVerticalGroup(
             panelProductosAgotadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -543,7 +543,7 @@ public class Administrador extends javax.swing.JFrame {
                     .addGroup(panelProductosDisponiblesLayout.createSequentialGroup()
                         .addGap(151, 151, 151)
                         .addComponent(jLabel21)))
-                .addContainerGap(342, Short.MAX_VALUE))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
         panelProductosDisponiblesLayout.setVerticalGroup(
             panelProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -638,7 +638,7 @@ public class Administrador extends javax.swing.JFrame {
                         .addGroup(panelEliminarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel34))))
-                .addContainerGap(256, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         panelEliminarUsuariosLayout.setVerticalGroup(
             panelEliminarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -755,7 +755,7 @@ public class Administrador extends javax.swing.JFrame {
                     .addGroup(panelAgregarUsuariosLayout.createSequentialGroup()
                         .addGap(332, 332, 332)
                         .addComponent(jLabel35)))
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelAgregarUsuariosLayout.setVerticalGroup(
             panelAgregarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -903,7 +903,7 @@ public class Administrador extends javax.swing.JFrame {
                                     .addComponent(jLabel56))
                                 .addGap(71, 71, 71)
                                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 130, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificarUsuariosLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel58)
@@ -1093,7 +1093,7 @@ public class Administrador extends javax.swing.JFrame {
                     .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
                         .addGap(323, 323, 323)
                         .addComponent(jLabel60)))
-                .addContainerGap(277, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         panelGestionarUsuariosLayout.setVerticalGroup(
             panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1233,7 +1233,7 @@ public class Administrador extends javax.swing.JFrame {
                 .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel78)
                     .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(274, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelAsignarPermisosLayout.setVerticalGroup(
             panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1363,7 +1363,7 @@ public class Administrador extends javax.swing.JFrame {
                     .addGroup(panelReporteVentasLayout.createSequentialGroup()
                         .addGap(332, 332, 332)
                         .addComponent(jLabel79, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(255, Short.MAX_VALUE))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
         panelReporteVentasLayout.setVerticalGroup(
             panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1434,7 +1434,7 @@ public class Administrador extends javax.swing.JFrame {
                     .addGroup(panelCerrarSesionLayout.createSequentialGroup()
                         .addGap(82, 82, 82)
                         .addComponent(jLabel86)))
-                .addContainerGap(593, Short.MAX_VALUE))
+                .addContainerGap(446, Short.MAX_VALUE))
         );
         panelCerrarSesionLayout.setVerticalGroup(
             panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1450,32 +1450,52 @@ public class Administrador extends javax.swing.JFrame {
 
         jPanelMostrarAdmin.add(panelCerrarSesion, "card13");
 
-        panelAgregarProducto.setBackground(new java.awt.Color(102, 102, 102));
+        panelAgregarProducto.setBackground(new java.awt.Color(153, 153, 153));
         panelAgregarProducto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        jLabel7.setText("AGREGAR  PLATO A LA CARTA");
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("AGREGAR PRODUCTO A LA CARTA");
 
-        jLabel8.setText("Nombre del plato : ");
+        jLabel8.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel8.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Nombre del producto :");
 
+        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel9.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Categoria :");
 
+        jLabel10.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Precio : ");
 
-        jLabel11.setText("Descripcion : ");
+        jLabel11.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("Cantidad : ");
 
-        jLabel13.setText("Complete la información del nuevo plato para añadirlo al menú : ");
+        jLabel13.setFont(new java.awt.Font("Segoe UI Black", 3, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setText("Complete la información para agregar nuevo producto :");
 
         jButton3.setBackground(new java.awt.Color(0, 153, 0));
-        jButton3.setText("Agregar Plato");
+        jButton3.setText("Agregar");
+        jButton3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jButton5.setBackground(new java.awt.Color(153, 0, 0));
         jButton5.setText("Cancelar");
+        jButton5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel14.setText("Estas seguro de agregar el plato a la carta : ");
+        jLabel14.setFont(new java.awt.Font("Segoe UI Black", 3, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setText("Estas seguro de agregar este producto a la carta ?");
 
-        jLabel15.setText("Menu actualizado:");
+        jLabel15.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel15.setText("Carta actualizada :");
 
+        jList2.setBackground(new java.awt.Color(255, 204, 51));
         jScrollPane2.setViewportView(jList2);
 
         javax.swing.GroupLayout panelAgregarProductoLayout = new javax.swing.GroupLayout(panelAgregarProducto);
@@ -1486,79 +1506,86 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(104, 104, 104)
                 .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelAgregarProductoLayout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(jLabel13)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(panelAgregarProductoLayout.createSequentialGroup()
+                        .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelAgregarProductoLayout.createSequentialGroup()
-                                .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jTextField3)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(43, 43, 43)
                                 .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel11)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(panelAgregarProductoLayout.createSequentialGroup()
-                                .addGap(109, 109, 109)
-                                .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(panelAgregarProductoLayout.createSequentialGroup()
-                                        .addComponent(jButton3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton5))
-                                    .addComponent(jLabel14))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
-                        .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel15))
-                        .addGap(229, 229, 229))))
-            .addGroup(panelAgregarProductoLayout.createSequentialGroup()
-                .addGap(276, 276, 276)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(jLabel10))
+                                .addGap(101, 101, 101))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAgregarProductoLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(panelAgregarProductoLayout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(jButton5))
+                    .addGroup(panelAgregarProductoLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel14)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel15)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(84, 84, 84))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAgregarProductoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAgregarProductoLayout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(190, 190, 190))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAgregarProductoLayout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(245, 245, 245))))
         );
         panelAgregarProductoLayout.setVerticalGroup(
             panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelAgregarProductoLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(26, 26, 26)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel13)
-                .addGap(23, 23, 23)
+                .addGap(34, 34, 34)
                 .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel11)
                         .addComponent(jLabel15)))
-                .addGap(14, 14, 14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelAgregarProductoLayout.createSequentialGroup()
-                        .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addGap(26, 26, 26)
                         .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
                             .addComponent(jLabel10))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(39, 39, 39)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(47, 47, 47)
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
+                        .addGap(29, 29, 29)
                         .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton3)
-                            .addComponent(jButton5)))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(75, Short.MAX_VALUE))
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jPanelMostrarAdmin.add(panelAgregarProducto, "card13");
+
+        jMenuAdmin.setPreferredSize(new java.awt.Dimension(850, 51));
 
         menuInventario.setText("Inventario");
         menuInventario.setPreferredSize(new java.awt.Dimension(122, 50));
@@ -1695,15 +1722,16 @@ public class Administrador extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 1034, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 887, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE)
+                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 472, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
