@@ -339,6 +339,18 @@ public class Mesero extends javax.swing.JFrame {
         jLabel91 = new javax.swing.JLabel();
         txtCantidadProductoBuscado2 = new javax.swing.JTextField();
         panelProducAgotados = new javax.swing.JPanel();
+        jLabel92 = new javax.swing.JLabel();
+        txtCantidadProductoAgotado = new javax.swing.JTextField();
+        txtPrecioProductoAgotado = new javax.swing.JTextField();
+        jLabel93 = new javax.swing.JLabel();
+        jLabel94 = new javax.swing.JLabel();
+        txtCategoriaProductoAgotado = new javax.swing.JTextField();
+        txtNombreProductoAgotado = new javax.swing.JTextField();
+        jLabel95 = new javax.swing.JLabel();
+        jLabel96 = new javax.swing.JLabel();
+        jLabel97 = new javax.swing.JLabel();
+        jScrollPane26 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
         panelCargarMesas = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnBuscarRuta = new javax.swing.JButton();
@@ -1608,16 +1620,55 @@ public class Mesero extends javax.swing.JFrame {
 
         jPanelMostrar.add(panelProducDisponibles, "card9");
 
-        javax.swing.GroupLayout panelProducAgotadosLayout = new javax.swing.GroupLayout(panelProducAgotados);
-        panelProducAgotados.setLayout(panelProducAgotadosLayout);
-        panelProducAgotadosLayout.setHorizontalGroup(
-            panelProducAgotadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 959, Short.MAX_VALUE)
-        );
-        panelProducAgotadosLayout.setVerticalGroup(
-            panelProducAgotadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 443, Short.MAX_VALUE)
-        );
+        panelProducAgotados.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel92.setText("Cantidad del producto");
+        panelProducAgotados.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 146, 33));
+
+        txtCantidadProductoAgotado.setEditable(false);
+        txtCantidadProductoAgotado.setText("Cantidad del producto");
+        txtCantidadProductoAgotado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantidadProductoAgotadoActionPerformed(evt);
+            }
+        });
+        panelProducAgotados.add(txtCantidadProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 160, 30));
+
+        txtPrecioProductoAgotado.setEditable(false);
+        txtPrecioProductoAgotado.setText("Precio del producto");
+        panelProducAgotados.add(txtPrecioProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 160, 30));
+
+        jLabel93.setText("Precio del producto");
+        panelProducAgotados.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 146, 33));
+
+        jLabel94.setText("Categoría del producto");
+        panelProducAgotados.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 146, 33));
+
+        txtCategoriaProductoAgotado.setEditable(false);
+        txtCategoriaProductoAgotado.setText("Categoría del producto");
+        panelProducAgotados.add(txtCategoriaProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 160, 30));
+
+        txtNombreProductoAgotado.setEditable(false);
+        txtNombreProductoAgotado.setText("Nombre del producto");
+        panelProducAgotados.add(txtNombreProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 160, 30));
+
+        jLabel95.setText("Nombre del producto");
+        panelProducAgotados.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 146, 33));
+
+        jLabel96.setText("Datos del producto ");
+        panelProducAgotados.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 122, 30));
+
+        jLabel97.setText("Productos agotados");
+        panelProducAgotados.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, 152, 44));
+
+        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane26.setViewportView(jList2);
+
+        panelProducAgotados.add(jScrollPane26, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 330, 310));
 
         jPanelMostrar.add(panelProducAgotados, "card10");
 
@@ -1893,6 +1944,10 @@ public class Mesero extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCantidadProductoBuscado2ActionPerformed
 
+    private void txtCantidadProductoAgotadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProductoAgotadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCantidadProductoAgotadoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2125,7 +2180,14 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
     private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
+    private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanelMostrar;
     private javax.swing.JPanel jPanelMostrarMesa;
@@ -2147,6 +2209,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane23;
     private javax.swing.JScrollPane jScrollPane24;
     private javax.swing.JScrollPane jScrollPane25;
+    private javax.swing.JScrollPane jScrollPane26;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -2226,11 +2289,13 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JTextField txtCantidadPersonasMesa8;
     private javax.swing.JTextField txtCantidadPersonasMesa9;
     private javax.swing.JTextField txtCantidadProductoActual;
+    private javax.swing.JTextField txtCantidadProductoAgotado;
     private javax.swing.JTextField txtCantidadProductoBuscado;
     private javax.swing.JTextField txtCantidadProductoBuscado1;
     private javax.swing.JTextField txtCantidadProductoBuscado2;
     private javax.swing.JTextField txtCantidadProductoNuevo;
     private javax.swing.JTextField txtCategoriaProductoActual;
+    private javax.swing.JTextField txtCategoriaProductoAgotado;
     private javax.swing.JTextField txtCategoriaProductoBuscado;
     private javax.swing.JTextField txtCategoriaProductoBuscado1;
     private javax.swing.JTextField txtCategoriaProductoBuscado2;
@@ -2240,6 +2305,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JTextField txtEstadoArchivoProductos;
     private javax.swing.JTextField txtIngresarCodigo;
     private javax.swing.JTextField txtNombreProductoActual;
+    private javax.swing.JTextField txtNombreProductoAgotado;
     private javax.swing.JTextField txtNombreProductoBuscado;
     private javax.swing.JTextField txtNombreProductoBuscado1;
     private javax.swing.JTextField txtNombreProductoBuscado2;
@@ -2248,6 +2314,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombreProductoModificar;
     private javax.swing.JTextField txtNombreProductoNuevo;
     private javax.swing.JTextField txtPrecioProductoActual;
+    private javax.swing.JTextField txtPrecioProductoAgotado;
     private javax.swing.JTextField txtPrecioProductoBuscado;
     private javax.swing.JTextField txtPrecioProductoBuscado1;
     private javax.swing.JTextField txtPrecioProductoBuscado2;
