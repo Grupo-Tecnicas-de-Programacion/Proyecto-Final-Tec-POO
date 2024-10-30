@@ -298,6 +298,19 @@ public class Mesero extends javax.swing.JFrame {
         txtCantidadProductoNuevo = new javax.swing.JTextField();
         btnModificarProducto = new javax.swing.JButton();
         panelBuscProducto = new javax.swing.JPanel();
+        jLabel72 = new javax.swing.JLabel();
+        txtNombreProductoBuscar = new javax.swing.JTextField();
+        jLabel73 = new javax.swing.JLabel();
+        jLabel74 = new javax.swing.JLabel();
+        jLabel75 = new javax.swing.JLabel();
+        jLabel76 = new javax.swing.JLabel();
+        jLabel77 = new javax.swing.JLabel();
+        jLabel78 = new javax.swing.JLabel();
+        txtNombreProductoBuscado = new javax.swing.JTextField();
+        txtCategoriaProductoBuscado = new javax.swing.JTextField();
+        txtPrecioProductoBuscado = new javax.swing.JTextField();
+        txtCantidadProductoBuscado = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         panelElimProducto = new javax.swing.JPanel();
         panelProducDisponibles = new javax.swing.JPanel();
         panelProducAgotados = new javax.swing.JPanel();
@@ -1419,16 +1432,53 @@ public class Mesero extends javax.swing.JFrame {
 
         jPanelMostrar.add(panelModProducto, "card6");
 
-        javax.swing.GroupLayout panelBuscProductoLayout = new javax.swing.GroupLayout(panelBuscProducto);
-        panelBuscProducto.setLayout(panelBuscProductoLayout);
-        panelBuscProductoLayout.setHorizontalGroup(
-            panelBuscProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 959, Short.MAX_VALUE)
-        );
-        panelBuscProductoLayout.setVerticalGroup(
-            panelBuscProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 443, Short.MAX_VALUE)
-        );
+        panelBuscProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel72.setText("Buscar producto");
+        panelBuscProducto.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 147, 40));
+        panelBuscProducto.add(txtNombreProductoBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 290, -1));
+
+        jLabel73.setText("Ingresar nombre del producto");
+        panelBuscProducto.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 184, 35));
+
+        jLabel74.setText("Datos del producto");
+        panelBuscProducto.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 122, 30));
+
+        jLabel75.setText("Nombre del producto");
+        panelBuscProducto.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 146, 33));
+
+        jLabel76.setText("Categoría del producto");
+        panelBuscProducto.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 146, 33));
+
+        jLabel77.setText("Precio del producto");
+        panelBuscProducto.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 320, 146, 33));
+
+        jLabel78.setText("Cantidad del producto");
+        panelBuscProducto.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 146, 33));
+
+        txtNombreProductoBuscado.setEditable(false);
+        txtNombreProductoBuscado.setText("Nombre del producto");
+        panelBuscProducto.add(txtNombreProductoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 160, 30));
+
+        txtCategoriaProductoBuscado.setEditable(false);
+        txtCategoriaProductoBuscado.setText("Categoría del producto");
+        panelBuscProducto.add(txtCategoriaProductoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 270, 160, 30));
+
+        txtPrecioProductoBuscado.setEditable(false);
+        txtPrecioProductoBuscado.setText("Precio del producto");
+        panelBuscProducto.add(txtPrecioProductoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 160, 30));
+
+        txtCantidadProductoBuscado.setEditable(false);
+        txtCantidadProductoBuscado.setText("Cantidad del producto");
+        txtCantidadProductoBuscado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantidadProductoBuscadoActionPerformed(evt);
+            }
+        });
+        panelBuscProducto.add(txtCantidadProductoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 370, 160, 30));
+
+        jButton1.setText("Buscar producto");
+        panelBuscProducto.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, 130, 70));
 
         jPanelMostrar.add(panelBuscProducto, "card7");
 
@@ -1744,6 +1794,10 @@ public class Mesero extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPrecioProductoNuevoActionPerformed
 
+    private void txtCantidadProductoBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProductoBuscadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCantidadProductoBuscadoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1883,6 +1937,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JButton btnVerPedidosMesa7;
     private javax.swing.JButton btnVerPedidosMesa8;
     private javax.swing.JButton btnVerPedidosMesa9;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1952,6 +2007,13 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar2;
@@ -2054,17 +2116,22 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JTextField txtCantidadPersonasMesa8;
     private javax.swing.JTextField txtCantidadPersonasMesa9;
     private javax.swing.JTextField txtCantidadProductoActual;
+    private javax.swing.JTextField txtCantidadProductoBuscado;
     private javax.swing.JTextField txtCantidadProductoNuevo;
     private javax.swing.JTextField txtCategoriaProductoActual;
+    private javax.swing.JTextField txtCategoriaProductoBuscado;
     private javax.swing.JTextField txtCategoriaProductoNuevo;
     private javax.swing.JTextField txtCodigoGenerado;
     private javax.swing.JTextField txtEstadoArchivo;
     private javax.swing.JTextField txtEstadoArchivoProductos;
     private javax.swing.JTextField txtIngresarCodigo;
     private javax.swing.JTextField txtNombreProductoActual;
+    private javax.swing.JTextField txtNombreProductoBuscado;
+    private javax.swing.JTextField txtNombreProductoBuscar;
     private javax.swing.JTextField txtNombreProductoModificar;
     private javax.swing.JTextField txtNombreProductoNuevo;
     private javax.swing.JTextField txtPrecioProductoActual;
+    private javax.swing.JTextField txtPrecioProductoBuscado;
     private javax.swing.JTextField txtPrecioProductoNuevo;
     private javax.swing.JTextField txtRutaArchivo;
     private javax.swing.JTextField txtRutaPrductos;
