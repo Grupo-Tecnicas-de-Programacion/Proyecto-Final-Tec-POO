@@ -331,7 +331,7 @@ public class Mesero extends javax.swing.JFrame {
         txtCantidadProductoBuscado = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         panelElimProducto = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        btnEliminarProducto = new javax.swing.JButton();
         txtNombreProductoBuscar1 = new javax.swing.JTextField();
         jLabel79 = new javax.swing.JLabel();
         txtNombreProductoBuscado1 = new javax.swing.JTextField();
@@ -344,6 +344,7 @@ public class Mesero extends javax.swing.JFrame {
         jLabel83 = new javax.swing.JLabel();
         jLabel84 = new javax.swing.JLabel();
         jLabel85 = new javax.swing.JLabel();
+        btnBuscarProducto = new javax.swing.JButton();
         panelProducDisponibles = new javax.swing.JPanel();
         jLabel86 = new javax.swing.JLabel();
         jScrollPane25 = new javax.swing.JScrollPane();
@@ -1725,14 +1726,14 @@ public class Mesero extends javax.swing.JFrame {
         panelElimProducto.setBackground(new java.awt.Color(204, 204, 204));
         panelElimProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Eliminar producto");
-        panelElimProducto.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 80, 130, 70));
+        btnEliminarProducto.setForeground(new java.awt.Color(0, 0, 0));
+        btnEliminarProducto.setText("Buscar Producto");
+        panelElimProducto.add(btnEliminarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 260, 130, 70));
         panelElimProducto.add(txtNombreProductoBuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 290, -1));
 
         jLabel79.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel79.setText("Datos del producto ");
-        panelElimProducto.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, 122, 30));
+        jLabel79.setText("Datos del producto a eliminar");
+        panelElimProducto.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, 180, 30));
 
         txtNombreProductoBuscado1.setEditable(false);
         txtNombreProductoBuscado1.setText("Nombre del producto");
@@ -1779,6 +1780,10 @@ public class Mesero extends javax.swing.JFrame {
         jLabel85.setForeground(new java.awt.Color(0, 0, 0));
         jLabel85.setText("Eliminar producto");
         panelElimProducto.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 147, 40));
+
+        btnBuscarProducto.setForeground(new java.awt.Color(0, 0, 0));
+        btnBuscarProducto.setText("Buscar Producto");
+        panelElimProducto.add(btnBuscarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 80, 130, 70));
 
         jPanelMostrar.add(panelElimProducto, "card8");
 
@@ -1896,13 +1901,11 @@ public class Mesero extends javax.swing.JFrame {
 
         jPanelMostrar.add(panelProducAgotados, "card10");
 
-        menuMesero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesero.png"))); // NOI18N
         menuMesero.setText("Mesero");
         menuMesero.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menuMesero.setPreferredSize(new java.awt.Dimension(122, 50));
 
         menItemCargarMesas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        menItemCargarMesas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargarmesas.png"))); // NOI18N
         menItemCargarMesas.setText("Cargar mesas");
         menItemCargarMesas.setPreferredSize(new java.awt.Dimension(180, 40));
         menItemCargarMesas.addActionListener(new java.awt.event.ActionListener() {
@@ -1913,7 +1916,6 @@ public class Mesero extends javax.swing.JFrame {
         menuMesero.add(menItemCargarMesas);
 
         menItemCargarProductos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        menItemCargarProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cargarProductos.png"))); // NOI18N
         menItemCargarProductos.setText("Cargar productos");
         menItemCargarProductos.setPreferredSize(new java.awt.Dimension(180, 40));
         menItemCargarProductos.addActionListener(new java.awt.event.ActionListener() {
@@ -1924,7 +1926,6 @@ public class Mesero extends javax.swing.JFrame {
         menuMesero.add(menItemCargarProductos);
 
         menItemCerrarSesion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        menItemCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerrar sesion.png"))); // NOI18N
         menItemCerrarSesion.setText("Cerrar sesión");
         menItemCerrarSesion.setPreferredSize(new java.awt.Dimension(180, 40));
         menItemCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -1936,13 +1937,11 @@ public class Mesero extends javax.swing.JFrame {
 
         jMenuBar2.add(menuMesero);
 
-        menuMesas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesa.png"))); // NOI18N
         menuMesas.setText("Mesas");
         menuMesas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menuMesas.setPreferredSize(new java.awt.Dimension(122, 50));
 
         menItemGestionarMesas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        menItemGestionarMesas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gestionarmesa.png"))); // NOI18N
         menItemGestionarMesas.setText("Gestionar mesas");
         menItemGestionarMesas.setPreferredSize(new java.awt.Dimension(180, 40));
         menItemGestionarMesas.addActionListener(new java.awt.event.ActionListener() {
@@ -1954,13 +1953,11 @@ public class Mesero extends javax.swing.JFrame {
 
         jMenuBar2.add(menuMesas);
 
-        menuProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/producto.png"))); // NOI18N
         menuProductos.setText("Productos");
         menuProductos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menuProductos.setPreferredSize(new java.awt.Dimension(122, 50));
 
         menItemModProducto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        menItemModProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificarproducto.png"))); // NOI18N
         menItemModProducto.setText("Modificar producto");
         menItemModProducto.setPreferredSize(new java.awt.Dimension(180, 40));
         menItemModProducto.addActionListener(new java.awt.event.ActionListener() {
@@ -1971,7 +1968,6 @@ public class Mesero extends javax.swing.JFrame {
         menuProductos.add(menItemModProducto);
 
         menItemBuscProducto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        menItemBuscProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar producto.png"))); // NOI18N
         menItemBuscProducto.setText("BuscarProducto");
         menItemBuscProducto.setPreferredSize(new java.awt.Dimension(180, 40));
         menItemBuscProducto.addActionListener(new java.awt.event.ActionListener() {
@@ -1982,7 +1978,6 @@ public class Mesero extends javax.swing.JFrame {
         menuProductos.add(menItemBuscProducto);
 
         menItemElimProducto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        menItemElimProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminarProducto.png"))); // NOI18N
         menItemElimProducto.setText("Eliminar producto");
         menItemElimProducto.setPreferredSize(new java.awt.Dimension(180, 40));
         menItemElimProducto.addActionListener(new java.awt.event.ActionListener() {
@@ -1993,7 +1988,6 @@ public class Mesero extends javax.swing.JFrame {
         menuProductos.add(menItemElimProducto);
 
         menItemProducDisponibles.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        menItemProducDisponibles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productosDisponibles.png"))); // NOI18N
         menItemProducDisponibles.setText("Productos disponibles");
         menItemProducDisponibles.setPreferredSize(new java.awt.Dimension(180, 40));
         menItemProducDisponibles.addActionListener(new java.awt.event.ActionListener() {
@@ -2004,7 +1998,6 @@ public class Mesero extends javax.swing.JFrame {
         menuProductos.add(menItemProducDisponibles);
 
         menItemProducDAgotados.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        menItemProducDAgotados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/productoAgotado.png"))); // NOI18N
         menItemProducDAgotados.setText("Productos agotados");
         menItemProducDAgotados.setPreferredSize(new java.awt.Dimension(180, 40));
         menItemProducDAgotados.addActionListener(new java.awt.event.ActionListener() {
@@ -2239,12 +2232,14 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JButton btnBorrarProductoPedidoMesa7;
     private javax.swing.JButton btnBorrarProductoPedidoMesa8;
     private javax.swing.JButton btnBorrarProductoPedidoMesa9;
+    private javax.swing.JButton btnBuscarProducto;
     private javax.swing.JButton btnBuscarRuta;
     private javax.swing.JButton btnBuscarRutaProductos;
     private javax.swing.JButton btnCargarMesas;
     private javax.swing.JButton btnCargarProductos;
     private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JButton btnComprobarCodigo;
+    private javax.swing.JButton btnEliminarProducto;
     private javax.swing.JButton btnGenerarReciboMesa1;
     private javax.swing.JButton btnGenerarReciboMesa10;
     private javax.swing.JButton btnGenerarReciboMesa11;
@@ -2307,7 +2302,6 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JButton btnVerPedidosMesa8;
     private javax.swing.JButton btnVerPedidosMesa9;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
