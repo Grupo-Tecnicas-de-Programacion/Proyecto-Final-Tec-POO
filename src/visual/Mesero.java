@@ -35,6 +35,13 @@ public class Mesero extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelMostrar = new javax.swing.JPanel();
+        panelCargarMesas = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btnBuscarRuta = new javax.swing.JButton();
+        txtRutaArchivo = new javax.swing.JTextField();
+        btnCargarMesas = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        txtEstadoArchivo = new javax.swing.JTextField();
         panelCargarProductos = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btnBuscarRutaProductos = new javax.swing.JButton();
@@ -351,13 +358,6 @@ public class Mesero extends javax.swing.JFrame {
         jLabel97 = new javax.swing.JLabel();
         jScrollPane26 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
-        panelCargarMesas = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        btnBuscarRuta = new javax.swing.JButton();
-        txtRutaArchivo = new javax.swing.JTextField();
-        btnCargarMesas = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        txtEstadoArchivo = new javax.swing.JTextField();
         jMenuBar2 = new javax.swing.JMenuBar();
         menuMesero = new javax.swing.JMenu();
         menItemCargarMesas = new javax.swing.JMenuItem();
@@ -377,7 +377,68 @@ public class Mesero extends javax.swing.JFrame {
         jPanelMostrar.setVerifyInputWhenFocusTarget(false);
         jPanelMostrar.setLayout(new java.awt.CardLayout());
 
-        jLabel2.setText("CARGAR PRODUCTOS");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setText("Cargar mesas");
+
+        btnBuscarRuta.setText("Buscar archivo mesas.txt");
+
+        txtRutaArchivo.setEditable(false);
+
+        btnCargarMesas.setText("Cargar mesas");
+
+        jLabel4.setText("Estado del archivo");
+
+        txtEstadoArchivo.setEditable(false);
+
+        javax.swing.GroupLayout panelCargarMesasLayout = new javax.swing.GroupLayout(panelCargarMesas);
+        panelCargarMesas.setLayout(panelCargarMesasLayout);
+        panelCargarMesasLayout.setHorizontalGroup(
+            panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCargarMesasLayout.createSequentialGroup()
+                .addGap(103, 103, 103)
+                .addGroup(panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCargarMesasLayout.createSequentialGroup()
+                            .addGroup(panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(btnBuscarRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelCargarMesasLayout.createSequentialGroup()
+                                    .addGap(14, 14, 14)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(57, 57, 57)
+                            .addGroup(panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtEstadoArchivo)
+                                .addComponent(txtRutaArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCargarMesasLayout.createSequentialGroup()
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(211, 211, 211)))
+                    .addGroup(panelCargarMesasLayout.createSequentialGroup()
+                        .addGap(252, 252, 252)
+                        .addComponent(btnCargarMesas, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(375, 375, 375)))
+                .addContainerGap(104, Short.MAX_VALUE))
+        );
+        panelCargarMesasLayout.setVerticalGroup(
+            panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCargarMesasLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBuscarRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtRutaArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEstadoArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55)
+                .addComponent(btnCargarMesas, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
+
+        jPanelMostrar.add(panelCargarMesas, "card2");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("Cargar productos");
 
         btnBuscarRutaProductos.setText("Buscar archivo productos.txt");
 
@@ -402,14 +463,9 @@ public class Mesero extends javax.swing.JFrame {
                 .addGap(82, 82, 82)
                 .addGroup(panelCargarProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelCargarProductosLayout.createSequentialGroup()
-                        .addGroup(panelCargarProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelCargarProductosLayout.createSequentialGroup()
-                                .addGap(286, 286, 286)
-                                .addComponent(btnCargarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelCargarProductosLayout.createSequentialGroup()
-                                .addGap(278, 278, 278)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(403, 403, 403))
+                        .addGap(286, 286, 286)
+                        .addComponent(btnCargarProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(408, 408, 408))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCargarProductosLayout.createSequentialGroup()
                         .addGroup(panelCargarProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(panelCargarProductosLayout.createSequentialGroup()
@@ -419,9 +475,13 @@ public class Mesero extends javax.swing.JFrame {
                                 .addComponent(txtEstadoArchivoProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelCargarProductosLayout.createSequentialGroup()
                                 .addComponent(btnBuscarRutaProductos)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                                 .addComponent(txtRutaPrductos, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(85, 85, 85))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCargarProductosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(399, 399, 399))
         );
         panelCargarProductosLayout.setVerticalGroup(
             panelCargarProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -443,7 +503,8 @@ public class Mesero extends javax.swing.JFrame {
 
         jPanelMostrar.add(panelCargarProductos, "card3");
 
-        jLabel3.setText("CERRAR SESION");
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setText("Cerrar sesión");
 
         jLabel6.setText("Ingresar el código generado");
 
@@ -515,7 +576,8 @@ public class Mesero extends javax.swing.JFrame {
 
         jPanelMostrar.add(panelCerrarSesion, "card4");
 
-        jLabel9.setText("Gestionar Mesas");
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setText("Gestionar mesas");
 
         btnMesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
 
@@ -545,15 +607,18 @@ public class Mesero extends javax.swing.JFrame {
 
         jLabel11.setText("Disponible");
 
-        mDisponible.setEnabled(false);
+        mDisponible.setBackground(new java.awt.Color(51, 255, 0));
+        mDisponible.setForeground(new java.awt.Color(0, 255, 0));
 
-        mOcupada.setEnabled(false);
+        mOcupada.setBackground(new java.awt.Color(153, 0, 0));
+        mOcupada.setForeground(new java.awt.Color(153, 0, 0));
 
         jPanelMostrarMesa.setLayout(new java.awt.CardLayout());
 
         panelMesa1.setBackground(new java.awt.Color(255, 255, 255));
         panelMesa1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(51, 51, 51));
         jLabel12.setText("Mesa 1");
         panelMesa1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 58, 57));
@@ -615,6 +680,7 @@ public class Mesero extends javax.swing.JFrame {
         panelMesa2.setBackground(new java.awt.Color(255, 255, 255));
         panelMesa2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(51, 51, 51));
         jLabel17.setText("Mesa 2");
         panelMesa2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 58, 57));
@@ -676,6 +742,7 @@ public class Mesero extends javax.swing.JFrame {
         panelMesa3.setBackground(new java.awt.Color(255, 255, 255));
         panelMesa3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(51, 51, 51));
         jLabel13.setText("Mesa 3");
         panelMesa3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 58, 57));
@@ -737,6 +804,7 @@ public class Mesero extends javax.swing.JFrame {
         panelMesa4.setBackground(new java.awt.Color(255, 255, 255));
         panelMesa4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(51, 51, 51));
         jLabel24.setText("Mesa 4");
         panelMesa4.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 58, 57));
@@ -798,8 +866,9 @@ public class Mesero extends javax.swing.JFrame {
         panelMesa5.setBackground(new java.awt.Color(255, 255, 255));
         panelMesa5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel28.setText("Mesa 1");
+        jLabel28.setText("Mesa 5");
         panelMesa5.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 58, 57));
 
         jLabel29.setForeground(new java.awt.Color(0, 0, 0));
@@ -859,6 +928,7 @@ public class Mesero extends javax.swing.JFrame {
         panelMesa6.setBackground(new java.awt.Color(255, 255, 255));
         panelMesa6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(51, 51, 51));
         jLabel32.setText("Mesa 6");
         panelMesa6.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 58, 57));
@@ -920,6 +990,7 @@ public class Mesero extends javax.swing.JFrame {
         panelMesa7.setBackground(new java.awt.Color(255, 255, 255));
         panelMesa7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel36.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(51, 51, 51));
         jLabel36.setText("Mesa 7");
         panelMesa7.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 58, 57));
@@ -981,6 +1052,7 @@ public class Mesero extends javax.swing.JFrame {
         panelMesa8.setBackground(new java.awt.Color(255, 255, 255));
         panelMesa8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel40.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(51, 51, 51));
         jLabel40.setText("Mesa 8");
         panelMesa8.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 58, 57));
@@ -1042,6 +1114,7 @@ public class Mesero extends javax.swing.JFrame {
         panelMesa9.setBackground(new java.awt.Color(255, 255, 255));
         panelMesa9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel44.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel44.setForeground(new java.awt.Color(51, 51, 51));
         jLabel44.setText("Mesa 9");
         panelMesa9.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 58, 57));
@@ -1103,6 +1176,7 @@ public class Mesero extends javax.swing.JFrame {
         panelMesa10.setBackground(new java.awt.Color(255, 255, 255));
         panelMesa10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel48.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(51, 51, 51));
         jLabel48.setText("Mesa 10");
         panelMesa10.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 58, 57));
@@ -1164,6 +1238,7 @@ public class Mesero extends javax.swing.JFrame {
         panelMesa11.setBackground(new java.awt.Color(255, 255, 255));
         panelMesa11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel52.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel52.setForeground(new java.awt.Color(51, 51, 51));
         jLabel52.setText("Mesa 11");
         panelMesa11.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 58, 57));
@@ -1225,6 +1300,7 @@ public class Mesero extends javax.swing.JFrame {
         panelMesa12.setBackground(new java.awt.Color(255, 255, 255));
         panelMesa12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel56.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel56.setForeground(new java.awt.Color(51, 51, 51));
         jLabel56.setText("Mesa 12");
         panelMesa12.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 58, 57));
@@ -1290,45 +1366,48 @@ public class Mesero extends javax.swing.JFrame {
             .addGroup(panelGestionarMesasLayout.createSequentialGroup()
                 .addGroup(panelGestionarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelGestionarMesasLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
                         .addGroup(panelGestionarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnMesa2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnMesa3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnMesa4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnMesa1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelGestionarMesasLayout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addGroup(panelGestionarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnMesa2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnMesa3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnMesa4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnMesa1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(45, 45, 45)
+                                .addGroup(panelGestionarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnMesa6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnMesa5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnMesa7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnMesa8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(43, 43, 43)
+                                .addGroup(panelGestionarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnMesa11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnMesa12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnMesa9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnMesa10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(panelGestionarMesasLayout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addComponent(mOcupada, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(mDisponible, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(45, 45, 45)
-                        .addGroup(panelGestionarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnMesa6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnMesa5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnMesa7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnMesa8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(43, 43, 43)
-                        .addGroup(panelGestionarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnMesa11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnMesa12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnMesa9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnMesa10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanelMostrarMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelGestionarMesasLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(mOcupada, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(mDisponible, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(45, 45, 45)
-                .addGroup(panelGestionarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanelMostrarMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(398, 398, 398)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         panelGestionarMesasLayout.setVerticalGroup(
             panelGestionarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGestionarMesasLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelGestionarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelGestionarMesasLayout.createSequentialGroup()
                         .addGroup(panelGestionarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1373,8 +1452,9 @@ public class Mesero extends javax.swing.JFrame {
 
         panelModProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel60.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel60.setText("Modificar un producto");
-        panelModProducto.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 147, 40));
+        panelModProducto.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 180, 40));
 
         jLabel61.setText("Ingresar nombre del producto");
         panelModProducto.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 98, 184, 35));
@@ -1470,6 +1550,7 @@ public class Mesero extends javax.swing.JFrame {
 
         panelBuscProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel72.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel72.setText("Buscar producto");
         panelBuscProducto.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 147, 40));
         panelBuscProducto.add(txtNombreProductoBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 290, -1));
@@ -1563,6 +1644,7 @@ public class Mesero extends javax.swing.JFrame {
         jLabel84.setText("Ingresar nombre del producto");
         panelElimProducto.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 184, 35));
 
+        jLabel85.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel85.setText("Eliminar producto");
         panelElimProducto.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 147, 40));
 
@@ -1570,6 +1652,7 @@ public class Mesero extends javax.swing.JFrame {
 
         panelProducDisponibles.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel86.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel86.setText("Productos disponibles");
         panelProducDisponibles.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, 152, 44));
 
@@ -1623,7 +1706,7 @@ public class Mesero extends javax.swing.JFrame {
         panelProducAgotados.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel92.setText("Cantidad del producto");
-        panelProducAgotados.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 146, 33));
+        panelProducAgotados.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 146, 33));
 
         txtCantidadProductoAgotado.setEditable(false);
         txtCantidadProductoAgotado.setText("Cantidad del producto");
@@ -1632,34 +1715,35 @@ public class Mesero extends javax.swing.JFrame {
                 txtCantidadProductoAgotadoActionPerformed(evt);
             }
         });
-        panelProducAgotados.add(txtCantidadProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 160, 30));
+        panelProducAgotados.add(txtCantidadProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, 160, 30));
 
         txtPrecioProductoAgotado.setEditable(false);
         txtPrecioProductoAgotado.setText("Precio del producto");
-        panelProducAgotados.add(txtPrecioProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 160, 30));
+        panelProducAgotados.add(txtPrecioProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, 160, 30));
 
         jLabel93.setText("Precio del producto");
-        panelProducAgotados.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 146, 33));
+        panelProducAgotados.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 146, 33));
 
         jLabel94.setText("Categoría del producto");
-        panelProducAgotados.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 146, 33));
+        panelProducAgotados.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 146, 33));
 
         txtCategoriaProductoAgotado.setEditable(false);
         txtCategoriaProductoAgotado.setText("Categoría del producto");
-        panelProducAgotados.add(txtCategoriaProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 160, 30));
+        panelProducAgotados.add(txtCategoriaProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 160, 30));
 
         txtNombreProductoAgotado.setEditable(false);
         txtNombreProductoAgotado.setText("Nombre del producto");
-        panelProducAgotados.add(txtNombreProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 160, 30));
+        panelProducAgotados.add(txtNombreProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 160, 30));
 
         jLabel95.setText("Nombre del producto");
-        panelProducAgotados.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 146, 33));
+        panelProducAgotados.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 146, 33));
 
         jLabel96.setText("Datos del producto ");
-        panelProducAgotados.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 122, 30));
+        panelProducAgotados.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 122, 30));
 
+        jLabel97.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel97.setText("Productos agotados");
-        panelProducAgotados.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, 152, 44));
+        panelProducAgotados.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, 152, 44));
 
         jList2.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -1668,68 +1752,9 @@ public class Mesero extends javax.swing.JFrame {
         });
         jScrollPane26.setViewportView(jList2);
 
-        panelProducAgotados.add(jScrollPane26, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 330, 310));
+        panelProducAgotados.add(jScrollPane26, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 100, 330, 310));
 
         jPanelMostrar.add(panelProducAgotados, "card10");
-
-        jLabel1.setText("CARGAR MESAS");
-
-        btnBuscarRuta.setText("Buscar archivo mesas.txt");
-
-        txtRutaArchivo.setEditable(false);
-
-        btnCargarMesas.setText("Cargar mesas");
-
-        jLabel4.setText("Estado del archivo");
-
-        txtEstadoArchivo.setEditable(false);
-
-        javax.swing.GroupLayout panelCargarMesasLayout = new javax.swing.GroupLayout(panelCargarMesas);
-        panelCargarMesas.setLayout(panelCargarMesasLayout);
-        panelCargarMesasLayout.setHorizontalGroup(
-            panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelCargarMesasLayout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addGroup(panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCargarMesasLayout.createSequentialGroup()
-                            .addGroup(panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(btnBuscarRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelCargarMesasLayout.createSequentialGroup()
-                                    .addGap(14, 14, 14)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(57, 57, 57)
-                            .addGroup(panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtEstadoArchivo)
-                                .addComponent(txtRutaArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCargarMesasLayout.createSequentialGroup()
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(211, 211, 211)))
-                    .addGroup(panelCargarMesasLayout.createSequentialGroup()
-                        .addGap(252, 252, 252)
-                        .addComponent(btnCargarMesas, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(375, 375, 375)))
-                .addContainerGap(104, Short.MAX_VALUE))
-        );
-        panelCargarMesasLayout.setVerticalGroup(
-            panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelCargarMesasLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addGroup(panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBuscarRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtRutaArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addGroup(panelCargarMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtEstadoArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55)
-                .addComponent(btnCargarMesas, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
-        );
-
-        jPanelMostrar.add(panelCargarMesas, "card2");
 
         menuMesero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesero.png"))); // NOI18N
         menuMesero.setText("Mesero");
