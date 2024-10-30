@@ -23,6 +23,18 @@ public class Mesero extends javax.swing.JFrame {
         jPanelMostrar.add(panelBuscProducto, "panelBuscProducto");
         jPanelMostrar.add(panelProducAgotados, "panelProducAgotados");
         jPanelMostrar.add(panelProducDisponibles, "panelProducDisponibles");
+        jPanelMostrarMesa.add(panelMesa1, "panelMesa1");
+        jPanelMostrarMesa.add(panelMesa2, "panelMesa2");
+        jPanelMostrarMesa.add(panelMesa3, "panelMesa3");
+        jPanelMostrarMesa.add(panelMesa4, "panelMesa4");
+        jPanelMostrarMesa.add(panelMesa5, "panelMesa5");
+        jPanelMostrarMesa.add(panelMesa6, "panelMesa6");
+        jPanelMostrarMesa.add(panelMesa7, "panelMesa7");
+        jPanelMostrarMesa.add(panelMesa8, "panelMesa8");
+        jPanelMostrarMesa.add(panelMesa9, "panelMesa9");
+        jPanelMostrarMesa.add(panelMesa10, "panelMesa10");
+        jPanelMostrarMesa.add(panelMesa11, "panelMesa11");
+        jPanelMostrarMesa.add(panelMesa12, "panelMesa12");
     }
 
     /**
@@ -611,26 +623,81 @@ public class Mesero extends javax.swing.JFrame {
         });
 
         btnMesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+        btnMesa2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMesa2ActionPerformed(evt);
+            }
+        });
 
         btnMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+        btnMesa3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMesa3ActionPerformed(evt);
+            }
+        });
 
         btnMesa4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+        btnMesa4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMesa4ActionPerformed(evt);
+            }
+        });
 
         btnMesa5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+        btnMesa5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMesa5ActionPerformed(evt);
+            }
+        });
 
         btnMesa6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+        btnMesa6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMesa6ActionPerformed(evt);
+            }
+        });
 
         btnMesa7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+        btnMesa7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMesa7ActionPerformed(evt);
+            }
+        });
 
         btnMesa8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+        btnMesa8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMesa8ActionPerformed(evt);
+            }
+        });
 
         btnMesa9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+        btnMesa9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMesa9ActionPerformed(evt);
+            }
+        });
 
         btnMesa10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+        btnMesa10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMesa10ActionPerformed(evt);
+            }
+        });
 
         btnMesa11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+        btnMesa11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMesa11ActionPerformed(evt);
+            }
+        });
 
         btnMesa12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
+        btnMesa12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMesa12ActionPerformed(evt);
+            }
+        });
 
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Ocupada");
@@ -2046,9 +2113,59 @@ public class Mesero extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCantidadProductoAgotadoActionPerformed
 
+    private void showPanel(String panelName) {
+        CardLayout layout = (CardLayout) jPanelMostrarMesa.getLayout();
+        layout.show(jPanelMostrarMesa, panelName);
+    }
+
+    
     private void btnMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa1ActionPerformed
-        // TODO add your handling code here:
+        showPanel("panelMesa1");
     }//GEN-LAST:event_btnMesa1ActionPerformed
+
+    private void btnMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa5ActionPerformed
+        showPanel("panelMesa5");
+    }//GEN-LAST:event_btnMesa5ActionPerformed
+
+    private void btnMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa2ActionPerformed
+        showPanel("panelMesa2");
+    }//GEN-LAST:event_btnMesa2ActionPerformed
+
+    private void btnMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa3ActionPerformed
+        showPanel("panelMesa3");
+    }//GEN-LAST:event_btnMesa3ActionPerformed
+
+    private void btnMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa4ActionPerformed
+        showPanel("panelMesa4");
+    }//GEN-LAST:event_btnMesa4ActionPerformed
+
+    private void btnMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa6ActionPerformed
+        showPanel("panelMesa6");
+    }//GEN-LAST:event_btnMesa6ActionPerformed
+
+    private void btnMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa7ActionPerformed
+        showPanel("panelMesa7");
+    }//GEN-LAST:event_btnMesa7ActionPerformed
+
+    private void btnMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa8ActionPerformed
+        showPanel("panelMesa8");
+    }//GEN-LAST:event_btnMesa8ActionPerformed
+
+    private void btnMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa9ActionPerformed
+        showPanel("panelMesa9");
+    }//GEN-LAST:event_btnMesa9ActionPerformed
+
+    private void btnMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa10ActionPerformed
+        showPanel("panelMesa10");
+    }//GEN-LAST:event_btnMesa10ActionPerformed
+
+    private void btnMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa11ActionPerformed
+        showPanel("panelMesa11");
+    }//GEN-LAST:event_btnMesa11ActionPerformed
+
+    private void btnMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa12ActionPerformed
+        showPanel("panelMesa12");
+    }//GEN-LAST:event_btnMesa12ActionPerformed
 
     /**
      * @param args the command line arguments

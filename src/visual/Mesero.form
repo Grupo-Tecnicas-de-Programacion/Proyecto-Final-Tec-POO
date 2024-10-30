@@ -791,6 +791,9 @@
                   <Image iconType="3" name="/imagenes/mesaGestionMesas.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMesa2ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnMesa3">
               <Properties>
@@ -798,6 +801,9 @@
                   <Image iconType="3" name="/imagenes/mesaGestionMesas.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMesa3ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnMesa4">
               <Properties>
@@ -805,6 +811,9 @@
                   <Image iconType="3" name="/imagenes/mesaGestionMesas.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMesa4ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnMesa5">
               <Properties>
@@ -812,6 +821,9 @@
                   <Image iconType="3" name="/imagenes/mesaGestionMesas.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMesa5ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnMesa6">
               <Properties>
@@ -819,6 +831,9 @@
                   <Image iconType="3" name="/imagenes/mesaGestionMesas.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMesa6ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnMesa7">
               <Properties>
@@ -826,6 +841,9 @@
                   <Image iconType="3" name="/imagenes/mesaGestionMesas.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMesa7ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnMesa8">
               <Properties>
@@ -833,6 +851,9 @@
                   <Image iconType="3" name="/imagenes/mesaGestionMesas.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMesa8ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnMesa9">
               <Properties>
@@ -840,6 +861,9 @@
                   <Image iconType="3" name="/imagenes/mesaGestionMesas.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMesa9ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnMesa10">
               <Properties>
@@ -847,6 +871,9 @@
                   <Image iconType="3" name="/imagenes/mesaGestionMesas.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMesa10ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnMesa11">
               <Properties>
@@ -854,6 +881,9 @@
                   <Image iconType="3" name="/imagenes/mesaGestionMesas.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMesa11ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnMesa12">
               <Properties>
@@ -861,6 +891,9 @@
                   <Image iconType="3" name="/imagenes/mesaGestionMesas.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMesa12ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
