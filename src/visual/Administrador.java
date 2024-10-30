@@ -43,7 +43,6 @@ public class Administrador extends javax.swing.JFrame {
 
         jPanelMostrarAdmin = new javax.swing.JPanel();
         panelEliminarProducto = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jLabel2 = new javax.swing.JLabel();
@@ -267,31 +266,43 @@ public class Administrador extends javax.swing.JFrame {
         jPanelMostrarAdmin.setPreferredSize(new java.awt.Dimension(500, 500));
         jPanelMostrarAdmin.setLayout(new java.awt.CardLayout());
 
-        panelEliminarProducto.setBackground(new java.awt.Color(102, 102, 102));
+        panelEliminarProducto.setBackground(new java.awt.Color(153, 153, 153));
         panelEliminarProducto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panelEliminarProducto.setForeground(new java.awt.Color(204, 204, 204));
 
-        jLabel1.setText("Seleccione el producto a eliminar : ");
-
+        jList1.setBackground(new java.awt.Color(255, 204, 51));
+        jList1.setForeground(new java.awt.Color(255, 204, 51));
         jScrollPane1.setViewportView(jList1);
 
-        jLabel2.setText("Ingrese el producto eliminar : ");
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Ingrese el producto a eliminar : ");
 
         jButton1.setBackground(new java.awt.Color(0, 102, 0));
         jButton1.setText("Confirmar");
+        jButton1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jButton2.setBackground(new java.awt.Color(153, 0, 0));
         jButton2.setText("Cancelar");
+        jButton2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel3.setText("¿Estas seguro de eliminar el producto?");
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 3, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Esta seguro de eliminar el producto ?");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        jLabel4.setText("ELIMINAR PLATO DE LA CARTA : ");
+        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("ELIMINAR PRODUCTO DE LA CARTA");
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Lista de todos los productos:");
 
         jButton4.setBackground(new java.awt.Color(0, 51, 255));
         jButton4.setText("Aceptar");
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Su producto a eliminar es : ");
 
         javax.swing.GroupLayout panelEliminarProductoLayout = new javax.swing.GroupLayout(panelEliminarProducto);
@@ -301,62 +312,64 @@ public class Administrador extends javax.swing.JFrame {
             .addGroup(panelEliminarProductoLayout.createSequentialGroup()
                 .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelEliminarProductoLayout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addGap(66, 66, 66)
-                        .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel6)
-                            .addGroup(panelEliminarProductoLayout.createSequentialGroup()
-                                .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(26, 26, 26)
-                                .addComponent(jButton4))
-                            .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(panelEliminarProductoLayout.createSequentialGroup()
-                                    .addComponent(jButton1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jLabel3))))
+                        .addGap(233, 233, 233)
+                        .addComponent(jLabel4))
                     .addGroup(panelEliminarProductoLayout.createSequentialGroup()
                         .addGap(156, 156, 156)
-                        .addComponent(jLabel4)))
-                .addContainerGap(295, Short.MAX_VALUE))
+                        .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addGroup(panelEliminarProductoLayout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelEliminarProductoLayout.createSequentialGroup()
+                                        .addGap(81, 81, 81)
+                                        .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel2)
+                                            .addGroup(panelEliminarProductoLayout.createSequentialGroup()
+                                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(34, 34, 34)
+                                                .addComponent(jButton4))
+                                            .addComponent(jLabel6)
+                                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel3)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelEliminarProductoLayout.createSequentialGroup()
+                                        .addGap(107, 107, 107)
+                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(36, 36, 36)
+                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
         panelEliminarProductoLayout.setVerticalGroup(
             panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelEliminarProductoLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(23, 23, 23)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panelEliminarProductoLayout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelEliminarProductoLayout.createSequentialGroup()
+                        .addGap(83, 83, 83)
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelEliminarProductoLayout.createSequentialGroup()
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(36, 36, 36)
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jButton4))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                         .addComponent(jLabel3)
-                        .addGap(28, 28, 28)
+                        .addGap(18, 18, 18)
                         .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2))))
-                .addContainerGap(86, Short.MAX_VALUE))
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(77, 77, 77))
+                    .addGroup(panelEliminarProductoLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         jPanelMostrarAdmin.add(panelEliminarProducto, "card3");
@@ -1453,7 +1466,7 @@ public class Administrador extends javax.swing.JFrame {
         panelAgregarProducto.setBackground(new java.awt.Color(153, 153, 153));
         panelAgregarProducto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("AGREGAR PRODUCTO A LA CARTA");
 
@@ -1895,7 +1908,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
