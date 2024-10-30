@@ -21,7 +21,6 @@ public class Mesero extends javax.swing.JFrame {
         jPanelMostrar.add(panelModProducto, "panelModProducto");
         jPanelMostrar.add(panelElimProducto, "panelElimProducto");
         jPanelMostrar.add(panelBuscProducto, "panelBuscProducto");
-        jPanelMostrar.add(panelGenerarRecibo, "panelGenerarRecibo");
         jPanelMostrar.add(panelProducAgotados, "panelProducAgotados");
         jPanelMostrar.add(panelProducDisponibles, "panelProducDisponibles");
     }
@@ -323,8 +322,6 @@ public class Mesero extends javax.swing.JFrame {
         menItemElimProducto = new javax.swing.JMenuItem();
         menItemProducDisponibles = new javax.swing.JMenuItem();
         menItemProducDAgotados = new javax.swing.JMenuItem();
-        menuRecibo = new javax.swing.JMenu();
-        menItemGenerarRecibo = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1666,24 +1663,6 @@ public class Mesero extends javax.swing.JFrame {
 
         jMenuBar2.add(menuProductos);
 
-        menuRecibo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/recibo.png"))); // NOI18N
-        menuRecibo.setText("Recibo");
-        menuRecibo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        menuRecibo.setPreferredSize(new java.awt.Dimension(180, 40));
-
-        menItemGenerarRecibo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        menItemGenerarRecibo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/generarRecibo.png"))); // NOI18N
-        menItemGenerarRecibo.setText("Generar recibo");
-        menItemGenerarRecibo.setPreferredSize(new java.awt.Dimension(180, 30));
-        menItemGenerarRecibo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menItemGenerarReciboActionPerformed(evt);
-            }
-        });
-        menuRecibo.add(menItemGenerarRecibo);
-
-        jMenuBar2.add(menuRecibo);
-
         setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1748,11 +1727,6 @@ public class Mesero extends javax.swing.JFrame {
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "panelProducAgotados");
     }//GEN-LAST:event_menItemProducDAgotadosActionPerformed
-
-    private void menItemGenerarReciboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemGenerarReciboActionPerformed
-        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
-        layout.show(jPanelMostrar, "panelGenerarRecibo");
-    }//GEN-LAST:event_menItemGenerarReciboActionPerformed
 
     private void txtCantidadProductoActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProductoActualActionPerformed
         // TODO add your handling code here:
@@ -2026,7 +2000,6 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JMenuItem menItemCargarProductos;
     private javax.swing.JMenuItem menItemCerrarSesion;
     private javax.swing.JMenuItem menItemElimProducto;
-    private javax.swing.JMenuItem menItemGenerarRecibo;
     private javax.swing.JMenuItem menItemGestionarMesas;
     private javax.swing.JMenuItem menItemModProducto;
     private javax.swing.JMenuItem menItemProducDAgotados;
@@ -2034,7 +2007,6 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JMenu menuMesas;
     private javax.swing.JMenu menuMesero;
     private javax.swing.JMenu menuProductos;
-    private javax.swing.JMenu menuRecibo;
     private javax.swing.JPanel panelBuscProducto;
     private javax.swing.JPanel panelCargarMesas;
     private javax.swing.JPanel panelCargarProductos;
