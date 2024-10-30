@@ -26,3 +26,4 @@ replay_pid*
 # Ignorar archivos de configuración privada de NetBeans
 nbproject/private/
 nbproject/private/*.properties
+/dist/
