@@ -140,26 +140,12 @@ public class Administrador extends javax.swing.JFrame {
         jLabel61 = new javax.swing.JLabel();
         jScrollPane12 = new javax.swing.JScrollPane();
         jList12 = new javax.swing.JList<>();
-        jLabel62 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
         jTextField23 = new javax.swing.JTextField();
-        jButton21 = new javax.swing.JButton();
-        jLabel64 = new javax.swing.JLabel();
-        jButton22 = new javax.swing.JButton();
-        jLabel65 = new javax.swing.JLabel();
-        jLabel66 = new javax.swing.JLabel();
-        jTextField26 = new javax.swing.JTextField();
-        jLabel67 = new javax.swing.JLabel();
         jTextField27 = new javax.swing.JTextField();
-        jLabel68 = new javax.swing.JLabel();
-        jScrollPane13 = new javax.swing.JScrollPane();
-        jList13 = new javax.swing.JList<>();
-        jLabel69 = new javax.swing.JLabel();
-        jButton23 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
         jLabel70 = new javax.swing.JLabel();
-        jScrollPane14 = new javax.swing.JScrollPane();
-        jList14 = new javax.swing.JList<>();
+        jButton7 = new javax.swing.JButton();
+        jLabel25 = new javax.swing.JLabel();
         panelAsignarPermisos = new javax.swing.JPanel();
         jLabel71 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
@@ -986,169 +972,91 @@ public class Administrador extends javax.swing.JFrame {
 
         jPanelMostrarAdmin.add(panelModificarUsuarios, "card8");
 
-        panelGestionarUsuarios.setBackground(new java.awt.Color(102, 102, 102));
+        panelGestionarUsuarios.setBackground(new java.awt.Color(153, 153, 153));
         panelGestionarUsuarios.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel60.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        jLabel60.setText("Gestion de Usuarios");
+        jLabel60.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel60.setText("GESTION DE MESEROS");
 
-        jLabel61.setText("Vista general de todos los usuarios :");
+        jLabel61.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel61.setText("Vista general de todos los meseros :");
 
+        jList12.setBackground(new java.awt.Color(255, 204, 51));
         jScrollPane12.setViewportView(jList12);
 
-        jLabel62.setText("Buscar usuario :");
+        jLabel63.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel63.setText("Nombre del mesero : ");
 
-        jLabel63.setText("Ingrese nombre :");
+        jLabel70.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel70.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel70.setText("Contraseña del mesero :");
 
-        jButton21.setText("Modificar");
+        jButton7.setBackground(new java.awt.Color(102, 153, 0));
+        jButton7.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        jButton7.setText("Seleccione un mesero");
+        jButton7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel64.setText("Seleccione una opcion :");
-
-        jButton22.setText("Eliminar");
-
-        jLabel65.setText("Asignar roles o permisos :");
-
-        jLabel66.setText("Ingrese usuario :");
-
-        jLabel67.setText("Asignar rol :");
-
-        jLabel68.setText("Asignar permisos :");
-
-        jScrollPane13.setViewportView(jList13);
-
-        jLabel69.setText("Desea guardar los cambios ? ");
-
-        jButton23.setBackground(new java.awt.Color(0, 153, 0));
-        jButton23.setText("Confirmar");
-
-        jButton24.setBackground(new java.awt.Color(153, 0, 0));
-        jButton24.setText("Cancelar");
-
-        jLabel70.setText("Ultimas conexciones :");
-
-        jScrollPane14.setViewportView(jList14);
+        jLabel25.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel25.setText("Visualizacion del mesero seleccionado :");
 
         javax.swing.GroupLayout panelGestionarUsuariosLayout = new javax.swing.GroupLayout(panelGestionarUsuarios);
         panelGestionarUsuarios.setLayout(panelGestionarUsuariosLayout);
         panelGestionarUsuariosLayout.setHorizontalGroup(
             panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGestionarUsuariosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel60)
+                .addGap(302, 302, 302))
             .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
+                .addGap(130, 130, 130)
+                .addComponent(jLabel61)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
+                .addGap(175, 175, 175)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
                 .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel61)
-                            .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
-                                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
-                                        .addGap(67, 67, 67)
-                                        .addComponent(jLabel62))
-                                    .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
-                                                .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel63)
-                                                    .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(jLabel64)
-                                                        .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
-                                                        .addComponent(jButton21)
-                                                        .addGap(18, 18, 18)
-                                                        .addComponent(jButton22)))
-                                                .addGap(31, 31, 31))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGestionarUsuariosLayout.createSequentialGroup()
-                                                .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel68, javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(18, 18, 18)))
-                                        .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelGestionarUsuariosLayout.createSequentialGroup()
-                                                .addGap(218, 218, 218)
-                                                .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(jLabel70, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelGestionarUsuariosLayout.createSequentialGroup()
-                                                .addGap(21, 21, 21)
-                                                .addComponent(jLabel65))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jLabel66)
-                                                .addComponent(jTextField26)
-                                                .addComponent(jLabel67)
-                                                .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelGestionarUsuariosLayout.createSequentialGroup()
-                                                .addGap(33, 33, 33)
-                                                .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
-                                                        .addComponent(jLabel69)
-                                                        .addGap(19, 19, 19))
-                                                    .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
-                                                        .addComponent(jButton23)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(jButton24))))))))))
-                    .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
-                        .addGap(323, 323, 323)
-                        .addComponent(jLabel60)))
-                .addContainerGap(130, Short.MAX_VALUE))
+                    .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel70)
+                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel63)
+                    .addComponent(jLabel25))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         panelGestionarUsuariosLayout.setVerticalGroup(
             panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jLabel60)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
-                        .addComponent(jLabel62)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
+                                .addGap(100, 100, 100)
+                                .addComponent(jLabel25)
+                                .addGap(27, 27, 27)
                                 .addComponent(jLabel63)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel64)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton21)
-                                    .addComponent(jButton22)))
+                                .addComponent(jLabel70))
                             .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
-                                        .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
-                                                .addComponent(jLabel65)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jLabel66)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jLabel67)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
-                                                .addComponent(jLabel70)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(20, 20, 20)
-                                        .addComponent(jLabel69)
-                                        .addGap(18, 18, 18)
-                                        .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jButton23)
-                                            .addComponent(jButton24))
-                                        .addGap(0, 30, Short.MAX_VALUE))
-                                    .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
-                                        .addGap(112, 112, 112)
-                                        .addComponent(jLabel68)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jScrollPane13)))
-                                .addGap(57, 57, 57))))
-                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(186, 186, 186)
+                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         jPanelMostrarAdmin.add(panelGestionarUsuarios, "card9");
@@ -1866,10 +1774,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
@@ -1885,6 +1789,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1903,6 +1808,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
@@ -1936,14 +1842,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel64;
-    private javax.swing.JLabel jLabel65;
-    private javax.swing.JLabel jLabel66;
-    private javax.swing.JLabel jLabel67;
-    private javax.swing.JLabel jLabel68;
-    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
@@ -1967,8 +1866,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList10;
     private javax.swing.JList<String> jList12;
-    private javax.swing.JList<String> jList13;
-    private javax.swing.JList<String> jList14;
     private javax.swing.JList<String> jList15;
     private javax.swing.JList<String> jList16;
     private javax.swing.JList<String> jList17;
@@ -1984,8 +1881,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane12;
-    private javax.swing.JScrollPane jScrollPane13;
-    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JScrollPane jScrollPane17;
@@ -2011,7 +1906,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField24;
     private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
     private javax.swing.JTextField jTextField27;
     private javax.swing.JTextField jTextField28;
     private javax.swing.JTextField jTextField29;
