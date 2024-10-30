@@ -419,6 +419,11 @@ public class Mesero extends javax.swing.JFrame {
         btnBuscarRutaMesas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBuscarRutaMesas.setForeground(new java.awt.Color(0, 0, 0));
         btnBuscarRutaMesas.setText("Buscar archivo");
+        btnBuscarRutaMesas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarRutaMesasActionPerformed(evt);
+            }
+        });
         panelCargarMesas.add(btnBuscarRutaMesas, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, 140, 60));
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -538,7 +543,6 @@ public class Mesero extends javax.swing.JFrame {
         jLabel9.setText("Gestionar mesas");
         panelGestionarMesas.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 12, 220, 45));
 
-        btnMesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
         btnMesa1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa1ActionPerformed(evt);
@@ -546,7 +550,6 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 69, 60, 58));
 
-        btnMesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
         btnMesa2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa2ActionPerformed(evt);
@@ -554,7 +557,6 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 145, 60, 58));
 
-        btnMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
         btnMesa3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa3ActionPerformed(evt);
@@ -562,7 +564,6 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 221, 60, 58));
 
-        btnMesa4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
         btnMesa4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa4ActionPerformed(evt);
@@ -570,7 +571,6 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 297, 60, 58));
 
-        btnMesa5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
         btnMesa5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa5ActionPerformed(evt);
@@ -578,7 +578,6 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 69, 60, 58));
 
-        btnMesa6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
         btnMesa6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa6ActionPerformed(evt);
@@ -586,7 +585,6 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 145, 60, 58));
 
-        btnMesa7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
         btnMesa7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa7ActionPerformed(evt);
@@ -594,7 +592,6 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 221, 60, 58));
 
-        btnMesa8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
         btnMesa8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa8ActionPerformed(evt);
@@ -602,7 +599,6 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 297, 60, 58));
 
-        btnMesa9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
         btnMesa9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa9ActionPerformed(evt);
@@ -610,7 +606,6 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa9, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 69, 60, 58));
 
-        btnMesa10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
         btnMesa10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa10ActionPerformed(evt);
@@ -618,7 +613,6 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa10, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 145, 60, 58));
 
-        btnMesa11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
         btnMesa11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa11ActionPerformed(evt);
@@ -626,7 +620,6 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa11, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 221, 60, 58));
 
-        btnMesa12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesaGestionMesas.png"))); // NOI18N
         btnMesa12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa12ActionPerformed(evt);
@@ -2221,11 +2214,11 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, 957, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
         );
 
         pack();
@@ -2374,6 +2367,10 @@ public class Mesero extends javax.swing.JFrame {
     private void btnCargarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarProductosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCargarProductosActionPerformed
+
+    private void btnBuscarRutaMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarRutaMesasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscarRutaMesasActionPerformed
 
     /**
      * @param args the command line arguments
