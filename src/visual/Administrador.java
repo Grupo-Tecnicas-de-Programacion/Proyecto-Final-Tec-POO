@@ -160,14 +160,9 @@ public class Administrador extends javax.swing.JFrame {
         jTextField29 = new javax.swing.JTextField();
         jLabel76 = new javax.swing.JLabel();
         jButton25 = new javax.swing.JButton();
-        jLabel77 = new javax.swing.JLabel();
-        jButton26 = new javax.swing.JButton();
         jButton27 = new javax.swing.JButton();
-        jButton28 = new javax.swing.JButton();
         jButton29 = new javax.swing.JButton();
-        jLabel78 = new javax.swing.JLabel();
-        jScrollPane17 = new javax.swing.JScrollPane();
-        jList17 = new javax.swing.JList<>();
+        jLabel27 = new javax.swing.JLabel();
         panelReporteVentas = new javax.swing.JPanel();
         jLabel79 = new javax.swing.JLabel();
         jLabel80 = new javax.swing.JLabel();
@@ -1061,139 +1056,149 @@ public class Administrador extends javax.swing.JFrame {
 
         jPanelMostrarAdmin.add(panelGestionarUsuarios, "card9");
 
-        panelAsignarPermisos.setBackground(new java.awt.Color(102, 102, 102));
+        panelAsignarPermisos.setBackground(new java.awt.Color(153, 153, 153));
         panelAsignarPermisos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel71.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jLabel71.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
+        jLabel71.setForeground(new java.awt.Color(0, 0, 0));
         jLabel71.setText("ASIGNACION DE PERMISOS");
 
-        jLabel72.setText("Lista de usuarios :");
+        jLabel72.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel72.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel72.setText("Lista de meseros :");
 
+        jList15.setBackground(new java.awt.Color(255, 204, 51));
         jScrollPane15.setViewportView(jList15);
 
+        jLabel73.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel73.setForeground(new java.awt.Color(0, 0, 0));
         jLabel73.setText("Lista de permisos :");
 
+        jList16.setBackground(new java.awt.Color(255, 153, 51));
         jScrollPane16.setViewportView(jList16);
 
-        jLabel74.setText("Seleccionar usuario :");
+        jLabel74.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel74.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel74.setText("Ingresar nombre del mesero :");
 
-        jLabel75.setText("Seleccionar permiso :");
+        jLabel75.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel75.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel75.setText("Ingresar permiso :");
 
-        jLabel76.setText("Confirmacion de cambios :");
+        jLabel76.setFont(new java.awt.Font("Segoe UI Black", 3, 14)); // NOI18N
+        jLabel76.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel76.setText("Confirmar los cambios selecionados.");
 
+        jButton25.setBackground(new java.awt.Color(0, 153, 0));
         jButton25.setText("Confirmar");
+        jButton25.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel77.setText("Confirmacion de permiso temporal :");
-
-        jButton26.setBackground(new java.awt.Color(0, 153, 0));
-        jButton26.setText("Confirmar");
-
+        jButton27.setBackground(new java.awt.Color(204, 0, 0));
         jButton27.setText("Cancelar");
+        jButton27.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton28.setBackground(new java.awt.Color(153, 0, 0));
-        jButton28.setText("Cancelar");
-
+        jButton29.setBackground(new java.awt.Color(0, 51, 255));
         jButton29.setText("Restablecer cambios.");
+        jButton29.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel78.setText("Lista actualizada :");
-
-        jScrollPane17.setViewportView(jList17);
+        jLabel27.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel27.setText("Modificar o asignar permiso :");
 
         javax.swing.GroupLayout panelAsignarPermisosLayout = new javax.swing.GroupLayout(panelAsignarPermisos);
         panelAsignarPermisos.setLayout(panelAsignarPermisosLayout);
         panelAsignarPermisosLayout.setHorizontalGroup(
             panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelAsignarPermisosLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(85, 85, 85)
                 .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel72)
-                    .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel73)
-                    .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel76)
-                        .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel74)
-                            .addComponent(jLabel71)
-                            .addComponent(jTextField28)
-                            .addComponent(jLabel75)
-                            .addComponent(jTextField29)))
-                    .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(panelAsignarPermisosLayout.createSequentialGroup()
-                            .addComponent(jButton25)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton27))
-                        .addComponent(jLabel77)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelAsignarPermisosLayout.createSequentialGroup()
-                            .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButton29)
-                                .addComponent(jButton26))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton28))))
-                .addGap(57, 57, 57)
-                .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel78)
-                    .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelAsignarPermisosLayout.createSequentialGroup()
+                        .addComponent(jLabel72)
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel73)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(panelAsignarPermisosLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56)
+                        .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelAsignarPermisosLayout.createSequentialGroup()
+                                .addGap(108, 108, 108)
+                                .addComponent(jLabel76)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(panelAsignarPermisosLayout.createSequentialGroup()
+                                .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelAsignarPermisosLayout.createSequentialGroup()
+                                        .addGap(144, 144, 144)
+                                        .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(48, 48, 48)
+                                        .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(panelAsignarPermisosLayout.createSequentialGroup()
+                                        .addGap(183, 183, 183)
+                                        .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAsignarPermisosLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                                .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAsignarPermisosLayout.createSequentialGroup()
+                                        .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel74)
+                                            .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel75)
+                                            .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(88, 88, 88))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAsignarPermisosLayout.createSequentialGroup()
+                                        .addComponent(jLabel27)
+                                        .addGap(142, 142, 142))))))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAsignarPermisosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel71)
+                .addGap(267, 267, 267))
         );
         panelAsignarPermisosLayout.setVerticalGroup(
             panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelAsignarPermisosLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(22, 22, 22)
                 .addComponent(jLabel71)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel72)
-                    .addComponent(jLabel73))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelAsignarPermisosLayout.createSequentialGroup()
-                        .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane16, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                            .addComponent(jScrollPane15))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelAsignarPermisosLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel74)
-                            .addComponent(jLabel78))
+                            .addComponent(jLabel72)
+                            .addComponent(jLabel73))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane16, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                            .addComponent(jScrollPane15)))
+                    .addGroup(panelAsignarPermisosLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jLabel27)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel74)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel75)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel76)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelAsignarPermisosLayout.createSequentialGroup()
-                                .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel75)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel76)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton25)
-                                    .addComponent(jButton27))
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel77)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton26)
-                                    .addComponent(jButton28))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton29))
-                            .addGroup(panelAsignarPermisosLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(55, 55, 55))))
+                        .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         jPanelMostrarAdmin.add(panelAsignarPermisos, "card10");
 
-        panelReporteVentas.setBackground(new java.awt.Color(102, 102, 102));
+        panelReporteVentas.setBackground(new java.awt.Color(153, 153, 153));
         panelReporteVentas.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel79.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jLabel79.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
         jLabel79.setText("REPORTE DE VENTAS");
 
         jLabel80.setText("Ingrese fecha : ");
@@ -1225,57 +1230,56 @@ public class Administrador extends javax.swing.JFrame {
         panelReporteVentasLayout.setHorizontalGroup(
             panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                .addGap(109, 109, 109)
                 .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                                .addGap(83, 83, 83)
-                                .addComponent(jLabel80))
+                        .addGap(83, 83, 83)
+                        .addComponent(jLabel80))
+                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton31)
                             .addGroup(panelReporteVentasLayout.createSequentialGroup()
                                 .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton31)
-                                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelReporteVentasLayout.createSequentialGroup()
                                         .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelReporteVentasLayout.createSequentialGroup()
-                                                .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel82)
-                                                    .addComponent(jLabel81))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(jTextField30)
-                                                    .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel83)
-                                                    .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(jLabel82)
+                                            .addComponent(jLabel81))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jTextField30)
+                                            .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                                                .addGap(42, 42, 42)
-                                                .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jButton30)
-                                                    .addComponent(jButton33)
-                                                    .addComponent(jButton32))
-                                                .addGap(4, 4, 4))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelReporteVentasLayout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel84)))))
-                                .addGap(50, 50, 50)
+                                            .addComponent(jLabel83)
+                                            .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel85)
-                                    .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                        .addGap(332, 332, 332)
-                        .addComponent(jLabel79, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                                        .addGap(42, 42, 42)
+                                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jButton30)
+                                            .addComponent(jButton33)
+                                            .addComponent(jButton32))
+                                        .addGap(4, 4, 4))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelReporteVentasLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel84)))))
+                        .addGap(50, 50, 50)
+                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel85)
+                            .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(108, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelReporteVentasLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel79, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(274, 274, 274))
         );
         panelReporteVentasLayout.setVerticalGroup(
             panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(22, 22, 22)
                 .addComponent(jLabel79)
-                .addGap(26, 26, 26)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel80)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1775,9 +1779,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton30;
@@ -1810,6 +1812,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -1851,8 +1854,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
-    private javax.swing.JLabel jLabel77;
-    private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
@@ -1868,7 +1869,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JList<String> jList12;
     private javax.swing.JList<String> jList15;
     private javax.swing.JList<String> jList16;
-    private javax.swing.JList<String> jList17;
     private javax.swing.JList<String> jList18;
     private javax.swing.JList<String> jList19;
     private javax.swing.JList<String> jList2;
@@ -1883,7 +1883,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
-    private javax.swing.JScrollPane jScrollPane17;
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
