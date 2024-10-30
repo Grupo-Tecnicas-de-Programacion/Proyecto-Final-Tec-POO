@@ -23,7 +23,6 @@
 hs_err_pid*
 replay_pid*
 /build/
-
 # Ignorar archivos de configuración privada de NetBeans
 nbproject/private/
 nbproject/private/*.properties
