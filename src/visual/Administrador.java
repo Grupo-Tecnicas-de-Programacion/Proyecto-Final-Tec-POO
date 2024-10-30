@@ -78,14 +78,8 @@ public class Administrador extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
         jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jLabel25 = new javax.swing.JLabel();
-        jButton14 = new javax.swing.JButton();
-        jLabel27 = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jList6 = new javax.swing.JList<>();
+        jLabel20 = new javax.swing.JLabel();
+        jTextField33 = new javax.swing.JTextField();
         panelEliminarUsuarios = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
@@ -494,37 +488,37 @@ public class Administrador extends javax.swing.JFrame {
 
         jPanelMostrarAdmin.add(panelProductosAgotados, "card4");
 
-        panelProductosDisponibles.setBackground(new java.awt.Color(102, 102, 102));
+        panelProductosDisponibles.setBackground(new java.awt.Color(153, 153, 153));
         panelProductosDisponibles.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel21.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jLabel21.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
         jLabel21.setText("STOCK DE PRODUCTOS DISPONIBLES");
 
-        jLabel22.setText("Estos son los productos disponibles en el menú : ");
+        jLabel22.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel22.setText("Estos son los productos disponibles en la carta : ");
 
+        jLabel23.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(0, 0, 0));
         jLabel23.setText("Lista de productos : ");
 
+        jList5.setBackground(new java.awt.Color(255, 204, 51));
         jScrollPane5.setViewportView(jList5);
 
+        jLabel24.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(0, 0, 0));
         jLabel24.setText("Ingrese el nombre del producto : ");
 
+        jButton8.setBackground(new java.awt.Color(0, 153, 102));
+        jButton8.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(0, 0, 0));
         jButton8.setText("Ver Stock");
+        jButton8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton9.setText("Estado del Producto");
-
-        jButton10.setText("Ajustar Stock");
-
-        jButton11.setBackground(new java.awt.Color(0, 153, 0));
-        jButton11.setText("Confirmar");
-
-        jLabel25.setText("Desea guardar los cambios ?");
-
-        jButton14.setBackground(new java.awt.Color(153, 0, 0));
-        jButton14.setText("Cancelar");
-
-        jLabel27.setText("Lista actualizada.");
-
-        jScrollPane6.setViewportView(jList6);
+        jLabel20.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel20.setText("Ver stock de un producto :");
 
         javax.swing.GroupLayout panelProductosDisponiblesLayout = new javax.swing.GroupLayout(panelProductosDisponibles);
         panelProductosDisponibles.setLayout(panelProductosDisponiblesLayout);
@@ -533,80 +527,60 @@ public class Administrador extends javax.swing.JFrame {
             .addGroup(panelProductosDisponiblesLayout.createSequentialGroup()
                 .addGroup(panelProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelProductosDisponiblesLayout.createSequentialGroup()
+                        .addGap(198, 198, 198)
+                        .addGroup(panelProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel23)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(panelProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelProductosDisponiblesLayout.createSequentialGroup()
-                                .addGap(116, 116, 116)
-                                .addComponent(jLabel22))
+                                .addGap(122, 122, 122)
+                                .addComponent(jLabel20))
                             .addGroup(panelProductosDisponiblesLayout.createSequentialGroup()
-                                .addGap(63, 63, 63)
+                                .addGap(94, 94, 94)
                                 .addGroup(panelProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel23)
-                                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(panelProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(panelProductosDisponiblesLayout.createSequentialGroup()
-                                        .addGap(49, 49, 49)
-                                        .addGroup(panelProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTextField8)
-                                            .addGroup(panelProductosDisponiblesLayout.createSequentialGroup()
-                                                .addGroup(panelProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel24)
-                                                    .addComponent(jButton8)
-                                                    .addComponent(jButton9)
-                                                    .addComponent(jButton10))
-                                                .addGap(0, 53, Short.MAX_VALUE))))
-                                    .addGroup(panelProductosDisponiblesLayout.createSequentialGroup()
-                                        .addGap(89, 89, 89)
-                                        .addComponent(jLabel25)
-                                        .addGap(0, 39, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProductosDisponiblesLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton11)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jButton14)
-                                        .addGap(23, 23, 23)))))
-                        .addGap(68, 68, 68)
-                        .addGroup(panelProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel27)
+                                    .addComponent(jLabel24)
+                                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(panelProductosDisponiblesLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(171, 171, 171)
+                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelProductosDisponiblesLayout.createSequentialGroup()
+                                .addGap(124, 124, 124)
+                                .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(panelProductosDisponiblesLayout.createSequentialGroup()
-                        .addGap(151, 151, 151)
-                        .addComponent(jLabel21)))
-                .addContainerGap(195, Short.MAX_VALUE))
+                        .addGap(254, 254, 254)
+                        .addComponent(jLabel22))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProductosDisponiblesLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel21)
+                        .addGap(22, 22, 22)))
+                .addContainerGap(200, Short.MAX_VALUE))
         );
         panelProductosDisponiblesLayout.setVerticalGroup(
             panelProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelProductosDisponiblesLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jLabel21)
-                .addGap(35, 35, 35)
-                .addComponent(jLabel22)
                 .addGap(18, 18, 18)
-                .addGroup(panelProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel23)
-                    .addComponent(jLabel24)
-                    .addComponent(jLabel27))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel22)
                 .addGroup(panelProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane6)
-                    .addComponent(jScrollPane5)
                     .addGroup(panelProductosDisponiblesLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jLabel23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelProductosDisponiblesLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                        .addComponent(jLabel20)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton8)
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton9)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton10)
-                        .addGap(19, 19, 19)
-                        .addComponent(jLabel25)
-                        .addGap(18, 18, 18)
-                        .addGroup(panelProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton11)
-                            .addComponent(jButton14))
-                        .addGap(0, 90, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(145, 145, 145))))
         );
 
         jPanelMostrarAdmin.add(panelProductosDisponibles, "card5");
@@ -1891,11 +1865,8 @@ public class Administrador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
@@ -1922,7 +1893,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1935,13 +1905,12 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
@@ -2022,7 +1991,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jList3;
     private javax.swing.JList<String> jList5;
-    private javax.swing.JList<String> jList6;
     private javax.swing.JList<String> jList7;
     private javax.swing.JList<String> jList8;
     private javax.swing.JList<String> jList9;
@@ -2042,7 +2010,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
@@ -2072,6 +2039,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField31;
     private javax.swing.JTextField jTextField32;
+    private javax.swing.JTextField jTextField33;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
