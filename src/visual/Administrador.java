@@ -173,13 +173,16 @@ public class Administrador extends javax.swing.JFrame {
         jScrollPane18 = new javax.swing.JScrollPane();
         jList18 = new javax.swing.JList<>();
         jLabel83 = new javax.swing.JLabel();
-        jButton30 = new javax.swing.JButton();
-        jButton32 = new javax.swing.JButton();
-        jButton33 = new javax.swing.JButton();
-        jLabel84 = new javax.swing.JLabel();
+        btnGenerarReporte = new javax.swing.JButton();
         jLabel85 = new javax.swing.JLabel();
-        jScrollPane19 = new javax.swing.JScrollPane();
-        jList19 = new javax.swing.JList<>();
+        btnVerReporte = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel51 = new javax.swing.JLabel();
+        txtGananciaReporteSeleccionado = new javax.swing.JTextField();
+        jLabel52 = new javax.swing.JLabel();
+        txtFechaReporteSeleccionado = new javax.swing.JTextField();
+        jLabel59 = new javax.swing.JLabel();
+        txtCantidadReporteSeleccionado = new javax.swing.JTextField();
         panelCerrarSesion = new javax.swing.JPanel();
         jLabel86 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
@@ -789,9 +792,9 @@ public class Administrador extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addGroup(panelAgregarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel40)
-                            .addComponent(jLabel44))
+                        .addGroup(panelAgregarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel44, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel40))
                         .addGroup(panelAgregarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelAgregarUsuariosLayout.createSequentialGroup()
                                 .addGap(7, 7, 7)
@@ -1201,136 +1204,68 @@ public class Administrador extends javax.swing.JFrame {
 
         panelReporteVentas.setBackground(new java.awt.Color(153, 153, 153));
         panelReporteVentas.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panelReporteVentas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel79.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
         jLabel79.setForeground(new java.awt.Color(0, 0, 0));
         jLabel79.setText("REPORTE DE VENTAS");
+        panelReporteVentas.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 24, 293, -1));
 
         jLabel80.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel80.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel80.setText("Rango de fecha para ver los reportes :");
+        jLabel80.setText("Rango de fecha para ver los reportes");
+        panelReporteVentas.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
         jLabel81.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel81.setForeground(new java.awt.Color(0, 0, 0));
         jLabel81.setText("Desde :");
+        panelReporteVentas.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
+        panelReporteVentas.add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 158, -1));
 
         jLabel82.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel82.setForeground(new java.awt.Color(0, 0, 0));
         jLabel82.setText("Hasta :");
+        panelReporteVentas.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
+        panelReporteVentas.add(jTextField31, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 158, -1));
 
         jList18.setBackground(new java.awt.Color(255, 204, 51));
         jScrollPane18.setViewportView(jList18);
 
+        panelReporteVentas.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 206, 240));
+
         jLabel83.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel83.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel83.setText("Tabla de ventas :");
+        jLabel83.setText("Reportes encontrados");
+        panelReporteVentas.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
 
-        jButton30.setBackground(new java.awt.Color(0, 51, 153));
-        jButton30.setText("Agrupar por fecha.");
-
-        jButton32.setBackground(new java.awt.Color(0, 153, 51));
-        jButton32.setText("Agrupar por categoría :");
-
-        jButton33.setBackground(new java.awt.Color(102, 102, 0));
-        jButton33.setText("Obtener resultados :");
-
-        jLabel84.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel84.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel84.setText("Opciones para visualizar el reporte :");
+        btnGenerarReporte.setBackground(new java.awt.Color(102, 102, 0));
+        btnGenerarReporte.setText("Generar reportes");
+        panelReporteVentas.add(btnGenerarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, 60));
 
         jLabel85.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel85.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel85.setText("Visualizacion del reporte seleccionado :");
+        jLabel85.setText("Visualizacion del reporte seleccionado");
+        panelReporteVentas.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, -1, -1));
 
-        jList19.setBackground(new java.awt.Color(204, 204, 0));
-        jScrollPane19.setViewportView(jList19);
+        btnVerReporte.setBackground(new java.awt.Color(102, 102, 0));
+        btnVerReporte.setText("Ver reporte");
+        panelReporteVentas.add(btnVerReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 110, 50));
 
-        javax.swing.GroupLayout panelReporteVentasLayout = new javax.swing.GroupLayout(panelReporteVentas);
-        panelReporteVentas.setLayout(panelReporteVentasLayout);
-        panelReporteVentasLayout.setHorizontalGroup(
-            panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelReporteVentasLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel79, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(274, 274, 274))
-            .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addComponent(jLabel80)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelReporteVentasLayout.createSequentialGroup()
-                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel82)
-                            .addComponent(jLabel81))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField30)
-                            .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel83)
-                        .addGap(62, 62, 62))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelReporteVentasLayout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                                .addGap(48, 48, 48)
-                                .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton30)
-                                    .addComponent(jButton33)
-                                    .addComponent(jButton32)))
-                            .addComponent(jLabel84))
-                        .addGap(40, 40, 40)
-                        .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelReporteVentasLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 254, Short.MAX_VALUE)
-                        .addComponent(jLabel85)
-                        .addGap(14, 14, 14))))
-        );
-        panelReporteVentasLayout.setVerticalGroup(
-            panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel79)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel80)
-                .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                            .addGap(119, 119, 119)
-                            .addComponent(jLabel84)
-                            .addGap(32, 32, 32)
-                            .addComponent(jButton30)
-                            .addGap(18, 18, 18)
-                            .addComponent(jButton32)
-                            .addGap(18, 18, 18)
-                            .addComponent(jButton33)
-                            .addGap(0, 0, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelReporteVentasLayout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                            .addComponent(jLabel85)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel81)
-                            .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel82)
-                            .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel83)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel51.setText("Cantidad de productos vendidos");
+        jPanel1.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 200, 30));
+        jPanel1.add(txtGananciaReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 150, 30));
+
+        jLabel52.setText("Fecha del reporte");
+        jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 108, 30));
+        jPanel1.add(txtFechaReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 22, 150, 30));
+
+        jLabel59.setText("Total ganancia");
+        jPanel1.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, -1));
+        jPanel1.add(txtCantidadReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 150, 30));
+
+        panelReporteVentas.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, 290, 280));
 
         jPanelMostrarAdmin.add(panelReporteVentas, "card11");
 
@@ -1694,7 +1629,7 @@ public class Administrador extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE)
+                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 472, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1823,6 +1758,8 @@ public class Administrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGenerarReporte;
+    private javax.swing.JButton btnVerReporte;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton12;
@@ -1837,9 +1774,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton32;
-    private javax.swing.JButton jButton33;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -1892,12 +1826,15 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
@@ -1916,7 +1853,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
-    private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel9;
@@ -1926,13 +1862,13 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JList<String> jList15;
     private javax.swing.JList<String> jList16;
     private javax.swing.JList<String> jList18;
-    private javax.swing.JList<String> jList19;
     private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jList3;
     private javax.swing.JList<String> jList5;
     private javax.swing.JList<String> jList7;
     private javax.swing.JList<String> jList9;
     private javax.swing.JMenuBar jMenuAdmin;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelMostrarAdmin;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
@@ -1940,7 +1876,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JScrollPane jScrollPane18;
-    private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane5;
@@ -2006,5 +1941,8 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JPanel panelProductosAgotados;
     private javax.swing.JPanel panelProductosDisponibles;
     private javax.swing.JPanel panelReporteVentas;
+    private javax.swing.JTextField txtCantidadReporteSeleccionado;
+    private javax.swing.JTextField txtFechaReporteSeleccionado;
+    private javax.swing.JTextField txtGananciaReporteSeleccionado;
     // End of variables declaration//GEN-END:variables
 }
