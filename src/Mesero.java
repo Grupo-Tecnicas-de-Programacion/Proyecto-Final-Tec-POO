@@ -20,4 +20,6 @@ public class Mesero extends Usuario{
     public void setPedidos(ArrayList<Pedido> pedidos) {
         this.pedidos = pedidos;
     }
+
+   
 }
