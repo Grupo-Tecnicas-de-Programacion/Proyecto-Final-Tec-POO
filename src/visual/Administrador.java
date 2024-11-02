@@ -1239,7 +1239,8 @@ public class Administrador extends javax.swing.JFrame {
         panelReporteVentas.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
 
         btnGenerarReporte.setBackground(new java.awt.Color(102, 102, 0));
-        btnGenerarReporte.setText("Generar reportes");
+        btnGenerarReporte.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnGenerarReporte.setText("Buscar reportes");
         panelReporteVentas.add(btnGenerarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, 60));
 
         jLabel85.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -1248,8 +1249,9 @@ public class Administrador extends javax.swing.JFrame {
         panelReporteVentas.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, -1, -1));
 
         btnVerReporte.setBackground(new java.awt.Color(102, 102, 0));
+        btnVerReporte.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnVerReporte.setText("Ver reporte");
-        panelReporteVentas.add(btnVerReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 110, 50));
+        panelReporteVentas.add(btnVerReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 110, 50));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

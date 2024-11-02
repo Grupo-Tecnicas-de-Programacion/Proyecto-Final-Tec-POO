@@ -386,6 +386,14 @@ public class Mesero extends javax.swing.JFrame {
         txtNombreProductoBuscado3 = new javax.swing.JTextField();
         jScrollPane27 = new javax.swing.JScrollPane();
         jList3 = new javax.swing.JList<>();
+        panelGenerarReporte = new javax.swing.JPanel();
+        jLabel144 = new javax.swing.JLabel();
+        jLabel145 = new javax.swing.JLabel();
+        jLabel146 = new javax.swing.JLabel();
+        jLabel147 = new javax.swing.JLabel();
+        txtFechaGenerarReporte = new javax.swing.JTextField();
+        txtNombreGenerarReporte = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         menuMesero = new javax.swing.JMenu();
         menItemCargarMesas = new javax.swing.JMenuItem();
@@ -400,6 +408,8 @@ public class Mesero extends javax.swing.JFrame {
         menItemElimProducto = new javax.swing.JMenuItem();
         menItemProducDisponibles = new javax.swing.JMenuItem();
         menItemProducDAgotados = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -2090,6 +2100,40 @@ public class Mesero extends javax.swing.JFrame {
 
         jPanelMostrar.add(panelProducAgotados, "card10");
 
+        panelGenerarReporte.setBackground(new java.awt.Color(204, 204, 204));
+        panelGenerarReporte.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel144.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel144.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel144.setText("Datos del reporte");
+        panelGenerarReporte.add(jLabel144, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 140, 30));
+
+        jLabel145.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel145.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel145.setText("GENERAR REPORTE");
+        panelGenerarReporte.add(jLabel145, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 340, 60));
+
+        jLabel146.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel146.setText("Fecha del reporte");
+        panelGenerarReporte.add(jLabel146, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 146, 33));
+
+        jLabel147.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel147.setText("Nombre del reporte");
+        panelGenerarReporte.add(jLabel147, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 146, 33));
+
+        txtFechaGenerarReporte.setText("Fecha del reporte");
+        panelGenerarReporte.add(txtFechaGenerarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 160, 30));
+
+        txtNombreGenerarReporte.setEditable(false);
+        txtNombreGenerarReporte.setText("Nombre del reporte");
+        panelGenerarReporte.add(txtNombreGenerarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 160, 30));
+
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton2.setText("Generar reporte");
+        panelGenerarReporte.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 190, 160, 130));
+
+        jPanelMostrar.add(panelGenerarReporte, "card12");
+
         menuMesero.setText("Mesero");
         menuMesero.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menuMesero.setPreferredSize(new java.awt.Dimension(122, 50));
@@ -2208,17 +2252,28 @@ public class Mesero extends javax.swing.JFrame {
 
         jMenuBar2.add(menuProductos);
 
+        jMenu1.setText("Reporte");
+        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jMenu1.setPreferredSize(new java.awt.Dimension(122, 50));
+
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMenuItem1.setText("Generar reporte");
+        jMenuItem1.setPreferredSize(new java.awt.Dimension(180, 40));
+        jMenu1.add(jMenuItem1);
+
+        jMenuBar2.add(jMenu1);
+
         setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, 957, Short.MAX_VALUE)
+            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
+            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -2514,6 +2569,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JButton btnVerPedidosMesa8;
     private javax.swing.JButton btnVerPedidosMesa9;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -2563,6 +2619,10 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel141;
     private javax.swing.JLabel jLabel142;
     private javax.swing.JLabel jLabel143;
+    private javax.swing.JLabel jLabel144;
+    private javax.swing.JLabel jLabel145;
+    private javax.swing.JLabel jLabel146;
+    private javax.swing.JLabel jLabel147;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -2622,7 +2682,9 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel99;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList3;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanelMostrar;
     private javax.swing.JPanel jPanelMostrarMesa;
     private javax.swing.JScrollPane jScrollPane1;
@@ -2684,6 +2746,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JPanel panelCargarProductos;
     private javax.swing.JPanel panelCerrarSesion;
     private javax.swing.JPanel panelElimProducto;
+    private javax.swing.JPanel panelGenerarReporte;
     private javax.swing.JPanel panelGestionarMesas;
     private javax.swing.JPanel panelMesa1;
     private javax.swing.JPanel panelMesa10;
@@ -2741,7 +2804,9 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JTextField txtCodigoGenerado;
     private javax.swing.JTextField txtEstadoArchivoMesas;
     private javax.swing.JTextField txtEstadoArchivoProductos;
+    private javax.swing.JTextField txtFechaGenerarReporte;
     private javax.swing.JTextField txtIngresarCodigo;
+    private javax.swing.JTextField txtNombreGenerarReporte;
     private javax.swing.JTextField txtNombreNuevoProducto;
     private javax.swing.JTextField txtNombreProductoActual;
     private javax.swing.JTextField txtNombreProductoBuscado;
