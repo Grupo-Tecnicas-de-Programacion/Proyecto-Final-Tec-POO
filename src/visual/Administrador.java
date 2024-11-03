@@ -190,8 +190,8 @@ public class Administrador extends javax.swing.JFrame {
         jTextField16 = new javax.swing.JTextField();
         jLabel43 = new javax.swing.JLabel();
         jTextField19 = new javax.swing.JTextField();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        btnConfirmacionCerrarSesion = new javax.swing.JButton();
+        btnCerrarSesionAdmnistrador = new javax.swing.JButton();
         panelAgregarProducto = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -1204,54 +1204,41 @@ public class Administrador extends javax.swing.JFrame {
 
         panelReporteVentas.setBackground(new java.awt.Color(153, 153, 153));
         panelReporteVentas.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelReporteVentas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel79.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
         jLabel79.setForeground(new java.awt.Color(0, 0, 0));
         jLabel79.setText("REPORTE DE VENTAS");
-        panelReporteVentas.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 24, 293, -1));
 
         jLabel80.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel80.setForeground(new java.awt.Color(0, 0, 0));
         jLabel80.setText("Rango de fecha para ver los reportes");
-        panelReporteVentas.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
         jLabel81.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel81.setForeground(new java.awt.Color(0, 0, 0));
         jLabel81.setText("Desde :");
-        panelReporteVentas.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
-        panelReporteVentas.add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 158, -1));
 
         jLabel82.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel82.setForeground(new java.awt.Color(0, 0, 0));
         jLabel82.setText("Hasta :");
-        panelReporteVentas.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
-        panelReporteVentas.add(jTextField31, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 158, -1));
 
         jList18.setBackground(new java.awt.Color(255, 204, 51));
         jScrollPane18.setViewportView(jList18);
 
-        panelReporteVentas.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 206, 240));
-
         jLabel83.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel83.setForeground(new java.awt.Color(0, 0, 0));
         jLabel83.setText("Reportes encontrados");
-        panelReporteVentas.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
 
         btnGenerarReporte.setBackground(new java.awt.Color(102, 102, 0));
         btnGenerarReporte.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnGenerarReporte.setText("Buscar reportes");
-        panelReporteVentas.add(btnGenerarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, 60));
 
         jLabel85.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel85.setForeground(new java.awt.Color(0, 0, 0));
         jLabel85.setText("Visualizacion del reporte seleccionado");
-        panelReporteVentas.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, -1, -1));
 
         btnVerReporte.setBackground(new java.awt.Color(102, 102, 0));
         btnVerReporte.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnVerReporte.setText("Ver reporte");
-        panelReporteVentas.add(btnVerReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 110, 50));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1267,7 +1254,78 @@ public class Administrador extends javax.swing.JFrame {
         jPanel1.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, -1));
         jPanel1.add(txtCantidadReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 150, 30));
 
-        panelReporteVentas.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, 290, 280));
+        javax.swing.GroupLayout panelReporteVentasLayout = new javax.swing.GroupLayout(panelReporteVentas);
+        panelReporteVentas.setLayout(panelReporteVentasLayout);
+        panelReporteVentasLayout.setHorizontalGroup(
+            panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                        .addGap(316, 316, 316)
+                        .addComponent(jLabel79, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel80))
+                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel81)
+                            .addComponent(jLabel82))
+                        .addGap(5, 5, 5)
+                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addComponent(btnGenerarReporte)
+                        .addGap(92, 92, 92)
+                        .addComponent(jLabel85))
+                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(jLabel83))
+                            .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(54, 54, 54)
+                        .addComponent(btnVerReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+        panelReporteVentasLayout.setVerticalGroup(
+            panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel79)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel80)
+                .addGap(11, 11, 11)
+                .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                        .addComponent(jLabel81)
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel82))
+                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                        .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnGenerarReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel85)))
+                .addGap(8, 8, 8)
+                .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel83)
+                        .addGap(11, 11, 11)
+                        .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelReporteVentasLayout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(btnVerReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
 
         jPanelMostrarAdmin.add(panelReporteVentas, "card11");
 
@@ -1286,17 +1344,28 @@ public class Administrador extends javax.swing.JFrame {
         jLabel31.setForeground(new java.awt.Color(0, 0, 0));
         jLabel31.setText("Codigo generado :");
 
+        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField16ActionPerformed(evt);
+            }
+        });
+
         jLabel43.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(0, 0, 0));
         jLabel43.setText("Ingresar codigo :");
 
-        jButton9.setBackground(new java.awt.Color(51, 102, 0));
-        jButton9.setText("Comprobar");
-        jButton9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnConfirmacionCerrarSesion.setBackground(new java.awt.Color(51, 102, 0));
+        btnConfirmacionCerrarSesion.setText("Comprobar");
+        btnConfirmacionCerrarSesion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton10.setBackground(new java.awt.Color(204, 0, 0));
-        jButton10.setText("Cerrar sesion");
-        jButton10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCerrarSesionAdmnistrador.setBackground(new java.awt.Color(204, 0, 0));
+        btnCerrarSesionAdmnistrador.setText("Cerrar sesion");
+        btnCerrarSesionAdmnistrador.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCerrarSesionAdmnistrador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSesionAdmnistradorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelCerrarSesionLayout = new javax.swing.GroupLayout(panelCerrarSesion);
         panelCerrarSesion.setLayout(panelCerrarSesionLayout);
@@ -1309,21 +1378,25 @@ public class Administrador extends javax.swing.JFrame {
                         .addComponent(jLabel86))
                     .addGroup(panelCerrarSesionLayout.createSequentialGroup()
                         .addGap(155, 155, 155)
-                        .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel29)
-                            .addGroup(panelCerrarSesionLayout.createSequentialGroup()
-                                .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel31))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 333, Short.MAX_VALUE)
-                                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jLabel29))
                     .addGroup(panelCerrarSesionLayout.createSequentialGroup()
-                        .addGap(281, 281, 281)
-                        .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(146, 146, 146))
+                        .addGap(155, 155, 155)
+                        .addComponent(jLabel31))
+                    .addGroup(panelCerrarSesionLayout.createSequentialGroup()
+                        .addGap(155, 155, 155)
+                        .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelCerrarSesionLayout.createSequentialGroup()
+                                .addGap(126, 126, 126)
+                                .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(141, 141, 141)
+                        .addComponent(btnCerrarSesionAdmnistrador, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelCerrarSesionLayout.createSequentialGroup()
+                        .addGap(356, 356, 356)
+                        .addComponent(btnConfirmacionCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
         panelCerrarSesionLayout.setVerticalGroup(
             panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1334,18 +1407,18 @@ public class Administrador extends javax.swing.JFrame {
                 .addComponent(jLabel29)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel31)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelCerrarSesionLayout.createSequentialGroup()
                         .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(12, 12, 12)
                         .addComponent(jLabel43)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(6, 6, 6)
                         .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCerrarSesionAdmnistrador, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addComponent(btnConfirmacionCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         jPanelMostrarAdmin.add(panelCerrarSesion, "card13");
@@ -1403,48 +1476,46 @@ public class Administrador extends javax.swing.JFrame {
         panelAgregarProductoLayout.setHorizontalGroup(
             panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelAgregarProductoLayout.createSequentialGroup()
-                .addGap(104, 104, 104)
                 .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelAgregarProductoLayout.createSequentialGroup()
-                        .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(247, 247, 247)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelAgregarProductoLayout.createSequentialGroup()
+                        .addGap(301, 301, 301)
+                        .addComponent(jLabel13))
+                    .addGroup(panelAgregarProductoLayout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(jLabel8)
+                        .addGap(68, 68, 68)
+                        .addComponent(jLabel11)
+                        .addGap(175, 175, 175)
+                        .addComponent(jLabel15))
+                    .addGroup(panelAgregarProductoLayout.createSequentialGroup()
+                        .addGap(104, 104, 104)
                         .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelAgregarProductoLayout.createSequentialGroup()
+                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(50, 50, 50)
+                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelAgregarProductoLayout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addGap(157, 157, 157)
+                                .addComponent(jLabel10))
+                            .addGroup(panelAgregarProductoLayout.createSequentialGroup()
+                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(50, 50, 50)
+                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelAgregarProductoLayout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(jLabel14))
+                            .addGroup(panelAgregarProductoLayout.createSequentialGroup()
+                                .addGap(124, 124, 124)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(43, 43, 43)
-                                .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel10))
-                                .addGap(101, 101, 101))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAgregarProductoLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(panelAgregarProductoLayout.createSequentialGroup()
-                        .addGap(124, 124, 124)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addComponent(jButton5))
-                    .addGroup(panelAgregarProductoLayout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel14)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
-                .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel15)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(84, 84, 84))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAgregarProductoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAgregarProductoLayout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(190, 190, 190))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAgregarProductoLayout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addGap(245, 245, 245))))
+                                .addComponent(jButton5)))
+                        .addGap(74, 74, 74)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
         panelAgregarProductoLayout.setVerticalGroup(
             panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1455,32 +1526,31 @@ public class Administrador extends javax.swing.JFrame {
                 .addComponent(jLabel13)
                 .addGap(34, 34, 34)
                 .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel11)
-                        .addComponent(jLabel15)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel15))
+                .addGap(12, 12, 12)
                 .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelAgregarProductoLayout.createSequentialGroup()
                         .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(26, 26, 26)
-                        .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
                             .addComponent(jLabel10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGap(12, 12, 12)
+                        .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(47, 47, 47)
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
-                        .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         jPanelMostrarAdmin.add(panelAgregarProducto, "card13");
@@ -1631,7 +1701,7 @@ public class Administrador extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 472, Short.MAX_VALUE)
+                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1692,6 +1762,15 @@ public class Administrador extends javax.swing.JFrame {
         CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
         layout.show(jPanelMostrarAdmin, "panelEliminarProducto");
     }//GEN-LAST:event_menItemEliminarProductosActionPerformed
+
+    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField16ActionPerformed
+
+    private void btnCerrarSesionAdmnistradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionAdmnistradorActionPerformed
+        new BievenidaO().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCerrarSesionAdmnistradorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1760,10 +1839,11 @@ public class Administrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCerrarSesionAdmnistrador;
+    private javax.swing.JButton btnConfirmacionCerrarSesion;
     private javax.swing.JButton btnGenerarReporte;
     private javax.swing.JButton btnVerReporte;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton15;
@@ -1781,7 +1861,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

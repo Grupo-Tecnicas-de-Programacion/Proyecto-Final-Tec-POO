@@ -524,7 +524,12 @@ public class Mesero extends javax.swing.JFrame {
         btnCerrarSesion.setBackground(new java.awt.Color(255, 0, 0));
         btnCerrarSesion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCerrarSesion.setForeground(new java.awt.Color(0, 0, 0));
-        btnCerrarSesion.setText("Cerrar sisión");
+        btnCerrarSesion.setText("Cerrar sesión");
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSesionActionPerformed(evt);
+            }
+        });
         panelCerrarSesion.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 210, 150, 130));
 
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
@@ -2426,6 +2431,11 @@ public class Mesero extends javax.swing.JFrame {
     private void btnBuscarRutaMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarRutaMesasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscarRutaMesasActionPerformed
+
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
+        new BievenidaO().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments

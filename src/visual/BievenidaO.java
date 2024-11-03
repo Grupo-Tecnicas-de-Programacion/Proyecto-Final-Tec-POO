@@ -29,11 +29,11 @@ public class BievenidaO extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnIniciarSesionAdministrador = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btnIniciarSesionMesero = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        btnRegsitrarseIniciarSesion = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,28 +43,28 @@ public class BievenidaO extends javax.swing.JFrame {
 
         jLabel3.setText("Iniciar sesión como:");
 
-        jButton1.setText("ADMINISTRADOR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnIniciarSesionAdministrador.setText("ADMINISTRADOR");
+        btnIniciarSesionAdministrador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnIniciarSesionAdministradorActionPerformed(evt);
             }
         });
 
         jLabel4.setText("\"¿Eres nuevo?\"");
 
-        jButton2.setText("MESERO");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnIniciarSesionMesero.setText("MESERO");
+        btnIniciarSesionMesero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnIniciarSesionMeseroActionPerformed(evt);
             }
         });
 
         jLabel5.setText("Haz click en el siguiente botón para registrarte");
 
-        jButton3.setText("REGISTRARSE");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnRegsitrarseIniciarSesion.setText("REGISTRARSE");
+        btnRegsitrarseIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnRegsitrarseIniciarSesionActionPerformed(evt);
             }
         });
 
@@ -84,16 +84,16 @@ public class BievenidaO extends javax.swing.JFrame {
                         .addGap(189, 189, 189)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(btnIniciarSesionAdministrador)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton2))
+                                .addComponent(btnIniciarSesionMesero))
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))))
                 .addGap(23, 23, 23))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addComponent(btnRegsitrarseIniciarSesion)
                 .addGap(58, 58, 58))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(189, 189, 189)
@@ -111,14 +111,14 @@ public class BievenidaO extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnIniciarSesionAdministrador)
+                    .addComponent(btnIniciarSesionMesero))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
                 .addGap(7, 7, 7)
-                .addComponent(jButton3)
+                .addComponent(btnRegsitrarseIniciarSesion)
                 .addGap(22, 22, 22))
         );
 
@@ -136,20 +136,20 @@ public class BievenidaO extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new Administrador().setVisible(true);
+    private void btnIniciarSesionAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionAdministradorActionPerformed
+        new InicioSesion().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnIniciarSesionAdministradorActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new Mesero().setVisible(true);
+    private void btnIniciarSesionMeseroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionMeseroActionPerformed
+        new InicioSesion().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnIniciarSesionMeseroActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnRegsitrarseIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegsitrarseIniciarSesionActionPerformed
         new Registrarse().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnRegsitrarseIniciarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,9 +187,9 @@ public class BievenidaO extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnIniciarSesionAdministrador;
+    private javax.swing.JButton btnIniciarSesionMesero;
+    private javax.swing.JButton btnRegsitrarseIniciarSesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
