@@ -4,20 +4,38 @@ import java.util.ArrayList;
 public class Mesero extends Usuario{
     
     private ArrayList<Pedido> pedidos;
+    private ArrayList<Reporte> reportes;
 
     public Mesero() {
+        this.pedidos = new ArrayList<>();
+        this.reportes = new ArrayList<>();
     }
 
-    public Mesero(ArrayList<Pedido> pedidos, String nombreUsuario, String constrasenia) {
+    public Mesero(String nombreUsuario, String constrasenia) {
         super(nombreUsuario, constrasenia);
-        this.pedidos = pedidos;
+        this.pedidos = new ArrayList<>();
+        this.reportes = new ArrayList<>();
+    }
+    
+    public ArrayList<Reporte> getReportes() {
+        return reportes;
     }
 
+    public void setReportes(ArrayList<Reporte> reportes) {
+        this.reportes = reportes;
+    }
+    
     public ArrayList<Pedido> getPedidos() {
         return pedidos;
     }
 
     public void setPedidos(ArrayList<Pedido> pedidos) {
         this.pedidos = pedidos;
-    }   
+    }
+    
+    public Reporte generarReporte(String fecha, String nombre, int cantidaProductos, double totalGanancia){
+        Reporte nuevoReporte = new Reporte(fecha, nombre, cantidaProductos, totalGanancia);
+        reportes.add(nuevoReporte);
+        return nuevoReporte;
+    }
 }
