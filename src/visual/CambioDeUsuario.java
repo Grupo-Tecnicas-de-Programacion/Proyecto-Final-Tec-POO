@@ -38,7 +38,7 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         NuevoNombreDeUsuario = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnVolverAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
@@ -93,8 +93,13 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         });
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, -1, -1));
 
-        jButton5.setText("Salir");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, -1, -1));
+        btnVolverAtras.setText("Volver atras");
+        btnVolverAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverAtrasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnVolverAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -148,6 +153,11 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void btnVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverAtrasActionPerformed
+        new InicioSesion().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVolverAtrasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -185,10 +195,10 @@ public class CambioDeUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField NuevoNombreDeUsuario;
+    private javax.swing.JButton btnVolverAtras;
     private javax.swing.JLabel iblCambioDeUsuario;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;

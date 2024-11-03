@@ -31,7 +31,7 @@ public class CambiarContraseña extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnVolverAtras = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPasswordField1 = new javax.swing.JPasswordField();
         jPasswordField2 = new javax.swing.JPasswordField();
@@ -50,7 +50,12 @@ public class CambiarContraseña extends javax.swing.JFrame {
 
         jTextField1.setColumns(12);
 
-        jButton1.setText("Volver atrás");
+        btnVolverAtras.setText("Volver atrás");
+        btnVolverAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverAtrasActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cambiar contraseña ");
 
@@ -83,7 +88,7 @@ public class CambiarContraseña extends javax.swing.JFrame {
                             .addGap(66, 66, 66)
                             .addComponent(jButton2)
                             .addGap(62, 62, 62)
-                            .addComponent(jButton1)))
+                            .addComponent(btnVolverAtras)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(124, 124, 124)
                         .addComponent(jLabel4)))
@@ -109,7 +114,7 @@ public class CambiarContraseña extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
-                    .addComponent(jButton1))
+                    .addComponent(btnVolverAtras))
                 .addGap(44, 44, 44))
         );
 
@@ -126,6 +131,11 @@ public class CambiarContraseña extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverAtrasActionPerformed
+        new InicioSesion().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVolverAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,7 +173,7 @@ public class CambiarContraseña extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnVolverAtras;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
