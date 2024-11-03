@@ -1,25 +1,24 @@
-
 import java.util.ArrayList;
-
 
 public class Mesa {
     private int numeroMesa;
     private String estado;
     private int capacidad;
     private ArrayList<Pedido> listaPedidos;
-    public Cuenta cuenta;
+    private Cuenta cuenta;
 
     public Mesa() {
-        this.listaPedidos = new ArrayList<> ();
-        this.cuenta = null;
+        this.listaPedidos = new ArrayList<>();
+        this.cuenta = new Cuenta(); 
+        this.estado = "Desocupado";
     }
 
     public Mesa(int numeroMesa, int capacidad) {
         this.numeroMesa = numeroMesa;
         this.estado = "Desocupado";
         this.capacidad = capacidad;
-        this.listaPedidos = new ArrayList<> ();
-        this.cuenta = null;
+        this.listaPedidos = new ArrayList<>();
+        this.cuenta = new Cuenta(); 
     }
 
     public Cuenta getCuenta() {
@@ -60,50 +59,54 @@ public class Mesa {
 
     public void setListaPedidos(ArrayList<Pedido> listaPedidos) {
         this.listaPedidos = listaPedidos;
-        this.estado = "Ocupado";
+        this.estado = !listaPedidos.isEmpty() ? "Ocupado" : "Desocupado";
     }
-    
-    public void asignarPedido(Pedido pedido)
-    {
+
+    public void asignarPedido(Pedido pedido) {
         this.listaPedidos.add(pedido);
         this.estado = "Ocupado";
     }
-    
-    public void liberarMesa()
-    {
+
+    public void liberarMesa() {
         this.listaPedidos.clear();
         this.estado = "Desocupado";
-        this.cuenta = null;
+        this.cuenta = new Cuenta(); 
     }
-    
-    public void mostrarInfoMesa() {
-        System.out.println("Informacion de la mesa:");
-        System.out.println("Mesa numero: " + this.getNumeroMesa());
-        System.out.println("Estado: " + this.getEstado());
 
-        System.out.println(" -- Pedidos asociados a la mesa:");
+    public String mostrarInfoMesa() {
+        StringBuilder info = new StringBuilder();
+        info.append("Información de la mesa:\n");
+        info.append("Mesa número: ").append(this.getNumeroMesa()).append("\n");
+        info.append("Estado: ").append(this.getEstado()).append("\n");
+
+        info.append(" -- Pedidos asociados a la mesa:\n");
         if (this.listaPedidos.isEmpty()) {
-            System.out.println("No hay pedidos asociados a esta mesa.");
+            info.append("No hay pedidos asociados a esta mesa.\n");
         } else {
             for (Pedido pedido : this.getListaPedidos()) {
-                System.out.println("Numero pedido: " + pedido.getNumPedido()+" | Tipo de pedido: "+pedido.getTipoPedido());
-                System.out.println("Productos en el pedido:");
+                info.append("Número de pedido: ").append(pedido.getNumPedido())
+                    .append(" | Tipo de pedido: ").append(pedido.getTipoPedido()).append("\n");
+                info.append("Productos en el pedido:\n");
                 for (Producto producto : pedido.getListaProductos()) {
-                    System.out.println("- Nombre de producto: " + producto.getNombre() + " | Precio del producto: " + producto.getPrecio());
+                    info.append("- Nombre de producto: ").append(producto.getNombre())
+                        .append(" | Precio del producto: ").append(producto.getPrecio()).append("\n");
                 }
                 double total = pedido.calcularTotalPedido();
-                System.out.println("Precio total del pedido: " + total);
+                info.append("Precio total del pedido: ").append(total).append("\n");
             }
         }
+        return info.toString();
     }
-    
-    public final class Cuenta{
-    
-        private double totalPagar; 
-        private String tipoPago; 
+
+    public final class Cuenta {
+        private double totalPagar;
+        private String tipoPago;
         private String estadoPago;
 
         public Cuenta() {
+            this.totalPagar = 0;
+            this.tipoPago = "Desconocido";
+            this.estadoPago = "Pendiente";
         }
 
         public Cuenta(String tipoPago) {
@@ -135,30 +138,24 @@ public class Mesa {
         public void setEstadoPago(String estadoPago) {
             this.estadoPago = estadoPago;
         }
-        
-        public double calcularTotalCuenta(){
-            
+
+        public double calcularTotalCuenta() {
             this.totalPagar = 0;
-            
             for (Pedido pedido : getListaPedidos()) {
-                this.totalPagar += pedido.getPrecioTotalPedido();
+                this.totalPagar += pedido.calcularTotalPedido();
             }
-            
             return this.totalPagar;
         }
-        
-        public void marcarComoPagada(){
+
+        public void marcarComoPagada() {
             this.estadoPago = "Pagado";
         }
-        
-        public void mostrarInfoCuenta(){
 
-            System.out.println("Informacion de la cuenta:");
-            System.out.println(" - Total a pagar: " + this.getTotalPagar());
-            System.out.println(" - Tipo de pago: " + this.getTipoPago());
-            System.out.println(" - Estado del pago: " + this.getEstadoPago());
-
+        public String mostrarInfoCuenta() {
+            return "Información de la cuenta:\n" +
+                   " - Total a pagar: " + this.getTotalPagar() + "\n" +
+                   " - Tipo de pago: " + this.getTipoPago() + "\n" +
+                   " - Estado del pago: " + this.getEstadoPago();
         }
-        
     }
 }

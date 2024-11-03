@@ -213,7 +213,7 @@ public class Main {
             if (mesa.getCuenta() == null) {
                 System.out.print("Elige el tipo de pago (Efectivo o Tarjeta): ");
                 String tipoPago = scanner.next();
-                mesa.cuenta = mesa.new Cuenta(tipoPago);
+                mesa.setCuenta(mesa.new Cuenta(tipoPago));
                 mesa.getCuenta().calcularTotalCuenta();
             }
             mesa.getCuenta().mostrarInfoCuenta();
