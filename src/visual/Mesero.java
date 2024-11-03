@@ -8,7 +8,10 @@ import java.io.File;
 import java.io.FileReader;
 import javax.swing.JFileChooser;
 import clases.Mesa;
+import java.awt.Color;
+import java.io.IOException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -566,6 +569,8 @@ public class Mesero extends javax.swing.JFrame {
         jLabel9.setText("Gestionar mesas");
         panelGestionarMesas.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 12, 220, 45));
 
+        btnMesa1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnMesa1.setText("1");
         btnMesa1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa1ActionPerformed(evt);
@@ -573,6 +578,8 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 69, 60, 58));
 
+        btnMesa2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnMesa2.setText("2");
         btnMesa2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa2ActionPerformed(evt);
@@ -580,6 +587,8 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 145, 60, 58));
 
+        btnMesa3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnMesa3.setText("3");
         btnMesa3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa3ActionPerformed(evt);
@@ -587,6 +596,8 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 221, 60, 58));
 
+        btnMesa4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnMesa4.setText("4");
         btnMesa4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa4ActionPerformed(evt);
@@ -594,6 +605,8 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 297, 60, 58));
 
+        btnMesa5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnMesa5.setText("5");
         btnMesa5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa5ActionPerformed(evt);
@@ -601,6 +614,8 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 69, 60, 58));
 
+        btnMesa6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnMesa6.setText("6");
         btnMesa6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa6ActionPerformed(evt);
@@ -608,6 +623,8 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 145, 60, 58));
 
+        btnMesa7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnMesa7.setText("7");
         btnMesa7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa7ActionPerformed(evt);
@@ -615,6 +632,8 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 221, 60, 58));
 
+        btnMesa8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnMesa8.setText("8");
         btnMesa8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa8ActionPerformed(evt);
@@ -622,6 +641,8 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 297, 60, 58));
 
+        btnMesa9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnMesa9.setText("9");
         btnMesa9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa9ActionPerformed(evt);
@@ -629,6 +650,8 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa9, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 69, 60, 58));
 
+        btnMesa10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnMesa10.setText("10");
         btnMesa10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa10ActionPerformed(evt);
@@ -636,6 +659,8 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa10, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 145, 60, 58));
 
+        btnMesa11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnMesa11.setText("11");
         btnMesa11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa11ActionPerformed(evt);
@@ -643,6 +668,8 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelGestionarMesas.add(btnMesa11, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 221, 60, 58));
 
+        btnMesa12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnMesa12.setText("12");
         btnMesa12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMesa12ActionPerformed(evt);
