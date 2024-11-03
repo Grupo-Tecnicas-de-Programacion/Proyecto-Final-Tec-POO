@@ -36,7 +36,7 @@ public class Registrarse extends javax.swing.JFrame {
         txtRegistrarConfirmarContrasenia = new javax.swing.JTextField();
         txtRegistrarNombreUsuario = new javax.swing.JTextField();
         txtRegistrarContrasenia = new javax.swing.JTextField();
-        btnRegistrarsse1 = new javax.swing.JButton();
+        btnVolverAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,11 +74,16 @@ public class Registrarse extends javax.swing.JFrame {
         jPanel1.add(txtRegistrarNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 160, -1));
         jPanel1.add(txtRegistrarContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 160, -1));
 
-        btnRegistrarsse1.setBackground(new java.awt.Color(153, 153, 0));
-        btnRegistrarsse1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnRegistrarsse1.setForeground(new java.awt.Color(0, 0, 0));
-        btnRegistrarsse1.setText("Volver atrás");
-        jPanel1.add(btnRegistrarsse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 160, 40));
+        btnVolverAtras.setBackground(new java.awt.Color(153, 153, 0));
+        btnVolverAtras.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnVolverAtras.setForeground(new java.awt.Color(0, 0, 0));
+        btnVolverAtras.setText("Volver atrás");
+        btnVolverAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverAtrasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnVolverAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 160, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,6 +102,12 @@ public class Registrarse extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverAtrasActionPerformed
+        
+        new BievenidaO().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVolverAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,7 +146,7 @@ public class Registrarse extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrarsse;
-    private javax.swing.JButton btnRegistrarsse1;
+    private javax.swing.JButton btnVolverAtras;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
