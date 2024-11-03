@@ -11,7 +11,10 @@ import clases.Mesa;
 import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 
 /**
@@ -20,7 +23,9 @@ import javax.swing.JOptionPane;
  */
 public class Mesero extends javax.swing.JFrame {
 
-    private ArrayList<Mesa> mesas;
+    private File archivoSeleccionado;
+    private ArrayList<Mesa> mesas = new ArrayList<>();
+    private JButton[] botonMesas = new JButton[12];
     
     public Mesero() {
         initComponents();
@@ -46,6 +51,7 @@ public class Mesero extends javax.swing.JFrame {
         jPanelMostrarMesa.add(panelMesa10, "panelMesa10");
         jPanelMostrarMesa.add(panelMesa11, "panelMesa11");
         jPanelMostrarMesa.add(panelMesa12, "panelMesa12");
+        inicializarMesas();
     }
 
     /**
@@ -119,6 +125,7 @@ public class Mesero extends javax.swing.JFrame {
         btnVerPedidosMesa1 = new javax.swing.JButton();
         btnBorrarPedidoMesa1 = new javax.swing.JButton();
         btnBorrarProductoPedidoMesa1 = new javax.swing.JButton();
+        btnVerInfoMesa1 = new javax.swing.JButton();
         panelMesa2 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -457,9 +464,11 @@ public class Mesero extends javax.swing.JFrame {
         panelCargarMesas.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 120, 30));
 
         txtEstadoArchivoMesas.setEditable(false);
+        txtEstadoArchivoMesas.setEnabled(false);
         panelCargarMesas.add(txtEstadoArchivoMesas, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 509, 30));
 
         txtRutaArchivoMesas.setEditable(false);
+        txtRutaArchivoMesas.setEnabled(false);
         panelCargarMesas.add(txtRutaArchivoMesas, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 509, 30));
 
         btnCargarMesas.setBackground(new java.awt.Color(0, 153, 0));
@@ -779,6 +788,15 @@ public class Mesero extends javax.swing.JFrame {
         btnBorrarProductoPedidoMesa1.setForeground(new java.awt.Color(0, 0, 0));
         btnBorrarProductoPedidoMesa1.setText("Borrar producto");
         panelMesa1.add(btnBorrarProductoPedidoMesa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 120, 40));
+
+        btnVerInfoMesa1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnVerInfoMesa1.setText("Información mesa");
+        btnVerInfoMesa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerInfoMesa1ActionPerformed(evt);
+            }
+        });
+        panelMesa1.add(btnVerInfoMesa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 140, 30));
 
         jPanelMostrarMesa.add(panelMesa1, "card2");
 
@@ -2309,11 +2327,11 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, 955, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
         );
 
         pack();
@@ -2395,8 +2413,11 @@ public class Mesero extends javax.swing.JFrame {
     private void showPanel(String panelName) {
         CardLayout layout = (CardLayout) jPanelMostrarMesa.getLayout();
         layout.show(jPanelMostrarMesa, panelName);
+        
+        
     }
 
+    
     
     private void btnMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa1ActionPerformed
         showPanel("panelMesa1");
@@ -2455,37 +2476,61 @@ public class Mesero extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCantidadProductoBuscado3ActionPerformed
 
-    private void btnCargarMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarMesasActionPerformed
-        String rutaArchivo = txtRutaArchivoMesas.getText();
-        File file = new File(rutaArchivo);
-        mesas.clear();
-        panelMesas.removeAll();
+    private void inicializarMesas(){
+        botonMesas = new JButton[] {
+            btnMesa1, btnMesa2, btnMesa3, btnMesa4, btnMesa5, btnMesa6,
+            btnMesa7, btnMesa8, btnMesa9, btnMesa10, btnMesa11, btnMesa12
+        };
+        
+        for (JButton boton : botonMesas) {
+            boton.setBackground(Color.RED);
+            boton.setEnabled(false);
+        }
+    }    
+    
+    private void cargarMesasDesdeArchivo(File file) {
+        mesas.clear(); // Limpiar la lista de mesas antes de cargar nuevas mesas
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String linea;
             while ((linea = br.readLine()) != null) {
                 String[] partes = linea.split(", ");
-                int numeroMesa = Integer.parseInt(partes[0].trim());
+                int numeroMesa = Integer.parseInt(partes[0].trim()) - 1; // Restar 1 para índice de array
                 String estado = partes[1].trim();
                 int capacidad = Integer.parseInt(partes[2].trim());
 
-                // Crear una instancia de Mesa y añadirla a la lista
-                Mesa mesa = new Mesa(numeroMesa, capacidad);
+                // Crear la instancia de Mesa y añadirla a la lista
+                Mesa mesa = new Mesa(numeroMesa + 1, capacidad);
                 mesa.setEstado(estado);
                 mesas.add(mesa);
 
-                // Crear un botón para representar la mesa en la interfaz
-                JButton btnMesa = new JButton("Mesa " + numeroMesa);
-                btnMesa.setBackground(estado.equals("Disponible") ? Color.GREEN : Color.RED);
-                btnMesa.setEnabled(estado.equals("Disponible")); // Solo habilitar si está disponible
-                panelMesas.add(btnMesa);
+                // Actualizar el botón de la mesa en base al estado
+                if (numeroMesa >= 0 && numeroMesa < botonMesas.length) {
+                    if (estado.equalsIgnoreCase("Disponible")) {
+                        botonMesas[numeroMesa].setBackground(Color.GREEN);
+                        botonMesas[numeroMesa].setEnabled(true);
+                    } else {
+                        botonMesas[numeroMesa].setBackground(Color.RED);
+                        botonMesas[numeroMesa].setEnabled(false);
+                    }
+                }
             }
 
-            panelMesas.revalidate();
-            panelMesas.repaint();
+            panelGestionarMesas.revalidate();
+            panelGestionarMesas.repaint();
 
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Error al leer el archivo de mesas", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    private void btnCargarMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarMesasActionPerformed
+        
+        if (archivoSeleccionado != null && validarArchivo(archivoSeleccionado)) {
+            cargarMesasDesdeArchivo(archivoSeleccionado);
+            JOptionPane.showMessageDialog(null, "Se cargaron correctamente las mesas.", "Confirmacion", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Archivo no válido o no seleccionado.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnCargarMesasActionPerformed
 
@@ -2496,17 +2541,69 @@ public class Mesero extends javax.swing.JFrame {
     private void btnBuscarRutaMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarRutaMesasActionPerformed
         JFileChooser fileChooser = new JFileChooser();
         int result = fileChooser.showOpenDialog(this);
+
         if (result == JFileChooser.APPROVE_OPTION) {
-            File file = fileChooser.getSelectedFile();
-            txtRutaArchivoMesas.setText(file.getAbsolutePath());
-            btnCargarMesas.setEnabled(true); // Habilitar el botón de cargar mesas
+            archivoSeleccionado = fileChooser.getSelectedFile(); // Guardar el archivo seleccionado
+            txtRutaArchivoMesas.setText(archivoSeleccionado.getAbsolutePath()); // Mostrar la ruta en el campo de texto
+
+            // Validar el archivo seleccionado
+            if (validarArchivo(archivoSeleccionado)) {
+                txtEstadoArchivoMesas.setText("Archivo válido y listo para cargar.");
+                txtEstadoArchivoMesas.setForeground(Color.GREEN);
+                btnCargarMesas.setEnabled(true); // Habilitar el botón de cargar mesas
+            } else {
+                txtEstadoArchivoMesas.setText("El archivo no es válido.");
+                txtEstadoArchivoMesas.setForeground(Color.RED);
+                btnCargarMesas.setEnabled(false); // Deshabilitar el botón de cargar mesas
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "No se seleccionó ningún archivo", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnBuscarRutaMesasActionPerformed
-
+    
+    private boolean validarArchivo(File file) {
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] partes = linea.split(", ");
+                if (partes.length != 3) {
+                    return false; // Formato incorrecto
+                }
+                try {
+                    Integer.parseInt(partes[0].trim()); // Número de mesa
+                    partes[1].trim(); // Estado
+                    Integer.parseInt(partes[2].trim()); // Capacidad
+                } catch (NumberFormatException e) {
+                    return false; // Si no es un número válido
+                }
+            }
+        } catch (IOException e) {
+            return false; // Si no se puede leer el archivo
+        }
+        return true; // El archivo es válido
+    }
+    
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
         new BievenidaO().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
+    
+    private void mostrarInformacionMesa(int numeroMesa) {
+        // Obtener la mesa correspondiente
+        Mesa mesaSeleccionada = mesas.get(numeroMesa - 1); // Asumiendo que mesas está indexado de 0 a 11
+
+        // Crear el mensaje de información
+        String infoMesa = "Número de mesa: " + mesaSeleccionada.getNumeroMesa() + "\n" +
+                          "Estado: " + mesaSeleccionada.getEstado() + "\n" +
+                          "Capacidad: " + mesaSeleccionada.getCapacidad() + "\n";
+
+        // Mostrar el mensaje en un cuadro de diálogo
+        JOptionPane.showMessageDialog(this, infoMesa, "Información de la Mesa", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    private void btnVerInfoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa1ActionPerformed
+        mostrarInformacionMesa(1);
+    }//GEN-LAST:event_btnVerInfoMesa1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2637,6 +2734,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JButton btnTotalCuentaMesa7;
     private javax.swing.JButton btnTotalCuentaMesa8;
     private javax.swing.JButton btnTotalCuentaMesa9;
+    private javax.swing.JButton btnVerInfoMesa1;
     private javax.swing.JButton btnVerPedidosMesa1;
     private javax.swing.JButton btnVerPedidosMesa10;
     private javax.swing.JButton btnVerPedidosMesa11;
