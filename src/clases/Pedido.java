@@ -1,4 +1,7 @@
+package clases;
 
+
+import clases.Mesa;
 import java.util.ArrayList;
 
 public class Pedido {

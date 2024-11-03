@@ -1,4 +1,7 @@
+package clases;
 
+
+import clases.Producto;
 import java.util.ArrayList;
 
 

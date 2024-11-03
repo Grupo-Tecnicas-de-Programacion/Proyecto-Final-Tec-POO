@@ -1,4 +1,12 @@
+package clases;
 
+
+import clases.ArchivosProductos;
+import clases.GestorProductos;
+import clases.Usuario;
+import clases.Producto;
+import clases.Pedido;
+import clases.Mesa;
 import java.util.ArrayList;
 import java.util.Scanner;
 

@@ -4,6 +4,8 @@
  */
 package visual;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author EQUIPO
@@ -147,7 +149,10 @@ public class InicioSesion extends javax.swing.JFrame {
         }else if (txtNombreUsuarioIniciarSesion.getText().equals("mesero") && txtContraseniaIniciarSesion.getText().equals("mesero")) {
             new Mesero().setVisible(true);
             this.dispose();
-        }
+        }else {
+        // Opcional: mostrar un mensaje de error si las credenciales no son válidas
+            JOptionPane.showMessageDialog(this, "Nombre de usuario o contraseña incorrectos", "Error de inicio de sesión", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_btnIngresarInicioSesionActionPerformed
 
     private void btnCambiarNombreUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarNombreUsuarioActionPerformed

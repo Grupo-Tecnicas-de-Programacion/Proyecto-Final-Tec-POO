@@ -1,3 +1,5 @@
+package clases;
+
 import java.io.Serializable;
 
 public class Producto implements Serializable{

@@ -1,4 +1,7 @@
+package clases;
 
+
+import clases.Producto;
 import java.io.*;
 import java.util.ArrayList;
 import javax.swing.JFileChooser;

@@ -1,7 +1,15 @@
 
 package visual;
 
+import clases.Mesa;
 import java.awt.CardLayout;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import javax.swing.JFileChooser;
+import clases.Mesa;
+import java.util.ArrayList;
+
 
 /**
  *
@@ -9,9 +17,8 @@ import java.awt.CardLayout;
  */
 public class Mesero extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Mesero
-     */
+    private ArrayList<Mesa> mesas;
+    
     public Mesero() {
         initComponents();
         jPanelMostrar.add(panelCargarMesas, "panelCargarMesas");
@@ -456,6 +463,7 @@ public class Mesero extends javax.swing.JFrame {
         btnCargarMesas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCargarMesas.setForeground(new java.awt.Color(0, 0, 0));
         btnCargarMesas.setText("Cargar lista mesas");
+        btnCargarMesas.setEnabled(false);
         btnCargarMesas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCargarMesasActionPerformed(evt);
@@ -2421,7 +2429,37 @@ public class Mesero extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCantidadProductoBuscado3ActionPerformed
 
     private void btnCargarMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarMesasActionPerformed
-        // TODO add your handling code here:
+        String rutaArchivo = txtRutaArchivoMesas.getText();
+        File file = new File(rutaArchivo);
+        mesas.clear();
+        panelMesas.removeAll();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] partes = linea.split(", ");
+                int numeroMesa = Integer.parseInt(partes[0].trim());
+                String estado = partes[1].trim();
+                int capacidad = Integer.parseInt(partes[2].trim());
+
+                // Crear una instancia de Mesa y añadirla a la lista
+                Mesa mesa = new Mesa(numeroMesa, capacidad);
+                mesa.setEstado(estado);
+                mesas.add(mesa);
+
+                // Crear un botón para representar la mesa en la interfaz
+                JButton btnMesa = new JButton("Mesa " + numeroMesa);
+                btnMesa.setBackground(estado.equals("Disponible") ? Color.GREEN : Color.RED);
+                btnMesa.setEnabled(estado.equals("Disponible")); // Solo habilitar si está disponible
+                panelMesas.add(btnMesa);
+            }
+
+            panelMesas.revalidate();
+            panelMesas.repaint();
+
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error al leer el archivo de mesas", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnCargarMesasActionPerformed
 
     private void btnCargarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarProductosActionPerformed
@@ -2429,7 +2467,13 @@ public class Mesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCargarProductosActionPerformed
 
     private void btnBuscarRutaMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarRutaMesasActionPerformed
-        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+        int result = fileChooser.showOpenDialog(this);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File file = fileChooser.getSelectedFile();
+            txtRutaArchivoMesas.setText(file.getAbsolutePath());
+            btnCargarMesas.setEnabled(true); // Habilitar el botón de cargar mesas
+        }
     }//GEN-LAST:event_btnBuscarRutaMesasActionPerformed
 
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed

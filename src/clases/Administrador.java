@@ -1,4 +1,8 @@
+package clases;
 
+
+import clases.Reporte;
+import clases.Usuario;
 import java.util.ArrayList;
 
 

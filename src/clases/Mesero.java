@@ -1,4 +1,7 @@
+package clases;
 
+
+import clases.Pedido;
 import java.util.ArrayList;
 
 public class Mesero extends Usuario{
