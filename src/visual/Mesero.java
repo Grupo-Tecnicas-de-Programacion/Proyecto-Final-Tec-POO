@@ -1,7 +1,6 @@
 
 package visual;
 
-import clases.Mesa;
 import java.awt.CardLayout;
 import java.io.BufferedReader;
 import java.io.File;
@@ -42,6 +41,30 @@ public class Mesero extends javax.swing.JFrame {
     private Pedido pedidoMesa10 = new Pedido();
     private Pedido pedidoMesa11 = new Pedido();
     private Pedido pedidoMesa12 = new Pedido();
+    private ArrayList<Pedido> pedidosMesa1 = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa1Llevar = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa2 = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa2Llevar = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa3 = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa3Llevar = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa4 = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa4Llevar = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa5 = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa5Llevar = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa6 = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa6Llevar = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa7 = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa7Llevar = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa8 = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa8Llevar = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa9 = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa9Llevar = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa10 = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa10Llevar = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa11 = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa11Llevar = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa12 = new ArrayList<>();
+    private ArrayList<Pedido> pedidosMesa12Llevar = new ArrayList<>();
     
     public Mesero() {
         initComponents();
@@ -802,6 +825,11 @@ public class Mesero extends javax.swing.JFrame {
         btnRealizarPedidoMesa1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnRealizarPedidoMesa1.setForeground(new java.awt.Color(0, 0, 0));
         btnRealizarPedidoMesa1.setText("Realizar pedido");
+        btnRealizarPedidoMesa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRealizarPedidoMesa1ActionPerformed(evt);
+            }
+        });
         panelMesa1.add(btnRealizarPedidoMesa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 130, 40));
 
         btnTotalCuentaMesa1.setBackground(new java.awt.Color(204, 204, 0));
@@ -886,6 +914,11 @@ public class Mesero extends javax.swing.JFrame {
         btnRealizarPedidoMesa2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnRealizarPedidoMesa2.setForeground(new java.awt.Color(0, 0, 0));
         btnRealizarPedidoMesa2.setText("Realizar pedido");
+        btnRealizarPedidoMesa2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRealizarPedidoMesa2ActionPerformed(evt);
+            }
+        });
         panelMesa2.add(btnRealizarPedidoMesa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 130, 40));
 
         listaPedidosMesa2.setModel(new javax.swing.AbstractListModel<String>() {
@@ -985,6 +1018,11 @@ public class Mesero extends javax.swing.JFrame {
         btnRealizarPedidoMesa3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnRealizarPedidoMesa3.setForeground(new java.awt.Color(0, 0, 0));
         btnRealizarPedidoMesa3.setText("Realizar pedido");
+        btnRealizarPedidoMesa3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRealizarPedidoMesa3ActionPerformed(evt);
+            }
+        });
         panelMesa3.add(btnRealizarPedidoMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 130, 40));
 
         listaPedidosMesa3.setModel(new javax.swing.AbstractListModel<String>() {
@@ -1084,6 +1122,11 @@ public class Mesero extends javax.swing.JFrame {
         btnRealizarPedidoMesa4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnRealizarPedidoMesa4.setForeground(new java.awt.Color(0, 0, 0));
         btnRealizarPedidoMesa4.setText("Realizar pedido");
+        btnRealizarPedidoMesa4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRealizarPedidoMesa4ActionPerformed(evt);
+            }
+        });
         panelMesa4.add(btnRealizarPedidoMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 130, 40));
 
         listaPedidosMesa4.setModel(new javax.swing.AbstractListModel<String>() {
@@ -1183,6 +1226,11 @@ public class Mesero extends javax.swing.JFrame {
         btnRealizarPedidoMesa5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnRealizarPedidoMesa5.setForeground(new java.awt.Color(0, 0, 0));
         btnRealizarPedidoMesa5.setText("Realizar pedido");
+        btnRealizarPedidoMesa5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRealizarPedidoMesa5ActionPerformed(evt);
+            }
+        });
         panelMesa5.add(btnRealizarPedidoMesa5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 130, 40));
 
         listaPedidosMesa5.setModel(new javax.swing.AbstractListModel<String>() {
@@ -1282,6 +1330,11 @@ public class Mesero extends javax.swing.JFrame {
         btnRealizarPedidoMesa6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnRealizarPedidoMesa6.setForeground(new java.awt.Color(0, 0, 0));
         btnRealizarPedidoMesa6.setText("Realizar pedido");
+        btnRealizarPedidoMesa6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRealizarPedidoMesa6ActionPerformed(evt);
+            }
+        });
         panelMesa6.add(btnRealizarPedidoMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 130, 40));
 
         listaPedidosMesa6.setModel(new javax.swing.AbstractListModel<String>() {
@@ -1381,6 +1434,11 @@ public class Mesero extends javax.swing.JFrame {
         btnRealizarPedidoMesa7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnRealizarPedidoMesa7.setForeground(new java.awt.Color(0, 0, 0));
         btnRealizarPedidoMesa7.setText("Realizar pedido");
+        btnRealizarPedidoMesa7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRealizarPedidoMesa7ActionPerformed(evt);
+            }
+        });
         panelMesa7.add(btnRealizarPedidoMesa7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 130, 40));
 
         listaPedidosMesa7.setModel(new javax.swing.AbstractListModel<String>() {
@@ -1480,6 +1538,11 @@ public class Mesero extends javax.swing.JFrame {
         btnRealizarPedidoMesa8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnRealizarPedidoMesa8.setForeground(new java.awt.Color(0, 0, 0));
         btnRealizarPedidoMesa8.setText("Realizar pedido");
+        btnRealizarPedidoMesa8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRealizarPedidoMesa8ActionPerformed(evt);
+            }
+        });
         panelMesa8.add(btnRealizarPedidoMesa8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 130, 40));
 
         listaPedidosMesa8.setModel(new javax.swing.AbstractListModel<String>() {
@@ -1579,6 +1642,11 @@ public class Mesero extends javax.swing.JFrame {
         btnRealizarPedidoMesa9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnRealizarPedidoMesa9.setForeground(new java.awt.Color(0, 0, 0));
         btnRealizarPedidoMesa9.setText("Realizar pedido");
+        btnRealizarPedidoMesa9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRealizarPedidoMesa9ActionPerformed(evt);
+            }
+        });
         panelMesa9.add(btnRealizarPedidoMesa9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 130, 40));
 
         listaPedidosMesa9.setModel(new javax.swing.AbstractListModel<String>() {
@@ -1678,6 +1746,11 @@ public class Mesero extends javax.swing.JFrame {
         btnRealizarPedidoMesa10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnRealizarPedidoMesa10.setForeground(new java.awt.Color(0, 0, 0));
         btnRealizarPedidoMesa10.setText("Realizar pedido");
+        btnRealizarPedidoMesa10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRealizarPedidoMesa10ActionPerformed(evt);
+            }
+        });
         panelMesa10.add(btnRealizarPedidoMesa10, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 130, 40));
 
         listaPedidosMesa10.setModel(new javax.swing.AbstractListModel<String>() {
@@ -1777,6 +1850,11 @@ public class Mesero extends javax.swing.JFrame {
         btnRealizarPedidoMesa11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnRealizarPedidoMesa11.setForeground(new java.awt.Color(0, 0, 0));
         btnRealizarPedidoMesa11.setText("Realizar pedido");
+        btnRealizarPedidoMesa11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRealizarPedidoMesa11ActionPerformed(evt);
+            }
+        });
         panelMesa11.add(btnRealizarPedidoMesa11, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 130, 40));
 
         listaPedidosMesa11.setModel(new javax.swing.AbstractListModel<String>() {
@@ -1876,6 +1954,11 @@ public class Mesero extends javax.swing.JFrame {
         btnRealizarPedidoMesa12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnRealizarPedidoMesa12.setForeground(new java.awt.Color(0, 0, 0));
         btnRealizarPedidoMesa12.setText("Realizar pedido");
+        btnRealizarPedidoMesa12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRealizarPedidoMesa12ActionPerformed(evt);
+            }
+        });
         panelMesa12.add(btnRealizarPedidoMesa12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 130, 40));
 
         listaPedidosMesa12.setModel(new javax.swing.AbstractListModel<String>() {
@@ -3048,7 +3131,6 @@ public class Mesero extends javax.swing.JFrame {
                 actualizarListaProductosDelPedidoMesa1();
                 cargarProductosEnLista1();
 
-                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
@@ -3101,7 +3183,6 @@ public class Mesero extends javax.swing.JFrame {
                 actualizarListaProductosDelPedidoMesa2();
                 cargarProductosEnLista2();
 
-                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
@@ -3152,7 +3233,6 @@ public class Mesero extends javax.swing.JFrame {
                 actualizarListaProductosDelPedidoMesa3();
                 cargarProductosEnLista3();
 
-                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
@@ -3203,7 +3283,6 @@ public class Mesero extends javax.swing.JFrame {
                 actualizarListaProductosDelPedidoMesa4();
                 cargarProductosEnLista4();
 
-                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
@@ -3254,7 +3333,6 @@ public class Mesero extends javax.swing.JFrame {
                 actualizarListaProductosDelPedidoMesa5();
                 cargarProductosEnLista5();
 
-                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
@@ -3305,7 +3383,6 @@ public class Mesero extends javax.swing.JFrame {
                 actualizarListaProductosDelPedidoMesa6();
                 cargarProductosEnLista6();
 
-                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
@@ -3356,7 +3433,6 @@ public class Mesero extends javax.swing.JFrame {
                 actualizarListaProductosDelPedidoMesa7();
                 cargarProductosEnLista7();
 
-                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
@@ -3407,7 +3483,6 @@ public class Mesero extends javax.swing.JFrame {
                 actualizarListaProductosDelPedidoMesa8();
                 cargarProductosEnLista8();
 
-                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
@@ -3458,7 +3533,6 @@ public class Mesero extends javax.swing.JFrame {
                 actualizarListaProductosDelPedidoMesa9();
                 cargarProductosEnLista9();
 
-                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
@@ -3508,8 +3582,7 @@ public class Mesero extends javax.swing.JFrame {
 
                 actualizarListaProductosDelPedidoMesa10();
                 cargarProductosEnLista10();
-
-                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
@@ -3560,7 +3633,6 @@ public class Mesero extends javax.swing.JFrame {
                 actualizarListaProductosDelPedidoMesa11();
                 cargarProductosEnLista11();
 
-                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
@@ -3611,7 +3683,6 @@ public class Mesero extends javax.swing.JFrame {
                 actualizarListaProductosDelPedidoMesa12();
                 cargarProductosEnLista12();
 
-                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
@@ -3619,8 +3690,532 @@ public class Mesero extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa12ActionPerformed
+
+    private void realizarPedidoMesa1() {
+
+        if (!pedidoMesa1.getListaProductos().isEmpty()) {
+
+            Object[] opciones = {"Para mesa", "Para llevar"};
+            int seleccion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Este pedido es para mesa o para llevar?",
+                    "Confirmar tipo de pedido",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[0]
+            );
+
+
+            if (seleccion == JOptionPane.YES_OPTION) { 
+                pedidosMesa1.add(pedidoMesa1);
+                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa1.setBackground(Color.red);
+            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                pedidosMesa1Llevar.add(pedidoMesa1);
+                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa1.setBackground(Color.red);
+            } else {
+                
+                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+           
+            pedidoMesa1 = new Pedido(); 
+            actualizarListaProductosDelPedidoMesa1(); 
+
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+
+    private void realizarPedidoMesa2() {
+
+        if (!pedidoMesa2.getListaProductos().isEmpty()) {
+
+            Object[] opciones = {"Para mesa", "Para llevar"};
+            int seleccion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Este pedido es para mesa o para llevar?",
+                    "Confirmar tipo de pedido",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[0]
+            );
+
+
+            if (seleccion == JOptionPane.YES_OPTION) { 
+                pedidosMesa2.add(pedidoMesa2);
+                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa2.setBackground(Color.red);
+            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                pedidosMesa2Llevar.add(pedidoMesa2);
+                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa2.setBackground(Color.red);
+            } else {
+                
+                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+           
+            pedidoMesa2 = new Pedido(); 
+            actualizarListaProductosDelPedidoMesa2(); 
+
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }
     
+    private void realizarPedidoMesa3() {
+
+        if (!pedidoMesa3.getListaProductos().isEmpty()) {
+
+            Object[] opciones = {"Para mesa", "Para llevar"};
+            int seleccion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Este pedido es para mesa o para llevar?",
+                    "Confirmar tipo de pedido",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[0]
+            );
+
+
+            if (seleccion == JOptionPane.YES_OPTION) { 
+                pedidosMesa3.add(pedidoMesa3);
+                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa3.setBackground(Color.red);
+            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                pedidosMesa3Llevar.add(pedidoMesa3);
+                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa3.setBackground(Color.red);
+            } else {
+                
+                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+           
+            pedidoMesa3 = new Pedido(); 
+            actualizarListaProductosDelPedidoMesa3(); 
+
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }
     
+    private void realizarPedidoMesa4() {
+
+        if (!pedidoMesa4.getListaProductos().isEmpty()) {
+
+            Object[] opciones = {"Para mesa", "Para llevar"};
+            int seleccion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Este pedido es para mesa o para llevar?",
+                    "Confirmar tipo de pedido",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[0]
+            );
+
+
+            if (seleccion == JOptionPane.YES_OPTION) { 
+                pedidosMesa4.add(pedidoMesa4);
+                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa4.setBackground(Color.red);
+            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                pedidosMesa4Llevar.add(pedidoMesa4);
+                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa4.setBackground(Color.red);
+            } else {
+                
+                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+           
+            pedidoMesa4 = new Pedido(); 
+            actualizarListaProductosDelPedidoMesa4(); 
+
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+    
+    private void realizarPedidoMesa5() {
+
+        if (!pedidoMesa5.getListaProductos().isEmpty()) {
+
+            Object[] opciones = {"Para mesa", "Para llevar"};
+            int seleccion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Este pedido es para mesa o para llevar?",
+                    "Confirmar tipo de pedido",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[0]
+            );
+
+
+            if (seleccion == JOptionPane.YES_OPTION) { 
+                pedidosMesa5.add(pedidoMesa5);
+                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa5.setBackground(Color.red);
+            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                pedidosMesa5Llevar.add(pedidoMesa5);
+                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa5.setBackground(Color.red);
+            } else {
+                
+                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+           
+            pedidoMesa5 = new Pedido(); 
+            actualizarListaProductosDelPedidoMesa5(); 
+
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+    
+    private void realizarPedidoMesa6() {
+
+        if (!pedidoMesa6.getListaProductos().isEmpty()) {
+
+            Object[] opciones = {"Para mesa", "Para llevar"};
+            int seleccion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Este pedido es para mesa o para llevar?",
+                    "Confirmar tipo de pedido",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[0]
+            );
+
+
+            if (seleccion == JOptionPane.YES_OPTION) { 
+                pedidosMesa6.add(pedidoMesa6);
+                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa6.setBackground(Color.red);
+            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                pedidosMesa6Llevar.add(pedidoMesa6);
+                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa6.setBackground(Color.red);
+            } else {
+                
+                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+           
+            pedidoMesa6 = new Pedido(); 
+            actualizarListaProductosDelPedidoMesa6(); 
+
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+    
+    private void realizarPedidoMesa7() {
+
+        if (!pedidoMesa7.getListaProductos().isEmpty()) {
+
+            Object[] opciones = {"Para mesa", "Para llevar"};
+            int seleccion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Este pedido es para mesa o para llevar?",
+                    "Confirmar tipo de pedido",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[0]
+            );
+
+
+            if (seleccion == JOptionPane.YES_OPTION) { 
+                pedidosMesa7.add(pedidoMesa7);
+                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa7.setBackground(Color.red);
+            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                pedidosMesa7Llevar.add(pedidoMesa7);
+                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa7.setBackground(Color.red);
+            } else {
+                
+                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+           
+            pedidoMesa7 = new Pedido(); 
+            actualizarListaProductosDelPedidoMesa7(); 
+
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+    
+    private void realizarPedidoMesa8() {
+
+        if (!pedidoMesa8.getListaProductos().isEmpty()) {
+
+            Object[] opciones = {"Para mesa", "Para llevar"};
+            int seleccion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Este pedido es para mesa o para llevar?",
+                    "Confirmar tipo de pedido",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[0]
+            );
+
+
+            if (seleccion == JOptionPane.YES_OPTION) { 
+                pedidosMesa8.add(pedidoMesa8);
+                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa8.setBackground(Color.red);
+            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                pedidosMesa8Llevar.add(pedidoMesa8);
+                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa8.setBackground(Color.red);
+            } else {
+                
+                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+           
+            pedidoMesa8 = new Pedido(); 
+            actualizarListaProductosDelPedidoMesa8(); 
+
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+    
+    private void realizarPedidoMesa9() {
+
+        if (!pedidoMesa9.getListaProductos().isEmpty()) {
+
+            Object[] opciones = {"Para mesa", "Para llevar"};
+            int seleccion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Este pedido es para mesa o para llevar?",
+                    "Confirmar tipo de pedido",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[0]
+            );
+
+
+            if (seleccion == JOptionPane.YES_OPTION) { 
+                pedidosMesa9.add(pedidoMesa9);
+                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa9.setBackground(Color.red);
+            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                pedidosMesa9Llevar.add(pedidoMesa9);
+                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa9.setBackground(Color.red);
+            } else {
+                
+                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+           
+            pedidoMesa9 = new Pedido(); 
+            actualizarListaProductosDelPedidoMesa9(); 
+
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+    
+    private void realizarPedidoMesa10() {
+
+        if (!pedidoMesa10.getListaProductos().isEmpty()) {
+
+            Object[] opciones = {"Para mesa", "Para llevar"};
+            int seleccion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Este pedido es para mesa o para llevar?",
+                    "Confirmar tipo de pedido",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[0]
+            );
+
+
+            if (seleccion == JOptionPane.YES_OPTION) { 
+                pedidosMesa10.add(pedidoMesa10);
+                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa10.setBackground(Color.red);
+            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                pedidosMesa10Llevar.add(pedidoMesa10);
+                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa10.setBackground(Color.red);
+            } else {
+                
+                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            
+            pedidoMesa10 = new Pedido(); 
+            actualizarListaProductosDelPedidoMesa10(); 
+
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+    
+    private void realizarPedidoMesa11() {
+
+        if (!pedidoMesa11.getListaProductos().isEmpty()) {
+
+            Object[] opciones = {"Para mesa", "Para llevar"};
+            int seleccion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Este pedido es para mesa o para llevar?",
+                    "Confirmar tipo de pedido",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[0]
+            );
+
+
+            if (seleccion == JOptionPane.YES_OPTION) { 
+                pedidosMesa11.add(pedidoMesa11);
+                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa11.setBackground(Color.red);
+            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                pedidosMesa11Llevar.add(pedidoMesa11);
+                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa11.setBackground(Color.red);
+            } else {
+                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+           
+            pedidoMesa11 = new Pedido(); 
+            actualizarListaProductosDelPedidoMesa11(); 
+
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+    
+    private void realizarPedidoMesa12() {
+
+        if (!pedidoMesa12.getListaProductos().isEmpty()) {
+
+            Object[] opciones = {"Para mesa", "Para llevar"};
+            int seleccion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Este pedido es para mesa o para llevar?",
+                    "Confirmar tipo de pedido",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[0]
+            );
+
+
+            if (seleccion == JOptionPane.YES_OPTION) { 
+                pedidosMesa12.add(pedidoMesa12);
+                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa12.setBackground(Color.red);
+            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                pedidosMesa12Llevar.add(pedidoMesa12);
+                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa12.setBackground(Color.red);
+            } else {
+                
+                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+           
+            pedidoMesa12 = new Pedido(); 
+            actualizarListaProductosDelPedidoMesa12(); 
+
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+    
+    private void btnRealizarPedidoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa1ActionPerformed
+        realizarPedidoMesa1();
+    }//GEN-LAST:event_btnRealizarPedidoMesa1ActionPerformed
+
+    private void btnRealizarPedidoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa2ActionPerformed
+        realizarPedidoMesa2();
+    }//GEN-LAST:event_btnRealizarPedidoMesa2ActionPerformed
+
+    private void btnRealizarPedidoMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa3ActionPerformed
+        realizarPedidoMesa3();
+    }//GEN-LAST:event_btnRealizarPedidoMesa3ActionPerformed
+
+    private void btnRealizarPedidoMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa4ActionPerformed
+        realizarPedidoMesa4();
+    }//GEN-LAST:event_btnRealizarPedidoMesa4ActionPerformed
+
+    private void btnRealizarPedidoMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa5ActionPerformed
+        realizarPedidoMesa5();
+    }//GEN-LAST:event_btnRealizarPedidoMesa5ActionPerformed
+
+    private void btnRealizarPedidoMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa6ActionPerformed
+        realizarPedidoMesa6();
+    }//GEN-LAST:event_btnRealizarPedidoMesa6ActionPerformed
+
+    private void btnRealizarPedidoMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa7ActionPerformed
+        realizarPedidoMesa7();
+    }//GEN-LAST:event_btnRealizarPedidoMesa7ActionPerformed
+
+    private void btnRealizarPedidoMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa8ActionPerformed
+        realizarPedidoMesa8();
+    }//GEN-LAST:event_btnRealizarPedidoMesa8ActionPerformed
+
+    private void btnRealizarPedidoMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa9ActionPerformed
+        realizarPedidoMesa9();
+    }//GEN-LAST:event_btnRealizarPedidoMesa9ActionPerformed
+
+    private void btnRealizarPedidoMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa10ActionPerformed
+        realizarPedidoMesa10();
+    }//GEN-LAST:event_btnRealizarPedidoMesa10ActionPerformed
+
+    private void btnRealizarPedidoMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa11ActionPerformed
+        realizarPedidoMesa11();
+    }//GEN-LAST:event_btnRealizarPedidoMesa11ActionPerformed
+
+    private void btnRealizarPedidoMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa12ActionPerformed
+        realizarPedidoMesa12();
+    }//GEN-LAST:event_btnRealizarPedidoMesa12ActionPerformed
     
     private void actualizarListaProductosDelPedidoMesa1() {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
