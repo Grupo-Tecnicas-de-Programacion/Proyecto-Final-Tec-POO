@@ -8,13 +8,15 @@ import java.io.File;
 import java.io.FileReader;
 import javax.swing.JFileChooser;
 import clases.Mesa;
+import clases.Pedido;
+import clases.Producto;
 import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
-import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 
 /**
@@ -26,6 +28,20 @@ public class Mesero extends javax.swing.JFrame {
     private File archivoSeleccionado;
     private ArrayList<Mesa> mesas = new ArrayList<>();
     private JButton[] botonMesas = new JButton[12];
+    private ArrayList<Producto> productos = new ArrayList<>();
+    private File archivoSeleccionadoProductos;
+    private Pedido pedidoMesa1 = new Pedido();
+    private Pedido pedidoMesa2 = new Pedido();
+    private Pedido pedidoMesa3 = new Pedido();
+    private Pedido pedidoMesa4 = new Pedido();
+    private Pedido pedidoMesa5 = new Pedido();
+    private Pedido pedidoMesa6 = new Pedido();
+    private Pedido pedidoMesa7 = new Pedido();
+    private Pedido pedidoMesa8 = new Pedido();
+    private Pedido pedidoMesa9 = new Pedido();
+    private Pedido pedidoMesa10 = new Pedido();
+    private Pedido pedidoMesa11 = new Pedido();
+    private Pedido pedidoMesa12 = new Pedido();
     
     public Mesero() {
         initComponents();
@@ -107,6 +123,7 @@ public class Mesero extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         mDisponible = new javax.swing.JButton();
         mOcupada = new javax.swing.JButton();
+        mNoDisponible = new javax.swing.JButton();
         jPanelMostrarMesa = new javax.swing.JPanel();
         panelMesa1 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
@@ -143,6 +160,7 @@ public class Mesero extends javax.swing.JFrame {
         btnBorrarProductoPedidoMesa2 = new javax.swing.JButton();
         btnTotalCuentaMesa2 = new javax.swing.JButton();
         btnGenerarReciboMesa2 = new javax.swing.JButton();
+        btnVerInfoMesa2 = new javax.swing.JButton();
         panelMesa3 = new javax.swing.JPanel();
         jLabel92 = new javax.swing.JLabel();
         jLabel93 = new javax.swing.JLabel();
@@ -160,6 +178,7 @@ public class Mesero extends javax.swing.JFrame {
         btnBorrarProductoPedidoMesa3 = new javax.swing.JButton();
         btnTotalCuentaMesa3 = new javax.swing.JButton();
         btnGenerarReciboMesa3 = new javax.swing.JButton();
+        btnVerInfoMesa3 = new javax.swing.JButton();
         panelMesa4 = new javax.swing.JPanel();
         jLabel96 = new javax.swing.JLabel();
         jLabel97 = new javax.swing.JLabel();
@@ -177,6 +196,7 @@ public class Mesero extends javax.swing.JFrame {
         btnBorrarProductoPedidoMesa4 = new javax.swing.JButton();
         btnTotalCuentaMesa4 = new javax.swing.JButton();
         btnGenerarReciboMesa4 = new javax.swing.JButton();
+        btnVerInfoMesa4 = new javax.swing.JButton();
         panelMesa5 = new javax.swing.JPanel();
         jLabel112 = new javax.swing.JLabel();
         jLabel113 = new javax.swing.JLabel();
@@ -194,6 +214,7 @@ public class Mesero extends javax.swing.JFrame {
         btnBorrarProductoPedidoMesa5 = new javax.swing.JButton();
         btnTotalCuentaMesa5 = new javax.swing.JButton();
         btnGenerarReciboMesa5 = new javax.swing.JButton();
+        btnVerInfoMesa5 = new javax.swing.JButton();
         panelMesa6 = new javax.swing.JPanel();
         jLabel116 = new javax.swing.JLabel();
         jLabel117 = new javax.swing.JLabel();
@@ -211,6 +232,7 @@ public class Mesero extends javax.swing.JFrame {
         btnBorrarProductoPedidoMesa6 = new javax.swing.JButton();
         btnTotalCuentaMesa6 = new javax.swing.JButton();
         btnGenerarReciboMesa6 = new javax.swing.JButton();
+        btnVerInfoMesa6 = new javax.swing.JButton();
         panelMesa7 = new javax.swing.JPanel();
         jLabel120 = new javax.swing.JLabel();
         jLabel121 = new javax.swing.JLabel();
@@ -228,16 +250,17 @@ public class Mesero extends javax.swing.JFrame {
         btnBorrarProductoPedidoMesa7 = new javax.swing.JButton();
         btnTotalCuentaMesa7 = new javax.swing.JButton();
         btnGenerarReciboMesa7 = new javax.swing.JButton();
+        btnVerInfoMesa7 = new javax.swing.JButton();
         panelMesa8 = new javax.swing.JPanel();
         jLabel124 = new javax.swing.JLabel();
         jLabel125 = new javax.swing.JLabel();
         jLabel126 = new javax.swing.JLabel();
         jScrollPane37 = new javax.swing.JScrollPane();
-        productosPedidoMesa18 = new javax.swing.JList<>();
+        productosPedidoMesa8 = new javax.swing.JList<>();
         btnAgregarProductoPedidoMesa8 = new javax.swing.JButton();
         btnRealizarPedidoMesa8 = new javax.swing.JButton();
         jScrollPane38 = new javax.swing.JScrollPane();
-        listaPedidosMesa18 = new javax.swing.JList<>();
+        listaPedidosMesa8 = new javax.swing.JList<>();
         jLabel127 = new javax.swing.JLabel();
         txtCantidadPersonasMesa8 = new javax.swing.JTextField();
         btnVerPedidosMesa8 = new javax.swing.JButton();
@@ -245,6 +268,7 @@ public class Mesero extends javax.swing.JFrame {
         btnBorrarProductoPedidoMesa8 = new javax.swing.JButton();
         btnTotalCuentaMesa8 = new javax.swing.JButton();
         btnGenerarReciboMesa8 = new javax.swing.JButton();
+        btnVerInfoMesa8 = new javax.swing.JButton();
         panelMesa9 = new javax.swing.JPanel();
         jLabel128 = new javax.swing.JLabel();
         jLabel129 = new javax.swing.JLabel();
@@ -262,6 +286,7 @@ public class Mesero extends javax.swing.JFrame {
         btnBorrarProductoPedidoMesa9 = new javax.swing.JButton();
         btnTotalCuentaMesa9 = new javax.swing.JButton();
         btnGenerarReciboMesa9 = new javax.swing.JButton();
+        btnVerInfoMesa9 = new javax.swing.JButton();
         panelMesa10 = new javax.swing.JPanel();
         jLabel132 = new javax.swing.JLabel();
         jLabel133 = new javax.swing.JLabel();
@@ -279,6 +304,7 @@ public class Mesero extends javax.swing.JFrame {
         btnBorrarProductoPedidoMesa10 = new javax.swing.JButton();
         btnTotalCuentaMesa10 = new javax.swing.JButton();
         btnGenerarReciboMesa10 = new javax.swing.JButton();
+        btnVerInfoMesa10 = new javax.swing.JButton();
         panelMesa11 = new javax.swing.JPanel();
         jLabel136 = new javax.swing.JLabel();
         jLabel137 = new javax.swing.JLabel();
@@ -296,6 +322,7 @@ public class Mesero extends javax.swing.JFrame {
         btnBorrarProductoPedidoMesa11 = new javax.swing.JButton();
         btnTotalCuentaMesa11 = new javax.swing.JButton();
         btnGenerarReciboMesa11 = new javax.swing.JButton();
+        btnVerInfoMesa11 = new javax.swing.JButton();
         panelMesa12 = new javax.swing.JPanel();
         jLabel140 = new javax.swing.JLabel();
         jLabel141 = new javax.swing.JLabel();
@@ -313,6 +340,8 @@ public class Mesero extends javax.swing.JFrame {
         btnBorrarProductoPedidoMesa12 = new javax.swing.JButton();
         btnTotalCuentaMesa12 = new javax.swing.JButton();
         btnGenerarReciboMesa12 = new javax.swing.JButton();
+        btnVerInfoMesa12 = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
         panelAgreProducto = new javax.swing.JPanel();
         jLabel98 = new javax.swing.JLabel();
         jLabel99 = new javax.swing.JLabel();
@@ -492,6 +521,7 @@ public class Mesero extends javax.swing.JFrame {
         btnCargarProductos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCargarProductos.setForeground(new java.awt.Color(0, 0, 0));
         btnCargarProductos.setText("Cargar lista productos");
+        btnCargarProductos.setEnabled(false);
         btnCargarProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCargarProductosActionPerformed(evt);
@@ -519,6 +549,11 @@ public class Mesero extends javax.swing.JFrame {
         btnBuscarRutaProductos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBuscarRutaProductos.setForeground(new java.awt.Color(0, 0, 0));
         btnBuscarRutaProductos.setText("Buscar archivo");
+        btnBuscarRutaProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarRutaProductosActionPerformed(evt);
+            }
+        });
         panelCargarProductos.add(btnBuscarRutaProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, 140, 60));
 
         jLabel26.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
@@ -689,20 +724,25 @@ public class Mesero extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Ocupada");
-        panelGestionarMesas.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 395, 59, -1));
+        panelGestionarMesas.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 59, 40));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("Disponible");
-        panelGestionarMesas.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 395, 59, -1));
+        jLabel11.setText("No disponible");
+        panelGestionarMesas.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 80, 20));
 
         mDisponible.setBackground(new java.awt.Color(51, 255, 0));
         mDisponible.setForeground(new java.awt.Color(0, 255, 0));
-        panelGestionarMesas.add(mDisponible, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 388, 27, 23));
+        panelGestionarMesas.add(mDisponible, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 27, 23));
 
         mOcupada.setBackground(new java.awt.Color(153, 0, 0));
         mOcupada.setForeground(new java.awt.Color(153, 0, 0));
-        panelGestionarMesas.add(mOcupada, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 388, 27, 23));
+        panelGestionarMesas.add(mOcupada, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 27, 23));
+
+        mNoDisponible.setBackground(new java.awt.Color(204, 204, 204));
+        mNoDisponible.setForeground(new java.awt.Color(204, 204, 204));
+        mNoDisponible.setEnabled(false);
+        panelGestionarMesas.add(mNoDisponible, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 27, 23));
 
         jPanelMostrarMesa.setLayout(new java.awt.CardLayout());
 
@@ -737,6 +777,11 @@ public class Mesero extends javax.swing.JFrame {
         btnAgregarProductoPedidoMesa1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnAgregarProductoPedidoMesa1.setForeground(new java.awt.Color(0, 0, 0));
         btnAgregarProductoPedidoMesa1.setText("Agregar producto al pedido");
+        btnAgregarProductoPedidoMesa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProductoPedidoMesa1ActionPerformed(evt);
+            }
+        });
         panelMesa1.add(btnAgregarProductoPedidoMesa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 200, 40));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -830,6 +875,11 @@ public class Mesero extends javax.swing.JFrame {
         btnAgregarProductoPedidoMesa2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnAgregarProductoPedidoMesa2.setForeground(new java.awt.Color(0, 0, 0));
         btnAgregarProductoPedidoMesa2.setText("Agregar producto al pedido");
+        btnAgregarProductoPedidoMesa2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProductoPedidoMesa2ActionPerformed(evt);
+            }
+        });
         panelMesa2.add(btnAgregarProductoPedidoMesa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 200, 40));
 
         btnRealizarPedidoMesa2.setBackground(new java.awt.Color(255, 255, 255));
@@ -883,6 +933,15 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa2.setText("Generar recibo");
         panelMesa2.add(btnGenerarReciboMesa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 120, 40));
 
+        btnVerInfoMesa2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnVerInfoMesa2.setText("Información mesa");
+        btnVerInfoMesa2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerInfoMesa2ActionPerformed(evt);
+            }
+        });
+        panelMesa2.add(btnVerInfoMesa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 140, 30));
+
         jPanelMostrarMesa.add(panelMesa2, "card3");
 
         panelMesa3.setBackground(new java.awt.Color(153, 153, 153));
@@ -915,6 +974,11 @@ public class Mesero extends javax.swing.JFrame {
         btnAgregarProductoPedidoMesa3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnAgregarProductoPedidoMesa3.setForeground(new java.awt.Color(0, 0, 0));
         btnAgregarProductoPedidoMesa3.setText("Agregar producto al pedido");
+        btnAgregarProductoPedidoMesa3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProductoPedidoMesa3ActionPerformed(evt);
+            }
+        });
         panelMesa3.add(btnAgregarProductoPedidoMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 200, 40));
 
         btnRealizarPedidoMesa3.setBackground(new java.awt.Color(255, 255, 255));
@@ -968,6 +1032,15 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa3.setText("Generar recibo");
         panelMesa3.add(btnGenerarReciboMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 120, 40));
 
+        btnVerInfoMesa3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnVerInfoMesa3.setText("Información mesa");
+        btnVerInfoMesa3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerInfoMesa3ActionPerformed(evt);
+            }
+        });
+        panelMesa3.add(btnVerInfoMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 140, 30));
+
         jPanelMostrarMesa.add(panelMesa3, "card4");
 
         panelMesa4.setBackground(new java.awt.Color(153, 153, 153));
@@ -1000,6 +1073,11 @@ public class Mesero extends javax.swing.JFrame {
         btnAgregarProductoPedidoMesa4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnAgregarProductoPedidoMesa4.setForeground(new java.awt.Color(0, 0, 0));
         btnAgregarProductoPedidoMesa4.setText("Agregar producto al pedido");
+        btnAgregarProductoPedidoMesa4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProductoPedidoMesa4ActionPerformed(evt);
+            }
+        });
         panelMesa4.add(btnAgregarProductoPedidoMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 200, 40));
 
         btnRealizarPedidoMesa4.setBackground(new java.awt.Color(255, 255, 255));
@@ -1053,6 +1131,15 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa4.setText("Generar recibo");
         panelMesa4.add(btnGenerarReciboMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 120, 40));
 
+        btnVerInfoMesa4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnVerInfoMesa4.setText("Información mesa");
+        btnVerInfoMesa4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerInfoMesa4ActionPerformed(evt);
+            }
+        });
+        panelMesa4.add(btnVerInfoMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 140, 30));
+
         jPanelMostrarMesa.add(panelMesa4, "card5");
 
         panelMesa5.setBackground(new java.awt.Color(153, 153, 153));
@@ -1085,6 +1172,11 @@ public class Mesero extends javax.swing.JFrame {
         btnAgregarProductoPedidoMesa5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnAgregarProductoPedidoMesa5.setForeground(new java.awt.Color(0, 0, 0));
         btnAgregarProductoPedidoMesa5.setText("Agregar producto al pedido");
+        btnAgregarProductoPedidoMesa5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProductoPedidoMesa5ActionPerformed(evt);
+            }
+        });
         panelMesa5.add(btnAgregarProductoPedidoMesa5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 200, 40));
 
         btnRealizarPedidoMesa5.setBackground(new java.awt.Color(255, 255, 255));
@@ -1138,6 +1230,15 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa5.setText("Generar recibo");
         panelMesa5.add(btnGenerarReciboMesa5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 120, 40));
 
+        btnVerInfoMesa5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnVerInfoMesa5.setText("Información mesa");
+        btnVerInfoMesa5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerInfoMesa5ActionPerformed(evt);
+            }
+        });
+        panelMesa5.add(btnVerInfoMesa5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 140, 30));
+
         jPanelMostrarMesa.add(panelMesa5, "card6");
 
         panelMesa6.setBackground(new java.awt.Color(153, 153, 153));
@@ -1170,6 +1271,11 @@ public class Mesero extends javax.swing.JFrame {
         btnAgregarProductoPedidoMesa6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnAgregarProductoPedidoMesa6.setForeground(new java.awt.Color(0, 0, 0));
         btnAgregarProductoPedidoMesa6.setText("Agregar producto al pedido");
+        btnAgregarProductoPedidoMesa6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProductoPedidoMesa6ActionPerformed(evt);
+            }
+        });
         panelMesa6.add(btnAgregarProductoPedidoMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 200, 40));
 
         btnRealizarPedidoMesa6.setBackground(new java.awt.Color(255, 255, 255));
@@ -1223,6 +1329,15 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa6.setText("Generar recibo");
         panelMesa6.add(btnGenerarReciboMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 120, 40));
 
+        btnVerInfoMesa6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnVerInfoMesa6.setText("Información mesa");
+        btnVerInfoMesa6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerInfoMesa6ActionPerformed(evt);
+            }
+        });
+        panelMesa6.add(btnVerInfoMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 140, 30));
+
         jPanelMostrarMesa.add(panelMesa6, "card7");
 
         panelMesa7.setBackground(new java.awt.Color(153, 153, 153));
@@ -1255,6 +1370,11 @@ public class Mesero extends javax.swing.JFrame {
         btnAgregarProductoPedidoMesa7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnAgregarProductoPedidoMesa7.setForeground(new java.awt.Color(0, 0, 0));
         btnAgregarProductoPedidoMesa7.setText("Agregar producto al pedido");
+        btnAgregarProductoPedidoMesa7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProductoPedidoMesa7ActionPerformed(evt);
+            }
+        });
         panelMesa7.add(btnAgregarProductoPedidoMesa7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 200, 40));
 
         btnRealizarPedidoMesa7.setBackground(new java.awt.Color(255, 255, 255));
@@ -1308,6 +1428,15 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa7.setText("Generar recibo");
         panelMesa7.add(btnGenerarReciboMesa7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 120, 40));
 
+        btnVerInfoMesa7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnVerInfoMesa7.setText("Información mesa");
+        btnVerInfoMesa7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerInfoMesa7ActionPerformed(evt);
+            }
+        });
+        panelMesa7.add(btnVerInfoMesa7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 140, 30));
+
         jPanelMostrarMesa.add(panelMesa7, "card8");
 
         panelMesa8.setBackground(new java.awt.Color(153, 153, 153));
@@ -1327,12 +1456,12 @@ public class Mesero extends javax.swing.JFrame {
         jLabel126.setText("Productos de la carta");
         panelMesa8.add(jLabel126, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 159, -1));
 
-        productosPedidoMesa18.setModel(new javax.swing.AbstractListModel<String>() {
+        productosPedidoMesa8.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane37.setViewportView(productosPedidoMesa18);
+        jScrollPane37.setViewportView(productosPedidoMesa8);
 
         panelMesa8.add(jScrollPane37, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 151, 170));
 
@@ -1340,6 +1469,11 @@ public class Mesero extends javax.swing.JFrame {
         btnAgregarProductoPedidoMesa8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnAgregarProductoPedidoMesa8.setForeground(new java.awt.Color(0, 0, 0));
         btnAgregarProductoPedidoMesa8.setText("Agregar producto al pedido");
+        btnAgregarProductoPedidoMesa8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProductoPedidoMesa8ActionPerformed(evt);
+            }
+        });
         panelMesa8.add(btnAgregarProductoPedidoMesa8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 200, 40));
 
         btnRealizarPedidoMesa8.setBackground(new java.awt.Color(255, 255, 255));
@@ -1348,12 +1482,12 @@ public class Mesero extends javax.swing.JFrame {
         btnRealizarPedidoMesa8.setText("Realizar pedido");
         panelMesa8.add(btnRealizarPedidoMesa8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 130, 40));
 
-        listaPedidosMesa18.setModel(new javax.swing.AbstractListModel<String>() {
+        listaPedidosMesa8.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane38.setViewportView(listaPedidosMesa18);
+        jScrollPane38.setViewportView(listaPedidosMesa8);
 
         panelMesa8.add(jScrollPane38, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 128, 170));
 
@@ -1393,6 +1527,15 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa8.setText("Generar recibo");
         panelMesa8.add(btnGenerarReciboMesa8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 120, 40));
 
+        btnVerInfoMesa8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnVerInfoMesa8.setText("Información mesa");
+        btnVerInfoMesa8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerInfoMesa8ActionPerformed(evt);
+            }
+        });
+        panelMesa8.add(btnVerInfoMesa8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 140, 30));
+
         jPanelMostrarMesa.add(panelMesa8, "card9");
 
         panelMesa9.setBackground(new java.awt.Color(153, 153, 153));
@@ -1425,6 +1568,11 @@ public class Mesero extends javax.swing.JFrame {
         btnAgregarProductoPedidoMesa9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnAgregarProductoPedidoMesa9.setForeground(new java.awt.Color(0, 0, 0));
         btnAgregarProductoPedidoMesa9.setText("Agregar producto al pedido");
+        btnAgregarProductoPedidoMesa9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProductoPedidoMesa9ActionPerformed(evt);
+            }
+        });
         panelMesa9.add(btnAgregarProductoPedidoMesa9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 200, 40));
 
         btnRealizarPedidoMesa9.setBackground(new java.awt.Color(255, 255, 255));
@@ -1478,6 +1626,15 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa9.setText("Generar recibo");
         panelMesa9.add(btnGenerarReciboMesa9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 120, 40));
 
+        btnVerInfoMesa9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnVerInfoMesa9.setText("Información mesa");
+        btnVerInfoMesa9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerInfoMesa9ActionPerformed(evt);
+            }
+        });
+        panelMesa9.add(btnVerInfoMesa9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 140, 30));
+
         jPanelMostrarMesa.add(panelMesa9, "card10");
 
         panelMesa10.setBackground(new java.awt.Color(153, 153, 153));
@@ -1510,6 +1667,11 @@ public class Mesero extends javax.swing.JFrame {
         btnAgregarProductoPedidoMesa10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnAgregarProductoPedidoMesa10.setForeground(new java.awt.Color(0, 0, 0));
         btnAgregarProductoPedidoMesa10.setText("Agregar producto al pedido");
+        btnAgregarProductoPedidoMesa10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProductoPedidoMesa10ActionPerformed(evt);
+            }
+        });
         panelMesa10.add(btnAgregarProductoPedidoMesa10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 200, 40));
 
         btnRealizarPedidoMesa10.setBackground(new java.awt.Color(255, 255, 255));
@@ -1563,6 +1725,15 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa10.setText("Generar recibo");
         panelMesa10.add(btnGenerarReciboMesa10, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 120, 40));
 
+        btnVerInfoMesa10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnVerInfoMesa10.setText("Información mesa");
+        btnVerInfoMesa10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerInfoMesa10ActionPerformed(evt);
+            }
+        });
+        panelMesa10.add(btnVerInfoMesa10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 140, 30));
+
         jPanelMostrarMesa.add(panelMesa10, "card11");
 
         panelMesa11.setBackground(new java.awt.Color(153, 153, 153));
@@ -1595,6 +1766,11 @@ public class Mesero extends javax.swing.JFrame {
         btnAgregarProductoPedidoMesa11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnAgregarProductoPedidoMesa11.setForeground(new java.awt.Color(0, 0, 0));
         btnAgregarProductoPedidoMesa11.setText("Agregar producto al pedido");
+        btnAgregarProductoPedidoMesa11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProductoPedidoMesa11ActionPerformed(evt);
+            }
+        });
         panelMesa11.add(btnAgregarProductoPedidoMesa11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 200, 40));
 
         btnRealizarPedidoMesa11.setBackground(new java.awt.Color(255, 255, 255));
@@ -1648,6 +1824,15 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa11.setText("Generar recibo");
         panelMesa11.add(btnGenerarReciboMesa11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 120, 40));
 
+        btnVerInfoMesa11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnVerInfoMesa11.setText("Información mesa");
+        btnVerInfoMesa11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerInfoMesa11ActionPerformed(evt);
+            }
+        });
+        panelMesa11.add(btnVerInfoMesa11, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 140, 30));
+
         jPanelMostrarMesa.add(panelMesa11, "card12");
 
         panelMesa12.setBackground(new java.awt.Color(153, 153, 153));
@@ -1680,6 +1865,11 @@ public class Mesero extends javax.swing.JFrame {
         btnAgregarProductoPedidoMesa12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnAgregarProductoPedidoMesa12.setForeground(new java.awt.Color(0, 0, 0));
         btnAgregarProductoPedidoMesa12.setText("Agregar producto al pedido");
+        btnAgregarProductoPedidoMesa12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProductoPedidoMesa12ActionPerformed(evt);
+            }
+        });
         panelMesa12.add(btnAgregarProductoPedidoMesa12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 200, 40));
 
         btnRealizarPedidoMesa12.setBackground(new java.awt.Color(255, 255, 255));
@@ -1733,9 +1923,23 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa12.setText("Generar recibo");
         panelMesa12.add(btnGenerarReciboMesa12, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 120, 40));
 
+        btnVerInfoMesa12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnVerInfoMesa12.setText("Información mesa");
+        btnVerInfoMesa12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerInfoMesa12ActionPerformed(evt);
+            }
+        });
+        panelMesa12.add(btnVerInfoMesa12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 140, 30));
+
         jPanelMostrarMesa.add(panelMesa12, "card13");
 
         panelGestionarMesas.add(jPanelMostrarMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 69, 597, 360));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setText("Disponible");
+        panelGestionarMesas.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, 59, 20));
 
         jPanelMostrar.add(panelGestionarMesas, "card5");
 
@@ -2410,61 +2614,79 @@ public class Mesero extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCantidadProductoBuscado2ActionPerformed
 
+    private void mostrarProductosEnMesa(JList<String> listaProductosMesa) {
+        DefaultListModel<String> modeloLista = new DefaultListModel<>();
+        for (Producto producto : productos) {
+            modeloLista.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        listaProductosMesa.setModel(modeloLista);
+    }
+    
     private void showPanel(String panelName) {
         CardLayout layout = (CardLayout) jPanelMostrarMesa.getLayout();
         layout.show(jPanelMostrarMesa, panelName);
         
         
     }
-
-    
     
     private void btnMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa1ActionPerformed
         showPanel("panelMesa1");
+        mostrarProductosEnMesa(productosPedidoMesa1);
     }//GEN-LAST:event_btnMesa1ActionPerformed
 
     private void btnMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa5ActionPerformed
         showPanel("panelMesa5");
+        mostrarProductosEnMesa(productosPedidoMesa5);
     }//GEN-LAST:event_btnMesa5ActionPerformed
 
     private void btnMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa2ActionPerformed
         showPanel("panelMesa2");
+        mostrarProductosEnMesa(productosPedidoMesa2);
     }//GEN-LAST:event_btnMesa2ActionPerformed
 
     private void btnMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa3ActionPerformed
         showPanel("panelMesa3");
+        mostrarProductosEnMesa(productosPedidoMesa3);
     }//GEN-LAST:event_btnMesa3ActionPerformed
 
     private void btnMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa4ActionPerformed
         showPanel("panelMesa4");
+        mostrarProductosEnMesa(productosPedidoMesa4);
     }//GEN-LAST:event_btnMesa4ActionPerformed
 
     private void btnMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa6ActionPerformed
         showPanel("panelMesa6");
+        mostrarProductosEnMesa(productosPedidoMesa6);
     }//GEN-LAST:event_btnMesa6ActionPerformed
 
     private void btnMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa7ActionPerformed
         showPanel("panelMesa7");
+        mostrarProductosEnMesa(productosPedidoMesa7);
     }//GEN-LAST:event_btnMesa7ActionPerformed
 
     private void btnMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa8ActionPerformed
         showPanel("panelMesa8");
+        mostrarProductosEnMesa(productosPedidoMesa8);
     }//GEN-LAST:event_btnMesa8ActionPerformed
 
     private void btnMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa9ActionPerformed
         showPanel("panelMesa9");
+        mostrarProductosEnMesa(productosPedidoMesa9);
     }//GEN-LAST:event_btnMesa9ActionPerformed
 
     private void btnMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa10ActionPerformed
         showPanel("panelMesa10");
+        mostrarProductosEnMesa(productosPedidoMesa10);
     }//GEN-LAST:event_btnMesa10ActionPerformed
 
     private void btnMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa11ActionPerformed
         showPanel("panelMesa11");
+        mostrarProductosEnMesa(productosPedidoMesa11);
     }//GEN-LAST:event_btnMesa11ActionPerformed
 
     private void btnMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa12ActionPerformed
         showPanel("panelMesa12");
+        mostrarProductosEnMesa(productosPedidoMesa12);
     }//GEN-LAST:event_btnMesa12ActionPerformed
 
     private void menItemAgreProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemAgreProductoActionPerformed
@@ -2489,22 +2711,22 @@ public class Mesero extends javax.swing.JFrame {
     }    
     
     private void cargarMesasDesdeArchivo(File file) {
-        mesas.clear(); // Limpiar la lista de mesas antes de cargar nuevas mesas
+        mesas.clear(); 
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String linea;
             while ((linea = br.readLine()) != null) {
                 String[] partes = linea.split(", ");
-                int numeroMesa = Integer.parseInt(partes[0].trim()) - 1; // Restar 1 para índice de array
+                int numeroMesa = Integer.parseInt(partes[0].trim()) - 1; 
                 String estado = partes[1].trim();
                 int capacidad = Integer.parseInt(partes[2].trim());
 
-                // Crear la instancia de Mesa y añadirla a la lista
+                
                 Mesa mesa = new Mesa(numeroMesa + 1, capacidad);
                 mesa.setEstado(estado);
                 mesas.add(mesa);
 
-                // Actualizar el botón de la mesa en base al estado
+               
                 if (numeroMesa >= 0 && numeroMesa < botonMesas.length) {
                     if (estado.equalsIgnoreCase("Disponible")) {
                         botonMesas[numeroMesa].setBackground(Color.GREEN);
@@ -2535,7 +2757,12 @@ public class Mesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCargarMesasActionPerformed
 
     private void btnCargarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarProductosActionPerformed
-        // TODO add your handling code here:
+        if (archivoSeleccionadoProductos != null && validarArchivoProductos(archivoSeleccionadoProductos)) {
+            cargarProductosDesdeArchivo(archivoSeleccionadoProductos);
+            JOptionPane.showMessageDialog(this, "Se cargaron correctamente los productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Archivo no válido o no seleccionado.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnCargarProductosActionPerformed
 
     private void btnBuscarRutaMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarRutaMesasActionPerformed
@@ -2543,18 +2770,17 @@ public class Mesero extends javax.swing.JFrame {
         int result = fileChooser.showOpenDialog(this);
 
         if (result == JFileChooser.APPROVE_OPTION) {
-            archivoSeleccionado = fileChooser.getSelectedFile(); // Guardar el archivo seleccionado
-            txtRutaArchivoMesas.setText(archivoSeleccionado.getAbsolutePath()); // Mostrar la ruta en el campo de texto
+            archivoSeleccionado = fileChooser.getSelectedFile(); 
+            txtRutaArchivoMesas.setText(archivoSeleccionado.getAbsolutePath());
 
-            // Validar el archivo seleccionado
             if (validarArchivo(archivoSeleccionado)) {
                 txtEstadoArchivoMesas.setText("Archivo válido y listo para cargar.");
                 txtEstadoArchivoMesas.setForeground(Color.GREEN);
-                btnCargarMesas.setEnabled(true); // Habilitar el botón de cargar mesas
+                btnCargarMesas.setEnabled(true);
             } else {
                 txtEstadoArchivoMesas.setText("El archivo no es válido.");
                 txtEstadoArchivoMesas.setForeground(Color.RED);
-                btnCargarMesas.setEnabled(false); // Deshabilitar el botón de cargar mesas
+                btnCargarMesas.setEnabled(false); 
             }
         } else {
             JOptionPane.showMessageDialog(this, "No se seleccionó ningún archivo", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -2567,20 +2793,20 @@ public class Mesero extends javax.swing.JFrame {
             while ((linea = br.readLine()) != null) {
                 String[] partes = linea.split(", ");
                 if (partes.length != 3) {
-                    return false; // Formato incorrecto
+                    return false; 
                 }
                 try {
-                    Integer.parseInt(partes[0].trim()); // Número de mesa
-                    partes[1].trim(); // Estado
-                    Integer.parseInt(partes[2].trim()); // Capacidad
+                    Integer.parseInt(partes[0].trim()); 
+                    partes[1].trim(); 
+                    Integer.parseInt(partes[2].trim()); 
                 } catch (NumberFormatException e) {
-                    return false; // Si no es un número válido
+                    return false; 
                 }
             }
         } catch (IOException e) {
-            return false; // Si no se puede leer el archivo
+            return false; 
         }
-        return true; // El archivo es válido
+        return true; 
     }
     
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
@@ -2590,7 +2816,7 @@ public class Mesero extends javax.swing.JFrame {
     
     private void mostrarInformacionMesa(int numeroMesa) {
         // Obtener la mesa correspondiente
-        Mesa mesaSeleccionada = mesas.get(numeroMesa - 1); // Asumiendo que mesas está indexado de 0 a 11
+        Mesa mesaSeleccionada = mesas.get(numeroMesa - 1); 
 
         // Crear el mensaje de información
         String infoMesa = "Número de mesa: " + mesaSeleccionada.getNumeroMesa() + "\n" +
@@ -2605,9 +2831,949 @@ public class Mesero extends javax.swing.JFrame {
         mostrarInformacionMesa(1);
     }//GEN-LAST:event_btnVerInfoMesa1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void btnVerInfoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa2ActionPerformed
+        mostrarInformacionMesa(2);
+    }//GEN-LAST:event_btnVerInfoMesa2ActionPerformed
+
+    private void btnVerInfoMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa3ActionPerformed
+        mostrarInformacionMesa(3);
+    }//GEN-LAST:event_btnVerInfoMesa3ActionPerformed
+
+    private void btnVerInfoMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa4ActionPerformed
+        mostrarInformacionMesa(4);
+    }//GEN-LAST:event_btnVerInfoMesa4ActionPerformed
+
+    private void btnVerInfoMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa5ActionPerformed
+        mostrarInformacionMesa(5);
+    }//GEN-LAST:event_btnVerInfoMesa5ActionPerformed
+
+    private void btnVerInfoMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa6ActionPerformed
+        mostrarInformacionMesa(6);
+    }//GEN-LAST:event_btnVerInfoMesa6ActionPerformed
+
+    private void btnVerInfoMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa7ActionPerformed
+        mostrarInformacionMesa(7);
+    }//GEN-LAST:event_btnVerInfoMesa7ActionPerformed
+
+    private void btnVerInfoMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa8ActionPerformed
+        mostrarInformacionMesa(8);
+    }//GEN-LAST:event_btnVerInfoMesa8ActionPerformed
+
+    private void btnVerInfoMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa9ActionPerformed
+        mostrarInformacionMesa(9);
+    }//GEN-LAST:event_btnVerInfoMesa9ActionPerformed
+
+    private void btnVerInfoMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa10ActionPerformed
+        mostrarInformacionMesa(10);
+    }//GEN-LAST:event_btnVerInfoMesa10ActionPerformed
+
+    private void btnVerInfoMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa11ActionPerformed
+        mostrarInformacionMesa(11);
+    }//GEN-LAST:event_btnVerInfoMesa11ActionPerformed
+
+    private void btnVerInfoMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa12ActionPerformed
+        mostrarInformacionMesa(12);
+    }//GEN-LAST:event_btnVerInfoMesa12ActionPerformed
+
+    private void btnBuscarRutaProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarRutaProductosActionPerformed
+        
+        JFileChooser fileChooser = new JFileChooser();
+        int result = fileChooser.showOpenDialog(this);
+
+        if (result == JFileChooser.APPROVE_OPTION) {
+            archivoSeleccionadoProductos = fileChooser.getSelectedFile();
+            txtRutaArchivoProductos.setText(archivoSeleccionadoProductos.getAbsolutePath());
+
+            if (validarArchivoProductos(archivoSeleccionadoProductos)) {
+                txtEstadoArchivoProductos.setText("Archivo correcto");
+                txtEstadoArchivoProductos.setForeground(Color.GREEN);
+                btnCargarProductos.setEnabled(true); 
+            } else {
+                txtEstadoArchivoProductos.setText("Archivo incorrecto o vacío");
+                txtEstadoArchivoProductos.setForeground(Color.RED);
+                btnCargarProductos.setEnabled(false); 
+            }
+        }
+        
+    }//GEN-LAST:event_btnBuscarRutaProductosActionPerformed
+
+    DefaultListModel<String> modeloProductosMesa1 = new DefaultListModel<>();
+    private void cargarProductosEnLista1() {
+        modeloProductosMesa1.clear();
+        for (Producto producto : productos) {
+            modeloProductosMesa1.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        productosPedidoMesa1.setModel(modeloProductosMesa1);
+    }
+    
+    DefaultListModel<String> modeloProductosMesa2 = new DefaultListModel<>();
+    private void cargarProductosEnLista2() {
+        modeloProductosMesa2.clear();
+        for (Producto producto : productos) {
+            modeloProductosMesa2.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        productosPedidoMesa2.setModel(modeloProductosMesa2);
+    }
+    
+    DefaultListModel<String> modeloProductosMesa3 = new DefaultListModel<>();
+    private void cargarProductosEnLista3() {
+        modeloProductosMesa3.clear();
+        for (Producto producto : productos) {
+            modeloProductosMesa3.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        productosPedidoMesa3.setModel(modeloProductosMesa3);
+    }
+    
+    DefaultListModel<String> modeloProductosMesa4 = new DefaultListModel<>();
+    private void cargarProductosEnLista4() {
+        modeloProductosMesa4.clear();
+        for (Producto producto : productos) {
+            modeloProductosMesa4.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        productosPedidoMesa4.setModel(modeloProductosMesa4);
+    }
+    
+    DefaultListModel<String> modeloProductosMesa5 = new DefaultListModel<>();
+    private void cargarProductosEnLista5() {
+        modeloProductosMesa5.clear();
+        for (Producto producto : productos) {
+            modeloProductosMesa5.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        productosPedidoMesa5.setModel(modeloProductosMesa5);
+    }
+    
+    DefaultListModel<String> modeloProductosMesa6 = new DefaultListModel<>();
+    private void cargarProductosEnLista6() {
+        modeloProductosMesa6.clear();
+        for (Producto producto : productos) {
+            modeloProductosMesa6.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        productosPedidoMesa6.setModel(modeloProductosMesa6);
+    }
+    
+    DefaultListModel<String> modeloProductosMesa7 = new DefaultListModel<>();
+    private void cargarProductosEnLista7() {
+        modeloProductosMesa7.clear();
+        for (Producto producto : productos) {
+            modeloProductosMesa7.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        productosPedidoMesa7.setModel(modeloProductosMesa7);
+    }
+    
+    DefaultListModel<String> modeloProductosMesa8 = new DefaultListModel<>();
+    private void cargarProductosEnLista8() {
+        modeloProductosMesa8.clear();
+        for (Producto producto : productos) {
+            modeloProductosMesa8.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        productosPedidoMesa8.setModel(modeloProductosMesa8);
+    }
+    
+    DefaultListModel<String> modeloProductosMesa9 = new DefaultListModel<>();
+    private void cargarProductosEnLista9() {
+        modeloProductosMesa9.clear();
+        for (Producto producto : productos) {
+            modeloProductosMesa9.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        productosPedidoMesa9.setModel(modeloProductosMesa9);
+    }
+    
+    DefaultListModel<String> modeloProductosMesa10 = new DefaultListModel<>();
+    private void cargarProductosEnLista10() {
+        modeloProductosMesa10.clear();
+        for (Producto producto : productos) {
+            modeloProductosMesa10.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        productosPedidoMesa10.setModel(modeloProductosMesa10);
+    }
+    
+    DefaultListModel<String> modeloProductosMesa11 = new DefaultListModel<>();
+    private void cargarProductosEnLista11() {
+        modeloProductosMesa11.clear();
+        for (Producto producto : productos) {
+            modeloProductosMesa11.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        productosPedidoMesa11.setModel(modeloProductosMesa11);
+    }
+    
+    DefaultListModel<String> modeloProductosMesa12 = new DefaultListModel<>();
+    private void cargarProductosEnLista12() {
+        modeloProductosMesa12.clear();
+        for (Producto producto : productos) {
+            modeloProductosMesa12.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        productosPedidoMesa12.setModel(modeloProductosMesa12);
+    }
+    
+    private void btnAgregarProductoPedidoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa1ActionPerformed
+
+        String nombreProductoSeleccionado = productosPedidoMesa1.getSelectedValue();
+
+        if (nombreProductoSeleccionado != null) {
+            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
+            Producto productoSeleccionado = null;
+
+
+            for (Producto producto : productos) {
+                if (producto.getNombre().equals(nombreProducto)) {
+                    productoSeleccionado = producto;
+                    break;
+                }
+            }
+
+            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
+
+                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - 1);
+
+                boolean productoYaEnPedido = false;
+                for (Producto productoEnPedido : pedidoMesa1.getListaProductos()) {
+                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
+                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + 1);
+                        productoYaEnPedido = true;
+                        break;
+                    }
+                }
+
+                if (!productoYaEnPedido) {
+                    Producto productoParaPedido = new Producto(
+                        productoSeleccionado.getNombre(),
+                        productoSeleccionado.getPrecio(),
+                        productoSeleccionado.getCategoria(),
+                        1 
+                    );
+                    pedidoMesa1.agregarProducto(productoParaPedido);
+                }
+
+
+                actualizarListaProductosDelPedidoMesa1();
+                cargarProductosEnLista1();
+
+                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+
+    }//GEN-LAST:event_btnAgregarProductoPedidoMesa1ActionPerformed
+    
+    private void btnAgregarProductoPedidoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa2ActionPerformed
+        
+        String nombreProductoSeleccionado = productosPedidoMesa2.getSelectedValue();
+
+        if (nombreProductoSeleccionado != null) {
+            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
+            Producto productoSeleccionado = null;
+
+
+            for (Producto producto : productos) {
+                if (producto.getNombre().equals(nombreProducto)) {
+                    productoSeleccionado = producto;
+                    break;
+                }
+            }
+
+            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
+
+                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - 1);
+
+                boolean productoYaEnPedido = false;
+                for (Producto productoEnPedido : pedidoMesa2.getListaProductos()) {
+                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
+                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + 1);
+                        productoYaEnPedido = true;
+                        break;
+                    }
+                }
+
+                if (!productoYaEnPedido) {
+                    Producto productoParaPedido = new Producto(
+                        productoSeleccionado.getNombre(),
+                        productoSeleccionado.getPrecio(),
+                        productoSeleccionado.getCategoria(),
+                        1 
+                    );
+                    pedidoMesa2.agregarProducto(productoParaPedido);
+                }
+
+
+                actualizarListaProductosDelPedidoMesa2();
+                cargarProductosEnLista2();
+
+                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAgregarProductoPedidoMesa2ActionPerformed
+    
+    private void btnAgregarProductoPedidoMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa3ActionPerformed
+        String nombreProductoSeleccionado = productosPedidoMesa3.getSelectedValue();
+
+        if (nombreProductoSeleccionado != null) {
+            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
+            Producto productoSeleccionado = null;
+
+
+            for (Producto producto : productos) {
+                if (producto.getNombre().equals(nombreProducto)) {
+                    productoSeleccionado = producto;
+                    break;
+                }
+            }
+
+            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
+
+                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - 1);
+
+                boolean productoYaEnPedido = false;
+                for (Producto productoEnPedido : pedidoMesa3.getListaProductos()) {
+                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
+                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + 1);
+                        productoYaEnPedido = true;
+                        break;
+                    }
+                }
+
+                if (!productoYaEnPedido) {
+                    Producto productoParaPedido = new Producto(
+                        productoSeleccionado.getNombre(),
+                        productoSeleccionado.getPrecio(),
+                        productoSeleccionado.getCategoria(),
+                        1 
+                    );
+                    pedidoMesa3.agregarProducto(productoParaPedido);
+                }
+
+
+                actualizarListaProductosDelPedidoMesa3();
+                cargarProductosEnLista3();
+
+                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAgregarProductoPedidoMesa3ActionPerformed
+
+    private void btnAgregarProductoPedidoMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa4ActionPerformed
+        String nombreProductoSeleccionado = productosPedidoMesa4.getSelectedValue();
+
+        if (nombreProductoSeleccionado != null) {
+            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
+            Producto productoSeleccionado = null;
+
+
+            for (Producto producto : productos) {
+                if (producto.getNombre().equals(nombreProducto)) {
+                    productoSeleccionado = producto;
+                    break;
+                }
+            }
+
+            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
+
+                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - 1);
+
+                boolean productoYaEnPedido = false;
+                for (Producto productoEnPedido : pedidoMesa4.getListaProductos()) {
+                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
+                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + 1);
+                        productoYaEnPedido = true;
+                        break;
+                    }
+                }
+
+                if (!productoYaEnPedido) {
+                    Producto productoParaPedido = new Producto(
+                        productoSeleccionado.getNombre(),
+                        productoSeleccionado.getPrecio(),
+                        productoSeleccionado.getCategoria(),
+                        1 
+                    );
+                    pedidoMesa4.agregarProducto(productoParaPedido);
+                }
+
+
+                actualizarListaProductosDelPedidoMesa4();
+                cargarProductosEnLista4();
+
+                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAgregarProductoPedidoMesa4ActionPerformed
+
+    private void btnAgregarProductoPedidoMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa5ActionPerformed
+        String nombreProductoSeleccionado = productosPedidoMesa5.getSelectedValue();
+
+        if (nombreProductoSeleccionado != null) {
+            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
+            Producto productoSeleccionado = null;
+
+
+            for (Producto producto : productos) {
+                if (producto.getNombre().equals(nombreProducto)) {
+                    productoSeleccionado = producto;
+                    break;
+                }
+            }
+
+            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
+
+                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - 1);
+
+                boolean productoYaEnPedido = false;
+                for (Producto productoEnPedido : pedidoMesa5.getListaProductos()) {
+                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
+                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + 1);
+                        productoYaEnPedido = true;
+                        break;
+                    }
+                }
+
+                if (!productoYaEnPedido) {
+                    Producto productoParaPedido = new Producto(
+                        productoSeleccionado.getNombre(),
+                        productoSeleccionado.getPrecio(),
+                        productoSeleccionado.getCategoria(),
+                        1 
+                    );
+                    pedidoMesa5.agregarProducto(productoParaPedido);
+                }
+
+
+                actualizarListaProductosDelPedidoMesa5();
+                cargarProductosEnLista5();
+
+                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAgregarProductoPedidoMesa5ActionPerformed
+
+    private void btnAgregarProductoPedidoMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa6ActionPerformed
+        String nombreProductoSeleccionado = productosPedidoMesa6.getSelectedValue();
+
+        if (nombreProductoSeleccionado != null) {
+            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
+            Producto productoSeleccionado = null;
+
+
+            for (Producto producto : productos) {
+                if (producto.getNombre().equals(nombreProducto)) {
+                    productoSeleccionado = producto;
+                    break;
+                }
+            }
+
+            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
+
+                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - 1);
+
+                boolean productoYaEnPedido = false;
+                for (Producto productoEnPedido : pedidoMesa6.getListaProductos()) {
+                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
+                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + 1);
+                        productoYaEnPedido = true;
+                        break;
+                    }
+                }
+
+                if (!productoYaEnPedido) {
+                    Producto productoParaPedido = new Producto(
+                        productoSeleccionado.getNombre(),
+                        productoSeleccionado.getPrecio(),
+                        productoSeleccionado.getCategoria(),
+                        1 
+                    );
+                    pedidoMesa6.agregarProducto(productoParaPedido);
+                }
+
+
+                actualizarListaProductosDelPedidoMesa6();
+                cargarProductosEnLista6();
+
+                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAgregarProductoPedidoMesa6ActionPerformed
+
+    private void btnAgregarProductoPedidoMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa7ActionPerformed
+        String nombreProductoSeleccionado = productosPedidoMesa7.getSelectedValue();
+
+        if (nombreProductoSeleccionado != null) {
+            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
+            Producto productoSeleccionado = null;
+
+
+            for (Producto producto : productos) {
+                if (producto.getNombre().equals(nombreProducto)) {
+                    productoSeleccionado = producto;
+                    break;
+                }
+            }
+
+            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
+
+                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - 1);
+
+                boolean productoYaEnPedido = false;
+                for (Producto productoEnPedido : pedidoMesa7.getListaProductos()) {
+                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
+                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + 1);
+                        productoYaEnPedido = true;
+                        break;
+                    }
+                }
+
+                if (!productoYaEnPedido) {
+                    Producto productoParaPedido = new Producto(
+                        productoSeleccionado.getNombre(),
+                        productoSeleccionado.getPrecio(),
+                        productoSeleccionado.getCategoria(),
+                        1 
+                    );
+                    pedidoMesa7.agregarProducto(productoParaPedido);
+                }
+
+
+                actualizarListaProductosDelPedidoMesa7();
+                cargarProductosEnLista7();
+
+                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAgregarProductoPedidoMesa7ActionPerformed
+
+    private void btnAgregarProductoPedidoMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa8ActionPerformed
+        String nombreProductoSeleccionado = productosPedidoMesa8.getSelectedValue();
+
+        if (nombreProductoSeleccionado != null) {
+            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
+            Producto productoSeleccionado = null;
+
+
+            for (Producto producto : productos) {
+                if (producto.getNombre().equals(nombreProducto)) {
+                    productoSeleccionado = producto;
+                    break;
+                }
+            }
+
+            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
+
+                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - 1);
+
+                boolean productoYaEnPedido = false;
+                for (Producto productoEnPedido : pedidoMesa8.getListaProductos()) {
+                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
+                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + 1);
+                        productoYaEnPedido = true;
+                        break;
+                    }
+                }
+
+                if (!productoYaEnPedido) {
+                    Producto productoParaPedido = new Producto(
+                        productoSeleccionado.getNombre(),
+                        productoSeleccionado.getPrecio(),
+                        productoSeleccionado.getCategoria(),
+                        1 
+                    );
+                    pedidoMesa8.agregarProducto(productoParaPedido);
+                }
+
+
+                actualizarListaProductosDelPedidoMesa8();
+                cargarProductosEnLista8();
+
+                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAgregarProductoPedidoMesa8ActionPerformed
+
+    private void btnAgregarProductoPedidoMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa9ActionPerformed
+        String nombreProductoSeleccionado = productosPedidoMesa9.getSelectedValue();
+
+        if (nombreProductoSeleccionado != null) {
+            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
+            Producto productoSeleccionado = null;
+
+
+            for (Producto producto : productos) {
+                if (producto.getNombre().equals(nombreProducto)) {
+                    productoSeleccionado = producto;
+                    break;
+                }
+            }
+
+            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
+
+                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - 1);
+
+                boolean productoYaEnPedido = false;
+                for (Producto productoEnPedido : pedidoMesa9.getListaProductos()) {
+                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
+                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + 1);
+                        productoYaEnPedido = true;
+                        break;
+                    }
+                }
+
+                if (!productoYaEnPedido) {
+                    Producto productoParaPedido = new Producto(
+                        productoSeleccionado.getNombre(),
+                        productoSeleccionado.getPrecio(),
+                        productoSeleccionado.getCategoria(),
+                        1 
+                    );
+                    pedidoMesa9.agregarProducto(productoParaPedido);
+                }
+
+
+                actualizarListaProductosDelPedidoMesa9();
+                cargarProductosEnLista9();
+
+                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAgregarProductoPedidoMesa9ActionPerformed
+
+    private void btnAgregarProductoPedidoMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa10ActionPerformed
+        String nombreProductoSeleccionado = productosPedidoMesa10.getSelectedValue();
+
+        if (nombreProductoSeleccionado != null) {
+            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
+            Producto productoSeleccionado = null;
+
+
+            for (Producto producto : productos) {
+                if (producto.getNombre().equals(nombreProducto)) {
+                    productoSeleccionado = producto;
+                    break;
+                }
+            }
+
+            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
+
+                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - 1);
+
+                boolean productoYaEnPedido = false;
+                for (Producto productoEnPedido : pedidoMesa10.getListaProductos()) {
+                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
+                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + 1);
+                        productoYaEnPedido = true;
+                        break;
+                    }
+                }
+
+                if (!productoYaEnPedido) {
+                    Producto productoParaPedido = new Producto(
+                        productoSeleccionado.getNombre(),
+                        productoSeleccionado.getPrecio(),
+                        productoSeleccionado.getCategoria(),
+                        1 
+                    );
+                    pedidoMesa10.agregarProducto(productoParaPedido);
+                }
+
+
+                actualizarListaProductosDelPedidoMesa10();
+                cargarProductosEnLista10();
+
+                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAgregarProductoPedidoMesa10ActionPerformed
+
+    private void btnAgregarProductoPedidoMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa11ActionPerformed
+        String nombreProductoSeleccionado = productosPedidoMesa11.getSelectedValue();
+
+        if (nombreProductoSeleccionado != null) {
+            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
+            Producto productoSeleccionado = null;
+
+
+            for (Producto producto : productos) {
+                if (producto.getNombre().equals(nombreProducto)) {
+                    productoSeleccionado = producto;
+                    break;
+                }
+            }
+
+            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
+
+                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - 1);
+
+                boolean productoYaEnPedido = false;
+                for (Producto productoEnPedido : pedidoMesa11.getListaProductos()) {
+                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
+                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + 1);
+                        productoYaEnPedido = true;
+                        break;
+                    }
+                }
+
+                if (!productoYaEnPedido) {
+                    Producto productoParaPedido = new Producto(
+                        productoSeleccionado.getNombre(),
+                        productoSeleccionado.getPrecio(),
+                        productoSeleccionado.getCategoria(),
+                        1 
+                    );
+                    pedidoMesa11.agregarProducto(productoParaPedido);
+                }
+
+
+                actualizarListaProductosDelPedidoMesa11();
+                cargarProductosEnLista11();
+
+                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAgregarProductoPedidoMesa11ActionPerformed
+
+    private void btnAgregarProductoPedidoMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa12ActionPerformed
+        String nombreProductoSeleccionado = productosPedidoMesa12.getSelectedValue();
+
+        if (nombreProductoSeleccionado != null) {
+            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
+            Producto productoSeleccionado = null;
+
+
+            for (Producto producto : productos) {
+                if (producto.getNombre().equals(nombreProducto)) {
+                    productoSeleccionado = producto;
+                    break;
+                }
+            }
+
+            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
+
+                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - 1);
+
+                boolean productoYaEnPedido = false;
+                for (Producto productoEnPedido : pedidoMesa12.getListaProductos()) {
+                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
+                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + 1);
+                        productoYaEnPedido = true;
+                        break;
+                    }
+                }
+
+                if (!productoYaEnPedido) {
+                    Producto productoParaPedido = new Producto(
+                        productoSeleccionado.getNombre(),
+                        productoSeleccionado.getPrecio(),
+                        productoSeleccionado.getCategoria(),
+                        1 
+                    );
+                    pedidoMesa12.agregarProducto(productoParaPedido);
+                }
+
+
+                actualizarListaProductosDelPedidoMesa12();
+                cargarProductosEnLista12();
+
+                JOptionPane.showMessageDialog(this, "Producto agregado al pedido.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAgregarProductoPedidoMesa12ActionPerformed
+    
+    
+    
+    private void actualizarListaProductosDelPedidoMesa1() {
+        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
+        for (Producto producto : pedidoMesa1.getListaProductos()) {
+            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        listaPedidosMesa1.setModel(modeloPedido);
+    }
+    
+    private void actualizarListaProductosDelPedidoMesa2() {
+        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
+        for (Producto producto : pedidoMesa2.getListaProductos()) {
+            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        listaPedidosMesa2.setModel(modeloPedido);
+    }
+
+    private void actualizarListaProductosDelPedidoMesa3() {
+        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
+        for (Producto producto : pedidoMesa3.getListaProductos()) {
+            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        listaPedidosMesa3.setModel(modeloPedido);
+    }
+    
+    private void actualizarListaProductosDelPedidoMesa4() {
+        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
+        for (Producto producto : pedidoMesa4.getListaProductos()) {
+            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        listaPedidosMesa4.setModel(modeloPedido);
+    }
+    
+    private void actualizarListaProductosDelPedidoMesa5() {
+        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
+        for (Producto producto : pedidoMesa5.getListaProductos()) {
+            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        listaPedidosMesa5.setModel(modeloPedido);
+    }
+    
+    private void actualizarListaProductosDelPedidoMesa6() {
+        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
+        for (Producto producto : pedidoMesa6.getListaProductos()) {
+            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        listaPedidosMesa6.setModel(modeloPedido);
+    }
+    
+    private void actualizarListaProductosDelPedidoMesa7() {
+        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
+        for (Producto producto : pedidoMesa7.getListaProductos()) {
+            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        listaPedidosMesa7.setModel(modeloPedido);
+    }
+    
+    private void actualizarListaProductosDelPedidoMesa8() {
+        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
+        for (Producto producto : pedidoMesa8.getListaProductos()) {
+            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        listaPedidosMesa8.setModel(modeloPedido);
+    }
+    
+    private void actualizarListaProductosDelPedidoMesa9() {
+        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
+        for (Producto producto : pedidoMesa9.getListaProductos()) {
+            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        listaPedidosMesa9.setModel(modeloPedido);
+    }
+    
+    private void actualizarListaProductosDelPedidoMesa10() {
+        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
+        for (Producto producto : pedidoMesa10.getListaProductos()) {
+            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        listaPedidosMesa10.setModel(modeloPedido);
+    }
+    
+    private void actualizarListaProductosDelPedidoMesa11() {
+        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
+        for (Producto producto : pedidoMesa11.getListaProductos()) {
+            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        listaPedidosMesa11.setModel(modeloPedido);
+    }
+    
+    private void actualizarListaProductosDelPedidoMesa12() {
+        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
+        for (Producto producto : pedidoMesa12.getListaProductos()) {
+            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+        }
+        listaPedidosMesa12.setModel(modeloPedido);
+    }
+    
+    private void cargarProductosDesdeArchivo(File archivo) {
+        productos.clear(); 
+
+        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] partes = linea.split(",");
+                String nombre = partes[0].trim();
+                double precio = Double.parseDouble(partes[1].trim());
+                String categoria = partes[2].trim();
+                int cantidadDisponible = Integer.parseInt(partes[3].trim());
+
+                Producto producto = new Producto(nombre, precio, categoria,cantidadDisponible);
+                productos.add(producto); 
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error al leer el archivo de productos", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    private boolean validarArchivoProductos(File archivo) {
+        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+            String linea;
+            boolean tieneDatos = false;
+
+            while ((linea = br.readLine()) != null) {
+                String[] partes = linea.split(",");
+
+                // Verificar que la línea tenga exactamente 4 elementos
+                if (partes.length != 4) {
+                    return false;
+                }
+
+                // Validar el precio
+                try {
+                    Double.parseDouble(partes[1].trim());
+                } catch (NumberFormatException e) {
+                    return false;
+                }
+
+                // Validar la cantidad
+                try {
+                    Integer.parseInt(partes[3].trim());
+                } catch (NumberFormatException e) {
+                    return false;
+                }
+
+                tieneDatos = true; // Hay al menos una línea válida
+            }
+
+            return tieneDatos; // Devuelve true si el archivo tiene datos válidos
+        } catch (IOException e) {
+            return false;
+        }
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -2735,6 +3901,17 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JButton btnTotalCuentaMesa8;
     private javax.swing.JButton btnTotalCuentaMesa9;
     private javax.swing.JButton btnVerInfoMesa1;
+    private javax.swing.JButton btnVerInfoMesa10;
+    private javax.swing.JButton btnVerInfoMesa11;
+    private javax.swing.JButton btnVerInfoMesa12;
+    private javax.swing.JButton btnVerInfoMesa2;
+    private javax.swing.JButton btnVerInfoMesa3;
+    private javax.swing.JButton btnVerInfoMesa4;
+    private javax.swing.JButton btnVerInfoMesa5;
+    private javax.swing.JButton btnVerInfoMesa6;
+    private javax.swing.JButton btnVerInfoMesa7;
+    private javax.swing.JButton btnVerInfoMesa8;
+    private javax.swing.JButton btnVerInfoMesa9;
     private javax.swing.JButton btnVerPedidosMesa1;
     private javax.swing.JButton btnVerPedidosMesa10;
     private javax.swing.JButton btnVerPedidosMesa11;
@@ -2783,6 +3960,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel127;
     private javax.swing.JLabel jLabel128;
     private javax.swing.JLabel jLabel129;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel130;
     private javax.swing.JLabel jLabel131;
     private javax.swing.JLabel jLabel132;
@@ -2896,15 +4074,16 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JList<String> listaPedidosMesa10;
     private javax.swing.JList<String> listaPedidosMesa11;
     private javax.swing.JList<String> listaPedidosMesa12;
-    private javax.swing.JList<String> listaPedidosMesa18;
     private javax.swing.JList<String> listaPedidosMesa2;
     private javax.swing.JList<String> listaPedidosMesa3;
     private javax.swing.JList<String> listaPedidosMesa4;
     private javax.swing.JList<String> listaPedidosMesa5;
     private javax.swing.JList<String> listaPedidosMesa6;
     private javax.swing.JList<String> listaPedidosMesa7;
+    private javax.swing.JList<String> listaPedidosMesa8;
     private javax.swing.JList<String> listaPedidosMesa9;
     private javax.swing.JButton mDisponible;
+    private javax.swing.JButton mNoDisponible;
     private javax.swing.JButton mOcupada;
     private javax.swing.JMenuItem menItemAgreProducto;
     private javax.swing.JMenuItem menItemBuscProducto;
@@ -2946,13 +4125,13 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JList<String> productosPedidoMesa10;
     private javax.swing.JList<String> productosPedidoMesa11;
     private javax.swing.JList<String> productosPedidoMesa12;
-    private javax.swing.JList<String> productosPedidoMesa18;
     private javax.swing.JList<String> productosPedidoMesa2;
     private javax.swing.JList<String> productosPedidoMesa3;
     private javax.swing.JList<String> productosPedidoMesa4;
     private javax.swing.JList<String> productosPedidoMesa5;
     private javax.swing.JList<String> productosPedidoMesa6;
     private javax.swing.JList<String> productosPedidoMesa7;
+    private javax.swing.JList<String> productosPedidoMesa8;
     private javax.swing.JList<String> productosPedidoMesa9;
     private javax.swing.JTextField txtCantidadNuevoProducto;
     private javax.swing.JTextField txtCantidadPersonasMesa1;

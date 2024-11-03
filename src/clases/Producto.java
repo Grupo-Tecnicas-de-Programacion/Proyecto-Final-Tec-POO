@@ -1,19 +1,18 @@
 package clases;
 
-import java.io.Serializable;
-
-public class Producto implements Serializable{
+public class Producto {
     private String nombre;
     private double precio;
     private String categoria;
+    private int cantidadDisponible;
 
-    public Producto() {
-    }
+    public Producto() {}
 
-    public Producto(String nombre, double precio, String categoria) {
+    public Producto(String nombre, double precio, String categoria, int cantidadDisponible) {
         this.nombre = nombre;
         this.precio = precio;
         this.categoria = categoria;
+        this.cantidadDisponible = cantidadDisponible;
     }
 
     public String getNombre() {
@@ -40,20 +39,30 @@ public class Producto implements Serializable{
         this.categoria = categoria;
     }
 
-    public void actualizarPrecio(double nuevoPrecio){
-        if (nuevoPrecio > 0) {
-            this.precio = nuevoPrecio;
-        }else{
-            System.out.println("El precio debe ser mayor que 0.");
-        }
-        
+    public int getCantidadDisponible() {
+        return cantidadDisponible;
     }
-    
+
+    public void setCantidadDisponible(int cantidadDisponible) {
+        this.cantidadDisponible = cantidadDisponible;
+    }
+
+    // Método para reducir la cantidad
+    public boolean reducirCantidad(int cantidad) {
+        if (cantidad <= cantidadDisponible) {
+            cantidadDisponible -= cantidad;
+            return true;
+        } else {
+            return false; // No hay suficiente cantidad
+        }
+    }
+
     @Override
     public String toString() {
-        return "Producto:  " + 
+        return "Producto: " + 
                "Nombre = " + this.getNombre() + " | " + 
                "Precio = " + this.getPrecio() + " | " +
+               "Cantidad Disponible = " + this.getCantidadDisponible() + " | " +
                "Categoria = " + this.getCategoria() + ".";
     }
 }

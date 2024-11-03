@@ -21,7 +21,7 @@ public class Main {
     static ArrayList<Usuario> listaUsuarios = new ArrayList<>();
     
     public static void main(String[] args) {
-        
+        /*
         int opcion;
         do {            
             System.out.println("\n--- Pollos y Parrilas El Gran Rancho ---");
@@ -38,7 +38,7 @@ public class Main {
                 default: System.out.println("Opción no válida.");break;
             }
         } while (opcion != 0);
-        
+        */
     }
     
     public static void menuArchivosColecciones(){
@@ -93,7 +93,7 @@ public class Main {
     }
     
     public static void menuOperaciones(){
-        int opcion;
+        /*int opcion;
             
         do {
             
@@ -138,9 +138,10 @@ public class Main {
                 default: System.out.println("Opción no válida. Inténtalo de nuevo."); break;
             }
         } while (opcion != 0);
+        */
     }
     
-    public static void actualizarPrecioProducto() {
+    /*public static void actualizarPrecioProducto() {
         System.out.println("--- Actualizar Precio de Producto ---");
         System.out.print("Nombre del producto a actualizar: ");
         String nombre = scanner.nextLine();
@@ -154,7 +155,7 @@ public class Main {
         } else {
             System.out.println("Producto no encontrado.");
         }
-    }
+    }*/
 
     public static void agregarPedido() {
         System.out.println("--- Agregar Pedido ---");
@@ -398,7 +399,7 @@ public class Main {
     }
     
     public static void agregarProducto(){
-        
+        /*
         String nombre, categoria;
         double precio;
         
@@ -416,6 +417,7 @@ public class Main {
         Producto nuevoProducto = new Producto(nombre, precio, categoria);
         gestorProductos.agregarProducto(nuevoProducto);
         listaProductos.add(nuevoProducto);
+        */
     }
     
     public static void mostrarProductosOperacion(){

@@ -34,7 +34,7 @@ public class ArchivosProductos {
     }
 
     public void cargarProductos(ArrayList<Producto> productosExistentes) {
-        JFileChooser exploradorArchivos = new JFileChooser();
+        /*JFileChooser exploradorArchivos = new JFileChooser();
         
         int resultado = exploradorArchivos.showOpenDialog(null);
         
@@ -52,8 +52,9 @@ public class ArchivosProductos {
                     String nombre = datosProducto[0];
                     double precio = Double.parseDouble(datosProducto[1]);
                     String categoria = datosProducto[2];
+                    int cantidadDisponible = Integer.parseInt(datosProducto)[3];
                     
-                    Producto nuevoProducto = new Producto(nombre, precio, categoria);
+                    Producto nuevoProducto = new Producto(nombre, precio, categoria,cantidadDisponible);
                     
                     boolean productoYaExiste = false;
                     
@@ -77,6 +78,6 @@ public class ArchivosProductos {
             }
         } else {
             System.out.println("No se seleccionó ningún archivo.");
-        }
+        }*/
     }
 }
