@@ -128,7 +128,6 @@ public class Mesero extends javax.swing.JFrame {
         txtIngresarCodigo = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         txtCodigoGenerado = new javax.swing.JTextField();
-        btnComprobarCodigo = new javax.swing.JButton();
         panelGestionarMesas = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         btnMesa1 = new javax.swing.JButton();
@@ -571,10 +570,10 @@ public class Mesero extends javax.swing.JFrame {
         jLabel3.setText("CERRAR SESIÓN");
         panelCerrarSesion.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 210, 45));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Ingresar el código generado");
-        panelCerrarSesion.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 218, 43));
+        jLabel6.setText("Ingresar el número generado");
+        panelCerrarSesion.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 250, 43));
 
         btnCerrarSesion.setBackground(new java.awt.Color(255, 0, 0));
         btnCerrarSesion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -585,23 +584,24 @@ public class Mesero extends javax.swing.JFrame {
                 btnCerrarSesionActionPerformed(evt);
             }
         });
-        panelCerrarSesion.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 210, 150, 130));
+        panelCerrarSesion.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 190, 150, 130));
 
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Código generado");
-        panelCerrarSesion.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 115, 44));
-        panelCerrarSesion.add(txtIngresarCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 257, 44));
+        jLabel7.setText("Número generado");
+        panelCerrarSesion.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 180, 60));
 
+        txtIngresarCodigo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        panelCerrarSesion.add(txtIngresarCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 257, 44));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Ingresar código");
-        panelCerrarSesion.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 115, 44));
-        panelCerrarSesion.add(txtCodigoGenerado, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 257, 45));
+        jLabel8.setText("Ingresar el número");
+        panelCerrarSesion.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 180, 60));
 
-        btnComprobarCodigo.setBackground(new java.awt.Color(255, 255, 255));
-        btnComprobarCodigo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnComprobarCodigo.setForeground(new java.awt.Color(0, 0, 0));
-        btnComprobarCodigo.setText("Comprobar");
-        panelCerrarSesion.add(btnComprobarCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 137, 48));
+        txtCodigoGenerado.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtCodigoGenerado.setEnabled(false);
+        panelCerrarSesion.add(txtCodigoGenerado, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 257, 45));
 
         jPanelMostrar.add(panelCerrarSesion, "card4");
 
@@ -2560,10 +2560,17 @@ public class Mesero extends javax.swing.JFrame {
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "panelCargarProductos");
     }//GEN-LAST:event_menItemCargarProductosActionPerformed
+    
+    
 
+    
     private void menItemCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemCerrarSesionActionPerformed
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "panelCerrarSesion");
+        
+        int numeroConfirmacionCerrarSesion = (int)(Math.random()*90000)+10000;
+        txtCodigoGenerado.setText(String.valueOf(numeroConfirmacionCerrarSesion));
+        
     }//GEN-LAST:event_menItemCerrarSesionActionPerformed
 
     private void menItemGestionarMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemGestionarMesasActionPerformed
@@ -2815,8 +2822,40 @@ public class Mesero extends javax.swing.JFrame {
     }
     
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
-        new BievenidaO().setVisible(true);
-        this.dispose();
+        
+        String numeroGenerado = txtCodigoGenerado.getText();
+        String numeroIngresaUsuario = txtIngresarCodigo.getText();
+        
+        if (numeroIngresaUsuario.isEmpty()) {
+            
+            JOptionPane.showMessageDialog(rootPane, "No ha ingresado un número, ingrese el número generado", "Error", JOptionPane.WARNING_MESSAGE);
+        
+        }else if (numeroGenerado.equalsIgnoreCase(numeroIngresaUsuario)) {
+            
+            Object[] opciones = {"Si", "No"};
+            int seleccion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Seguro que quieres cerrar sesión?",
+                    "Confirmación",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[0]
+            );
+
+
+            if (seleccion == JOptionPane.YES_OPTION) { 
+                
+                new BievenidaO().setVisible(true);
+                this.dispose();  
+            } 
+            
+        }else{
+            
+            JOptionPane.showMessageDialog(rootPane, "Número ingresado incorrecto, intentar otra vez", "Error", JOptionPane.WARNING_MESSAGE);
+            
+        }
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
     
     private void mostrarInformacionMesa(int numeroMesa) {
@@ -4384,7 +4423,6 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JButton btnCargarMesas;
     private javax.swing.JButton btnCargarProductos;
     private javax.swing.JButton btnCerrarSesion;
-    private javax.swing.JButton btnComprobarCodigo;
     private javax.swing.JButton btnEliminarProducto;
     private javax.swing.JButton btnGenerarReciboMesa1;
     private javax.swing.JButton btnGenerarReciboMesa10;
