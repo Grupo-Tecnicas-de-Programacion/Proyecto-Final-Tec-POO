@@ -2770,9 +2770,9 @@
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="124" pref="124" max="-2" attributes="0"/>
-                                      <Component id="jButton3" min="-2" pref="59" max="-2" attributes="0"/>
+                                      <Component id="btnAgregarProducto" min="-2" pref="59" max="-2" attributes="0"/>
                                       <EmptySpace min="43" pref="43" max="-2" attributes="0"/>
-                                      <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnCancelarAgregacion" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="74" pref="74" max="-2" attributes="0"/>
@@ -2817,8 +2817,8 @@
                               <Component id="jLabel14" min="-2" pref="16" max="-2" attributes="0"/>
                               <EmptySpace min="29" pref="29" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jButton3" min="-2" pref="29" max="-2" attributes="0"/>
-                                  <Component id="jButton5" min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Component id="btnAgregarProducto" min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Component id="btnCancelarAgregacion" min="-2" pref="29" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jScrollPane2" min="-2" pref="290" max="-2" attributes="0"/>
@@ -2907,7 +2907,7 @@
                 <Property name="text" type="java.lang.String" value="Complete la informaci&#xf3;n para agregar nuevo producto :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton3">
+            <Component class="javax.swing.JButton" name="btnAgregarProducto">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="99" red="0" type="rgb"/>
@@ -2920,7 +2920,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton5">
+            <Component class="javax.swing.JButton" name="btnCancelarAgregacion">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="99" type="rgb"/>
@@ -2962,7 +2962,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="jList2">
+                <Component class="javax.swing.JList" name="listCartaActualizada">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="cc" red="ff" type="rgb"/>
