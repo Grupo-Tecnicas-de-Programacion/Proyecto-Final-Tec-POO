@@ -767,7 +767,7 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
-                                      <Component id="jButton8" min="-2" pref="66" max="-2" attributes="0"/>
+                                      <Component id="btnVerStock" min="-2" pref="66" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
@@ -812,7 +812,7 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jTextField8" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton8" min="-2" pref="29" max="-2" attributes="0"/>
+                              <Component id="btnVerStock" min="-2" pref="29" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jTextField33" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
@@ -891,7 +891,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField8">
             </Component>
-            <Component class="javax.swing.JButton" name="jButton8">
+            <Component class="javax.swing.JButton" name="btnVerStock">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="99" red="0" type="rgb"/>
@@ -966,9 +966,9 @@
                               <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="jButton15" min="-2" pref="75" max="-2" attributes="0"/>
+                                      <Component id="btnEliminarMesero" min="-2" pref="75" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                                      <Component id="jButton16" min="-2" pref="59" max="-2" attributes="0"/>
+                                      <Component id="btnCancelarEliminacionMesero" min="-2" pref="59" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -1000,8 +1000,8 @@
                       <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton16" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="jButton15" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="btnCancelarEliminacionMesero" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="btnEliminarMesero" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                   </Group>
@@ -1034,7 +1034,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="jList7">
+                <Component class="javax.swing.JList" name="listMeseros">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="cc" red="ff" type="rgb"/>
@@ -1084,7 +1084,7 @@
                 <Property name="text" type="java.lang.String" value="Desea eliminar al mesero ? "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton15">
+            <Component class="javax.swing.JButton" name="btnEliminarMesero">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="99" red="0" type="rgb"/>
@@ -1097,7 +1097,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton16">
+            <Component class="javax.swing.JButton" name="btnCancelarEliminacionMesero">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="99" type="rgb"/>
