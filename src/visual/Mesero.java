@@ -2727,7 +2727,7 @@ public class Mesero extends javax.swing.JFrame {
 
                
                 if (numeroMesa >= 0 && numeroMesa < botonMesas.length) {
-                    if (estado.equalsIgnoreCase("Disponible")) {
+                    if (estado.equalsIgnoreCase("Desocupada")) {
                         botonMesas[numeroMesa].setBackground(Color.GREEN);
                         botonMesas[numeroMesa].setEnabled(true);
                     } else {
@@ -2814,20 +2814,17 @@ public class Mesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
     
     private void mostrarInformacionMesa(int numeroMesa) {
-        // Obtener la mesa correspondiente
         Mesa mesaSeleccionada = mesas.get(numeroMesa - 1); 
-
-        // Crear el mensaje de información
         String infoMesa = "Número de mesa: " + mesaSeleccionada.getNumeroMesa() + "\n" +
                           "Estado: " + mesaSeleccionada.getEstado() + "\n" +
                           "Capacidad: " + mesaSeleccionada.getCapacidad() + "\n";
 
-        // Mostrar el mensaje en un cuadro de diálogo
         JOptionPane.showMessageDialog(this, infoMesa, "Información de la Mesa", JOptionPane.INFORMATION_MESSAGE);
     }
     
     private void btnVerInfoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa1ActionPerformed
         mostrarInformacionMesa(1);
+        
     }//GEN-LAST:event_btnVerInfoMesa1ActionPerformed
 
     private void btnVerInfoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa2ActionPerformed
@@ -3640,7 +3637,8 @@ public class Mesero extends javax.swing.JFrame {
 
            
             pedidoMesa1 = new Pedido(); 
-            actualizarListaProductosDelPedidoMesa1(); 
+            actualizarListaProductosDelPedidoMesa1();
+            mesas.get(0).setEstado("Ocupada");
 
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -3680,7 +3678,8 @@ public class Mesero extends javax.swing.JFrame {
 
            
             pedidoMesa2 = new Pedido(); 
-            actualizarListaProductosDelPedidoMesa2(); 
+            actualizarListaProductosDelPedidoMesa2();
+            mesas.get(1).setEstado("Ocupada");
 
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -3721,6 +3720,7 @@ public class Mesero extends javax.swing.JFrame {
            
             pedidoMesa3 = new Pedido(); 
             actualizarListaProductosDelPedidoMesa3(); 
+            mesas.get(2).setEstado("Ocupada");
 
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -3760,7 +3760,8 @@ public class Mesero extends javax.swing.JFrame {
 
            
             pedidoMesa4 = new Pedido(); 
-            actualizarListaProductosDelPedidoMesa4(); 
+            actualizarListaProductosDelPedidoMesa4();
+            mesas.get(3).setEstado("Ocupada");
 
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -3800,7 +3801,8 @@ public class Mesero extends javax.swing.JFrame {
 
            
             pedidoMesa5 = new Pedido(); 
-            actualizarListaProductosDelPedidoMesa5(); 
+            actualizarListaProductosDelPedidoMesa5();
+            mesas.get(4).setEstado("Ocupada");
 
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -3840,7 +3842,8 @@ public class Mesero extends javax.swing.JFrame {
 
            
             pedidoMesa6 = new Pedido(); 
-            actualizarListaProductosDelPedidoMesa6(); 
+            actualizarListaProductosDelPedidoMesa6();
+            mesas.get(5).setEstado("Ocupada");
 
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -3880,7 +3883,8 @@ public class Mesero extends javax.swing.JFrame {
 
            
             pedidoMesa7 = new Pedido(); 
-            actualizarListaProductosDelPedidoMesa7(); 
+            actualizarListaProductosDelPedidoMesa7();
+            mesas.get(6).setEstado("Ocupada");
 
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -3920,7 +3924,8 @@ public class Mesero extends javax.swing.JFrame {
 
            
             pedidoMesa8 = new Pedido(); 
-            actualizarListaProductosDelPedidoMesa8(); 
+            actualizarListaProductosDelPedidoMesa8();
+            mesas.get(7).setEstado("Ocupada");
 
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -3960,7 +3965,8 @@ public class Mesero extends javax.swing.JFrame {
 
            
             pedidoMesa9 = new Pedido(); 
-            actualizarListaProductosDelPedidoMesa9(); 
+            actualizarListaProductosDelPedidoMesa9();
+            mesas.get(8).setEstado("Ocupada");
 
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -3999,7 +4005,8 @@ public class Mesero extends javax.swing.JFrame {
             }
             
             pedidoMesa10 = new Pedido(); 
-            actualizarListaProductosDelPedidoMesa10(); 
+            actualizarListaProductosDelPedidoMesa10();
+            mesas.get(9).setEstado("Ocupada");
 
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -4038,7 +4045,8 @@ public class Mesero extends javax.swing.JFrame {
 
            
             pedidoMesa11 = new Pedido(); 
-            actualizarListaProductosDelPedidoMesa11(); 
+            actualizarListaProductosDelPedidoMesa11();
+            mesas.get(10).setEstado("Ocupada");
 
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -4078,7 +4086,8 @@ public class Mesero extends javax.swing.JFrame {
 
            
             pedidoMesa12 = new Pedido(); 
-            actualizarListaProductosDelPedidoMesa12(); 
+            actualizarListaProductosDelPedidoMesa12();
+            mesas.get(11).setEstado("Ocupada");
 
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -4087,10 +4096,13 @@ public class Mesero extends javax.swing.JFrame {
     
     private void btnRealizarPedidoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa1ActionPerformed
         realizarPedidoMesa1();
+        
     }//GEN-LAST:event_btnRealizarPedidoMesa1ActionPerformed
 
     private void btnRealizarPedidoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa2ActionPerformed
         realizarPedidoMesa2();
+        
+
     }//GEN-LAST:event_btnRealizarPedidoMesa2ActionPerformed
 
     private void btnRealizarPedidoMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa3ActionPerformed

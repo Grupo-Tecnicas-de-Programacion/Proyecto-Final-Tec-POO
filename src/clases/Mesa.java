@@ -12,12 +12,12 @@ public class Mesa {
     public Mesa() {
         this.listaPedidos = new ArrayList<>();
         this.cuenta = new Cuenta(); 
-        this.estado = "Desocupado";
+        this.estado = "Desocupada";
     }
 
     public Mesa(int numeroMesa, int capacidad) {
         this.numeroMesa = numeroMesa;
-        this.estado = "Desocupado";
+        this.estado = "Desocupada";
         this.capacidad = capacidad;
         this.listaPedidos = new ArrayList<>();
         this.cuenta = new Cuenta(); 
@@ -61,20 +61,31 @@ public class Mesa {
 
     public void setListaPedidos(ArrayList<Pedido> listaPedidos) {
         this.listaPedidos = listaPedidos;
-        this.estado = !listaPedidos.isEmpty() ? "Ocupado" : "Desocupado";
+        this.estado = !listaPedidos.isEmpty() ? "Ocupada" : "Desocupada";
     }
 
     public void asignarPedido(Pedido pedido) {
         this.listaPedidos.add(pedido);
-        this.estado = "Ocupado";
+        this.estado = "Ocupada";
+        actualizarEstadoMesa();
+    }
+    
+    public void actualizarEstadoMesa() {
+        if (listaPedidos.isEmpty()) {
+            this.estado = "Desocupada";
+        } else {
+            this.estado = "Ocupada";
+        }
     }
 
     public void liberarMesa() {
         this.listaPedidos.clear();
-        this.estado = "Desocupado";
+        this.estado = "Desocupada";
         this.cuenta = new Cuenta(); 
     }
 
+    
+    
     public String mostrarInfoMesa() {
         StringBuilder info = new StringBuilder();
         info.append("Información de la mesa:\n");
