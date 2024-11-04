@@ -171,7 +171,7 @@ public class Administrador extends javax.swing.JFrame {
         jLabel82 = new javax.swing.JLabel();
         jTextField31 = new javax.swing.JTextField();
         jScrollPane18 = new javax.swing.JScrollPane();
-        jList18 = new javax.swing.JList<>();
+        btnReporteVentas = new javax.swing.JList<>();
         jLabel83 = new javax.swing.JLabel();
         btnGenerarReporte = new javax.swing.JButton();
         jLabel85 = new javax.swing.JLabel();
@@ -1221,8 +1221,8 @@ public class Administrador extends javax.swing.JFrame {
         jLabel82.setForeground(new java.awt.Color(0, 0, 0));
         jLabel82.setText("Hasta :");
 
-        jList18.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane18.setViewportView(jList18);
+        btnReporteVentas.setBackground(new java.awt.Color(255, 204, 51));
+        jScrollPane18.setViewportView(btnReporteVentas);
 
         jLabel83.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel83.setForeground(new java.awt.Color(0, 0, 0));
@@ -1855,6 +1855,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminarProducto;
     private javax.swing.JButton btnGenerarReporte;
     private javax.swing.JButton btnRegistroMesero;
+    private javax.swing.JList<String> btnReporteVentas;
     private javax.swing.JButton btnRestablecerCambios;
     private javax.swing.JButton btnSeleccionarMesero;
     private javax.swing.JButton btnVerReporte;
@@ -1937,7 +1938,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList18;
     private javax.swing.JList<String> jList2;
     private javax.swing.JMenuBar jMenuAdmin;
     private javax.swing.JPanel jPanel1;
