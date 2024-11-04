@@ -60,12 +60,12 @@ public class Administrador extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList<>();
+        listProductosAgotados = new javax.swing.JList<>();
         jLabel18 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
+        btnConfirmarModificarProducto = new javax.swing.JButton();
+        btnCancelarModificacionProducto = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jTextField32 = new javax.swing.JTextField();
@@ -357,9 +357,9 @@ public class Administrador extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("Lista de productos sin stock:");
 
-        jList3.setBackground(new java.awt.Color(255, 204, 51));
-        jList3.setForeground(new java.awt.Color(255, 204, 51));
-        jScrollPane3.setViewportView(jList3);
+        listProductosAgotados.setBackground(new java.awt.Color(255, 204, 51));
+        listProductosAgotados.setForeground(new java.awt.Color(255, 204, 51));
+        jScrollPane3.setViewportView(listProductosAgotados);
 
         jLabel18.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(0, 0, 0));
@@ -369,13 +369,13 @@ public class Administrador extends javax.swing.JFrame {
         jLabel26.setForeground(new java.awt.Color(0, 0, 0));
         jLabel26.setText("Esta seguro de modificar el productos ?");
 
-        jButton12.setBackground(new java.awt.Color(0, 153, 0));
-        jButton12.setText("Confirmar");
-        jButton12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnConfirmarModificarProducto.setBackground(new java.awt.Color(0, 153, 0));
+        btnConfirmarModificarProducto.setText("Confirmar");
+        btnConfirmarModificarProducto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton13.setBackground(new java.awt.Color(153, 0, 0));
-        jButton13.setText("Cancelar");
-        jButton13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCancelarModificacionProducto.setBackground(new java.awt.Color(153, 0, 0));
+        btnCancelarModificacionProducto.setText("Cancelar");
+        btnCancelarModificacionProducto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -408,9 +408,9 @@ public class Administrador extends javax.swing.JFrame {
                         .addGroup(panelProductosAgotadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelProductosAgotadosLayout.createSequentialGroup()
                                 .addGap(149, 149, 149)
-                                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnConfirmarModificarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(39, 39, 39)
-                                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnCancelarModificacionProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelProductosAgotadosLayout.createSequentialGroup()
                                 .addGap(155, 155, 155)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -455,8 +455,8 @@ public class Administrador extends javax.swing.JFrame {
                         .addComponent(jLabel26)
                         .addGap(18, 18, 18)
                         .addGroup(panelProductosAgotadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnConfirmarModificarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCancelarModificacionProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(38, 38, 38))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(58, 58, 58))
@@ -1840,14 +1840,14 @@ public class Administrador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarEliminacionPedido;
+    private javax.swing.JButton btnCancelarModificacionProducto;
     private javax.swing.JButton btnCerrarSesionAdmnistrador;
     private javax.swing.JButton btnConfirmacionCerrarSesion;
     private javax.swing.JButton btnConfirmarEliminarPedido;
+    private javax.swing.JButton btnConfirmarModificarProducto;
     private javax.swing.JButton btnEliminarProducto;
     private javax.swing.JButton btnGenerarReporte;
     private javax.swing.JButton btnVerReporte;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
@@ -1943,7 +1943,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JList<String> jList16;
     private javax.swing.JList<String> jList18;
     private javax.swing.JList<String> jList2;
-    private javax.swing.JList<String> jList3;
     private javax.swing.JList<String> jList5;
     private javax.swing.JList<String> jList7;
     private javax.swing.JList<String> jList9;
@@ -1993,6 +1992,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JList<String> listProductosAgotados;
     private javax.swing.JList<String> listTodosLosProductos;
     private javax.swing.JMenuItem menItemAgregarProductos;
     private javax.swing.JMenuItem menItemAgregarUsuario;
