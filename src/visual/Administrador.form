@@ -2003,13 +2003,13 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
-                                              <Component id="jButton25" min="-2" pref="83" max="-2" attributes="0"/>
+                                              <Component id="btnConfirmarAsignacion" min="-2" pref="83" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                                              <Component id="jButton27" min="-2" pref="69" max="-2" attributes="0"/>
+                                              <Component id="btnCancelarAsignacion" min="-2" pref="69" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
-                                              <Component id="jButton29" min="-2" pref="139" max="-2" attributes="0"/>
+                                              <Component id="btnRestablecerCambios" min="-2" pref="139" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
@@ -2076,11 +2076,11 @@
                               <Component id="jLabel76" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jButton25" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="jButton27" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                                  <Component id="btnConfirmarAsignacion" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="btnCancelarAsignacion" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton29" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="btnRestablecerCambios" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="49" max="32767" attributes="0"/>
@@ -2118,7 +2118,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="jList15">
+                <Component class="javax.swing.JList" name="listMeserosPermisos">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="cc" red="ff" type="rgb"/>
@@ -2151,7 +2151,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="jList16">
+                <Component class="javax.swing.JList" name="listPermisos">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="99" red="ff" type="rgb"/>
@@ -2203,7 +2203,7 @@
                 <Property name="text" type="java.lang.String" value="Confirmar los cambios selecionados."/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton25">
+            <Component class="javax.swing.JButton" name="btnConfirmarAsignacion">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="99" red="0" type="rgb"/>
@@ -2216,7 +2216,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton27">
+            <Component class="javax.swing.JButton" name="btnCancelarAsignacion">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="cc" type="rgb"/>
@@ -2229,7 +2229,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton29">
+            <Component class="javax.swing.JButton" name="btnRestablecerCambios">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="33" red="0" type="rgb"/>

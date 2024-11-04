@@ -150,18 +150,18 @@ public class Administrador extends javax.swing.JFrame {
         jLabel71 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
         jScrollPane15 = new javax.swing.JScrollPane();
-        jList15 = new javax.swing.JList<>();
+        listMeserosPermisos = new javax.swing.JList<>();
         jLabel73 = new javax.swing.JLabel();
         jScrollPane16 = new javax.swing.JScrollPane();
-        jList16 = new javax.swing.JList<>();
+        listPermisos = new javax.swing.JList<>();
         jLabel74 = new javax.swing.JLabel();
         jTextField28 = new javax.swing.JTextField();
         jLabel75 = new javax.swing.JLabel();
         jTextField29 = new javax.swing.JTextField();
         jLabel76 = new javax.swing.JLabel();
-        jButton25 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
-        jButton29 = new javax.swing.JButton();
+        btnConfirmarAsignacion = new javax.swing.JButton();
+        btnCancelarAsignacion = new javax.swing.JButton();
+        btnRestablecerCambios = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
         panelReporteVentas = new javax.swing.JPanel();
         jLabel79 = new javax.swing.JLabel();
@@ -1074,15 +1074,15 @@ public class Administrador extends javax.swing.JFrame {
         jLabel72.setForeground(new java.awt.Color(0, 0, 0));
         jLabel72.setText("Lista de meseros :");
 
-        jList15.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane15.setViewportView(jList15);
+        listMeserosPermisos.setBackground(new java.awt.Color(255, 204, 51));
+        jScrollPane15.setViewportView(listMeserosPermisos);
 
         jLabel73.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel73.setForeground(new java.awt.Color(0, 0, 0));
         jLabel73.setText("Lista de permisos :");
 
-        jList16.setBackground(new java.awt.Color(255, 153, 51));
-        jScrollPane16.setViewportView(jList16);
+        listPermisos.setBackground(new java.awt.Color(255, 153, 51));
+        jScrollPane16.setViewportView(listPermisos);
 
         jLabel74.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel74.setForeground(new java.awt.Color(0, 0, 0));
@@ -1096,17 +1096,17 @@ public class Administrador extends javax.swing.JFrame {
         jLabel76.setForeground(new java.awt.Color(0, 0, 0));
         jLabel76.setText("Confirmar los cambios selecionados.");
 
-        jButton25.setBackground(new java.awt.Color(0, 153, 0));
-        jButton25.setText("Confirmar");
-        jButton25.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnConfirmarAsignacion.setBackground(new java.awt.Color(0, 153, 0));
+        btnConfirmarAsignacion.setText("Confirmar");
+        btnConfirmarAsignacion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton27.setBackground(new java.awt.Color(204, 0, 0));
-        jButton27.setText("Cancelar");
-        jButton27.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCancelarAsignacion.setBackground(new java.awt.Color(204, 0, 0));
+        btnCancelarAsignacion.setText("Cancelar");
+        btnCancelarAsignacion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton29.setBackground(new java.awt.Color(0, 51, 255));
-        jButton29.setText("Restablecer cambios.");
-        jButton29.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnRestablecerCambios.setBackground(new java.awt.Color(0, 51, 255));
+        btnRestablecerCambios.setText("Restablecer cambios.");
+        btnRestablecerCambios.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel27.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(0, 0, 0));
@@ -1138,12 +1138,12 @@ public class Administrador extends javax.swing.JFrame {
                                 .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panelAsignarPermisosLayout.createSequentialGroup()
                                         .addGap(144, 144, 144)
-                                        .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnConfirmarAsignacion, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(48, 48, 48)
-                                        .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(btnCancelarAsignacion, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(panelAsignarPermisosLayout.createSequentialGroup()
                                         .addGap(183, 183, 183)
-                                        .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(btnRestablecerCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap())
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAsignarPermisosLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
@@ -1193,10 +1193,10 @@ public class Administrador extends javax.swing.JFrame {
                         .addComponent(jLabel76)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnConfirmarAsignacion, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCancelarAsignacion, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnRestablecerCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(49, Short.MAX_VALUE))
         );
 
@@ -1839,6 +1839,7 @@ public class Administrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelarAsignacion;
     private javax.swing.JButton btnCancelarEdicionDatos;
     private javax.swing.JButton btnCancelarEliminacionMesero;
     private javax.swing.JButton btnCancelarEliminacionPedido;
@@ -1846,6 +1847,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelarRegistroMesero;
     private javax.swing.JButton btnCerrarSesionAdmnistrador;
     private javax.swing.JButton btnConfirmacionCerrarSesion;
+    private javax.swing.JButton btnConfirmarAsignacion;
     private javax.swing.JButton btnConfirmarEliminarPedido;
     private javax.swing.JButton btnConfirmarModificarProducto;
     private javax.swing.JButton btnEditarDatosMesero;
@@ -1853,12 +1855,10 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminarProducto;
     private javax.swing.JButton btnGenerarReporte;
     private javax.swing.JButton btnRegistroMesero;
+    private javax.swing.JButton btnRestablecerCambios;
     private javax.swing.JButton btnSeleccionarMesero;
     private javax.swing.JButton btnVerReporte;
     private javax.swing.JButton btnVerStock;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
@@ -1937,8 +1937,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList15;
-    private javax.swing.JList<String> jList16;
     private javax.swing.JList<String> jList18;
     private javax.swing.JList<String> jList2;
     private javax.swing.JMenuBar jMenuAdmin;
@@ -1991,6 +1989,8 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JList<String> listGestionMeseros;
     private javax.swing.JList<String> listMeseroActualizados;
     private javax.swing.JList<String> listMeseros;
+    private javax.swing.JList<String> listMeserosPermisos;
+    private javax.swing.JList<String> listPermisos;
     private javax.swing.JList<String> listProductosAgotados;
     private javax.swing.JList<String> listProductosDisponibles;
     private javax.swing.JList<String> listTodosLosProductos;
