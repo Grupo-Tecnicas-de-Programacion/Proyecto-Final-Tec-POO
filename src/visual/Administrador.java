@@ -74,7 +74,7 @@ public class Administrador extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jList5 = new javax.swing.JList<>();
+        listProductosDisponibles = new javax.swing.JList<>();
         jLabel24 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
         jButton8 = new javax.swing.JButton();
@@ -479,8 +479,8 @@ public class Administrador extends javax.swing.JFrame {
         jLabel23.setForeground(new java.awt.Color(0, 0, 0));
         jLabel23.setText("Lista de productos : ");
 
-        jList5.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane5.setViewportView(jList5);
+        listProductosDisponibles.setBackground(new java.awt.Color(255, 204, 51));
+        jScrollPane5.setViewportView(listProductosDisponibles);
 
         jLabel24.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(0, 0, 0));
@@ -1943,7 +1943,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JList<String> jList16;
     private javax.swing.JList<String> jList18;
     private javax.swing.JList<String> jList2;
-    private javax.swing.JList<String> jList5;
     private javax.swing.JList<String> jList7;
     private javax.swing.JList<String> jList9;
     private javax.swing.JMenuBar jMenuAdmin;
@@ -1993,6 +1992,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JList<String> listProductosAgotados;
+    private javax.swing.JList<String> listProductosDisponibles;
     private javax.swing.JList<String> listTodosLosProductos;
     private javax.swing.JMenuItem menItemAgregarProductos;
     private javax.swing.JMenuItem menItemAgregarUsuario;
