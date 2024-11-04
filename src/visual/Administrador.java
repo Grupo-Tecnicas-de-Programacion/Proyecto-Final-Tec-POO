@@ -44,15 +44,15 @@ public class Administrador extends javax.swing.JFrame {
         jPanelMostrarAdmin = new javax.swing.JPanel();
         panelEliminarProducto = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listTodosLosProductos = new javax.swing.JList<>();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnConfirmarEliminarPedido = new javax.swing.JButton();
+        btnCancelarEliminacionPedido = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        btnEliminarProducto = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         panelProductosAgotados = new javax.swing.JPanel();
@@ -237,21 +237,21 @@ public class Administrador extends javax.swing.JFrame {
         panelEliminarProducto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         panelEliminarProducto.setForeground(new java.awt.Color(204, 204, 204));
 
-        jList1.setBackground(new java.awt.Color(255, 204, 51));
-        jList1.setForeground(new java.awt.Color(255, 204, 51));
-        jScrollPane1.setViewportView(jList1);
+        listTodosLosProductos.setBackground(new java.awt.Color(255, 204, 51));
+        listTodosLosProductos.setForeground(new java.awt.Color(255, 204, 51));
+        jScrollPane1.setViewportView(listTodosLosProductos);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Ingrese el producto a eliminar : ");
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 0));
-        jButton1.setText("Confirmar");
-        jButton1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnConfirmarEliminarPedido.setBackground(new java.awt.Color(0, 102, 0));
+        btnConfirmarEliminarPedido.setText("Confirmar");
+        btnConfirmarEliminarPedido.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton2.setBackground(new java.awt.Color(153, 0, 0));
-        jButton2.setText("Cancelar");
-        jButton2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCancelarEliminacionPedido.setBackground(new java.awt.Color(153, 0, 0));
+        btnCancelarEliminacionPedido.setText("Cancelar");
+        btnCancelarEliminacionPedido.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 3, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -265,8 +265,8 @@ public class Administrador extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Lista de todos los productos:");
 
-        jButton4.setBackground(new java.awt.Color(0, 51, 255));
-        jButton4.setText("Aceptar");
+        btnEliminarProducto.setBackground(new java.awt.Color(0, 51, 255));
+        btnEliminarProducto.setText("Aceptar");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
@@ -295,15 +295,15 @@ public class Administrador extends javax.swing.JFrame {
                                             .addGroup(panelEliminarProductoLayout.createSequentialGroup()
                                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(34, 34, 34)
-                                                .addComponent(jButton4))
+                                                .addComponent(btnEliminarProducto))
                                             .addComponent(jLabel6)
                                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel3)))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelEliminarProductoLayout.createSequentialGroup()
                                         .addGap(107, 107, 107)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnConfirmarEliminarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(36, 36, 36)
-                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addComponent(btnCancelarEliminacionPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap(175, Short.MAX_VALUE))
         );
         panelEliminarProductoLayout.setVerticalGroup(
@@ -323,13 +323,13 @@ public class Administrador extends javax.swing.JFrame {
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton4))
+                            .addComponent(btnEliminarProducto))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
                         .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnConfirmarEliminarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCancelarEliminacionPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(77, 77, 77))
                     .addGroup(panelEliminarProductoLayout.createSequentialGroup()
                         .addGap(46, 46, 46)
@@ -1701,7 +1701,7 @@ public class Administrador extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE)
+                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 472, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1839,11 +1839,13 @@ public class Administrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelarEliminacionPedido;
     private javax.swing.JButton btnCerrarSesionAdmnistrador;
     private javax.swing.JButton btnConfirmacionCerrarSesion;
+    private javax.swing.JButton btnConfirmarEliminarPedido;
+    private javax.swing.JButton btnEliminarProducto;
     private javax.swing.JButton btnGenerarReporte;
     private javax.swing.JButton btnVerReporte;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton15;
@@ -1851,12 +1853,10 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
@@ -1937,7 +1937,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList10;
     private javax.swing.JList<String> jList12;
     private javax.swing.JList<String> jList15;
@@ -1994,6 +1993,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JList<String> listTodosLosProductos;
     private javax.swing.JMenuItem menItemAgregarProductos;
     private javax.swing.JMenuItem menItemAgregarUsuario;
     private javax.swing.JMenuItem menItemAsignarPermisos;

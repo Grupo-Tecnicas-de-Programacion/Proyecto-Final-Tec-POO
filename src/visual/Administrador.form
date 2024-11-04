@@ -289,7 +289,7 @@
                                                   <Group type="102" attributes="0">
                                                       <Component id="jTextField1" min="-2" pref="178" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                                      <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="btnEliminarProducto" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jTextField2" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
@@ -298,9 +298,9 @@
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
-                                              <Component id="jButton1" min="-2" pref="78" max="-2" attributes="0"/>
+                                              <Component id="btnConfirmarEliminarPedido" min="-2" pref="78" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                              <Component id="jButton2" min="-2" pref="93" max="-2" attributes="0"/>
+                                              <Component id="btnCancelarEliminacionPedido" min="-2" pref="93" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -329,14 +329,14 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jTextField2" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jButton4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnEliminarProducto" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="40" max="32767" attributes="0"/>
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jButton1" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                                  <Component id="jButton2" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="btnConfirmarEliminarPedido" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="btnCancelarEliminacionPedido" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                           </Group>
@@ -360,7 +360,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="jList1">
+                <Component class="javax.swing.JList" name="listTodosLosProductos">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="cc" red="ff" type="rgb"/>
@@ -391,7 +391,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField1">
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="btnConfirmarEliminarPedido">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="66" red="0" type="rgb"/>
@@ -404,7 +404,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="btnCancelarEliminacionPedido">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="99" type="rgb"/>
@@ -450,7 +450,7 @@
                 <Property name="text" type="java.lang.String" value="Lista de todos los productos:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton4">
+            <Component class="javax.swing.JButton" name="btnEliminarProducto">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="33" red="0" type="rgb"/>
