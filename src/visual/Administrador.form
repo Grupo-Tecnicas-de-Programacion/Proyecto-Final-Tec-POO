@@ -1511,9 +1511,9 @@
                                   <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="302" max="-2" attributes="0"/>
-                                      <Component id="jButton19" min="-2" pref="66" max="-2" attributes="0"/>
+                                      <Component id="btnEditarDatosMesero" min="-2" pref="66" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                                      <Component id="jButton6" min="-2" pref="61" max="-2" attributes="0"/>
+                                      <Component id="btnCancelarEdicionDatos" min="-2" pref="61" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace pref="88" max="32767" attributes="0"/>
@@ -1565,8 +1565,8 @@
                                       <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jButton6" min="-2" pref="31" max="-2" attributes="0"/>
-                                          <Component id="jButton19" alignment="0" min="-2" pref="31" max="-2" attributes="0"/>
+                                          <Component id="btnCancelarEdicionDatos" min="-2" pref="31" max="-2" attributes="0"/>
+                                          <Component id="btnEditarDatosMesero" alignment="0" min="-2" pref="31" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -1628,7 +1628,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="jList10">
+                <Component class="javax.swing.JList" name="listDatosMeseros">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="cc" red="ff" type="rgb"/>
@@ -1743,7 +1743,7 @@
                 <Property name="text" type="java.lang.String" value="Desea guardar los cambios ?"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton19">
+            <Component class="javax.swing.JButton" name="btnEditarDatosMesero">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="99" red="0" type="rgb"/>
@@ -1756,7 +1756,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton6">
+            <Component class="javax.swing.JButton" name="btnCancelarEdicionDatos">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="cc" type="rgb"/>
