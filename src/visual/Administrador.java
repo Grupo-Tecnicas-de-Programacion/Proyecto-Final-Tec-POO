@@ -102,8 +102,8 @@ public class Administrador extends javax.swing.JFrame {
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
+        btnRegistroMesero = new javax.swing.JButton();
+        btnCancelarRegistroMesero = new javax.swing.JButton();
         jTextField11 = new javax.swing.JTextField();
         jTextField12 = new javax.swing.JTextField();
         jTextField13 = new javax.swing.JTextField();
@@ -112,7 +112,7 @@ public class Administrador extends javax.swing.JFrame {
         jTextField17 = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        jList9 = new javax.swing.JList<>();
+        listMeseroActualizados = new javax.swing.JList<>();
         panelModificarUsuarios = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
@@ -698,20 +698,20 @@ public class Administrador extends javax.swing.JFrame {
         jLabel44.setForeground(new java.awt.Color(0, 0, 0));
         jLabel44.setText("Desea registrar al mesero ? ");
 
-        jButton17.setBackground(new java.awt.Color(0, 153, 0));
-        jButton17.setText("Confirmar");
-        jButton17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnRegistroMesero.setBackground(new java.awt.Color(0, 153, 0));
+        btnRegistroMesero.setText("Confirmar");
+        btnRegistroMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton18.setBackground(new java.awt.Color(153, 0, 0));
-        jButton18.setText("Cancelar");
-        jButton18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCancelarRegistroMesero.setBackground(new java.awt.Color(153, 0, 0));
+        btnCancelarRegistroMesero.setText("Cancelar");
+        btnCancelarRegistroMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel45.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(0, 0, 0));
         jLabel45.setText("Lista de meseros actualizada :");
 
-        jList9.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane9.setViewportView(jList9);
+        listMeseroActualizados.setBackground(new java.awt.Color(255, 204, 51));
+        jScrollPane9.setViewportView(listMeseroActualizados);
 
         javax.swing.GroupLayout panelAgregarUsuariosLayout = new javax.swing.GroupLayout(panelAgregarUsuarios);
         panelAgregarUsuarios.setLayout(panelAgregarUsuariosLayout);
@@ -746,9 +746,9 @@ public class Administrador extends javax.swing.JFrame {
                             .addComponent(jLabel40)
                             .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnRegistroMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
-                        .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCancelarRegistroMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(76, 76, 76)))
                 .addGroup(panelAgregarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel45)
@@ -802,8 +802,8 @@ public class Administrador extends javax.swing.JFrame {
                             .addGroup(panelAgregarUsuariosLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(panelAgregarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(btnCancelarRegistroMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnRegistroMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(84, 84, 84))
                     .addGroup(panelAgregarUsuariosLayout.createSequentialGroup()
                         .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1842,6 +1842,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelarEliminacionMesero;
     private javax.swing.JButton btnCancelarEliminacionPedido;
     private javax.swing.JButton btnCancelarModificacionProducto;
+    private javax.swing.JButton btnCancelarRegistroMesero;
     private javax.swing.JButton btnCerrarSesionAdmnistrador;
     private javax.swing.JButton btnConfirmacionCerrarSesion;
     private javax.swing.JButton btnConfirmarEliminarPedido;
@@ -1849,10 +1850,9 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminarMesero;
     private javax.swing.JButton btnEliminarProducto;
     private javax.swing.JButton btnGenerarReporte;
+    private javax.swing.JButton btnRegistroMesero;
     private javax.swing.JButton btnVerReporte;
     private javax.swing.JButton btnVerStock;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton27;
@@ -1943,7 +1943,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JList<String> jList16;
     private javax.swing.JList<String> jList18;
     private javax.swing.JList<String> jList2;
-    private javax.swing.JList<String> jList9;
     private javax.swing.JMenuBar jMenuAdmin;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelMostrarAdmin;
@@ -1990,6 +1989,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JList<String> listMeseroActualizados;
     private javax.swing.JList<String> listMeseros;
     private javax.swing.JList<String> listProductosAgotados;
     private javax.swing.JList<String> listProductosDisponibles;
