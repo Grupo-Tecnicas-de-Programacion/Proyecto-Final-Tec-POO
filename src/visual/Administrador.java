@@ -139,12 +139,12 @@ public class Administrador extends javax.swing.JFrame {
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
         jScrollPane12 = new javax.swing.JScrollPane();
-        jList12 = new javax.swing.JList<>();
+        listGestionMeseros = new javax.swing.JList<>();
         jLabel63 = new javax.swing.JLabel();
         jTextField23 = new javax.swing.JTextField();
         jTextField27 = new javax.swing.JTextField();
         jLabel70 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
+        btnSeleccionarMesero = new javax.swing.JButton();
         jLabel25 = new javax.swing.JLabel();
         panelAsignarPermisos = new javax.swing.JPanel();
         jLabel71 = new javax.swing.JLabel();
@@ -985,8 +985,8 @@ public class Administrador extends javax.swing.JFrame {
         jLabel61.setForeground(new java.awt.Color(0, 0, 0));
         jLabel61.setText("Vista general de todos los meseros :");
 
-        jList12.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane12.setViewportView(jList12);
+        listGestionMeseros.setBackground(new java.awt.Color(255, 204, 51));
+        jScrollPane12.setViewportView(listGestionMeseros);
 
         jLabel63.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel63.setForeground(new java.awt.Color(0, 0, 0));
@@ -996,10 +996,10 @@ public class Administrador extends javax.swing.JFrame {
         jLabel70.setForeground(new java.awt.Color(0, 0, 0));
         jLabel70.setText("Contraseña del mesero :");
 
-        jButton7.setBackground(new java.awt.Color(102, 153, 0));
-        jButton7.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        jButton7.setText("Seleccione un mesero");
-        jButton7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnSeleccionarMesero.setBackground(new java.awt.Color(102, 153, 0));
+        btnSeleccionarMesero.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnSeleccionarMesero.setText("Seleccione un mesero");
+        btnSeleccionarMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel25.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(0, 0, 0));
@@ -1021,7 +1021,7 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(175, 175, 175)
                 .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSeleccionarMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1050,7 +1050,7 @@ public class Administrador extends javax.swing.JFrame {
                                 .addComponent(jLabel70))
                             .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
                                 .addGap(186, 186, 186)
-                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnSeleccionarMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
@@ -1853,6 +1853,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminarProducto;
     private javax.swing.JButton btnGenerarReporte;
     private javax.swing.JButton btnRegistroMesero;
+    private javax.swing.JButton btnSeleccionarMesero;
     private javax.swing.JButton btnVerReporte;
     private javax.swing.JButton btnVerStock;
     private javax.swing.JButton jButton25;
@@ -1860,7 +1861,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1937,7 +1937,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList12;
     private javax.swing.JList<String> jList15;
     private javax.swing.JList<String> jList16;
     private javax.swing.JList<String> jList18;
@@ -1989,6 +1988,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JList<String> listDatosMeseros;
+    private javax.swing.JList<String> listGestionMeseros;
     private javax.swing.JList<String> listMeseroActualizados;
     private javax.swing.JList<String> listMeseros;
     private javax.swing.JList<String> listProductosAgotados;
