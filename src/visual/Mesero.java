@@ -78,6 +78,7 @@ public class Mesero extends javax.swing.JFrame {
         jPanelMostrar.add(panelProducAgotados, "panelProducAgotados");
         jPanelMostrar.add(panelProducDisponibles, "panelProducDisponibles");
         jPanelMostrar.add(panelAgreProducto, "panelAgreProducto");
+        jPanelMostrar.add(panelGenerarReporte, "panelGenerarReporte");
         jPanelMostrarMesa.add(panelMesa1, "panelMesa1");
         jPanelMostrarMesa.add(panelMesa2, "panelMesa2");
         jPanelMostrarMesa.add(panelMesa3, "panelMesa3");
@@ -453,8 +454,8 @@ public class Mesero extends javax.swing.JFrame {
         menItemElimProducto = new javax.swing.JMenuItem();
         menItemProducDisponibles = new javax.swing.JMenuItem();
         menItemProducDAgotados = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        menuGenerarReporte = new javax.swing.JMenu();
+        menItemGenerarReporte = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -2513,16 +2514,21 @@ public class Mesero extends javax.swing.JFrame {
 
         jMenuBar2.add(menuProductos);
 
-        jMenu1.setText("Reporte");
-        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jMenu1.setPreferredSize(new java.awt.Dimension(122, 50));
+        menuGenerarReporte.setText("Reporte");
+        menuGenerarReporte.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        menuGenerarReporte.setPreferredSize(new java.awt.Dimension(122, 50));
 
-        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem1.setText("Generar reporte");
-        jMenuItem1.setPreferredSize(new java.awt.Dimension(180, 40));
-        jMenu1.add(jMenuItem1);
+        menItemGenerarReporte.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menItemGenerarReporte.setText("Generar reporte");
+        menItemGenerarReporte.setPreferredSize(new java.awt.Dimension(180, 40));
+        menItemGenerarReporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemGenerarReporteActionPerformed(evt);
+            }
+        });
+        menuGenerarReporte.add(menItemGenerarReporte);
 
-        jMenuBar2.add(jMenu1);
+        jMenuBar2.add(menuGenerarReporte);
 
         setJMenuBar(jMenuBar2);
 
@@ -4145,6 +4151,11 @@ public class Mesero extends javax.swing.JFrame {
         realizarPedidoMesa12();
         
     }//GEN-LAST:event_btnRealizarPedidoMesa12ActionPerformed
+
+    private void menItemGenerarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemGenerarReporteActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "panelGenerarReporte");
+    }//GEN-LAST:event_menItemGenerarReporteActionPerformed
     
     private void actualizarListaProductosDelPedidoMesa1() {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
@@ -4551,9 +4562,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel99;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList3;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanelMostrar;
     private javax.swing.JPanel jPanelMostrarMesa;
     private javax.swing.JScrollPane jScrollPane1;
@@ -4603,10 +4612,12 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JMenuItem menItemCargarProductos;
     private javax.swing.JMenuItem menItemCerrarSesion;
     private javax.swing.JMenuItem menItemElimProducto;
+    private javax.swing.JMenuItem menItemGenerarReporte;
     private javax.swing.JMenuItem menItemGestionarMesas;
     private javax.swing.JMenuItem menItemModProducto;
     private javax.swing.JMenuItem menItemProducDAgotados;
     private javax.swing.JMenuItem menItemProducDisponibles;
+    private javax.swing.JMenu menuGenerarReporte;
     private javax.swing.JMenu menuMesas;
     private javax.swing.JMenu menuMesero;
     private javax.swing.JMenu menuProductos;
