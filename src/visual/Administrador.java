@@ -7,6 +7,7 @@ package visual;
 
 
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -44,54 +45,54 @@ public class Administrador extends javax.swing.JFrame {
         jPanelMostrarAdmin = new javax.swing.JPanel();
         panelEliminarProducto = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listTodosLosProductos = new javax.swing.JList<>();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        txtIngresarProductoEliminar = new javax.swing.JTextField();
+        btnConfirmarEliminarPedido = new javax.swing.JButton();
+        btnCancelarEliminacionPedido = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        btnEliminarProducto = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtVizualizarProductoEliminar = new javax.swing.JTextField();
         panelProductosAgotados = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList<>();
+        listProductosAgotados = new javax.swing.JList<>();
         jLabel18 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        txtNombreProducto = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
+        btnConfirmarModificarProducto = new javax.swing.JButton();
+        btnCancelarModificacionProducto = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jTextField32 = new javax.swing.JTextField();
+        txtIngreseCantidadProducto = new javax.swing.JTextField();
         panelProductosDisponibles = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jList5 = new javax.swing.JList<>();
+        listProductosDisponibles = new javax.swing.JList<>();
         jLabel24 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jButton8 = new javax.swing.JButton();
+        txtNombreProductoDisponible = new javax.swing.JTextField();
+        btnVerStock = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
         jTextField33 = new javax.swing.JTextField();
         panelEliminarUsuarios = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jList7 = new javax.swing.JList<>();
+        listMeseros = new javax.swing.JList<>();
         jLabel30 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        txtIngreseMeseroEliminar = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
+        btnEliminarMesero = new javax.swing.JButton();
+        btnCancelarEliminacionMesero = new javax.swing.JButton();
         jLabel34 = new javax.swing.JLabel();
-        jTextField34 = new javax.swing.JTextField();
+        txtContraseñaAdministrador = new javax.swing.JTextField();
         panelAgregarUsuarios = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
@@ -102,76 +103,76 @@ public class Administrador extends javax.swing.JFrame {
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
+        btnRegistroMesero = new javax.swing.JButton();
+        btnCancelarRegistroMesero = new javax.swing.JButton();
+        txtNombreNuevoMesero = new javax.swing.JTextField();
+        txtApellidoNuevoMesero = new javax.swing.JTextField();
+        txtUsuarioNuevoMesero = new javax.swing.JTextField();
+        txtContraseñaNuevoMesero = new javax.swing.JTextField();
+        txtConfirmarContraseñaNuevoMesero = new javax.swing.JTextField();
+        txtTelefonoNuevomesero = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        jList9 = new javax.swing.JList<>();
+        listMeseroActualizados = new javax.swing.JList<>();
         panelModificarUsuarios = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
         jScrollPane10 = new javax.swing.JScrollPane();
-        jList10 = new javax.swing.JList<>();
+        listDatosMeseros = new javax.swing.JList<>();
         jLabel49 = new javax.swing.JLabel();
-        jTextField18 = new javax.swing.JTextField();
+        txtNombreMeseroModificar = new javax.swing.JTextField();
         jLabel50 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
-        jTextField21 = new javax.swing.JTextField();
+        txtModificarTelefono = new javax.swing.JTextField();
         jLabel54 = new javax.swing.JLabel();
-        jTextField22 = new javax.swing.JTextField();
+        txtModificarContarseña = new javax.swing.JTextField();
         jLabel55 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
+        txtNuevaContraseñaModificada = new javax.swing.JTextField();
         jLabel56 = new javax.swing.JLabel();
-        jTextField24 = new javax.swing.JTextField();
+        txtConfirCotraseñModificada = new javax.swing.JTextField();
         jLabel57 = new javax.swing.JLabel();
-        jTextField25 = new javax.swing.JTextField();
+        txtModificarRol = new javax.swing.JTextField();
         jLabel58 = new javax.swing.JLabel();
-        jButton19 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnEditarDatosMesero = new javax.swing.JButton();
+        btnCancelarEdicionDatos = new javax.swing.JButton();
         panelGestionarUsuarios = new javax.swing.JPanel();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
         jScrollPane12 = new javax.swing.JScrollPane();
-        jList12 = new javax.swing.JList<>();
+        listGestionMeseros = new javax.swing.JList<>();
         jLabel63 = new javax.swing.JLabel();
-        jTextField23 = new javax.swing.JTextField();
-        jTextField27 = new javax.swing.JTextField();
+        txtNombreGestionMesero = new javax.swing.JTextField();
+        txtGestionContraseñaMesero = new javax.swing.JTextField();
         jLabel70 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
+        btnSeleccionarMesero = new javax.swing.JButton();
         jLabel25 = new javax.swing.JLabel();
         panelAsignarPermisos = new javax.swing.JPanel();
         jLabel71 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
         jScrollPane15 = new javax.swing.JScrollPane();
-        jList15 = new javax.swing.JList<>();
+        listMeserosPermisos = new javax.swing.JList<>();
         jLabel73 = new javax.swing.JLabel();
         jScrollPane16 = new javax.swing.JScrollPane();
-        jList16 = new javax.swing.JList<>();
+        listPermisos = new javax.swing.JList<>();
         jLabel74 = new javax.swing.JLabel();
-        jTextField28 = new javax.swing.JTextField();
+        txtNombreMeseroPermisos = new javax.swing.JTextField();
         jLabel75 = new javax.swing.JLabel();
-        jTextField29 = new javax.swing.JTextField();
+        txtIngresarPermisoMesero = new javax.swing.JTextField();
         jLabel76 = new javax.swing.JLabel();
-        jButton25 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
-        jButton29 = new javax.swing.JButton();
+        btnConfirmarAsignacion = new javax.swing.JButton();
+        btnCancelarAsignacion = new javax.swing.JButton();
+        btnRestablecerCambios = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
         panelReporteVentas = new javax.swing.JPanel();
         jLabel79 = new javax.swing.JLabel();
         jLabel80 = new javax.swing.JLabel();
         jLabel81 = new javax.swing.JLabel();
-        jTextField30 = new javax.swing.JTextField();
+        txtFechaInicio = new javax.swing.JTextField();
         jLabel82 = new javax.swing.JLabel();
-        jTextField31 = new javax.swing.JTextField();
+        txtFechaFinal = new javax.swing.JTextField();
         jScrollPane18 = new javax.swing.JScrollPane();
-        jList18 = new javax.swing.JList<>();
+        btnReporteVentas = new javax.swing.JList<>();
         jLabel83 = new javax.swing.JLabel();
         btnGenerarReporte = new javax.swing.JButton();
         jLabel85 = new javax.swing.JLabel();
@@ -187,28 +188,27 @@ public class Administrador extends javax.swing.JFrame {
         jLabel86 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        jTextField16 = new javax.swing.JTextField();
         jLabel43 = new javax.swing.JLabel();
-        jTextField19 = new javax.swing.JTextField();
-        btnConfirmacionCerrarSesion = new javax.swing.JButton();
+        txtIngreseCodigoGenerado = new javax.swing.JTextField();
         btnCerrarSesionAdmnistrador = new javax.swing.JButton();
+        txtCodigoGenerado = new javax.swing.JTextField();
         panelAgregarProducto = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txtCategoriaPlato = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtAgregarPlatoCarta = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txtCantidadPlato = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnAgregarProducto = new javax.swing.JButton();
+        btnCancelarAgregacion = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
-        jTextField3 = new javax.swing.JTextField();
+        listCartaActualizada = new javax.swing.JList<>();
+        txtPrecioPlato = new javax.swing.JTextField();
         jMenuAdmin = new javax.swing.JMenuBar();
         menuInventario = new javax.swing.JMenu();
         menItemEliminarProductos = new javax.swing.JMenuItem();
@@ -237,21 +237,21 @@ public class Administrador extends javax.swing.JFrame {
         panelEliminarProducto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         panelEliminarProducto.setForeground(new java.awt.Color(204, 204, 204));
 
-        jList1.setBackground(new java.awt.Color(255, 204, 51));
-        jList1.setForeground(new java.awt.Color(255, 204, 51));
-        jScrollPane1.setViewportView(jList1);
+        listTodosLosProductos.setBackground(new java.awt.Color(255, 204, 51));
+        listTodosLosProductos.setForeground(new java.awt.Color(255, 204, 51));
+        jScrollPane1.setViewportView(listTodosLosProductos);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Ingrese el producto a eliminar : ");
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 0));
-        jButton1.setText("Confirmar");
-        jButton1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnConfirmarEliminarPedido.setBackground(new java.awt.Color(0, 102, 0));
+        btnConfirmarEliminarPedido.setText("Confirmar");
+        btnConfirmarEliminarPedido.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton2.setBackground(new java.awt.Color(153, 0, 0));
-        jButton2.setText("Cancelar");
-        jButton2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCancelarEliminacionPedido.setBackground(new java.awt.Color(153, 0, 0));
+        btnCancelarEliminacionPedido.setText("Cancelar");
+        btnCancelarEliminacionPedido.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 3, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -265,8 +265,8 @@ public class Administrador extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Lista de todos los productos:");
 
-        jButton4.setBackground(new java.awt.Color(0, 51, 255));
-        jButton4.setText("Aceptar");
+        btnEliminarProducto.setBackground(new java.awt.Color(0, 51, 255));
+        btnEliminarProducto.setText("Aceptar");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
@@ -293,17 +293,17 @@ public class Administrador extends javax.swing.JFrame {
                                         .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel2)
                                             .addGroup(panelEliminarProductoLayout.createSequentialGroup()
-                                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtIngresarProductoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(34, 34, 34)
-                                                .addComponent(jButton4))
+                                                .addComponent(btnEliminarProducto))
                                             .addComponent(jLabel6)
-                                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtVizualizarProductoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel3)))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelEliminarProductoLayout.createSequentialGroup()
                                         .addGap(107, 107, 107)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnConfirmarEliminarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(36, 36, 36)
-                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addComponent(btnCancelarEliminacionPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap(175, Short.MAX_VALUE))
         );
         panelEliminarProductoLayout.setVerticalGroup(
@@ -318,18 +318,18 @@ public class Administrador extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelEliminarProductoLayout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtIngresarProductoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(36, 36, 36)
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton4))
+                                .addComponent(txtVizualizarProductoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnEliminarProducto))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
                         .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnConfirmarEliminarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCancelarEliminacionPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(77, 77, 77))
                     .addGroup(panelEliminarProductoLayout.createSequentialGroup()
                         .addGap(46, 46, 46)
@@ -357,9 +357,9 @@ public class Administrador extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("Lista de productos sin stock:");
 
-        jList3.setBackground(new java.awt.Color(255, 204, 51));
-        jList3.setForeground(new java.awt.Color(255, 204, 51));
-        jScrollPane3.setViewportView(jList3);
+        listProductosAgotados.setBackground(new java.awt.Color(255, 204, 51));
+        listProductosAgotados.setForeground(new java.awt.Color(255, 204, 51));
+        jScrollPane3.setViewportView(listProductosAgotados);
 
         jLabel18.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(0, 0, 0));
@@ -369,13 +369,13 @@ public class Administrador extends javax.swing.JFrame {
         jLabel26.setForeground(new java.awt.Color(0, 0, 0));
         jLabel26.setText("Esta seguro de modificar el productos ?");
 
-        jButton12.setBackground(new java.awt.Color(0, 153, 0));
-        jButton12.setText("Confirmar");
-        jButton12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnConfirmarModificarProducto.setBackground(new java.awt.Color(0, 153, 0));
+        btnConfirmarModificarProducto.setText("Confirmar");
+        btnConfirmarModificarProducto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton13.setBackground(new java.awt.Color(153, 0, 0));
-        jButton13.setText("Cancelar");
-        jButton13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCancelarModificacionProducto.setBackground(new java.awt.Color(153, 0, 0));
+        btnCancelarModificacionProducto.setText("Cancelar");
+        btnCancelarModificacionProducto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -408,21 +408,21 @@ public class Administrador extends javax.swing.JFrame {
                         .addGroup(panelProductosAgotadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelProductosAgotadosLayout.createSequentialGroup()
                                 .addGap(149, 149, 149)
-                                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnConfirmarModificarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(39, 39, 39)
-                                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnCancelarModificacionProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelProductosAgotadosLayout.createSequentialGroup()
                                 .addGap(155, 155, 155)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelProductosAgotadosLayout.createSequentialGroup()
                                 .addGap(108, 108, 108)
                                 .addGroup(panelProductosAgotadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel18)))
                             .addGroup(panelProductosAgotadosLayout.createSequentialGroup()
                                 .addGap(121, 121, 121)
                                 .addGroup(panelProductosAgotadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtIngreseCantidadProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel19)))
                             .addGroup(panelProductosAgotadosLayout.createSequentialGroup()
                                 .addGap(98, 98, 98)
@@ -446,17 +446,17 @@ public class Administrador extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtIngreseCantidadProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(47, 47, 47)
                         .addComponent(jLabel26)
                         .addGap(18, 18, 18)
                         .addGroup(panelProductosAgotadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnConfirmarModificarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCancelarModificacionProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(38, 38, 38))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(58, 58, 58))
@@ -479,18 +479,18 @@ public class Administrador extends javax.swing.JFrame {
         jLabel23.setForeground(new java.awt.Color(0, 0, 0));
         jLabel23.setText("Lista de productos : ");
 
-        jList5.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane5.setViewportView(jList5);
+        listProductosDisponibles.setBackground(new java.awt.Color(255, 204, 51));
+        jScrollPane5.setViewportView(listProductosDisponibles);
 
         jLabel24.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(0, 0, 0));
         jLabel24.setText("Ingrese el nombre del producto : ");
 
-        jButton8.setBackground(new java.awt.Color(0, 153, 102));
-        jButton8.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(0, 0, 0));
-        jButton8.setText("Ver Stock");
-        jButton8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnVerStock.setBackground(new java.awt.Color(0, 153, 102));
+        btnVerStock.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        btnVerStock.setForeground(new java.awt.Color(0, 0, 0));
+        btnVerStock.setText("Ver Stock");
+        btnVerStock.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel20.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(0, 0, 0));
@@ -515,10 +515,10 @@ public class Administrador extends javax.swing.JFrame {
                                 .addGap(94, 94, 94)
                                 .addGroup(panelProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel24)
-                                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtNombreProductoDisponible, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(panelProductosDisponiblesLayout.createSequentialGroup()
                                 .addGap(171, 171, 171)
-                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnVerStock, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelProductosDisponiblesLayout.createSequentialGroup()
                                 .addGap(124, 124, 124)
                                 .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -551,9 +551,9 @@ public class Administrador extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel24)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNombreProductoDisponible, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnVerStock, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(145, 145, 145))))
@@ -568,8 +568,8 @@ public class Administrador extends javax.swing.JFrame {
         jLabel28.setForeground(new java.awt.Color(0, 0, 0));
         jLabel28.setText("ELIMINAR MESERO");
 
-        jList7.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane7.setViewportView(jList7);
+        listMeseros.setBackground(new java.awt.Color(255, 204, 51));
+        jScrollPane7.setViewportView(listMeseros);
 
         jLabel30.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(0, 0, 0));
@@ -583,19 +583,19 @@ public class Administrador extends javax.swing.JFrame {
         jLabel33.setForeground(new java.awt.Color(0, 0, 0));
         jLabel33.setText("Desea eliminar al mesero ? ");
 
-        jButton15.setBackground(new java.awt.Color(0, 153, 0));
-        jButton15.setText("Confirmar");
-        jButton15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnEliminarMesero.setBackground(new java.awt.Color(0, 153, 0));
+        btnEliminarMesero.setText("Confirmar");
+        btnEliminarMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton16.setBackground(new java.awt.Color(153, 0, 0));
-        jButton16.setText("Cancelar");
-        jButton16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCancelarEliminacionMesero.setBackground(new java.awt.Color(153, 0, 0));
+        btnCancelarEliminacionMesero.setText("Cancelar");
+        btnCancelarEliminacionMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel34.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(0, 0, 0));
         jLabel34.setText("Confirmacion de contraseña : ");
 
-        jTextField34.setText("Contraseña del Administrador");
+        txtContraseñaAdministrador.setText("Contraseña del Administrador");
 
         javax.swing.GroupLayout panelEliminarUsuariosLayout = new javax.swing.GroupLayout(panelEliminarUsuarios);
         panelEliminarUsuarios.setLayout(panelEliminarUsuariosLayout);
@@ -611,17 +611,17 @@ public class Administrador extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addGroup(panelEliminarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel32)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtIngreseMeseroEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(panelEliminarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField34, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtContraseñaAdministrador, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(panelEliminarUsuariosLayout.createSequentialGroup()
                         .addGap(91, 91, 91)
                         .addGroup(panelEliminarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelEliminarUsuariosLayout.createSequentialGroup()
-                                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnEliminarMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(43, 43, 43)
-                                .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnCancelarEliminacionMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel33))))
                 .addContainerGap(198, Short.MAX_VALUE))
             .addGroup(panelEliminarUsuariosLayout.createSequentialGroup()
@@ -637,17 +637,17 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(72, 72, 72)
                 .addComponent(jLabel32)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtIngreseMeseroEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(jLabel34)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtContraseñaAdministrador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel33)
                 .addGap(18, 18, 18)
                 .addGroup(panelEliminarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCancelarEliminacionMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEliminarMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(94, 94, 94))
             .addGroup(panelEliminarUsuariosLayout.createSequentialGroup()
                 .addGap(49, 71, Short.MAX_VALUE)
@@ -698,20 +698,20 @@ public class Administrador extends javax.swing.JFrame {
         jLabel44.setForeground(new java.awt.Color(0, 0, 0));
         jLabel44.setText("Desea registrar al mesero ? ");
 
-        jButton17.setBackground(new java.awt.Color(0, 153, 0));
-        jButton17.setText("Confirmar");
-        jButton17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnRegistroMesero.setBackground(new java.awt.Color(0, 153, 0));
+        btnRegistroMesero.setText("Confirmar");
+        btnRegistroMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton18.setBackground(new java.awt.Color(153, 0, 0));
-        jButton18.setText("Cancelar");
-        jButton18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCancelarRegistroMesero.setBackground(new java.awt.Color(153, 0, 0));
+        btnCancelarRegistroMesero.setText("Cancelar");
+        btnCancelarRegistroMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel45.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(0, 0, 0));
         jLabel45.setText("Lista de meseros actualizada :");
 
-        jList9.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane9.setViewportView(jList9);
+        listMeseroActualizados.setBackground(new java.awt.Color(255, 204, 51));
+        jScrollPane9.setViewportView(listMeseroActualizados);
 
         javax.swing.GroupLayout panelAgregarUsuariosLayout = new javax.swing.GroupLayout(panelAgregarUsuarios);
         panelAgregarUsuarios.setLayout(panelAgregarUsuariosLayout);
@@ -726,9 +726,9 @@ public class Administrador extends javax.swing.JFrame {
                             .addGroup(panelAgregarUsuariosLayout.createSequentialGroup()
                                 .addGroup(panelAgregarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panelAgregarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                                        .addComponent(jTextField12, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField13, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addComponent(txtNombreNuevoMesero, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                                        .addComponent(txtApellidoNuevoMesero, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtUsuarioNuevoMesero, javax.swing.GroupLayout.Alignment.LEADING))
                                     .addComponent(jLabel39)
                                     .addComponent(jLabel38)
                                     .addComponent(jLabel37))
@@ -737,18 +737,18 @@ public class Administrador extends javax.swing.JFrame {
                                     .addComponent(jLabel41)
                                     .addComponent(jLabel42)
                                     .addGroup(panelAgregarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                                        .addComponent(jTextField17))
+                                        .addComponent(txtConfirmarContraseñaNuevoMesero, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                                        .addComponent(txtTelefonoNuevomesero))
                                     .addComponent(jLabel44))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(panelAgregarUsuariosLayout.createSequentialGroup()
                         .addGroup(panelAgregarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel40)
-                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtContraseñaNuevoMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnRegistroMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
-                        .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCancelarRegistroMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(76, 76, 76)))
                 .addGroup(panelAgregarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel45)
@@ -777,20 +777,20 @@ public class Administrador extends javax.swing.JFrame {
                 .addGroup(panelAgregarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelAgregarUsuariosLayout.createSequentialGroup()
                         .addGroup(panelAgregarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtNombreNuevoMesero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtConfirmarContraseñaNuevoMesero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(12, 12, 12)
                         .addGroup(panelAgregarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel38)
                             .addComponent(jLabel42))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelAgregarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtApellidoNuevoMesero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTelefonoNuevomesero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(17, 17, 17)
                         .addComponent(jLabel39)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtUsuarioNuevoMesero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                         .addGroup(panelAgregarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel44, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -798,12 +798,12 @@ public class Administrador extends javax.swing.JFrame {
                         .addGroup(panelAgregarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelAgregarUsuariosLayout.createSequentialGroup()
                                 .addGap(7, 7, 7)
-                                .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtContraseñaNuevoMesero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelAgregarUsuariosLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(panelAgregarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(btnCancelarRegistroMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnRegistroMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(84, 84, 84))
                     .addGroup(panelAgregarUsuariosLayout.createSequentialGroup()
                         .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -827,8 +827,8 @@ public class Administrador extends javax.swing.JFrame {
         jLabel48.setForeground(new java.awt.Color(0, 0, 0));
         jLabel48.setText("Lista de los meseros :");
 
-        jList10.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane10.setViewportView(jList10);
+        listDatosMeseros.setBackground(new java.awt.Color(255, 204, 51));
+        jScrollPane10.setViewportView(listDatosMeseros);
 
         jLabel49.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel49.setForeground(new java.awt.Color(0, 0, 0));
@@ -862,14 +862,14 @@ public class Administrador extends javax.swing.JFrame {
         jLabel58.setForeground(new java.awt.Color(0, 0, 0));
         jLabel58.setText("Desea guardar los cambios ?");
 
-        jButton19.setBackground(new java.awt.Color(0, 153, 0));
-        jButton19.setText("Confirmar");
-        jButton19.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnEditarDatosMesero.setBackground(new java.awt.Color(0, 153, 0));
+        btnEditarDatosMesero.setText("Confirmar");
+        btnEditarDatosMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton6.setBackground(new java.awt.Color(204, 0, 0));
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("Cancelar");
-        jButton6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCancelarEdicionDatos.setBackground(new java.awt.Color(204, 0, 0));
+        btnCancelarEdicionDatos.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancelarEdicionDatos.setText("Cancelar");
+        btnCancelarEdicionDatos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout panelModificarUsuariosLayout = new javax.swing.GroupLayout(panelModificarUsuarios);
         panelModificarUsuarios.setLayout(panelModificarUsuariosLayout);
@@ -893,31 +893,31 @@ public class Administrador extends javax.swing.JFrame {
                     .addGroup(panelModificarUsuariosLayout.createSequentialGroup()
                         .addGroup(panelModificarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel53)
-                            .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtModificarTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtModificarRol, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel57))
                         .addGap(72, 72, 72)
                         .addGroup(panelModificarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel56)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                            .addComponent(txtNuevaContraseñaModificada, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
                             .addComponent(jLabel55)
-                            .addComponent(jTextField24))
+                            .addComponent(txtConfirCotraseñModificada))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panelModificarUsuariosLayout.createSequentialGroup()
                         .addGroup(panelModificarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel54)
                             .addGroup(panelModificarUsuariosLayout.createSequentialGroup()
-                                .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtModificarContarseña, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(66, 66, 66)
                                 .addComponent(jLabel58))
                             .addComponent(jLabel50)
-                            .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNombreMeseroModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel49)
                             .addGroup(panelModificarUsuariosLayout.createSequentialGroup()
                                 .addGap(302, 302, 302)
-                                .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnEditarDatosMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(46, 46, 46)
-                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnCancelarEdicionDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(88, Short.MAX_VALUE))))
         );
         panelModificarUsuariosLayout.setVerticalGroup(
@@ -934,7 +934,7 @@ public class Administrador extends javax.swing.JFrame {
                     .addGroup(panelModificarUsuariosLayout.createSequentialGroup()
                         .addComponent(jLabel49)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNombreMeseroModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel50)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -943,29 +943,29 @@ public class Administrador extends javax.swing.JFrame {
                             .addComponent(jLabel55))
                         .addGap(6, 6, 6)
                         .addGroup(panelModificarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtModificarTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNuevaContraseñaModificada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(panelModificarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel57)
                             .addComponent(jLabel56))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelModificarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtModificarRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtConfirCotraseñModificada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(panelModificarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelModificarUsuariosLayout.createSequentialGroup()
                                 .addGap(30, 30, 30)
                                 .addComponent(jLabel58)
                                 .addGap(18, 18, 18)
                                 .addGroup(panelModificarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(btnCancelarEdicionDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnEditarDatosMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(panelModificarUsuariosLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(jLabel54)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtModificarContarseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(53, Short.MAX_VALUE))
                     .addGroup(panelModificarUsuariosLayout.createSequentialGroup()
                         .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -985,8 +985,8 @@ public class Administrador extends javax.swing.JFrame {
         jLabel61.setForeground(new java.awt.Color(0, 0, 0));
         jLabel61.setText("Vista general de todos los meseros :");
 
-        jList12.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane12.setViewportView(jList12);
+        listGestionMeseros.setBackground(new java.awt.Color(255, 204, 51));
+        jScrollPane12.setViewportView(listGestionMeseros);
 
         jLabel63.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel63.setForeground(new java.awt.Color(0, 0, 0));
@@ -996,10 +996,10 @@ public class Administrador extends javax.swing.JFrame {
         jLabel70.setForeground(new java.awt.Color(0, 0, 0));
         jLabel70.setText("Contraseña del mesero :");
 
-        jButton7.setBackground(new java.awt.Color(102, 153, 0));
-        jButton7.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        jButton7.setText("Seleccione un mesero");
-        jButton7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnSeleccionarMesero.setBackground(new java.awt.Color(102, 153, 0));
+        btnSeleccionarMesero.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnSeleccionarMesero.setText("Seleccione un mesero");
+        btnSeleccionarMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel25.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(0, 0, 0));
@@ -1021,12 +1021,12 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(175, 175, 175)
                 .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSeleccionarMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addGroup(panelGestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtGestionContraseñaMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel70)
-                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombreGestionMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel63)
                     .addComponent(jLabel25))
                 .addContainerGap(51, Short.MAX_VALUE))
@@ -1045,14 +1045,14 @@ public class Administrador extends javax.swing.JFrame {
                                 .addGap(27, 27, 27)
                                 .addComponent(jLabel63)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtNombreGestionMesero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel70))
                             .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
                                 .addGap(186, 186, 186)
-                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnSeleccionarMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtGestionContraseñaMesero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelGestionarUsuariosLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1074,15 +1074,15 @@ public class Administrador extends javax.swing.JFrame {
         jLabel72.setForeground(new java.awt.Color(0, 0, 0));
         jLabel72.setText("Lista de meseros :");
 
-        jList15.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane15.setViewportView(jList15);
+        listMeserosPermisos.setBackground(new java.awt.Color(255, 204, 51));
+        jScrollPane15.setViewportView(listMeserosPermisos);
 
         jLabel73.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel73.setForeground(new java.awt.Color(0, 0, 0));
         jLabel73.setText("Lista de permisos :");
 
-        jList16.setBackground(new java.awt.Color(255, 153, 51));
-        jScrollPane16.setViewportView(jList16);
+        listPermisos.setBackground(new java.awt.Color(255, 153, 51));
+        jScrollPane16.setViewportView(listPermisos);
 
         jLabel74.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel74.setForeground(new java.awt.Color(0, 0, 0));
@@ -1096,17 +1096,17 @@ public class Administrador extends javax.swing.JFrame {
         jLabel76.setForeground(new java.awt.Color(0, 0, 0));
         jLabel76.setText("Confirmar los cambios selecionados.");
 
-        jButton25.setBackground(new java.awt.Color(0, 153, 0));
-        jButton25.setText("Confirmar");
-        jButton25.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnConfirmarAsignacion.setBackground(new java.awt.Color(0, 153, 0));
+        btnConfirmarAsignacion.setText("Confirmar");
+        btnConfirmarAsignacion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton27.setBackground(new java.awt.Color(204, 0, 0));
-        jButton27.setText("Cancelar");
-        jButton27.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCancelarAsignacion.setBackground(new java.awt.Color(204, 0, 0));
+        btnCancelarAsignacion.setText("Cancelar");
+        btnCancelarAsignacion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton29.setBackground(new java.awt.Color(0, 51, 255));
-        jButton29.setText("Restablecer cambios.");
-        jButton29.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnRestablecerCambios.setBackground(new java.awt.Color(0, 51, 255));
+        btnRestablecerCambios.setText("Restablecer cambios.");
+        btnRestablecerCambios.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel27.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(0, 0, 0));
@@ -1138,12 +1138,12 @@ public class Administrador extends javax.swing.JFrame {
                                 .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panelAsignarPermisosLayout.createSequentialGroup()
                                         .addGap(144, 144, 144)
-                                        .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnConfirmarAsignacion, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(48, 48, 48)
-                                        .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(btnCancelarAsignacion, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(panelAsignarPermisosLayout.createSequentialGroup()
                                         .addGap(183, 183, 183)
-                                        .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(btnRestablecerCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap())
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAsignarPermisosLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
@@ -1151,9 +1151,9 @@ public class Administrador extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAsignarPermisosLayout.createSequentialGroup()
                                         .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel74)
-                                            .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtNombreMeseroPermisos, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel75)
-                                            .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(txtIngresarPermisoMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(88, 88, 88))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAsignarPermisosLayout.createSequentialGroup()
                                         .addComponent(jLabel27)
@@ -1184,19 +1184,19 @@ public class Administrador extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel74)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNombreMeseroPermisos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel75)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtIngresarPermisoMesero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel76)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnConfirmarAsignacion, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCancelarAsignacion, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnRestablecerCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(49, Short.MAX_VALUE))
         );
 
@@ -1221,8 +1221,8 @@ public class Administrador extends javax.swing.JFrame {
         jLabel82.setForeground(new java.awt.Color(0, 0, 0));
         jLabel82.setText("Hasta :");
 
-        jList18.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane18.setViewportView(jList18);
+        btnReporteVentas.setBackground(new java.awt.Color(255, 204, 51));
+        jScrollPane18.setViewportView(btnReporteVentas);
 
         jLabel83.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel83.setForeground(new java.awt.Color(0, 0, 0));
@@ -1273,8 +1273,8 @@ public class Administrador extends javax.swing.JFrame {
                             .addComponent(jLabel82))
                         .addGap(5, 5, 5)
                         .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtFechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtFechaFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32)
                         .addComponent(btnGenerarReporte)
                         .addGap(92, 92, 92)
@@ -1306,9 +1306,9 @@ public class Administrador extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addComponent(jLabel82))
                     .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                        .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtFechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtFechaFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnGenerarReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelReporteVentasLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
@@ -1344,19 +1344,9 @@ public class Administrador extends javax.swing.JFrame {
         jLabel31.setForeground(new java.awt.Color(0, 0, 0));
         jLabel31.setText("Codigo generado :");
 
-        jTextField16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField16ActionPerformed(evt);
-            }
-        });
-
         jLabel43.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(0, 0, 0));
         jLabel43.setText("Ingresar codigo :");
-
-        btnConfirmacionCerrarSesion.setBackground(new java.awt.Color(51, 102, 0));
-        btnConfirmacionCerrarSesion.setText("Comprobar");
-        btnConfirmacionCerrarSesion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         btnCerrarSesionAdmnistrador.setBackground(new java.awt.Color(204, 0, 0));
         btnCerrarSesionAdmnistrador.setText("Cerrar sesion");
@@ -1374,29 +1364,29 @@ public class Administrador extends javax.swing.JFrame {
             .addGroup(panelCerrarSesionLayout.createSequentialGroup()
                 .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelCerrarSesionLayout.createSequentialGroup()
-                        .addGap(304, 304, 304)
-                        .addComponent(jLabel86))
-                    .addGroup(panelCerrarSesionLayout.createSequentialGroup()
                         .addGap(155, 155, 155)
-                        .addComponent(jLabel29))
-                    .addGroup(panelCerrarSesionLayout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(jLabel31))
-                    .addGroup(panelCerrarSesionLayout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panelCerrarSesionLayout.createSequentialGroup()
-                                .addGap(126, 126, 126)
-                                .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(141, 141, 141)
-                        .addComponent(btnCerrarSesionAdmnistrador, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelCerrarSesionLayout.createSequentialGroup()
-                        .addGap(356, 356, 356)
-                        .addComponent(btnConfirmacionCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(92, Short.MAX_VALUE))
+                        .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCerrarSesionLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(txtIngreseCodigoGenerado, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(140, 140, 140)))
+                .addComponent(btnCerrarSesionAdmnistrador, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(138, 138, 138))
+            .addGroup(panelCerrarSesionLayout.createSequentialGroup()
+                .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtCodigoGenerado, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelCerrarSesionLayout.createSequentialGroup()
+                            .addGap(304, 304, 304)
+                            .addComponent(jLabel86))
+                        .addGroup(panelCerrarSesionLayout.createSequentialGroup()
+                            .addGap(155, 155, 155)
+                            .addComponent(jLabel29))
+                        .addGroup(panelCerrarSesionLayout.createSequentialGroup()
+                            .addGap(155, 155, 155)
+                            .addComponent(jLabel31))))
+                .addContainerGap(391, Short.MAX_VALUE))
         );
         panelCerrarSesionLayout.setVerticalGroup(
             panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1410,15 +1400,13 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelCerrarSesionLayout.createSequentialGroup()
-                        .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCodigoGenerado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
                         .addComponent(jLabel43)
-                        .addGap(6, 6, 6)
-                        .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(5, 5, 5)
+                        .addComponent(txtIngreseCodigoGenerado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnCerrarSesionAdmnistrador, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(btnConfirmacionCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(215, Short.MAX_VALUE))
         );
 
         jPanelMostrarAdmin.add(panelCerrarSesion, "card13");
@@ -1452,13 +1440,13 @@ public class Administrador extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Complete la información para agregar nuevo producto :");
 
-        jButton3.setBackground(new java.awt.Color(0, 153, 0));
-        jButton3.setText("Agregar");
-        jButton3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnAgregarProducto.setBackground(new java.awt.Color(0, 153, 0));
+        btnAgregarProducto.setText("Agregar");
+        btnAgregarProducto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton5.setBackground(new java.awt.Color(153, 0, 0));
-        jButton5.setText("Cancelar");
-        jButton5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCancelarAgregacion.setBackground(new java.awt.Color(153, 0, 0));
+        btnCancelarAgregacion.setText("Cancelar");
+        btnCancelarAgregacion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Black", 3, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 0));
@@ -1468,8 +1456,8 @@ public class Administrador extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setText("Carta actualizada :");
 
-        jList2.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane2.setViewportView(jList2);
+        listCartaActualizada.setBackground(new java.awt.Color(255, 204, 51));
+        jScrollPane2.setViewportView(listCartaActualizada);
 
         javax.swing.GroupLayout panelAgregarProductoLayout = new javax.swing.GroupLayout(panelAgregarProducto);
         panelAgregarProducto.setLayout(panelAgregarProductoLayout);
@@ -1494,25 +1482,25 @@ public class Administrador extends javax.swing.JFrame {
                         .addGap(104, 104, 104)
                         .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelAgregarProductoLayout.createSequentialGroup()
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtAgregarPlatoCarta, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(50, 50, 50)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtCantidadPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelAgregarProductoLayout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(157, 157, 157)
                                 .addComponent(jLabel10))
                             .addGroup(panelAgregarProductoLayout.createSequentialGroup()
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCategoriaPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(50, 50, 50)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtPrecioPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelAgregarProductoLayout.createSequentialGroup()
                                 .addGap(37, 37, 37)
                                 .addComponent(jLabel14))
                             .addGroup(panelAgregarProductoLayout.createSequentialGroup()
                                 .addGap(124, 124, 124)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnAgregarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(43, 43, 43)
-                                .addComponent(jButton5)))
+                                .addComponent(btnCancelarAgregacion)))
                         .addGap(74, 74, 74)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(88, Short.MAX_VALUE))
@@ -1533,22 +1521,22 @@ public class Administrador extends javax.swing.JFrame {
                 .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelAgregarProductoLayout.createSequentialGroup()
                         .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtAgregarPlatoCarta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCantidadPlato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(26, 26, 26)
                         .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
                             .addComponent(jLabel10))
                         .addGap(12, 12, 12)
                         .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCategoriaPlato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPrecioPlato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(47, 47, 47)
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
                         .addGroup(panelAgregarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnAgregarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCancelarAgregacion, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
@@ -1711,6 +1699,8 @@ public class Administrador extends javax.swing.JFrame {
     private void menItemCerrarSecsionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemCerrarSecsionActionPerformed
         CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
         layout.show(jPanelMostrarAdmin, "panelCerrarSesion");
+        int numeroCerrarSesion = (int)( Math.random()*90000) + 10000;
+        txtCodigoGenerado.setText(String.valueOf(numeroCerrarSesion));
     }//GEN-LAST:event_menItemCerrarSecsionActionPerformed
 
     private void menItemReporteVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemReporteVentasActionPerformed
@@ -1762,14 +1752,35 @@ public class Administrador extends javax.swing.JFrame {
         CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
         layout.show(jPanelMostrarAdmin, "panelEliminarProducto");
     }//GEN-LAST:event_menItemEliminarProductosActionPerformed
-
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
-
+    
     private void btnCerrarSesionAdmnistradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionAdmnistradorActionPerformed
-        new BievenidaO().setVisible(true);
-        this.dispose();
+        String numeroGenerado = txtCodigoGenerado.getText();
+        String numeroIngresado = txtIngreseCodigoGenerado.getText();
+        if (numeroIngresado.isEmpty())
+        {
+            JOptionPane.showMessageDialog(rootPane, "Ingrese el numero generado", "Error", JOptionPane.WARNING_MESSAGE);
+        }else if(numeroGenerado.equalsIgnoreCase(numeroIngresado)){
+            Object[] opciones = {"Si" , "No"};
+            int seleccion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Seguro que quieres cerrar sesión?",
+                    "Confirmación",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[0]
+            );
+            
+            if (seleccion == JOptionPane.YES_OPTION)
+            {
+                new BievenidaO().setVisible(true);
+                this.dispose();
+            }
+        }else
+        {
+            JOptionPane.showMessageDialog(rootPane, "Número ingresado incorrecto, Intentar otra vez." , "Error", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btnCerrarSesionAdmnistradorActionPerformed
 
     /**
@@ -1839,28 +1850,28 @@ public class Administrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarProducto;
+    private javax.swing.JButton btnCancelarAgregacion;
+    private javax.swing.JButton btnCancelarAsignacion;
+    private javax.swing.JButton btnCancelarEdicionDatos;
+    private javax.swing.JButton btnCancelarEliminacionMesero;
+    private javax.swing.JButton btnCancelarEliminacionPedido;
+    private javax.swing.JButton btnCancelarModificacionProducto;
+    private javax.swing.JButton btnCancelarRegistroMesero;
     private javax.swing.JButton btnCerrarSesionAdmnistrador;
-    private javax.swing.JButton btnConfirmacionCerrarSesion;
+    private javax.swing.JButton btnConfirmarAsignacion;
+    private javax.swing.JButton btnConfirmarEliminarPedido;
+    private javax.swing.JButton btnConfirmarModificarProducto;
+    private javax.swing.JButton btnEditarDatosMesero;
+    private javax.swing.JButton btnEliminarMesero;
+    private javax.swing.JButton btnEliminarProducto;
     private javax.swing.JButton btnGenerarReporte;
+    private javax.swing.JButton btnRegistroMesero;
+    private javax.swing.JList<String> btnReporteVentas;
+    private javax.swing.JButton btnRestablecerCambios;
+    private javax.swing.JButton btnSeleccionarMesero;
     private javax.swing.JButton btnVerReporte;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton29;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton btnVerStock;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1937,17 +1948,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList10;
-    private javax.swing.JList<String> jList12;
-    private javax.swing.JList<String> jList15;
-    private javax.swing.JList<String> jList16;
-    private javax.swing.JList<String> jList18;
-    private javax.swing.JList<String> jList2;
-    private javax.swing.JList<String> jList3;
-    private javax.swing.JList<String> jList5;
-    private javax.swing.JList<String> jList7;
-    private javax.swing.JList<String> jList9;
     private javax.swing.JMenuBar jMenuAdmin;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelMostrarAdmin;
@@ -1962,38 +1962,17 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField29;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField30;
-    private javax.swing.JTextField jTextField31;
-    private javax.swing.JTextField jTextField32;
     private javax.swing.JTextField jTextField33;
-    private javax.swing.JTextField jTextField34;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JList<String> listCartaActualizada;
+    private javax.swing.JList<String> listDatosMeseros;
+    private javax.swing.JList<String> listGestionMeseros;
+    private javax.swing.JList<String> listMeseroActualizados;
+    private javax.swing.JList<String> listMeseros;
+    private javax.swing.JList<String> listMeserosPermisos;
+    private javax.swing.JList<String> listPermisos;
+    private javax.swing.JList<String> listProductosAgotados;
+    private javax.swing.JList<String> listProductosDisponibles;
+    private javax.swing.JList<String> listTodosLosProductos;
     private javax.swing.JMenuItem menItemAgregarProductos;
     private javax.swing.JMenuItem menItemAgregarUsuario;
     private javax.swing.JMenuItem menItemAsignarPermisos;
@@ -2022,8 +2001,39 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JPanel panelProductosAgotados;
     private javax.swing.JPanel panelProductosDisponibles;
     private javax.swing.JPanel panelReporteVentas;
+    private javax.swing.JTextField txtAgregarPlatoCarta;
+    private javax.swing.JTextField txtApellidoNuevoMesero;
+    private javax.swing.JTextField txtCantidadPlato;
     private javax.swing.JTextField txtCantidadReporteSeleccionado;
+    private javax.swing.JTextField txtCategoriaPlato;
+    private javax.swing.JTextField txtCodigoGenerado;
+    private javax.swing.JTextField txtConfirCotraseñModificada;
+    private javax.swing.JTextField txtConfirmarContraseñaNuevoMesero;
+    private javax.swing.JTextField txtContraseñaAdministrador;
+    private javax.swing.JTextField txtContraseñaNuevoMesero;
+    private javax.swing.JTextField txtFechaFinal;
+    private javax.swing.JTextField txtFechaInicio;
     private javax.swing.JTextField txtFechaReporteSeleccionado;
     private javax.swing.JTextField txtGananciaReporteSeleccionado;
+    private javax.swing.JTextField txtGestionContraseñaMesero;
+    private javax.swing.JTextField txtIngresarPermisoMesero;
+    private javax.swing.JTextField txtIngresarProductoEliminar;
+    private javax.swing.JTextField txtIngreseCantidadProducto;
+    private javax.swing.JTextField txtIngreseCodigoGenerado;
+    private javax.swing.JTextField txtIngreseMeseroEliminar;
+    private javax.swing.JTextField txtModificarContarseña;
+    private javax.swing.JTextField txtModificarRol;
+    private javax.swing.JTextField txtModificarTelefono;
+    private javax.swing.JTextField txtNombreGestionMesero;
+    private javax.swing.JTextField txtNombreMeseroModificar;
+    private javax.swing.JTextField txtNombreMeseroPermisos;
+    private javax.swing.JTextField txtNombreNuevoMesero;
+    private javax.swing.JTextField txtNombreProducto;
+    private javax.swing.JTextField txtNombreProductoDisponible;
+    private javax.swing.JTextField txtNuevaContraseñaModificada;
+    private javax.swing.JTextField txtPrecioPlato;
+    private javax.swing.JTextField txtTelefonoNuevomesero;
+    private javax.swing.JTextField txtUsuarioNuevoMesero;
+    private javax.swing.JTextField txtVizualizarProductoEliminar;
     // End of variables declaration//GEN-END:variables
 }
