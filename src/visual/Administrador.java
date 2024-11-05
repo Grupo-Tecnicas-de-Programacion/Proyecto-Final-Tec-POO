@@ -167,9 +167,9 @@ public class Administrador extends javax.swing.JFrame {
         jLabel79 = new javax.swing.JLabel();
         jLabel80 = new javax.swing.JLabel();
         jLabel81 = new javax.swing.JLabel();
-        jTextField30 = new javax.swing.JTextField();
+        txtFechaInicio = new javax.swing.JTextField();
         jLabel82 = new javax.swing.JLabel();
-        jTextField31 = new javax.swing.JTextField();
+        txtFechaFinal = new javax.swing.JTextField();
         jScrollPane18 = new javax.swing.JScrollPane();
         btnReporteVentas = new javax.swing.JList<>();
         jLabel83 = new javax.swing.JLabel();
@@ -1273,8 +1273,8 @@ public class Administrador extends javax.swing.JFrame {
                             .addComponent(jLabel82))
                         .addGap(5, 5, 5)
                         .addGroup(panelReporteVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtFechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtFechaFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32)
                         .addComponent(btnGenerarReporte)
                         .addGap(92, 92, 92)
@@ -1306,9 +1306,9 @@ public class Administrador extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addComponent(jLabel82))
                     .addGroup(panelReporteVentasLayout.createSequentialGroup()
-                        .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtFechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtFechaFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnGenerarReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelReporteVentasLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
@@ -1954,8 +1954,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField30;
-    private javax.swing.JTextField jTextField31;
     private javax.swing.JTextField jTextField33;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
@@ -2004,6 +2002,8 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtConfirmarContraseñaNuevoMesero;
     private javax.swing.JTextField txtContraseñaAdministrador;
     private javax.swing.JTextField txtContraseñaNuevoMesero;
+    private javax.swing.JTextField txtFechaFinal;
+    private javax.swing.JTextField txtFechaInicio;
     private javax.swing.JTextField txtFechaReporteSeleccionado;
     private javax.swing.JTextField txtGananciaReporteSeleccionado;
     private javax.swing.JTextField txtGestionContraseñaMesero;

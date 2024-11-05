@@ -2293,8 +2293,8 @@
                               </Group>
                               <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextField30" min="-2" pref="158" max="-2" attributes="0"/>
-                                  <Component id="jTextField31" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <Component id="txtFechaInicio" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <Component id="txtFechaFinal" min="-2" pref="158" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="32" pref="32" max="-2" attributes="0"/>
                               <Component id="btnGenerarReporte" min="-2" max="-2" attributes="0"/>
@@ -2335,9 +2335,9 @@
                               <Component id="jLabel82" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="jTextField30" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtFechaInicio" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                              <Component id="jTextField31" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtFechaFinal" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="btnGenerarReporte" min="-2" pref="60" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
@@ -2398,7 +2398,7 @@
                 <Property name="text" type="java.lang.String" value="Desde :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField30">
+            <Component class="javax.swing.JTextField" name="txtFechaInicio">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel82">
               <Properties>
@@ -2411,7 +2411,7 @@
                 <Property name="text" type="java.lang.String" value="Hasta :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField31">
+            <Component class="javax.swing.JTextField" name="txtFechaFinal">
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane18">
               <AuxValues>
