@@ -76,7 +76,7 @@ public class Administrador extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         listProductosDisponibles = new javax.swing.JList<>();
         jLabel24 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        txtNombreProductoDisponible = new javax.swing.JTextField();
         btnVerStock = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
         jTextField33 = new javax.swing.JTextField();
@@ -515,7 +515,7 @@ public class Administrador extends javax.swing.JFrame {
                                 .addGap(94, 94, 94)
                                 .addGroup(panelProductosDisponiblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel24)
-                                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtNombreProductoDisponible, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(panelProductosDisponiblesLayout.createSequentialGroup()
                                 .addGap(171, 171, 171)
                                 .addComponent(btnVerStock, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -551,7 +551,7 @@ public class Administrador extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel24)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNombreProductoDisponible, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnVerStock, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -1977,7 +1977,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JList<String> listCartaActualizada;
     private javax.swing.JList<String> listDatosMeseros;
@@ -2023,6 +2022,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtIngresarProductoEliminar;
     private javax.swing.JTextField txtIngreseCantidadProducto;
     private javax.swing.JTextField txtNombreProducto;
+    private javax.swing.JTextField txtNombreProductoDisponible;
     private javax.swing.JTextField txtVizualizarProductoEliminar;
     // End of variables declaration//GEN-END:variables
 }
