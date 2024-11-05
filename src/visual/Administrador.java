@@ -187,9 +187,9 @@ public class Administrador extends javax.swing.JFrame {
         jLabel86 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        jTextField16 = new javax.swing.JTextField();
+        txtCodigoGenerado = new javax.swing.JTextField();
         jLabel43 = new javax.swing.JLabel();
-        jTextField19 = new javax.swing.JTextField();
+        txtIngreseCodigoGenerado = new javax.swing.JTextField();
         btnConfirmacionCerrarSesion = new javax.swing.JButton();
         btnCerrarSesionAdmnistrador = new javax.swing.JButton();
         panelAgregarProducto = new javax.swing.JPanel();
@@ -1344,9 +1344,9 @@ public class Administrador extends javax.swing.JFrame {
         jLabel31.setForeground(new java.awt.Color(0, 0, 0));
         jLabel31.setText("Codigo generado :");
 
-        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+        txtCodigoGenerado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField16ActionPerformed(evt);
+                txtCodigoGeneradoActionPerformed(evt);
             }
         });
 
@@ -1389,8 +1389,8 @@ public class Administrador extends javax.swing.JFrame {
                             .addGroup(panelCerrarSesionLayout.createSequentialGroup()
                                 .addGap(126, 126, 126)
                                 .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txtCodigoGenerado, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtIngreseCodigoGenerado, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(141, 141, 141)
                         .addComponent(btnCerrarSesionAdmnistrador, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelCerrarSesionLayout.createSequentialGroup()
@@ -1410,11 +1410,11 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelCerrarSesionLayout.createSequentialGroup()
-                        .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCodigoGenerado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
                         .addComponent(jLabel43)
                         .addGap(6, 6, 6)
-                        .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtIngreseCodigoGenerado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnCerrarSesionAdmnistrador, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addComponent(btnConfirmacionCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1701,7 +1701,7 @@ public class Administrador extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 472, Short.MAX_VALUE)
+                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1763,9 +1763,9 @@ public class Administrador extends javax.swing.JFrame {
         layout.show(jPanelMostrarAdmin, "panelEliminarProducto");
     }//GEN-LAST:event_menItemEliminarProductosActionPerformed
 
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
+    private void txtCodigoGeneradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoGeneradoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
+    }//GEN-LAST:event_txtCodigoGeneradoActionPerformed
 
     private void btnCerrarSesionAdmnistradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionAdmnistradorActionPerformed
 
@@ -1951,8 +1951,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField33;
     private javax.swing.JTextField jTextField4;
@@ -1998,6 +1996,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JPanel panelReporteVentas;
     private javax.swing.JTextField txtApellidoNuevoMesero;
     private javax.swing.JTextField txtCantidadReporteSeleccionado;
+    private javax.swing.JTextField txtCodigoGenerado;
     private javax.swing.JTextField txtConfirCotraseñModificada;
     private javax.swing.JTextField txtConfirmarContraseñaNuevoMesero;
     private javax.swing.JTextField txtContraseñaAdministrador;
@@ -2010,6 +2009,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtIngresarPermisoMesero;
     private javax.swing.JTextField txtIngresarProductoEliminar;
     private javax.swing.JTextField txtIngreseCantidadProducto;
+    private javax.swing.JTextField txtIngreseCodigoGenerado;
     private javax.swing.JTextField txtIngreseMeseroEliminar;
     private javax.swing.JTextField txtModificarContarseña;
     private javax.swing.JTextField txtModificarRol;

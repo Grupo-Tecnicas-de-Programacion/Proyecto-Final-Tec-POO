@@ -2581,8 +2581,8 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="126" pref="126" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jTextField16" min="-2" pref="202" max="-2" attributes="0"/>
-                                          <Component id="jTextField19" min="-2" pref="202" max="-2" attributes="0"/>
+                                          <Component id="txtCodigoGenerado" min="-2" pref="202" max="-2" attributes="0"/>
+                                          <Component id="txtIngreseCodigoGenerado" min="-2" pref="202" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -2610,11 +2610,11 @@
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jTextField16" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtCodigoGenerado" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                               <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                              <Component id="jTextField19" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtIngreseCodigoGenerado" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="btnCerrarSesionAdmnistrador" min="-2" pref="64" max="-2" attributes="0"/>
                       </Group>
@@ -2659,9 +2659,9 @@
                 <Property name="text" type="java.lang.String" value="Codigo generado :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField16">
+            <Component class="javax.swing.JTextField" name="txtCodigoGenerado">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField16ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoGeneradoActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel43">
@@ -2675,7 +2675,7 @@
                 <Property name="text" type="java.lang.String" value="Ingresar codigo :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField19">
+            <Component class="javax.swing.JTextField" name="txtIngreseCodigoGenerado">
             </Component>
             <Component class="javax.swing.JButton" name="btnConfirmacionCerrarSesion">
               <Properties>
