@@ -1157,9 +1157,9 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="jTextField11" alignment="0" pref="233" max="32767" attributes="0"/>
-                                              <Component id="jTextField12" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextField13" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtNombreNuevoMesero" alignment="0" pref="233" max="32767" attributes="0"/>
+                                              <Component id="txtApellidoNuevoMesero" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtUsuarioNuevoMesero" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <Component id="jLabel39" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel38" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -1170,8 +1170,8 @@
                                           <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jTextField15" alignment="1" pref="164" max="32767" attributes="0"/>
-                                              <Component id="jTextField17" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtConfirmarContraseñaNuevoMesero" alignment="1" pref="164" max="32767" attributes="0"/>
+                                              <Component id="txtTelefonoNuevomesero" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <Component id="jLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -1182,7 +1182,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel40" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField14" alignment="0" min="-2" pref="233" max="-2" attributes="0"/>
+                                  <Component id="txtContraseñaNuevoMesero" alignment="0" min="-2" pref="233" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="51" max="32767" attributes="0"/>
                               <Component id="btnRegistroMesero" min="-2" pref="72" max="-2" attributes="0"/>
@@ -1224,8 +1224,8 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTextField11" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtNombreNuevoMesero" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtConfirmarContraseñaNuevoMesero" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -1234,13 +1234,13 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTextField12" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField17" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtApellidoNuevoMesero" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtTelefonoNuevomesero" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                               <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jTextField13" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtUsuarioNuevoMesero" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="18" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel44" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -1249,7 +1249,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                      <Component id="jTextField14" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtContraseñaNuevoMesero" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -1396,17 +1396,17 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField11">
+            <Component class="javax.swing.JTextField" name="txtNombreNuevoMesero">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField12">
+            <Component class="javax.swing.JTextField" name="txtApellidoNuevoMesero">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField13">
+            <Component class="javax.swing.JTextField" name="txtUsuarioNuevoMesero">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField14">
+            <Component class="javax.swing.JTextField" name="txtContrase&#xf1;aNuevoMesero">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField15">
+            <Component class="javax.swing.JTextField" name="txtConfirmarContrase&#xf1;aNuevoMesero">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField17">
+            <Component class="javax.swing.JTextField" name="txtTelefonoNuevomesero">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel45">
               <Properties>
