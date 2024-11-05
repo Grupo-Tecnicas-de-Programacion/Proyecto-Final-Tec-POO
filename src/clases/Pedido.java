@@ -7,24 +7,20 @@ import java.util.ArrayList;
 public class Pedido {
     private int numPedido;
     private ArrayList<Producto> listaProductos;
-    private ArrayList<Mesa> listaMesas;
     private int cantidadTotalProductos;
     private double precioTotalPedido;
     private String tipoPedido;
 
     public Pedido() {
-        this.listaProductos = new ArrayList<> ();
-        this.listaMesas = new ArrayList<> ();
+        this.listaProductos = new ArrayList<>();
         this.precioTotalPedido = 0;
         this.cantidadTotalProductos = 0;
-        
     }
 
     public Pedido(int numPedido, String tipoPedido) {
         this.numPedido = numPedido;
         this.tipoPedido = tipoPedido;
-        this.listaProductos = new ArrayList<> ();
-        this.listaMesas = new ArrayList<> ();
+        this.listaProductos = new ArrayList<>();
         this.precioTotalPedido = 0;
         this.cantidadTotalProductos = 0;
     }
@@ -43,14 +39,7 @@ public class Pedido {
 
     public void setListaProductos(ArrayList<Producto> listaProductos) {
         this.listaProductos = listaProductos;
-    }
-
-    public ArrayList<Mesa> getListaMesas() {
-        return listaMesas;
-    }
-
-    public void setListaMesas(ArrayList<Mesa> listaMesas) {
-        this.listaMesas = listaMesas;
+        recalcularTotal();
     }
 
     public int getCantidadTotalProductos() {
@@ -76,58 +65,56 @@ public class Pedido {
     public void setTipoPedido(String tipoPedido) {
         this.tipoPedido = tipoPedido;
     }
-    
-    public double calcularTotalPedido()
-    {
+
+    private void recalcularTotal() {
         this.precioTotalPedido = 0;
-        
-        for (Producto producto : this.listaProductos)
-        {
+        for (Producto producto : this.listaProductos) {
             this.precioTotalPedido += producto.getPrecio();
         }
-        return this.precioTotalPedido;
     }
-    
-    public void agregarProducto(Producto producto)
-    {
-        this.listaProductos.add(producto);
-        this.cantidadTotalProductos++;
-        this.calcularTotalPedido();
+
+    public void agregarProducto(Producto producto) {
+        boolean productoExistente = false;
+        for (Producto p : this.listaProductos) {
+            if (p.getNombre().equals(producto.getNombre())) {
+                p.setCantidad(p.getCantidad() + producto.getCantidad());
+                productoExistente = true;
+                break;
+            }
+        }
+        if (!productoExistente) {
+            this.listaProductos.add(producto);
+        }
+        this.cantidadTotalProductos += producto.getCantidad();
+        this.recalcularTotal();
     }
-    
-    public void eliminarProducto(Producto producto)
-    {
+
+
+    public void eliminarProducto(Producto producto) {
         if (this.listaProductos.contains(producto)) {
             this.listaProductos.remove(producto);
             this.cantidadTotalProductos--;
-            this.calcularTotalPedido();
-        }else{
-            
+            recalcularTotal();
+        } else {
             System.out.println("El producto no está en la lista.");
         }
     }
-    
-    public void agregarMesa(Mesa mesa)
-    {
-        this.listaMesas.add(mesa);
-    }
-    
+
     public void mostrarInfoPedido() {
-        this.calcularTotalPedido();
-        
-        System.out.println("Informacion del pedido:");
-        System.out.println("Numero de pedido: " + this.getNumPedido());
+        recalcularTotal();
+        System.out.println("Información del pedido:");
+        System.out.println("Número de pedido: " + this.getNumPedido());
         System.out.println("Tipo de pedido: " + this.getTipoPedido());
         System.out.println("Precio total del pedido: " + this.getPrecioTotalPedido());
 
-        System.out.println(" -- Mesas asociadas a este pedido:");
-        if (this.listaMesas.isEmpty()) {
-            System.out.println("No hay mesas asociadas a este pedido.");
-        } else {
-            for (Mesa mesa : this.getListaMesas()) {
-                System.out.println("Numero de mesa: " + mesa.getNumeroMesa()+" | Estado de mesa: "+mesa.getEstado());
-                
-            }
+        System.out.println("Productos en el pedido:");
+        for (Producto producto : this.getListaProductos()) {
+            System.out.println("- " + producto.getNombre() + " | Precio: " + producto.getPrecio());
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Pedido #" + numPedido + " - Tipo: " + tipoPedido + " - Total: S/ " + precioTotalPedido;
     }
 }
