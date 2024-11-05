@@ -46,7 +46,7 @@ public class Administrador extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         listTodosLosProductos = new javax.swing.JList<>();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtIngresarProductoEliminar = new javax.swing.JTextField();
         btnConfirmarEliminarPedido = new javax.swing.JButton();
         btnCancelarEliminacionPedido = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -54,7 +54,7 @@ public class Administrador extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         btnEliminarProducto = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtVizualizarProductoEliminar = new javax.swing.JTextField();
         panelProductosAgotados = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -293,11 +293,11 @@ public class Administrador extends javax.swing.JFrame {
                                         .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel2)
                                             .addGroup(panelEliminarProductoLayout.createSequentialGroup()
-                                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtIngresarProductoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(34, 34, 34)
                                                 .addComponent(btnEliminarProducto))
                                             .addComponent(jLabel6)
-                                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtVizualizarProductoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel3)))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelEliminarProductoLayout.createSequentialGroup()
                                         .addGap(107, 107, 107)
@@ -318,11 +318,11 @@ public class Administrador extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(panelEliminarProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelEliminarProductoLayout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtIngresarProductoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(36, 36, 36)
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtVizualizarProductoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(btnEliminarProducto))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                         .addComponent(jLabel3)
@@ -1768,8 +1768,7 @@ public class Administrador extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField16ActionPerformed
 
     private void btnCerrarSesionAdmnistradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionAdmnistradorActionPerformed
-        new BievenidaO().setVisible(true);
-        this.dispose();
+
     }//GEN-LAST:event_btnCerrarSesionAdmnistradorActionPerformed
 
     /**
@@ -1952,7 +1951,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
@@ -1963,7 +1961,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
@@ -2025,5 +2022,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtCantidadReporteSeleccionado;
     private javax.swing.JTextField txtFechaReporteSeleccionado;
     private javax.swing.JTextField txtGananciaReporteSeleccionado;
+    private javax.swing.JTextField txtIngresarProductoEliminar;
+    private javax.swing.JTextField txtVizualizarProductoEliminar;
     // End of variables declaration//GEN-END:variables
 }

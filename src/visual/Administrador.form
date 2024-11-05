@@ -287,12 +287,12 @@
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                                   <Group type="102" attributes="0">
-                                                      <Component id="jTextField1" min="-2" pref="178" max="-2" attributes="0"/>
+                                                      <Component id="txtIngresarProductoEliminar" min="-2" pref="178" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                                       <Component id="btnEliminarProducto" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jTextField2" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
+                                                  <Component id="txtVizualizarProductoEliminar" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
                                                   <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
@@ -323,11 +323,11 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtIngresarProductoEliminar" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtVizualizarProductoEliminar" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="btnEliminarProducto" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -389,7 +389,7 @@
                 <Property name="text" type="java.lang.String" value="Ingrese el producto a eliminar : "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField1">
+            <Component class="javax.swing.JTextField" name="txtIngresarProductoEliminar">
             </Component>
             <Component class="javax.swing.JButton" name="btnConfirmarEliminarPedido">
               <Properties>
@@ -469,7 +469,7 @@
                 <Property name="text" type="java.lang.String" value="Su producto a eliminar es : "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField2">
+            <Component class="javax.swing.JTextField" name="txtVizualizarProductoEliminar">
             </Component>
           </SubComponents>
         </Container>
