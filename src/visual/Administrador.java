@@ -155,9 +155,9 @@ public class Administrador extends javax.swing.JFrame {
         jScrollPane16 = new javax.swing.JScrollPane();
         listPermisos = new javax.swing.JList<>();
         jLabel74 = new javax.swing.JLabel();
-        jTextField28 = new javax.swing.JTextField();
+        txtNombreMeseroPermisos = new javax.swing.JTextField();
         jLabel75 = new javax.swing.JLabel();
-        jTextField29 = new javax.swing.JTextField();
+        txtIngresarPermisoMesero = new javax.swing.JTextField();
         jLabel76 = new javax.swing.JLabel();
         btnConfirmarAsignacion = new javax.swing.JButton();
         btnCancelarAsignacion = new javax.swing.JButton();
@@ -1151,9 +1151,9 @@ public class Administrador extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAsignarPermisosLayout.createSequentialGroup()
                                         .addGroup(panelAsignarPermisosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel74)
-                                            .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtNombreMeseroPermisos, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel75)
-                                            .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(txtIngresarPermisoMesero, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(88, 88, 88))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAsignarPermisosLayout.createSequentialGroup()
                                         .addComponent(jLabel27)
@@ -1184,11 +1184,11 @@ public class Administrador extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel74)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNombreMeseroPermisos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel75)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtIngresarPermisoMesero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel76)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1953,8 +1953,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField31;
@@ -2009,6 +2007,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtFechaReporteSeleccionado;
     private javax.swing.JTextField txtGananciaReporteSeleccionado;
     private javax.swing.JTextField txtGestionContraseñaMesero;
+    private javax.swing.JTextField txtIngresarPermisoMesero;
     private javax.swing.JTextField txtIngresarProductoEliminar;
     private javax.swing.JTextField txtIngreseCantidadProducto;
     private javax.swing.JTextField txtIngreseMeseroEliminar;
@@ -2017,6 +2016,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtModificarTelefono;
     private javax.swing.JTextField txtNombreGestionMesero;
     private javax.swing.JTextField txtNombreMeseroModificar;
+    private javax.swing.JTextField txtNombreMeseroPermisos;
     private javax.swing.JTextField txtNombreNuevoMesero;
     private javax.swing.JTextField txtNombreProducto;
     private javax.swing.JTextField txtNombreProductoDisponible;
