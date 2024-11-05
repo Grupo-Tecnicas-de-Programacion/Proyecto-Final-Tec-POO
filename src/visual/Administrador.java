@@ -7,6 +7,7 @@ package visual;
 
 
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -187,11 +188,10 @@ public class Administrador extends javax.swing.JFrame {
         jLabel86 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        txtCodigoGenerado = new javax.swing.JTextField();
         jLabel43 = new javax.swing.JLabel();
         txtIngreseCodigoGenerado = new javax.swing.JTextField();
-        btnConfirmacionCerrarSesion = new javax.swing.JButton();
         btnCerrarSesionAdmnistrador = new javax.swing.JButton();
+        txtCodigoGenerado = new javax.swing.JTextField();
         panelAgregarProducto = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -1344,19 +1344,9 @@ public class Administrador extends javax.swing.JFrame {
         jLabel31.setForeground(new java.awt.Color(0, 0, 0));
         jLabel31.setText("Codigo generado :");
 
-        txtCodigoGenerado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodigoGeneradoActionPerformed(evt);
-            }
-        });
-
         jLabel43.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(0, 0, 0));
         jLabel43.setText("Ingresar codigo :");
-
-        btnConfirmacionCerrarSesion.setBackground(new java.awt.Color(51, 102, 0));
-        btnConfirmacionCerrarSesion.setText("Comprobar");
-        btnConfirmacionCerrarSesion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         btnCerrarSesionAdmnistrador.setBackground(new java.awt.Color(204, 0, 0));
         btnCerrarSesionAdmnistrador.setText("Cerrar sesion");
@@ -1374,29 +1364,29 @@ public class Administrador extends javax.swing.JFrame {
             .addGroup(panelCerrarSesionLayout.createSequentialGroup()
                 .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelCerrarSesionLayout.createSequentialGroup()
-                        .addGap(304, 304, 304)
-                        .addComponent(jLabel86))
-                    .addGroup(panelCerrarSesionLayout.createSequentialGroup()
                         .addGap(155, 155, 155)
-                        .addComponent(jLabel29))
-                    .addGroup(panelCerrarSesionLayout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(jLabel31))
-                    .addGroup(panelCerrarSesionLayout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panelCerrarSesionLayout.createSequentialGroup()
-                                .addGap(126, 126, 126)
-                                .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCodigoGenerado, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtIngreseCodigoGenerado, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(141, 141, 141)
-                        .addComponent(btnCerrarSesionAdmnistrador, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelCerrarSesionLayout.createSequentialGroup()
-                        .addGap(356, 356, 356)
-                        .addComponent(btnConfirmacionCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(92, Short.MAX_VALUE))
+                        .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCerrarSesionLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(txtIngreseCodigoGenerado, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(140, 140, 140)))
+                .addComponent(btnCerrarSesionAdmnistrador, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(138, 138, 138))
+            .addGroup(panelCerrarSesionLayout.createSequentialGroup()
+                .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtCodigoGenerado, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelCerrarSesionLayout.createSequentialGroup()
+                            .addGap(304, 304, 304)
+                            .addComponent(jLabel86))
+                        .addGroup(panelCerrarSesionLayout.createSequentialGroup()
+                            .addGap(155, 155, 155)
+                            .addComponent(jLabel29))
+                        .addGroup(panelCerrarSesionLayout.createSequentialGroup()
+                            .addGap(155, 155, 155)
+                            .addComponent(jLabel31))))
+                .addContainerGap(391, Short.MAX_VALUE))
         );
         panelCerrarSesionLayout.setVerticalGroup(
             panelCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1413,12 +1403,10 @@ public class Administrador extends javax.swing.JFrame {
                         .addComponent(txtCodigoGenerado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
                         .addComponent(jLabel43)
-                        .addGap(6, 6, 6)
+                        .addGap(5, 5, 5)
                         .addComponent(txtIngreseCodigoGenerado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnCerrarSesionAdmnistrador, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(btnConfirmacionCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(215, Short.MAX_VALUE))
         );
 
         jPanelMostrarAdmin.add(panelCerrarSesion, "card13");
@@ -1711,6 +1699,8 @@ public class Administrador extends javax.swing.JFrame {
     private void menItemCerrarSecsionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemCerrarSecsionActionPerformed
         CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
         layout.show(jPanelMostrarAdmin, "panelCerrarSesion");
+        int numeroCerrarSesion = (int)( Math.random()*90000) + 10000;
+        txtCodigoGenerado.setText(String.valueOf(numeroCerrarSesion));
     }//GEN-LAST:event_menItemCerrarSecsionActionPerformed
 
     private void menItemReporteVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemReporteVentasActionPerformed
@@ -1762,13 +1752,35 @@ public class Administrador extends javax.swing.JFrame {
         CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
         layout.show(jPanelMostrarAdmin, "panelEliminarProducto");
     }//GEN-LAST:event_menItemEliminarProductosActionPerformed
-
-    private void txtCodigoGeneradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoGeneradoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodigoGeneradoActionPerformed
-
+    
     private void btnCerrarSesionAdmnistradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionAdmnistradorActionPerformed
-
+        String numeroGenerado = txtCodigoGenerado.getText();
+        String numeroIngresado = txtIngreseCodigoGenerado.getText();
+        if (numeroIngresado.isEmpty())
+        {
+            JOptionPane.showMessageDialog(rootPane, "Ingrese el numero generado", "Error", JOptionPane.WARNING_MESSAGE);
+        }else if(numeroGenerado.equalsIgnoreCase(numeroIngresado)){
+            Object[] opciones = {"Si" , "No"};
+            int seleccion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Seguro que quieres cerrar sesión?",
+                    "Confirmación",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[0]
+            );
+            
+            if (seleccion == JOptionPane.YES_OPTION)
+            {
+                new BievenidaO().setVisible(true);
+                this.dispose();
+            }
+        }else
+        {
+            JOptionPane.showMessageDialog(rootPane, "Número ingresado incorrecto, Intentar otra vez." , "Error", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btnCerrarSesionAdmnistradorActionPerformed
 
     /**
@@ -1847,7 +1859,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelarModificacionProducto;
     private javax.swing.JButton btnCancelarRegistroMesero;
     private javax.swing.JButton btnCerrarSesionAdmnistrador;
-    private javax.swing.JButton btnConfirmacionCerrarSesion;
     private javax.swing.JButton btnConfirmarAsignacion;
     private javax.swing.JButton btnConfirmarEliminarPedido;
     private javax.swing.JButton btnConfirmarModificarProducto;
