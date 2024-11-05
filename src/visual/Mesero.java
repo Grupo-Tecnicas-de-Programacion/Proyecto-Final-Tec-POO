@@ -79,6 +79,18 @@ public class Mesero extends javax.swing.JFrame {
         jPanelMostrar.add(panelProducDisponibles, "panelProducDisponibles");
         jPanelMostrar.add(panelAgreProducto, "panelAgreProducto");
         jPanelMostrar.add(panelGenerarReporte, "panelGenerarReporte");
+        jPanelMostrar.add(verPedidoMesa1, "verPedidoMesa1");
+        jPanelMostrar.add(verPedidoMesa2, "verPedidoMesa2");
+        jPanelMostrar.add(verPedidoMesa3, "verPedidoMesa3");
+        jPanelMostrar.add(verPedidoMesa4, "verPedidoMesa4");
+        jPanelMostrar.add(verPedidoMesa5, "verPedidoMesa5");
+        jPanelMostrar.add(verPedidoMesa6, "verPedidoMesa6");
+        jPanelMostrar.add(verPedidoMesa7, "verPedidoMesa7");
+        jPanelMostrar.add(verPedidoMesa8, "verPedidoMesa8");
+        jPanelMostrar.add(verPedidoMesa9, "verPedidoMesa9");
+        jPanelMostrar.add(verPedidoMesa10, "verPedidoMesa10");
+        jPanelMostrar.add(verPedidoMesa11, "verPedidoMesa11");
+        jPanelMostrar.add(verPedidoMesa12, "verPedidoMesa12");
         jPanelMostrarMesa.add(panelMesa1, "panelMesa1");
         jPanelMostrarMesa.add(panelMesa2, "panelMesa2");
         jPanelMostrarMesa.add(panelMesa3, "panelMesa3");
@@ -144,6 +156,7 @@ public class Mesero extends javax.swing.JFrame {
         btnMesa12 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         mDisponible = new javax.swing.JButton();
         mOcupada = new javax.swing.JButton();
         mNoDisponible = new javax.swing.JButton();
@@ -340,7 +353,6 @@ public class Mesero extends javax.swing.JFrame {
         btnTotalCuentaMesa12 = new javax.swing.JButton();
         btnGenerarReciboMesa12 = new javax.swing.JButton();
         btnVerInfoMesa12 = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
         panelAgreProducto = new javax.swing.JPanel();
         jLabel98 = new javax.swing.JLabel();
         jLabel99 = new javax.swing.JLabel();
@@ -439,6 +451,150 @@ public class Mesero extends javax.swing.JFrame {
         txtFechaGenerarReporte = new javax.swing.JTextField();
         txtNombreGenerarReporte = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        verPedidoMesa1 = new javax.swing.JPanel();
+        volverAtrasMesa1 = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        listaVerPedidosLlevarMesa1 = new javax.swing.JList<>();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        listaVerPedidosMesa1 = new javax.swing.JList<>();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        detallePedidoMesa1 = new javax.swing.JList<>();
+        verPedidoMesa2 = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
+        volverAtrasMesa2 = new javax.swing.JButton();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        listaVerPedidosMesa2 = new javax.swing.JList<>();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        detallePedidoMesa2 = new javax.swing.JList<>();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        listaVerPedidosLlevarMesa2 = new javax.swing.JList<>();
+        verPedidoMesa3 = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        volverAtrasMesa3 = new javax.swing.JButton();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        listaVerPedidosMesa3 = new javax.swing.JList<>();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        detallePedidoMesa3 = new javax.swing.JList<>();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        listaVerPedidosLlevarMesa3 = new javax.swing.JList<>();
+        verPedidoMesa4 = new javax.swing.JPanel();
+        jLabel39 = new javax.swing.JLabel();
+        volverAtrasMesa4 = new javax.swing.JButton();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        listaVerPedidosMesa4 = new javax.swing.JList<>();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        detallePedidoMesa4 = new javax.swing.JList<>();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        listaVerPedidosLlevarMesa4 = new javax.swing.JList<>();
+        verPedidoMesa5 = new javax.swing.JPanel();
+        jLabel43 = new javax.swing.JLabel();
+        volverAtrasMesa5 = new javax.swing.JButton();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        listaVerPedidosMesa5 = new javax.swing.JList<>();
+        jScrollPane18 = new javax.swing.JScrollPane();
+        detallePedidoMesa5 = new javax.swing.JList<>();
+        jScrollPane19 = new javax.swing.JScrollPane();
+        listaVerPedidosLlevarMesa5 = new javax.swing.JList<>();
+        verPedidoMesa6 = new javax.swing.JPanel();
+        jLabel47 = new javax.swing.JLabel();
+        volverAtrasMesa6 = new javax.swing.JButton();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jScrollPane20 = new javax.swing.JScrollPane();
+        listaVerPedidosMesa6 = new javax.swing.JList<>();
+        jScrollPane21 = new javax.swing.JScrollPane();
+        detallePedidoMesa6 = new javax.swing.JList<>();
+        jScrollPane22 = new javax.swing.JScrollPane();
+        listaVerPedidosLlevarMesa6 = new javax.swing.JList<>();
+        verPedidoMesa7 = new javax.swing.JPanel();
+        jLabel51 = new javax.swing.JLabel();
+        volverAtrasMesa7 = new javax.swing.JButton();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jScrollPane23 = new javax.swing.JScrollPane();
+        listaVerPedidosMesa7 = new javax.swing.JList<>();
+        jScrollPane24 = new javax.swing.JScrollPane();
+        detallePedidoMesa7 = new javax.swing.JList<>();
+        jScrollPane42 = new javax.swing.JScrollPane();
+        listaVerPedidosLlevarMesa7 = new javax.swing.JList<>();
+        verPedidoMesa8 = new javax.swing.JPanel();
+        jLabel55 = new javax.swing.JLabel();
+        volverAtrasMesa8 = new javax.swing.JButton();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jScrollPane48 = new javax.swing.JScrollPane();
+        listaVerPedidosMesa8 = new javax.swing.JList<>();
+        jScrollPane49 = new javax.swing.JScrollPane();
+        detallePedidoMesa8 = new javax.swing.JList<>();
+        jScrollPane50 = new javax.swing.JScrollPane();
+        listaVerPedidosLlevarMesa8 = new javax.swing.JList<>();
+        verPedidoMesa9 = new javax.swing.JPanel();
+        jLabel59 = new javax.swing.JLabel();
+        volverAtrasMesa9 = new javax.swing.JButton();
+        jLabel93 = new javax.swing.JLabel();
+        jLabel97 = new javax.swing.JLabel();
+        jLabel113 = new javax.swing.JLabel();
+        jScrollPane51 = new javax.swing.JScrollPane();
+        listaVerPedidosMesa9 = new javax.swing.JList<>();
+        jScrollPane52 = new javax.swing.JScrollPane();
+        detallePedidoMesa9 = new javax.swing.JList<>();
+        jScrollPane53 = new javax.swing.JScrollPane();
+        listaVerPedidosLlevarMesa9 = new javax.swing.JList<>();
+        verPedidoMesa10 = new javax.swing.JPanel();
+        jLabel117 = new javax.swing.JLabel();
+        volverAtrasMesa10 = new javax.swing.JButton();
+        jLabel121 = new javax.swing.JLabel();
+        jLabel125 = new javax.swing.JLabel();
+        jLabel129 = new javax.swing.JLabel();
+        jScrollPane54 = new javax.swing.JScrollPane();
+        listaVerPedidosMesa10 = new javax.swing.JList<>();
+        jScrollPane55 = new javax.swing.JScrollPane();
+        detallePedidoMesa10 = new javax.swing.JList<>();
+        jScrollPane56 = new javax.swing.JScrollPane();
+        listaVerPedidosLlevarMesa10 = new javax.swing.JList<>();
+        verPedidoMesa11 = new javax.swing.JPanel();
+        jLabel133 = new javax.swing.JLabel();
+        volverAtrasMesa11 = new javax.swing.JButton();
+        jLabel137 = new javax.swing.JLabel();
+        jLabel141 = new javax.swing.JLabel();
+        jLabel148 = new javax.swing.JLabel();
+        jScrollPane57 = new javax.swing.JScrollPane();
+        listaVerPedidosMesa11 = new javax.swing.JList<>();
+        jScrollPane58 = new javax.swing.JScrollPane();
+        detallePedidoMesa11 = new javax.swing.JList<>();
+        jScrollPane59 = new javax.swing.JScrollPane();
+        listaVerPedidosLlevarMesa11 = new javax.swing.JList<>();
+        verPedidoMesa12 = new javax.swing.JPanel();
+        jLabel149 = new javax.swing.JLabel();
+        volverAtrasMesa12 = new javax.swing.JButton();
+        jLabel150 = new javax.swing.JLabel();
+        jLabel151 = new javax.swing.JLabel();
+        jLabel152 = new javax.swing.JLabel();
+        jScrollPane60 = new javax.swing.JScrollPane();
+        listaVerPedidosMesa12 = new javax.swing.JList<>();
+        jScrollPane61 = new javax.swing.JScrollPane();
+        detallePedidoMesa12 = new javax.swing.JList<>();
+        jScrollPane62 = new javax.swing.JScrollPane();
+        listaVerPedidosLlevarMesa12 = new javax.swing.JList<>();
         jMenuBar2 = new javax.swing.JMenuBar();
         menuMesero = new javax.swing.JMenu();
         menItemCargarMesas = new javax.swing.JMenuItem();
@@ -731,6 +887,11 @@ public class Mesero extends javax.swing.JFrame {
         jLabel11.setText("No disponible");
         panelGestionarMesas.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 80, 20));
 
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setText("Disponible");
+        panelGestionarMesas.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, 59, 20));
+
         mDisponible.setBackground(new java.awt.Color(51, 255, 0));
         mDisponible.setForeground(new java.awt.Color(0, 255, 0));
         panelGestionarMesas.add(mDisponible, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 27, 23));
@@ -820,6 +981,11 @@ public class Mesero extends javax.swing.JFrame {
         btnVerPedidosMesa1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnVerPedidosMesa1.setForeground(new java.awt.Color(0, 0, 0));
         btnVerPedidosMesa1.setText("Ver pedidos");
+        btnVerPedidosMesa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerPedidosMesa1ActionPerformed(evt);
+            }
+        });
         panelMesa1.add(btnVerPedidosMesa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 120, 40));
 
         btnBorrarPedidoMesa1.setBackground(new java.awt.Color(204, 204, 0));
@@ -907,6 +1073,11 @@ public class Mesero extends javax.swing.JFrame {
         btnVerPedidosMesa2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnVerPedidosMesa2.setForeground(new java.awt.Color(0, 0, 0));
         btnVerPedidosMesa2.setText("Ver pedidos");
+        btnVerPedidosMesa2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerPedidosMesa2ActionPerformed(evt);
+            }
+        });
         panelMesa2.add(btnVerPedidosMesa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 120, 40));
 
         btnBorrarPedidoMesa2.setBackground(new java.awt.Color(204, 204, 0));
@@ -1006,6 +1177,11 @@ public class Mesero extends javax.swing.JFrame {
         btnVerPedidosMesa3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnVerPedidosMesa3.setForeground(new java.awt.Color(0, 0, 0));
         btnVerPedidosMesa3.setText("Ver pedidos");
+        btnVerPedidosMesa3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerPedidosMesa3ActionPerformed(evt);
+            }
+        });
         panelMesa3.add(btnVerPedidosMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 120, 40));
 
         btnBorrarPedidoMesa3.setBackground(new java.awt.Color(204, 204, 0));
@@ -1105,6 +1281,11 @@ public class Mesero extends javax.swing.JFrame {
         btnVerPedidosMesa4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnVerPedidosMesa4.setForeground(new java.awt.Color(0, 0, 0));
         btnVerPedidosMesa4.setText("Ver pedidos");
+        btnVerPedidosMesa4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerPedidosMesa4ActionPerformed(evt);
+            }
+        });
         panelMesa4.add(btnVerPedidosMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 120, 40));
 
         btnBorrarPedidoMesa4.setBackground(new java.awt.Color(204, 204, 0));
@@ -1204,6 +1385,11 @@ public class Mesero extends javax.swing.JFrame {
         btnVerPedidosMesa5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnVerPedidosMesa5.setForeground(new java.awt.Color(0, 0, 0));
         btnVerPedidosMesa5.setText("Ver pedidos");
+        btnVerPedidosMesa5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerPedidosMesa5ActionPerformed(evt);
+            }
+        });
         panelMesa5.add(btnVerPedidosMesa5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 120, 40));
 
         btnBorrarPedidoMesa5.setBackground(new java.awt.Color(204, 204, 0));
@@ -1303,6 +1489,11 @@ public class Mesero extends javax.swing.JFrame {
         btnVerPedidosMesa6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnVerPedidosMesa6.setForeground(new java.awt.Color(0, 0, 0));
         btnVerPedidosMesa6.setText("Ver pedidos");
+        btnVerPedidosMesa6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerPedidosMesa6ActionPerformed(evt);
+            }
+        });
         panelMesa6.add(btnVerPedidosMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 120, 40));
 
         btnBorrarPedidoMesa6.setBackground(new java.awt.Color(204, 204, 0));
@@ -1393,6 +1584,11 @@ public class Mesero extends javax.swing.JFrame {
         btnVerPedidosMesa7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnVerPedidosMesa7.setForeground(new java.awt.Color(0, 0, 0));
         btnVerPedidosMesa7.setText("Ver pedidos");
+        btnVerPedidosMesa7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerPedidosMesa7ActionPerformed(evt);
+            }
+        });
         panelMesa7.add(btnVerPedidosMesa7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 120, 40));
 
         btnBorrarPedidoMesa7.setBackground(new java.awt.Color(204, 204, 0));
@@ -1492,6 +1688,11 @@ public class Mesero extends javax.swing.JFrame {
         btnVerPedidosMesa8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnVerPedidosMesa8.setForeground(new java.awt.Color(0, 0, 0));
         btnVerPedidosMesa8.setText("Ver pedidos");
+        btnVerPedidosMesa8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerPedidosMesa8ActionPerformed(evt);
+            }
+        });
         panelMesa8.add(btnVerPedidosMesa8, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 120, 40));
 
         btnBorrarPedidoMesa8.setBackground(new java.awt.Color(204, 204, 0));
@@ -1591,6 +1792,11 @@ public class Mesero extends javax.swing.JFrame {
         btnVerPedidosMesa9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnVerPedidosMesa9.setForeground(new java.awt.Color(0, 0, 0));
         btnVerPedidosMesa9.setText("Ver pedidos");
+        btnVerPedidosMesa9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerPedidosMesa9ActionPerformed(evt);
+            }
+        });
         panelMesa9.add(btnVerPedidosMesa9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 120, 40));
 
         btnBorrarPedidoMesa9.setBackground(new java.awt.Color(204, 204, 0));
@@ -1690,6 +1896,11 @@ public class Mesero extends javax.swing.JFrame {
         btnVerPedidosMesa10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnVerPedidosMesa10.setForeground(new java.awt.Color(0, 0, 0));
         btnVerPedidosMesa10.setText("Ver pedidos");
+        btnVerPedidosMesa10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerPedidosMesa10ActionPerformed(evt);
+            }
+        });
         panelMesa10.add(btnVerPedidosMesa10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 120, 40));
 
         btnBorrarPedidoMesa10.setBackground(new java.awt.Color(204, 204, 0));
@@ -1798,6 +2009,11 @@ public class Mesero extends javax.swing.JFrame {
         btnVerPedidosMesa11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnVerPedidosMesa11.setForeground(new java.awt.Color(0, 0, 0));
         btnVerPedidosMesa11.setText("Ver pedidos");
+        btnVerPedidosMesa11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerPedidosMesa11ActionPerformed(evt);
+            }
+        });
         panelMesa11.add(btnVerPedidosMesa11, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 120, 40));
 
         btnBorrarPedidoMesa11.setBackground(new java.awt.Color(204, 204, 0));
@@ -1897,6 +2113,11 @@ public class Mesero extends javax.swing.JFrame {
         btnVerPedidosMesa12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnVerPedidosMesa12.setForeground(new java.awt.Color(0, 0, 0));
         btnVerPedidosMesa12.setText("Ver pedidos");
+        btnVerPedidosMesa12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerPedidosMesa12ActionPerformed(evt);
+            }
+        });
         panelMesa12.add(btnVerPedidosMesa12, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 120, 40));
 
         btnBorrarPedidoMesa12.setBackground(new java.awt.Color(204, 204, 0));
@@ -1935,11 +2156,6 @@ public class Mesero extends javax.swing.JFrame {
         jPanelMostrarMesa.add(panelMesa12, "card13");
 
         panelGestionarMesas.add(jPanelMostrarMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 69, 597, 360));
-
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel13.setText("Disponible");
-        panelGestionarMesas.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, 59, 20));
 
         jPanelMostrar.add(panelGestionarMesas, "card5");
 
@@ -2396,6 +2612,871 @@ public class Mesero extends javax.swing.JFrame {
 
         jPanelMostrar.add(panelGenerarReporte, "card12");
 
+        verPedidoMesa1.setBackground(new java.awt.Color(204, 204, 204));
+        verPedidoMesa1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        volverAtrasMesa1.setBackground(new java.awt.Color(204, 204, 0));
+        volverAtrasMesa1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        volverAtrasMesa1.setForeground(new java.awt.Color(0, 0, 0));
+        volverAtrasMesa1.setText("Volver atrás");
+        volverAtrasMesa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverAtrasMesa1ActionPerformed(evt);
+            }
+        });
+        verPedidoMesa1.add(volverAtrasMesa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 101, 46));
+
+        jLabel27.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel27.setText("Detalle pedido");
+        verPedidoMesa1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 150, 25));
+
+        jLabel28.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel28.setText("Pedidos mesa 1");
+        verPedidoMesa1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 200, 25));
+
+        jLabel29.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel29.setText("Pedidos mesa");
+        verPedidoMesa1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 140, 25));
+
+        jLabel30.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel30.setText("Pedidos llevar");
+        verPedidoMesa1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 150, 25));
+
+        listaVerPedidosLlevarMesa1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosLlevarMesa1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosLlevarMesa1MouseClicked(evt);
+            }
+        });
+        jScrollPane5.setViewportView(listaVerPedidosLlevarMesa1);
+
+        verPedidoMesa1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 220, 240));
+
+        listaVerPedidosMesa1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosMesa1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosMesa1MouseClicked(evt);
+            }
+        });
+        jScrollPane6.setViewportView(listaVerPedidosMesa1);
+
+        verPedidoMesa1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 220, 240));
+
+        detallePedidoMesa1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane7.setViewportView(detallePedidoMesa1);
+
+        verPedidoMesa1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 220, 240));
+
+        jPanelMostrar.add(verPedidoMesa1, "card13");
+
+        verPedidoMesa2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel31.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel31.setText("Pedidos mesa 2");
+        verPedidoMesa2.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 200, 25));
+
+        volverAtrasMesa2.setBackground(new java.awt.Color(204, 204, 0));
+        volverAtrasMesa2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        volverAtrasMesa2.setForeground(new java.awt.Color(0, 0, 0));
+        volverAtrasMesa2.setText("Volver atrás");
+        volverAtrasMesa2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverAtrasMesa2ActionPerformed(evt);
+            }
+        });
+        verPedidoMesa2.add(volverAtrasMesa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 101, 46));
+
+        jLabel32.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel32.setText("Pedidos llevar");
+        verPedidoMesa2.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 150, 25));
+
+        jLabel33.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel33.setText("Detalle pedido");
+        verPedidoMesa2.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 150, 25));
+
+        jLabel34.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel34.setText("Pedidos mesa");
+        verPedidoMesa2.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 140, 25));
+
+        listaVerPedidosMesa2.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosMesa2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosMesa2MouseClicked(evt);
+            }
+        });
+        jScrollPane8.setViewportView(listaVerPedidosMesa2);
+
+        verPedidoMesa2.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 220, 240));
+
+        detallePedidoMesa2.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane9.setViewportView(detallePedidoMesa2);
+
+        verPedidoMesa2.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 220, 240));
+
+        listaVerPedidosLlevarMesa2.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosLlevarMesa2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosLlevarMesa2MouseClicked(evt);
+            }
+        });
+        jScrollPane10.setViewportView(listaVerPedidosLlevarMesa2);
+
+        verPedidoMesa2.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 220, 240));
+
+        jPanelMostrar.add(verPedidoMesa2, "card14");
+
+        verPedidoMesa3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel35.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel35.setText("Pedidos mesa 3");
+        verPedidoMesa3.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 200, 25));
+
+        volverAtrasMesa3.setBackground(new java.awt.Color(204, 204, 0));
+        volverAtrasMesa3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        volverAtrasMesa3.setForeground(new java.awt.Color(0, 0, 0));
+        volverAtrasMesa3.setText("Volver atrás");
+        volverAtrasMesa3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverAtrasMesa3ActionPerformed(evt);
+            }
+        });
+        verPedidoMesa3.add(volverAtrasMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 101, 46));
+
+        jLabel36.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel36.setText("Pedidos llevar");
+        verPedidoMesa3.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 150, 25));
+
+        jLabel37.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel37.setText("Detalle pedido");
+        verPedidoMesa3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 150, 25));
+
+        jLabel38.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel38.setText("Pedidos mesa");
+        verPedidoMesa3.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 140, 25));
+
+        listaVerPedidosMesa3.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosMesa3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosMesa3MouseClicked(evt);
+            }
+        });
+        jScrollPane11.setViewportView(listaVerPedidosMesa3);
+
+        verPedidoMesa3.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 220, 240));
+
+        detallePedidoMesa3.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane12.setViewportView(detallePedidoMesa3);
+
+        verPedidoMesa3.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 220, 240));
+
+        listaVerPedidosLlevarMesa3.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosLlevarMesa3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosLlevarMesa3MouseClicked(evt);
+            }
+        });
+        jScrollPane13.setViewportView(listaVerPedidosLlevarMesa3);
+
+        verPedidoMesa3.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 220, 240));
+
+        jPanelMostrar.add(verPedidoMesa3, "card15");
+
+        verPedidoMesa4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel39.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel39.setText("Pedidos mesa 4");
+        verPedidoMesa4.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 200, 25));
+
+        volverAtrasMesa4.setBackground(new java.awt.Color(204, 204, 0));
+        volverAtrasMesa4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        volverAtrasMesa4.setForeground(new java.awt.Color(0, 0, 0));
+        volverAtrasMesa4.setText("Volver atrás");
+        volverAtrasMesa4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverAtrasMesa4ActionPerformed(evt);
+            }
+        });
+        verPedidoMesa4.add(volverAtrasMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 101, 46));
+
+        jLabel40.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel40.setText("Pedidos llevar");
+        verPedidoMesa4.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 150, 25));
+
+        jLabel41.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel41.setText("Detalle pedido");
+        verPedidoMesa4.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 150, 25));
+
+        jLabel42.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel42.setText("Pedidos mesa");
+        verPedidoMesa4.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 140, 25));
+
+        listaVerPedidosMesa4.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosMesa4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosMesa4MouseClicked(evt);
+            }
+        });
+        jScrollPane14.setViewportView(listaVerPedidosMesa4);
+
+        verPedidoMesa4.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 220, 240));
+
+        detallePedidoMesa4.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane15.setViewportView(detallePedidoMesa4);
+
+        verPedidoMesa4.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 220, 240));
+
+        listaVerPedidosLlevarMesa4.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosLlevarMesa4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosLlevarMesa4MouseClicked(evt);
+            }
+        });
+        jScrollPane16.setViewportView(listaVerPedidosLlevarMesa4);
+
+        verPedidoMesa4.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 220, 240));
+
+        jPanelMostrar.add(verPedidoMesa4, "card16");
+
+        verPedidoMesa5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel43.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel43.setText("Pedidos mesa 5");
+        verPedidoMesa5.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 200, 25));
+
+        volverAtrasMesa5.setBackground(new java.awt.Color(204, 204, 0));
+        volverAtrasMesa5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        volverAtrasMesa5.setForeground(new java.awt.Color(0, 0, 0));
+        volverAtrasMesa5.setText("Volver atrás");
+        volverAtrasMesa5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverAtrasMesa5ActionPerformed(evt);
+            }
+        });
+        verPedidoMesa5.add(volverAtrasMesa5, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 101, 46));
+
+        jLabel44.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel44.setText("Pedidos llevar");
+        verPedidoMesa5.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 150, 25));
+
+        jLabel45.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel45.setText("Detalle pedido");
+        verPedidoMesa5.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 150, 25));
+
+        jLabel46.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel46.setText("Pedidos mesa");
+        verPedidoMesa5.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 140, 25));
+
+        listaVerPedidosMesa5.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosMesa5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosMesa5MouseClicked(evt);
+            }
+        });
+        jScrollPane17.setViewportView(listaVerPedidosMesa5);
+
+        verPedidoMesa5.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 220, 240));
+
+        detallePedidoMesa5.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane18.setViewportView(detallePedidoMesa5);
+
+        verPedidoMesa5.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 220, 240));
+
+        listaVerPedidosLlevarMesa5.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosLlevarMesa5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosLlevarMesa5MouseClicked(evt);
+            }
+        });
+        jScrollPane19.setViewportView(listaVerPedidosLlevarMesa5);
+
+        verPedidoMesa5.add(jScrollPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 220, 240));
+
+        jPanelMostrar.add(verPedidoMesa5, "card17");
+
+        verPedidoMesa6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel47.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel47.setText("Pedidos mesa 6");
+        verPedidoMesa6.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 200, 25));
+
+        volverAtrasMesa6.setBackground(new java.awt.Color(204, 204, 0));
+        volverAtrasMesa6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        volverAtrasMesa6.setForeground(new java.awt.Color(0, 0, 0));
+        volverAtrasMesa6.setText("Volver atrás");
+        volverAtrasMesa6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverAtrasMesa6ActionPerformed(evt);
+            }
+        });
+        verPedidoMesa6.add(volverAtrasMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 101, 46));
+
+        jLabel48.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel48.setText("Pedidos llevar");
+        verPedidoMesa6.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 150, 25));
+
+        jLabel49.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel49.setText("Detalle pedido");
+        verPedidoMesa6.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 150, 25));
+
+        jLabel50.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel50.setText("Pedidos mesa");
+        verPedidoMesa6.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 140, 25));
+
+        listaVerPedidosMesa6.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosMesa6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosMesa6MouseClicked(evt);
+            }
+        });
+        jScrollPane20.setViewportView(listaVerPedidosMesa6);
+
+        verPedidoMesa6.add(jScrollPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 220, 240));
+
+        detallePedidoMesa6.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane21.setViewportView(detallePedidoMesa6);
+
+        verPedidoMesa6.add(jScrollPane21, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 220, 240));
+
+        listaVerPedidosLlevarMesa6.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosLlevarMesa6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosLlevarMesa6MouseClicked(evt);
+            }
+        });
+        jScrollPane22.setViewportView(listaVerPedidosLlevarMesa6);
+
+        verPedidoMesa6.add(jScrollPane22, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 220, 240));
+
+        jPanelMostrar.add(verPedidoMesa6, "card18");
+
+        verPedidoMesa7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel51.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel51.setText("Pedidos mesa 7");
+        verPedidoMesa7.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 200, 25));
+
+        volverAtrasMesa7.setBackground(new java.awt.Color(204, 204, 0));
+        volverAtrasMesa7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        volverAtrasMesa7.setForeground(new java.awt.Color(0, 0, 0));
+        volverAtrasMesa7.setText("Volver atrás");
+        volverAtrasMesa7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverAtrasMesa7ActionPerformed(evt);
+            }
+        });
+        verPedidoMesa7.add(volverAtrasMesa7, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 101, 46));
+
+        jLabel52.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel52.setText("Pedidos llevar");
+        verPedidoMesa7.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 150, 25));
+
+        jLabel53.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel53.setText("Detalle pedido");
+        verPedidoMesa7.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 150, 25));
+
+        jLabel54.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel54.setText("Pedidos mesa");
+        verPedidoMesa7.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 140, 25));
+
+        listaVerPedidosMesa7.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosMesa7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosMesa7MouseClicked(evt);
+            }
+        });
+        jScrollPane23.setViewportView(listaVerPedidosMesa7);
+
+        verPedidoMesa7.add(jScrollPane23, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 220, 240));
+
+        detallePedidoMesa7.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane24.setViewportView(detallePedidoMesa7);
+
+        verPedidoMesa7.add(jScrollPane24, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 220, 240));
+
+        listaVerPedidosLlevarMesa7.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosLlevarMesa7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosLlevarMesa7MouseClicked(evt);
+            }
+        });
+        jScrollPane42.setViewportView(listaVerPedidosLlevarMesa7);
+
+        verPedidoMesa7.add(jScrollPane42, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 220, 240));
+
+        jPanelMostrar.add(verPedidoMesa7, "card19");
+
+        verPedidoMesa8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel55.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel55.setText("Pedidos mesa 8");
+        verPedidoMesa8.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 200, 25));
+
+        volverAtrasMesa8.setBackground(new java.awt.Color(204, 204, 0));
+        volverAtrasMesa8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        volverAtrasMesa8.setForeground(new java.awt.Color(0, 0, 0));
+        volverAtrasMesa8.setText("Volver atrás");
+        volverAtrasMesa8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverAtrasMesa8ActionPerformed(evt);
+            }
+        });
+        verPedidoMesa8.add(volverAtrasMesa8, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 101, 46));
+
+        jLabel56.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel56.setText("Pedidos llevar");
+        verPedidoMesa8.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 150, 25));
+
+        jLabel57.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel57.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel57.setText("Detalle pedido");
+        verPedidoMesa8.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 150, 25));
+
+        jLabel58.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel58.setText("Pedidos mesa");
+        verPedidoMesa8.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 140, 25));
+
+        listaVerPedidosMesa8.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosMesa8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosMesa8MouseClicked(evt);
+            }
+        });
+        jScrollPane48.setViewportView(listaVerPedidosMesa8);
+
+        verPedidoMesa8.add(jScrollPane48, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 220, 240));
+
+        detallePedidoMesa8.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane49.setViewportView(detallePedidoMesa8);
+
+        verPedidoMesa8.add(jScrollPane49, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 220, 240));
+
+        listaVerPedidosLlevarMesa8.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosLlevarMesa8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosLlevarMesa8MouseClicked(evt);
+            }
+        });
+        jScrollPane50.setViewportView(listaVerPedidosLlevarMesa8);
+
+        verPedidoMesa8.add(jScrollPane50, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 220, 240));
+
+        jPanelMostrar.add(verPedidoMesa8, "card20");
+
+        verPedidoMesa9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel59.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel59.setText("Pedidos mesa 9");
+        verPedidoMesa9.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 200, 25));
+
+        volverAtrasMesa9.setBackground(new java.awt.Color(204, 204, 0));
+        volverAtrasMesa9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        volverAtrasMesa9.setForeground(new java.awt.Color(0, 0, 0));
+        volverAtrasMesa9.setText("Volver atrás");
+        volverAtrasMesa9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverAtrasMesa9ActionPerformed(evt);
+            }
+        });
+        verPedidoMesa9.add(volverAtrasMesa9, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 101, 46));
+
+        jLabel93.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel93.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel93.setText("Pedidos llevar");
+        verPedidoMesa9.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 150, 25));
+
+        jLabel97.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel97.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel97.setText("Detalle pedido");
+        verPedidoMesa9.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 150, 25));
+
+        jLabel113.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel113.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel113.setText("Pedidos mesa");
+        verPedidoMesa9.add(jLabel113, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 140, 25));
+
+        listaVerPedidosMesa9.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosMesa9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosMesa9MouseClicked(evt);
+            }
+        });
+        jScrollPane51.setViewportView(listaVerPedidosMesa9);
+
+        verPedidoMesa9.add(jScrollPane51, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 220, 240));
+
+        detallePedidoMesa9.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane52.setViewportView(detallePedidoMesa9);
+
+        verPedidoMesa9.add(jScrollPane52, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 220, 240));
+
+        listaVerPedidosLlevarMesa9.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosLlevarMesa9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosLlevarMesa9MouseClicked(evt);
+            }
+        });
+        jScrollPane53.setViewportView(listaVerPedidosLlevarMesa9);
+
+        verPedidoMesa9.add(jScrollPane53, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 220, 240));
+
+        jPanelMostrar.add(verPedidoMesa9, "card21");
+
+        verPedidoMesa10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel117.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel117.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel117.setText("Pedidos mesa 10");
+        verPedidoMesa10.add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 210, 25));
+
+        volverAtrasMesa10.setBackground(new java.awt.Color(204, 204, 0));
+        volverAtrasMesa10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        volverAtrasMesa10.setForeground(new java.awt.Color(0, 0, 0));
+        volverAtrasMesa10.setText("Volver atrás");
+        volverAtrasMesa10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverAtrasMesa10ActionPerformed(evt);
+            }
+        });
+        verPedidoMesa10.add(volverAtrasMesa10, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 101, 46));
+
+        jLabel121.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel121.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel121.setText("Pedidos llevar");
+        verPedidoMesa10.add(jLabel121, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 150, 25));
+
+        jLabel125.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel125.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel125.setText("Detalle pedido");
+        verPedidoMesa10.add(jLabel125, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 150, 25));
+
+        jLabel129.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel129.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel129.setText("Pedidos mesa");
+        verPedidoMesa10.add(jLabel129, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 140, 25));
+
+        listaVerPedidosMesa10.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosMesa10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosMesa10MouseClicked(evt);
+            }
+        });
+        jScrollPane54.setViewportView(listaVerPedidosMesa10);
+
+        verPedidoMesa10.add(jScrollPane54, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 220, 240));
+
+        detallePedidoMesa10.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane55.setViewportView(detallePedidoMesa10);
+
+        verPedidoMesa10.add(jScrollPane55, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 220, 240));
+
+        listaVerPedidosLlevarMesa10.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosLlevarMesa10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosLlevarMesa10MouseClicked(evt);
+            }
+        });
+        jScrollPane56.setViewportView(listaVerPedidosLlevarMesa10);
+
+        verPedidoMesa10.add(jScrollPane56, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 220, 240));
+
+        jPanelMostrar.add(verPedidoMesa10, "card22");
+
+        verPedidoMesa11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel133.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel133.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel133.setText("Pedidos mesa 11");
+        verPedidoMesa11.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 220, 25));
+
+        volverAtrasMesa11.setBackground(new java.awt.Color(204, 204, 0));
+        volverAtrasMesa11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        volverAtrasMesa11.setForeground(new java.awt.Color(0, 0, 0));
+        volverAtrasMesa11.setText("Volver atrás");
+        volverAtrasMesa11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverAtrasMesa11ActionPerformed(evt);
+            }
+        });
+        verPedidoMesa11.add(volverAtrasMesa11, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 101, 46));
+
+        jLabel137.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel137.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel137.setText("Pedidos llevar");
+        verPedidoMesa11.add(jLabel137, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 150, 25));
+
+        jLabel141.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel141.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel141.setText("Detalle pedido");
+        verPedidoMesa11.add(jLabel141, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 150, 25));
+
+        jLabel148.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel148.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel148.setText("Pedidos mesa");
+        verPedidoMesa11.add(jLabel148, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 140, 25));
+
+        listaVerPedidosMesa11.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosMesa11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosMesa11MouseClicked(evt);
+            }
+        });
+        jScrollPane57.setViewportView(listaVerPedidosMesa11);
+
+        verPedidoMesa11.add(jScrollPane57, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 220, 240));
+
+        detallePedidoMesa11.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane58.setViewportView(detallePedidoMesa11);
+
+        verPedidoMesa11.add(jScrollPane58, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 220, 240));
+
+        listaVerPedidosLlevarMesa11.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosLlevarMesa11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosLlevarMesa11MouseClicked(evt);
+            }
+        });
+        jScrollPane59.setViewportView(listaVerPedidosLlevarMesa11);
+
+        verPedidoMesa11.add(jScrollPane59, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 220, 240));
+
+        jPanelMostrar.add(verPedidoMesa11, "card23");
+
+        verPedidoMesa12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel149.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel149.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel149.setText("Pedidos mesa 12");
+        verPedidoMesa12.add(jLabel149, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 210, 25));
+
+        volverAtrasMesa12.setBackground(new java.awt.Color(204, 204, 0));
+        volverAtrasMesa12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        volverAtrasMesa12.setForeground(new java.awt.Color(0, 0, 0));
+        volverAtrasMesa12.setText("Volver atrás");
+        volverAtrasMesa12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverAtrasMesa12ActionPerformed(evt);
+            }
+        });
+        verPedidoMesa12.add(volverAtrasMesa12, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 101, 46));
+
+        jLabel150.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel150.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel150.setText("Pedidos llevar");
+        verPedidoMesa12.add(jLabel150, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 150, 25));
+
+        jLabel151.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel151.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel151.setText("Detalle pedido");
+        verPedidoMesa12.add(jLabel151, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 150, 25));
+
+        jLabel152.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel152.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel152.setText("Pedidos mesa");
+        verPedidoMesa12.add(jLabel152, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 140, 25));
+
+        listaVerPedidosMesa12.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosMesa12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosMesa12MouseClicked(evt);
+            }
+        });
+        jScrollPane60.setViewportView(listaVerPedidosMesa12);
+
+        verPedidoMesa12.add(jScrollPane60, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 220, 240));
+
+        detallePedidoMesa12.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane61.setViewportView(detallePedidoMesa12);
+
+        verPedidoMesa12.add(jScrollPane61, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 220, 240));
+
+        listaVerPedidosLlevarMesa12.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaVerPedidosLlevarMesa12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaVerPedidosLlevarMesa12MouseClicked(evt);
+            }
+        });
+        jScrollPane62.setViewportView(listaVerPedidosLlevarMesa12);
+
+        verPedidoMesa12.add(jScrollPane62, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 220, 240));
+
+        jPanelMostrar.add(verPedidoMesa12, "card24");
+
         menuMesero.setText("Mesero");
         menuMesero.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menuMesero.setPreferredSize(new java.awt.Dimension(122, 50));
@@ -2536,16 +3617,16 @@ public class Mesero extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, 955, Short.MAX_VALUE)
+            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
+            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void menItemProducDisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemProducDisponiblesActionPerformed
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "panelProducDisponibles");
@@ -2560,10 +3641,7 @@ public class Mesero extends javax.swing.JFrame {
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "panelCargarProductos");
     }//GEN-LAST:event_menItemCargarProductosActionPerformed
-    
-    
 
-    
     private void menItemCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemCerrarSesionActionPerformed
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "panelCerrarSesion");
@@ -2637,8 +3715,6 @@ public class Mesero extends javax.swing.JFrame {
     private void showPanel(String panelName) {
         CardLayout layout = (CardLayout) jPanelMostrarMesa.getLayout();
         layout.show(jPanelMostrarMesa, panelName);
-        
-        
     }
     
     private void btnMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa1ActionPerformed
@@ -3072,6 +4148,7 @@ public class Mesero extends javax.swing.JFrame {
                         productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + 1);
                         productoYaEnPedido = true;
                         break;
+                        
                     }
                 }
 
@@ -3649,9 +4726,11 @@ public class Mesero extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa12ActionPerformed
 
+    int contadorPedidosMesa1 = 1;
+    int contadorPedidosMesa1Llevar = 1;
     private void realizarPedidoMesa1() {
 
-        if (!pedidoMesa1.getListaProductos().isEmpty()) {
+       if (!pedidoMesa1.getListaProductos().isEmpty()) {
 
             Object[] opciones = {"Para mesa", "Para llevar"};
             int seleccion = JOptionPane.showOptionDialog(
@@ -3664,24 +4743,30 @@ public class Mesero extends javax.swing.JFrame {
                     opciones,
                     opciones[0]
             );
-
-
+            
             if (seleccion == JOptionPane.YES_OPTION) { 
+                pedidoMesa1.setNumPedido(contadorPedidosMesa1);
+                pedidoMesa1.setTipoPedido("Mesa");
+                
                 pedidosMesa1.add(pedidoMesa1);
                 JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa1.setBackground(Color.red);
+                contadorPedidosMesa1++; 
             } else if (seleccion == JOptionPane.NO_OPTION) { 
+                pedidoMesa1.setNumPedido(contadorPedidosMesa1Llevar);
+                pedidoMesa1.setTipoPedido("Llevar");
                 pedidosMesa1Llevar.add(pedidoMesa1);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa1.setBackground(Color.red);
+                contadorPedidosMesa1Llevar++; 
+
             } else {
-                
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
                 return;
             }
 
-           
-            pedidoMesa1 = new Pedido(); 
+
+            pedidoMesa1 = new Pedido();
             actualizarListaProductosDelPedidoMesa1();
             mesas.get(0).setEstado("Ocupada");
 
@@ -3690,6 +4775,8 @@ public class Mesero extends javax.swing.JFrame {
         }
     }
 
+    int contadorPedidosMesa2 = 1;
+    int contadorPedidosMesa2Llevar = 1;
     private void realizarPedidoMesa2() {
 
         if (!pedidoMesa2.getListaProductos().isEmpty()) {
@@ -3708,13 +4795,19 @@ public class Mesero extends javax.swing.JFrame {
 
 
             if (seleccion == JOptionPane.YES_OPTION) { 
+                pedidoMesa2.setNumPedido(contadorPedidosMesa2);
+                pedidoMesa2.setTipoPedido("Mesa");
                 pedidosMesa2.add(pedidoMesa2);
                 JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa2.setBackground(Color.red);
-            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                contadorPedidosMesa2++;
+            } else if (seleccion == JOptionPane.NO_OPTION) {
+                pedidoMesa2.setNumPedido(contadorPedidosMesa2Llevar);
+                pedidoMesa2.setTipoPedido("Llevar");
                 pedidosMesa2Llevar.add(pedidoMesa2);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa2.setBackground(Color.red);
+                contadorPedidosMesa2Llevar++;
             } else {
                 
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -3730,6 +4823,9 @@ public class Mesero extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
     }
+    
+    int contadorPedidosMesa3 = 1;
+    int contadorPedidosMesa3Llevar = 1;
     
     private void realizarPedidoMesa3() {
 
@@ -3748,14 +4844,20 @@ public class Mesero extends javax.swing.JFrame {
             );
 
 
-            if (seleccion == JOptionPane.YES_OPTION) { 
+            if (seleccion == JOptionPane.YES_OPTION) {
+                pedidoMesa3.setNumPedido(contadorPedidosMesa3);
+                pedidoMesa3.setTipoPedido("Mesa");
                 pedidosMesa3.add(pedidoMesa3);
                 JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa3.setBackground(Color.red);
+                contadorPedidosMesa3++;
             } else if (seleccion == JOptionPane.NO_OPTION) { 
+                pedidoMesa3.setNumPedido(contadorPedidosMesa3Llevar);
+                pedidoMesa3.setTipoPedido("Llevar");
                 pedidosMesa3Llevar.add(pedidoMesa3);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa3.setBackground(Color.red);
+                contadorPedidosMesa3Llevar++;
             } else {
                 
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -3772,6 +4874,8 @@ public class Mesero extends javax.swing.JFrame {
         }
     }
     
+    int contadorPedidosMesa4 = 1;
+    int contadorPedidosMesa4Llevar = 1;
     private void realizarPedidoMesa4() {
 
         if (!pedidoMesa4.getListaProductos().isEmpty()) {
@@ -3789,14 +4893,21 @@ public class Mesero extends javax.swing.JFrame {
             );
 
 
-            if (seleccion == JOptionPane.YES_OPTION) { 
+            if (seleccion == JOptionPane.YES_OPTION) {
+                pedidoMesa4.setNumPedido(contadorPedidosMesa4);
+                pedidoMesa4.setTipoPedido("Mesa");
                 pedidosMesa4.add(pedidoMesa4);
                 JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa4.setBackground(Color.red);
-            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                contadorPedidosMesa4++;
+            } else if (seleccion == JOptionPane.NO_OPTION) {
+                pedidoMesa4.setNumPedido(contadorPedidosMesa4Llevar);
+                pedidoMesa4.setTipoPedido("Llevar");
                 pedidosMesa4Llevar.add(pedidoMesa4);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa4.setBackground(Color.red);
+                contadorPedidosMesa4Llevar++;
+                
             } else {
                 
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -3813,6 +4924,8 @@ public class Mesero extends javax.swing.JFrame {
         }
     }
     
+    int contadorPedidosMesa5 = 1;
+    int contadorPedidosMesa5Llevar = 1;
     private void realizarPedidoMesa5() {
 
         if (!pedidoMesa5.getListaProductos().isEmpty()) {
@@ -3830,14 +4943,20 @@ public class Mesero extends javax.swing.JFrame {
             );
 
 
-            if (seleccion == JOptionPane.YES_OPTION) { 
+            if (seleccion == JOptionPane.YES_OPTION) {
+                pedidoMesa5.setNumPedido(contadorPedidosMesa5);
+                pedidoMesa5.setTipoPedido("Mesa");
                 pedidosMesa5.add(pedidoMesa5);
                 JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa5.setBackground(Color.red);
-            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                contadorPedidosMesa5++;
+            } else if (seleccion == JOptionPane.NO_OPTION) {
+                pedidoMesa5.setNumPedido(contadorPedidosMesa5Llevar);
+                pedidoMesa5.setTipoPedido("Llevar");
                 pedidosMesa5Llevar.add(pedidoMesa5);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa5.setBackground(Color.red);
+                contadorPedidosMesa5Llevar++;
             } else {
                 
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -3854,6 +4973,8 @@ public class Mesero extends javax.swing.JFrame {
         }
     }
     
+    int contadorPedidosMesa6 = 1;
+    int contadorPedidosMesa6Llevar = 1;
     private void realizarPedidoMesa6() {
 
         if (!pedidoMesa6.getListaProductos().isEmpty()) {
@@ -3871,14 +4992,20 @@ public class Mesero extends javax.swing.JFrame {
             );
 
 
-            if (seleccion == JOptionPane.YES_OPTION) { 
+            if (seleccion == JOptionPane.YES_OPTION) {
+                pedidoMesa6.setNumPedido(contadorPedidosMesa6);
+                pedidoMesa6.setTipoPedido("Mesa");
                 pedidosMesa6.add(pedidoMesa6);
                 JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa6.setBackground(Color.red);
-            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                contadorPedidosMesa6++;
+            } else if (seleccion == JOptionPane.NO_OPTION) {
+                pedidoMesa6.setNumPedido(contadorPedidosMesa6Llevar);
+                pedidoMesa6.setTipoPedido("Llevar");
                 pedidosMesa6Llevar.add(pedidoMesa6);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa6.setBackground(Color.red);
+                contadorPedidosMesa6Llevar++;
             } else {
                 
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -3895,6 +5022,8 @@ public class Mesero extends javax.swing.JFrame {
         }
     }
     
+    int contadorPedidosMesa7 = 1;
+    int contadorPedidosMesa7Llevar = 1;
     private void realizarPedidoMesa7() {
 
         if (!pedidoMesa7.getListaProductos().isEmpty()) {
@@ -3912,15 +5041,21 @@ public class Mesero extends javax.swing.JFrame {
             );
 
 
-            if (seleccion == JOptionPane.YES_OPTION) { 
+            if (seleccion == JOptionPane.YES_OPTION) {
+                pedidoMesa7.setNumPedido(contadorPedidosMesa7);
+                pedidoMesa7.setTipoPedido("Mesa");
                 pedidosMesa7.add(pedidoMesa7);
                 JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa7.setBackground(Color.red);
-            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                contadorPedidosMesa7++;
+            } else if (seleccion == JOptionPane.NO_OPTION) {
+                pedidoMesa7.setNumPedido(contadorPedidosMesa7Llevar);
+                pedidoMesa7.setTipoPedido("Llevar");
                 pedidosMesa7Llevar.add(pedidoMesa7);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa7.setBackground(Color.red);
-            } else {
+                contadorPedidosMesa7Llevar++; 
+           } else {
                 
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
                 return;
@@ -3936,6 +5071,8 @@ public class Mesero extends javax.swing.JFrame {
         }
     }
     
+    int contadorPedidosMesa8 = 1;
+    int contadorPedidosMesa8Llevar = 1;
     private void realizarPedidoMesa8() {
 
         if (!pedidoMesa8.getListaProductos().isEmpty()) {
@@ -3953,14 +5090,20 @@ public class Mesero extends javax.swing.JFrame {
             );
 
 
-            if (seleccion == JOptionPane.YES_OPTION) { 
+            if (seleccion == JOptionPane.YES_OPTION) {
+                pedidoMesa8.setNumPedido(contadorPedidosMesa8);
+                pedidoMesa8.setTipoPedido("Mesa");
                 pedidosMesa8.add(pedidoMesa8);
                 JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa8.setBackground(Color.red);
+                contadorPedidosMesa8++;
             } else if (seleccion == JOptionPane.NO_OPTION) { 
+                pedidoMesa8.setNumPedido(contadorPedidosMesa8Llevar);
+                pedidoMesa8.setTipoPedido("Llevar");
                 pedidosMesa8Llevar.add(pedidoMesa8);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa8.setBackground(Color.red);
+                contadorPedidosMesa8++;
             } else {
                 
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -3977,6 +5120,8 @@ public class Mesero extends javax.swing.JFrame {
         }
     }
     
+    int contadorPedidosMesa9 = 1;
+    int contadorPedidosMesa9Llevar = 1;
     private void realizarPedidoMesa9() {
 
         if (!pedidoMesa9.getListaProductos().isEmpty()) {
@@ -3994,14 +5139,20 @@ public class Mesero extends javax.swing.JFrame {
             );
 
 
-            if (seleccion == JOptionPane.YES_OPTION) { 
+            if (seleccion == JOptionPane.YES_OPTION) {
+                pedidoMesa9.setNumPedido(contadorPedidosMesa9);
+                pedidoMesa9.setTipoPedido("Mesa");
                 pedidosMesa9.add(pedidoMesa9);
                 JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa9.setBackground(Color.red);
-            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                contadorPedidosMesa9++;
+            } else if (seleccion == JOptionPane.NO_OPTION) {
+                pedidoMesa9.setNumPedido(contadorPedidosMesa9Llevar);
+                pedidoMesa9.setTipoPedido("Llevar");
                 pedidosMesa9Llevar.add(pedidoMesa9);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa9.setBackground(Color.red);
+                contadorPedidosMesa9Llevar++;
             } else {
                 
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -4018,6 +5169,8 @@ public class Mesero extends javax.swing.JFrame {
         }
     }
     
+    int contadorPedidosMesa10 = 1;
+    int contadorPedidosMesa10Llevar = 1;
     private void realizarPedidoMesa10() {
 
         if (!pedidoMesa10.getListaProductos().isEmpty()) {
@@ -4035,14 +5188,20 @@ public class Mesero extends javax.swing.JFrame {
             );
 
 
-            if (seleccion == JOptionPane.YES_OPTION) { 
+            if (seleccion == JOptionPane.YES_OPTION) {
+                pedidoMesa10.setNumPedido(contadorPedidosMesa10);
+                pedidoMesa10.setTipoPedido("Mesa");
                 pedidosMesa10.add(pedidoMesa10);
                 JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa10.setBackground(Color.red);
-            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                contadorPedidosMesa10++;
+            } else if (seleccion == JOptionPane.NO_OPTION) {
+                pedidoMesa10.setNumPedido(contadorPedidosMesa10Llevar);
+                pedidoMesa10.setTipoPedido("Llevar");
                 pedidosMesa10Llevar.add(pedidoMesa10);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa10.setBackground(Color.red);
+                contadorPedidosMesa10Llevar++;
             } else {
                 
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -4058,6 +5217,8 @@ public class Mesero extends javax.swing.JFrame {
         }
     }
     
+    int contadorPedidosMesa11 = 1;
+    int contadorPedidosMesa11Llevar = 1;
     private void realizarPedidoMesa11() {
 
         if (!pedidoMesa11.getListaProductos().isEmpty()) {
@@ -4075,14 +5236,20 @@ public class Mesero extends javax.swing.JFrame {
             );
 
 
-            if (seleccion == JOptionPane.YES_OPTION) { 
+            if (seleccion == JOptionPane.YES_OPTION) {
+                pedidoMesa11.setNumPedido(contadorPedidosMesa11);
+                pedidoMesa11.setTipoPedido("Mesa");
                 pedidosMesa11.add(pedidoMesa11);
                 JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa11.setBackground(Color.red);
-            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                contadorPedidosMesa11++;
+            } else if (seleccion == JOptionPane.NO_OPTION) {
+                pedidoMesa11.setNumPedido(contadorPedidosMesa11Llevar);
+                pedidoMesa11.setTipoPedido("Llevar");
                 pedidosMesa11Llevar.add(pedidoMesa11);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa11.setBackground(Color.red);
+                contadorPedidosMesa11Llevar++;
             } else {
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
                 return;
@@ -4098,6 +5265,8 @@ public class Mesero extends javax.swing.JFrame {
         }
     }
     
+    int contadorPedidosMesa12 = 1;
+    int contadorPedidosMesa12Llevar = 1;
     private void realizarPedidoMesa12() {
 
         if (!pedidoMesa12.getListaProductos().isEmpty()) {
@@ -4115,14 +5284,20 @@ public class Mesero extends javax.swing.JFrame {
             );
 
 
-            if (seleccion == JOptionPane.YES_OPTION) { 
+            if (seleccion == JOptionPane.YES_OPTION) {
+                pedidoMesa12.setNumPedido(contadorPedidosMesa12);
+                pedidoMesa12.setTipoPedido("Mesa");
                 pedidosMesa12.add(pedidoMesa12);
                 JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa12.setBackground(Color.red);
-            } else if (seleccion == JOptionPane.NO_OPTION) { 
+                contadorPedidosMesa12++; 
+           } else if (seleccion == JOptionPane.NO_OPTION) {
+                pedidoMesa12.setNumPedido(contadorPedidosMesa12Llevar);
+                pedidoMesa12.setTipoPedido("Llevar");
                 pedidosMesa12Llevar.add(pedidoMesa12);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa12.setBackground(Color.red);
+                contadorPedidosMesa12Llevar++;
             } else {
                 
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -4191,10 +5366,591 @@ public class Mesero extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnRealizarPedidoMesa12ActionPerformed
 
+    
     private void menItemGenerarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemGenerarReporteActionPerformed
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "panelGenerarReporte");
     }//GEN-LAST:event_menItemGenerarReporteActionPerformed
+    
+    private void actualizarListaPedidosMesa1() {
+        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa1) {
+            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosMesa1.setModel(modeloPedidosMesa);
+
+        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa1Llevar) {
+            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosLlevarMesa1.setModel(modeloPedidosLlevar); 
+    }
+    
+    private void actualizarListaPedidosMesa2() {
+        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa2) {
+            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosMesa2.setModel(modeloPedidosMesa);
+
+        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa2Llevar) {
+            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosLlevarMesa2.setModel(modeloPedidosLlevar); 
+    }
+    
+    private void actualizarListaPedidosMesa3() {
+        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa3) {
+            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosMesa3.setModel(modeloPedidosMesa);
+
+        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa3Llevar) {
+            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosLlevarMesa3.setModel(modeloPedidosLlevar); 
+    }
+    
+    private void actualizarListaPedidosMesa4() {
+        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa4) {
+            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosMesa4.setModel(modeloPedidosMesa);
+
+        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa4Llevar) {
+            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosLlevarMesa4.setModel(modeloPedidosLlevar); 
+    }
+    
+    private void actualizarListaPedidosMesa5() {
+        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa5) {
+            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosMesa5.setModel(modeloPedidosMesa);
+
+        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa5Llevar) {
+            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosLlevarMesa5.setModel(modeloPedidosLlevar); 
+    }
+    
+    private void actualizarListaPedidosMesa6() {
+        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa6) {
+            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosMesa6.setModel(modeloPedidosMesa);
+
+        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa6Llevar) {
+            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosLlevarMesa6.setModel(modeloPedidosLlevar); 
+    }
+    
+    private void actualizarListaPedidosMesa7() {
+        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa7) {
+            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosMesa7.setModel(modeloPedidosMesa);
+
+        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa7Llevar) {
+            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosLlevarMesa7.setModel(modeloPedidosLlevar); 
+    }
+    
+    private void actualizarListaPedidosMesa8() {
+        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa8) {
+            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosMesa8.setModel(modeloPedidosMesa);
+
+        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa8Llevar) {
+            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosLlevarMesa8.setModel(modeloPedidosLlevar); 
+    }
+    
+    private void actualizarListaPedidosMesa9() {
+        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa9) {
+            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosMesa9.setModel(modeloPedidosMesa);
+
+        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa9Llevar) {
+            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosLlevarMesa9.setModel(modeloPedidosLlevar); 
+    }
+    
+    private void actualizarListaPedidosMesa10() {
+        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa10) {
+            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosMesa10.setModel(modeloPedidosMesa);
+
+        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa10Llevar) {
+            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosLlevarMesa10.setModel(modeloPedidosLlevar); 
+    }
+    
+    private void actualizarListaPedidosMesa11() {
+        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa11) {
+            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosMesa11.setModel(modeloPedidosMesa);
+
+        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa11Llevar) {
+            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosLlevarMesa11.setModel(modeloPedidosLlevar); 
+    }
+    
+    private void actualizarListaPedidosMesa12() {
+        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa12) {
+            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosMesa12.setModel(modeloPedidosMesa);
+
+        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
+        for (Pedido pedido : pedidosMesa12Llevar) {
+            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+        }
+        listaVerPedidosLlevarMesa12.setModel(modeloPedidosLlevar); 
+    }
+
+    private void mostrarDetallePedidoMesa1(Pedido pedido) {
+        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
+        for (Producto producto : pedido.getListaProductos()) {
+            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
+        }
+        detallePedidoMesa1.setModel(modeloDetalle); 
+    }
+    
+    private void mostrarDetallePedidoMesa2(Pedido pedido) {
+        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
+        for (Producto producto : pedido.getListaProductos()) {
+            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
+        }
+        detallePedidoMesa2.setModel(modeloDetalle); 
+    }
+
+    private void mostrarDetallePedidoMesa3(Pedido pedido) {
+        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
+        for (Producto producto : pedido.getListaProductos()) {
+            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
+        }
+        detallePedidoMesa3.setModel(modeloDetalle); 
+    }
+    
+    private void mostrarDetallePedidoMesa4(Pedido pedido) {
+        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
+        for (Producto producto : pedido.getListaProductos()) {
+            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
+        }
+        detallePedidoMesa4.setModel(modeloDetalle); 
+    }
+    
+    private void mostrarDetallePedidoMesa5(Pedido pedido) {
+        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
+        for (Producto producto : pedido.getListaProductos()) {
+            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
+        }
+        detallePedidoMesa5.setModel(modeloDetalle); 
+    }
+    
+    private void mostrarDetallePedidoMesa6(Pedido pedido) {
+        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
+        for (Producto producto : pedido.getListaProductos()) {
+            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
+        }
+        detallePedidoMesa6.setModel(modeloDetalle); 
+    }
+    
+    private void mostrarDetallePedidoMesa7(Pedido pedido) {
+        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
+        for (Producto producto : pedido.getListaProductos()) {
+            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
+        }
+        detallePedidoMesa7.setModel(modeloDetalle); 
+    }
+    
+    private void mostrarDetallePedidoMesa8(Pedido pedido) {
+        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
+        for (Producto producto : pedido.getListaProductos()) {
+            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
+        }
+        detallePedidoMesa8.setModel(modeloDetalle); 
+    }
+    
+    private void mostrarDetallePedidoMesa9(Pedido pedido) {
+        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
+        for (Producto producto : pedido.getListaProductos()) {
+            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
+        }
+        detallePedidoMesa9.setModel(modeloDetalle); 
+    }
+    
+    private void mostrarDetallePedidoMesa10(Pedido pedido) {
+        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
+        for (Producto producto : pedido.getListaProductos()) {
+            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
+        }
+        detallePedidoMesa10.setModel(modeloDetalle); 
+    }
+    
+    private void mostrarDetallePedidoMesa11(Pedido pedido) {
+        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
+        for (Producto producto : pedido.getListaProductos()) {
+            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
+        }
+        detallePedidoMesa11.setModel(modeloDetalle); 
+    }
+    
+    private void mostrarDetallePedidoMesa12(Pedido pedido) {
+        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
+        for (Producto producto : pedido.getListaProductos()) {
+            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
+        }
+        detallePedidoMesa12.setModel(modeloDetalle); 
+    }
+    private void btnVerPedidosMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa1ActionPerformed
+        actualizarListaPedidosMesa1();
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "verPedidoMesa1");
+    }//GEN-LAST:event_btnVerPedidosMesa1ActionPerformed
+
+    private void volverAtrasPanelMesas(){
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "panelGestionarMesas");
+    }
+    private void volverAtrasMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAtrasMesa1ActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "panelGestionarMesas");
+    }//GEN-LAST:event_volverAtrasMesa1ActionPerformed
+
+    private void volverAtrasMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAtrasMesa2ActionPerformed
+        volverAtrasPanelMesas();
+    }//GEN-LAST:event_volverAtrasMesa2ActionPerformed
+
+    private void volverAtrasMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAtrasMesa3ActionPerformed
+        volverAtrasPanelMesas();
+    }//GEN-LAST:event_volverAtrasMesa3ActionPerformed
+
+    private void volverAtrasMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAtrasMesa4ActionPerformed
+        volverAtrasPanelMesas();
+    }//GEN-LAST:event_volverAtrasMesa4ActionPerformed
+
+    private void volverAtrasMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAtrasMesa5ActionPerformed
+        volverAtrasPanelMesas();
+    }//GEN-LAST:event_volverAtrasMesa5ActionPerformed
+
+    private void volverAtrasMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAtrasMesa6ActionPerformed
+        volverAtrasPanelMesas();
+    }//GEN-LAST:event_volverAtrasMesa6ActionPerformed
+
+    private void volverAtrasMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAtrasMesa7ActionPerformed
+        volverAtrasPanelMesas();
+    }//GEN-LAST:event_volverAtrasMesa7ActionPerformed
+
+    private void volverAtrasMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAtrasMesa8ActionPerformed
+        volverAtrasPanelMesas();
+    }//GEN-LAST:event_volverAtrasMesa8ActionPerformed
+
+    private void volverAtrasMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAtrasMesa9ActionPerformed
+        volverAtrasPanelMesas();
+    }//GEN-LAST:event_volverAtrasMesa9ActionPerformed
+
+    private void volverAtrasMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAtrasMesa10ActionPerformed
+        volverAtrasPanelMesas();
+    }//GEN-LAST:event_volverAtrasMesa10ActionPerformed
+
+    private void volverAtrasMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAtrasMesa11ActionPerformed
+        volverAtrasPanelMesas();
+    }//GEN-LAST:event_volverAtrasMesa11ActionPerformed
+
+    private void volverAtrasMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAtrasMesa12ActionPerformed
+        volverAtrasPanelMesas();
+    }//GEN-LAST:event_volverAtrasMesa12ActionPerformed
+
+    private void listaVerPedidosMesa1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosMesa1MouseClicked
+        int index = listaVerPedidosMesa1.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa1.get(index);
+            mostrarDetallePedidoMesa1(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosMesa1MouseClicked
+
+    private void listaVerPedidosLlevarMesa1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosLlevarMesa1MouseClicked
+        int index = listaVerPedidosLlevarMesa1.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa1Llevar.get(index);
+            mostrarDetallePedidoMesa1(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosLlevarMesa1MouseClicked
+
+    private void btnVerPedidosMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa2ActionPerformed
+        actualizarListaPedidosMesa2();
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "verPedidoMesa2");
+    }//GEN-LAST:event_btnVerPedidosMesa2ActionPerformed
+
+    private void btnVerPedidosMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa3ActionPerformed
+        actualizarListaPedidosMesa3();
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "verPedidoMesa3");
+    }//GEN-LAST:event_btnVerPedidosMesa3ActionPerformed
+
+    private void btnVerPedidosMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa4ActionPerformed
+        actualizarListaPedidosMesa4();
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "verPedidoMesa4");
+    }//GEN-LAST:event_btnVerPedidosMesa4ActionPerformed
+
+    private void btnVerPedidosMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa5ActionPerformed
+        actualizarListaPedidosMesa5();
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "verPedidoMesa5");
+    }//GEN-LAST:event_btnVerPedidosMesa5ActionPerformed
+
+    private void btnVerPedidosMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa6ActionPerformed
+        actualizarListaPedidosMesa6();
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "verPedidoMesa6");
+    }//GEN-LAST:event_btnVerPedidosMesa6ActionPerformed
+
+    private void btnVerPedidosMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa7ActionPerformed
+        actualizarListaPedidosMesa7();
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "verPedidoMesa7");
+    }//GEN-LAST:event_btnVerPedidosMesa7ActionPerformed
+
+    private void btnVerPedidosMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa8ActionPerformed
+        actualizarListaPedidosMesa8();
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "verPedidoMesa8");
+    }//GEN-LAST:event_btnVerPedidosMesa8ActionPerformed
+
+    private void btnVerPedidosMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa9ActionPerformed
+        actualizarListaPedidosMesa9();
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "verPedidoMesa9");
+    }//GEN-LAST:event_btnVerPedidosMesa9ActionPerformed
+
+    private void btnVerPedidosMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa10ActionPerformed
+        actualizarListaPedidosMesa10();
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "verPedidoMesa10");
+    }//GEN-LAST:event_btnVerPedidosMesa10ActionPerformed
+
+    private void btnVerPedidosMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa11ActionPerformed
+        actualizarListaPedidosMesa11();
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "verPedidoMesa11");
+    }//GEN-LAST:event_btnVerPedidosMesa11ActionPerformed
+
+    private void btnVerPedidosMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa12ActionPerformed
+        actualizarListaPedidosMesa12();
+        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
+        layout.show(jPanelMostrar, "verPedidoMesa12");
+    }//GEN-LAST:event_btnVerPedidosMesa12ActionPerformed
+
+    private void listaVerPedidosMesa2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosMesa2MouseClicked
+        int index = listaVerPedidosMesa2.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa2.get(index);
+            mostrarDetallePedidoMesa2(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosMesa2MouseClicked
+
+    private void listaVerPedidosLlevarMesa2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosLlevarMesa2MouseClicked
+        int index = listaVerPedidosLlevarMesa2.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa2Llevar.get(index);
+            mostrarDetallePedidoMesa1(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosLlevarMesa2MouseClicked
+
+    private void listaVerPedidosMesa3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosMesa3MouseClicked
+        int index = listaVerPedidosMesa3.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa3.get(index);
+            mostrarDetallePedidoMesa3(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosMesa3MouseClicked
+
+    private void listaVerPedidosLlevarMesa3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosLlevarMesa3MouseClicked
+        int index = listaVerPedidosLlevarMesa3.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa3Llevar.get(index);
+            mostrarDetallePedidoMesa3(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosLlevarMesa3MouseClicked
+
+    private void listaVerPedidosMesa4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosMesa4MouseClicked
+        int index = listaVerPedidosMesa4.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa4.get(index);
+            mostrarDetallePedidoMesa4(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosMesa4MouseClicked
+
+    private void listaVerPedidosLlevarMesa4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosLlevarMesa4MouseClicked
+        int index = listaVerPedidosLlevarMesa4.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa4Llevar.get(index);
+            mostrarDetallePedidoMesa4(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosLlevarMesa4MouseClicked
+
+    private void listaVerPedidosMesa5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosMesa5MouseClicked
+        int index = listaVerPedidosMesa5.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa5.get(index);
+            mostrarDetallePedidoMesa5(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosMesa5MouseClicked
+
+    private void listaVerPedidosLlevarMesa5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosLlevarMesa5MouseClicked
+        int index = listaVerPedidosLlevarMesa5.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa5Llevar.get(index);
+            mostrarDetallePedidoMesa5(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosLlevarMesa5MouseClicked
+
+    private void listaVerPedidosMesa6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosMesa6MouseClicked
+        int index = listaVerPedidosMesa6.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa6.get(index);
+            mostrarDetallePedidoMesa6(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosMesa6MouseClicked
+
+    private void listaVerPedidosLlevarMesa6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosLlevarMesa6MouseClicked
+        int index = listaVerPedidosLlevarMesa6.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa6Llevar.get(index);
+            mostrarDetallePedidoMesa6(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosLlevarMesa6MouseClicked
+
+    private void listaVerPedidosMesa7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosMesa7MouseClicked
+        int index = listaVerPedidosMesa7.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa7.get(index);
+            mostrarDetallePedidoMesa7(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosMesa7MouseClicked
+
+    private void listaVerPedidosLlevarMesa7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosLlevarMesa7MouseClicked
+        int index = listaVerPedidosLlevarMesa7.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa7Llevar.get(index);
+            mostrarDetallePedidoMesa7(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosLlevarMesa7MouseClicked
+
+    private void listaVerPedidosMesa8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosMesa8MouseClicked
+        int index = listaVerPedidosMesa8.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa8.get(index);
+            mostrarDetallePedidoMesa8(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosMesa8MouseClicked
+
+    private void listaVerPedidosLlevarMesa8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosLlevarMesa8MouseClicked
+        int index = listaVerPedidosLlevarMesa8.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa8Llevar.get(index);
+            mostrarDetallePedidoMesa8(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosLlevarMesa8MouseClicked
+
+    private void listaVerPedidosMesa9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosMesa9MouseClicked
+        int index = listaVerPedidosMesa9.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa9.get(index);
+            mostrarDetallePedidoMesa9(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosMesa9MouseClicked
+
+    private void listaVerPedidosLlevarMesa9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosLlevarMesa9MouseClicked
+        int index = listaVerPedidosLlevarMesa9.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa9Llevar.get(index);
+            mostrarDetallePedidoMesa9(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosLlevarMesa9MouseClicked
+
+    private void listaVerPedidosMesa10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosMesa10MouseClicked
+        int index = listaVerPedidosMesa10.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa10.get(index);
+            mostrarDetallePedidoMesa10(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosMesa10MouseClicked
+
+    private void listaVerPedidosLlevarMesa10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosLlevarMesa10MouseClicked
+        int index = listaVerPedidosLlevarMesa10.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa10Llevar.get(index);
+            mostrarDetallePedidoMesa10(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosLlevarMesa10MouseClicked
+
+    private void listaVerPedidosMesa11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosMesa11MouseClicked
+        int index = listaVerPedidosMesa11.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa11.get(index);
+            mostrarDetallePedidoMesa11(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosMesa11MouseClicked
+
+    private void listaVerPedidosLlevarMesa11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosLlevarMesa11MouseClicked
+        int index = listaVerPedidosLlevarMesa11.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa11Llevar.get(index);
+            mostrarDetallePedidoMesa11(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosLlevarMesa11MouseClicked
+
+    private void listaVerPedidosMesa12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosMesa12MouseClicked
+        int index = listaVerPedidosMesa12.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa12.get(index);
+            mostrarDetallePedidoMesa12(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosMesa12MouseClicked
+
+    private void listaVerPedidosLlevarMesa12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaVerPedidosLlevarMesa12MouseClicked
+        int index = listaVerPedidosLlevarMesa12.getSelectedIndex();
+        if (index >= 0) {
+            Pedido pedidoSeleccionado = pedidosMesa12Llevar.get(index);
+            mostrarDetallePedidoMesa12(pedidoSeleccionado);
+        }
+    }//GEN-LAST:event_listaVerPedidosLlevarMesa12MouseClicked
     
     private void actualizarListaProductosDelPedidoMesa1() {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
@@ -4320,29 +6076,27 @@ public class Mesero extends javax.swing.JFrame {
             while ((linea = br.readLine()) != null) {
                 String[] partes = linea.split(",");
 
-                // Verificar que la línea tenga exactamente 4 elementos
                 if (partes.length != 4) {
                     return false;
                 }
 
-                // Validar el precio
                 try {
                     Double.parseDouble(partes[1].trim());
                 } catch (NumberFormatException e) {
                     return false;
                 }
 
-                // Validar la cantidad
+       
                 try {
                     Integer.parseInt(partes[3].trim());
                 } catch (NumberFormatException e) {
                     return false;
                 }
 
-                tieneDatos = true; // Hay al menos una línea válida
+                tieneDatos = true; 
             }
 
-            return tieneDatos; // Devuelve true si el archivo tiene datos válidos
+            return tieneDatos;
         } catch (IOException e) {
             return false;
         }
@@ -4497,6 +6251,18 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JButton btnVerPedidosMesa7;
     private javax.swing.JButton btnVerPedidosMesa8;
     private javax.swing.JButton btnVerPedidosMesa9;
+    private javax.swing.JList<String> detallePedidoMesa1;
+    private javax.swing.JList<String> detallePedidoMesa10;
+    private javax.swing.JList<String> detallePedidoMesa11;
+    private javax.swing.JList<String> detallePedidoMesa12;
+    private javax.swing.JList<String> detallePedidoMesa2;
+    private javax.swing.JList<String> detallePedidoMesa3;
+    private javax.swing.JList<String> detallePedidoMesa4;
+    private javax.swing.JList<String> detallePedidoMesa5;
+    private javax.swing.JList<String> detallePedidoMesa6;
+    private javax.swing.JList<String> detallePedidoMesa7;
+    private javax.swing.JList<String> detallePedidoMesa8;
+    private javax.swing.JList<String> detallePedidoMesa9;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -4515,36 +6281,49 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel110;
     private javax.swing.JLabel jLabel111;
     private javax.swing.JLabel jLabel112;
+    private javax.swing.JLabel jLabel113;
     private javax.swing.JLabel jLabel114;
     private javax.swing.JLabel jLabel115;
     private javax.swing.JLabel jLabel116;
+    private javax.swing.JLabel jLabel117;
     private javax.swing.JLabel jLabel118;
     private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel120;
+    private javax.swing.JLabel jLabel121;
     private javax.swing.JLabel jLabel122;
     private javax.swing.JLabel jLabel123;
     private javax.swing.JLabel jLabel124;
+    private javax.swing.JLabel jLabel125;
     private javax.swing.JLabel jLabel126;
     private javax.swing.JLabel jLabel127;
     private javax.swing.JLabel jLabel128;
+    private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel130;
     private javax.swing.JLabel jLabel131;
     private javax.swing.JLabel jLabel132;
+    private javax.swing.JLabel jLabel133;
     private javax.swing.JLabel jLabel134;
     private javax.swing.JLabel jLabel135;
     private javax.swing.JLabel jLabel136;
+    private javax.swing.JLabel jLabel137;
     private javax.swing.JLabel jLabel138;
     private javax.swing.JLabel jLabel139;
     private javax.swing.JLabel jLabel140;
+    private javax.swing.JLabel jLabel141;
     private javax.swing.JLabel jLabel142;
     private javax.swing.JLabel jLabel143;
     private javax.swing.JLabel jLabel144;
     private javax.swing.JLabel jLabel145;
     private javax.swing.JLabel jLabel146;
     private javax.swing.JLabel jLabel147;
+    private javax.swing.JLabel jLabel148;
+    private javax.swing.JLabel jLabel149;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel150;
+    private javax.swing.JLabel jLabel151;
+    private javax.swing.JLabel jLabel152;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel19;
@@ -4555,7 +6334,40 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
@@ -4593,9 +6405,11 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel90;
     private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
     private javax.swing.JLabel jLabel94;
     private javax.swing.JLabel jLabel95;
     private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
     private javax.swing.JList<String> jList1;
@@ -4604,7 +6418,22 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelMostrar;
     private javax.swing.JPanel jPanelMostrarMesa;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
+    private javax.swing.JScrollPane jScrollPane18;
+    private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane20;
+    private javax.swing.JScrollPane jScrollPane21;
+    private javax.swing.JScrollPane jScrollPane22;
+    private javax.swing.JScrollPane jScrollPane23;
+    private javax.swing.JScrollPane jScrollPane24;
     private javax.swing.JScrollPane jScrollPane25;
     private javax.swing.JScrollPane jScrollPane26;
     private javax.swing.JScrollPane jScrollPane27;
@@ -4624,11 +6453,32 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane40;
     private javax.swing.JScrollPane jScrollPane41;
+    private javax.swing.JScrollPane jScrollPane42;
     private javax.swing.JScrollPane jScrollPane43;
     private javax.swing.JScrollPane jScrollPane44;
     private javax.swing.JScrollPane jScrollPane45;
     private javax.swing.JScrollPane jScrollPane46;
     private javax.swing.JScrollPane jScrollPane47;
+    private javax.swing.JScrollPane jScrollPane48;
+    private javax.swing.JScrollPane jScrollPane49;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane50;
+    private javax.swing.JScrollPane jScrollPane51;
+    private javax.swing.JScrollPane jScrollPane52;
+    private javax.swing.JScrollPane jScrollPane53;
+    private javax.swing.JScrollPane jScrollPane54;
+    private javax.swing.JScrollPane jScrollPane55;
+    private javax.swing.JScrollPane jScrollPane56;
+    private javax.swing.JScrollPane jScrollPane57;
+    private javax.swing.JScrollPane jScrollPane58;
+    private javax.swing.JScrollPane jScrollPane59;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane60;
+    private javax.swing.JScrollPane jScrollPane61;
+    private javax.swing.JScrollPane jScrollPane62;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JList<String> listaPedidosMesa1;
     private javax.swing.JList<String> listaPedidosMesa10;
     private javax.swing.JList<String> listaPedidosMesa11;
@@ -4641,6 +6491,30 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JList<String> listaPedidosMesa7;
     private javax.swing.JList<String> listaPedidosMesa8;
     private javax.swing.JList<String> listaPedidosMesa9;
+    private javax.swing.JList<String> listaVerPedidosLlevarMesa1;
+    private javax.swing.JList<String> listaVerPedidosLlevarMesa10;
+    private javax.swing.JList<String> listaVerPedidosLlevarMesa11;
+    private javax.swing.JList<String> listaVerPedidosLlevarMesa12;
+    private javax.swing.JList<String> listaVerPedidosLlevarMesa2;
+    private javax.swing.JList<String> listaVerPedidosLlevarMesa3;
+    private javax.swing.JList<String> listaVerPedidosLlevarMesa4;
+    private javax.swing.JList<String> listaVerPedidosLlevarMesa5;
+    private javax.swing.JList<String> listaVerPedidosLlevarMesa6;
+    private javax.swing.JList<String> listaVerPedidosLlevarMesa7;
+    private javax.swing.JList<String> listaVerPedidosLlevarMesa8;
+    private javax.swing.JList<String> listaVerPedidosLlevarMesa9;
+    private javax.swing.JList<String> listaVerPedidosMesa1;
+    private javax.swing.JList<String> listaVerPedidosMesa10;
+    private javax.swing.JList<String> listaVerPedidosMesa11;
+    private javax.swing.JList<String> listaVerPedidosMesa12;
+    private javax.swing.JList<String> listaVerPedidosMesa2;
+    private javax.swing.JList<String> listaVerPedidosMesa3;
+    private javax.swing.JList<String> listaVerPedidosMesa4;
+    private javax.swing.JList<String> listaVerPedidosMesa5;
+    private javax.swing.JList<String> listaVerPedidosMesa6;
+    private javax.swing.JList<String> listaVerPedidosMesa7;
+    private javax.swing.JList<String> listaVerPedidosMesa8;
+    private javax.swing.JList<String> listaVerPedidosMesa9;
     private javax.swing.JButton mDisponible;
     private javax.swing.JButton mNoDisponible;
     private javax.swing.JButton mOcupada;
@@ -4733,5 +6607,29 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JTextField txtPrecioProductoNuevo;
     private javax.swing.JTextField txtRutaArchivoMesas;
     private javax.swing.JTextField txtRutaArchivoProductos;
+    private javax.swing.JPanel verPedidoMesa1;
+    private javax.swing.JPanel verPedidoMesa10;
+    private javax.swing.JPanel verPedidoMesa11;
+    private javax.swing.JPanel verPedidoMesa12;
+    private javax.swing.JPanel verPedidoMesa2;
+    private javax.swing.JPanel verPedidoMesa3;
+    private javax.swing.JPanel verPedidoMesa4;
+    private javax.swing.JPanel verPedidoMesa5;
+    private javax.swing.JPanel verPedidoMesa6;
+    private javax.swing.JPanel verPedidoMesa7;
+    private javax.swing.JPanel verPedidoMesa8;
+    private javax.swing.JPanel verPedidoMesa9;
+    private javax.swing.JButton volverAtrasMesa1;
+    private javax.swing.JButton volverAtrasMesa10;
+    private javax.swing.JButton volverAtrasMesa11;
+    private javax.swing.JButton volverAtrasMesa12;
+    private javax.swing.JButton volverAtrasMesa2;
+    private javax.swing.JButton volverAtrasMesa3;
+    private javax.swing.JButton volverAtrasMesa4;
+    private javax.swing.JButton volverAtrasMesa5;
+    private javax.swing.JButton volverAtrasMesa6;
+    private javax.swing.JButton volverAtrasMesa7;
+    private javax.swing.JButton volverAtrasMesa8;
+    private javax.swing.JButton volverAtrasMesa9;
     // End of variables declaration//GEN-END:variables
 }

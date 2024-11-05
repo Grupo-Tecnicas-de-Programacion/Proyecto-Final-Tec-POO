@@ -104,7 +104,7 @@ public class Mesa {
                     info.append("- Nombre de producto: ").append(producto.getNombre())
                         .append(" | Precio del producto: ").append(producto.getPrecio()).append("\n");
                 }
-                double total = pedido.calcularTotalPedido();
+                double total = pedido.getPrecioTotalPedido();
                 info.append("Precio total del pedido: ").append(total).append("\n");
             }
         }
@@ -155,7 +155,7 @@ public class Mesa {
         public double calcularTotalCuenta() {
             this.totalPagar = 0;
             for (Pedido pedido : getListaPedidos()) {
-                this.totalPagar += pedido.calcularTotalPedido();
+                this.totalPagar += pedido.getPrecioTotalPedido();
             }
             return this.totalPagar;
         }
