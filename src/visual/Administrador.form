@@ -1485,16 +1485,16 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel53" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField21" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
-                                  <Component id="jTextField25" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
+                                  <Component id="txtModificarTelefono" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
+                                  <Component id="txtModificarRol" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
                                   <Component id="jLabel57" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField10" pref="218" max="32767" attributes="0"/>
+                                  <Component id="txtNuevaContraseñaModificada" pref="218" max="32767" attributes="0"/>
                                   <Component id="jLabel55" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField24" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtConfirCotraseñModificada" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -1502,12 +1502,12 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
-                                      <Component id="jTextField22" min="-2" pref="218" max="-2" attributes="0"/>
+                                      <Component id="txtModificarContarseña" min="-2" pref="218" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                                       <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel50" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField18" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
+                                  <Component id="txtNombreMeseroModificar" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
                                   <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="302" max="-2" attributes="0"/>
@@ -1536,7 +1536,7 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField18" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtNombreMeseroModificar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -1546,8 +1546,8 @@
                               </Group>
                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTextField21" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtModificarTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtNuevaContraseñaModificada" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -1556,8 +1556,8 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTextField25" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField24" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtModificarRol" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtConfirCotraseñModificada" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
@@ -1573,7 +1573,7 @@
                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                       <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField22" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtModificarContarseña" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace pref="53" max="32767" attributes="0"/>
@@ -1654,7 +1654,7 @@
                 <Property name="text" type="java.lang.String" value="Ingrese nombre del mesero a modificar :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField18">
+            <Component class="javax.swing.JTextField" name="txtNombreMeseroModificar">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel50">
               <Properties>
@@ -1678,7 +1678,7 @@
                 <Property name="text" type="java.lang.String" value="Telefono : "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField21">
+            <Component class="javax.swing.JTextField" name="txtModificarTelefono">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel54">
               <Properties>
@@ -1691,7 +1691,7 @@
                 <Property name="text" type="java.lang.String" value="Contrase&#xf1;a Anterior :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField22">
+            <Component class="javax.swing.JTextField" name="txtModificarContarse&#xf1;a">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel55">
               <Properties>
@@ -1704,7 +1704,7 @@
                 <Property name="text" type="java.lang.String" value="Nueva contarse&#xf1;a : "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField10">
+            <Component class="javax.swing.JTextField" name="txtNuevaContrase&#xf1;aModificada">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel56">
               <Properties>
@@ -1717,7 +1717,7 @@
                 <Property name="text" type="java.lang.String" value="Confirmar contrase&#xf1;a : "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField24">
+            <Component class="javax.swing.JTextField" name="txtConfirCotrase&#xf1;Modificada">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel57">
               <Properties>
@@ -1730,7 +1730,7 @@
                 <Property name="text" type="java.lang.String" value="Rol : "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField25">
+            <Component class="javax.swing.JTextField" name="txtModificarRol">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel58">
               <Properties>

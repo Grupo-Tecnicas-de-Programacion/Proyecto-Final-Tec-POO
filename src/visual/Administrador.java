@@ -120,18 +120,18 @@ public class Administrador extends javax.swing.JFrame {
         jScrollPane10 = new javax.swing.JScrollPane();
         listDatosMeseros = new javax.swing.JList<>();
         jLabel49 = new javax.swing.JLabel();
-        jTextField18 = new javax.swing.JTextField();
+        txtNombreMeseroModificar = new javax.swing.JTextField();
         jLabel50 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
-        jTextField21 = new javax.swing.JTextField();
+        txtModificarTelefono = new javax.swing.JTextField();
         jLabel54 = new javax.swing.JLabel();
-        jTextField22 = new javax.swing.JTextField();
+        txtModificarContarseña = new javax.swing.JTextField();
         jLabel55 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
+        txtNuevaContraseñaModificada = new javax.swing.JTextField();
         jLabel56 = new javax.swing.JLabel();
-        jTextField24 = new javax.swing.JTextField();
+        txtConfirCotraseñModificada = new javax.swing.JTextField();
         jLabel57 = new javax.swing.JLabel();
-        jTextField25 = new javax.swing.JTextField();
+        txtModificarRol = new javax.swing.JTextField();
         jLabel58 = new javax.swing.JLabel();
         btnEditarDatosMesero = new javax.swing.JButton();
         btnCancelarEdicionDatos = new javax.swing.JButton();
@@ -893,25 +893,25 @@ public class Administrador extends javax.swing.JFrame {
                     .addGroup(panelModificarUsuariosLayout.createSequentialGroup()
                         .addGroup(panelModificarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel53)
-                            .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtModificarTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtModificarRol, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel57))
                         .addGap(72, 72, 72)
                         .addGroup(panelModificarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel56)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                            .addComponent(txtNuevaContraseñaModificada, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
                             .addComponent(jLabel55)
-                            .addComponent(jTextField24))
+                            .addComponent(txtConfirCotraseñModificada))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panelModificarUsuariosLayout.createSequentialGroup()
                         .addGroup(panelModificarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel54)
                             .addGroup(panelModificarUsuariosLayout.createSequentialGroup()
-                                .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtModificarContarseña, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(66, 66, 66)
                                 .addComponent(jLabel58))
                             .addComponent(jLabel50)
-                            .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNombreMeseroModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel49)
                             .addGroup(panelModificarUsuariosLayout.createSequentialGroup()
                                 .addGap(302, 302, 302)
@@ -934,7 +934,7 @@ public class Administrador extends javax.swing.JFrame {
                     .addGroup(panelModificarUsuariosLayout.createSequentialGroup()
                         .addComponent(jLabel49)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNombreMeseroModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel50)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -943,16 +943,16 @@ public class Administrador extends javax.swing.JFrame {
                             .addComponent(jLabel55))
                         .addGap(6, 6, 6)
                         .addGroup(panelModificarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtModificarTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNuevaContraseñaModificada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(panelModificarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel57)
                             .addComponent(jLabel56))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelModificarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtModificarRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtConfirCotraseñModificada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(panelModificarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelModificarUsuariosLayout.createSequentialGroup()
                                 .addGap(30, 30, 30)
@@ -965,7 +965,7 @@ public class Administrador extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)
                                 .addComponent(jLabel54)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtModificarContarseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(53, Short.MAX_VALUE))
                     .addGroup(panelModificarUsuariosLayout.createSequentialGroup()
                         .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1701,7 +1701,7 @@ public class Administrador extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE)
+                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 472, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1951,15 +1951,9 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
     private javax.swing.JTextField jTextField27;
     private javax.swing.JTextField jTextField28;
     private javax.swing.JTextField jTextField29;
@@ -2010,6 +2004,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JPanel panelReporteVentas;
     private javax.swing.JTextField txtApellidoNuevoMesero;
     private javax.swing.JTextField txtCantidadReporteSeleccionado;
+    private javax.swing.JTextField txtConfirCotraseñModificada;
     private javax.swing.JTextField txtConfirmarContraseñaNuevoMesero;
     private javax.swing.JTextField txtContraseñaAdministrador;
     private javax.swing.JTextField txtContraseñaNuevoMesero;
@@ -2018,9 +2013,14 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtIngresarProductoEliminar;
     private javax.swing.JTextField txtIngreseCantidadProducto;
     private javax.swing.JTextField txtIngreseMeseroEliminar;
+    private javax.swing.JTextField txtModificarContarseña;
+    private javax.swing.JTextField txtModificarRol;
+    private javax.swing.JTextField txtModificarTelefono;
+    private javax.swing.JTextField txtNombreMeseroModificar;
     private javax.swing.JTextField txtNombreNuevoMesero;
     private javax.swing.JTextField txtNombreProducto;
     private javax.swing.JTextField txtNombreProductoDisponible;
+    private javax.swing.JTextField txtNuevaContraseñaModificada;
     private javax.swing.JTextField txtTelefonoNuevomesero;
     private javax.swing.JTextField txtUsuarioNuevoMesero;
     private javax.swing.JTextField txtVizualizarProductoEliminar;
