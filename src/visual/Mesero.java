@@ -4388,7 +4388,8 @@ public class Mesero extends javax.swing.JFrame {
     private void btnAgregarProductoPedidoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa1ActionPerformed
 
         String nombreProductoSeleccionado = productosPedidoMesa1.getSelectedValue();
-
+        
+        
         if (nombreProductoSeleccionado != null) {
             String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
             Producto productoSeleccionado = null;
@@ -4398,6 +4399,11 @@ public class Mesero extends javax.swing.JFrame {
                     productoSeleccionado = producto;
                     break;
                 }
+            }
+            
+            System.out.println("----------------------------------------------");
+            for (Producto producto : productos) {
+                System.out.println("Producto: " + producto.getNombre() + ", Cantidad Disponible: " + producto.getCantidadDisponible());
             }
 
             if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
@@ -4422,11 +4428,13 @@ public class Mesero extends javax.swing.JFrame {
                         1 
                     );
                     pedidoMesa1.agregarProducto(productoParaPedido);
+                    
                 }
 
 
                 actualizarListaProductosDelPedidoMesa1();
                 cargarProductosEnLista1();
+                
 
             } else {
                 JOptionPane.showMessageDialog(rootPane, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
