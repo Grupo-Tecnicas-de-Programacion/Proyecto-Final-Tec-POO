@@ -7025,7 +7025,6 @@ public class Mesero extends javax.swing.JFrame {
 
                 Producto producto = new Producto(nombre, precio, categoria,cantidadDisponible);
                 productos.add(producto);
-                System.out.println("Producto: " + producto.getNombre() + ", Cantidad Disponible: " + producto.getCantidadDisponible());
             }
         } catch (IOException e) {
             JOptionPane.showMessageDialog(rootPane, "Error al leer el archivo de productos", "Error", JOptionPane.ERROR_MESSAGE);
