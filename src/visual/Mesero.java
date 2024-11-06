@@ -3969,7 +3969,7 @@ public class Mesero extends javax.swing.JFrame {
     private void mostrarProductosEnMesa(JList<String> listaProductosMesa) {
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
         for (Producto producto : productos) {
-            modeloLista.addElement(producto.getNombre() +" | Precio: "+producto.getPrecio() +" | Cantidad: " + producto.getCantidadDisponible());
+            modeloLista.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible()+ " - Precio: " + producto.getPrecio());
         }
         listaProductosMesa.setModel(modeloLista);
     }
@@ -4110,10 +4110,10 @@ public class Mesero extends javax.swing.JFrame {
         if (archivoSeleccionadoProductos != null && validarArchivoProductos(archivoSeleccionadoProductos)) {
             cargarProductosDesdeArchivo(archivoSeleccionadoProductos);
             JOptionPane.showMessageDialog(this, "Se cargaron correctamente los productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-
         } else {
             JOptionPane.showMessageDialog(this, "Archivo no válido o no seleccionado.", "Error", JOptionPane.ERROR_MESSAGE);
         }
+
     }//GEN-LAST:event_btnCargarProductosActionPerformed
 
     private void btnBuscarRutaMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarRutaMesasActionPerformed
@@ -4388,11 +4388,11 @@ public class Mesero extends javax.swing.JFrame {
     private void btnAgregarProductoPedidoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa1ActionPerformed
 
         String nombreProductoSeleccionado = productosPedidoMesa1.getSelectedValue();
-        
-        
+
         if (nombreProductoSeleccionado != null) {
             String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
             Producto productoSeleccionado = null;
+
 
             for (Producto producto : productos) {
                 if (producto.getNombre().equals(nombreProducto)) {
@@ -4400,23 +4400,18 @@ public class Mesero extends javax.swing.JFrame {
                     break;
                 }
             }
-            
-            System.out.println("----------------------------------------------");
-            for (Producto producto : productos) {
-                System.out.println("Producto: " + producto.getNombre() + ", Cantidad Disponible: " + producto.getCantidadDisponible());
-            }
 
             if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
 
                 productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - 1);
 
                 boolean productoYaEnPedido = false;
-
                 for (Producto productoEnPedido : pedidoMesa1.getListaProductos()) {
                     if (productoEnPedido.getNombre().equals(nombreProducto)) {
-                        productoEnPedido.setCantidad(productoEnPedido.getCantidad() + 1);
+                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + 1);
                         productoYaEnPedido = true;
                         break;
+                        
                     }
                 }
 
@@ -4428,19 +4423,19 @@ public class Mesero extends javax.swing.JFrame {
                         1 
                     );
                     pedidoMesa1.agregarProducto(productoParaPedido);
-                    
                 }
 
 
                 actualizarListaProductosDelPedidoMesa1();
                 cargarProductosEnLista1();
+                mostrarProductosEnMesa(productosPedidoMesa1);
                 
 
             } else {
-                JOptionPane.showMessageDialog(rootPane, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Por favor, selecciona un producto de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa1ActionPerformed
     
@@ -4486,6 +4481,7 @@ public class Mesero extends javax.swing.JFrame {
 
                 actualizarListaProductosDelPedidoMesa2();
                 cargarProductosEnLista2();
+                mostrarProductosEnMesa(productosPedidoMesa2);
 
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -4536,6 +4532,7 @@ public class Mesero extends javax.swing.JFrame {
 
                 actualizarListaProductosDelPedidoMesa3();
                 cargarProductosEnLista3();
+                mostrarProductosEnMesa(productosPedidoMesa3);
 
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -4586,6 +4583,7 @@ public class Mesero extends javax.swing.JFrame {
 
                 actualizarListaProductosDelPedidoMesa4();
                 cargarProductosEnLista4();
+                mostrarProductosEnMesa(productosPedidoMesa4);
 
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -4636,6 +4634,7 @@ public class Mesero extends javax.swing.JFrame {
 
                 actualizarListaProductosDelPedidoMesa5();
                 cargarProductosEnLista5();
+                mostrarProductosEnMesa(productosPedidoMesa5);
 
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -4686,6 +4685,7 @@ public class Mesero extends javax.swing.JFrame {
 
                 actualizarListaProductosDelPedidoMesa6();
                 cargarProductosEnLista6();
+                mostrarProductosEnMesa(productosPedidoMesa6);
 
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -4736,6 +4736,7 @@ public class Mesero extends javax.swing.JFrame {
 
                 actualizarListaProductosDelPedidoMesa7();
                 cargarProductosEnLista7();
+                mostrarProductosEnMesa(productosPedidoMesa7);
 
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -4786,6 +4787,7 @@ public class Mesero extends javax.swing.JFrame {
 
                 actualizarListaProductosDelPedidoMesa8();
                 cargarProductosEnLista8();
+                mostrarProductosEnMesa(productosPedidoMesa8);
 
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -4836,6 +4838,7 @@ public class Mesero extends javax.swing.JFrame {
 
                 actualizarListaProductosDelPedidoMesa9();
                 cargarProductosEnLista9();
+                mostrarProductosEnMesa(productosPedidoMesa9);
 
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -4886,6 +4889,7 @@ public class Mesero extends javax.swing.JFrame {
 
                 actualizarListaProductosDelPedidoMesa10();
                 cargarProductosEnLista10();
+                mostrarProductosEnMesa(productosPedidoMesa10);
                 
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -4936,6 +4940,7 @@ public class Mesero extends javax.swing.JFrame {
 
                 actualizarListaProductosDelPedidoMesa11();
                 cargarProductosEnLista11();
+                mostrarProductosEnMesa(productosPedidoMesa11);
 
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -4986,6 +4991,7 @@ public class Mesero extends javax.swing.JFrame {
 
                 actualizarListaProductosDelPedidoMesa12();
                 cargarProductosEnLista12();
+                mostrarProductosEnMesa(productosPedidoMesa12);
 
             } else {
                 JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -6057,7 +6063,7 @@ public class Mesero extends javax.swing.JFrame {
         int index = listaVerPedidosLlevarMesa2.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa2Llevar.get(index);
-            mostrarDetallePedidoMesa1(pedidoSeleccionado);
+            mostrarDetallePedidoMesa2(pedidoSeleccionado);
         }
     }//GEN-LAST:event_listaVerPedidosLlevarMesa2MouseClicked
 
