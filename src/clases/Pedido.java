@@ -66,13 +66,15 @@ public class Pedido {
         this.tipoPedido = tipoPedido;
     }
 
-    private void recalcularTotal() {
+    public double recalcularTotal() {
         this.precioTotalPedido = 0;
         for (Producto producto : this.listaProductos) {
             this.precioTotalPedido += producto.getPrecio();
         }
+        
+        return precioTotalPedido;
     }
-
+    
     public void agregarProducto(Producto producto) {
         boolean productoExistente = false;
         for (Producto p : this.listaProductos) {
