@@ -6827,20 +6827,24 @@ public class Mesero extends javax.swing.JFrame {
     }//GEN-LAST:event_listaVerPedidosLlevarMesa9ValueChanged
 
     private void btnTotalCuentaMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa1ActionPerformed
+        
         double totalCuenta = 0;
-
-
+        
         for (Pedido pedido : pedidosMesa1) {
-            totalCuenta += pedido.recalcularTotal();
+            for (Producto producto : pedido.getListaProductos()) {
+                totalCuenta += producto.getPrecio() * producto.getCantidad();
+            }
         }
-
         
+
         for (Pedido pedido : pedidosMesa1Llevar) {
-            totalCuenta += pedido.recalcularTotal();
+            for (Producto producto : pedido.getListaProductos()) {
+                totalCuenta += producto.getPrecio() * producto.getCantidad();
+            }
         }
-
         
-        JOptionPane.showMessageDialog(this, "Total cuenta para Mesa 1: S/ " + totalCuenta, "Total Cuenta", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 1 es: S/ " + totalCuenta, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_btnTotalCuentaMesa1ActionPerformed
 
     private void btnTotalCuentaMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa2ActionPerformed
