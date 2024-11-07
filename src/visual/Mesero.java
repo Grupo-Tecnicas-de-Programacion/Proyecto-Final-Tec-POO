@@ -930,6 +930,11 @@ public class Mesero extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        productosPedidoMesa1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                productosPedidoMesa1ValueChanged(evt);
+            }
+        });
         jScrollPane1.setViewportView(productosPedidoMesa1);
 
         panelMesa1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 200, 200));
@@ -954,6 +959,11 @@ public class Mesero extends javax.swing.JFrame {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        listaPedidosMesa1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaPedidosMesa1ValueChanged(evt);
+            }
         });
         jScrollPane2.setViewportView(listaPedidosMesa1);
 
@@ -6945,6 +6955,14 @@ public class Mesero extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnGenerarReciboMesa1ActionPerformed
+
+    private void productosPedidoMesa1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa1ValueChanged
+        cambioSeleccionVerPedidos(productosPedidoMesa1, listaPedidosMesa1);
+    }//GEN-LAST:event_productosPedidoMesa1ValueChanged
+
+    private void listaPedidosMesa1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaPedidosMesa1ValueChanged
+        cambioSeleccionVerPedidos(listaPedidosMesa1, productosPedidoMesa1);
+    }//GEN-LAST:event_listaPedidosMesa1ValueChanged
     
     private void actualizarListaProductosDelPedidoMesa1() {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
