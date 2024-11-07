@@ -16,6 +16,14 @@ public class Producto {
         this.cantidad = 1; 
     }
 
+    public Producto(String nombre, double precio, int cantidad) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.cantidad = cantidad;
+    }
+    
+    
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }

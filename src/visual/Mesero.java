@@ -766,7 +766,7 @@ public class Mesero extends javax.swing.JFrame {
         jPanelMostrar.add(panelCerrarSesion, "card4");
 
         panelGestionarMesas.setBackground(new java.awt.Color(204, 204, 204));
-        panelGestionarMesas.setPreferredSize(new java.awt.Dimension(950, 450));
+        panelGestionarMesas.setPreferredSize(new java.awt.Dimension(960, 455));
         panelGestionarMesas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
@@ -2611,6 +2611,7 @@ public class Mesero extends javax.swing.JFrame {
         jPanelMostrar.add(panelGenerarReporte, "card12");
 
         verPedidoMesa1.setBackground(new java.awt.Color(204, 204, 204));
+        verPedidoMesa1.setPreferredSize(new java.awt.Dimension(950, 450));
         verPedidoMesa1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         volverAtrasMesa1.setBackground(new java.awt.Color(204, 204, 0));
