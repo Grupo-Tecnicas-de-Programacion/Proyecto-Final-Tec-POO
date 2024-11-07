@@ -77,9 +77,9 @@ public class Pedido {
     
     public void agregarProducto(Producto producto) {
         boolean productoExistente = false;
-        for (Producto p : this.listaProductos) {
-            if (p.getNombre().equals(producto.getNombre())) {
-                p.setCantidad(p.getCantidad() + producto.getCantidad());
+        for (Producto product : this.listaProductos) {
+            if (product.getNombre().equals(producto.getNombre())) {
+                product.setCantidad(product.getCantidad() + producto.getCantidad());
                 productoExistente = true;
                 break;
             }
