@@ -7227,7 +7227,70 @@ public class Mesero extends javax.swing.JFrame {
     }//GEN-LAST:event_listaProductosAgotadosValueChanged
 
     private void cancelarPedidoMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa3ActionPerformed
-        // TODO add your handling code here:
+        int indexMesa = listaVerPedidosMesa3.getSelectedIndex();
+        int indexLlevar = listaVerPedidosLlevarMesa3.getSelectedIndex();
+
+        if (indexMesa >= 0) {
+            int confirmacion = JOptionPane.showConfirmDialog(
+                    this, 
+                    "¿Estás seguro de que deseas cancelar el pedido para mesa?", 
+                    "Confirmación de Cancelación", 
+                    JOptionPane.YES_NO_OPTION
+            );
+
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                
+                Pedido pedidoCancelado = pedidosMesa3.get(indexMesa);
+
+                
+                for (Producto productoCancelado : pedidoCancelado.getListaProductos()) {
+                    for (Producto producto : productos) {
+                        if (producto.getNombre().equals(productoCancelado.getNombre())) {
+                            producto.setCantidadDisponible(producto.getCantidadDisponible() + productoCancelado.getCantidad());
+                            break;
+                        }
+                    }
+                }
+
+                
+                pedidosMesa3.remove(indexMesa);
+                actualizarListaPedidosMesa3();
+                mostrarProductosEnMesa(productosPedidoMesa3);
+                JOptionPane.showMessageDialog(rootPane, "Pedido para mesa cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                detallePedidoMesa3.setModel(new DefaultListModel<>());
+            }
+        } else if (indexLlevar >= 0) {
+            int confirmacion = JOptionPane.showConfirmDialog(
+                    rootPane, 
+                    "¿Estás seguro de que deseas cancelar el pedido para llevar?", 
+                    "Confirmación de Cancelación", 
+                    JOptionPane.YES_NO_OPTION
+            );
+
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                
+                Pedido pedidoCancelado = pedidosMesa3Llevar.get(indexLlevar);
+
+                
+                for (Producto productoCancelado : pedidoCancelado.getListaProductos()) {
+                    for (Producto producto : productos) {
+                        if (producto.getNombre().equals(productoCancelado.getNombre())) {
+                            producto.setCantidadDisponible(producto.getCantidadDisponible() + productoCancelado.getCantidad());
+                            break;
+                        }
+                    }
+                }
+
+                
+                pedidosMesa3Llevar.remove(indexLlevar);
+                actualizarListaPedidosMesa3();
+                mostrarProductosEnMesa(productosPedidoMesa3);
+                JOptionPane.showMessageDialog(rootPane, "Pedido para llevar cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                detallePedidoMesa3.setModel(new DefaultListModel<>());
+            }
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Por favor selecciona un pedido para cancelar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_cancelarPedidoMesa3ActionPerformed
 
     private void btnLimpiarMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa4ActionPerformed
