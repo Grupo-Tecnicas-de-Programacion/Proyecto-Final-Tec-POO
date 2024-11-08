@@ -470,7 +470,7 @@ public class Mesero extends javax.swing.JFrame {
         jScrollPane10 = new javax.swing.JScrollPane();
         listaVerPedidosLlevarMesa2 = new javax.swing.JList<>();
         btnLimpiarMesa2 = new javax.swing.JButton();
-        cancelarPedidoMesa13 = new javax.swing.JButton();
+        cancelarPedidoMesa2 = new javax.swing.JButton();
         verPedidoMesa3 = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         volverAtrasMesa3 = new javax.swing.JButton();
@@ -2664,15 +2664,15 @@ public class Mesero extends javax.swing.JFrame {
         });
         verPedidoMesa2.add(btnLimpiarMesa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 140, 120, 46));
 
-        cancelarPedidoMesa13.setBackground(new java.awt.Color(204, 204, 0));
-        cancelarPedidoMesa13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        cancelarPedidoMesa13.setText("Cancelar pedido");
-        cancelarPedidoMesa13.addActionListener(new java.awt.event.ActionListener() {
+        cancelarPedidoMesa2.setBackground(new java.awt.Color(204, 204, 0));
+        cancelarPedidoMesa2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        cancelarPedidoMesa2.setText("Cancelar pedido");
+        cancelarPedidoMesa2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelarPedidoMesa13ActionPerformed(evt);
+                cancelarPedidoMesa2ActionPerformed(evt);
             }
         });
-        verPedidoMesa2.add(cancelarPedidoMesa13, new org.netbeans.lib.awtextra.AbsoluteConstraints(811, 80, 120, 46));
+        verPedidoMesa2.add(cancelarPedidoMesa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(811, 80, 120, 46));
 
         jPanelMostrar.add(verPedidoMesa2, "card14");
 
@@ -5904,8 +5904,7 @@ public class Mesero extends javax.swing.JFrame {
         layout.show(jPanelMostrar, "panelGestionarMesas");
     }
     private void volverAtrasMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAtrasMesa1ActionPerformed
-        CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
-        layout.show(jPanelMostrar, "panelGestionarMesas");
+        volverAtrasPanelMesas();
     }//GEN-LAST:event_volverAtrasMesa1ActionPerformed
 
     private void volverAtrasMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAtrasMesa2ActionPerformed
@@ -7227,10 +7226,6 @@ public class Mesero extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_listaProductosAgotadosValueChanged
 
-    private void cancelarPedidoMesa13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cancelarPedidoMesa13ActionPerformed
-
     private void cancelarPedidoMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cancelarPedidoMesa3ActionPerformed
@@ -7270,6 +7265,73 @@ public class Mesero extends javax.swing.JFrame {
     private void btnLimpiarMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa12ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnLimpiarMesa12ActionPerformed
+
+    private void cancelarPedidoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa2ActionPerformed
+        int indexMesa = listaVerPedidosMesa2.getSelectedIndex();
+        int indexLlevar = listaVerPedidosLlevarMesa2.getSelectedIndex();
+
+        if (indexMesa >= 0) {
+            int confirmacion = JOptionPane.showConfirmDialog(
+                    this, 
+                    "¿Estás seguro de que deseas cancelar el pedido para mesa?", 
+                    "Confirmación de Cancelación", 
+                    JOptionPane.YES_NO_OPTION
+            );
+
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                
+                Pedido pedidoCancelado = pedidosMesa2.get(indexMesa);
+
+                
+                for (Producto productoCancelado : pedidoCancelado.getListaProductos()) {
+                    for (Producto producto : productos) {
+                        if (producto.getNombre().equals(productoCancelado.getNombre())) {
+                            producto.setCantidadDisponible(producto.getCantidadDisponible() + productoCancelado.getCantidad());
+                            break;
+                        }
+                    }
+                }
+
+                
+                pedidosMesa2.remove(indexMesa);
+                actualizarListaPedidosMesa2();
+                mostrarProductosEnMesa(productosPedidoMesa2);
+                JOptionPane.showMessageDialog(rootPane, "Pedido para mesa cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                detallePedidoMesa2.setModel(new DefaultListModel<>());
+            }
+        } else if (indexLlevar >= 0) {
+            int confirmacion = JOptionPane.showConfirmDialog(
+                    rootPane, 
+                    "¿Estás seguro de que deseas cancelar el pedido para llevar?", 
+                    "Confirmación de Cancelación", 
+                    JOptionPane.YES_NO_OPTION
+            );
+
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                
+                Pedido pedidoCancelado = pedidosMesa2Llevar.get(indexLlevar);
+
+                
+                for (Producto productoCancelado : pedidoCancelado.getListaProductos()) {
+                    for (Producto producto : productos) {
+                        if (producto.getNombre().equals(productoCancelado.getNombre())) {
+                            producto.setCantidadDisponible(producto.getCantidadDisponible() + productoCancelado.getCantidad());
+                            break;
+                        }
+                    }
+                }
+
+                
+                pedidosMesa2Llevar.remove(indexLlevar);
+                actualizarListaPedidosMesa2();
+                mostrarProductosEnMesa(productosPedidoMesa2);
+                JOptionPane.showMessageDialog(rootPane, "Pedido para llevar cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                detallePedidoMesa2.setModel(new DefaultListModel<>());
+            }
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Por favor selecciona un pedido para cancelar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_cancelarPedidoMesa2ActionPerformed
     
     private void actualizarListaProductosDelPedidoMesa1() {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
@@ -7577,7 +7639,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JButton cancelarPedidoMesa10;
     private javax.swing.JButton cancelarPedidoMesa11;
     private javax.swing.JButton cancelarPedidoMesa12;
-    private javax.swing.JButton cancelarPedidoMesa13;
+    private javax.swing.JButton cancelarPedidoMesa2;
     private javax.swing.JButton cancelarPedidoMesa3;
     private javax.swing.JButton cancelarPedidoMesa4;
     private javax.swing.JButton cancelarPedidoMesa5;
