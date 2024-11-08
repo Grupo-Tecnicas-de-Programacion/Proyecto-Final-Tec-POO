@@ -10,8 +10,10 @@ import clases.Mesa;
 import clases.Pedido;
 import clases.Producto;
 import java.awt.Color;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -6841,29 +6843,40 @@ public class Mesero extends javax.swing.JFrame {
         cambioSeleccionVerPedidos(listaVerPedidosLlevarMesa9, listaVerPedidosMesa9);
     }//GEN-LAST:event_listaVerPedidosLlevarMesa9ValueChanged
 
-    private void btnTotalCuentaMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa1ActionPerformed
+    private double calcularCuentaMesa(ArrayList<Pedido> pedidosMesa, ArrayList<Pedido> pedidosMEsaLlevar){
         
         double totalCuenta = 0;
         
-        for (Pedido pedido : pedidosMesa1) {
+        for (Pedido pedido : pedidosMesa) {
             for (Producto producto : pedido.getListaProductos()) {
                 totalCuenta += producto.getPrecio() * producto.getCantidad();
             }
         }
         
-
-        for (Pedido pedido : pedidosMesa1Llevar) {
+        for (Pedido pedido : pedidosMEsaLlevar) {
             for (Producto producto : pedido.getListaProductos()) {
                 totalCuenta += producto.getPrecio() * producto.getCantidad();
             }
         }
-        
-        JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 1 es: S/ " + totalCuenta, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuenta == 0) {
-            btnMesa1.setBackground(Color.green);
+            return 0;
+        }else{
+            return totalCuenta;
         }
+    }
+    
+    private void btnTotalCuentaMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa1ActionPerformed
         
+        double totalCuentaMesa = calcularCuentaMesa(pedidosMesa1, pedidosMesa1Llevar);
+        
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 1 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+        
+        if (totalCuentaMesa == 0) {
+        
+            btnMesa1.setBackground(Color.green);
+        
+        }
     }//GEN-LAST:event_btnTotalCuentaMesa1ActionPerformed
 
     private void btnTotalCuentaMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa2ActionPerformed
@@ -6911,58 +6924,43 @@ public class Mesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTotalCuentaMesa12ActionPerformed
 
     private void btnGenerarReciboMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa1ActionPerformed
-        StringBuilder recibo = new StringBuilder();
-        recibo.append("Recibo - Mesa 1\n\n");
+        
+        double totalCuenta = calcularCuentaMesa(pedidosMesa1, pedidosMesa1Llevar);
 
-        recibo.append("Pedidos en Mesa:\n");
-        double totalCuenta = 0;
+        if (totalCuenta == 0) {
+            
+            JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        
+        }else{
+        
+               
+            try (PrintWriter writer = new PrintWriter("recibo_mesa1.txt")) {
+                writer.println("Recibo de la Mesa 1");
+                writer.println("====================");
 
-        for (Pedido pedido : pedidosMesa1) {
-            recibo.append("Pedido ").append(pedido.getNumPedido()).append("\n");
-            for (Producto producto : pedido.getListaProductos()) {
-                recibo.append(" - ").append(producto.getNombre())
-                        .append(" | Cantidad: ").append(producto.getCantidad())
-                        .append(" | Precio Unitario: S/ ").append(producto.getPrecio())
-                        .append(" | Subtotal: S/ ").append(producto.getPrecio() * producto.getCantidad())
-                        .append("\n");
-                totalCuenta += producto.getPrecio() * producto.getCantidad();
+                for (Pedido pedido : pedidosMesa1) {
+                    writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                    for (Producto producto : pedido.getListaProductos()) {
+                        writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+                    }
+                    writer.println();
+                }
+
+                for (Pedido pedido : pedidosMesa1Llevar) {
+                    writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                    for (Producto producto : pedido.getListaProductos()) {
+                        writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+                    }
+                    writer.println();
+                }
+
+                writer.println("====================");
+                writer.println("Total de la cuenta: S/ " + totalCuenta);
+                JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en recibo_mesa1.txt", "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
+            } catch (FileNotFoundException e) {
+                JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
-            recibo.append("\n");
-        }
-
-        recibo.append("Pedidos para Llevar:\n");
-
-
-        for (Pedido pedido : pedidosMesa1Llevar) {
-            recibo.append("Pedido ").append(pedido.getNumPedido()).append("\n");
-            for (Producto producto : pedido.getListaProductos()) {
-                recibo.append(" - ").append(producto.getNombre())
-                        .append(" | Cantidad: ").append(producto.getCantidad())
-                        .append(" | Precio Unitario: S/ ").append(producto.getPrecio())
-                        .append(" | Subtotal: S/ ").append(producto.getPrecio() * producto.getCantidad())
-                        .append("\n");
-                totalCuenta += producto.getPrecio() * producto.getCantidad();
-            }
-            recibo.append("\n");
-        }
-
-        recibo.append("\nTotal a Pagar: S/ ").append(totalCuenta);
-
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Guardar Recibo");
-        fileChooser.setSelectedFile(new File("Recibo_Mesa1.txt"));
-
-        int userSelection = fileChooser.showSaveDialog(null);
-
-        if (userSelection == JFileChooser.APPROVE_OPTION) {
-            File fileToSave = fileChooser.getSelectedFile();
-            try (FileWriter writer = new FileWriter(fileToSave)) {
-                writer.write(recibo.toString());
-                JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en " + fileToSave.getAbsolutePath(), "Generar Recibo", JOptionPane.INFORMATION_MESSAGE);
-            } catch (IOException e) {
-                JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }
+        } 
     }//GEN-LAST:event_btnGenerarReciboMesa1ActionPerformed
 
     private void productosPedidoMesa1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa1ValueChanged
