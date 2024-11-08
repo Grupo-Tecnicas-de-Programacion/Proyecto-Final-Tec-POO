@@ -1084,6 +1084,11 @@ public class Mesero extends javax.swing.JFrame {
         btnBorrarProductoPedidoMesa2.setBackground(new java.awt.Color(204, 204, 0));
         btnBorrarProductoPedidoMesa2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnBorrarProductoPedidoMesa2.setText("Borrar producto");
+        btnBorrarProductoPedidoMesa2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarProductoPedidoMesa2ActionPerformed(evt);
+            }
+        });
         panelMesa2.add(btnBorrarProductoPedidoMesa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 120, 40));
 
         btnTotalCuentaMesa2.setBackground(new java.awt.Color(204, 204, 0));
@@ -5051,32 +5056,58 @@ public class Mesero extends javax.swing.JFrame {
                     opciones[0]
             );
 
+            Pedido nuevoPedido = new Pedido(pedidoMesa2.getNumPedido(), pedidoMesa2.getTipoPedido());
+            for (int i = 0; i < listaPedidosMesa2.getModel().getSize(); i++) {
+                String productoTexto = listaPedidosMesa2.getModel().getElementAt(i);
 
-            if (seleccion == JOptionPane.YES_OPTION) { 
-                pedidoMesa2.setNumPedido(contadorPedidosMesa2);
-                pedidoMesa2.setTipoPedido("Mesa");
-                pedidosMesa2.add(pedidoMesa2);
+                String[] partes = productoTexto.split(" - Cantidad: ");
+                if (partes.length == 2) {
+                    String nombreProducto = partes[0].trim();
+                    int cantidadProducto = Integer.parseInt(partes[1].trim());
+
+                    Producto productoOriginal = null;
+                    for (Producto producto : productos) {
+                        if (producto.getNombre().equals(nombreProducto)) {
+                            productoOriginal = producto;
+                            break;
+                        }
+                    }
+
+                    if (productoOriginal != null) {
+
+                        Producto producto = new Producto(
+                            nombreProducto,
+                            productoOriginal.getPrecio(), 
+                            cantidadProducto
+                        );
+                        nuevoPedido.agregarProducto(producto);
+                    }
+                }
+            }
+
+            if (seleccion == JOptionPane.YES_OPTION) {
+                nuevoPedido.setNumPedido(contadorPedidosMesa2);
+                nuevoPedido.setTipoPedido("Mesa");
+                
+                pedidosMesa2.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa2.setBackground(Color.red);
                 contadorPedidosMesa2++;
             } else if (seleccion == JOptionPane.NO_OPTION) {
-                pedidoMesa2.setNumPedido(contadorPedidosMesa2Llevar);
-                pedidoMesa2.setTipoPedido("Llevar");
-                pedidosMesa2Llevar.add(pedidoMesa2);
+                nuevoPedido.setNumPedido(contadorPedidosMesa2Llevar);
+                nuevoPedido.setTipoPedido("Llevar");
+
+                pedidosMesa2Llevar.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa2.setBackground(Color.red);
                 contadorPedidosMesa2Llevar++;
             } else {
-                
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
                 return;
             }
 
-           
-            pedidoMesa2 = new Pedido(); 
+            pedidoMesa2 = new Pedido();
             actualizarListaProductosDelPedidoMesa2();
-            mesas.get(1).setEstado("Ocupada");
-
+            mesas.get(0).setEstado("Ocupada");
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
@@ -5579,8 +5610,6 @@ public class Mesero extends javax.swing.JFrame {
 
     private void btnRealizarPedidoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa2ActionPerformed
         realizarPedidoMesa2();
-        
-
     }//GEN-LAST:event_btnRealizarPedidoMesa2ActionPerformed
 
     private void btnRealizarPedidoMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa3ActionPerformed
@@ -7647,6 +7676,10 @@ public class Mesero extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Por favor selecciona un pedido para cancelar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_cancelarPedidoMesa2ActionPerformed
+
+    private void btnBorrarProductoPedidoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBorrarProductoPedidoMesa2ActionPerformed
     
     private void actualizarListaProductosDelPedidoMesa1() {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
