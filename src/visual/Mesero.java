@@ -498,6 +498,7 @@ public class Mesero extends javax.swing.JFrame {
         jScrollPane16 = new javax.swing.JScrollPane();
         listaVerPedidosLlevarMesa4 = new javax.swing.JList<>();
         cancelarPedidoMesa4 = new javax.swing.JButton();
+        btnLimpiarMesa4 = new javax.swing.JButton();
         verPedidoMesa5 = new javax.swing.JPanel();
         jLabel43 = new javax.swing.JLabel();
         volverAtrasMesa5 = new javax.swing.JButton();
@@ -2767,6 +2768,7 @@ public class Mesero extends javax.swing.JFrame {
 
         jPanelMostrar.add(verPedidoMesa3, "card15");
 
+        verPedidoMesa4.setBackground(new java.awt.Color(204, 204, 204));
         verPedidoMesa4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel39.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
@@ -2785,15 +2787,15 @@ public class Mesero extends javax.swing.JFrame {
 
         jLabel40.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel40.setText("Pedidos llevar");
-        verPedidoMesa4.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 150, 25));
+        verPedidoMesa4.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 150, 25));
 
         jLabel41.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel41.setText("Detalle pedido");
-        verPedidoMesa4.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 150, 25));
+        verPedidoMesa4.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 150, 25));
 
         jLabel42.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel42.setText("Pedidos mesa");
-        verPedidoMesa4.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 140, 25));
+        verPedidoMesa4.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 140, 25));
 
         listaVerPedidosMesa4.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -2812,7 +2814,7 @@ public class Mesero extends javax.swing.JFrame {
         });
         jScrollPane14.setViewportView(listaVerPedidosMesa4);
 
-        verPedidoMesa4.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 220, 240));
+        verPedidoMesa4.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 220, 240));
 
         detallePedidoMesa4.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -2822,7 +2824,7 @@ public class Mesero extends javax.swing.JFrame {
         detallePedidoMesa4.setEnabled(false);
         jScrollPane15.setViewportView(detallePedidoMesa4);
 
-        verPedidoMesa4.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 220, 240));
+        verPedidoMesa4.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 220, 240));
 
         listaVerPedidosLlevarMesa4.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -2841,7 +2843,7 @@ public class Mesero extends javax.swing.JFrame {
         });
         jScrollPane16.setViewportView(listaVerPedidosLlevarMesa4);
 
-        verPedidoMesa4.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 220, 240));
+        verPedidoMesa4.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, 220, 240));
 
         cancelarPedidoMesa4.setBackground(new java.awt.Color(204, 204, 0));
         cancelarPedidoMesa4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -2851,7 +2853,18 @@ public class Mesero extends javax.swing.JFrame {
                 cancelarPedidoMesa4ActionPerformed(evt);
             }
         });
-        verPedidoMesa4.add(cancelarPedidoMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(811, 80, 120, 46));
+        verPedidoMesa4.add(cancelarPedidoMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 80, 120, 46));
+
+        btnLimpiarMesa4.setBackground(new java.awt.Color(204, 204, 0));
+        btnLimpiarMesa4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnLimpiarMesa4.setText("Limpiar");
+        btnLimpiarMesa4.setEnabled(false);
+        btnLimpiarMesa4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarMesa4ActionPerformed(evt);
+            }
+        });
+        verPedidoMesa4.add(btnLimpiarMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 140, 120, 46));
 
         jPanelMostrar.add(verPedidoMesa4, "card16");
 
@@ -7117,6 +7130,10 @@ public class Mesero extends javax.swing.JFrame {
     private void cancelarPedidoMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cancelarPedidoMesa3ActionPerformed
+
+    private void btnLimpiarMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLimpiarMesa4ActionPerformed
     
     private void actualizarListaProductosDelPedidoMesa1() {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
@@ -7349,6 +7366,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JButton btnLimpiarMesa1;
     private javax.swing.JButton btnLimpiarMesa2;
     private javax.swing.JButton btnLimpiarMesa3;
+    private javax.swing.JButton btnLimpiarMesa4;
     private javax.swing.JButton btnMesa1;
     private javax.swing.JButton btnMesa10;
     private javax.swing.JButton btnMesa11;
