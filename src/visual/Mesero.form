@@ -4590,7 +4590,6 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtNombreProductoNuevo">
               <Properties>
-                <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="Nombre nuevo"/>
               </Properties>
               <Constraints>
@@ -4614,7 +4613,6 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtCategoriaProductoNuevo">
               <Properties>
-                <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="Categor&#xed;a nueva"/>
               </Properties>
               <Constraints>
@@ -4638,7 +4636,6 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtPrecioProductoNuevo">
               <Properties>
-                <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="Precio nuevo "/>
               </Properties>
               <Events>
@@ -4665,7 +4662,6 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtCantidadProductoNuevo">
               <Properties>
-                <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="Cantidad nueva"/>
               </Properties>
               <Events>
@@ -4674,6 +4670,29 @@
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="590" y="380" width="160" height="30"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JButton" name="buscarProductoModificar">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="cc" red="cc" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="0" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Buscar producto"/>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarProductoModificarActionPerformed"/>
+              </Events>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="740" y="100" width="170" height="50"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -4696,7 +4715,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="760" y="260" width="170" height="120"/>
+                  <AbsoluteConstraints x="770" y="260" width="170" height="120"/>
                 </Constraint>
               </Constraints>
             </Component>

@@ -378,6 +378,7 @@ public class Mesero extends javax.swing.JFrame {
         txtPrecioProductoNuevo = new javax.swing.JTextField();
         jLabel71 = new javax.swing.JLabel();
         txtCantidadProductoNuevo = new javax.swing.JTextField();
+        buscarProductoModificar = new javax.swing.JButton();
         btnModificarProducto = new javax.swing.JButton();
         panelBuscProducto = new javax.swing.JPanel();
         jLabel72 = new javax.swing.JLabel();
@@ -2293,7 +2294,6 @@ public class Mesero extends javax.swing.JFrame {
         jLabel68.setText("Nombre del nuevo producto");
         panelModProducto.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 170, 33));
 
-        txtNombreProductoNuevo.setEditable(false);
         txtNombreProductoNuevo.setText("Nombre nuevo");
         panelModProducto.add(txtNombreProductoNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 230, 160, 30));
 
@@ -2301,7 +2301,6 @@ public class Mesero extends javax.swing.JFrame {
         jLabel69.setText("Categoría del nuevo producto");
         panelModProducto.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 170, 33));
 
-        txtCategoriaProductoNuevo.setEditable(false);
         txtCategoriaProductoNuevo.setText("Categoría nueva");
         panelModProducto.add(txtCategoriaProductoNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 280, 160, 30));
 
@@ -2309,7 +2308,6 @@ public class Mesero extends javax.swing.JFrame {
         jLabel70.setText("Precio del nuevo producto");
         panelModProducto.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 170, 33));
 
-        txtPrecioProductoNuevo.setEditable(false);
         txtPrecioProductoNuevo.setText("Precio nuevo ");
         txtPrecioProductoNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2322,7 +2320,6 @@ public class Mesero extends javax.swing.JFrame {
         jLabel71.setText("Cantidad del nuevo producto");
         panelModProducto.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 170, 33));
 
-        txtCantidadProductoNuevo.setEditable(false);
         txtCantidadProductoNuevo.setText("Cantidad nueva");
         txtCantidadProductoNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2330,6 +2327,18 @@ public class Mesero extends javax.swing.JFrame {
             }
         });
         panelModProducto.add(txtCantidadProductoNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, 160, 30));
+
+        buscarProductoModificar.setBackground(new java.awt.Color(204, 204, 0));
+        buscarProductoModificar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        buscarProductoModificar.setForeground(new java.awt.Color(0, 0, 0));
+        buscarProductoModificar.setText("Buscar producto");
+        buscarProductoModificar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        buscarProductoModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarProductoModificarActionPerformed(evt);
+            }
+        });
+        panelModProducto.add(buscarProductoModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 100, 170, 50));
 
         btnModificarProducto.setBackground(new java.awt.Color(204, 204, 0));
         btnModificarProducto.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -2341,7 +2350,7 @@ public class Mesero extends javax.swing.JFrame {
                 btnModificarProductoActionPerformed(evt);
             }
         });
-        panelModProducto.add(btnModificarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 260, 170, 120));
+        panelModProducto.add(btnModificarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, 170, 120));
 
         jPanelMostrar.add(panelModProducto, "card6");
 
@@ -3982,10 +3991,15 @@ public class Mesero extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCantidadProductoNuevoActionPerformed
 
-    private void btnModificarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarProductoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnModificarProductoActionPerformed
-
+    private Producto buscarProductoPorNombre(String nombreProducto) {
+        for (Producto producto : productos) {
+            if (producto.getNombre().equalsIgnoreCase(nombreProducto)) {
+                return producto;
+            }
+        }
+        return null;
+    }
+    
     private void txtPrecioProductoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioProductoNuevoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPrecioProductoNuevoActionPerformed
@@ -7108,6 +7122,83 @@ public class Mesero extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "El precio y la cantidad deben ser valores numéricos.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnAgregarProductoCartaActionPerformed
+
+    private void btnModificarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarProductoActionPerformed
+        
+        String nombreProductoActual = txtNombreProductoModificar.getText().trim();
+
+        if (nombreProductoActual.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Primero busca un producto para modificarlo.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        Producto productoEncontrado = buscarProductoPorNombre(nombreProductoActual);
+
+        if (productoEncontrado != null) {
+
+            String nuevoNombre = txtNombreProductoNuevo.getText().trim();
+            String nuevaCategoria = txtCategoriaProductoNuevo.getText().trim();
+            String nuevoPrecioTexto = txtPrecioProductoNuevo.getText().trim();
+            String nuevaCantidadTexto = txtCantidadProductoNuevo.getText().trim();
+
+            if (nuevoNombre.isEmpty() || nuevaCategoria.isEmpty() || nuevoPrecioTexto.isEmpty() || nuevaCantidadTexto.isEmpty()) {
+                JOptionPane.showMessageDialog(rootPane, "Por favor, complete todos los campos de datos nuevos.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            try {
+                double nuevoPrecio = Double.parseDouble(nuevoPrecioTexto);
+                int nuevaCantidad = Integer.parseInt(nuevaCantidadTexto);
+
+                productoEncontrado.setNombre(nuevoNombre);
+                productoEncontrado.setCategoria(nuevaCategoria);
+                productoEncontrado.setPrecio(nuevoPrecio);
+                productoEncontrado.setCantidadDisponible(nuevaCantidad);
+
+                JOptionPane.showMessageDialog(this, "Producto modificado correctamente.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                mostrarProductosEnMesa(productosPedidoMesa1);
+                
+                txtNombreProductoModificar.setText("");
+                txtNombreProductoNuevo.setText("");
+                txtCategoriaProductoNuevo.setText("");
+                txtCantidadProductoNuevo.setText("");
+                txtPrecioProductoNuevo.setText("");
+                txtNombreProductoActual.setText("");
+                txtCategoriaProductoActual.setText("");
+                txtPrecioProductoActual.setText("");
+                txtCantidadProductoActual.setText("");
+
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "El precio y la cantidad deben ser valores numéricos.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Producto no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_btnModificarProductoActionPerformed
+
+    private void buscarProductoModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarProductoModificarActionPerformed
+       String nombreProductoBuscado = txtNombreProductoModificar.getText().trim();
+
+        if (nombreProductoBuscado.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, ingrese el nombre del producto a buscar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        Producto productoEncontrado = buscarProductoPorNombre(nombreProductoBuscado);
+
+        if (productoEncontrado != null) {
+            
+            txtNombreProductoActual.setText(productoEncontrado.getNombre());
+            txtCategoriaProductoActual.setText(productoEncontrado.getCategoria());
+            txtPrecioProductoActual.setText(String.valueOf(productoEncontrado.getPrecio()));
+            txtCantidadProductoActual.setText(String.valueOf(productoEncontrado.getCantidadDisponible()));
+
+            JOptionPane.showMessageDialog(rootPane, "Producto encontrado. Puedes proceder a modificarlo.", "Producto Encontrado", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Producto no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_buscarProductoModificarActionPerformed
     
     private void actualizarListaProductosDelPedidoMesa1() {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
@@ -7398,6 +7489,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JButton btnVerPedidosMesa7;
     private javax.swing.JButton btnVerPedidosMesa8;
     private javax.swing.JButton btnVerPedidosMesa9;
+    private javax.swing.JButton buscarProductoModificar;
     private javax.swing.JButton cancelarPedidoMesa1;
     private javax.swing.JButton cancelarPedidoMesa10;
     private javax.swing.JButton cancelarPedidoMesa11;
