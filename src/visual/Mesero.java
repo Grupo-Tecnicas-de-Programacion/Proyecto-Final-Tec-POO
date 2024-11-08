@@ -455,6 +455,7 @@ public class Mesero extends javax.swing.JFrame {
         jScrollPane7 = new javax.swing.JScrollPane();
         detallePedidoMesa1 = new javax.swing.JList<>();
         cancelarPedidoMesa1 = new javax.swing.JButton();
+        btnLimpiarMesa1 = new javax.swing.JButton();
         verPedidoMesa2 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         volverAtrasMesa2 = new javax.swing.JButton();
@@ -2645,7 +2646,7 @@ public class Mesero extends javax.swing.JFrame {
         jLabel27.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(0, 0, 0));
         jLabel27.setText("Detalle pedido");
-        verPedidoMesa1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 150, 25));
+        verPedidoMesa1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 150, 25));
 
         jLabel28.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(0, 0, 0));
@@ -2655,12 +2656,12 @@ public class Mesero extends javax.swing.JFrame {
         jLabel29.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(0, 0, 0));
         jLabel29.setText("Pedidos mesa");
-        verPedidoMesa1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 140, 25));
+        verPedidoMesa1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 140, 25));
 
         jLabel30.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(0, 0, 0));
         jLabel30.setText("Pedidos llevar");
-        verPedidoMesa1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 150, 25));
+        verPedidoMesa1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, 150, 25));
 
         listaVerPedidosLlevarMesa1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -2679,7 +2680,7 @@ public class Mesero extends javax.swing.JFrame {
         });
         jScrollPane5.setViewportView(listaVerPedidosLlevarMesa1);
 
-        verPedidoMesa1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 220, 240));
+        verPedidoMesa1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 220, 240));
 
         listaVerPedidosMesa1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -2698,7 +2699,7 @@ public class Mesero extends javax.swing.JFrame {
         });
         jScrollPane6.setViewportView(listaVerPedidosMesa1);
 
-        verPedidoMesa1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 220, 240));
+        verPedidoMesa1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 220, 240));
 
         detallePedidoMesa1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -2708,7 +2709,7 @@ public class Mesero extends javax.swing.JFrame {
         detallePedidoMesa1.setEnabled(false);
         jScrollPane7.setViewportView(detallePedidoMesa1);
 
-        verPedidoMesa1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 220, 240));
+        verPedidoMesa1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 220, 240));
 
         cancelarPedidoMesa1.setBackground(new java.awt.Color(204, 204, 0));
         cancelarPedidoMesa1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -2719,7 +2720,19 @@ public class Mesero extends javax.swing.JFrame {
                 cancelarPedidoMesa1ActionPerformed(evt);
             }
         });
-        verPedidoMesa1.add(cancelarPedidoMesa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(811, 80, 120, 46));
+        verPedidoMesa1.add(cancelarPedidoMesa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 80, 120, 46));
+
+        btnLimpiarMesa1.setBackground(new java.awt.Color(204, 204, 0));
+        btnLimpiarMesa1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnLimpiarMesa1.setForeground(new java.awt.Color(0, 0, 0));
+        btnLimpiarMesa1.setText("Limpiar");
+        btnLimpiarMesa1.setEnabled(false);
+        btnLimpiarMesa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarMesa1ActionPerformed(evt);
+            }
+        });
+        verPedidoMesa1.add(btnLimpiarMesa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 140, 120, 46));
 
         jPanelMostrar.add(verPedidoMesa1, "card13");
 
@@ -6273,10 +6286,10 @@ public class Mesero extends javax.swing.JFrame {
 
     
     private void cancelarPedidoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa1ActionPerformed
+        
         int indexMesa = listaVerPedidosMesa1.getSelectedIndex();
         int indexLlevar = listaVerPedidosLlevarMesa1.getSelectedIndex();
 
-        
         if (indexMesa >= 0) {
             int confirmacion = JOptionPane.showConfirmDialog(
                     this, 
@@ -6286,13 +6299,27 @@ public class Mesero extends javax.swing.JFrame {
             );
 
             if (confirmacion == JOptionPane.YES_OPTION) {
+                
+                Pedido pedidoCancelado = pedidosMesa1.get(indexMesa);
+
+                
+                for (Producto productoCancelado : pedidoCancelado.getListaProductos()) {
+                    for (Producto producto : productos) {
+                        if (producto.getNombre().equals(productoCancelado.getNombre())) {
+                            producto.setCantidadDisponible(producto.getCantidadDisponible() + productoCancelado.getCantidad());
+                            break;
+                        }
+                    }
+                }
+
+                
                 pedidosMesa1.remove(indexMesa);
                 actualizarListaPedidosMesa1();
+                cargarProductosEnLista1(); // Actualizar la lista de productos disponible
                 JOptionPane.showMessageDialog(rootPane, "Pedido para mesa cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 detallePedidoMesa1.setModel(new DefaultListModel<>());
             }
-        }
-        else if (indexLlevar >= 0) {
+        } else if (indexLlevar >= 0) {
             int confirmacion = JOptionPane.showConfirmDialog(
                     rootPane, 
                     "¿Estás seguro de que deseas cancelar el pedido para llevar?", 
@@ -6301,14 +6328,30 @@ public class Mesero extends javax.swing.JFrame {
             );
 
             if (confirmacion == JOptionPane.YES_OPTION) {
+                
+                Pedido pedidoCancelado = pedidosMesa1Llevar.get(indexLlevar);
+
+                
+                for (Producto productoCancelado : pedidoCancelado.getListaProductos()) {
+                    for (Producto producto : productos) {
+                        if (producto.getNombre().equals(productoCancelado.getNombre())) {
+                            producto.setCantidadDisponible(producto.getCantidadDisponible() + productoCancelado.getCantidad());
+                            break;
+                        }
+                    }
+                }
+
+                
                 pedidosMesa1Llevar.remove(indexLlevar);
                 actualizarListaPedidosMesa1();
+                cargarProductosEnLista1(); 
                 JOptionPane.showMessageDialog(rootPane, "Pedido para llevar cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 detallePedidoMesa1.setModel(new DefaultListModel<>());
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Por favor selecciona un pedido para cancelar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
+        
     }//GEN-LAST:event_cancelarPedidoMesa1ActionPerformed
 
     private void cancelarPedidoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa2ActionPerformed
@@ -6930,37 +6973,48 @@ public class Mesero extends javax.swing.JFrame {
         if (totalCuenta == 0) {
             
             JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        
-        }else{
-        
-               
-            try (PrintWriter writer = new PrintWriter("recibo_mesa1.txt")) {
-                writer.println("Recibo de la Mesa 1");
-                writer.println("====================");
+        } else {
+            
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Guardar recibo");
+            fileChooser.setSelectedFile(new File("recibo_mesa1.txt")); 
 
-                for (Pedido pedido : pedidosMesa1) {
-                    writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-                    for (Producto producto : pedido.getListaProductos()) {
-                        writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+            int userSelection = fileChooser.showSaveDialog(this);
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = fileChooser.getSelectedFile();
+
+                try (PrintWriter writer = new PrintWriter(fileToSave)) {
+                    writer.println("Recibo de la Mesa 1");
+                    writer.println("====================");
+
+                    for (Pedido pedido : pedidosMesa1) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+                        }
+                        writer.println();
                     }
-                    writer.println();
-                }
 
-                for (Pedido pedido : pedidosMesa1Llevar) {
-                    writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-                    for (Producto producto : pedido.getListaProductos()) {
-                        writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+                    for (Pedido pedido : pedidosMesa1Llevar) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+                        }
+                        writer.println();
                     }
-                    writer.println();
-                }
 
-                writer.println("====================");
-                writer.println("Total de la cuenta: S/ " + totalCuenta);
-                JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en recibo_mesa1.txt", "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
-            } catch (FileNotFoundException e) {
-                JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                    writer.println("====================");
+                    writer.println("Total de la cuenta: S/ " + totalCuenta);
+                    JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en " + fileToSave.getAbsolutePath(), "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
+                    btnLimpiarMesa1.setEnabled(true);
+                } catch (FileNotFoundException e) {
+                    JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Guardado cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
             }
-        } 
+        }
+         
     }//GEN-LAST:event_btnGenerarReciboMesa1ActionPerformed
 
     private void productosPedidoMesa1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa1ValueChanged
@@ -7006,6 +7060,17 @@ public class Mesero extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa1ActionPerformed
+
+    private void btnLimpiarMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa1ActionPerformed
+
+        pedidosMesa1.clear();
+        pedidosMesa1Llevar.clear();
+
+        actualizarListaPedidosMesa1();
+        detallePedidoMesa1.setModel(new DefaultListModel<>()); 
+
+        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btnLimpiarMesa1ActionPerformed
     
     private void actualizarListaProductosDelPedidoMesa1() {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
@@ -7233,6 +7298,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JButton btnGenerarReciboMesa7;
     private javax.swing.JButton btnGenerarReciboMesa8;
     private javax.swing.JButton btnGenerarReciboMesa9;
+    private javax.swing.JButton btnLimpiarMesa1;
     private javax.swing.JButton btnMesa1;
     private javax.swing.JButton btnMesa10;
     private javax.swing.JButton btnMesa11;
