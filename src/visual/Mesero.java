@@ -350,7 +350,7 @@ public class Mesero extends javax.swing.JFrame {
         jLabel100 = new javax.swing.JLabel();
         txtPrecioNuevoProducto = new javax.swing.JTextField();
         txtCantidadNuevoProducto = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        btnAgregarProductoCarta = new javax.swing.JButton();
         jLabel102 = new javax.swing.JLabel();
         txtCategoriaNuevoProducto = new javax.swing.JTextField();
         txtNombreNuevoProducto = new javax.swing.JTextField();
@@ -2198,11 +2198,16 @@ public class Mesero extends javax.swing.JFrame {
         txtCantidadNuevoProducto.setForeground(new java.awt.Color(0, 0, 0));
         panelAgreProducto.add(txtCantidadNuevoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 240, 110, 30));
 
-        jButton3.setBackground(new java.awt.Color(0, 153, 0));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("Agregar producto");
-        panelAgreProducto.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 160, 80));
+        btnAgregarProductoCarta.setBackground(new java.awt.Color(0, 153, 0));
+        btnAgregarProductoCarta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnAgregarProductoCarta.setForeground(new java.awt.Color(0, 0, 0));
+        btnAgregarProductoCarta.setText("Agregar producto");
+        btnAgregarProductoCarta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProductoCartaActionPerformed(evt);
+            }
+        });
+        panelAgreProducto.add(btnAgregarProductoCarta, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 160, 80));
 
         jLabel102.setForeground(new java.awt.Color(0, 0, 0));
         jLabel102.setText("Precio");
@@ -4458,7 +4463,6 @@ public class Mesero extends javax.swing.JFrame {
 
 
                 actualizarListaProductosDelPedidoMesa1();
-                cargarProductosEnLista1();
                 mostrarProductosEnMesa(productosPedidoMesa1);
                 
 
@@ -6315,7 +6319,7 @@ public class Mesero extends javax.swing.JFrame {
                 
                 pedidosMesa1.remove(indexMesa);
                 actualizarListaPedidosMesa1();
-                cargarProductosEnLista1(); // Actualizar la lista de productos disponible
+                mostrarProductosEnMesa(productosPedidoMesa1);
                 JOptionPane.showMessageDialog(rootPane, "Pedido para mesa cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 detallePedidoMesa1.setModel(new DefaultListModel<>());
             }
@@ -6344,7 +6348,7 @@ public class Mesero extends javax.swing.JFrame {
                 
                 pedidosMesa1Llevar.remove(indexLlevar);
                 actualizarListaPedidosMesa1();
-                cargarProductosEnLista1(); 
+                mostrarProductosEnMesa(productosPedidoMesa1);
                 JOptionPane.showMessageDialog(rootPane, "Pedido para llevar cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 detallePedidoMesa1.setModel(new DefaultListModel<>());
             }
@@ -7071,6 +7075,39 @@ public class Mesero extends javax.swing.JFrame {
 
         JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnLimpiarMesa1ActionPerformed
+
+    private void btnAgregarProductoCartaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoCartaActionPerformed
+        
+        String nombre = txtNombreNuevoProducto.getText().trim();
+        String categoria = txtCategoriaNuevoProducto.getText().trim();
+        String precioTexto = txtPrecioNuevoProducto.getText().trim();
+        String cantidadTexto = txtCantidadNuevoProducto.getText().trim();
+
+
+        if (nombre.isEmpty() || categoria.isEmpty() || precioTexto.isEmpty() || cantidadTexto.isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "Por favor, complete todos los campos.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        try {
+            double precio = Double.parseDouble(precioTexto);
+            int cantidad = Integer.parseInt(cantidadTexto);
+
+            Producto nuevoProducto = new Producto(nombre, precio, categoria, cantidad);
+
+            productos.add(nuevoProducto);
+            mostrarProductosEnMesa(productosPedidoMesa1);
+            JOptionPane.showMessageDialog(rootPane, "Producto agregado correctamente.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+
+            txtNombreNuevoProducto.setText("");
+            txtCategoriaNuevoProducto.setText("");
+            txtPrecioNuevoProducto.setText("");
+            txtCantidadNuevoProducto.setText("");
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(rootPane, "El precio y la cantidad deben ser valores numéricos.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAgregarProductoCartaActionPerformed
     
     private void actualizarListaProductosDelPedidoMesa1() {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
@@ -7255,6 +7292,7 @@ public class Mesero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarProductoCarta;
     private javax.swing.JButton btnAgregarProductoPedidoMesa1;
     private javax.swing.JButton btnAgregarProductoPedidoMesa10;
     private javax.swing.JButton btnAgregarProductoPedidoMesa11;
@@ -7386,7 +7424,6 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JList<String> detallePedidoMesa9;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
