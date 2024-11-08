@@ -5132,35 +5132,62 @@ public class Mesero extends javax.swing.JFrame {
                     opciones[0]
             );
 
+            Pedido nuevoPedido = new Pedido(pedidoMesa3.getNumPedido(), pedidoMesa3.getTipoPedido());
+            for (int i = 0; i < listaPedidosMesa3.getModel().getSize(); i++) {
+                String productoTexto = listaPedidosMesa3.getModel().getElementAt(i);
+
+                String[] partes = productoTexto.split(" - Cantidad: ");
+                if (partes.length == 2) {
+                    String nombreProducto = partes[0].trim();
+                    int cantidadProducto = Integer.parseInt(partes[1].trim());
+
+                    Producto productoOriginal = null;
+                    for (Producto producto : productos) {
+                        if (producto.getNombre().equals(nombreProducto)) {
+                            productoOriginal = producto;
+                            break;
+                        }
+                    }
+
+                    if (productoOriginal != null) {
+
+                        Producto producto = new Producto(
+                            nombreProducto,
+                            productoOriginal.getPrecio(), 
+                            cantidadProducto
+                        );
+                        nuevoPedido.agregarProducto(producto);
+                    }
+                }
+            }
 
             if (seleccion == JOptionPane.YES_OPTION) {
-                pedidoMesa3.setNumPedido(contadorPedidosMesa3);
-                pedidoMesa3.setTipoPedido("Mesa");
-                pedidosMesa3.add(pedidoMesa3);
+                nuevoPedido.setNumPedido(contadorPedidosMesa3);
+                nuevoPedido.setTipoPedido("Mesa");
+                
+                pedidosMesa3.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa3.setBackground(Color.red);
                 contadorPedidosMesa3++;
-            } else if (seleccion == JOptionPane.NO_OPTION) { 
-                pedidoMesa3.setNumPedido(contadorPedidosMesa3Llevar);
-                pedidoMesa3.setTipoPedido("Llevar");
-                pedidosMesa3Llevar.add(pedidoMesa3);
+            } else if (seleccion == JOptionPane.NO_OPTION) {
+                nuevoPedido.setNumPedido(contadorPedidosMesa3Llevar);
+                nuevoPedido.setTipoPedido("Llevar");
+
+                pedidosMesa3Llevar.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa3.setBackground(Color.red);
                 contadorPedidosMesa3Llevar++;
             } else {
-                
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
                 return;
             }
 
-           
-            pedidoMesa3 = new Pedido(); 
-            actualizarListaProductosDelPedidoMesa3(); 
-            mesas.get(2).setEstado("Ocupada");
-
+            pedidoMesa3 = new Pedido();
+            actualizarListaProductosDelPedidoMesa3();
+            mesas.get(0).setEstado("Ocupada");
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
+        
     }
     
     int contadorPedidosMesa4 = 1;
@@ -5181,33 +5208,58 @@ public class Mesero extends javax.swing.JFrame {
                     opciones[0]
             );
 
+            Pedido nuevoPedido = new Pedido(pedidoMesa4.getNumPedido(), pedidoMesa4.getTipoPedido());
+            for (int i = 0; i < listaPedidosMesa4.getModel().getSize(); i++) {
+                String productoTexto = listaPedidosMesa4.getModel().getElementAt(i);
+
+                String[] partes = productoTexto.split(" - Cantidad: ");
+                if (partes.length == 2) {
+                    String nombreProducto = partes[0].trim();
+                    int cantidadProducto = Integer.parseInt(partes[1].trim());
+
+                    Producto productoOriginal = null;
+                    for (Producto producto : productos) {
+                        if (producto.getNombre().equals(nombreProducto)) {
+                            productoOriginal = producto;
+                            break;
+                        }
+                    }
+
+                    if (productoOriginal != null) {
+
+                        Producto producto = new Producto(
+                            nombreProducto,
+                            productoOriginal.getPrecio(), 
+                            cantidadProducto
+                        );
+                        nuevoPedido.agregarProducto(producto);
+                    }
+                }
+            }
 
             if (seleccion == JOptionPane.YES_OPTION) {
-                pedidoMesa4.setNumPedido(contadorPedidosMesa4);
-                pedidoMesa4.setTipoPedido("Mesa");
-                pedidosMesa4.add(pedidoMesa4);
+                nuevoPedido.setNumPedido(contadorPedidosMesa1);
+                nuevoPedido.setTipoPedido("Mesa");
+                
+                pedidosMesa4.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa4.setBackground(Color.red);
                 contadorPedidosMesa4++;
             } else if (seleccion == JOptionPane.NO_OPTION) {
-                pedidoMesa4.setNumPedido(contadorPedidosMesa4Llevar);
-                pedidoMesa4.setTipoPedido("Llevar");
-                pedidosMesa4Llevar.add(pedidoMesa4);
+                nuevoPedido.setNumPedido(contadorPedidosMesa4Llevar);
+                nuevoPedido.setTipoPedido("Llevar");
+
+                pedidosMesa4Llevar.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa4.setBackground(Color.red);
                 contadorPedidosMesa4Llevar++;
-                
             } else {
-                
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
                 return;
             }
 
-           
-            pedidoMesa4 = new Pedido(); 
+            pedidoMesa4 = new Pedido();
             actualizarListaProductosDelPedidoMesa4();
-            mesas.get(3).setEstado("Ocupada");
-
+            mesas.get(0).setEstado("Ocupada");
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
@@ -5231,32 +5283,58 @@ public class Mesero extends javax.swing.JFrame {
                     opciones[0]
             );
 
+            Pedido nuevoPedido = new Pedido(pedidoMesa5.getNumPedido(), pedidoMesa5.getTipoPedido());
+            for (int i = 0; i < listaPedidosMesa5.getModel().getSize(); i++) {
+                String productoTexto = listaPedidosMesa5.getModel().getElementAt(i);
+
+                String[] partes = productoTexto.split(" - Cantidad: ");
+                if (partes.length == 2) {
+                    String nombreProducto = partes[0].trim();
+                    int cantidadProducto = Integer.parseInt(partes[1].trim());
+
+                    Producto productoOriginal = null;
+                    for (Producto producto : productos) {
+                        if (producto.getNombre().equals(nombreProducto)) {
+                            productoOriginal = producto;
+                            break;
+                        }
+                    }
+
+                    if (productoOriginal != null) {
+
+                        Producto producto = new Producto(
+                            nombreProducto,
+                            productoOriginal.getPrecio(), 
+                            cantidadProducto
+                        );
+                        nuevoPedido.agregarProducto(producto);
+                    }
+                }
+            }
 
             if (seleccion == JOptionPane.YES_OPTION) {
-                pedidoMesa5.setNumPedido(contadorPedidosMesa5);
-                pedidoMesa5.setTipoPedido("Mesa");
-                pedidosMesa5.add(pedidoMesa5);
+                nuevoPedido.setNumPedido(contadorPedidosMesa1);
+                nuevoPedido.setTipoPedido("Mesa");
+                
+                pedidosMesa5.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 btnMesa5.setBackground(Color.red);
                 contadorPedidosMesa5++;
             } else if (seleccion == JOptionPane.NO_OPTION) {
-                pedidoMesa5.setNumPedido(contadorPedidosMesa5Llevar);
-                pedidoMesa5.setTipoPedido("Llevar");
-                pedidosMesa5Llevar.add(pedidoMesa5);
+                nuevoPedido.setNumPedido(contadorPedidosMesa5Llevar);
+                nuevoPedido.setTipoPedido("Llevar");
+
+                pedidosMesa5Llevar.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa5.setBackground(Color.red);
                 contadorPedidosMesa5Llevar++;
             } else {
-                
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
                 return;
             }
 
-           
-            pedidoMesa5 = new Pedido(); 
+            pedidoMesa5 = new Pedido();
             actualizarListaProductosDelPedidoMesa5();
-            mesas.get(4).setEstado("Ocupada");
-
+            mesas.get(0).setEstado("Ocupada");
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
