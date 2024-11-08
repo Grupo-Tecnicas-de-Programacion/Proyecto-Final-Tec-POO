@@ -6562,7 +6562,6 @@ public class Mesero extends javax.swing.JFrame {
         int indexMesa = listaVerPedidosMesa7.getSelectedIndex();
         int indexLlevar = listaVerPedidosLlevarMesa7.getSelectedIndex();
 
-        
         if (indexMesa >= 0) {
             int confirmacion = JOptionPane.showConfirmDialog(
                     this, 
@@ -6572,13 +6571,27 @@ public class Mesero extends javax.swing.JFrame {
             );
 
             if (confirmacion == JOptionPane.YES_OPTION) {
+                
+                Pedido pedidoCancelado = pedidosMesa7.get(indexMesa);
+
+                
+                for (Producto productoCancelado : pedidoCancelado.getListaProductos()) {
+                    for (Producto producto : productos) {
+                        if (producto.getNombre().equals(productoCancelado.getNombre())) {
+                            producto.setCantidadDisponible(producto.getCantidadDisponible() + productoCancelado.getCantidad());
+                            break;
+                        }
+                    }
+                }
+
+                
                 pedidosMesa7.remove(indexMesa);
                 actualizarListaPedidosMesa7();
+                mostrarProductosEnMesa(productosPedidoMesa7);
                 JOptionPane.showMessageDialog(rootPane, "Pedido para mesa cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 detallePedidoMesa7.setModel(new DefaultListModel<>());
             }
-        }
-        else if (indexLlevar >= 0) {
+        } else if (indexLlevar >= 0) {
             int confirmacion = JOptionPane.showConfirmDialog(
                     rootPane, 
                     "¿Estás seguro de que deseas cancelar el pedido para llevar?", 
@@ -6587,8 +6600,23 @@ public class Mesero extends javax.swing.JFrame {
             );
 
             if (confirmacion == JOptionPane.YES_OPTION) {
+                
+                Pedido pedidoCancelado = pedidosMesa7Llevar.get(indexLlevar);
+
+                
+                for (Producto productoCancelado : pedidoCancelado.getListaProductos()) {
+                    for (Producto producto : productos) {
+                        if (producto.getNombre().equals(productoCancelado.getNombre())) {
+                            producto.setCantidadDisponible(producto.getCantidadDisponible() + productoCancelado.getCantidad());
+                            break;
+                        }
+                    }
+                }
+
+                
                 pedidosMesa7Llevar.remove(indexLlevar);
                 actualizarListaPedidosMesa7();
+                mostrarProductosEnMesa(productosPedidoMesa7);
                 JOptionPane.showMessageDialog(rootPane, "Pedido para llevar cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 detallePedidoMesa7.setModel(new DefaultListModel<>());
             }
