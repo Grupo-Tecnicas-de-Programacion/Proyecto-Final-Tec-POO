@@ -412,16 +412,16 @@ public class Mesero extends javax.swing.JFrame {
         panelProducDisponibles = new javax.swing.JPanel();
         jLabel86 = new javax.swing.JLabel();
         jScrollPane25 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listaProductosDisponibles = new javax.swing.JList<>();
         jLabel87 = new javax.swing.JLabel();
         jLabel88 = new javax.swing.JLabel();
-        txtNombreProductoBuscado2 = new javax.swing.JTextField();
+        txtNombreProductoDisponible = new javax.swing.JTextField();
         jLabel89 = new javax.swing.JLabel();
-        txtCategoriaProductoBuscado2 = new javax.swing.JTextField();
+        txtCategoriaProductoDisponible = new javax.swing.JTextField();
         jLabel90 = new javax.swing.JLabel();
-        txtPrecioProductoBuscado2 = new javax.swing.JTextField();
+        txtPrecioProductoDisponible = new javax.swing.JTextField();
         jLabel91 = new javax.swing.JLabel();
-        txtCantidadProductoBuscado2 = new javax.swing.JTextField();
+        txtCantidadProductoDisponible = new javax.swing.JTextField();
         panelProducAgotados = new javax.swing.JPanel();
         jLabel101 = new javax.swing.JLabel();
         jLabel105 = new javax.swing.JLabel();
@@ -429,12 +429,12 @@ public class Mesero extends javax.swing.JFrame {
         jLabel107 = new javax.swing.JLabel();
         jLabel108 = new javax.swing.JLabel();
         jLabel109 = new javax.swing.JLabel();
-        txtCantidadProductoBuscado3 = new javax.swing.JTextField();
-        txtPrecioProductoBuscado3 = new javax.swing.JTextField();
-        txtCategoriaProductoBuscado3 = new javax.swing.JTextField();
-        txtNombreProductoBuscado3 = new javax.swing.JTextField();
+        txtCantidadProductoAgotado = new javax.swing.JTextField();
+        txtPrecioProductoAgotado = new javax.swing.JTextField();
+        txtCategoriaProductoAgotado = new javax.swing.JTextField();
+        txtNombreProductoAgotado = new javax.swing.JTextField();
         jScrollPane27 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList<>();
+        listaProductosAgotados = new javax.swing.JList<>();
         panelGenerarReporte = new javax.swing.JPanel();
         jLabel144 = new javax.swing.JLabel();
         jLabel145 = new javax.swing.JLabel();
@@ -2509,12 +2509,17 @@ public class Mesero extends javax.swing.JFrame {
         jLabel86.setText("PRODUCTOS DISPONIBLES");
         panelProducDisponibles.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 340, 60));
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        listaProductosDisponibles.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane25.setViewportView(jList1);
+        listaProductosDisponibles.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaProductosDisponiblesValueChanged(evt);
+            }
+        });
+        jScrollPane25.setViewportView(listaProductosDisponibles);
 
         panelProducDisponibles.add(jScrollPane25, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 330, 310));
 
@@ -2527,38 +2532,38 @@ public class Mesero extends javax.swing.JFrame {
         jLabel88.setText("Nombre del producto");
         panelProducDisponibles.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 146, 33));
 
-        txtNombreProductoBuscado2.setEditable(false);
-        txtNombreProductoBuscado2.setText("Nombre del producto");
-        panelProducDisponibles.add(txtNombreProductoBuscado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 160, 30));
+        txtNombreProductoDisponible.setEditable(false);
+        txtNombreProductoDisponible.setText("Nombre del producto");
+        panelProducDisponibles.add(txtNombreProductoDisponible, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 160, 30));
 
         jLabel89.setForeground(new java.awt.Color(0, 0, 0));
         jLabel89.setText("Categoría del producto");
         panelProducDisponibles.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 146, 33));
 
-        txtCategoriaProductoBuscado2.setEditable(false);
-        txtCategoriaProductoBuscado2.setText("Categoría del producto");
-        panelProducDisponibles.add(txtCategoriaProductoBuscado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 160, 30));
+        txtCategoriaProductoDisponible.setEditable(false);
+        txtCategoriaProductoDisponible.setText("Categoría del producto");
+        panelProducDisponibles.add(txtCategoriaProductoDisponible, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 160, 30));
 
         jLabel90.setForeground(new java.awt.Color(0, 0, 0));
         jLabel90.setText("Precio del producto");
         panelProducDisponibles.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 146, 33));
 
-        txtPrecioProductoBuscado2.setEditable(false);
-        txtPrecioProductoBuscado2.setText("Precio del producto");
-        panelProducDisponibles.add(txtPrecioProductoBuscado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 160, 30));
+        txtPrecioProductoDisponible.setEditable(false);
+        txtPrecioProductoDisponible.setText("Precio del producto");
+        panelProducDisponibles.add(txtPrecioProductoDisponible, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 160, 30));
 
         jLabel91.setForeground(new java.awt.Color(0, 0, 0));
         jLabel91.setText("Cantidad del producto");
         panelProducDisponibles.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 146, 33));
 
-        txtCantidadProductoBuscado2.setEditable(false);
-        txtCantidadProductoBuscado2.setText("Cantidad del producto");
-        txtCantidadProductoBuscado2.addActionListener(new java.awt.event.ActionListener() {
+        txtCantidadProductoDisponible.setEditable(false);
+        txtCantidadProductoDisponible.setText("Cantidad del producto");
+        txtCantidadProductoDisponible.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCantidadProductoBuscado2ActionPerformed(evt);
+                txtCantidadProductoDisponibleActionPerformed(evt);
             }
         });
-        panelProducDisponibles.add(txtCantidadProductoBuscado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 160, 30));
+        panelProducDisponibles.add(txtCantidadProductoDisponible, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 160, 30));
 
         jPanelMostrar.add(panelProducDisponibles, "card9");
 
@@ -2591,33 +2596,38 @@ public class Mesero extends javax.swing.JFrame {
         jLabel109.setText("Cantidad del producto");
         panelProducAgotados.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 146, 33));
 
-        txtCantidadProductoBuscado3.setEditable(false);
-        txtCantidadProductoBuscado3.setText("Cantidad del producto");
-        txtCantidadProductoBuscado3.addActionListener(new java.awt.event.ActionListener() {
+        txtCantidadProductoAgotado.setEditable(false);
+        txtCantidadProductoAgotado.setText("Cantidad del producto");
+        txtCantidadProductoAgotado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCantidadProductoBuscado3ActionPerformed(evt);
+                txtCantidadProductoAgotadoActionPerformed(evt);
             }
         });
-        panelProducAgotados.add(txtCantidadProductoBuscado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 160, 30));
+        panelProducAgotados.add(txtCantidadProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 160, 30));
 
-        txtPrecioProductoBuscado3.setEditable(false);
-        txtPrecioProductoBuscado3.setText("Precio del producto");
-        panelProducAgotados.add(txtPrecioProductoBuscado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 160, 30));
+        txtPrecioProductoAgotado.setEditable(false);
+        txtPrecioProductoAgotado.setText("Precio del producto");
+        panelProducAgotados.add(txtPrecioProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 160, 30));
 
-        txtCategoriaProductoBuscado3.setEditable(false);
-        txtCategoriaProductoBuscado3.setText("Categoría del producto");
-        panelProducAgotados.add(txtCategoriaProductoBuscado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 160, 30));
+        txtCategoriaProductoAgotado.setEditable(false);
+        txtCategoriaProductoAgotado.setText("Categoría del producto");
+        panelProducAgotados.add(txtCategoriaProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 160, 30));
 
-        txtNombreProductoBuscado3.setEditable(false);
-        txtNombreProductoBuscado3.setText("Nombre del producto");
-        panelProducAgotados.add(txtNombreProductoBuscado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 160, 30));
+        txtNombreProductoAgotado.setEditable(false);
+        txtNombreProductoAgotado.setText("Nombre del producto");
+        panelProducAgotados.add(txtNombreProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 160, 30));
 
-        jList3.setModel(new javax.swing.AbstractListModel<String>() {
+        listaProductosAgotados.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane27.setViewportView(jList3);
+        listaProductosAgotados.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaProductosAgotadosValueChanged(evt);
+            }
+        });
+        jScrollPane27.setViewportView(listaProductosAgotados);
 
         panelProducAgotados.add(jScrollPane27, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 330, 310));
 
@@ -2690,7 +2700,7 @@ public class Mesero extends javax.swing.JFrame {
         jLabel30.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(0, 0, 0));
         jLabel30.setText("Pedidos llevar");
-        verPedidoMesa1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, 150, 25));
+        verPedidoMesa1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 150, 25));
 
         listaVerPedidosLlevarMesa1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -2709,7 +2719,7 @@ public class Mesero extends javax.swing.JFrame {
         });
         jScrollPane5.setViewportView(listaVerPedidosLlevarMesa1);
 
-        verPedidoMesa1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 220, 240));
+        verPedidoMesa1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, 220, 240));
 
         listaVerPedidosMesa1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -3952,6 +3962,14 @@ public class Mesero extends javax.swing.JFrame {
     private void menItemProducDisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemProducDisponiblesActionPerformed
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "panelProducDisponibles");
+        
+        DefaultListModel<String> modeloProductosDisponibles = new DefaultListModel<>();
+        for (Producto producto : productos) {
+            if (producto.getCantidadDisponible() > 0) {
+                modeloProductosDisponibles.addElement(producto.getNombre());
+            }
+        }
+        listaProductosDisponibles.setModel(modeloProductosDisponibles);
     }//GEN-LAST:event_menItemProducDisponiblesActionPerformed
 
     private void menItemCargarMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemCargarMesasActionPerformed
@@ -3996,6 +4014,14 @@ public class Mesero extends javax.swing.JFrame {
     private void menItemProducDAgotadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemProducDAgotadosActionPerformed
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "panelProducAgotados");
+
+        DefaultListModel<String> modeloProductosDisponibles = new DefaultListModel<>();
+        for (Producto producto : productos) {
+            if (producto.getCantidadDisponible() == 0) {
+                modeloProductosDisponibles.addElement(producto.getNombre());
+            }
+        }
+        listaProductosAgotados.setModel(modeloProductosDisponibles);
     }//GEN-LAST:event_menItemProducDAgotadosActionPerformed
 
     private void txtCantidadProductoActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProductoActualActionPerformed
@@ -4027,9 +4053,9 @@ public class Mesero extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCantidadProductoAEliminarActionPerformed
 
-    private void txtCantidadProductoBuscado2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProductoBuscado2ActionPerformed
+    private void txtCantidadProductoDisponibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProductoDisponibleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCantidadProductoBuscado2ActionPerformed
+    }//GEN-LAST:event_txtCantidadProductoDisponibleActionPerformed
 
     private void mostrarProductosEnMesa(JList<String> listaProductosMesa) {
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
@@ -4109,9 +4135,9 @@ public class Mesero extends javax.swing.JFrame {
         layout.show(jPanelMostrar, "panelAgreProducto");
     }//GEN-LAST:event_menItemAgreProductoActionPerformed
 
-    private void txtCantidadProductoBuscado3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProductoBuscado3ActionPerformed
+    private void txtCantidadProductoAgotadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProductoAgotadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCantidadProductoBuscado3ActionPerformed
+    }//GEN-LAST:event_txtCantidadProductoAgotadoActionPerformed
 
     private void inicializarMesas(){
         botonMesas = new JButton[] {
@@ -7297,6 +7323,42 @@ public class Mesero extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnEliminarProductoActionPerformed
+
+    private void listaProductosDisponiblesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaProductosDisponiblesValueChanged
+        
+        if (!evt.getValueIsAdjusting()) { 
+            int index = listaProductosDisponibles.getSelectedIndex();
+            if (index >= 0) {
+                String nombreProductoSeleccionado = listaProductosDisponibles.getSelectedValue();
+                Producto productoSeleccionado = buscarProductoPorNombre(nombreProductoSeleccionado);
+
+                if (productoSeleccionado != null) {
+                    txtNombreProductoDisponible.setText(productoSeleccionado.getNombre());
+                    txtCategoriaProductoDisponible.setText(productoSeleccionado.getCategoria());
+                    txtPrecioProductoDisponible.setText(String.valueOf(productoSeleccionado.getPrecio()));
+                    txtCantidadProductoDisponible.setText(String.valueOf(productoSeleccionado.getCantidadDisponible()));
+                }
+            }
+        }
+        
+    }//GEN-LAST:event_listaProductosDisponiblesValueChanged
+
+    private void listaProductosAgotadosValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaProductosAgotadosValueChanged
+        if (!evt.getValueIsAdjusting()) { 
+            int index = listaProductosAgotados.getSelectedIndex();
+            if (index >= 0) {
+                String nombreProductoSeleccionado = listaProductosAgotados.getSelectedValue();
+                Producto productoSeleccionado = buscarProductoPorNombre(nombreProductoSeleccionado);
+
+                if (productoSeleccionado != null) {
+                    txtNombreProductoAgotado.setText(productoSeleccionado.getNombre());
+                    txtCategoriaProductoAgotado.setText(productoSeleccionado.getCategoria());
+                    txtPrecioProductoAgotado.setText(String.valueOf(productoSeleccionado.getPrecio()));
+                    txtCantidadProductoAgotado.setText(String.valueOf(productoSeleccionado.getCantidadDisponible()));
+                }
+            }
+        }
+    }//GEN-LAST:event_listaProductosAgotadosValueChanged
     
     private void actualizarListaProductosDelPedidoMesa1() {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
@@ -7760,8 +7822,6 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList3;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanelMostrar;
     private javax.swing.JPanel jPanelMostrarMesa;
@@ -7839,6 +7899,8 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JList<String> listaPedidosMesa7;
     private javax.swing.JList<String> listaPedidosMesa8;
     private javax.swing.JList<String> listaPedidosMesa9;
+    private javax.swing.JList<String> listaProductosAgotados;
+    private javax.swing.JList<String> listaProductosDisponibles;
     private javax.swing.JList<String> listaVerPedidosLlevarMesa1;
     private javax.swing.JList<String> listaVerPedidosLlevarMesa10;
     private javax.swing.JList<String> listaVerPedidosLlevarMesa11;
@@ -7919,16 +7981,16 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JTextField txtCantidadNuevoProducto;
     private javax.swing.JTextField txtCantidadProductoAEliminar;
     private javax.swing.JTextField txtCantidadProductoActual;
+    private javax.swing.JTextField txtCantidadProductoAgotado;
     private javax.swing.JTextField txtCantidadProductoBuscado;
-    private javax.swing.JTextField txtCantidadProductoBuscado2;
-    private javax.swing.JTextField txtCantidadProductoBuscado3;
+    private javax.swing.JTextField txtCantidadProductoDisponible;
     private javax.swing.JTextField txtCantidadProductoNuevo;
     private javax.swing.JTextField txtCategoriaNuevoProducto;
     private javax.swing.JTextField txtCategoriaProductoAEliminar;
     private javax.swing.JTextField txtCategoriaProductoActual;
+    private javax.swing.JTextField txtCategoriaProductoAgotado;
     private javax.swing.JTextField txtCategoriaProductoBuscado;
-    private javax.swing.JTextField txtCategoriaProductoBuscado2;
-    private javax.swing.JTextField txtCategoriaProductoBuscado3;
+    private javax.swing.JTextField txtCategoriaProductoDisponible;
     private javax.swing.JTextField txtCategoriaProductoNuevo;
     private javax.swing.JTextField txtCodigoGenerado;
     private javax.swing.JTextField txtEstadoArchivoMesas;
@@ -7939,19 +8001,19 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombreNuevoProducto;
     private javax.swing.JTextField txtNombreProductoAEliminar;
     private javax.swing.JTextField txtNombreProductoActual;
+    private javax.swing.JTextField txtNombreProductoAgotado;
     private javax.swing.JTextField txtNombreProductoBuscado;
-    private javax.swing.JTextField txtNombreProductoBuscado2;
-    private javax.swing.JTextField txtNombreProductoBuscado3;
     private javax.swing.JTextField txtNombreProductoBuscar;
+    private javax.swing.JTextField txtNombreProductoDisponible;
     private javax.swing.JTextField txtNombreProductoEliminar;
     private javax.swing.JTextField txtNombreProductoModificar;
     private javax.swing.JTextField txtNombreProductoNuevo;
     private javax.swing.JTextField txtPrecioNuevoProducto;
     private javax.swing.JTextField txtPrecioProductoAEliminar;
     private javax.swing.JTextField txtPrecioProductoActual;
+    private javax.swing.JTextField txtPrecioProductoAgotado;
     private javax.swing.JTextField txtPrecioProductoBuscado;
-    private javax.swing.JTextField txtPrecioProductoBuscado2;
-    private javax.swing.JTextField txtPrecioProductoBuscado3;
+    private javax.swing.JTextField txtPrecioProductoDisponible;
     private javax.swing.JTextField txtPrecioProductoNuevo;
     private javax.swing.JTextField txtRutaArchivoMesas;
     private javax.swing.JTextField txtRutaArchivoProductos;
