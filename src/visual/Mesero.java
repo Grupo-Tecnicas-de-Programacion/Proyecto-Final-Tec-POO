@@ -1663,6 +1663,11 @@ public class Mesero extends javax.swing.JFrame {
         btnBorrarProductoPedidoMesa8.setBackground(new java.awt.Color(204, 204, 0));
         btnBorrarProductoPedidoMesa8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnBorrarProductoPedidoMesa8.setText("Borrar producto");
+        btnBorrarProductoPedidoMesa8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarProductoPedidoMesa8ActionPerformed(evt);
+            }
+        });
         panelMesa8.add(btnBorrarProductoPedidoMesa8, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 120, 40));
 
         btnTotalCuentaMesa8.setBackground(new java.awt.Color(204, 204, 0));
@@ -8173,6 +8178,41 @@ public class Mesero extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa7ActionPerformed
+
+    private void btnBorrarProductoPedidoMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa8ActionPerformed
+        int index = listaPedidosMesa8.getSelectedIndex(); 
+        if (index >= 0) {
+            
+            String productoTexto = listaPedidosMesa8.getSelectedValue();
+            
+            String[] partes = productoTexto.split(" - Cantidad: ");
+            if (partes.length == 2) {
+                String nombreProducto = partes[0].trim();
+                int cantidadProducto = Integer.parseInt(partes[1].trim());
+
+                
+                for (Producto producto : productos) {
+                    if (producto.getNombre().equals(nombreProducto)) {
+                        producto.setCantidadDisponible(producto.getCantidadDisponible() + cantidadProducto);
+                        break;
+                    }
+                }
+
+                
+                pedidoMesa8.getListaProductos().remove(index);
+
+                actualizarListaProductosDelPedidoMesa8();
+                cargarProductosEnLista8();
+                mostrarProductosEnMesa(productosPedidoMesa8);
+                
+                JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Error al parsear la cantidad del producto.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnBorrarProductoPedidoMesa8ActionPerformed
     
     private void actualizarListaProductosDelPedidoMesa1() {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
