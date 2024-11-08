@@ -396,12 +396,12 @@ public class Mesero extends javax.swing.JFrame {
         btnBuscandoProducto = new javax.swing.JButton();
         panelElimProducto = new javax.swing.JPanel();
         btnEliminarProducto = new javax.swing.JButton();
-        txtNombreProductoBuscar1 = new javax.swing.JTextField();
+        txtNombreProductoEliminar = new javax.swing.JTextField();
         jLabel79 = new javax.swing.JLabel();
-        txtNombreProductoBuscado1 = new javax.swing.JTextField();
-        txtCategoriaProductoBuscado1 = new javax.swing.JTextField();
-        txtPrecioProductoBuscado1 = new javax.swing.JTextField();
-        txtCantidadProductoBuscado1 = new javax.swing.JTextField();
+        txtNombreProductoAEliminar = new javax.swing.JTextField();
+        txtCategoriaProductoAEliminar = new javax.swing.JTextField();
+        txtPrecioProductoAEliminar = new javax.swing.JTextField();
+        txtCantidadProductoAEliminar = new javax.swing.JTextField();
         jLabel80 = new javax.swing.JLabel();
         jLabel81 = new javax.swing.JLabel();
         jLabel82 = new javax.swing.JLabel();
@@ -2429,34 +2429,39 @@ public class Mesero extends javax.swing.JFrame {
         btnEliminarProducto.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnEliminarProducto.setForeground(new java.awt.Color(0, 0, 0));
         btnEliminarProducto.setText("Eliminar producto");
+        btnEliminarProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarProductoActionPerformed(evt);
+            }
+        });
         panelElimProducto.add(btnEliminarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 260, 160, 70));
-        panelElimProducto.add(txtNombreProductoBuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 290, -1));
+        panelElimProducto.add(txtNombreProductoEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 290, -1));
 
         jLabel79.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel79.setForeground(new java.awt.Color(0, 0, 0));
         jLabel79.setText("Datos del producto a eliminar");
         panelElimProducto.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 210, 30));
 
-        txtNombreProductoBuscado1.setEditable(false);
-        txtNombreProductoBuscado1.setText("Nombre del producto");
-        panelElimProducto.add(txtNombreProductoBuscado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 160, 30));
+        txtNombreProductoAEliminar.setEditable(false);
+        txtNombreProductoAEliminar.setText("Nombre del producto");
+        panelElimProducto.add(txtNombreProductoAEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 160, 30));
 
-        txtCategoriaProductoBuscado1.setEditable(false);
-        txtCategoriaProductoBuscado1.setText("Categoría del producto");
-        panelElimProducto.add(txtCategoriaProductoBuscado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 160, 30));
+        txtCategoriaProductoAEliminar.setEditable(false);
+        txtCategoriaProductoAEliminar.setText("Categoría del producto");
+        panelElimProducto.add(txtCategoriaProductoAEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 160, 30));
 
-        txtPrecioProductoBuscado1.setEditable(false);
-        txtPrecioProductoBuscado1.setText("Precio del producto");
-        panelElimProducto.add(txtPrecioProductoBuscado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 160, 30));
+        txtPrecioProductoAEliminar.setEditable(false);
+        txtPrecioProductoAEliminar.setText("Precio del producto");
+        panelElimProducto.add(txtPrecioProductoAEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 160, 30));
 
-        txtCantidadProductoBuscado1.setEditable(false);
-        txtCantidadProductoBuscado1.setText("Cantidad del producto");
-        txtCantidadProductoBuscado1.addActionListener(new java.awt.event.ActionListener() {
+        txtCantidadProductoAEliminar.setEditable(false);
+        txtCantidadProductoAEliminar.setText("Cantidad del producto");
+        txtCantidadProductoAEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCantidadProductoBuscado1ActionPerformed(evt);
+                txtCantidadProductoAEliminarActionPerformed(evt);
             }
         });
-        panelElimProducto.add(txtCantidadProductoBuscado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, 160, 30));
+        panelElimProducto.add(txtCantidadProductoAEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, 160, 30));
 
         jLabel80.setForeground(new java.awt.Color(0, 0, 0));
         jLabel80.setText("Cantidad del producto");
@@ -2487,6 +2492,11 @@ public class Mesero extends javax.swing.JFrame {
         btnBuscarProductoEliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBuscarProductoEliminar.setForeground(new java.awt.Color(0, 0, 0));
         btnBuscarProductoEliminar.setText("Buscar producto a eliminar");
+        btnBuscarProductoEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarProductoEliminarActionPerformed(evt);
+            }
+        });
         panelElimProducto.add(btnBuscarProductoEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 100, 220, 50));
 
         jPanelMostrar.add(panelElimProducto, "card8");
@@ -4013,9 +4023,9 @@ public class Mesero extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCantidadProductoBuscadoActionPerformed
 
-    private void txtCantidadProductoBuscado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProductoBuscado1ActionPerformed
+    private void txtCantidadProductoAEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProductoAEliminarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCantidadProductoBuscado1ActionPerformed
+    }//GEN-LAST:event_txtCantidadProductoAEliminarActionPerformed
 
     private void txtCantidadProductoBuscado2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProductoBuscado2ActionPerformed
         // TODO add your handling code here:
@@ -7206,7 +7216,7 @@ public class Mesero extends javax.swing.JFrame {
     }//GEN-LAST:event_buscarProductoModificarActionPerformed
 
     private void btnBuscandoProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscandoProductoActionPerformed
-       String nombreProductoBuscado = txtNombreProductoBuscar.getText().trim();
+        String nombreProductoBuscado = txtNombreProductoBuscar.getText().trim();
 
         if (nombreProductoBuscado.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, ingrese el nombre del producto a buscar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -7222,11 +7232,71 @@ public class Mesero extends javax.swing.JFrame {
             txtPrecioProductoBuscado.setText(String.valueOf(productoEncontrado.getPrecio()));
             txtCantidadProductoBuscado.setText(String.valueOf(productoEncontrado.getCantidadDisponible()));
 
-            JOptionPane.showMessageDialog(rootPane, "Producto encontrado. Puedes proceder a modificarlo.", "Producto Encontrado", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Producto encontrado.", "Producto Encontrado", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(rootPane, "Producto no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnBuscandoProductoActionPerformed
+
+    private void btnBuscarProductoEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProductoEliminarActionPerformed
+        
+        String nombreProductoBuscado = txtNombreProductoEliminar.getText().trim();
+
+        if (nombreProductoBuscado.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, ingrese el nombre del producto a buscar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        Producto productoEncontrado = buscarProductoPorNombre(nombreProductoBuscado);
+
+        if (productoEncontrado != null) {
+            
+            txtNombreProductoAEliminar.setText(productoEncontrado.getNombre());
+            txtCantidadProductoAEliminar.setText(productoEncontrado.getCategoria());
+            txtPrecioProductoAEliminar.setText(String.valueOf(productoEncontrado.getPrecio()));
+            txtCantidadProductoAEliminar.setText(String.valueOf(productoEncontrado.getCantidadDisponible()));
+
+            JOptionPane.showMessageDialog(rootPane, "Producto encontrado.", "Producto Encontrado", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Producto no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnBuscarProductoEliminarActionPerformed
+
+    private void btnEliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProductoActionPerformed
+        
+        String nombreProductoBuscado = txtNombreProductoEliminar.getText().trim();
+
+        if (nombreProductoBuscado.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, ingrese el nombre del producto a eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        Producto productoEncontrado = buscarProductoPorNombre(nombreProductoBuscado);
+
+        if (productoEncontrado != null) {
+            int confirmacion = JOptionPane.showConfirmDialog(
+                    this, 
+                    "¿Está seguro de que desea eliminar el producto: " + productoEncontrado.getNombre() + "?", 
+                    "Confirmación de Eliminación", 
+                    JOptionPane.YES_NO_OPTION
+            );
+
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                productos.remove(productoEncontrado); 
+                mostrarProductosEnMesa(productosPedidoMesa1); 
+                txtNombreProductoAEliminar.setText("");
+                txtCategoriaProductoAEliminar.setText("");
+                txtPrecioProductoAEliminar.setText("");
+                txtCantidadProductoAEliminar.setText("");
+                txtNombreProductoEliminar.setText("");
+
+                JOptionPane.showMessageDialog(this, "Producto eliminado correctamente.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Producto no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_btnEliminarProductoActionPerformed
     
     private void actualizarListaProductosDelPedidoMesa1() {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
@@ -7847,16 +7917,16 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JList<String> productosPedidoMesa8;
     private javax.swing.JList<String> productosPedidoMesa9;
     private javax.swing.JTextField txtCantidadNuevoProducto;
+    private javax.swing.JTextField txtCantidadProductoAEliminar;
     private javax.swing.JTextField txtCantidadProductoActual;
     private javax.swing.JTextField txtCantidadProductoBuscado;
-    private javax.swing.JTextField txtCantidadProductoBuscado1;
     private javax.swing.JTextField txtCantidadProductoBuscado2;
     private javax.swing.JTextField txtCantidadProductoBuscado3;
     private javax.swing.JTextField txtCantidadProductoNuevo;
     private javax.swing.JTextField txtCategoriaNuevoProducto;
+    private javax.swing.JTextField txtCategoriaProductoAEliminar;
     private javax.swing.JTextField txtCategoriaProductoActual;
     private javax.swing.JTextField txtCategoriaProductoBuscado;
-    private javax.swing.JTextField txtCategoriaProductoBuscado1;
     private javax.swing.JTextField txtCategoriaProductoBuscado2;
     private javax.swing.JTextField txtCategoriaProductoBuscado3;
     private javax.swing.JTextField txtCategoriaProductoNuevo;
@@ -7867,19 +7937,19 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JTextField txtIngresarCodigo;
     private javax.swing.JTextField txtNombreGenerarReporte;
     private javax.swing.JTextField txtNombreNuevoProducto;
+    private javax.swing.JTextField txtNombreProductoAEliminar;
     private javax.swing.JTextField txtNombreProductoActual;
     private javax.swing.JTextField txtNombreProductoBuscado;
-    private javax.swing.JTextField txtNombreProductoBuscado1;
     private javax.swing.JTextField txtNombreProductoBuscado2;
     private javax.swing.JTextField txtNombreProductoBuscado3;
     private javax.swing.JTextField txtNombreProductoBuscar;
-    private javax.swing.JTextField txtNombreProductoBuscar1;
+    private javax.swing.JTextField txtNombreProductoEliminar;
     private javax.swing.JTextField txtNombreProductoModificar;
     private javax.swing.JTextField txtNombreProductoNuevo;
     private javax.swing.JTextField txtPrecioNuevoProducto;
+    private javax.swing.JTextField txtPrecioProductoAEliminar;
     private javax.swing.JTextField txtPrecioProductoActual;
     private javax.swing.JTextField txtPrecioProductoBuscado;
-    private javax.swing.JTextField txtPrecioProductoBuscado1;
     private javax.swing.JTextField txtPrecioProductoBuscado2;
     private javax.swing.JTextField txtPrecioProductoBuscado3;
     private javax.swing.JTextField txtPrecioProductoNuevo;
