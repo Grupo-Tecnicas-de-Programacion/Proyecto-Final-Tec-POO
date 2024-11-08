@@ -393,7 +393,7 @@ public class Mesero extends javax.swing.JFrame {
         txtCategoriaProductoBuscado = new javax.swing.JTextField();
         txtPrecioProductoBuscado = new javax.swing.JTextField();
         txtCantidadProductoBuscado = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnBuscandoProducto = new javax.swing.JButton();
         panelElimProducto = new javax.swing.JPanel();
         btnEliminarProducto = new javax.swing.JButton();
         txtNombreProductoBuscar1 = new javax.swing.JTextField();
@@ -2409,11 +2409,16 @@ public class Mesero extends javax.swing.JFrame {
         });
         panelBuscProducto.add(txtCantidadProductoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 370, 160, 30));
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Buscar producto");
-        panelBuscProducto.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, 160, 70));
+        btnBuscandoProducto.setBackground(new java.awt.Color(153, 153, 0));
+        btnBuscandoProducto.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBuscandoProducto.setForeground(new java.awt.Color(0, 0, 0));
+        btnBuscandoProducto.setText("Buscar producto");
+        btnBuscandoProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscandoProductoActionPerformed(evt);
+            }
+        });
+        panelBuscProducto.add(btnBuscandoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, 160, 70));
 
         jPanelMostrar.add(panelBuscProducto, "card7");
 
@@ -7178,7 +7183,7 @@ public class Mesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnModificarProductoActionPerformed
 
     private void buscarProductoModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarProductoModificarActionPerformed
-       String nombreProductoBuscado = txtNombreProductoModificar.getText().trim();
+        String nombreProductoBuscado = txtNombreProductoModificar.getText().trim();
 
         if (nombreProductoBuscado.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, ingrese el nombre del producto a buscar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -7199,6 +7204,29 @@ public class Mesero extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Producto no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_buscarProductoModificarActionPerformed
+
+    private void btnBuscandoProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscandoProductoActionPerformed
+       String nombreProductoBuscado = txtNombreProductoBuscar.getText().trim();
+
+        if (nombreProductoBuscado.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, ingrese el nombre del producto a buscar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        Producto productoEncontrado = buscarProductoPorNombre(nombreProductoBuscado);
+
+        if (productoEncontrado != null) {
+            
+            txtNombreProductoBuscado.setText(productoEncontrado.getNombre());
+            txtCantidadProductoBuscado.setText(productoEncontrado.getCategoria());
+            txtPrecioProductoBuscado.setText(String.valueOf(productoEncontrado.getPrecio()));
+            txtCantidadProductoBuscado.setText(String.valueOf(productoEncontrado.getCantidadDisponible()));
+
+            JOptionPane.showMessageDialog(rootPane, "Producto encontrado. Puedes proceder a modificarlo.", "Producto Encontrado", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Producto no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnBuscandoProductoActionPerformed
     
     private void actualizarListaProductosDelPedidoMesa1() {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
@@ -7408,6 +7436,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JButton btnBorrarProductoPedidoMesa7;
     private javax.swing.JButton btnBorrarProductoPedidoMesa8;
     private javax.swing.JButton btnBorrarProductoPedidoMesa9;
+    private javax.swing.JButton btnBuscandoProducto;
     private javax.swing.JButton btnBuscarProductoEliminar;
     private javax.swing.JButton btnBuscarRutaMesas;
     private javax.swing.JButton btnBuscarRutaProductos;
@@ -7514,7 +7543,6 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JList<String> detallePedidoMesa7;
     private javax.swing.JList<String> detallePedidoMesa8;
     private javax.swing.JList<String> detallePedidoMesa9;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
