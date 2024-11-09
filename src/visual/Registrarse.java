@@ -4,6 +4,9 @@
  */
 package visual;
 
+import clases.Usuario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author EQUIPO
@@ -33,10 +36,10 @@ public class Registrarse extends javax.swing.JFrame {
         jLabel76 = new javax.swing.JLabel();
         btnRegistrarsse = new javax.swing.JButton();
         jLabel77 = new javax.swing.JLabel();
-        txtRegistrarConfirmarContrasenia = new javax.swing.JTextField();
         txtRegistrarNombreUsuario = new javax.swing.JTextField();
-        txtRegistrarContrasenia = new javax.swing.JTextField();
         btnVolverAtras = new javax.swing.JButton();
+        txtRegistrarContrasenia = new javax.swing.JPasswordField();
+        txtRegistrarConfirmarContrasenia = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,14 +68,17 @@ public class Registrarse extends javax.swing.JFrame {
         btnRegistrarsse.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnRegistrarsse.setForeground(new java.awt.Color(0, 0, 0));
         btnRegistrarsse.setText("Registrarme");
+        btnRegistrarsse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarsseActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnRegistrarsse, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 160, 100));
 
         jLabel77.setForeground(new java.awt.Color(0, 0, 0));
         jLabel77.setText("Contraseña");
         jPanel1.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 243, 146, 40));
-        jPanel1.add(txtRegistrarConfirmarContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, 160, -1));
         jPanel1.add(txtRegistrarNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 160, -1));
-        jPanel1.add(txtRegistrarContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 160, -1));
 
         btnVolverAtras.setBackground(new java.awt.Color(153, 153, 0));
         btnVolverAtras.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -84,6 +90,8 @@ public class Registrarse extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnVolverAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 160, 40));
+        jPanel1.add(txtRegistrarContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 160, -1));
+        jPanel1.add(txtRegistrarConfirmarContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, 160, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,6 +116,42 @@ public class Registrarse extends javax.swing.JFrame {
         new BievenidaO().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVolverAtrasActionPerformed
+
+    private void btnRegistrarsseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarsseActionPerformed
+        String nombreUsuario = txtRegistrarNombreUsuario.getText().trim();
+        String contrasenia = new String(txtRegistrarContrasenia.getPassword()).trim();
+        String confirmarContrasenia = new String(txtRegistrarConfirmarContrasenia.getPassword()).trim();
+
+        if (nombreUsuario.isEmpty() || contrasenia.isEmpty() || confirmarContrasenia.isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "Por favor, complete todos los campos.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        if (!contrasenia.equals(confirmarContrasenia)) {
+            JOptionPane.showMessageDialog(rootPane, "Las contraseñas no coinciden.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        Object[] opciones = {"Mesero", "Administrador"};
+        int seleccion = JOptionPane.showOptionDialog(this, "Seleccione el tipo de usuario:", "Tipo de Usuario",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+
+        Usuario nuevoUsuario;
+        if (seleccion == 0) {
+            nuevoUsuario = new Mesero(nombreUsuario, contrasenia);
+        } else if (seleccion == 1) {
+            nuevoUsuario = new Administrador(nombreUsuario, contrasenia);
+        } else {
+            JOptionPane.showMessageDialog(this, "No se seleccionó ningún tipo de usuario.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        // Aquí se debe agregar el usuario a una lista o base de datos global
+        listaUsuarios.add(nuevoUsuario); // listaUsuarios es una lista global que contiene los usuarios
+
+        JOptionPane.showMessageDialog(this, "Usuario registrado con éxito.", "Registro Exitoso", JOptionPane.INFORMATION_MESSAGE);
+        limpiarCamposRegistro();
+    }//GEN-LAST:event_btnRegistrarsseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,8 +197,8 @@ public class Registrarse extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtRegistrarConfirmarContrasenia;
-    private javax.swing.JTextField txtRegistrarContrasenia;
+    private javax.swing.JPasswordField txtRegistrarConfirmarContrasenia;
+    private javax.swing.JPasswordField txtRegistrarContrasenia;
     private javax.swing.JTextField txtRegistrarNombreUsuario;
     // End of variables declaration//GEN-END:variables
 }
