@@ -21,7 +21,6 @@ public class Administrador extends javax.swing.JFrame {
     public Administrador() {
         initComponents();
         jPanelMostrarAdmin.add(panelAgregarProducto, "panelAgregarProducto");
-        jPanelMostrarAdmin.add(panelProductosAgotados, "panelProductosAgotados");
         jPanelMostrarAdmin.add(panelProductosDisponibles, "panelProductosDisponibles");
         jPanelMostrarAdmin.add(panelEliminarUsuarios, "panelEliminarUsuarios");
         jPanelMostrarAdmin.add(panelAgregarUsuarios, "panelAgregarUsuarios");
@@ -42,20 +41,6 @@ public class Administrador extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelMostrarAdmin = new javax.swing.JPanel();
-        panelProductosAgotados = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        listProductosAgotados = new javax.swing.JList<>();
-        jLabel18 = new javax.swing.JLabel();
-        txtNombreProducto = new javax.swing.JTextField();
-        jLabel26 = new javax.swing.JLabel();
-        btnConfirmarModificarProducto = new javax.swing.JButton();
-        btnCancelarModificacionProducto = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        txtIngreseCantidadProducto = new javax.swing.JTextField();
         panelProductosDisponibles = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -199,7 +184,6 @@ public class Administrador extends javax.swing.JFrame {
         menuInventario = new javax.swing.JMenu();
         menItemAgregarProductos = new javax.swing.JMenuItem();
         menuStock = new javax.swing.JMenu();
-        menItemProductosAgotados = new javax.swing.JMenuItem();
         menItemProductosDisponibles = new javax.swing.JMenuItem();
         menuUsuarios = new javax.swing.JMenu();
         menItemEliminarUsuario = new javax.swing.JMenuItem();
@@ -217,66 +201,6 @@ public class Administrador extends javax.swing.JFrame {
 
         jPanelMostrarAdmin.setPreferredSize(new java.awt.Dimension(500, 500));
         jPanelMostrarAdmin.setLayout(new java.awt.CardLayout());
-
-        panelProductosAgotados.setBackground(new java.awt.Color(153, 153, 153));
-        panelProductosAgotados.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelProductosAgotados.setForeground(new java.awt.Color(153, 153, 153));
-        panelProductosAgotados.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel12.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel12.setText("STOCK DE PRODUCTOS AGOTADOS");
-        panelProductosAgotados.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 25, -1, -1));
-
-        jLabel16.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel16.setText("Estos productos están temporalmente sin stock.");
-        panelProductosAgotados.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 69, -1, -1));
-
-        jLabel17.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel17.setText("Lista de productos sin stock:");
-        panelProductosAgotados.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 101, -1, -1));
-
-        listProductosAgotados.setBackground(new java.awt.Color(255, 204, 51));
-        listProductosAgotados.setForeground(new java.awt.Color(255, 204, 51));
-        jScrollPane3.setViewportView(listProductosAgotados);
-
-        panelProductosAgotados.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 126, 174, 301));
-
-        jLabel18.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel18.setText("Ingrese nombre del producto :");
-        panelProductosAgotados.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(451, 151, -1, -1));
-        panelProductosAgotados.add(txtNombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(451, 176, 231, -1));
-
-        jLabel26.setFont(new java.awt.Font("Segoe UI Black", 3, 14)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel26.setText("Esta seguro de modificar el productos ?");
-        panelProductosAgotados.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 322, -1, -1));
-
-        btnConfirmarModificarProducto.setBackground(new java.awt.Color(0, 153, 0));
-        btnConfirmarModificarProducto.setText("Confirmar");
-        btnConfirmarModificarProducto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelProductosAgotados.add(btnConfirmarModificarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 360, 68, 29));
-
-        btnCancelarModificacionProducto.setBackground(new java.awt.Color(153, 0, 0));
-        btnCancelarModificacionProducto.setText("Cancelar");
-        btnCancelarModificacionProducto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelProductosAgotados.add(btnCancelarModificacionProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(599, 360, 62, 29));
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Reponer stock :");
-        panelProductosAgotados.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 126, 144, -1));
-
-        jLabel19.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel19.setText("Ingrese cantidad a reponer :");
-        panelProductosAgotados.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(464, 228, -1, -1));
-        panelProductosAgotados.add(txtIngreseCantidadProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(464, 253, 179, -1));
-
-        jPanelMostrarAdmin.add(panelProductosAgotados, "card4");
 
         panelProductosDisponibles.setBackground(new java.awt.Color(153, 153, 153));
         panelProductosDisponibles.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -838,15 +762,6 @@ public class Administrador extends javax.swing.JFrame {
         menuStock.setText("Stock");
         menuStock.setPreferredSize(new java.awt.Dimension(122, 50));
 
-        menItemProductosAgotados.setText("Productos Agotados");
-        menItemProductosAgotados.setPreferredSize(new java.awt.Dimension(180, 40));
-        menItemProductosAgotados.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menItemProductosAgotadosActionPerformed(evt);
-            }
-        });
-        menuStock.add(menItemProductosAgotados);
-
         menItemProductosDisponibles.setText("Productos Disponibles");
         menItemProductosDisponibles.setPreferredSize(new java.awt.Dimension(180, 40));
         menItemProductosDisponibles.addActionListener(new java.awt.event.ActionListener() {
@@ -1005,11 +920,6 @@ public class Administrador extends javax.swing.JFrame {
         layout.show(jPanelMostrarAdmin, "panelProductosDisponibles");
     }//GEN-LAST:event_menItemProductosDisponiblesActionPerformed
 
-    private void menItemProductosAgotadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemProductosAgotadosActionPerformed
-        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
-        layout.show(jPanelMostrarAdmin, "panelProductosAgotados");
-    }//GEN-LAST:event_menItemProductosAgotadosActionPerformed
-
     private void menItemAgregarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemAgregarProductosActionPerformed
         CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
         layout.show(jPanelMostrarAdmin, "panelAgregarProducto");
@@ -1117,11 +1027,9 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelarAsignacion;
     private javax.swing.JButton btnCancelarEdicionDatos;
     private javax.swing.JButton btnCancelarEliminacionMesero;
-    private javax.swing.JButton btnCancelarModificacionProducto;
     private javax.swing.JButton btnCancelarRegistroMesero;
     private javax.swing.JButton btnCerrarSesionAdmnistrador;
     private javax.swing.JButton btnConfirmarAsignacion;
-    private javax.swing.JButton btnConfirmarModificarProducto;
     private javax.swing.JButton btnEditarDatosMesero;
     private javax.swing.JButton btnEliminarMesero;
     private javax.swing.JButton btnGenerarReporte;
@@ -1131,24 +1039,17 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton btnSeleccionarMesero;
     private javax.swing.JButton btnVerReporte;
     private javax.swing.JButton btnVerStock;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
@@ -1211,7 +1112,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane9;
@@ -1223,7 +1123,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JList<String> listMeseros;
     private javax.swing.JList<String> listMeserosPermisos;
     private javax.swing.JList<String> listPermisos;
-    private javax.swing.JList<String> listProductosAgotados;
     private javax.swing.JList<String> listProductosDisponibles;
     private javax.swing.JMenuItem menItemAgregarProductos;
     private javax.swing.JMenuItem menItemAgregarUsuario;
@@ -1232,7 +1131,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JMenuItem menItemEliminarUsuario;
     private javax.swing.JMenuItem menItemGestionarUsuarios;
     private javax.swing.JMenuItem menItemModificarUsuario;
-    private javax.swing.JMenuItem menItemProductosAgotados;
     private javax.swing.JMenuItem menItemProductosDisponibles;
     private javax.swing.JMenuItem menItemReporteVentas;
     private javax.swing.JMenu menuCerrar;
@@ -1248,7 +1146,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JPanel panelEliminarUsuarios;
     private javax.swing.JPanel panelGestionarUsuarios;
     private javax.swing.JPanel panelModificarUsuarios;
-    private javax.swing.JPanel panelProductosAgotados;
     private javax.swing.JPanel panelProductosDisponibles;
     private javax.swing.JPanel panelReporteVentas;
     private javax.swing.JTextField txtAgregarPlatoCarta;
@@ -1267,7 +1164,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtGananciaReporteSeleccionado;
     private javax.swing.JTextField txtGestionContraseñaMesero;
     private javax.swing.JTextField txtIngresarPermisoMesero;
-    private javax.swing.JTextField txtIngreseCantidadProducto;
     private javax.swing.JTextField txtIngreseCodigoGenerado;
     private javax.swing.JTextField txtIngreseMeseroEliminar;
     private javax.swing.JTextField txtModificarContarseña;
@@ -1277,7 +1173,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombreMeseroModificar;
     private javax.swing.JTextField txtNombreMeseroPermisos;
     private javax.swing.JTextField txtNombreNuevoMesero;
-    private javax.swing.JTextField txtNombreProducto;
     private javax.swing.JTextField txtNombreProductoDisponible;
     private javax.swing.JTextField txtNuevaContraseñaModificada;
     private javax.swing.JTextField txtPrecioPlato;
