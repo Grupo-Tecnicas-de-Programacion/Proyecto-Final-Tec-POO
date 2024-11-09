@@ -9,6 +9,7 @@ import javax.swing.JFileChooser;
 import clases.Mesa;
 import clases.Pedido;
 import clases.Producto;
+import clases.Reporte;
 import java.awt.Color;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -9029,7 +9030,7 @@ public class Mesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGenerarReciboMesa12ActionPerformed
 
     private void btnGenerarReporteDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteDiaActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnGenerarReporteDiaActionPerformed
     
     private void actualizarListaProductosDelPedidoMesa1() {
