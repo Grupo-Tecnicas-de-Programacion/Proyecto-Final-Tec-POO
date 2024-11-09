@@ -24,7 +24,6 @@ public class Administrador extends javax.swing.JFrame {
         jPanelMostrarAdmin.add(panelAgregarUsuarios, "panelAgregarUsuarios");
         jPanelMostrarAdmin.add(panelModificarUsuarios, "panelModificarUsuarios");
         jPanelMostrarAdmin.add(panelGestionarUsuarios, "panelGestionarUsuarios");
-        jPanelMostrarAdmin.add(panelAsignarPermisos, "panelAsignarPermisos");
         jPanelMostrarAdmin.add(panelReporteVentas, "panelReporteVentas");
         jPanelMostrarAdmin.add(panelCerrarSesion, "panelCerrarSesion");
     }
@@ -105,23 +104,6 @@ public class Administrador extends javax.swing.JFrame {
         jLabel70 = new javax.swing.JLabel();
         btnSeleccionarMesero = new javax.swing.JButton();
         jLabel25 = new javax.swing.JLabel();
-        panelAsignarPermisos = new javax.swing.JPanel();
-        jLabel71 = new javax.swing.JLabel();
-        jLabel72 = new javax.swing.JLabel();
-        jScrollPane15 = new javax.swing.JScrollPane();
-        listMeserosPermisos = new javax.swing.JList<>();
-        jLabel73 = new javax.swing.JLabel();
-        jScrollPane16 = new javax.swing.JScrollPane();
-        listPermisos = new javax.swing.JList<>();
-        jLabel74 = new javax.swing.JLabel();
-        txtNombreMeseroPermisos = new javax.swing.JTextField();
-        jLabel75 = new javax.swing.JLabel();
-        txtIngresarPermisoMesero = new javax.swing.JTextField();
-        jLabel76 = new javax.swing.JLabel();
-        btnConfirmarAsignacion = new javax.swing.JButton();
-        btnCancelarAsignacion = new javax.swing.JButton();
-        btnRestablecerCambios = new javax.swing.JButton();
-        jLabel27 = new javax.swing.JLabel();
         panelReporteVentas = new javax.swing.JPanel();
         jLabel79 = new javax.swing.JLabel();
         jLabel80 = new javax.swing.JLabel();
@@ -151,15 +133,11 @@ public class Administrador extends javax.swing.JFrame {
         btnCerrarSesionAdmnistrador = new javax.swing.JButton();
         txtCodigoGenerado = new javax.swing.JTextField();
         jMenuAdmin = new javax.swing.JMenuBar();
-        menuInventario = new javax.swing.JMenu();
-        menuStock = new javax.swing.JMenu();
         menuUsuarios = new javax.swing.JMenu();
         menItemEliminarUsuario = new javax.swing.JMenuItem();
         menItemAgregarUsuario = new javax.swing.JMenuItem();
         menItemModificarUsuario = new javax.swing.JMenuItem();
         menItemGestionarUsuarios = new javax.swing.JMenuItem();
-        menuPermisos = new javax.swing.JMenu();
-        menItemAsignarPermisos = new javax.swing.JMenuItem();
         menuReportes = new javax.swing.JMenu();
         menItemReporteVentas = new javax.swing.JMenuItem();
         menuCerrar = new javax.swing.JMenu();
@@ -424,74 +402,6 @@ public class Administrador extends javax.swing.JFrame {
 
         jPanelMostrarAdmin.add(panelGestionarUsuarios, "card9");
 
-        panelAsignarPermisos.setBackground(new java.awt.Color(153, 153, 153));
-        panelAsignarPermisos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelAsignarPermisos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel71.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
-        jLabel71.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel71.setText("ASIGNACION DE PERMISOS");
-        panelAsignarPermisos.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 24, -1, -1));
-
-        jLabel72.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel72.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel72.setText("Lista de meseros :");
-        panelAsignarPermisos.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 74, -1, -1));
-
-        listMeserosPermisos.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane15.setViewportView(listMeserosPermisos);
-
-        panelAsignarPermisos.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 105, 115, 316));
-
-        jLabel73.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel73.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel73.setText("Lista de permisos :");
-        panelAsignarPermisos.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 74, -1, -1));
-
-        listPermisos.setBackground(new java.awt.Color(255, 153, 51));
-        jScrollPane16.setViewportView(listPermisos);
-
-        panelAsignarPermisos.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 105, 117, 316));
-
-        jLabel74.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel74.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel74.setText("Ingresar nombre del mesero :");
-        panelAsignarPermisos.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(471, 142, -1, -1));
-        panelAsignarPermisos.add(txtNombreMeseroPermisos, new org.netbeans.lib.awtextra.AbsoluteConstraints(471, 173, 326, -1));
-
-        jLabel75.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel75.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel75.setText("Ingresar permiso :");
-        panelAsignarPermisos.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(471, 213, -1, -1));
-        panelAsignarPermisos.add(txtIngresarPermisoMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(471, 244, 326, -1));
-
-        jLabel76.setFont(new java.awt.Font("Segoe UI Black", 3, 14)); // NOI18N
-        jLabel76.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel76.setText("Confirmar los cambios selecionados.");
-        panelAsignarPermisos.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(489, 284, -1, -1));
-
-        btnConfirmarAsignacion.setBackground(new java.awt.Color(0, 153, 0));
-        btnConfirmarAsignacion.setText("Confirmar");
-        btnConfirmarAsignacion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelAsignarPermisos.add(btnConfirmarAsignacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 310, 83, 35));
-
-        btnCancelarAsignacion.setBackground(new java.awt.Color(204, 0, 0));
-        btnCancelarAsignacion.setText("Cancelar");
-        btnCancelarAsignacion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelAsignarPermisos.add(btnCancelarAsignacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(656, 311, 69, 32));
-
-        btnRestablecerCambios.setBackground(new java.awt.Color(0, 51, 255));
-        btnRestablecerCambios.setText("Restablecer cambios.");
-        btnRestablecerCambios.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelAsignarPermisos.add(btnRestablecerCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, 363, 139, 35));
-
-        jLabel27.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel27.setText("Modificar o asignar permiso :");
-        panelAsignarPermisos.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(521, 105, -1, -1));
-
-        jPanelMostrarAdmin.add(panelAsignarPermisos, "card10");
-
         panelReporteVentas.setBackground(new java.awt.Color(153, 153, 153));
         panelReporteVentas.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         panelReporteVentas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -601,14 +511,6 @@ public class Administrador extends javax.swing.JFrame {
 
         jMenuAdmin.setPreferredSize(new java.awt.Dimension(850, 51));
 
-        menuInventario.setText("Inventario");
-        menuInventario.setPreferredSize(new java.awt.Dimension(122, 50));
-        jMenuAdmin.add(menuInventario);
-
-        menuStock.setText("Stock");
-        menuStock.setPreferredSize(new java.awt.Dimension(122, 50));
-        jMenuAdmin.add(menuStock);
-
         menuUsuarios.setText("Usuarios");
         menuUsuarios.setPreferredSize(new java.awt.Dimension(122, 50));
 
@@ -649,20 +551,6 @@ public class Administrador extends javax.swing.JFrame {
         menuUsuarios.add(menItemGestionarUsuarios);
 
         jMenuAdmin.add(menuUsuarios);
-
-        menuPermisos.setText("Permisos");
-        menuPermisos.setPreferredSize(new java.awt.Dimension(180, 40));
-
-        menItemAsignarPermisos.setText("Asignar Permisos");
-        menItemAsignarPermisos.setPreferredSize(new java.awt.Dimension(180, 30));
-        menItemAsignarPermisos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menItemAsignarPermisosActionPerformed(evt);
-            }
-        });
-        menuPermisos.add(menItemAsignarPermisos);
-
-        jMenuAdmin.add(menuPermisos);
 
         menuReportes.setText("Reportes");
         menuReportes.setPreferredSize(new java.awt.Dimension(180, 40));
@@ -725,11 +613,6 @@ public class Administrador extends javax.swing.JFrame {
         CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
         layout.show(jPanelMostrarAdmin, "panelReporteVentas");
     }//GEN-LAST:event_menItemReporteVentasActionPerformed
-
-    private void menItemAsignarPermisosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemAsignarPermisosActionPerformed
-        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
-        layout.show(jPanelMostrarAdmin, "panelAsignarPermisos");
-    }//GEN-LAST:event_menItemAsignarPermisosActionPerformed
 
     private void menItemGestionarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemGestionarUsuariosActionPerformed
         CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
@@ -848,22 +731,18 @@ public class Administrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelarAsignacion;
     private javax.swing.JButton btnCancelarEdicionDatos;
     private javax.swing.JButton btnCancelarEliminacionMesero;
     private javax.swing.JButton btnCancelarRegistroMesero;
     private javax.swing.JButton btnCerrarSesionAdmnistrador;
-    private javax.swing.JButton btnConfirmarAsignacion;
     private javax.swing.JButton btnEditarDatosMesero;
     private javax.swing.JButton btnEliminarMesero;
     private javax.swing.JButton btnGenerarReporte;
     private javax.swing.JButton btnRegistroMesero;
     private javax.swing.JList<String> btnReporteVentas;
-    private javax.swing.JButton btnRestablecerCambios;
     private javax.swing.JButton btnSeleccionarMesero;
     private javax.swing.JButton btnVerReporte;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
@@ -900,12 +779,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
-    private javax.swing.JLabel jLabel72;
-    private javax.swing.JLabel jLabel73;
-    private javax.swing.JLabel jLabel74;
-    private javax.swing.JLabel jLabel75;
-    private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
@@ -918,8 +791,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelMostrarAdmin;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane12;
-    private javax.swing.JScrollPane jScrollPane15;
-    private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane9;
@@ -927,23 +798,16 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JList<String> listGestionMeseros;
     private javax.swing.JList<String> listMeseroActualizados;
     private javax.swing.JList<String> listMeseros;
-    private javax.swing.JList<String> listMeserosPermisos;
-    private javax.swing.JList<String> listPermisos;
     private javax.swing.JMenuItem menItemAgregarUsuario;
-    private javax.swing.JMenuItem menItemAsignarPermisos;
     private javax.swing.JMenuItem menItemCerrarSecsion;
     private javax.swing.JMenuItem menItemEliminarUsuario;
     private javax.swing.JMenuItem menItemGestionarUsuarios;
     private javax.swing.JMenuItem menItemModificarUsuario;
     private javax.swing.JMenuItem menItemReporteVentas;
     private javax.swing.JMenu menuCerrar;
-    private javax.swing.JMenu menuInventario;
-    private javax.swing.JMenu menuPermisos;
     private javax.swing.JMenu menuReportes;
-    private javax.swing.JMenu menuStock;
     private javax.swing.JMenu menuUsuarios;
     private javax.swing.JPanel panelAgregarUsuarios;
-    private javax.swing.JPanel panelAsignarPermisos;
     private javax.swing.JPanel panelCerrarSesion;
     private javax.swing.JPanel panelEliminarUsuarios;
     private javax.swing.JPanel panelGestionarUsuarios;
@@ -961,7 +825,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtFechaReporteSeleccionado;
     private javax.swing.JTextField txtGananciaReporteSeleccionado;
     private javax.swing.JTextField txtGestionContraseñaMesero;
-    private javax.swing.JTextField txtIngresarPermisoMesero;
     private javax.swing.JTextField txtIngreseCodigoGenerado;
     private javax.swing.JTextField txtIngreseMeseroEliminar;
     private javax.swing.JTextField txtModificarContarseña;
@@ -969,7 +832,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtModificarTelefono;
     private javax.swing.JTextField txtNombreGestionMesero;
     private javax.swing.JTextField txtNombreMeseroModificar;
-    private javax.swing.JTextField txtNombreMeseroPermisos;
     private javax.swing.JTextField txtNombreNuevoMesero;
     private javax.swing.JTextField txtNuevaContraseñaModificada;
     private javax.swing.JTextField txtTelefonoNuevomesero;
