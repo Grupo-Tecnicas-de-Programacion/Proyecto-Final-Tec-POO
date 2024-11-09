@@ -1,6 +1,7 @@
 
 package visual;
 
+import clases.GestionReportes;
 import java.awt.CardLayout;
 import java.io.BufferedReader;
 import java.io.File;
@@ -12,7 +13,6 @@ import clases.Producto;
 import clases.Reporte;
 import java.awt.Color;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -69,6 +69,7 @@ public class Mesero extends javax.swing.JFrame {
     private ArrayList<Pedido> pedidosMesa11Llevar = new ArrayList<>();
     private ArrayList<Pedido> pedidosMesa12 = new ArrayList<>();
     private ArrayList<Pedido> pedidosMesa12Llevar = new ArrayList<>();
+    private ArrayList<Producto> productosVendidos = new ArrayList<>();
     
     public Mesero() {
         initComponents();
@@ -2860,12 +2861,7 @@ public class Mesero extends javax.swing.JFrame {
         jLabel147.setForeground(new java.awt.Color(0, 0, 0));
         jLabel147.setText("Nombre del reporte");
         panelGenerarReporte.add(jLabel147, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 146, 33));
-
-        txtFechaGenerarReporte.setText("Fecha del reporte");
         panelGenerarReporte.add(txtFechaGenerarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 160, 30));
-
-        txtNombreGenerarReporte.setEditable(false);
-        txtNombreGenerarReporte.setText("Nombre del reporte");
         panelGenerarReporte.add(txtNombreGenerarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 160, 30));
 
         btnGenerarReporteDia.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -7996,6 +7992,20 @@ public class Mesero extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnTotalCuentaMesa12ActionPerformed
 
+    private void registrarProductoVendido(Producto producto) {
+        boolean productoExistente = false;
+        for (Producto p : productosVendidos) {
+            if (p.getNombre().equals(producto.getNombre())) {
+                p.setCantidad(p.getCantidad() + producto.getCantidad());
+                productoExistente = true;
+                break;
+            }
+        }
+        if (!productoExistente) {
+            productosVendidos.add(new Producto(producto.getNombre(), producto.getPrecio(), producto.getCantidad()));
+        }
+    }
+    
     private void btnGenerarReciboMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa1ActionPerformed
         
         double totalCuenta = calcularCuentaMesa(pedidosMesa1, pedidosMesa1Llevar);
@@ -8003,7 +8013,7 @@ public class Mesero extends javax.swing.JFrame {
         if (totalCuenta == 0) {
             JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         } else {
-            
+
             String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
             while (nombreCliente == null || nombreCliente.isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
                 nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente:");
@@ -8013,7 +8023,7 @@ public class Mesero extends javax.swing.JFrame {
             while (apellidoCliente == null || apellidoCliente.isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
                 apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente:");
             }
-        
+
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
             fileChooser.setSelectedFile(new File("recibo_mesa1.txt")); 
@@ -8032,6 +8042,8 @@ public class Mesero extends javax.swing.JFrame {
                         writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
                         for (Producto producto : pedido.getListaProductos()) {
                             writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
                         }
                         writer.println();
                     }
@@ -8040,6 +8052,8 @@ public class Mesero extends javax.swing.JFrame {
                         writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
                         for (Producto producto : pedido.getListaProductos()) {
                             writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
                         }
                         writer.println();
                     }
@@ -9029,8 +9043,52 @@ public class Mesero extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGenerarReciboMesa12ActionPerformed
 
-    private void btnGenerarReporteDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteDiaActionPerformed
+    private double calcularTotalGananciasGlobal() {
+        double total = 0;
         
+        for (Producto producto : productosVendidos) {
+            total += producto.getCantidad() * producto.getPrecio();
+        }
+        
+        return total;
+    }
+
+    private int calcularCantidadProductosVendidosGlobal() {
+
+        int totalCantidad = 0;
+
+        for (Producto producto : productosVendidos) {
+            totalCantidad += producto.getCantidad();
+        }
+
+        return totalCantidad;
+
+    }
+    
+    private void btnGenerarReporteDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteDiaActionPerformed
+        String fecha = txtFechaGenerarReporte.getText().trim();
+        String nombre = txtNombreGenerarReporte.getText().trim();
+
+        if (!fecha.matches("\\d{2}/\\d{2}/\\d{4}")) {
+            JOptionPane.showMessageDialog(this, "La fecha debe estar en formato dd/MM/yyyy.", "Formato de fecha incorrecto", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        if (fecha.isEmpty() || nombre.isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "Por favor, complete todos los campos.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        double totalGanancias = calcularTotalGananciasGlobal();
+        int cantidadProductosVendidos = calcularCantidadProductosVendidosGlobal();
+
+        Reporte nuevoReporte = new Reporte(fecha, nombre, totalGanancias, cantidadProductosVendidos);
+        GestionReportes.agregarReporte(nuevoReporte);
+
+        JOptionPane.showMessageDialog(rootPane, "Reporte generado correctamente.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+
+        txtFechaGenerarReporte.setText("");
+        txtNombreGenerarReporte.setText("");
     }//GEN-LAST:event_btnGenerarReporteDiaActionPerformed
     
     private void actualizarListaProductosDelPedidoMesa1() {

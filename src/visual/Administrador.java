@@ -8,6 +8,9 @@ package visual;
 
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
+import clases.GestionReportes;
+import clases.Reporte;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -168,13 +171,13 @@ public class Administrador extends javax.swing.JFrame {
         jLabel79 = new javax.swing.JLabel();
         jLabel80 = new javax.swing.JLabel();
         jLabel81 = new javax.swing.JLabel();
-        txtFechaInicio = new javax.swing.JTextField();
+        txtFechaInicioReporteBuscar = new javax.swing.JTextField();
         jLabel82 = new javax.swing.JLabel();
-        txtFechaFinal = new javax.swing.JTextField();
+        txtFechaFinalReporteBuscar = new javax.swing.JTextField();
         jScrollPane18 = new javax.swing.JScrollPane();
-        btnReporteVentas = new javax.swing.JList<>();
+        listaReportesEncontrados = new javax.swing.JList<>();
         jLabel83 = new javax.swing.JLabel();
-        btnGenerarReporte = new javax.swing.JButton();
+        btnBuscarReportes = new javax.swing.JButton();
         jLabel85 = new javax.swing.JLabel();
         btnVerReporte = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -184,6 +187,8 @@ public class Administrador extends javax.swing.JFrame {
         txtFechaReporteSeleccionado = new javax.swing.JTextField();
         jLabel59 = new javax.swing.JLabel();
         txtCantidadReporteSeleccionado = new javax.swing.JTextField();
+        jLabel62 = new javax.swing.JLabel();
+        txtNombreReporteSeleccionado = new javax.swing.JTextField();
         panelCerrarSesion = new javax.swing.JPanel();
         jLabel86 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
@@ -716,6 +721,7 @@ public class Administrador extends javax.swing.JFrame {
 
         panelReporteVentas.setBackground(new java.awt.Color(153, 153, 153));
         panelReporteVentas.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panelReporteVentas.setPreferredSize(new java.awt.Dimension(850, 500));
         panelReporteVentas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel79.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
@@ -732,16 +738,16 @@ public class Administrador extends javax.swing.JFrame {
         jLabel81.setForeground(new java.awt.Color(0, 0, 0));
         jLabel81.setText("Desde :");
         panelReporteVentas.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
-        panelReporteVentas.add(txtFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 158, -1));
+        panelReporteVentas.add(txtFechaInicioReporteBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 158, -1));
 
         jLabel82.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel82.setForeground(new java.awt.Color(0, 0, 0));
         jLabel82.setText("Hasta :");
         panelReporteVentas.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
-        panelReporteVentas.add(txtFechaFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 158, -1));
+        panelReporteVentas.add(txtFechaFinalReporteBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 158, -1));
 
-        btnReporteVentas.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane18.setViewportView(btnReporteVentas);
+        listaReportesEncontrados.setBackground(new java.awt.Color(255, 204, 51));
+        jScrollPane18.setViewportView(listaReportesEncontrados);
 
         panelReporteVentas.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 206, 240));
 
@@ -750,36 +756,50 @@ public class Administrador extends javax.swing.JFrame {
         jLabel83.setText("Reportes encontrados");
         panelReporteVentas.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
 
-        btnGenerarReporte.setBackground(new java.awt.Color(102, 102, 0));
-        btnGenerarReporte.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnGenerarReporte.setText("Buscar reportes");
-        panelReporteVentas.add(btnGenerarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, 60));
+        btnBuscarReportes.setBackground(new java.awt.Color(102, 102, 0));
+        btnBuscarReportes.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnBuscarReportes.setText("Buscar reportes");
+        btnBuscarReportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarReportesActionPerformed(evt);
+            }
+        });
+        panelReporteVentas.add(btnBuscarReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, 60));
 
         jLabel85.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel85.setForeground(new java.awt.Color(0, 0, 0));
         jLabel85.setText("Visualizacion del reporte seleccionado");
-        panelReporteVentas.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, -1, -1));
+        panelReporteVentas.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, -1, -1));
 
         btnVerReporte.setBackground(new java.awt.Color(102, 102, 0));
         btnVerReporte.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnVerReporte.setText("Ver reporte");
+        btnVerReporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerReporteActionPerformed(evt);
+            }
+        });
         panelReporteVentas.add(btnVerReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 110, 50));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel51.setText("Cantidad de productos vendidos");
-        jPanel1.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 200, 30));
-        jPanel1.add(txtGananciaReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 150, 30));
+        jPanel1.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 170, 30));
+        jPanel1.add(txtGananciaReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 150, 30));
 
         jLabel52.setText("Fecha del reporte");
-        jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 108, 30));
-        jPanel1.add(txtFechaReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 22, 150, 30));
+        jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 108, 30));
+        jPanel1.add(txtFechaReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 150, 30));
 
         jLabel59.setText("Total ganancia");
-        jPanel1.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, -1));
-        jPanel1.add(txtCantidadReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 150, 30));
+        jPanel1.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, 30));
+        jPanel1.add(txtCantidadReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 150, 30));
 
-        panelReporteVentas.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, 290, 280));
+        jLabel62.setText("Nombre");
+        jPanel1.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 50, 30));
+        jPanel1.add(txtNombreReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 150, 30));
+
+        panelReporteVentas.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 130, 290, 340));
 
         jPanelMostrarAdmin.add(panelReporteVentas, "card11");
 
@@ -1128,6 +1148,65 @@ public class Administrador extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnCerrarSesionAdmnistradorActionPerformed
 
+    private void btnBuscarReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarReportesActionPerformed
+         String fechaDesde = txtFechaInicioReporteBuscar.getText().trim();
+        String fechaHasta = txtFechaFinalReporteBuscar.getText().trim();
+
+        if (!fechaDesde.matches("\\d{2}/\\d{2}/\\d{4}") || !fechaHasta.matches("\\d{2}/\\d{2}/\\d{4}")) {
+            JOptionPane.showMessageDialog(this, "Las fechas deben estar en formato dd/MM/yyyy.", "Formato de fecha incorrecto", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        if (fechaDesde.isEmpty() || fechaHasta.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, ingrese ambas fechas para buscar reportes.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        DefaultListModel<String> modeloReportes = new DefaultListModel<>();
+        for (Reporte reporte : GestionReportes.getListaReportes()) {
+            if (reporte.getFecha().compareTo(fechaDesde) >= 0 && reporte.getFecha().compareTo(fechaHasta) <= 0) {
+                modeloReportes.addElement(reporte.getNombre() + " - Fecha: " + reporte.getFecha());
+            }
+        }
+
+        if (modeloReportes.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No se encontraron reportes en el rango de fechas especificado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+        listaReportesEncontrados.setModel(modeloReportes);
+    }//GEN-LAST:event_btnBuscarReportesActionPerformed
+
+    private Reporte buscarReportePorNombre(String nombreReporte) {
+        for (Reporte reporte : GestionReportes.getListaReportes()) {
+            if (reporte.getNombre().equalsIgnoreCase(nombreReporte)) {
+                return reporte;
+            }
+        }
+        return null;
+    }
+    
+    private void btnVerReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerReporteActionPerformed
+        int index = listaReportesEncontrados.getSelectedIndex();
+
+        if (index >= 0) {
+            String reporteSeleccionado = listaReportesEncontrados.getSelectedValue();
+            String nombreReporte = reporteSeleccionado.split(" -")[0].trim();
+
+            Reporte reporte = buscarReportePorNombre(nombreReporte);
+
+            if (reporte != null) {
+                txtNombreReporteSeleccionado.setText(reporte.getNombre());
+                txtFechaReporteSeleccionado.setText(reporte.getFecha());
+                txtCantidadReporteSeleccionado.setText(String.valueOf(reporte.getCantidadProductosVendidos()));
+                txtGananciaReporteSeleccionado.setText(String.format("S/ %.2f", reporte.getTotalGanancias()));
+            } else {
+                JOptionPane.showMessageDialog(this, "Error al cargar el reporte.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, seleccione un reporte de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnVerReporteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1196,6 +1275,7 @@ public class Administrador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarProducto;
+    private javax.swing.JButton btnBuscarReportes;
     private javax.swing.JButton btnCancelarAgregacion;
     private javax.swing.JButton btnCancelarAsignacion;
     private javax.swing.JButton btnCancelarEdicionDatos;
@@ -1210,9 +1290,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton btnEditarDatosMesero;
     private javax.swing.JButton btnEliminarMesero;
     private javax.swing.JButton btnEliminarProducto;
-    private javax.swing.JButton btnGenerarReporte;
     private javax.swing.JButton btnRegistroMesero;
-    private javax.swing.JList<String> btnReporteVentas;
     private javax.swing.JButton btnRestablecerCambios;
     private javax.swing.JButton btnSeleccionarMesero;
     private javax.swing.JButton btnVerReporte;
@@ -1275,6 +1353,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
@@ -1318,6 +1397,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JList<String> listProductosAgotados;
     private javax.swing.JList<String> listProductosDisponibles;
     private javax.swing.JList<String> listTodosLosProductos;
+    private javax.swing.JList<String> listaReportesEncontrados;
     private javax.swing.JMenuItem menItemAgregarProductos;
     private javax.swing.JMenuItem menItemAgregarUsuario;
     private javax.swing.JMenuItem menItemAsignarPermisos;
@@ -1356,8 +1436,8 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtConfirmarContraseñaNuevoMesero;
     private javax.swing.JTextField txtContraseñaAdministrador;
     private javax.swing.JTextField txtContraseñaNuevoMesero;
-    private javax.swing.JTextField txtFechaFinal;
-    private javax.swing.JTextField txtFechaInicio;
+    private javax.swing.JTextField txtFechaFinalReporteBuscar;
+    private javax.swing.JTextField txtFechaInicioReporteBuscar;
     private javax.swing.JTextField txtFechaReporteSeleccionado;
     private javax.swing.JTextField txtGananciaReporteSeleccionado;
     private javax.swing.JTextField txtGestionContraseñaMesero;
@@ -1375,6 +1455,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombreNuevoMesero;
     private javax.swing.JTextField txtNombreProducto;
     private javax.swing.JTextField txtNombreProductoDisponible;
+    private javax.swing.JTextField txtNombreReporteSeleccionado;
     private javax.swing.JTextField txtNuevaContraseñaModificada;
     private javax.swing.JTextField txtPrecioPlato;
     private javax.swing.JTextField txtTelefonoNuevomesero;
