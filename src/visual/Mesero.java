@@ -7705,47 +7705,124 @@ public class Mesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTotalCuentaMesa1ActionPerformed
 
     private void btnTotalCuentaMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa2ActionPerformed
-        // TODO add your handling code here:
+        double totalCuentaMesa = calcularCuentaMesa(pedidosMesa2, pedidosMesa2Llevar);
+        
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 2 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+        
+        if (totalCuentaMesa == 0) {
+        
+            btnMesa2.setBackground(Color.green);
+        }
     }//GEN-LAST:event_btnTotalCuentaMesa2ActionPerformed
 
     private void btnTotalCuentaMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa3ActionPerformed
-        // TODO add your handling code here:
+        double totalCuentaMesa = calcularCuentaMesa(pedidosMesa3, pedidosMesa3Llevar);
+        
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 3 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+        
+        if (totalCuentaMesa == 0) {
+        
+            btnMesa3.setBackground(Color.green);
+        }
     }//GEN-LAST:event_btnTotalCuentaMesa3ActionPerformed
 
     private void btnTotalCuentaMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa4ActionPerformed
-        // TODO add your handling code here:
+         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa4, pedidosMesa4Llevar);
+        
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 4 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+        
+        if (totalCuentaMesa == 0) {
+        
+            btnMesa4.setBackground(Color.green);
+        }
     }//GEN-LAST:event_btnTotalCuentaMesa4ActionPerformed
 
     private void btnTotalCuentaMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa5ActionPerformed
-        // TODO add your handling code here:
+         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa5, pedidosMesa5Llevar);
+        
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 5 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+        
+        if (totalCuentaMesa == 0) {
+        
+            btnMesa5.setBackground(Color.green);
+        }
     }//GEN-LAST:event_btnTotalCuentaMesa5ActionPerformed
 
     private void btnTotalCuentaMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa6ActionPerformed
-        // TODO add your handling code here:
+         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa6, pedidosMesa6Llevar);
+        
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 6 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+        
+        if (totalCuentaMesa == 0) {
+        
+            btnMesa6.setBackground(Color.green);
+        }
     }//GEN-LAST:event_btnTotalCuentaMesa6ActionPerformed
 
     private void btnTotalCuentaMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa7ActionPerformed
-        // TODO add your handling code here:
+         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa7, pedidosMesa7Llevar);
+        
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 7 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+        
+        if (totalCuentaMesa == 0) {
+        
+            btnMesa7.setBackground(Color.green);
+        }
     }//GEN-LAST:event_btnTotalCuentaMesa7ActionPerformed
 
     private void btnTotalCuentaMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa8ActionPerformed
-        // TODO add your handling code here:
+         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa8, pedidosMesa8Llevar);
+        
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 8 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+        
+        if (totalCuentaMesa == 0) {
+        
+            btnMesa8.setBackground(Color.green);
+        }
     }//GEN-LAST:event_btnTotalCuentaMesa8ActionPerformed
 
     private void btnTotalCuentaMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa9ActionPerformed
-        // TODO add your handling code here:
+         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa9, pedidosMesa9Llevar);
+        
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 9 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+        
+        if (totalCuentaMesa == 0) {
+        
+            btnMesa9.setBackground(Color.green);
+        }
     }//GEN-LAST:event_btnTotalCuentaMesa9ActionPerformed
 
     private void btnTotalCuentaMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa10ActionPerformed
-        // TODO add your handling code here:
+         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa10, pedidosMesa10Llevar);
+        
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 10 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+        
+        if (totalCuentaMesa == 0) {
+        
+            btnMesa10.setBackground(Color.green);
+        }
     }//GEN-LAST:event_btnTotalCuentaMesa10ActionPerformed
 
     private void btnTotalCuentaMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa11ActionPerformed
-        // TODO add your handling code here:
+         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa11, pedidosMesa11Llevar);
+        
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 11 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+        
+        if (totalCuentaMesa == 0) {
+        
+            btnMesa11.setBackground(Color.green);
+        }
     }//GEN-LAST:event_btnTotalCuentaMesa11ActionPerformed
 
     private void btnTotalCuentaMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa12ActionPerformed
-        // TODO add your handling code here:
+         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa12, pedidosMesa12Llevar);
+        
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 12 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+        
+        if (totalCuentaMesa == 0) {
+        
+            btnMesa12.setBackground(Color.green);
+        }
     }//GEN-LAST:event_btnTotalCuentaMesa12ActionPerformed
 
     private void btnGenerarReciboMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa1ActionPerformed
