@@ -55,21 +55,15 @@ public class JframeAdministrador extends javax.swing.JFrame {
         panelAgregarUsuarios = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
-        btnRegistroMesero = new javax.swing.JButton();
-        btnCancelarRegistroMesero = new javax.swing.JButton();
-        txtNombreNuevoMesero = new javax.swing.JTextField();
-        txtApellidoNuevoMesero = new javax.swing.JTextField();
+        btnConfirmarContraseña = new javax.swing.JButton();
+        btnCancelarContraseña = new javax.swing.JButton();
         txtUsuarioNuevoMesero = new javax.swing.JTextField();
         txtContraseñaNuevoMesero = new javax.swing.JTextField();
         txtConfirmarContraseñaNuevoMesero = new javax.swing.JTextField();
-        txtTelefonoNuevomesero = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
         listMeseroActualizados = new javax.swing.JList<>();
@@ -193,56 +187,38 @@ public class JframeAdministrador extends javax.swing.JFrame {
         jLabel36.setText("Completa los sigueintes campos para el registro :");
         panelAgregarUsuarios.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 84, -1, -1));
 
-        jLabel37.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel37.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel37.setText("Nombres : ");
-        panelAgregarUsuarios.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 120, -1, -1));
-
-        jLabel38.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel38.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel38.setText("Apellidos :");
-        panelAgregarUsuarios.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 185, -1, -1));
-
         jLabel39.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(0, 0, 0));
         jLabel39.setText("Nombre de usuario : ");
-        panelAgregarUsuarios.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 249, -1, -1));
+        panelAgregarUsuarios.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
 
         jLabel40.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(0, 0, 0));
         jLabel40.setText("Contraseña :");
-        panelAgregarUsuarios.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 320, -1, -1));
+        panelAgregarUsuarios.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, -1));
 
         jLabel41.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(0, 0, 0));
         jLabel41.setText("Confirmacion de contraseña : ");
-        panelAgregarUsuarios.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 120, -1, -1));
-
-        jLabel42.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel42.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel42.setText("Telefono : ");
-        panelAgregarUsuarios.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 185, -1, -1));
+        panelAgregarUsuarios.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, -1, -1));
 
         jLabel44.setFont(new java.awt.Font("Segoe UI Black", 3, 14)); // NOI18N
         jLabel44.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel44.setText("Desea registrar al mesero ? ");
+        jLabel44.setText("Confirmar contraseña ?");
         panelAgregarUsuarios.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 320, -1, -1));
 
-        btnRegistroMesero.setBackground(new java.awt.Color(0, 153, 0));
-        btnRegistroMesero.setText("Confirmar");
-        btnRegistroMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelAgregarUsuarios.add(btnRegistroMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 358, 72, 28));
+        btnConfirmarContraseña.setBackground(new java.awt.Color(0, 153, 0));
+        btnConfirmarContraseña.setText("Confirmar");
+        btnConfirmarContraseña.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panelAgregarUsuarios.add(btnConfirmarContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 358, 72, 28));
 
-        btnCancelarRegistroMesero.setBackground(new java.awt.Color(153, 0, 0));
-        btnCancelarRegistroMesero.setText("Cancelar");
-        btnCancelarRegistroMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelAgregarUsuarios.add(btnCancelarRegistroMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 358, 66, 28));
-        panelAgregarUsuarios.add(txtNombreNuevoMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 151, 233, -1));
-        panelAgregarUsuarios.add(txtApellidoNuevoMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 210, 233, -1));
-        panelAgregarUsuarios.add(txtUsuarioNuevoMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 280, 233, -1));
-        panelAgregarUsuarios.add(txtContraseñaNuevoMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 347, 233, -1));
-        panelAgregarUsuarios.add(txtConfirmarContraseñaNuevoMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 151, 164, -1));
-        panelAgregarUsuarios.add(txtTelefonoNuevomesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 210, 164, -1));
+        btnCancelarContraseña.setBackground(new java.awt.Color(153, 0, 0));
+        btnCancelarContraseña.setText("Cancelar");
+        btnCancelarContraseña.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panelAgregarUsuarios.add(btnCancelarContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 358, 66, 28));
+        panelAgregarUsuarios.add(txtUsuarioNuevoMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 233, -1));
+        panelAgregarUsuarios.add(txtContraseñaNuevoMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 233, -1));
+        panelAgregarUsuarios.add(txtConfirmarContraseñaNuevoMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 164, -1));
 
         jLabel45.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(0, 0, 0));
@@ -725,11 +701,11 @@ public class JframeAdministrador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarReportes;
+    private javax.swing.JButton btnCancelarContraseña;
     private javax.swing.JButton btnCancelarEliminacionMesero;
-    private javax.swing.JButton btnCancelarRegistroMesero;
     private javax.swing.JButton btnCerrarSesionAdmnistrador;
+    private javax.swing.JButton btnConfirmarContraseña;
     private javax.swing.JButton btnEliminarMesero;
-    private javax.swing.JButton btnRegistroMesero;
     private javax.swing.JButton btnSeleccionarMesero;
     private javax.swing.JButton btnVerReporte;
     private javax.swing.JLabel jLabel25;
@@ -742,12 +718,9 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
@@ -790,7 +763,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private javax.swing.JPanel panelEliminarUsuarios;
     private javax.swing.JPanel panelGestionarUsuarios;
     private javax.swing.JPanel panelReporteVentas;
-    private javax.swing.JTextField txtApellidoNuevoMesero;
     private javax.swing.JTextField txtCantidadReporteSeleccionado;
     private javax.swing.JTextField txtCodigoGenerado;
     private javax.swing.JTextField txtConfirmarContraseñaNuevoMesero;
@@ -804,9 +776,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtIngreseCodigoGenerado;
     private javax.swing.JTextField txtIngreseMeseroEliminar;
     private javax.swing.JTextField txtNombreGestionMesero;
-    private javax.swing.JTextField txtNombreNuevoMesero;
     private javax.swing.JTextField txtNombreReporteSeleccionado;
-    private javax.swing.JTextField txtTelefonoNuevomesero;
     private javax.swing.JTextField txtUsuarioNuevoMesero;
     // End of variables declaration//GEN-END:variables
 }
