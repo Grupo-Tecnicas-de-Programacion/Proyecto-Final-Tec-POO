@@ -112,47 +112,41 @@ public class Registrarse extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarsseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarsseActionPerformed
+        
         String nombreUsuario = txtRegistrarNombreUsuario.getText();
         String contrasenia = new String(txtRegistrarContrasenia.getPassword());
         String confirmarContrasenia = new String(txtRegistrarConfirmarContrasenia.getPassword());
 
         if (nombreUsuario.isEmpty() || contrasenia.isEmpty() || confirmarContrasenia.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Todos los campos deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Todos los campos deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        boolean exito = Usuario.registrarUsuario(nombreUsuario, contrasenia, confirmarContrasenia);
+        String[] opciones = {"Mesero", "Administrador"};
+        int seleccion = JOptionPane.showOptionDialog(
+            this,
+            "¿Qué rol tiene el usuario?",
+            "Seleccionar rol",
+            JOptionPane.DEFAULT_OPTION,
+            JOptionPane.QUESTION_MESSAGE,
+            null,
+            opciones,
+            opciones[0]
+        );
+
+        String rol = (seleccion == 0) ? "MESERO" : "ADMINISTRADOR";
+
+        boolean exito = Usuario.registrarUsuario(nombreUsuario, contrasenia, confirmarContrasenia, rol);
 
         if (exito) {
-
-            String[] opciones = {"Mesero", "Administrador"};
-            int seleccion = JOptionPane.showOptionDialog(
-                this,
-                "¿Qué rol tiene el usuario?",
-                "Seleccionar rol",
-                JOptionPane.DEFAULT_OPTION,
-                JOptionPane.QUESTION_MESSAGE,
-                null,
-                opciones,
-                opciones[0]
-            );
-
-            if (seleccion == 0) {
-                
-                JOptionPane.showMessageDialog(this, "Usuario registrado como Mesero.");
-                
-            } else if (seleccion == 1) {
-                
-                JOptionPane.showMessageDialog(this, "Usuario registrado como Administrador.");
-                
-            }
-
+            JOptionPane.showMessageDialog(rootPane, "Usuario registrado como " + rol + ".");
             txtRegistrarNombreUsuario.setText("");
             txtRegistrarContrasenia.setText("");
             txtRegistrarConfirmarContrasenia.setText("");
         } else {
-            JOptionPane.showMessageDialog(this, "Error al registrar el usuario. Verifique los datos.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Error al registrar el usuario. Verifique los datos.", "Error", JOptionPane.ERROR_MESSAGE);
         }
+        
     }//GEN-LAST:event_btnRegistrarsseActionPerformed
 
     private void btnVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverAtrasActionPerformed

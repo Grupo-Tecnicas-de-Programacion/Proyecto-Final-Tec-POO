@@ -8,16 +8,16 @@ public class Usuario {
     protected String nombreUsuario;
     protected String contrasenia;
     protected boolean sesionIniciada;
-    protected Usuario supervisor;
+    protected String rol;
 
     private static List<Usuario> listaUsuarios = new ArrayList<>();
 
     public Usuario() {}
 
-    public Usuario(String nombreUsuario, String constrasenia) {
+    public Usuario(String nombreUsuario, String contrasenia, String rol) {
         this.nombreUsuario = nombreUsuario;
-        this.contrasenia = constrasenia;
-        this.supervisor = null;
+        this.contrasenia = contrasenia;
+        this.rol = rol;
         this.sesionIniciada = false;
     }
 
@@ -45,36 +45,32 @@ public class Usuario {
         this.contrasenia = contrasenia;
     }
 
-    public Usuario getSupervisor() {
-        return supervisor;
+    public String getRol() {
+        return rol;
     }
 
-    public void setSupervisor(Usuario supervisor) {
-        this.supervisor = supervisor;
+    public void setRol(String rol) {
+        this.rol = rol;
     }
-    
+
     public static List<Usuario> getListaUsuarios() {
         return listaUsuarios;
     }
 
-    public static boolean registrarUsuario(String nombreUsuario, String contrasenia, String confirmarContrasenia) {
+    public static boolean registrarUsuario(String nombreUsuario, String contrasenia, String confirmarContrasenia, String rol) {
 
         if (!contrasenia.equals(confirmarContrasenia)) {
-            System.out.println("Error: Las contraseñas no coinciden.");
-            return false;
+            return false; 
         }
-        
+
         for (Usuario usuario : listaUsuarios) {
             if (usuario.getNombreUsuario().equalsIgnoreCase(nombreUsuario)) {
-                System.out.println("Error: El nombre de usuario ya existe.");
-                return false;
+                return false; 
             }
         }
 
-        Usuario nuevoUsuario = new Usuario(nombreUsuario, contrasenia);
+        Usuario nuevoUsuario = new Usuario(nombreUsuario, contrasenia, rol);
         listaUsuarios.add(nuevoUsuario);
-        System.out.println("Usuario registrado con éxito: " + nombreUsuario);
-        return true;
-    
+        return true; 
     }
 }

@@ -4,6 +4,9 @@
  */
 package visual;
 
+import clases.Usuario;
+import clases.Mesero;
+import clases.Administrador;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,10 +15,15 @@ import javax.swing.JOptionPane;
  */
 public class InicioSesion extends javax.swing.JFrame {
 
-    /**
-     * Creates new form InicioSesion
-     */
-    public InicioSesion() {
+    private String rol;
+    
+    public InicioSesion(String rol) {
+        initComponents();
+        this.rol = rol;
+        setTitle("Inicio de sesión - " + rol);
+    }
+    
+    public InicioSesion(){
         initComponents();
     }
 
@@ -143,16 +151,34 @@ public class InicioSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverAtrasInicioSesionActionPerformed
 
     private void btnIngresarInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarInicioSesionActionPerformed
-        if (txtNombreUsuarioIniciarSesion.getText().equals("administrador" )&& txtContraseniaIniciarSesion.getText().equals("administrador")) {
-            new Administrador().setVisible(true);
-            this.dispose();
-        }else if (txtNombreUsuarioIniciarSesion.getText().equals("mesero") && txtContraseniaIniciarSesion.getText().equals("mesero")) {
-            new Mesero().setVisible(true);
-            this.dispose();
-        }else {
-        // Opcional: mostrar un mensaje de error si las credenciales no son válidas
-            JOptionPane.showMessageDialog(this, "Nombre de usuario o contraseña incorrectos", "Error de inicio de sesión", JOptionPane.ERROR_MESSAGE);
-    }
+        String nombreUsuario = txtNombreUsuarioIniciarSesion.getText();
+        String contrasenia = txtContraseniaIniciarSesion.getText();
+
+        boolean usuarioEncontrado = false;
+
+        for (Usuario usuario : Usuario.getListaUsuarios()) {
+            if (usuario.getNombreUsuario().equalsIgnoreCase(nombreUsuario) && 
+                usuario.getContrasenia().equals(contrasenia)) {
+
+                usuarioEncontrado = true;
+
+                if (rol.equals("ADMINISTRADOR") && usuario.getRol().equals("ADMINISTRADOR")) {
+                    new JframeAdministrador().setVisible(true);
+                } else if (rol.equals("MESERO") && usuario.getRol().equals("MESERO")) {
+                    new JframeMesero().setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "No tienes permiso para iniciar sesión como " + rol, "Acceso denegado", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                this.dispose();
+                break;
+            }
+        }
+
+        if (!usuarioEncontrado) {
+            JOptionPane.showMessageDialog(rootPane, "Nombre de usuario o contraseña incorrectos", "Error de inicio de sesión", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnIngresarInicioSesionActionPerformed
 
     private void btnCambiarNombreUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarNombreUsuarioActionPerformed

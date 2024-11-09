@@ -10,9 +10,6 @@ package visual;
  */
 public class CambiarContraseña extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CambiarContraseña
-     */
     public CambiarContraseña() {
         initComponents();
     }
