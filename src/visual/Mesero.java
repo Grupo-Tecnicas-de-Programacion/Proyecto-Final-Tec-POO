@@ -8418,7 +8418,13 @@ public class Mesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimpiarMesa7ActionPerformed
 
     private void btnLimpiarMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa8ActionPerformed
-        // TODO add your handling code here:
+        pedidosMesa8.clear();
+        pedidosMesa8Llevar.clear();
+
+        actualizarListaPedidosMesa8();
+        detallePedidoMesa8.setModel(new DefaultListModel<>()); 
+
+        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnLimpiarMesa8ActionPerformed
 
     private void btnLimpiarMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa9ActionPerformed
