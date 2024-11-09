@@ -7830,10 +7830,19 @@ public class Mesero extends javax.swing.JFrame {
         double totalCuenta = calcularCuentaMesa(pedidosMesa1, pedidosMesa1Llevar);
 
         if (totalCuenta == 0) {
-            
             JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         } else {
             
+            String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
+            while (nombreCliente == null || nombreCliente.isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
+                nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente (solo letras y espacios):");
+            }
+
+            String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
+            while (apellidoCliente == null || apellidoCliente.isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
+                apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente (solo letras y espacios):");
+            }
+        
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
             fileChooser.setSelectedFile(new File("recibo_mesa1.txt")); 
@@ -7844,6 +7853,8 @@ public class Mesero extends javax.swing.JFrame {
 
                 try (PrintWriter writer = new PrintWriter(fileToSave)) {
                     writer.println("Recibo de la Mesa 1");
+                    writer.println("====================");
+                    writer.println("Cliente: " + nombreCliente + " " + apellidoCliente);
                     writer.println("====================");
 
                     for (Pedido pedido : pedidosMesa1) {
@@ -7873,7 +7884,7 @@ public class Mesero extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Guardado cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
             }
         }
-         
+        
     }//GEN-LAST:event_btnGenerarReciboMesa1ActionPerformed
 
     private void productosPedidoMesa1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa1ValueChanged
