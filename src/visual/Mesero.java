@@ -7063,7 +7063,7 @@ public class Mesero extends javax.swing.JFrame {
 
     private void btnLimpiarMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa3ActionPerformed
         pedidosMesa3.clear();
-        pedidosMesa1Llevar.clear();
+        pedidosMesa3Llevar.clear();
 
         actualizarListaPedidosMesa3();
         detallePedidoMesa3.setModel(new DefaultListModel<>()); 
