@@ -9030,7 +9030,7 @@ public class Mesero extends javax.swing.JFrame {
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
-            fileChooser.setSelectedFile(new File("recibo_mesa1.txt")); 
+            fileChooser.setSelectedFile(new File("recibo_mesa2.txt")); 
 
             int userSelection = fileChooser.showSaveDialog(this);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
@@ -9076,7 +9076,67 @@ public class Mesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGenerarReciboMesa2ActionPerformed
 
     private void btnGenerarReciboMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa3ActionPerformed
-        // TODO add your handling code here:
+        double totalCuenta = calcularCuentaMesa(pedidosMesa3, pedidosMesa3Llevar);
+
+        if (totalCuenta == 0) {
+            JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } else {
+
+            String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
+            while (nombreCliente == null || nombreCliente.isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
+                nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente:");
+            }
+
+            String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
+            while (apellidoCliente == null || apellidoCliente.isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
+                apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente:");
+            }
+
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Guardar recibo");
+            fileChooser.setSelectedFile(new File("recibo_mesa3.txt")); 
+
+            int userSelection = fileChooser.showSaveDialog(this);
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = fileChooser.getSelectedFile();
+
+                try (PrintWriter writer = new PrintWriter(fileToSave)) {
+                    writer.println("Recibo de la Mesa 3");
+                    writer.println("====================");
+                    writer.println("Cliente: " + nombreCliente + " " + apellidoCliente);
+                    writer.println("====================");
+
+                    for (Pedido pedido : pedidosMesa3) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    for (Pedido pedido : pedidosMesa3Llevar) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    writer.println("====================");
+                    writer.println("Total de la cuenta: S/ " + totalCuenta);
+                    JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en " + fileToSave.getAbsolutePath(), "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
+                    btnLimpiarMesa3.setEnabled(true);
+                } catch (FileNotFoundException e) {
+                    JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Guardado cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_btnGenerarReciboMesa3ActionPerformed
 
     private void btnGenerarReciboMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa4ActionPerformed
