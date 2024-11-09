@@ -25,7 +25,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
         initComponents();
         jPanelMostrarAdmin.add(panelEliminarUsuarios, "panelEliminarUsuarios");
         jPanelMostrarAdmin.add(panelAgregarUsuarios, "panelAgregarUsuarios");
-        jPanelMostrarAdmin.add(panelModificarUsuarios, "panelModificarUsuarios");
         jPanelMostrarAdmin.add(panelGestionarUsuarios, "panelGestionarUsuarios");
         jPanelMostrarAdmin.add(panelReporteVentas, "panelReporteVentas");
         jPanelMostrarAdmin.add(panelCerrarSesion, "panelCerrarSesion");
@@ -74,28 +73,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
         jLabel45 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
         listMeseroActualizados = new javax.swing.JList<>();
-        panelModificarUsuarios = new javax.swing.JPanel();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        listDatosMeseros = new javax.swing.JList<>();
-        jLabel49 = new javax.swing.JLabel();
-        txtNombreMeseroModificar = new javax.swing.JTextField();
-        jLabel50 = new javax.swing.JLabel();
-        jLabel53 = new javax.swing.JLabel();
-        txtModificarTelefono = new javax.swing.JTextField();
-        jLabel54 = new javax.swing.JLabel();
-        txtModificarContarseña = new javax.swing.JTextField();
-        jLabel55 = new javax.swing.JLabel();
-        txtNuevaContraseñaModificada = new javax.swing.JTextField();
-        jLabel56 = new javax.swing.JLabel();
-        txtConfirCotraseñModificada = new javax.swing.JTextField();
-        jLabel57 = new javax.swing.JLabel();
-        txtModificarRol = new javax.swing.JTextField();
-        jLabel58 = new javax.swing.JLabel();
-        btnEditarDatosMesero = new javax.swing.JButton();
-        btnCancelarEdicionDatos = new javax.swing.JButton();
         panelGestionarUsuarios = new javax.swing.JPanel();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
@@ -141,7 +118,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
         menuUsuarios = new javax.swing.JMenu();
         menItemEliminarUsuario = new javax.swing.JMenuItem();
         menItemAgregarUsuario = new javax.swing.JMenuItem();
-        menItemModificarUsuario = new javax.swing.JMenuItem();
         menItemGestionarUsuarios = new javax.swing.JMenuItem();
         menuReportes = new javax.swing.JMenu();
         menItemReporteVentas = new javax.swing.JMenuItem();
@@ -279,89 +255,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
         panelAgregarUsuarios.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(646, 151, 188, 269));
 
         jPanelMostrarAdmin.add(panelAgregarUsuarios, "card7");
-
-        panelModificarUsuarios.setBackground(new java.awt.Color(153, 153, 153));
-        panelModificarUsuarios.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelModificarUsuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel46.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
-        jLabel46.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel46.setText("EDITAR DATOS DEL MESERO");
-        panelModificarUsuarios.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 28, -1, -1));
-
-        jLabel47.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
-        jLabel47.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel47.setText("Llene todos los campos para la actualizacion.");
-        panelModificarUsuarios.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 66, -1, -1));
-
-        jLabel48.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel48.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel48.setText("Lista de los meseros :");
-        panelModificarUsuarios.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 103, -1, -1));
-
-        listDatosMeseros.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane10.setViewportView(listDatosMeseros);
-
-        panelModificarUsuarios.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 128, 142, 290));
-
-        jLabel49.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel49.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel49.setText("Ingrese nombre del mesero a modificar :");
-        panelModificarUsuarios.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 128, -1, -1));
-        panelModificarUsuarios.add(txtNombreMeseroModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 153, 178, -1));
-
-        jLabel50.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel50.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel50.setText("Modificacion de los datos :");
-        panelModificarUsuarios.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 181, -1, -1));
-
-        jLabel53.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel53.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel53.setText("Telefono : ");
-        panelModificarUsuarios.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 212, -1, -1));
-        panelModificarUsuarios.add(txtModificarTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 237, 164, -1));
-
-        jLabel54.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel54.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel54.setText("Contraseña Anterior :");
-        panelModificarUsuarios.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 324, -1, -1));
-        panelModificarUsuarios.add(txtModificarContarseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 349, 218, -1));
-
-        jLabel55.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel55.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel55.setText("Nueva contarseña : ");
-        panelModificarUsuarios.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, 212, -1, -1));
-        panelModificarUsuarios.add(txtNuevaContraseñaModificada, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, 237, 218, -1));
-
-        jLabel56.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel56.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel56.setText("Confirmar contraseña : ");
-        panelModificarUsuarios.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, 271, -1, -1));
-        panelModificarUsuarios.add(txtConfirCotraseñModificada, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, 296, 218, -1));
-
-        jLabel57.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel57.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel57.setText("Rol : ");
-        panelModificarUsuarios.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 271, -1, -1));
-        panelModificarUsuarios.add(txtModificarRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 296, 164, -1));
-
-        jLabel58.setFont(new java.awt.Font("Segoe UI Black", 3, 14)); // NOI18N
-        jLabel58.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel58.setText("Desea guardar los cambios ?");
-        panelModificarUsuarios.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(594, 348, -1, -1));
-
-        btnEditarDatosMesero.setBackground(new java.awt.Color(0, 153, 0));
-        btnEditarDatosMesero.setText("Confirmar");
-        btnEditarDatosMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelModificarUsuarios.add(btnEditarDatosMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 386, 66, 31));
-
-        btnCancelarEdicionDatos.setBackground(new java.awt.Color(204, 0, 0));
-        btnCancelarEdicionDatos.setForeground(new java.awt.Color(255, 255, 255));
-        btnCancelarEdicionDatos.setText("Cancelar");
-        btnCancelarEdicionDatos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelModificarUsuarios.add(btnCancelarEdicionDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(724, 386, 61, 31));
-
-        jPanelMostrarAdmin.add(panelModificarUsuarios, "card8");
 
         panelGestionarUsuarios.setBackground(new java.awt.Color(153, 153, 153));
         panelGestionarUsuarios.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -554,15 +447,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
         });
         menuUsuarios.add(menItemAgregarUsuario);
 
-        menItemModificarUsuario.setText("Modificar Usuario");
-        menItemModificarUsuario.setPreferredSize(new java.awt.Dimension(180, 40));
-        menItemModificarUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menItemModificarUsuarioActionPerformed(evt);
-            }
-        });
-        menuUsuarios.add(menItemModificarUsuario);
-
         menItemGestionarUsuarios.setText("Gestionar Usuarios");
         menItemGestionarUsuarios.setPreferredSize(new java.awt.Dimension(180, 30));
         menItemGestionarUsuarios.addActionListener(new java.awt.event.ActionListener() {
@@ -640,16 +524,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
         CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
         layout.show(jPanelMostrarAdmin, "panelGestionarUsuarios");
     }//GEN-LAST:event_menItemGestionarUsuariosActionPerformed
-
-    private void menItemModificarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemModificarUsuarioActionPerformed
-        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
-        layout.show(jPanelMostrarAdmin, "panelModificarUsuarios");
-    }//GEN-LAST:event_menItemModificarUsuarioActionPerformed
-
-    private void menItemAgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemAgregarUsuarioActionPerformed
-        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
-        layout.show(jPanelMostrarAdmin, "panelAgregarUsuarios");
-    }//GEN-LAST:event_menItemAgregarUsuarioActionPerformed
 
     private void menItemEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemEliminarUsuarioActionPerformed
         CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
@@ -736,6 +610,11 @@ public class JframeAdministrador extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnVerReporteActionPerformed
+
+    private void menItemAgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemAgregarUsuarioActionPerformed
+        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
+        layout.show(jPanelMostrarAdmin, "panelAgregarUsuarios");
+    }//GEN-LAST:event_menItemAgregarUsuarioActionPerformed
 
     private Reporte buscarReportePorNombre(String nombreReporte) {
         for (Reporte reporte : GestionReportes.getListaReportes()) {
@@ -846,11 +725,9 @@ public class JframeAdministrador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarReportes;
-    private javax.swing.JButton btnCancelarEdicionDatos;
     private javax.swing.JButton btnCancelarEliminacionMesero;
     private javax.swing.JButton btnCancelarRegistroMesero;
     private javax.swing.JButton btnCerrarSesionAdmnistrador;
-    private javax.swing.JButton btnEditarDatosMesero;
     private javax.swing.JButton btnEliminarMesero;
     private javax.swing.JButton btnRegistroMesero;
     private javax.swing.JButton btnSeleccionarMesero;
@@ -874,19 +751,8 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
@@ -903,12 +769,10 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuAdmin;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelMostrarAdmin;
-    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JList<String> listDatosMeseros;
     private javax.swing.JList<String> listGestionMeseros;
     private javax.swing.JList<String> listMeseroActualizados;
     private javax.swing.JList<String> listMeseros;
@@ -917,7 +781,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenuItem menItemCerrarSecsion;
     private javax.swing.JMenuItem menItemEliminarUsuario;
     private javax.swing.JMenuItem menItemGestionarUsuarios;
-    private javax.swing.JMenuItem menItemModificarUsuario;
     private javax.swing.JMenuItem menItemReporteVentas;
     private javax.swing.JMenu menuCerrar;
     private javax.swing.JMenu menuReportes;
@@ -926,12 +789,10 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private javax.swing.JPanel panelCerrarSesion;
     private javax.swing.JPanel panelEliminarUsuarios;
     private javax.swing.JPanel panelGestionarUsuarios;
-    private javax.swing.JPanel panelModificarUsuarios;
     private javax.swing.JPanel panelReporteVentas;
     private javax.swing.JTextField txtApellidoNuevoMesero;
     private javax.swing.JTextField txtCantidadReporteSeleccionado;
     private javax.swing.JTextField txtCodigoGenerado;
-    private javax.swing.JTextField txtConfirCotraseñModificada;
     private javax.swing.JTextField txtConfirmarContraseñaNuevoMesero;
     private javax.swing.JTextField txtContraseñaAdministrador;
     private javax.swing.JTextField txtContraseñaNuevoMesero;
@@ -942,14 +803,9 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtGestionContraseñaMesero;
     private javax.swing.JTextField txtIngreseCodigoGenerado;
     private javax.swing.JTextField txtIngreseMeseroEliminar;
-    private javax.swing.JTextField txtModificarContarseña;
-    private javax.swing.JTextField txtModificarRol;
-    private javax.swing.JTextField txtModificarTelefono;
     private javax.swing.JTextField txtNombreGestionMesero;
-    private javax.swing.JTextField txtNombreMeseroModificar;
     private javax.swing.JTextField txtNombreNuevoMesero;
     private javax.swing.JTextField txtNombreReporteSeleccionado;
-    private javax.swing.JTextField txtNuevaContraseñaModificada;
     private javax.swing.JTextField txtTelefonoNuevomesero;
     private javax.swing.JTextField txtUsuarioNuevoMesero;
     // End of variables declaration//GEN-END:variables
