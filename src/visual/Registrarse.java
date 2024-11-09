@@ -111,47 +111,54 @@ public class Registrarse extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnRegistrarsseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarsseActionPerformed
+        String nombreUsuario = txtRegistrarNombreUsuario.getText();
+        String contrasenia = new String(txtRegistrarContrasenia.getPassword());
+        String confirmarContrasenia = new String(txtRegistrarConfirmarContrasenia.getPassword());
+
+        if (nombreUsuario.isEmpty() || contrasenia.isEmpty() || confirmarContrasenia.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Todos los campos deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        boolean exito = Usuario.registrarUsuario(nombreUsuario, contrasenia, confirmarContrasenia);
+
+        if (exito) {
+
+            String[] opciones = {"Mesero", "Administrador"};
+            int seleccion = JOptionPane.showOptionDialog(
+                this,
+                "¿Qué rol tiene el usuario?",
+                "Seleccionar rol",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                opciones,
+                opciones[0]
+            );
+
+            if (seleccion == 0) {
+                
+                JOptionPane.showMessageDialog(this, "Usuario registrado como Mesero.");
+                
+            } else if (seleccion == 1) {
+                
+                JOptionPane.showMessageDialog(this, "Usuario registrado como Administrador.");
+                
+            }
+
+            txtRegistrarNombreUsuario.setText("");
+            txtRegistrarContrasenia.setText("");
+            txtRegistrarConfirmarContrasenia.setText("");
+        } else {
+            JOptionPane.showMessageDialog(this, "Error al registrar el usuario. Verifique los datos.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnRegistrarsseActionPerformed
+
     private void btnVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverAtrasActionPerformed
-        
         new BievenidaO().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVolverAtrasActionPerformed
-
-    private void btnRegistrarsseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarsseActionPerformed
-        String nombreUsuario = txtRegistrarNombreUsuario.getText().trim();
-        String contrasenia = new String(txtRegistrarContrasenia.getPassword()).trim();
-        String confirmarContrasenia = new String(txtRegistrarConfirmarContrasenia.getPassword()).trim();
-
-        if (nombreUsuario.isEmpty() || contrasenia.isEmpty() || confirmarContrasenia.isEmpty()) {
-            JOptionPane.showMessageDialog(rootPane, "Por favor, complete todos los campos.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        if (!contrasenia.equals(confirmarContrasenia)) {
-            JOptionPane.showMessageDialog(rootPane, "Las contraseñas no coinciden.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        Object[] opciones = {"Mesero", "Administrador"};
-        int seleccion = JOptionPane.showOptionDialog(this, "Seleccione el tipo de usuario:", "Tipo de Usuario",
-                JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
-
-        Usuario nuevoUsuario;
-        if (seleccion == 0) {
-            nuevoUsuario = new Mesero(nombreUsuario, contrasenia);
-        } else if (seleccion == 1) {
-            nuevoUsuario = new Administrador(nombreUsuario, contrasenia);
-        } else {
-            JOptionPane.showMessageDialog(this, "No se seleccionó ningún tipo de usuario.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        // Aquí se debe agregar el usuario a una lista o base de datos global
-        listaUsuarios.add(nuevoUsuario); // listaUsuarios es una lista global que contiene los usuarios
-
-        JOptionPane.showMessageDialog(this, "Usuario registrado con éxito.", "Registro Exitoso", JOptionPane.INFORMATION_MESSAGE);
-        limpiarCamposRegistro();
-    }//GEN-LAST:event_btnRegistrarsseActionPerformed
 
     /**
      * @param args the command line arguments
