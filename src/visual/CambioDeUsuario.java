@@ -42,14 +42,16 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         iblCambioDeUsuario.setBackground(new java.awt.Color(204, 204, 204));
         iblCambioDeUsuario.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        iblCambioDeUsuario.setForeground(new java.awt.Color(51, 51, 51));
+        iblCambioDeUsuario.setForeground(new java.awt.Color(0, 0, 0));
         iblCambioDeUsuario.setText("CAMBIAR NOMBRE DE USUARIO");
         jPanel1.add(iblCambioDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, -1, 60));
 
+        jLabel98.setForeground(new java.awt.Color(0, 0, 0));
         jLabel98.setText("Ingrese nombre de usuario :");
         jPanel1.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
 
@@ -60,10 +62,12 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         });
         jPanel1.add(txtNombreDeUsuaario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 400, -1));
 
+        jLabel99.setForeground(new java.awt.Color(0, 0, 0));
         jLabel99.setText("Ingrese su contraseña :");
-        jPanel1.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
+        jPanel1.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
         jPanel1.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 400, -1));
 
+        jLabel100.setForeground(new java.awt.Color(0, 0, 0));
         jLabel100.setText("Ingrese su nuevo nombre de usuario :");
         jPanel1.add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
 
@@ -74,7 +78,7 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         });
         jPanel1.add(NuevoNombreDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 400, -1));
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 153));
+        jButton3.setForeground(new java.awt.Color(204, 204, 204));
         jButton3.setText("Actualizar usuario");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +87,7 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
 
+        btnVolverAtras.setForeground(new java.awt.Color(204, 204, 204));
         btnVolverAtras.setText("Volver atras");
         btnVolverAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

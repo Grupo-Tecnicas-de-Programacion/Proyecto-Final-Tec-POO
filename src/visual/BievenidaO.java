@@ -38,15 +38,19 @@ public class BievenidaO extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("BIENVENIDO A");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 28, 101, 33));
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Iniciar sesión como:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 141, 159, -1));
 
+        btnIniciarSesionAdministrador.setForeground(java.awt.Color.lightGray);
         btnIniciarSesionAdministrador.setText("ADMINISTRADOR");
         btnIniciarSesionAdministrador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,9 +59,11 @@ public class BievenidaO extends javax.swing.JFrame {
         });
         jPanel1.add(btnIniciarSesionAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 169, -1, -1));
 
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("\"¿Eres nuevo?\"");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 204, 86, -1));
 
+        btnIniciarSesionMesero.setForeground(java.awt.Color.lightGray);
         btnIniciarSesionMesero.setText("MESERO");
         btnIniciarSesionMesero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,9 +72,11 @@ public class BievenidaO extends javax.swing.JFrame {
         });
         jPanel1.add(btnIniciarSesionMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 169, -1, -1));
 
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Haz click en el siguiente botón para registrarte");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 232, -1, -1));
 
+        btnRegsitrarseIniciarSesion.setForeground(java.awt.Color.lightGray);
         btnRegsitrarseIniciarSesion.setText("REGISTRARSE");
         btnRegsitrarseIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,6 +86,7 @@ public class BievenidaO extends javax.swing.JFrame {
         jPanel1.add(btnRegsitrarseIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 255, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("POLLOS Y PARILLAS \" EL GRAN RANCHO\"");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 67, 256, 56));
 
