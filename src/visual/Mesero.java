@@ -7892,6 +7892,7 @@ public class Mesero extends javax.swing.JFrame {
         if (totalCuentaMesa == 0) {
         
             btnMesa3.setBackground(Color.green);
+            btnLimpiarMesa3.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa3ActionPerformed
 
