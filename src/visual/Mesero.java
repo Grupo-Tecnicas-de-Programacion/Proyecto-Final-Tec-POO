@@ -1061,6 +1061,11 @@ public class Mesero extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        productosPedidoMesa2.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                productosPedidoMesa2ValueChanged(evt);
+            }
+        });
         jScrollPane3.setViewportView(productosPedidoMesa2);
 
         panelMesa2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 200, 200));
@@ -1089,6 +1094,11 @@ public class Mesero extends javax.swing.JFrame {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        listaPedidosMesa2.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaPedidosMesa2ValueChanged(evt);
+            }
         });
         jScrollPane4.setViewportView(listaPedidosMesa2);
 
@@ -1168,6 +1178,11 @@ public class Mesero extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        productosPedidoMesa3.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                productosPedidoMesa3ValueChanged(evt);
+            }
+        });
         jScrollPane26.setViewportView(productosPedidoMesa3);
 
         panelMesa3.add(jScrollPane26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 200, 200));
@@ -1196,6 +1211,11 @@ public class Mesero extends javax.swing.JFrame {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        listaPedidosMesa3.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaPedidosMesa3ValueChanged(evt);
+            }
         });
         jScrollPane28.setViewportView(listaPedidosMesa3);
 
@@ -1275,6 +1295,11 @@ public class Mesero extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        productosPedidoMesa4.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                productosPedidoMesa4ValueChanged(evt);
+            }
+        });
         jScrollPane29.setViewportView(productosPedidoMesa4);
 
         panelMesa4.add(jScrollPane29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 200, 200));
@@ -1303,6 +1328,11 @@ public class Mesero extends javax.swing.JFrame {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        listaPedidosMesa4.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaPedidosMesa4ValueChanged(evt);
+            }
         });
         jScrollPane30.setViewportView(listaPedidosMesa4);
 
@@ -1382,6 +1412,11 @@ public class Mesero extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        productosPedidoMesa5.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                productosPedidoMesa5ValueChanged(evt);
+            }
+        });
         jScrollPane31.setViewportView(productosPedidoMesa5);
 
         panelMesa5.add(jScrollPane31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 200, 200));
@@ -1410,6 +1445,11 @@ public class Mesero extends javax.swing.JFrame {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        listaPedidosMesa5.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaPedidosMesa5ValueChanged(evt);
+            }
         });
         jScrollPane32.setViewportView(listaPedidosMesa5);
 
@@ -1489,6 +1529,11 @@ public class Mesero extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        productosPedidoMesa6.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                productosPedidoMesa6ValueChanged(evt);
+            }
+        });
         jScrollPane33.setViewportView(productosPedidoMesa6);
 
         panelMesa6.add(jScrollPane33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 200, 200));
@@ -1517,6 +1562,11 @@ public class Mesero extends javax.swing.JFrame {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        listaPedidosMesa6.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaPedidosMesa6ValueChanged(evt);
+            }
         });
         jScrollPane34.setViewportView(listaPedidosMesa6);
 
@@ -1595,6 +1645,11 @@ public class Mesero extends javax.swing.JFrame {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        productosPedidoMesa7.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                productosPedidoMesa7ValueChanged(evt);
+            }
         });
         jScrollPane35.setViewportView(productosPedidoMesa7);
 
@@ -1679,6 +1734,11 @@ public class Mesero extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        listaPedidosMesa7.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaPedidosMesa7ValueChanged(evt);
+            }
+        });
         jScrollPane47.setViewportView(listaPedidosMesa7);
 
         panelMesa7.add(jScrollPane47, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 100, 200, 200));
@@ -1702,6 +1762,11 @@ public class Mesero extends javax.swing.JFrame {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        productosPedidoMesa8.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                productosPedidoMesa8ValueChanged(evt);
+            }
         });
         jScrollPane37.setViewportView(productosPedidoMesa8);
 
@@ -1786,6 +1851,11 @@ public class Mesero extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        listaPedidosMesa8.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaPedidosMesa8ValueChanged(evt);
+            }
+        });
         jScrollPane36.setViewportView(listaPedidosMesa8);
 
         panelMesa8.add(jScrollPane36, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 100, 200, 200));
@@ -1810,6 +1880,11 @@ public class Mesero extends javax.swing.JFrame {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        productosPedidoMesa9.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                productosPedidoMesa9ValueChanged(evt);
+            }
         });
         jScrollPane39.setViewportView(productosPedidoMesa9);
 
@@ -1894,6 +1969,11 @@ public class Mesero extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        listaPedidosMesa9.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaPedidosMesa9ValueChanged(evt);
+            }
+        });
         jScrollPane38.setViewportView(listaPedidosMesa9);
 
         panelMesa9.add(jScrollPane38, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 100, 200, 200));
@@ -1917,6 +1997,11 @@ public class Mesero extends javax.swing.JFrame {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        productosPedidoMesa10.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                productosPedidoMesa10ValueChanged(evt);
+            }
         });
         jScrollPane41.setViewportView(productosPedidoMesa10);
 
@@ -2001,6 +2086,11 @@ public class Mesero extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        listaPedidosMesa10.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaPedidosMesa10ValueChanged(evt);
+            }
+        });
         jScrollPane40.setViewportView(listaPedidosMesa10);
 
         panelMesa10.add(jScrollPane40, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 100, 200, 200));
@@ -2024,6 +2114,11 @@ public class Mesero extends javax.swing.JFrame {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        productosPedidoMesa11.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                productosPedidoMesa11ValueChanged(evt);
+            }
         });
         jScrollPane43.setViewportView(productosPedidoMesa11);
 
@@ -2053,6 +2148,11 @@ public class Mesero extends javax.swing.JFrame {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        listaPedidosMesa11.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaPedidosMesa11ValueChanged(evt);
+            }
         });
         jScrollPane44.setViewportView(listaPedidosMesa11);
 
@@ -2132,6 +2232,11 @@ public class Mesero extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        productosPedidoMesa12.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                productosPedidoMesa12ValueChanged(evt);
+            }
+        });
         jScrollPane45.setViewportView(productosPedidoMesa12);
 
         panelMesa12.add(jScrollPane45, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 200, 200));
@@ -2160,6 +2265,11 @@ public class Mesero extends javax.swing.JFrame {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        listaPedidosMesa12.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaPedidosMesa12ValueChanged(evt);
+            }
         });
         jScrollPane46.setViewportView(listaPedidosMesa12);
 
@@ -7835,12 +7945,12 @@ public class Mesero extends javax.swing.JFrame {
             
             String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
             while (nombreCliente == null || nombreCliente.isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
-                nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente (solo letras y espacios):");
+                nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente:");
             }
 
             String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
             while (apellidoCliente == null || apellidoCliente.isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
-                apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente (solo letras y espacios):");
+                apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente:");
             }
         
             JFileChooser fileChooser = new JFileChooser();
@@ -8725,6 +8835,94 @@ public class Mesero extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa12ActionPerformed
+
+    private void productosPedidoMesa2ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa2ValueChanged
+        cambioSeleccionVerPedidos(productosPedidoMesa2, listaPedidosMesa2);
+    }//GEN-LAST:event_productosPedidoMesa2ValueChanged
+
+    private void listaPedidosMesa2ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaPedidosMesa2ValueChanged
+        cambioSeleccionVerPedidos(listaPedidosMesa2, productosPedidoMesa2);
+    }//GEN-LAST:event_listaPedidosMesa2ValueChanged
+
+    private void productosPedidoMesa3ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa3ValueChanged
+        cambioSeleccionVerPedidos(productosPedidoMesa3, listaPedidosMesa3);
+    }//GEN-LAST:event_productosPedidoMesa3ValueChanged
+
+    private void listaPedidosMesa3ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaPedidosMesa3ValueChanged
+        cambioSeleccionVerPedidos(listaPedidosMesa3, productosPedidoMesa3);
+    }//GEN-LAST:event_listaPedidosMesa3ValueChanged
+
+    private void productosPedidoMesa4ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa4ValueChanged
+        cambioSeleccionVerPedidos(productosPedidoMesa4, listaPedidosMesa4);
+    }//GEN-LAST:event_productosPedidoMesa4ValueChanged
+
+    private void listaPedidosMesa4ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaPedidosMesa4ValueChanged
+        cambioSeleccionVerPedidos(listaPedidosMesa4, productosPedidoMesa4);
+    }//GEN-LAST:event_listaPedidosMesa4ValueChanged
+
+    private void productosPedidoMesa5ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa5ValueChanged
+        cambioSeleccionVerPedidos(productosPedidoMesa5, listaPedidosMesa5);
+    }//GEN-LAST:event_productosPedidoMesa5ValueChanged
+
+    private void listaPedidosMesa5ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaPedidosMesa5ValueChanged
+        cambioSeleccionVerPedidos(listaPedidosMesa5, productosPedidoMesa5);
+    }//GEN-LAST:event_listaPedidosMesa5ValueChanged
+
+    private void productosPedidoMesa6ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa6ValueChanged
+        cambioSeleccionVerPedidos(productosPedidoMesa6, listaPedidosMesa6);
+    }//GEN-LAST:event_productosPedidoMesa6ValueChanged
+
+    private void listaPedidosMesa6ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaPedidosMesa6ValueChanged
+        cambioSeleccionVerPedidos(listaPedidosMesa6, productosPedidoMesa6);
+    }//GEN-LAST:event_listaPedidosMesa6ValueChanged
+
+    private void productosPedidoMesa7ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa7ValueChanged
+        cambioSeleccionVerPedidos(productosPedidoMesa7, listaPedidosMesa7);
+    }//GEN-LAST:event_productosPedidoMesa7ValueChanged
+
+    private void listaPedidosMesa7ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaPedidosMesa7ValueChanged
+        cambioSeleccionVerPedidos(listaPedidosMesa7, productosPedidoMesa7);
+    }//GEN-LAST:event_listaPedidosMesa7ValueChanged
+
+    private void productosPedidoMesa8ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa8ValueChanged
+        cambioSeleccionVerPedidos(productosPedidoMesa8, listaPedidosMesa8);
+    }//GEN-LAST:event_productosPedidoMesa8ValueChanged
+
+    private void listaPedidosMesa8ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaPedidosMesa8ValueChanged
+        cambioSeleccionVerPedidos(listaPedidosMesa8, productosPedidoMesa8);
+    }//GEN-LAST:event_listaPedidosMesa8ValueChanged
+
+    private void productosPedidoMesa9ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa9ValueChanged
+        cambioSeleccionVerPedidos(productosPedidoMesa9, listaPedidosMesa9);
+    }//GEN-LAST:event_productosPedidoMesa9ValueChanged
+
+    private void listaPedidosMesa9ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaPedidosMesa9ValueChanged
+        cambioSeleccionVerPedidos(listaPedidosMesa9, productosPedidoMesa9);
+    }//GEN-LAST:event_listaPedidosMesa9ValueChanged
+
+    private void productosPedidoMesa10ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa10ValueChanged
+        cambioSeleccionVerPedidos(productosPedidoMesa10, listaPedidosMesa10);
+    }//GEN-LAST:event_productosPedidoMesa10ValueChanged
+
+    private void listaPedidosMesa10ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaPedidosMesa10ValueChanged
+        cambioSeleccionVerPedidos(listaPedidosMesa10, productosPedidoMesa10);
+    }//GEN-LAST:event_listaPedidosMesa10ValueChanged
+
+    private void productosPedidoMesa11ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa11ValueChanged
+        cambioSeleccionVerPedidos(productosPedidoMesa11, listaPedidosMesa11);
+    }//GEN-LAST:event_productosPedidoMesa11ValueChanged
+
+    private void listaPedidosMesa11ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaPedidosMesa11ValueChanged
+        cambioSeleccionVerPedidos(listaPedidosMesa11, productosPedidoMesa11);
+    }//GEN-LAST:event_listaPedidosMesa11ValueChanged
+
+    private void productosPedidoMesa12ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa12ValueChanged
+        cambioSeleccionVerPedidos(productosPedidoMesa12, productosPedidoMesa12);
+    }//GEN-LAST:event_productosPedidoMesa12ValueChanged
+
+    private void listaPedidosMesa12ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaPedidosMesa12ValueChanged
+        cambioSeleccionVerPedidos(productosPedidoMesa12, listaPedidosMesa12);
+    }//GEN-LAST:event_listaPedidosMesa12ValueChanged
     
     private void actualizarListaProductosDelPedidoMesa1() {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
