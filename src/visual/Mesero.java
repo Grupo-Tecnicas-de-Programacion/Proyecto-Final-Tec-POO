@@ -7540,11 +7540,25 @@ public class Mesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTotalCuentaMesa10ActionPerformed
 
     private void btnTotalCuentaMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa11ActionPerformed
-        // TODO add your handling code here:
+         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa11, pedidosMesa11Llevar);
+        
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 1 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+        
+        if (totalCuentaMesa == 0) {
+        
+            btnMesa11.setBackground(Color.green);
+        }
     }//GEN-LAST:event_btnTotalCuentaMesa11ActionPerformed
 
     private void btnTotalCuentaMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa12ActionPerformed
-        // TODO add your handling code here:
+         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa12, pedidosMesa12Llevar);
+        
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 1 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+        
+        if (totalCuentaMesa == 0) {
+        
+            btnMesa12.setBackground(Color.green);
+        }
     }//GEN-LAST:event_btnTotalCuentaMesa12ActionPerformed
 
     private void btnGenerarReciboMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa1ActionPerformed
