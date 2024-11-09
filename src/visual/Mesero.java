@@ -7974,7 +7974,7 @@ public class Mesero extends javax.swing.JFrame {
     private void btnTotalCuentaMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa11ActionPerformed
          double totalCuentaMesa = calcularCuentaMesa(pedidosMesa11, pedidosMesa11Llevar);
         
-         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 11 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(rootPane, "El total de la cuenta de la Mesa 11 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
         
@@ -8868,12 +8868,12 @@ public class Mesero extends javax.swing.JFrame {
                 cargarProductosEnLista11();
                 mostrarProductosEnMesa(productosPedidoMesa11);
                 
-                JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(rootPane, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(this, "Error al parsear la cantidad del producto.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(rootPane, "Error al parsear la cantidad del producto.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa11ActionPerformed
 

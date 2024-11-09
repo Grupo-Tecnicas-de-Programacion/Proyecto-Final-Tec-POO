@@ -687,16 +687,16 @@ public class Administrador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarSesionAdmnistradorActionPerformed
 
     private void btnBuscarReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarReportesActionPerformed
-         String fechaDesde = txtFechaInicioReporteBuscar.getText().trim();
+        String fechaDesde = txtFechaInicioReporteBuscar.getText().trim();
         String fechaHasta = txtFechaFinalReporteBuscar.getText().trim();
 
         if (!fechaDesde.matches("\\d{2}/\\d{2}/\\d{4}") || !fechaHasta.matches("\\d{2}/\\d{2}/\\d{4}")) {
-            JOptionPane.showMessageDialog(this, "Las fechas deben estar en formato dd/MM/yyyy.", "Formato de fecha incorrecto", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Las fechas deben estar en formato dd/MM/yyyy.", "Formato de fecha incorrecto", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         if (fechaDesde.isEmpty() || fechaHasta.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Por favor, ingrese ambas fechas para buscar reportes.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Por favor, ingrese ambas fechas para buscar reportes.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -708,21 +708,12 @@ public class Administrador extends javax.swing.JFrame {
         }
 
         if (modeloReportes.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "No se encontraron reportes en el rango de fechas especificado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "No se encontraron reportes en el rango de fechas especificado.", "Información", JOptionPane.INFORMATION_MESSAGE);
         }
 
         listaReportesEncontrados.setModel(modeloReportes);
     }//GEN-LAST:event_btnBuscarReportesActionPerformed
 
-    private Reporte buscarReportePorNombre(String nombreReporte) {
-        for (Reporte reporte : GestionReportes.getListaReportes()) {
-            if (reporte.getNombre().equalsIgnoreCase(nombreReporte)) {
-                return reporte;
-            }
-        }
-        return null;
-    }
-    
     private void btnVerReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerReporteActionPerformed
         int index = listaReportesEncontrados.getSelectedIndex();
 
@@ -738,13 +729,23 @@ public class Administrador extends javax.swing.JFrame {
                 txtCantidadReporteSeleccionado.setText(String.valueOf(reporte.getCantidadProductosVendidos()));
                 txtGananciaReporteSeleccionado.setText(String.format("S/ %.2f", reporte.getTotalGanancias()));
             } else {
-                JOptionPane.showMessageDialog(this, "Error al cargar el reporte.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(rootPane, "Error al cargar el reporte.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Por favor, seleccione un reporte de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Por favor, seleccione un reporte de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
+
     }//GEN-LAST:event_btnVerReporteActionPerformed
 
+    private Reporte buscarReportePorNombre(String nombreReporte) {
+        for (Reporte reporte : GestionReportes.getListaReportes()) {
+            if (reporte.getNombre().equalsIgnoreCase(nombreReporte)) {
+                return reporte;
+            }
+        }
+        return null;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -812,15 +813,14 @@ public class Administrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscarReportes;
     private javax.swing.JButton btnCancelarEdicionDatos;
     private javax.swing.JButton btnCancelarEliminacionMesero;
     private javax.swing.JButton btnCancelarRegistroMesero;
     private javax.swing.JButton btnCerrarSesionAdmnistrador;
     private javax.swing.JButton btnEditarDatosMesero;
     private javax.swing.JButton btnEliminarMesero;
-    private javax.swing.JButton btnGenerarReporte;
     private javax.swing.JButton btnRegistroMesero;
-    private javax.swing.JList<String> btnReporteVentas;
     private javax.swing.JButton btnSeleccionarMesero;
     private javax.swing.JButton btnVerReporte;
     private javax.swing.JLabel jLabel25;
@@ -880,6 +880,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JList<String> listGestionMeseros;
     private javax.swing.JList<String> listMeseroActualizados;
     private javax.swing.JList<String> listMeseros;
+    private javax.swing.JList<String> listaReportesEncontrados;
     private javax.swing.JMenuItem menItemAgregarUsuario;
     private javax.swing.JMenuItem menItemCerrarSecsion;
     private javax.swing.JMenuItem menItemEliminarUsuario;
@@ -915,6 +916,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombreGestionMesero;
     private javax.swing.JTextField txtNombreMeseroModificar;
     private javax.swing.JTextField txtNombreNuevoMesero;
+    private javax.swing.JTextField txtNombreReporteSeleccionado;
     private javax.swing.JTextField txtNuevaContraseñaModificada;
     private javax.swing.JTextField txtTelefonoNuevomesero;
     private javax.swing.JTextField txtUsuarioNuevoMesero;
