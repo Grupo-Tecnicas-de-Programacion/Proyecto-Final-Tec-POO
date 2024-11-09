@@ -7880,6 +7880,7 @@ public class Mesero extends javax.swing.JFrame {
         if (totalCuentaMesa == 0) {
         
             btnMesa2.setBackground(Color.green);
+            btnLimpiarMesa2.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa2ActionPerformed
 
@@ -7891,6 +7892,7 @@ public class Mesero extends javax.swing.JFrame {
         if (totalCuentaMesa == 0) {
         
             btnMesa3.setBackground(Color.green);
+            btnLimpiarMesa3.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa3ActionPerformed
 
@@ -7902,6 +7904,7 @@ public class Mesero extends javax.swing.JFrame {
         if (totalCuentaMesa == 0) {
         
             btnMesa4.setBackground(Color.green);
+            btnLimpiarMesa4.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa4ActionPerformed
 
@@ -7913,6 +7916,7 @@ public class Mesero extends javax.swing.JFrame {
         if (totalCuentaMesa == 0) {
         
             btnMesa5.setBackground(Color.green);
+            btnLimpiarMesa5.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa5ActionPerformed
 
@@ -7924,6 +7928,7 @@ public class Mesero extends javax.swing.JFrame {
         if (totalCuentaMesa == 0) {
         
             btnMesa6.setBackground(Color.green);
+            btnLimpiarMesa6.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa6ActionPerformed
 
@@ -7935,6 +7940,7 @@ public class Mesero extends javax.swing.JFrame {
         if (totalCuentaMesa == 0) {
         
             btnMesa7.setBackground(Color.green);
+            btnLimpiarMesa7.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa7ActionPerformed
 
@@ -7946,6 +7952,7 @@ public class Mesero extends javax.swing.JFrame {
         if (totalCuentaMesa == 0) {
         
             btnMesa8.setBackground(Color.green);
+            btnLimpiarMesa8.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa8ActionPerformed
 
@@ -7957,6 +7964,7 @@ public class Mesero extends javax.swing.JFrame {
         if (totalCuentaMesa == 0) {
         
             btnMesa9.setBackground(Color.green);
+            btnLimpiarMesa9.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa9ActionPerformed
 
@@ -7968,6 +7976,7 @@ public class Mesero extends javax.swing.JFrame {
         if (totalCuentaMesa == 0) {
         
             btnMesa10.setBackground(Color.green);
+            btnLimpiarMesa10.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa10ActionPerformed
 
@@ -7979,6 +7988,7 @@ public class Mesero extends javax.swing.JFrame {
         if (totalCuentaMesa == 0) {
         
             btnMesa11.setBackground(Color.green);
+            btnLimpiarMesa11.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa11ActionPerformed
 
@@ -7990,6 +8000,7 @@ public class Mesero extends javax.swing.JFrame {
         if (totalCuentaMesa == 0) {
         
             btnMesa12.setBackground(Color.green);
+            btnLimpiarMesa12.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa12ActionPerformed
 
@@ -9001,47 +9012,707 @@ public class Mesero extends javax.swing.JFrame {
     }//GEN-LAST:event_listaPedidosMesa12ValueChanged
 
     private void btnGenerarReciboMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa2ActionPerformed
-        // TODO add your handling code here:
+        double totalCuenta = calcularCuentaMesa(pedidosMesa2, pedidosMesa2Llevar);
+
+        if (totalCuenta == 0) {
+            JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } else {
+
+            String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
+            while (nombreCliente == null || nombreCliente.isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
+                nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente:");
+            }
+
+            String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
+            while (apellidoCliente == null || apellidoCliente.isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
+                apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente:");
+            }
+
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Guardar recibo");
+            fileChooser.setSelectedFile(new File("recibo_mesa2.txt")); 
+
+            int userSelection = fileChooser.showSaveDialog(this);
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = fileChooser.getSelectedFile();
+
+                try (PrintWriter writer = new PrintWriter(fileToSave)) {
+                    writer.println("Recibo de la Mesa 2");
+                    writer.println("====================");
+                    writer.println("Cliente: " + nombreCliente + " " + apellidoCliente);
+                    writer.println("====================");
+
+                    for (Pedido pedido : pedidosMesa2) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    for (Pedido pedido : pedidosMesa2Llevar) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    writer.println("====================");
+                    writer.println("Total de la cuenta: S/ " + totalCuenta);
+                    JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en " + fileToSave.getAbsolutePath(), "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
+                    btnLimpiarMesa2.setEnabled(true);
+                } catch (FileNotFoundException e) {
+                    JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Guardado cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_btnGenerarReciboMesa2ActionPerformed
 
     private void btnGenerarReciboMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa3ActionPerformed
-        // TODO add your handling code here:
+        double totalCuenta = calcularCuentaMesa(pedidosMesa3, pedidosMesa3Llevar);
+
+        if (totalCuenta == 0) {
+            JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } else {
+
+            String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
+            while (nombreCliente == null || nombreCliente.isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
+                nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente:");
+            }
+
+            String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
+            while (apellidoCliente == null || apellidoCliente.isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
+                apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente:");
+            }
+
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Guardar recibo");
+            fileChooser.setSelectedFile(new File("recibo_mesa3.txt")); 
+
+            int userSelection = fileChooser.showSaveDialog(this);
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = fileChooser.getSelectedFile();
+
+                try (PrintWriter writer = new PrintWriter(fileToSave)) {
+                    writer.println("Recibo de la Mesa 3");
+                    writer.println("====================");
+                    writer.println("Cliente: " + nombreCliente + " " + apellidoCliente);
+                    writer.println("====================");
+
+                    for (Pedido pedido : pedidosMesa3) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    for (Pedido pedido : pedidosMesa3Llevar) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    writer.println("====================");
+                    writer.println("Total de la cuenta: S/ " + totalCuenta);
+                    JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en " + fileToSave.getAbsolutePath(), "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
+                    btnLimpiarMesa3.setEnabled(true);
+                } catch (FileNotFoundException e) {
+                    JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Guardado cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_btnGenerarReciboMesa3ActionPerformed
 
     private void btnGenerarReciboMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa4ActionPerformed
-        // TODO add your handling code here:
+        double totalCuenta = calcularCuentaMesa(pedidosMesa4, pedidosMesa4Llevar);
+
+        if (totalCuenta == 0) {
+            JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } else {
+
+            String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
+            while (nombreCliente == null || nombreCliente.isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
+                nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente:");
+            }
+
+            String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
+            while (apellidoCliente == null || apellidoCliente.isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
+                apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente:");
+            }
+
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Guardar recibo");
+            fileChooser.setSelectedFile(new File("recibo_mesa4.txt")); 
+
+            int userSelection = fileChooser.showSaveDialog(this);
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = fileChooser.getSelectedFile();
+
+                try (PrintWriter writer = new PrintWriter(fileToSave)) {
+                    writer.println("Recibo de la Mesa 4");
+                    writer.println("====================");
+                    writer.println("Cliente: " + nombreCliente + " " + apellidoCliente);
+                    writer.println("====================");
+
+                    for (Pedido pedido : pedidosMesa4) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    for (Pedido pedido : pedidosMesa4Llevar) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    writer.println("====================");
+                    writer.println("Total de la cuenta: S/ " + totalCuenta);
+                    JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en " + fileToSave.getAbsolutePath(), "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
+                    btnLimpiarMesa4.setEnabled(true);
+                } catch (FileNotFoundException e) {
+                    JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Guardado cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_btnGenerarReciboMesa4ActionPerformed
 
     private void btnGenerarReciboMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa5ActionPerformed
-        // TODO add your handling code here:
+        double totalCuenta = calcularCuentaMesa(pedidosMesa5, pedidosMesa5Llevar);
+
+        if (totalCuenta == 0) {
+            JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } else {
+
+            String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
+            while (nombreCliente == null || nombreCliente.isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
+                nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente:");
+            }
+
+            String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
+            while (apellidoCliente == null || apellidoCliente.isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
+                apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente:");
+            }
+
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Guardar recibo");
+            fileChooser.setSelectedFile(new File("recibo_mesa5.txt")); 
+
+            int userSelection = fileChooser.showSaveDialog(this);
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = fileChooser.getSelectedFile();
+
+                try (PrintWriter writer = new PrintWriter(fileToSave)) {
+                    writer.println("Recibo de la Mesa 5");
+                    writer.println("====================");
+                    writer.println("Cliente: " + nombreCliente + " " + apellidoCliente);
+                    writer.println("====================");
+
+                    for (Pedido pedido : pedidosMesa5) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    for (Pedido pedido : pedidosMesa5Llevar) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    writer.println("====================");
+                    writer.println("Total de la cuenta: S/ " + totalCuenta);
+                    JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en " + fileToSave.getAbsolutePath(), "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
+                    btnLimpiarMesa5.setEnabled(true);
+                } catch (FileNotFoundException e) {
+                    JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Guardado cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_btnGenerarReciboMesa5ActionPerformed
 
     private void btnGenerarReciboMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa6ActionPerformed
-        // TODO add your handling code here:
+        double totalCuenta = calcularCuentaMesa(pedidosMesa6, pedidosMesa6Llevar);
+
+        if (totalCuenta == 0) {
+            JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } else {
+
+            String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
+            while (nombreCliente == null || nombreCliente.isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
+                nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente:");
+            }
+
+            String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
+            while (apellidoCliente == null || apellidoCliente.isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
+                apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente:");
+            }
+
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Guardar recibo");
+            fileChooser.setSelectedFile(new File("recibo_mesa6.txt")); 
+
+            int userSelection = fileChooser.showSaveDialog(this);
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = fileChooser.getSelectedFile();
+
+                try (PrintWriter writer = new PrintWriter(fileToSave)) {
+                    writer.println("Recibo de la Mesa 6");
+                    writer.println("====================");
+                    writer.println("Cliente: " + nombreCliente + " " + apellidoCliente);
+                    writer.println("====================");
+
+                    for (Pedido pedido : pedidosMesa6) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    for (Pedido pedido : pedidosMesa6Llevar) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    writer.println("====================");
+                    writer.println("Total de la cuenta: S/ " + totalCuenta);
+                    JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en " + fileToSave.getAbsolutePath(), "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
+                    btnLimpiarMesa6.setEnabled(true);
+                } catch (FileNotFoundException e) {
+                    JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Guardado cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_btnGenerarReciboMesa6ActionPerformed
 
     private void btnGenerarReciboMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa7ActionPerformed
-        // TODO add your handling code here:
+        double totalCuenta = calcularCuentaMesa(pedidosMesa7, pedidosMesa7Llevar);
+
+        if (totalCuenta == 0) {
+            JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } else {
+
+            String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
+            while (nombreCliente == null || nombreCliente.isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
+                nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente:");
+            }
+
+            String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
+            while (apellidoCliente == null || apellidoCliente.isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
+                apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente:");
+            }
+
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Guardar recibo");
+            fileChooser.setSelectedFile(new File("recibo_mesa7.txt")); 
+
+            int userSelection = fileChooser.showSaveDialog(this);
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = fileChooser.getSelectedFile();
+
+                try (PrintWriter writer = new PrintWriter(fileToSave)) {
+                    writer.println("Recibo de la Mesa 7");
+                    writer.println("====================");
+                    writer.println("Cliente: " + nombreCliente + " " + apellidoCliente);
+                    writer.println("====================");
+
+                    for (Pedido pedido : pedidosMesa7) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    for (Pedido pedido : pedidosMesa7Llevar) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    writer.println("====================");
+                    writer.println("Total de la cuenta: S/ " + totalCuenta);
+                    JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en " + fileToSave.getAbsolutePath(), "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
+                    btnLimpiarMesa7.setEnabled(true);
+                } catch (FileNotFoundException e) {
+                    JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Guardado cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_btnGenerarReciboMesa7ActionPerformed
 
     private void btnGenerarReciboMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa8ActionPerformed
-        // TODO add your handling code here:
+        double totalCuenta = calcularCuentaMesa(pedidosMesa8, pedidosMesa8Llevar);
+
+        if (totalCuenta == 0) {
+            JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } else {
+
+            String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
+            while (nombreCliente == null || nombreCliente.isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
+                nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente:");
+            }
+
+            String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
+            while (apellidoCliente == null || apellidoCliente.isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
+                apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente:");
+            }
+
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Guardar recibo");
+            fileChooser.setSelectedFile(new File("recibo_mesa8.txt")); 
+
+            int userSelection = fileChooser.showSaveDialog(this);
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = fileChooser.getSelectedFile();
+
+                try (PrintWriter writer = new PrintWriter(fileToSave)) {
+                    writer.println("Recibo de la Mesa 8");
+                    writer.println("====================");
+                    writer.println("Cliente: " + nombreCliente + " " + apellidoCliente);
+                    writer.println("====================");
+
+                    for (Pedido pedido : pedidosMesa8) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    for (Pedido pedido : pedidosMesa8Llevar) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    writer.println("====================");
+                    writer.println("Total de la cuenta: S/ " + totalCuenta);
+                    JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en " + fileToSave.getAbsolutePath(), "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
+                    btnLimpiarMesa8.setEnabled(true);
+                } catch (FileNotFoundException e) {
+                    JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Guardado cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_btnGenerarReciboMesa8ActionPerformed
 
     private void btnGenerarReciboMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa9ActionPerformed
-        // TODO add your handling code here:
+        double totalCuenta = calcularCuentaMesa(pedidosMesa9, pedidosMesa9Llevar);
+
+        if (totalCuenta == 0) {
+            JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } else {
+
+            String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
+            while (nombreCliente == null || nombreCliente.isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
+                nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente:");
+            }
+
+            String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
+            while (apellidoCliente == null || apellidoCliente.isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
+                apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente:");
+            }
+
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Guardar recibo");
+            fileChooser.setSelectedFile(new File("recibo_mesa9.txt")); 
+
+            int userSelection = fileChooser.showSaveDialog(this);
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = fileChooser.getSelectedFile();
+
+                try (PrintWriter writer = new PrintWriter(fileToSave)) {
+                    writer.println("Recibo de la Mesa 9");
+                    writer.println("====================");
+                    writer.println("Cliente: " + nombreCliente + " " + apellidoCliente);
+                    writer.println("====================");
+
+                    for (Pedido pedido : pedidosMesa9) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    for (Pedido pedido : pedidosMesa9Llevar) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    writer.println("====================");
+                    writer.println("Total de la cuenta: S/ " + totalCuenta);
+                    JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en " + fileToSave.getAbsolutePath(), "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
+                    btnLimpiarMesa9.setEnabled(true);
+                } catch (FileNotFoundException e) {
+                    JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Guardado cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_btnGenerarReciboMesa9ActionPerformed
 
     private void btnGenerarReciboMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa10ActionPerformed
-        // TODO add your handling code here:
+        double totalCuenta = calcularCuentaMesa(pedidosMesa10, pedidosMesa10Llevar);
+
+        if (totalCuenta == 0) {
+            JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } else {
+
+            String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
+            while (nombreCliente == null || nombreCliente.isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
+                nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente:");
+            }
+
+            String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
+            while (apellidoCliente == null || apellidoCliente.isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
+                apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente:");
+            }
+
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Guardar recibo");
+            fileChooser.setSelectedFile(new File("recibo_mesa10.txt")); 
+
+            int userSelection = fileChooser.showSaveDialog(this);
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = fileChooser.getSelectedFile();
+
+                try (PrintWriter writer = new PrintWriter(fileToSave)) {
+                    writer.println("Recibo de la Mesa 10");
+                    writer.println("====================");
+                    writer.println("Cliente: " + nombreCliente + " " + apellidoCliente);
+                    writer.println("====================");
+
+                    for (Pedido pedido : pedidosMesa10) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    for (Pedido pedido : pedidosMesa10Llevar) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    writer.println("====================");
+                    writer.println("Total de la cuenta: S/ " + totalCuenta);
+                    JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en " + fileToSave.getAbsolutePath(), "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
+                    btnLimpiarMesa10.setEnabled(true);
+                } catch (FileNotFoundException e) {
+                    JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Guardado cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_btnGenerarReciboMesa10ActionPerformed
 
     private void btnGenerarReciboMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa11ActionPerformed
-        // TODO add your handling code here:
+        double totalCuenta = calcularCuentaMesa(pedidosMesa11, pedidosMesa11Llevar);
+
+        if (totalCuenta == 0) {
+            JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } else {
+
+            String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
+            while (nombreCliente == null || nombreCliente.isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
+                nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente:");
+            }
+
+            String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
+            while (apellidoCliente == null || apellidoCliente.isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
+                apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente:");
+            }
+
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Guardar recibo");
+            fileChooser.setSelectedFile(new File("recibo_mesa11.txt")); 
+
+            int userSelection = fileChooser.showSaveDialog(this);
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = fileChooser.getSelectedFile();
+
+                try (PrintWriter writer = new PrintWriter(fileToSave)) {
+                    writer.println("Recibo de la Mesa 11");
+                    writer.println("====================");
+                    writer.println("Cliente: " + nombreCliente + " " + apellidoCliente);
+                    writer.println("====================");
+
+                    for (Pedido pedido : pedidosMesa11) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    for (Pedido pedido : pedidosMesa11Llevar) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    writer.println("====================");
+                    writer.println("Total de la cuenta: S/ " + totalCuenta);
+                    JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en " + fileToSave.getAbsolutePath(), "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
+                    btnLimpiarMesa11.setEnabled(true);
+                } catch (FileNotFoundException e) {
+                    JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Guardado cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_btnGenerarReciboMesa11ActionPerformed
 
     private void btnGenerarReciboMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa12ActionPerformed
-        // TODO add your handling code here:
+        double totalCuenta = calcularCuentaMesa(pedidosMesa12, pedidosMesa12Llevar);
+
+        if (totalCuenta == 0) {
+            JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } else {
+
+            String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
+            while (nombreCliente == null || nombreCliente.isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
+                nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente:");
+            }
+
+            String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
+            while (apellidoCliente == null || apellidoCliente.isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
+                apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente:");
+            }
+
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Guardar recibo");
+            fileChooser.setSelectedFile(new File("recibo_mesa12.txt")); 
+
+            int userSelection = fileChooser.showSaveDialog(this);
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = fileChooser.getSelectedFile();
+
+                try (PrintWriter writer = new PrintWriter(fileToSave)) {
+                    writer.println("Recibo de la Mesa 12");
+                    writer.println("====================");
+                    writer.println("Cliente: " + nombreCliente + " " + apellidoCliente);
+                    writer.println("====================");
+
+                    for (Pedido pedido : pedidosMesa12) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    for (Pedido pedido : pedidosMesa12Llevar) {
+                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
+                        for (Producto producto : pedido.getListaProductos()) {
+                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+
+                            registrarProductoVendido(producto);
+                        }
+                        writer.println();
+                    }
+
+                    writer.println("====================");
+                    writer.println("Total de la cuenta: S/ " + totalCuenta);
+                    JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en " + fileToSave.getAbsolutePath(), "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
+                    btnLimpiarMesa12.setEnabled(true);
+                } catch (FileNotFoundException e) {
+                    JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Guardado cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_btnGenerarReciboMesa12ActionPerformed
 
     private double calcularTotalGananciasGlobal() {
