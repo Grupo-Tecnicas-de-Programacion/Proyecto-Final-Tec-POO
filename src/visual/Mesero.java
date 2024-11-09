@@ -7443,7 +7443,7 @@ public class Mesero extends javax.swing.JFrame {
     private void btnTotalCuentaMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa2ActionPerformed
         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa2, pedidosMesa2Llevar);
         
-         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 1 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 2 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
         
@@ -7454,7 +7454,7 @@ public class Mesero extends javax.swing.JFrame {
     private void btnTotalCuentaMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa3ActionPerformed
         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa3, pedidosMesa3Llevar);
         
-         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 1 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 3 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
         
@@ -7465,7 +7465,7 @@ public class Mesero extends javax.swing.JFrame {
     private void btnTotalCuentaMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa4ActionPerformed
          double totalCuentaMesa = calcularCuentaMesa(pedidosMesa4, pedidosMesa4Llevar);
         
-         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 1 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 4 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
         
@@ -7476,7 +7476,7 @@ public class Mesero extends javax.swing.JFrame {
     private void btnTotalCuentaMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa5ActionPerformed
          double totalCuentaMesa = calcularCuentaMesa(pedidosMesa5, pedidosMesa5Llevar);
         
-         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 1 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 5 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
         
@@ -7487,7 +7487,7 @@ public class Mesero extends javax.swing.JFrame {
     private void btnTotalCuentaMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa6ActionPerformed
          double totalCuentaMesa = calcularCuentaMesa(pedidosMesa6, pedidosMesa6Llevar);
         
-         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 1 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 6 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
         
@@ -7498,7 +7498,7 @@ public class Mesero extends javax.swing.JFrame {
     private void btnTotalCuentaMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa7ActionPerformed
          double totalCuentaMesa = calcularCuentaMesa(pedidosMesa7, pedidosMesa7Llevar);
         
-         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 1 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 7 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
         
@@ -7509,7 +7509,7 @@ public class Mesero extends javax.swing.JFrame {
     private void btnTotalCuentaMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa8ActionPerformed
          double totalCuentaMesa = calcularCuentaMesa(pedidosMesa8, pedidosMesa8Llevar);
         
-         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 1 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 8 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
         
@@ -7520,7 +7520,7 @@ public class Mesero extends javax.swing.JFrame {
     private void btnTotalCuentaMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa9ActionPerformed
          double totalCuentaMesa = calcularCuentaMesa(pedidosMesa9, pedidosMesa9Llevar);
         
-         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 1 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 9 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
         
@@ -7531,7 +7531,7 @@ public class Mesero extends javax.swing.JFrame {
     private void btnTotalCuentaMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa10ActionPerformed
          double totalCuentaMesa = calcularCuentaMesa(pedidosMesa10, pedidosMesa10Llevar);
         
-         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 1 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 10 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
         
@@ -7542,7 +7542,7 @@ public class Mesero extends javax.swing.JFrame {
     private void btnTotalCuentaMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa11ActionPerformed
          double totalCuentaMesa = calcularCuentaMesa(pedidosMesa11, pedidosMesa11Llevar);
         
-         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 1 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 11 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
         
@@ -7553,7 +7553,7 @@ public class Mesero extends javax.swing.JFrame {
     private void btnTotalCuentaMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa12ActionPerformed
          double totalCuentaMesa = calcularCuentaMesa(pedidosMesa12, pedidosMesa12Llevar);
         
-         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 1 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 12 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
         
