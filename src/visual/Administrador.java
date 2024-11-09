@@ -505,6 +505,8 @@ public class Administrador extends javax.swing.JFrame {
             }
         });
         panelCerrarSesion.add(btnCerrarSesionAdmnistrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(634, 175, 113, 64));
+
+        txtCodigoGenerado.setFont(new java.awt.Font("Segoe UI Black", 3, 18)); // NOI18N
         panelCerrarSesion.add(txtCodigoGenerado, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 175, 202, -1));
 
         jPanelMostrarAdmin.add(panelCerrarSesion, "card13");
@@ -553,7 +555,7 @@ public class Administrador extends javax.swing.JFrame {
         jMenuAdmin.add(menuUsuarios);
 
         menuReportes.setText("Reportes");
-        menuReportes.setPreferredSize(new java.awt.Dimension(180, 40));
+        menuReportes.setPreferredSize(new java.awt.Dimension(122, 50));
 
         menItemReporteVentas.setText("Reporte Ventas");
         menItemReporteVentas.setPreferredSize(new java.awt.Dimension(180, 30));
@@ -567,7 +569,7 @@ public class Administrador extends javax.swing.JFrame {
         jMenuAdmin.add(menuReportes);
 
         menuCerrar.setText("Cerrar");
-        menuCerrar.setPreferredSize(new java.awt.Dimension(180, 40));
+        menuCerrar.setPreferredSize(new java.awt.Dimension(122, 50));
 
         menItemCerrarSecsion.setText("Cerrar Sesion");
         menItemCerrarSecsion.setPreferredSize(new java.awt.Dimension(180, 30));
