@@ -7052,81 +7052,23 @@ public class Mesero extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarPedidoMesa1ActionPerformed
 
     private void btnLimpiarMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa2ActionPerformed
-        int indexMesa = listaVerPedidosMesa2.getSelectedIndex();
-        int indexLlevar = listaVerPedidosLlevarMesa2.getSelectedIndex();
+        pedidosMesa2.clear();
+        pedidosMesa2Llevar.clear();
 
-        
-        if (indexMesa >= 0) {
-            int confirmacion = JOptionPane.showConfirmDialog(
-                    this, 
-                    "¿Estás seguro de que deseas cancelar el pedido para mesa?", 
-                    "Confirmación de Cancelación", 
-                    JOptionPane.YES_NO_OPTION
-            );
+        actualizarListaPedidosMesa2();
+        detallePedidoMesa2.setModel(new DefaultListModel<>()); 
 
-            if (confirmacion == JOptionPane.YES_OPTION) {
-                pedidosMesa2.remove(indexMesa);
-                actualizarListaPedidosMesa2();
-                JOptionPane.showMessageDialog(rootPane, "Pedido para mesa cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                detallePedidoMesa2.setModel(new DefaultListModel<>());
-            }
-        }
-        else if (indexLlevar >= 0) {
-            int confirmacion = JOptionPane.showConfirmDialog(
-                    rootPane, 
-                    "¿Estás seguro de que deseas cancelar el pedido para llevar?", 
-                    "Confirmación de Cancelación", 
-                    JOptionPane.YES_NO_OPTION
-            );
-
-            if (confirmacion == JOptionPane.YES_OPTION) {
-                pedidosMesa2Llevar.remove(indexLlevar);
-                actualizarListaPedidosMesa2();
-                JOptionPane.showMessageDialog(rootPane, "Pedido para llevar cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                detallePedidoMesa2.setModel(new DefaultListModel<>());
-            }
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Por favor selecciona un pedido para cancelar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnLimpiarMesa2ActionPerformed
 
     private void btnLimpiarMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa3ActionPerformed
-        int indexMesa = listaVerPedidosMesa3.getSelectedIndex();
-        int indexLlevar = listaVerPedidosLlevarMesa3.getSelectedIndex();
+        pedidosMesa3.clear();
+        pedidosMesa1Llevar.clear();
 
-        
-        if (indexMesa >= 0) {
-            int confirmacion = JOptionPane.showConfirmDialog(
-                    this, 
-                    "¿Estás seguro de que deseas cancelar el pedido para mesa?", 
-                    "Confirmación de Cancelación", 
-                    JOptionPane.YES_NO_OPTION
-            );
+        actualizarListaPedidosMesa3();
+        detallePedidoMesa3.setModel(new DefaultListModel<>()); 
 
-            if (confirmacion == JOptionPane.YES_OPTION) {
-                pedidosMesa3.remove(indexMesa);
-                actualizarListaPedidosMesa3();
-                JOptionPane.showMessageDialog(rootPane, "Pedido para mesa cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                detallePedidoMesa3.setModel(new DefaultListModel<>());
-            }
-        }
-        else if (indexLlevar >= 0) {
-            int confirmacion = JOptionPane.showConfirmDialog(
-                    rootPane, 
-                    "¿Estás seguro de que deseas cancelar el pedido para llevar?", 
-                    "Confirmación de Cancelación", 
-                    JOptionPane.YES_NO_OPTION
-            );
-
-            if (confirmacion == JOptionPane.YES_OPTION) {
-                pedidosMesa3Llevar.remove(indexLlevar);
-                actualizarListaPedidosMesa3();
-                JOptionPane.showMessageDialog(rootPane, "Pedido para llevar cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                detallePedidoMesa3.setModel(new DefaultListModel<>());
-            }
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Por favor selecciona un pedido para cancelar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnLimpiarMesa3ActionPerformed
 
     private void cancelarPedidoMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa4ActionPerformed

@@ -37,7 +37,6 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         jLabel100 = new javax.swing.JLabel();
         NuevoNombreDeUsuario = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         btnVolverAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,15 +82,6 @@ public class CambioDeUsuario extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
-
-        jButton4.setBackground(new java.awt.Color(153, 0, 0));
-        jButton4.setText("Cancelar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, -1, -1));
 
         btnVolverAtras.setText("Volver atras");
         btnVolverAtras.addActionListener(new java.awt.event.ActionListener() {
@@ -149,10 +139,6 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void btnVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverAtrasActionPerformed
         new InicioSesion().setVisible(true);
         this.dispose();
@@ -198,7 +184,6 @@ public class CambioDeUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btnVolverAtras;
     private javax.swing.JLabel iblCambioDeUsuario;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;

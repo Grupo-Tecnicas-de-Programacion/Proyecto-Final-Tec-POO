@@ -38,10 +38,14 @@ public class BievenidaO extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("BIENVENIDO A");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 28, 101, 33));
 
         jLabel3.setText("Iniciar sesión como:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 141, 159, -1));
 
         btnIniciarSesionAdministrador.setText("ADMINISTRADOR");
         btnIniciarSesionAdministrador.addActionListener(new java.awt.event.ActionListener() {
@@ -49,8 +53,10 @@ public class BievenidaO extends javax.swing.JFrame {
                 btnIniciarSesionAdministradorActionPerformed(evt);
             }
         });
+        jPanel1.add(btnIniciarSesionAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 169, -1, -1));
 
         jLabel4.setText("\"¿Eres nuevo?\"");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 204, 86, -1));
 
         btnIniciarSesionMesero.setText("MESERO");
         btnIniciarSesionMesero.addActionListener(new java.awt.event.ActionListener() {
@@ -58,8 +64,10 @@ public class BievenidaO extends javax.swing.JFrame {
                 btnIniciarSesionMeseroActionPerformed(evt);
             }
         });
+        jPanel1.add(btnIniciarSesionMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 169, -1, -1));
 
         jLabel5.setText("Haz click en el siguiente botón para registrarte");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 232, -1, -1));
 
         btnRegsitrarseIniciarSesion.setText("REGISTRARSE");
         btnRegsitrarseIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -67,60 +75,11 @@ public class BievenidaO extends javax.swing.JFrame {
                 btnRegsitrarseIniciarSesionActionPerformed(evt);
             }
         });
+        jPanel1.add(btnRegsitrarseIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 255, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setText("POLLOS Y PARILLAS \" EL GRAN RANCHO\"");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(189, 189, 189)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnIniciarSesionAdministrador)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnIniciarSesionMesero))
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))))
-                .addGap(23, 23, 23))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnRegsitrarseIniciarSesion)
-                .addGap(58, 58, 58))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(189, 189, 189)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnIniciarSesionAdministrador)
-                    .addComponent(btnIniciarSesionMesero))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addGap(7, 7, 7)
-                .addComponent(btnRegsitrarseIniciarSesion)
-                .addGap(22, 22, 22))
-        );
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 67, 256, 56));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
