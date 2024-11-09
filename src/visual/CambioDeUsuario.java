@@ -4,6 +4,7 @@
  */
 package visual;
 
+import clases.Usuario;
 import javax.swing.JOptionPane;
 
 /**
@@ -33,11 +34,11 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         jLabel98 = new javax.swing.JLabel();
         txtNombreDeUsuario = new javax.swing.JTextField();
         jLabel99 = new javax.swing.JLabel();
-        txtContraseña = new javax.swing.JTextField();
         jLabel100 = new javax.swing.JLabel();
         txtNuevoNombreDeUsuario = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        btnActualizarNombreUsuario = new javax.swing.JButton();
         btnVolverAtras = new javax.swing.JButton();
+        txtContraseña = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
@@ -65,7 +66,6 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         jLabel99.setForeground(new java.awt.Color(0, 0, 0));
         jLabel99.setText("Ingrese su contraseña :");
         jPanel1.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
-        jPanel1.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 400, -1));
 
         jLabel100.setForeground(new java.awt.Color(0, 0, 0));
         jLabel100.setText("Ingrese su nuevo nombre de usuario :");
@@ -78,15 +78,17 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         });
         jPanel1.add(txtNuevoNombreDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 400, -1));
 
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("Actualizar usuario");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnActualizarNombreUsuario.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnActualizarNombreUsuario.setForeground(new java.awt.Color(0, 0, 0));
+        btnActualizarNombreUsuario.setText("Actualizar usuario");
+        btnActualizarNombreUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnActualizarNombreUsuarioActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
+        jPanel1.add(btnActualizarNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, 40));
 
+        btnVolverAtras.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnVolverAtras.setForeground(new java.awt.Color(0, 0, 0));
         btnVolverAtras.setText("Volver atras");
         btnVolverAtras.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +96,8 @@ public class CambioDeUsuario extends javax.swing.JFrame {
                 btnVolverAtrasActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVolverAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, -1, -1));
+        jPanel1.add(btnVolverAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, -1, 40));
+        jPanel1.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 400, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -140,12 +143,28 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNuevoNombreDeUsuarioActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void btnActualizarNombreUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarNombreUsuarioActionPerformed
+        String nombreUsuario = txtNombreDeUsuario.getText();
+        String contrasenia = new String(txtContraseña.getPassword());
+        String nuevoNombreUsuario = txtNuevoNombreDeUsuario.getText();
+
+        for (Usuario usuario : Usuario.getListaUsuarios()) {
+            if (usuario.getNombreUsuario().equals(nombreUsuario)) {
+                boolean exito = usuario.cambiarNombreUsuario(contrasenia, nuevoNombreUsuario);
+                if (exito) {
+                    JOptionPane.showMessageDialog(this, "Nombre de usuario actualizado con éxito.");
+                } else {
+                    JOptionPane.showMessageDialog(this, "Contraseña incorrecta. No se pudo actualizar el nombre de usuario.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+                return;
+            }
+        }
+
+        JOptionPane.showMessageDialog(this, "Usuario no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_btnActualizarNombreUsuarioActionPerformed
 
     private void btnVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverAtrasActionPerformed
-        new InicioSesion().setVisible(true);
+        new BievenidaO().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVolverAtrasActionPerformed
 
@@ -185,14 +204,14 @@ public class CambioDeUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActualizarNombreUsuario;
     private javax.swing.JButton btnVolverAtras;
     private javax.swing.JLabel iblCambioDeUsuario;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtContraseña;
+    private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtNombreDeUsuario;
     private javax.swing.JTextField txtNuevoNombreDeUsuario;
     // End of variables declaration//GEN-END:variables

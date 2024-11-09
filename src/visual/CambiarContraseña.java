@@ -4,6 +4,9 @@
  */
 package visual;
 
+import clases.Usuario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Lennin
@@ -29,7 +32,7 @@ public class CambiarContraseña extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtNombreUsuarioCambiarContraseña = new javax.swing.JTextField();
         btnVolverAtras = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnCambiarContraseña = new javax.swing.JButton();
         txtAntiguaContraseña = new javax.swing.JPasswordField();
         txtNuevaContraseña = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
@@ -55,6 +58,7 @@ public class CambiarContraseña extends javax.swing.JFrame {
         txtNombreUsuarioCambiarContraseña.setColumns(12);
         jPanel1.add(txtNombreUsuarioCambiarContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 79, 179, -1));
 
+        btnVolverAtras.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnVolverAtras.setForeground(new java.awt.Color(0, 0, 0));
         btnVolverAtras.setText("Volver atrás");
         btnVolverAtras.addActionListener(new java.awt.event.ActionListener() {
@@ -62,11 +66,17 @@ public class CambiarContraseña extends javax.swing.JFrame {
                 btnVolverAtrasActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVolverAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 233, -1, -1));
+        jPanel1.add(btnVolverAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 233, -1, 40));
 
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Cambiar contraseña ");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 233, -1, -1));
+        btnCambiarContraseña.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnCambiarContraseña.setForeground(new java.awt.Color(0, 0, 0));
+        btnCambiarContraseña.setText("Cambiar contraseña ");
+        btnCambiarContraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCambiarContraseñaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCambiarContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 233, -1, 40));
 
         txtAntiguaContraseña.setColumns(15);
         jPanel1.add(txtAntiguaContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 119, -1, -1));
@@ -94,9 +104,29 @@ public class CambiarContraseña extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverAtrasActionPerformed
-        new InicioSesion().setVisible(true);
+        new BievenidaO().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVolverAtrasActionPerformed
+
+    private void btnCambiarContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarContraseñaActionPerformed
+        String nombreUsuario = txtNombreUsuarioCambiarContraseña.getText();
+        String contraseniaActual = new String(txtAntiguaContraseña.getPassword());
+        String nuevaContrasenia = new String(txtNuevaContraseña.getPassword());
+
+        for (Usuario usuario : Usuario.getListaUsuarios()) {
+            if (usuario.getNombreUsuario().equals(nombreUsuario)) {
+                boolean exito = usuario.cambiarContrasenia(contraseniaActual, nuevaContrasenia);
+                if (exito) {
+                    JOptionPane.showMessageDialog(rootPane, "Contraseña actualizada con éxito.");
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Contraseña actual incorrecta. No se pudo actualizar la contraseña.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+                return;
+            }
+        }
+
+        JOptionPane.showMessageDialog(rootPane, "Usuario no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_btnCambiarContraseñaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,8 +164,8 @@ public class CambiarContraseña extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCambiarContraseña;
     private javax.swing.JButton btnVolverAtras;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
