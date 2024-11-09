@@ -2,58 +2,42 @@ package clases;
 
 
 public class Reporte {
-    private String fechaReporte;
-    private String tituloReporte;
-    private int cantidadProductosVendidos;
+    private String fecha;
+    private String nombre;
     private double totalGanancias;
+    private int cantidadProductosVendidos;
 
-    public Reporte() {
-    }
-
-    public Reporte(String fechaReporte, String tituloReporte, int cantidadProductosVendidos, double totalGanancias) {
-        this.fechaReporte = fechaReporte;
-        this.tituloReporte = tituloReporte;
-        this.cantidadProductosVendidos = cantidadProductosVendidos;
+    public Reporte(String fecha, String nombre, double totalGanancias, int cantidadProductosVendidos) {
+        this.fecha = fecha;
+        this.nombre = nombre;
         this.totalGanancias = totalGanancias;
-    }
-
-    public String getFechaReporte() {
-        return fechaReporte;
-    }
-
-    public void setFechaReporte(String fechaReporte) {
-        this.fechaReporte = fechaReporte;
-    }
-
-    public String getTituloReporte() {
-        return tituloReporte;
-    }
-
-    public void setTituloReporte(String tituloReporte) {
-        this.tituloReporte = tituloReporte;
-    }
-
-    public int getCantidadProductosVendidos() {
-        return cantidadProductosVendidos;
-    }
-
-    public void setCantidadProductosVendidos(int cantidadProductosVendidos) {
         this.cantidadProductosVendidos = cantidadProductosVendidos;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 
     public double getTotalGanancias() {
         return totalGanancias;
     }
 
-    public void setTotalGanancias(double totalGanancias) {
-        this.totalGanancias = totalGanancias;
+    public int getCantidadProductosVendidos() {
+        return cantidadProductosVendidos;
     }
 
     @Override
     public String toString() {
-        return "Reporte:" + " Fecha reporte = " + fechaReporte + " | Titulo del reporte = " + tituloReporte + " | Cantidad de productos vendidos = " + cantidadProductosVendidos + " | Total Ganancias = " + totalGanancias;
+        return "Reporte{" +
+                "fecha='" + fecha + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", totalGanancias=" + totalGanancias +
+                ", cantidadProductosVendidos=" + cantidadProductosVendidos +
+                '}';
     }
-    
-    
-    
 }
+

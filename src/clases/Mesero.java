@@ -36,8 +36,8 @@ public class Mesero extends Usuario{
         this.pedidos = pedidos;
     }
     
-    public Reporte generarReporte(String fecha, String nombre, int cantidaProductos, double totalGanancia){
-        Reporte nuevoReporte = new Reporte(fecha, nombre, cantidaProductos, totalGanancia);
+    public Reporte generarReporte(String fecha, String nombre, double totalGanancia, int cantidaProductos){
+        Reporte nuevoReporte = new Reporte(fecha, nombre, totalGanancia, cantidaProductos);
         reportes.add(nuevoReporte);
         return nuevoReporte;
     }

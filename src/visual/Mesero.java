@@ -442,7 +442,7 @@ public class Mesero extends javax.swing.JFrame {
         jLabel147 = new javax.swing.JLabel();
         txtFechaGenerarReporte = new javax.swing.JTextField();
         txtNombreGenerarReporte = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        btnGenerarReporteDia = new javax.swing.JButton();
         verPedidoMesa1 = new javax.swing.JPanel();
         volverAtrasMesa1 = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
@@ -1146,6 +1146,11 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnGenerarReciboMesa2.setForeground(new java.awt.Color(0, 0, 0));
         btnGenerarReciboMesa2.setText("Generar recibo");
+        btnGenerarReciboMesa2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReciboMesa2ActionPerformed(evt);
+            }
+        });
         panelMesa2.add(btnGenerarReciboMesa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 120, 40));
 
         btnVerInfoMesa2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -1263,6 +1268,11 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnGenerarReciboMesa3.setForeground(new java.awt.Color(0, 0, 0));
         btnGenerarReciboMesa3.setText("Generar recibo");
+        btnGenerarReciboMesa3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReciboMesa3ActionPerformed(evt);
+            }
+        });
         panelMesa3.add(btnGenerarReciboMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 120, 40));
 
         btnVerInfoMesa3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -1380,6 +1390,11 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnGenerarReciboMesa4.setForeground(new java.awt.Color(0, 0, 0));
         btnGenerarReciboMesa4.setText("Generar recibo");
+        btnGenerarReciboMesa4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReciboMesa4ActionPerformed(evt);
+            }
+        });
         panelMesa4.add(btnGenerarReciboMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 120, 40));
 
         btnVerInfoMesa4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -1497,6 +1512,11 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnGenerarReciboMesa5.setForeground(new java.awt.Color(0, 0, 0));
         btnGenerarReciboMesa5.setText("Generar recibo");
+        btnGenerarReciboMesa5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReciboMesa5ActionPerformed(evt);
+            }
+        });
         panelMesa5.add(btnGenerarReciboMesa5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 120, 40));
 
         btnVerInfoMesa5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -1614,6 +1634,11 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnGenerarReciboMesa6.setForeground(new java.awt.Color(0, 0, 0));
         btnGenerarReciboMesa6.setText("Generar recibo");
+        btnGenerarReciboMesa6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReciboMesa6ActionPerformed(evt);
+            }
+        });
         panelMesa6.add(btnGenerarReciboMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 120, 40));
 
         btnVerInfoMesa6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -1717,6 +1742,11 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnGenerarReciboMesa7.setForeground(new java.awt.Color(0, 0, 0));
         btnGenerarReciboMesa7.setText("Generar recibo");
+        btnGenerarReciboMesa7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReciboMesa7ActionPerformed(evt);
+            }
+        });
         panelMesa7.add(btnGenerarReciboMesa7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 120, 40));
 
         btnVerInfoMesa7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -1834,6 +1864,11 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnGenerarReciboMesa8.setForeground(new java.awt.Color(0, 0, 0));
         btnGenerarReciboMesa8.setText("Generar recibo");
+        btnGenerarReciboMesa8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReciboMesa8ActionPerformed(evt);
+            }
+        });
         panelMesa8.add(btnGenerarReciboMesa8, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 120, 40));
 
         btnVerInfoMesa8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -1952,6 +1987,11 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnGenerarReciboMesa9.setForeground(new java.awt.Color(0, 0, 0));
         btnGenerarReciboMesa9.setText("Generar recibo");
+        btnGenerarReciboMesa9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReciboMesa9ActionPerformed(evt);
+            }
+        });
         panelMesa9.add(btnGenerarReciboMesa9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 120, 40));
 
         btnVerInfoMesa9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -2069,6 +2109,11 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnGenerarReciboMesa10.setForeground(new java.awt.Color(0, 0, 0));
         btnGenerarReciboMesa10.setText("Generar recibo");
+        btnGenerarReciboMesa10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReciboMesa10ActionPerformed(evt);
+            }
+        });
         panelMesa10.add(btnGenerarReciboMesa10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 120, 40));
 
         btnVerInfoMesa10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -2200,6 +2245,11 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnGenerarReciboMesa11.setForeground(new java.awt.Color(0, 0, 0));
         btnGenerarReciboMesa11.setText("Generar recibo");
+        btnGenerarReciboMesa11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReciboMesa11ActionPerformed(evt);
+            }
+        });
         panelMesa11.add(btnGenerarReciboMesa11, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 120, 40));
 
         btnVerInfoMesa11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -2317,6 +2367,11 @@ public class Mesero extends javax.swing.JFrame {
         btnGenerarReciboMesa12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnGenerarReciboMesa12.setForeground(new java.awt.Color(0, 0, 0));
         btnGenerarReciboMesa12.setText("Generar recibo");
+        btnGenerarReciboMesa12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReciboMesa12ActionPerformed(evt);
+            }
+        });
         panelMesa12.add(btnGenerarReciboMesa12, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 120, 40));
 
         btnVerInfoMesa12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -2812,10 +2867,15 @@ public class Mesero extends javax.swing.JFrame {
         txtNombreGenerarReporte.setText("Nombre del reporte");
         panelGenerarReporte.add(txtNombreGenerarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 160, 30));
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Generar reporte");
-        panelGenerarReporte.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 190, 160, 130));
+        btnGenerarReporteDia.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnGenerarReporteDia.setForeground(new java.awt.Color(0, 0, 0));
+        btnGenerarReporteDia.setText("Generar reporte");
+        btnGenerarReporteDia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReporteDiaActionPerformed(evt);
+            }
+        });
+        panelGenerarReporte.add(btnGenerarReporteDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 190, 160, 130));
 
         jPanelMostrar.add(panelGenerarReporte, "card12");
 
@@ -8923,6 +8983,54 @@ public class Mesero extends javax.swing.JFrame {
     private void listaPedidosMesa12ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaPedidosMesa12ValueChanged
         cambioSeleccionVerPedidos(productosPedidoMesa12, listaPedidosMesa12);
     }//GEN-LAST:event_listaPedidosMesa12ValueChanged
+
+    private void btnGenerarReciboMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarReciboMesa2ActionPerformed
+
+    private void btnGenerarReciboMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarReciboMesa3ActionPerformed
+
+    private void btnGenerarReciboMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarReciboMesa4ActionPerformed
+
+    private void btnGenerarReciboMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarReciboMesa5ActionPerformed
+
+    private void btnGenerarReciboMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarReciboMesa6ActionPerformed
+
+    private void btnGenerarReciboMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarReciboMesa7ActionPerformed
+
+    private void btnGenerarReciboMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarReciboMesa8ActionPerformed
+
+    private void btnGenerarReciboMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarReciboMesa9ActionPerformed
+
+    private void btnGenerarReciboMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarReciboMesa10ActionPerformed
+
+    private void btnGenerarReciboMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarReciboMesa11ActionPerformed
+
+    private void btnGenerarReciboMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarReciboMesa12ActionPerformed
+
+    private void btnGenerarReporteDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteDiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarReporteDiaActionPerformed
     
     private void actualizarListaProductosDelPedidoMesa1() {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
@@ -9152,6 +9260,7 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JButton btnGenerarReciboMesa7;
     private javax.swing.JButton btnGenerarReciboMesa8;
     private javax.swing.JButton btnGenerarReciboMesa9;
+    private javax.swing.JButton btnGenerarReporteDia;
     private javax.swing.JButton btnLimpiarMesa1;
     private javax.swing.JButton btnLimpiarMesa10;
     private javax.swing.JButton btnLimpiarMesa11;
@@ -9250,7 +9359,6 @@ public class Mesero extends javax.swing.JFrame {
     private javax.swing.JList<String> detallePedidoMesa7;
     private javax.swing.JList<String> detallePedidoMesa8;
     private javax.swing.JList<String> detallePedidoMesa9;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
