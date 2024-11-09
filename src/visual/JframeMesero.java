@@ -7063,7 +7063,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
     private void btnLimpiarMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa3ActionPerformed
         pedidosMesa3.clear();
-        pedidosMesa1Llevar.clear();
+        pedidosMesa3Llevar.clear();
 
         actualizarListaPedidosMesa3();
         detallePedidoMesa3.setModel(new DefaultListModel<>()); 
@@ -8378,39 +8378,93 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarPedidoMesa3ActionPerformed
 
     private void btnLimpiarMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa4ActionPerformed
-        // TODO add your handling code here:
+        pedidosMesa4.clear();
+        pedidosMesa4Llevar.clear();
+
+        actualizarListaPedidosMesa4();
+        detallePedidoMesa4.setModel(new DefaultListModel<>()); 
+
+        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnLimpiarMesa4ActionPerformed
 
     private void btnLimpiarMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa5ActionPerformed
-        // TODO add your handling code here:
+        pedidosMesa5.clear();
+        pedidosMesa5Llevar.clear();
+
+        actualizarListaPedidosMesa5();
+        detallePedidoMesa5.setModel(new DefaultListModel<>()); 
+
+        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnLimpiarMesa5ActionPerformed
 
     private void btnLimpiarMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa6ActionPerformed
-        // TODO add your handling code here:
+        pedidosMesa6.clear();
+        pedidosMesa6Llevar.clear();
+
+        actualizarListaPedidosMesa6();
+        detallePedidoMesa6.setModel(new DefaultListModel<>()); 
+
+        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnLimpiarMesa6ActionPerformed
 
     private void btnLimpiarMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa7ActionPerformed
-        // TODO add your handling code here:
+        pedidosMesa7.clear();
+        pedidosMesa7Llevar.clear();
+
+        actualizarListaPedidosMesa7();
+        detallePedidoMesa7.setModel(new DefaultListModel<>()); 
+
+        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnLimpiarMesa7ActionPerformed
 
     private void btnLimpiarMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa8ActionPerformed
-        // TODO add your handling code here:
+        pedidosMesa8.clear();
+        pedidosMesa8Llevar.clear();
+
+        actualizarListaPedidosMesa8();
+        detallePedidoMesa8.setModel(new DefaultListModel<>()); 
+
+        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnLimpiarMesa8ActionPerformed
 
     private void btnLimpiarMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa9ActionPerformed
-        // TODO add your handling code here:
+        pedidosMesa9.clear();
+        pedidosMesa9Llevar.clear();
+
+        actualizarListaPedidosMesa9();
+        detallePedidoMesa9.setModel(new DefaultListModel<>()); 
+
+        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnLimpiarMesa9ActionPerformed
 
     private void btnLimpiarMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa10ActionPerformed
-        // TODO add your handling code here:
+        pedidosMesa10.clear();
+        pedidosMesa10Llevar.clear();
+
+        actualizarListaPedidosMesa10();
+        detallePedidoMesa10.setModel(new DefaultListModel<>()); 
+
+        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnLimpiarMesa10ActionPerformed
 
     private void btnLimpiarMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa11ActionPerformed
-        // TODO add your handling code here:
+        pedidosMesa11.clear();
+        pedidosMesa11Llevar.clear();
+
+        actualizarListaPedidosMesa11();
+        detallePedidoMesa11.setModel(new DefaultListModel<>()); 
+
+        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnLimpiarMesa11ActionPerformed
 
     private void btnLimpiarMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa12ActionPerformed
-        // TODO add your handling code here:
+        pedidosMesa12.clear();
+        pedidosMesa12Llevar.clear();
+
+        actualizarListaPedidosMesa12();
+        detallePedidoMesa12.setModel(new DefaultListModel<>()); 
+
+        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnLimpiarMesa12ActionPerformed
 
     private void cancelarPedidoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa2ActionPerformed
