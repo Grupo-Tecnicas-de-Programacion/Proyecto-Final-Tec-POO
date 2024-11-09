@@ -26,7 +26,7 @@ import javax.swing.JOptionPane;
  *
  * @author EQUIPO
  */
-public class Mesero extends javax.swing.JFrame {
+public class JframeMesero extends javax.swing.JFrame {
 
     private File archivoSeleccionado;
     private ArrayList<Mesa> mesas = new ArrayList<>();
@@ -71,7 +71,7 @@ public class Mesero extends javax.swing.JFrame {
     private ArrayList<Pedido> pedidosMesa12Llevar = new ArrayList<>();
     private ArrayList<Producto> productosVendidos = new ArrayList<>();
     
-    public Mesero() {
+    public JframeMesero() {
         initComponents();
         jPanelMostrar.add(panelCargarMesas, "panelCargarMesas");
         jPanelMostrar.add(panelCargarProductos, "panelCargarProductos");
@@ -9923,20 +9923,21 @@ public class Mesero extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Mesero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JframeMesero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Mesero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JframeMesero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Mesero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JframeMesero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Mesero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JframeMesero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Mesero().setVisible(true);
+                new JframeMesero().setVisible(true);
             }
         });
     }

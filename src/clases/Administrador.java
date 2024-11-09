@@ -6,15 +6,11 @@ import clases.Usuario;
 import java.util.ArrayList;
 
 
-public class Administrador extends Usuario{
+public class Administrador extends Usuario {
     private ArrayList<Reporte> reportes;
 
-    public Administrador() {
-        this.reportes = new ArrayList<>();
-    }
-
-    public Administrador(ArrayList<Reporte> reportes, String nombreUsuario, String constrasenia) {
-        super(nombreUsuario, constrasenia);
+    public Administrador(String nombreUsuario, String contrasenia) {
+        super(nombreUsuario, contrasenia, "ADMINISTRADOR"); // Se agrega el rol al constructor
         this.reportes = new ArrayList<>();
     }
 
@@ -28,12 +24,10 @@ public class Administrador extends Usuario{
 
     @Override
     public String toString() {
-        return "Administrador{" + "reportes=" + reportes + '}';
+        return "Administrador{" + "nombreUsuario='" + nombreUsuario + '\'' + ", reportes=" + reportes + '}';
     }
-    
-    
-    public ArrayList<Reporte> obtenerTodosLosReportes(){
+
+    public ArrayList<Reporte> obtenerTodosLosReportes() {
         return this.getReportes();
     }
-    
 }
