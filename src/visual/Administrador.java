@@ -20,7 +20,6 @@ public class Administrador extends javax.swing.JFrame {
      */
     public Administrador() {
         initComponents();
-        jPanelMostrarAdmin.add(panelAgregarProducto, "panelAgregarProducto");
         jPanelMostrarAdmin.add(panelEliminarUsuarios, "panelEliminarUsuarios");
         jPanelMostrarAdmin.add(panelAgregarUsuarios, "panelAgregarUsuarios");
         jPanelMostrarAdmin.add(panelModificarUsuarios, "panelModificarUsuarios");
@@ -151,26 +150,8 @@ public class Administrador extends javax.swing.JFrame {
         txtIngreseCodigoGenerado = new javax.swing.JTextField();
         btnCerrarSesionAdmnistrador = new javax.swing.JButton();
         txtCodigoGenerado = new javax.swing.JTextField();
-        panelAgregarProducto = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        txtCategoriaPlato = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        txtAgregarPlatoCarta = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        txtCantidadPlato = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        btnAgregarProducto = new javax.swing.JButton();
-        btnCancelarAgregacion = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        listCartaActualizada = new javax.swing.JList<>();
-        txtPrecioPlato = new javax.swing.JTextField();
         jMenuAdmin = new javax.swing.JMenuBar();
         menuInventario = new javax.swing.JMenu();
-        menItemAgregarProductos = new javax.swing.JMenuItem();
         menuStock = new javax.swing.JMenu();
         menuUsuarios = new javax.swing.JMenu();
         menItemEliminarUsuario = new javax.swing.JMenuItem();
@@ -618,87 +599,10 @@ public class Administrador extends javax.swing.JFrame {
 
         jPanelMostrarAdmin.add(panelCerrarSesion, "card13");
 
-        panelAgregarProducto.setBackground(new java.awt.Color(153, 153, 153));
-        panelAgregarProducto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelAgregarProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("AGREGAR PRODUCTO A LA CARTA");
-        panelAgregarProducto.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 28, 446, 30));
-
-        jLabel8.setBackground(new java.awt.Color(102, 102, 102));
-        jLabel8.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Nombre del producto :");
-        panelAgregarProducto.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 126, -1, -1));
-
-        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel9.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Categoria :");
-        panelAgregarProducto.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 205, -1, -1));
-        panelAgregarProducto.add(txtCategoriaPlato, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 236, 196, -1));
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("Precio : ");
-        panelAgregarProducto.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 205, -1, -1));
-        panelAgregarProducto.add(txtAgregarPlatoCarta, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 157, 196, -1));
-
-        jLabel11.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("Cantidad : ");
-        panelAgregarProducto.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 126, -1, -1));
-        panelAgregarProducto.add(txtCantidadPlato, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 157, 175, -1));
-
-        jLabel13.setFont(new java.awt.Font("Segoe UI Black", 3, 12)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel13.setText("Complete la información para agregar nuevo producto :");
-        panelAgregarProducto.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 76, -1, -1));
-
-        btnAgregarProducto.setBackground(new java.awt.Color(0, 153, 0));
-        btnAgregarProducto.setText("Agregar");
-        btnAgregarProducto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelAgregarProducto.add(btnAgregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 59, 29));
-
-        btnCancelarAgregacion.setBackground(new java.awt.Color(153, 0, 0));
-        btnCancelarAgregacion.setText("Cancelar");
-        btnCancelarAgregacion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelAgregarProducto.add(btnCancelarAgregacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 350, -1, 29));
-
-        jLabel14.setFont(new java.awt.Font("Segoe UI Black", 3, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel14.setText("Estas seguro de agregar este producto a la carta ?");
-        panelAgregarProducto.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 305, -1, 16));
-
-        jLabel15.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel15.setText("Carta actualizada :");
-        panelAgregarProducto.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(601, 126, -1, -1));
-
-        listCartaActualizada.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane2.setViewportView(listCartaActualizada);
-
-        panelAgregarProducto.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(601, 157, 200, 290));
-        panelAgregarProducto.add(txtPrecioPlato, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 236, 175, -1));
-
-        jPanelMostrarAdmin.add(panelAgregarProducto, "card13");
-
         jMenuAdmin.setPreferredSize(new java.awt.Dimension(850, 51));
 
         menuInventario.setText("Inventario");
         menuInventario.setPreferredSize(new java.awt.Dimension(122, 50));
-
-        menItemAgregarProductos.setText("Agregar Producto");
-        menItemAgregarProductos.setPreferredSize(new java.awt.Dimension(180, 40));
-        menItemAgregarProductos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menItemAgregarProductosActionPerformed(evt);
-            }
-        });
-        menuInventario.add(menItemAgregarProductos);
-
         jMenuAdmin.add(menuInventario);
 
         menuStock.setText("Stock");
@@ -846,11 +750,6 @@ public class Administrador extends javax.swing.JFrame {
         CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
         layout.show(jPanelMostrarAdmin, "panelEliminarUsuarios");
     }//GEN-LAST:event_menItemEliminarUsuarioActionPerformed
-
-    private void menItemAgregarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemAgregarProductosActionPerformed
-        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
-        layout.show(jPanelMostrarAdmin, "panelAgregarProducto");
-    }//GEN-LAST:event_menItemAgregarProductosActionPerformed
     
     private void btnCerrarSesionAdmnistradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionAdmnistradorActionPerformed
         String numeroGenerado = txtCodigoGenerado.getText();
@@ -949,8 +848,6 @@ public class Administrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregarProducto;
-    private javax.swing.JButton btnCancelarAgregacion;
     private javax.swing.JButton btnCancelarAsignacion;
     private javax.swing.JButton btnCancelarEdicionDatos;
     private javax.swing.JButton btnCancelarEliminacionMesero;
@@ -965,11 +862,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton btnRestablecerCambios;
     private javax.swing.JButton btnSeleccionarMesero;
     private javax.swing.JButton btnVerReporte;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
@@ -1007,7 +899,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
@@ -1016,14 +907,12 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel79;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuAdmin;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelMostrarAdmin;
@@ -1032,17 +921,14 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JScrollPane jScrollPane18;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JList<String> listCartaActualizada;
     private javax.swing.JList<String> listDatosMeseros;
     private javax.swing.JList<String> listGestionMeseros;
     private javax.swing.JList<String> listMeseroActualizados;
     private javax.swing.JList<String> listMeseros;
     private javax.swing.JList<String> listMeserosPermisos;
     private javax.swing.JList<String> listPermisos;
-    private javax.swing.JMenuItem menItemAgregarProductos;
     private javax.swing.JMenuItem menItemAgregarUsuario;
     private javax.swing.JMenuItem menItemAsignarPermisos;
     private javax.swing.JMenuItem menItemCerrarSecsion;
@@ -1056,7 +942,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JMenu menuReportes;
     private javax.swing.JMenu menuStock;
     private javax.swing.JMenu menuUsuarios;
-    private javax.swing.JPanel panelAgregarProducto;
     private javax.swing.JPanel panelAgregarUsuarios;
     private javax.swing.JPanel panelAsignarPermisos;
     private javax.swing.JPanel panelCerrarSesion;
@@ -1064,11 +949,8 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JPanel panelGestionarUsuarios;
     private javax.swing.JPanel panelModificarUsuarios;
     private javax.swing.JPanel panelReporteVentas;
-    private javax.swing.JTextField txtAgregarPlatoCarta;
     private javax.swing.JTextField txtApellidoNuevoMesero;
-    private javax.swing.JTextField txtCantidadPlato;
     private javax.swing.JTextField txtCantidadReporteSeleccionado;
-    private javax.swing.JTextField txtCategoriaPlato;
     private javax.swing.JTextField txtCodigoGenerado;
     private javax.swing.JTextField txtConfirCotraseñModificada;
     private javax.swing.JTextField txtConfirmarContraseñaNuevoMesero;
@@ -1090,7 +972,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombreMeseroPermisos;
     private javax.swing.JTextField txtNombreNuevoMesero;
     private javax.swing.JTextField txtNuevaContraseñaModificada;
-    private javax.swing.JTextField txtPrecioPlato;
     private javax.swing.JTextField txtTelefonoNuevomesero;
     private javax.swing.JTextField txtUsuarioNuevoMesero;
     // End of variables declaration//GEN-END:variables
