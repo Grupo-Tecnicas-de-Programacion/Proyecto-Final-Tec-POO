@@ -5625,9 +5625,6 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtFechaGenerarReporte">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Fecha del reporte"/>
-              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="280" y="210" width="160" height="30"/>
@@ -5635,10 +5632,6 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNombreGenerarReporte">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="text" type="java.lang.String" value="Nombre del reporte"/>
-              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="280" y="290" width="160" height="30"/>
