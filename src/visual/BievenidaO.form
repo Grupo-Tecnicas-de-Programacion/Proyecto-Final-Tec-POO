@@ -82,7 +82,7 @@
         <Component class="javax.swing.JButton" name="btnIniciarSesionAdministrador">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="c0" green="c0" id="lightGray" palette="1" red="c0" type="palette"/>
+              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="ADMINISTRADOR"/>
           </Properties>
@@ -111,7 +111,7 @@
         <Component class="javax.swing.JButton" name="btnIniciarSesionMesero">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="c0" green="c0" id="lightGray" palette="1" red="c0" type="palette"/>
+              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="MESERO"/>
           </Properties>
@@ -140,7 +140,7 @@
         <Component class="javax.swing.JButton" name="btnRegsitrarseIniciarSesion">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="c0" green="c0" id="lightGray" palette="1" red="c0" type="palette"/>
+              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="REGISTRARSE"/>
           </Properties>

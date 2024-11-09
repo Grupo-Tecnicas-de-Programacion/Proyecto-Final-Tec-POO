@@ -50,7 +50,7 @@ public class BievenidaO extends javax.swing.JFrame {
         jLabel3.setText("Iniciar sesión como:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 141, 159, -1));
 
-        btnIniciarSesionAdministrador.setForeground(java.awt.Color.lightGray);
+        btnIniciarSesionAdministrador.setForeground(new java.awt.Color(0, 0, 0));
         btnIniciarSesionAdministrador.setText("ADMINISTRADOR");
         btnIniciarSesionAdministrador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,7 +63,7 @@ public class BievenidaO extends javax.swing.JFrame {
         jLabel4.setText("\"¿Eres nuevo?\"");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 204, 86, -1));
 
-        btnIniciarSesionMesero.setForeground(java.awt.Color.lightGray);
+        btnIniciarSesionMesero.setForeground(new java.awt.Color(0, 0, 0));
         btnIniciarSesionMesero.setText("MESERO");
         btnIniciarSesionMesero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +76,7 @@ public class BievenidaO extends javax.swing.JFrame {
         jLabel5.setText("Haz click en el siguiente botón para registrarte");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 232, -1, -1));
 
-        btnRegsitrarseIniciarSesion.setForeground(java.awt.Color.lightGray);
+        btnRegsitrarseIniciarSesion.setForeground(new java.awt.Color(0, 0, 0));
         btnRegsitrarseIniciarSesion.setText("REGISTRARSE");
         btnRegsitrarseIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

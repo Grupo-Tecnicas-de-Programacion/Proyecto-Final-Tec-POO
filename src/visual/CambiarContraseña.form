@@ -86,7 +86,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="txtNombreUsuarioCambiarContrase&#xf1;a">
           <Properties>
             <Property name="columns" type="int" value="12"/>
           </Properties>
@@ -125,7 +125,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+        <Component class="javax.swing.JPasswordField" name="txtAntiguaContrase&#xf1;a">
           <Properties>
             <Property name="columns" type="int" value="15"/>
           </Properties>
@@ -135,7 +135,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jPasswordField2">
+        <Component class="javax.swing.JPasswordField" name="txtNuevaContrase&#xf1;a">
           <Properties>
             <Property name="columns" type="int" value="15"/>
           </Properties>

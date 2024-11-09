@@ -31,11 +31,11 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         iblCambioDeUsuario = new javax.swing.JLabel();
         jLabel98 = new javax.swing.JLabel();
-        txtNombreDeUsuaario = new javax.swing.JTextField();
+        txtNombreDeUsuario = new javax.swing.JTextField();
         jLabel99 = new javax.swing.JLabel();
         txtContraseña = new javax.swing.JTextField();
         jLabel100 = new javax.swing.JLabel();
-        NuevoNombreDeUsuario = new javax.swing.JTextField();
+        txtNuevoNombreDeUsuario = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         btnVolverAtras = new javax.swing.JButton();
 
@@ -55,12 +55,12 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         jLabel98.setText("Ingrese nombre de usuario :");
         jPanel1.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
 
-        txtNombreDeUsuaario.addActionListener(new java.awt.event.ActionListener() {
+        txtNombreDeUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreDeUsuaarioActionPerformed(evt);
+                txtNombreDeUsuarioActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNombreDeUsuaario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 400, -1));
+        jPanel1.add(txtNombreDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 400, -1));
 
         jLabel99.setForeground(new java.awt.Color(0, 0, 0));
         jLabel99.setText("Ingrese su contraseña :");
@@ -71,14 +71,14 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         jLabel100.setText("Ingrese su nuevo nombre de usuario :");
         jPanel1.add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
 
-        NuevoNombreDeUsuario.addActionListener(new java.awt.event.ActionListener() {
+        txtNuevoNombreDeUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NuevoNombreDeUsuarioActionPerformed(evt);
+                txtNuevoNombreDeUsuarioActionPerformed(evt);
             }
         });
-        jPanel1.add(NuevoNombreDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 400, -1));
+        jPanel1.add(txtNuevoNombreDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 400, -1));
 
-        jButton3.setForeground(new java.awt.Color(204, 204, 204));
+        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("Actualizar usuario");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,7 +87,7 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
 
-        btnVolverAtras.setForeground(new java.awt.Color(204, 204, 204));
+        btnVolverAtras.setForeground(new java.awt.Color(0, 0, 0));
         btnVolverAtras.setText("Volver atras");
         btnVolverAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,8 +112,8 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNombreDeUsuaarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreDeUsuaarioActionPerformed
-        String texto = txtNombreDeUsuaario.getText();
+    private void txtNombreDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreDeUsuarioActionPerformed
+        String texto = txtNombreDeUsuario.getText();
 
         // Verificar si contiene algún número
         if (!texto.matches("[a-zA-Z]+")) { // Verifica que solo haya letras
@@ -122,7 +122,7 @@ public class CambioDeUsuario extends javax.swing.JFrame {
 
             // Eliminar cualquier carácter no permitido
             texto = texto.replaceAll("[^a-zA-Z]", ""); // Quita todo lo que no sea letra
-            txtNombreDeUsuaario.setText(texto);
+            txtNombreDeUsuario.setText(texto);
             return; // Salir del método si se encuentra un número
         }
 
@@ -132,13 +132,13 @@ public class CambioDeUsuario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "muy pocos caracteres. El minimo permitido es 8.", "Advertencia", JOptionPane.WARNING_MESSAGE);
 
             // Limitar el texto a los primeros 15 caracteres
-            txtNombreDeUsuaario.setText(texto.substring(0, 15));
+            txtNombreDeUsuario.setText(texto.substring(0, 15));
         }
-    }//GEN-LAST:event_txtNombreDeUsuaarioActionPerformed
+    }//GEN-LAST:event_txtNombreDeUsuarioActionPerformed
 
-    private void NuevoNombreDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevoNombreDeUsuarioActionPerformed
+    private void txtNuevoNombreDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNuevoNombreDeUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NuevoNombreDeUsuarioActionPerformed
+    }//GEN-LAST:event_txtNuevoNombreDeUsuarioActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -185,7 +185,6 @@ public class CambioDeUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField NuevoNombreDeUsuario;
     private javax.swing.JButton btnVolverAtras;
     private javax.swing.JLabel iblCambioDeUsuario;
     private javax.swing.JButton jButton3;
@@ -194,6 +193,7 @@ public class CambioDeUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtContraseña;
-    private javax.swing.JTextField txtNombreDeUsuaario;
+    private javax.swing.JTextField txtNombreDeUsuario;
+    private javax.swing.JTextField txtNuevoNombreDeUsuario;
     // End of variables declaration//GEN-END:variables
 }

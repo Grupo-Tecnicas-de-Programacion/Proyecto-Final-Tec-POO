@@ -81,4 +81,20 @@ public class Usuario {
         listaUsuarios.add(nuevoUsuario);
         return true; 
     }
+    
+    public boolean cambiarNombreUsuario(String contrasenia, String nuevoNombreUsuario) {
+        if (this.contrasenia.equals(contrasenia)) {
+            this.nombreUsuario = nuevoNombreUsuario;
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean cambiarContrasenia(String contraseniaActual, String nuevaContrasenia) {
+        if (this.contrasenia.equals(contraseniaActual)) {
+            this.contrasenia = nuevaContrasenia;
+            return true;
+        }
+        return false;
+    }
 }

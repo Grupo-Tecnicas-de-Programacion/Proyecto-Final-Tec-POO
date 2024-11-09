@@ -27,11 +27,11 @@ public class CambiarContraseña extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtNombreUsuarioCambiarContraseña = new javax.swing.JTextField();
         btnVolverAtras = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        txtAntiguaContraseña = new javax.swing.JPasswordField();
+        txtNuevaContraseña = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,8 +52,8 @@ public class CambiarContraseña extends javax.swing.JFrame {
         jLabel3.setText("Nueva contraseña");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 162, -1, -1));
 
-        jTextField1.setColumns(12);
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 79, 179, -1));
+        txtNombreUsuarioCambiarContraseña.setColumns(12);
+        jPanel1.add(txtNombreUsuarioCambiarContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 79, 179, -1));
 
         btnVolverAtras.setForeground(new java.awt.Color(0, 0, 0));
         btnVolverAtras.setText("Volver atrás");
@@ -68,11 +68,11 @@ public class CambiarContraseña extends javax.swing.JFrame {
         jButton2.setText("Cambiar contraseña ");
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 233, -1, -1));
 
-        jPasswordField1.setColumns(15);
-        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 119, -1, -1));
+        txtAntiguaContraseña.setColumns(15);
+        jPanel1.add(txtAntiguaContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 119, -1, -1));
 
-        jPasswordField2.setColumns(15);
-        jPanel1.add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 159, -1, -1));
+        txtNuevaContraseña.setColumns(15);
+        jPanel1.add(txtNuevaContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 159, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Rockwell Extra Bold", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
@@ -141,8 +141,8 @@ public class CambiarContraseña extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField txtAntiguaContraseña;
+    private javax.swing.JTextField txtNombreUsuarioCambiarContraseña;
+    private javax.swing.JPasswordField txtNuevaContraseña;
     // End of variables declaration//GEN-END:variables
 }
