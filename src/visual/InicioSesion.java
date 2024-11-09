@@ -40,12 +40,12 @@ public class InicioSesion extends javax.swing.JFrame {
         lblNombreUsuario = new javax.swing.JLabel();
         txtNombreUsuarioIniciarSesion = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtContraseniaIniciarSesion = new javax.swing.JTextField();
         btnIngresarInicioSesion = new javax.swing.JButton();
         btnCambiarNombreUsuario = new javax.swing.JButton();
         btnCambiarContrasenia = new javax.swing.JButton();
         btnVolverAtrasInicioSesion = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        txtContraseniaIniciarSesion = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,21 +58,20 @@ public class InicioSesion extends javax.swing.JFrame {
         lblNombreUsuario.setForeground(new java.awt.Color(0, 0, 0));
         lblNombreUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNombreUsuario.setText("Nombre de usuario");
-        jPanel1.add(lblNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 121, 26));
+        jPanel1.add(lblNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 121, 26));
 
         txtNombreUsuarioIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreUsuarioIniciarSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNombreUsuarioIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 315, -1));
+        jPanel1.add(txtNombreUsuarioIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 315, 30));
 
         jLabel2.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Contraseña");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 121, 26));
-        jPanel1.add(txtContraseniaIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 315, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 121, 26));
 
         btnIngresarInicioSesion.setFont(new java.awt.Font("Rockwell", 1, 12)); // NOI18N
         btnIngresarInicioSesion.setForeground(new java.awt.Color(0, 0, 0));
@@ -122,6 +121,7 @@ public class InicioSesion extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("INICIO DE SESIÓN");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, -1));
+        jPanel1.add(txtContraseniaIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 310, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -152,7 +152,7 @@ public class InicioSesion extends javax.swing.JFrame {
 
     private void btnIngresarInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarInicioSesionActionPerformed
         String nombreUsuario = txtNombreUsuarioIniciarSesion.getText();
-        String contrasenia = txtContraseniaIniciarSesion.getText();
+        String contrasenia = new String(txtContraseniaIniciarSesion.getPassword());
 
         boolean usuarioEncontrado = false;
 
@@ -235,7 +235,7 @@ public class InicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblNombreUsuario;
-    private javax.swing.JTextField txtContraseniaIniciarSesion;
+    private javax.swing.JPasswordField txtContraseniaIniciarSesion;
     private javax.swing.JTextField txtNombreUsuarioIniciarSesion;
     // End of variables declaration//GEN-END:variables
 }

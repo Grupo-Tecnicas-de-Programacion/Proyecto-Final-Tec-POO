@@ -9,9 +9,7 @@ public class Usuario {
     protected String contrasenia;
     protected boolean sesionIniciada;
     protected String rol;
-
-    private static List<Usuario> listaUsuarios = new ArrayList<>();
-
+    
     public Usuario() {}
 
     public Usuario(String nombreUsuario, String contrasenia, String rol) {
@@ -19,6 +17,16 @@ public class Usuario {
         this.contrasenia = contrasenia;
         this.rol = rol;
         this.sesionIniciada = false;
+    }
+    
+    private static List<Usuario> listaUsuarios = new ArrayList<>();
+
+    static {
+        Usuario admin = new Usuario("administrador", "administrador", "ADMINISTRADOR");
+        listaUsuarios.add(admin);
+        
+        Usuario mesero = new Usuario("mesero", "mesero", "MESERO");
+        listaUsuarios.add(mesero);
     }
 
     public boolean isSesionIniciada() {
