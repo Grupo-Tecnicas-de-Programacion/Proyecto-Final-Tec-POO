@@ -23,6 +23,24 @@ public class Mesa {
         this.cuenta = new Cuenta(); 
     }
 
+
+    public void asignarPedido(Pedido pedido) {
+        this.listaPedidos.add(pedido);
+        this.estado = "Ocupada";
+        this.cuenta.calcularTotalCuenta(listaPedidos);
+    }
+
+    public void liberarMesa() {
+        this.listaPedidos.clear();
+        this.estado = "Desocupada";
+        this.cuenta = new Cuenta();
+    }
+
+    public double obtenerTotalCuenta() {
+        return this.cuenta.calcularTotalCuenta(listaPedidos);
+    }
+
+
     public Cuenta getCuenta() {
         return cuenta;
     }
@@ -62,53 +80,7 @@ public class Mesa {
     public void setListaPedidos(ArrayList<Pedido> listaPedidos) {
         this.listaPedidos = listaPedidos;
         this.estado = !listaPedidos.isEmpty() ? "Ocupada" : "Desocupada";
-    }
-
-    public void asignarPedido(Pedido pedido) {
-        this.listaPedidos.add(pedido);
-        this.estado = "Ocupada";
-        actualizarEstadoMesa();
-    }
-    
-    public void actualizarEstadoMesa() {
-        if (listaPedidos.isEmpty()) {
-            this.estado = "Desocupada";
-        } else {
-            this.estado = "Ocupada";
-        }
-    }
-
-    public void liberarMesa() {
-        this.listaPedidos.clear();
-        this.estado = "Desocupada";
-        this.cuenta = new Cuenta(); 
-    }
-
-    
-    
-    public String mostrarInfoMesa() {
-        StringBuilder info = new StringBuilder();
-        info.append("Información de la mesa:\n");
-        info.append("Mesa número: ").append(this.getNumeroMesa()).append("\n");
-        info.append("Estado: ").append(this.getEstado()).append("\n");
-
-        info.append(" -- Pedidos asociados a la mesa:\n");
-        if (this.listaPedidos.isEmpty()) {
-            info.append("No hay pedidos asociados a esta mesa.\n");
-        } else {
-            for (Pedido pedido : this.getListaPedidos()) {
-                info.append("Número de pedido: ").append(pedido.getNumPedido())
-                    .append(" | Tipo de pedido: ").append(pedido.getTipoPedido()).append("\n");
-                info.append("Productos en el pedido:\n");
-                for (Producto producto : pedido.getListaProductos()) {
-                    info.append("- Nombre de producto: ").append(producto.getNombre())
-                        .append(" | Precio del producto: ").append(producto.getPrecio()).append("\n");
-                }
-                double total = pedido.getPrecioTotalPedido();
-                info.append("Precio total del pedido: ").append(total).append("\n");
-            }
-        }
-        return info.toString();
+        this.cuenta.calcularTotalCuenta(listaPedidos);
     }
 
     public final class Cuenta {
@@ -122,10 +94,16 @@ public class Mesa {
             this.estadoPago = "Pendiente";
         }
 
-        public Cuenta(String tipoPago) {
+        public double calcularTotalCuenta(ArrayList<Pedido> pedidos) {
             this.totalPagar = 0;
-            this.tipoPago = tipoPago;
-            this.estadoPago = "Pendiente";
+            for (Pedido pedido : pedidos) {
+                this.totalPagar += pedido.getPrecioTotalPedido();
+            }
+            return this.totalPagar;
+        }
+
+        public void marcarComoPagada() {
+            this.estadoPago = "Pagado";
         }
 
         public double getTotalPagar() {
@@ -150,25 +128,6 @@ public class Mesa {
 
         public void setEstadoPago(String estadoPago) {
             this.estadoPago = estadoPago;
-        }
-
-        public double calcularTotalCuenta() {
-            this.totalPagar = 0;
-            for (Pedido pedido : getListaPedidos()) {
-                this.totalPagar += pedido.getPrecioTotalPedido();
-            }
-            return this.totalPagar;
-        }
-
-        public void marcarComoPagada() {
-            this.estadoPago = "Pagado";
-        }
-
-        public String mostrarInfoCuenta() {
-            return "Información de la cuenta:\n" +
-                   " - Total a pagar: " + this.getTotalPagar() + "\n" +
-                   " - Tipo de pago: " + this.getTipoPago() + "\n" +
-                   " - Estado del pago: " + this.getEstadoPago();
         }
     }
 }

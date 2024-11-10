@@ -7775,25 +7775,10 @@ public class JframeMesero extends javax.swing.JFrame {
 
     private double calcularCuentaMesa(ArrayList<Pedido> pedidosMesa, ArrayList<Pedido> pedidosMEsaLlevar){
         
-        double totalCuenta = 0;
-        
-        for (Pedido pedido : pedidosMesa) {
-            for (Producto producto : pedido.getListaProductos()) {
-                totalCuenta += producto.getPrecio() * producto.getCantidad();
-            }
-        }
-        
-        for (Pedido pedido : pedidosMEsaLlevar) {
-            for (Producto producto : pedido.getListaProductos()) {
-                totalCuenta += producto.getPrecio() * producto.getCantidad();
-            }
-        }
-        
-        if (totalCuenta == 0) {
-            return 0;
-        }else{
-            return totalCuenta;
-        }
+        Mesa mesa = new Mesa();
+        double totalCuenta = mesa.getCuenta().calcularTotalCuenta(pedidosMesa) + mesa.getCuenta().calcularTotalCuenta(pedidosMEsaLlevar);
+
+        return totalCuenta == 0 ? 0 : totalCuenta;
     }
     
     private void btnTotalCuentaMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa1ActionPerformed
