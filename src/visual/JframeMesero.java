@@ -5487,6 +5487,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
                 pedidosMesa1Llevar.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa1.setBackground(Color.red);
                 contadorPedidosMesa1Llevar++;
             } else {
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -5562,6 +5563,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
                 pedidosMesa2Llevar.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa2.setBackground(Color.red);
                 contadorPedidosMesa2Llevar++;
             } else {
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -5638,6 +5640,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
                 pedidosMesa3Llevar.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa3.setBackground(Color.red);
                 contadorPedidosMesa3Llevar++;
             } else {
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -5714,6 +5717,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
                 pedidosMesa4Llevar.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa4.setBackground(Color.red);
                 contadorPedidosMesa4Llevar++;
             } else {
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -5789,6 +5793,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
                 pedidosMesa5Llevar.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa5.setBackground(Color.red);
                 contadorPedidosMesa5Llevar++;
             } else {
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -5864,6 +5869,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
                 pedidosMesa6Llevar.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa6.setBackground(Color.red);
                 contadorPedidosMesa6Llevar++;
             } else {
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -5939,6 +5945,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
                 pedidosMesa7Llevar.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa7.setBackground(Color.red);
                 contadorPedidosMesa7Llevar++;
             } else {
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -6014,6 +6021,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
                 pedidosMesa8Llevar.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa8.setBackground(Color.red);
                 contadorPedidosMesa8Llevar++;
             } else {
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -6089,6 +6097,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
                 pedidosMesa9Llevar.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa9.setBackground(Color.red);
                 contadorPedidosMesa9Llevar++;
             } else {
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -6164,6 +6173,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
                 pedidosMesa10Llevar.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa10.setBackground(Color.red);
                 contadorPedidosMesa10Llevar++;
             } else {
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -6239,6 +6249,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
                 pedidosMesa11Llevar.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa11.setBackground(Color.red);
                 contadorPedidosMesa11Llevar++;
             } else {
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -6314,6 +6325,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
                 pedidosMesa12Llevar.add(nuevoPedido);
                 JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                btnMesa12.setBackground(Color.red);
                 contadorPedidosMesa12Llevar++;
             } else {
                 JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -7942,7 +7954,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
-            fileChooser.setSelectedFile(new File("recibo_mesa1.txt")); 
+            fileChooser.setSelectedFile(new File("Recibo "+nombreCliente+" "+apellidoCliente+".txt")); 
 
             int userSelection = fileChooser.showSaveDialog(this);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
