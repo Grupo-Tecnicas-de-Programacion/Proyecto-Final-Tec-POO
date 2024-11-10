@@ -9010,7 +9010,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
-            fileChooser.setSelectedFile(new File("recibo_mesa2.txt")); 
+            fileChooser.setSelectedFile(new File("Recibo "+nombreCliente+" "+apellidoCliente+".txt")); 
 
             int userSelection = fileChooser.showSaveDialog(this);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
@@ -9074,7 +9074,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
-            fileChooser.setSelectedFile(new File("recibo_mesa3.txt")); 
+            fileChooser.setSelectedFile(new File("Recibo "+nombreCliente+" "+apellidoCliente+".txt")); 
 
             int userSelection = fileChooser.showSaveDialog(this);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
@@ -9138,7 +9138,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
-            fileChooser.setSelectedFile(new File("recibo_mesa4.txt")); 
+            fileChooser.setSelectedFile(new File("Recibo "+nombreCliente+" "+apellidoCliente+".txt")); 
 
             int userSelection = fileChooser.showSaveDialog(this);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
@@ -9202,7 +9202,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
-            fileChooser.setSelectedFile(new File("recibo_mesa5.txt")); 
+            fileChooser.setSelectedFile(new File("Recibo "+nombreCliente+" "+apellidoCliente+".txt")); 
 
             int userSelection = fileChooser.showSaveDialog(this);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
@@ -9266,7 +9266,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
-            fileChooser.setSelectedFile(new File("recibo_mesa6.txt")); 
+            fileChooser.setSelectedFile(new File("Recibo "+nombreCliente+" "+apellidoCliente+".txt")); 
 
             int userSelection = fileChooser.showSaveDialog(this);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
@@ -9330,7 +9330,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
-            fileChooser.setSelectedFile(new File("recibo_mesa7.txt")); 
+            fileChooser.setSelectedFile(new File("Recibo "+nombreCliente+" "+apellidoCliente+".txt")); 
 
             int userSelection = fileChooser.showSaveDialog(this);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
@@ -9394,7 +9394,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
-            fileChooser.setSelectedFile(new File("recibo_mesa8.txt")); 
+            fileChooser.setSelectedFile(new File("Recibo "+nombreCliente+" "+apellidoCliente+".txt")); 
 
             int userSelection = fileChooser.showSaveDialog(this);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
@@ -9458,7 +9458,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
-            fileChooser.setSelectedFile(new File("recibo_mesa9.txt")); 
+            fileChooser.setSelectedFile(new File("Recibo "+nombreCliente+" "+apellidoCliente+".txt"));
 
             int userSelection = fileChooser.showSaveDialog(this);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
@@ -9522,7 +9522,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
-            fileChooser.setSelectedFile(new File("recibo_mesa10.txt")); 
+            fileChooser.setSelectedFile(new File("Recibo "+nombreCliente+" "+apellidoCliente+".txt")); 
 
             int userSelection = fileChooser.showSaveDialog(this);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
@@ -9586,7 +9586,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
-            fileChooser.setSelectedFile(new File("recibo_mesa11.txt")); 
+            fileChooser.setSelectedFile(new File("Recibo "+nombreCliente+" "+apellidoCliente+".txt")); 
 
             int userSelection = fileChooser.showSaveDialog(this);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
@@ -9650,7 +9650,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
-            fileChooser.setSelectedFile(new File("recibo_mesa12.txt")); 
+            fileChooser.setSelectedFile(new File("Recibo "+nombreCliente+" "+apellidoCliente+".txt")); 
 
             int userSelection = fileChooser.showSaveDialog(this);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
