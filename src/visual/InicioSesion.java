@@ -124,7 +124,7 @@ public class InicioSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverAtrasInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverAtrasInicioSesionActionPerformed
-        new BievenidaO().setVisible(true);
+        new Bievenida().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVolverAtrasInicioSesionActionPerformed
 

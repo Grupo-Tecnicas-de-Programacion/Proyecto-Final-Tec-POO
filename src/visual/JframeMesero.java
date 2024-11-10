@@ -4612,7 +4612,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
             if (seleccion == JOptionPane.YES_OPTION) { 
                 
-                new BievenidaO().setVisible(true);
+                new Bievenida().setVisible(true);
                 this.dispose();  
             } 
             

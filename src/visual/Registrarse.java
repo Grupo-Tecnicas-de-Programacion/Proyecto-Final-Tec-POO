@@ -137,7 +137,7 @@ public class Registrarse extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegistrarsseActionPerformed
 
     private void btnVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverAtrasActionPerformed
-        new BievenidaO().setVisible(true);
+        new Bievenida().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVolverAtrasActionPerformed
 
