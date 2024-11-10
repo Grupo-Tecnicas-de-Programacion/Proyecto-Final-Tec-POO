@@ -145,7 +145,7 @@ public class InicioSesion extends javax.swing.JFrame {
                 } else if (rol.equals("MESERO") && usuario.getRol().equals("MESERO")) {
                     new JframeMesero().setVisible(true);
                 } else {
-                    JOptionPane.showMessageDialog(rootPane, "No tienes permiso para iniciar sesión como " + rol, "Acceso denegado", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(rootPane, "No tienes permiso para iniciar sesión con esta cuenta", "Acceso denegado", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
 
