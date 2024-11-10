@@ -7036,7 +7036,8 @@ public class JframeMesero extends javax.swing.JFrame {
     private void btnLimpiarMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa2ActionPerformed
         pedidosMesa2.clear();
         pedidosMesa2Llevar.clear();
-
+        btnMesa2.setBackground(Color.green);
+        mesas.get(1).setEstado("Desocupada");
         actualizarListaPedidosMesa2();
         detallePedidoMesa2.setModel(new DefaultListModel<>()); 
 
@@ -7046,7 +7047,8 @@ public class JframeMesero extends javax.swing.JFrame {
     private void btnLimpiarMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa3ActionPerformed
         pedidosMesa3.clear();
         pedidosMesa3Llevar.clear();
-
+        btnMesa3.setBackground(Color.green);
+        mesas.get(2).setEstado("Desocupada");
         actualizarListaPedidosMesa3();
         detallePedidoMesa3.setModel(new DefaultListModel<>()); 
 
@@ -7790,7 +7792,7 @@ public class JframeMesero extends javax.swing.JFrame {
         
         if (totalCuentaMesa == 0) {
         
-            btnMesa1.setBackground(Color.green);
+            
             btnLimpiarMesa1.setEnabled(false);
         
         }
@@ -7802,8 +7804,6 @@ public class JframeMesero extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 2 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
-        
-            btnMesa2.setBackground(Color.green);
             btnLimpiarMesa2.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa2ActionPerformed
@@ -7814,8 +7814,6 @@ public class JframeMesero extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 3 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
-        
-            btnMesa3.setBackground(Color.green);
             btnLimpiarMesa3.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa3ActionPerformed
@@ -7826,8 +7824,6 @@ public class JframeMesero extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 4 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
-        
-            btnMesa4.setBackground(Color.green);
             btnLimpiarMesa4.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa4ActionPerformed
@@ -7838,8 +7834,6 @@ public class JframeMesero extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 5 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
-        
-            btnMesa5.setBackground(Color.green);
             btnLimpiarMesa5.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa5ActionPerformed
@@ -7850,8 +7844,6 @@ public class JframeMesero extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 6 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
-        
-            btnMesa6.setBackground(Color.green);
             btnLimpiarMesa6.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa6ActionPerformed
@@ -7862,8 +7854,6 @@ public class JframeMesero extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 7 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
-        
-            btnMesa7.setBackground(Color.green);
             btnLimpiarMesa7.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa7ActionPerformed
@@ -7874,8 +7864,6 @@ public class JframeMesero extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 8 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
-        
-            btnMesa8.setBackground(Color.green);
             btnLimpiarMesa8.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa8ActionPerformed
@@ -7886,8 +7874,6 @@ public class JframeMesero extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 9 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
-        
-            btnMesa9.setBackground(Color.green);
             btnLimpiarMesa9.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa9ActionPerformed
@@ -7898,8 +7884,6 @@ public class JframeMesero extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 10 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
-        
-            btnMesa10.setBackground(Color.green);
             btnLimpiarMesa10.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa10ActionPerformed
@@ -7910,8 +7894,6 @@ public class JframeMesero extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(rootPane, "El total de la cuenta de la Mesa 11 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
-        
-            btnMesa11.setBackground(Color.green);
             btnLimpiarMesa11.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa11ActionPerformed
@@ -7922,8 +7904,6 @@ public class JframeMesero extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 12 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
-        
-            btnMesa12.setBackground(Color.green);
             btnLimpiarMesa12.setEnabled(false);
         }
     }//GEN-LAST:event_btnTotalCuentaMesa12ActionPerformed
@@ -8056,7 +8036,8 @@ public class JframeMesero extends javax.swing.JFrame {
 
         pedidosMesa1.clear();
         pedidosMesa1Llevar.clear();
-
+        btnMesa1.setBackground(Color.green);
+        mesas.get(0).setEstado("Desocupada");
         actualizarListaPedidosMesa1();
         detallePedidoMesa1.setModel(new DefaultListModel<>()); 
 
@@ -8362,7 +8343,8 @@ public class JframeMesero extends javax.swing.JFrame {
     private void btnLimpiarMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa4ActionPerformed
         pedidosMesa4.clear();
         pedidosMesa4Llevar.clear();
-
+        btnMesa4.setBackground(Color.green);
+        mesas.get(3).setEstado("Desocupada");
         actualizarListaPedidosMesa4();
         detallePedidoMesa4.setModel(new DefaultListModel<>()); 
 
@@ -8372,7 +8354,8 @@ public class JframeMesero extends javax.swing.JFrame {
     private void btnLimpiarMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa5ActionPerformed
         pedidosMesa5.clear();
         pedidosMesa5Llevar.clear();
-
+        btnMesa5.setBackground(Color.green);
+        mesas.get(4).setEstado("Desocupada");
         actualizarListaPedidosMesa5();
         detallePedidoMesa5.setModel(new DefaultListModel<>()); 
 
@@ -8382,7 +8365,8 @@ public class JframeMesero extends javax.swing.JFrame {
     private void btnLimpiarMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa6ActionPerformed
         pedidosMesa6.clear();
         pedidosMesa6Llevar.clear();
-
+        btnMesa6.setBackground(Color.green);
+        mesas.get(5).setEstado("Desocupada");
         actualizarListaPedidosMesa6();
         detallePedidoMesa6.setModel(new DefaultListModel<>()); 
 
@@ -8392,7 +8376,8 @@ public class JframeMesero extends javax.swing.JFrame {
     private void btnLimpiarMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa7ActionPerformed
         pedidosMesa7.clear();
         pedidosMesa7Llevar.clear();
-
+        btnMesa7.setBackground(Color.green);
+        mesas.get(6).setEstado("Desocupada");
         actualizarListaPedidosMesa7();
         detallePedidoMesa7.setModel(new DefaultListModel<>()); 
 
@@ -8402,7 +8387,8 @@ public class JframeMesero extends javax.swing.JFrame {
     private void btnLimpiarMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa8ActionPerformed
         pedidosMesa8.clear();
         pedidosMesa8Llevar.clear();
-
+        btnMesa8.setBackground(Color.green);
+        mesas.get(7).setEstado("Desocupada");
         actualizarListaPedidosMesa8();
         detallePedidoMesa8.setModel(new DefaultListModel<>()); 
 
@@ -8412,7 +8398,8 @@ public class JframeMesero extends javax.swing.JFrame {
     private void btnLimpiarMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa9ActionPerformed
         pedidosMesa9.clear();
         pedidosMesa9Llevar.clear();
-
+        btnMesa9.setBackground(Color.green);
+        mesas.get(8).setEstado("Desocupada");
         actualizarListaPedidosMesa9();
         detallePedidoMesa9.setModel(new DefaultListModel<>()); 
 
@@ -8422,7 +8409,8 @@ public class JframeMesero extends javax.swing.JFrame {
     private void btnLimpiarMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa10ActionPerformed
         pedidosMesa10.clear();
         pedidosMesa10Llevar.clear();
-
+        btnMesa10.setBackground(Color.green);
+        mesas.get(9).setEstado("Desocupada");
         actualizarListaPedidosMesa10();
         detallePedidoMesa10.setModel(new DefaultListModel<>()); 
 
@@ -8432,7 +8420,8 @@ public class JframeMesero extends javax.swing.JFrame {
     private void btnLimpiarMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa11ActionPerformed
         pedidosMesa11.clear();
         pedidosMesa11Llevar.clear();
-
+        btnMesa11.setBackground(Color.green);
+        mesas.get(10).setEstado("Desocupada");
         actualizarListaPedidosMesa11();
         detallePedidoMesa11.setModel(new DefaultListModel<>()); 
 
@@ -8442,7 +8431,8 @@ public class JframeMesero extends javax.swing.JFrame {
     private void btnLimpiarMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa12ActionPerformed
         pedidosMesa12.clear();
         pedidosMesa12Llevar.clear();
-
+        btnMesa12.setBackground(Color.green);
+        mesas.get(11).setEstado("Desocupada");
         actualizarListaPedidosMesa12();
         detallePedidoMesa12.setModel(new DefaultListModel<>()); 
 
