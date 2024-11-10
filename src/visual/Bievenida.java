@@ -19,7 +19,7 @@ public class Bievenida extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         btnIniciarSesionMesero = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        btnRegsitrarseIniciarSesion = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,14 +62,14 @@ public class Bievenida extends javax.swing.JFrame {
         jLabel5.setText("Haz click en el siguiente botón para registrarte");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 232, -1, -1));
 
-        btnRegsitrarseIniciarSesion.setForeground(new java.awt.Color(0, 0, 0));
-        btnRegsitrarseIniciarSesion.setText("REGISTRARSE");
-        btnRegsitrarseIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrar.setForeground(new java.awt.Color(0, 0, 0));
+        btnRegistrar.setText("REGISTRARSE");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegsitrarseIniciarSesionActionPerformed(evt);
+                btnRegistrarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegsitrarseIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 255, -1, -1));
+        jPanel1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 255, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
@@ -106,10 +106,10 @@ public class Bievenida extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnIniciarSesionMeseroActionPerformed
 
-    private void btnRegsitrarseIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegsitrarseIniciarSesionActionPerformed
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         new Registrarse().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnRegsitrarseIniciarSesionActionPerformed
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
 
     public static void main(String args[]) {
@@ -148,7 +148,7 @@ public class Bievenida extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIniciarSesionAdministrador;
     private javax.swing.JButton btnIniciarSesionMesero;
-    private javax.swing.JButton btnRegsitrarseIniciarSesion;
+    private javax.swing.JButton btnRegistrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

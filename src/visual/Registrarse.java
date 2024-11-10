@@ -109,6 +109,11 @@ public class Registrarse extends javax.swing.JFrame {
             return;
         }
 
+        if (!contrasenia.equals(confirmarContrasenia)) {
+            JOptionPane.showMessageDialog(rootPane, "La contraseña y la confirmación deben ser iguales.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         String[] opciones = {"Mesero", "Administrador"};
         int seleccion = JOptionPane.showOptionDialog(
             this,
@@ -121,6 +126,11 @@ public class Registrarse extends javax.swing.JFrame {
             opciones[0]
         );
 
+        if (seleccion == JOptionPane.CLOSED_OPTION) {
+            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar un rol para registrar al usuario.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         String rol = (seleccion == 0) ? "MESERO" : "ADMINISTRADOR";
 
         boolean exito = Usuario.registrarUsuario(nombreUsuario, contrasenia, confirmarContrasenia, rol);
@@ -131,7 +141,7 @@ public class Registrarse extends javax.swing.JFrame {
             txtRegistrarContrasenia.setText("");
             txtRegistrarConfirmarContrasenia.setText("");
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Error al registrar el usuario. Verifique los datos.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Error al registrar el usuario. Usuario existente", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
     }//GEN-LAST:event_btnRegistrarsseActionPerformed
