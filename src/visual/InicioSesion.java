@@ -163,7 +163,7 @@ public class InicioSesion extends javax.swing.JFrame {
                 usuarioEncontrado = true;
 
                 if (rol.equals("ADMINISTRADOR") && usuario.getRol().equals("ADMINISTRADOR")) {
-                    new JframeAdministrador().setVisible(true);
+                    new JframeAdministrador(usuario).setVisible(true);
                 } else if (rol.equals("MESERO") && usuario.getRol().equals("MESERO")) {
                     new JframeMesero().setVisible(true);
                 } else {
