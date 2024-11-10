@@ -40,12 +40,6 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         jLabel98.setForeground(new java.awt.Color(0, 0, 0));
         jLabel98.setText("Ingrese nombre de usuario :");
         jPanel1.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
-
-        txtNombreDeUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreDeUsuarioActionPerformed(evt);
-            }
-        });
         jPanel1.add(txtNombreDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 400, -1));
 
         jLabel99.setForeground(new java.awt.Color(0, 0, 0));
@@ -55,12 +49,6 @@ public class CambioDeUsuario extends javax.swing.JFrame {
         jLabel100.setForeground(new java.awt.Color(0, 0, 0));
         jLabel100.setText("Ingrese su nuevo nombre de usuario :");
         jPanel1.add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
-
-        txtNuevoNombreDeUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNuevoNombreDeUsuarioActionPerformed(evt);
-            }
-        });
         jPanel1.add(txtNuevoNombreDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 400, -1));
 
         btnActualizarNombreUsuario.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -99,34 +87,6 @@ public class CambioDeUsuario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtNombreDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreDeUsuarioActionPerformed
-        String texto = txtNombreDeUsuario.getText();
-
-
-        if (!texto.matches("[a-zA-Z]+")) { 
-            
-            JOptionPane.showMessageDialog(null, "Por favor, ingresa solo letras.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-
-
-            texto = texto.replaceAll("[^a-zA-Z]", "");
-            txtNombreDeUsuario.setText(texto);
-            return;
-        }
-
-
-        if (texto.length() >8) {
-
-            JOptionPane.showMessageDialog(null, "muy pocos caracteres. El minimo permitido es 8.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-
-
-            txtNombreDeUsuario.setText(texto.substring(0, 15));
-        }
-    }//GEN-LAST:event_txtNombreDeUsuarioActionPerformed
-
-    private void txtNuevoNombreDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNuevoNombreDeUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNuevoNombreDeUsuarioActionPerformed
 
     private void btnActualizarNombreUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarNombreUsuarioActionPerformed
         String nombreUsuario = txtNombreDeUsuario.getText();
