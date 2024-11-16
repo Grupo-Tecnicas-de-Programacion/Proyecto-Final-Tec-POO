@@ -116,39 +116,44 @@ public class JframeAdministrador extends javax.swing.JFrame {
 
         jLabel28.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel28.setText("ELIMINAR MESERO");
-        panelEliminarUsuarios.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 24, -1, -1));
+        jLabel28.setText("DESACTIVAR CUENTA DEL MESERO");
+        panelEliminarUsuarios.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, -1, -1));
 
         listMeseros.setBackground(new java.awt.Color(204, 204, 204));
         listMeseros.setForeground(new java.awt.Color(0, 0, 0));
         jScrollPane7.setViewportView(listMeseros);
 
-        panelEliminarUsuarios.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 110, 197, 336));
+        panelEliminarUsuarios.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 96, 197, 340));
 
         btnEliminarMesero.setBackground(new java.awt.Color(0, 153, 0));
         btnEliminarMesero.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnEliminarMesero.setForeground(new java.awt.Color(0, 0, 0));
-        btnEliminarMesero.setText("Eliminar mesero");
+        btnEliminarMesero.setText("Desactivar cuenta mesero");
         btnEliminarMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnEliminarMesero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarMeseroActionPerformed(evt);
             }
         });
-        panelEliminarUsuarios.add(btnEliminarMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 130, 60));
+        panelEliminarUsuarios.add(btnEliminarMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 200, 60));
 
         jLabel34.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel34.setText("Ingrese su contraseña para poder eliminar");
-        panelEliminarUsuarios.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, -1, 30));
+        jLabel34.setText("Ingrese la contraseña para desactivar la cuenta :");
+        panelEliminarUsuarios.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, -1, 30));
 
         txtContraseñaAdministrador.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        panelEliminarUsuarios.add(txtContraseñaAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, 150, 30));
+        txtContraseñaAdministrador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtContraseñaAdministradorActionPerformed(evt);
+            }
+        });
+        panelEliminarUsuarios.add(txtContraseñaAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, 150, 30));
 
         jLabel46.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(0, 0, 0));
         jLabel46.setText("Lista de meseros");
-        panelEliminarUsuarios.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, -1, -1));
+        panelEliminarUsuarios.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 69, -1, 20));
 
         jPanelMostrarAdmin.add(panelEliminarUsuarios, "card6");
 
@@ -722,6 +727,10 @@ public class JframeAdministrador extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnVerDetallesActionPerformed
+
+    private void txtContraseñaAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContraseñaAdministradorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtContraseñaAdministradorActionPerformed
 
     private Reporte buscarReportePorNombre(String nombreReporte) {
         for (Reporte reporte : GestionReportes.getListaReportes()) {
