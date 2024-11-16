@@ -53,18 +53,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
         listMeseroActualizados = new javax.swing.JList<>();
         txtConfirmarContraseñaNuevoMesero = new javax.swing.JPasswordField();
         txtContraseñaNuevoMesero = new javax.swing.JPasswordField();
-        panelGestionarUsuarios = new javax.swing.JPanel();
-        jLabel60 = new javax.swing.JLabel();
-        jScrollPane12 = new javax.swing.JScrollPane();
-        listGestionMeseros = new javax.swing.JList<>();
-        jLabel63 = new javax.swing.JLabel();
-        txtNombreGestionMesero = new javax.swing.JTextField();
-        txtGestionContraseñaMesero = new javax.swing.JTextField();
-        jLabel70 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        btnMostrarConstraseña = new javax.swing.JButton();
-        jLabel47 = new javax.swing.JLabel();
-        btnVerDetalles = new javax.swing.JButton();
         panelReporteVentas = new javax.swing.JPanel();
         jLabel79 = new javax.swing.JLabel();
         jLabel80 = new javax.swing.JLabel();
@@ -99,7 +87,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
         menuUsuarios = new javax.swing.JMenu();
         menItemEliminarUsuario = new javax.swing.JMenuItem();
         menItemAgregarUsuario = new javax.swing.JMenuItem();
-        menItemGestionarUsuarios = new javax.swing.JMenuItem();
         menuReportes = new javax.swing.JMenu();
         menItemReporteVentas = new javax.swing.JMenuItem();
         menuCerrar = new javax.swing.JMenu();
@@ -117,7 +104,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
         jLabel28.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(0, 0, 0));
         jLabel28.setText("DESACTIVAR CUENTA DEL MESERO");
-        panelEliminarUsuarios.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, -1, -1));
+        panelEliminarUsuarios.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
 
         listMeseros.setBackground(new java.awt.Color(204, 204, 204));
         listMeseros.setForeground(new java.awt.Color(0, 0, 0));
@@ -207,62 +194,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
         panelAgregarUsuarios.add(txtContraseñaNuevoMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 170, 30));
 
         jPanelMostrarAdmin.add(panelAgregarUsuarios, "card7");
-
-        panelGestionarUsuarios.setBackground(new java.awt.Color(153, 153, 153));
-        panelGestionarUsuarios.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelGestionarUsuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel60.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
-        jLabel60.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel60.setText("GESTION DE MESEROS");
-        panelGestionarUsuarios.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 29, -1, -1));
-
-        listGestionMeseros.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane12.setViewportView(listGestionMeseros);
-
-        panelGestionarUsuarios.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 200, 290));
-
-        jLabel63.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel63.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel63.setText("Nombre del mesero");
-        panelGestionarUsuarios.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
-        panelGestionarUsuarios.add(txtNombreGestionMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, 154, -1));
-        panelGestionarUsuarios.add(txtGestionContraseñaMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 178, -1));
-
-        jLabel70.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel70.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel70.setText("Contraseña del mesero");
-        panelGestionarUsuarios.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, -1, -1));
-
-        jLabel25.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel25.setText("Visualizacion del mesero seleccionado");
-        panelGestionarUsuarios.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, -1, -1));
-
-        btnMostrarConstraseña.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnMostrarConstraseña.setText("Mostrar contraseña");
-        btnMostrarConstraseña.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMostrarConstraseñaActionPerformed(evt);
-            }
-        });
-        panelGestionarUsuarios.add(btnMostrarConstraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 330, 170, 40));
-
-        jLabel47.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel47.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel47.setText("Lista de meseros");
-        panelGestionarUsuarios.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
-
-        btnVerDetalles.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnVerDetalles.setText("Ver detalles");
-        btnVerDetalles.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVerDetallesActionPerformed(evt);
-            }
-        });
-        panelGestionarUsuarios.add(btnVerDetalles, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 260, 170, 40));
-
-        jPanelMostrarAdmin.add(panelGestionarUsuarios, "card9");
 
         panelReporteVentas.setBackground(new java.awt.Color(153, 153, 153));
         panelReporteVentas.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -411,15 +342,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
         });
         menuUsuarios.add(menItemAgregarUsuario);
 
-        menItemGestionarUsuarios.setText("Gestionar Usuarios");
-        menItemGestionarUsuarios.setPreferredSize(new java.awt.Dimension(180, 30));
-        menItemGestionarUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menItemGestionarUsuariosActionPerformed(evt);
-            }
-        });
-        menuUsuarios.add(menItemGestionarUsuarios);
-
         jMenuAdmin.add(menuUsuarios);
 
         menuReportes.setText("Reportes");
@@ -483,11 +405,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
         CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
         layout.show(jPanelMostrarAdmin, "panelReporteVentas");
     }//GEN-LAST:event_menItemReporteVentasActionPerformed
-
-    private void menItemGestionarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemGestionarUsuariosActionPerformed
-        CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
-        layout.show(jPanelMostrarAdmin, "panelGestionarUsuarios");
-    }//GEN-LAST:event_menItemGestionarUsuariosActionPerformed
 
     private void menItemEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemEliminarUsuarioActionPerformed
         CardLayout layout = (CardLayout) jPanelMostrarAdmin.getLayout();
@@ -657,77 +574,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
         cargarListaDeMeseros(listMeseros, listMeseroActualizados, listGestionMeseros);
     }//GEN-LAST:event_btnAgregarMeseroActionPerformed
     
-    private void btnMostrarConstraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarConstraseñaActionPerformed
-        
-        String nombreMeseroSeleccionado = txtNombreGestionMesero.getText();
-        if (nombreMeseroSeleccionado == null || nombreMeseroSeleccionado.isEmpty()) {
-            JOptionPane.showMessageDialog(rootPane, "Por favor, seleccione un mesero de la lista para mostrar la contraseña.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        String nombreUsuarioAdmin = JOptionPane.showInputDialog(rootPane, "Ingrese su nombre de usuario:");
-        if (nombreUsuarioAdmin == null || nombreUsuarioAdmin.isEmpty()) {
-            JOptionPane.showMessageDialog(rootPane, "Operación cancelada.", "Información", JOptionPane.INFORMATION_MESSAGE);
-            return;
-        }
-
-        String contraseniaAdmin = JOptionPane.showInputDialog(rootPane, "Ingrese su contraseña:");
-
-        boolean autenticado = false;
-        for (Usuario usuario : Usuario.getListaUsuarios()) {
-            if (usuario.getNombreUsuario().equalsIgnoreCase(nombreUsuarioAdmin) && 
-                usuario.getContrasenia().equals(contraseniaAdmin) && 
-                usuario.getRol().equalsIgnoreCase("ADMINISTRADOR")) {
-
-                autenticado = true;
-                break;
-            }
-        }
-
-        if (autenticado) {
-
-            for (Usuario usuario : Usuario.getListaUsuarios()) {
-                if (usuario.getNombreUsuario().equals(nombreMeseroSeleccionado) && usuario.getRol().equalsIgnoreCase("MESERO")) {
-                    txtGestionContraseñaMesero.setText(usuario.getContrasenia()); 
-
-                    Timer timer = new Timer(5000, e -> {
-                        
-                        txtGestionContraseñaMesero.setText(usuario.getContrasenia().replaceAll(".", "*"));
-
-                        listGestionMeseros.clearSelection();
-
-                        txtNombreGestionMesero.setText("");
-                        txtGestionContraseñaMesero.setText("");
-                    });
-                    timer.setRepeats(false);
-                    timer.start();
-
-                    return;
-                }
-            }
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Autenticación fallida. No se puede mostrar la contraseña.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        
-    }//GEN-LAST:event_btnMostrarConstraseñaActionPerformed
-
-    private void btnVerDetallesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerDetallesActionPerformed
-
-        String nombreMeseroSeleccionado = listGestionMeseros.getSelectedValue();
-        if (nombreMeseroSeleccionado == null || nombreMeseroSeleccionado.isEmpty()) {
-            JOptionPane.showMessageDialog(rootPane, "Por favor, seleccione un mesero de la lista para ver los detalles.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        for (Usuario usuario : Usuario.getListaUsuarios()) {
-            if (usuario.getNombreUsuario().equals(nombreMeseroSeleccionado) && usuario.getRol().equalsIgnoreCase("MESERO")) {
-                txtNombreGestionMesero.setText(usuario.getNombreUsuario());
-                txtGestionContraseñaMesero.setText(usuario.getContrasenia().replaceAll(".", "*")); 
-                break;
-            }
-        }
-    }//GEN-LAST:event_btnVerDetallesActionPerformed
-
     private void txtContraseñaAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContraseñaAdministradorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtContraseñaAdministradorActionPerformed
@@ -747,10 +593,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscarReportes;
     private javax.swing.JButton btnCerrarSesionAdmnistrador;
     private javax.swing.JButton btnEliminarMesero;
-    private javax.swing.JButton btnMostrarConstraseña;
-    private javax.swing.JButton btnVerDetalles;
     private javax.swing.JButton btnVerReporte;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel31;
@@ -762,14 +605,10 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
@@ -780,18 +619,15 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuAdmin;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelMostrarAdmin;
-    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JList<String> listGestionMeseros;
     private javax.swing.JList<String> listMeseroActualizados;
     private javax.swing.JList<String> listMeseros;
     private javax.swing.JList<String> listaReportesEncontrados;
     private javax.swing.JMenuItem menItemAgregarUsuario;
     private javax.swing.JMenuItem menItemCerrarSecsion;
     private javax.swing.JMenuItem menItemEliminarUsuario;
-    private javax.swing.JMenuItem menItemGestionarUsuarios;
     private javax.swing.JMenuItem menItemReporteVentas;
     private javax.swing.JMenu menuCerrar;
     private javax.swing.JMenu menuReportes;
@@ -799,7 +635,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private javax.swing.JPanel panelAgregarUsuarios;
     private javax.swing.JPanel panelCerrarSesion;
     private javax.swing.JPanel panelEliminarUsuarios;
-    private javax.swing.JPanel panelGestionarUsuarios;
     private javax.swing.JPanel panelReporteVentas;
     private javax.swing.JTextField txtCantidadReporteSeleccionado;
     private javax.swing.JTextField txtCodigoGenerado;
@@ -810,9 +645,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtFechaInicioReporteBuscar;
     private javax.swing.JTextField txtFechaReporteSeleccionado;
     private javax.swing.JTextField txtGananciaReporteSeleccionado;
-    private javax.swing.JTextField txtGestionContraseñaMesero;
     private javax.swing.JTextField txtIngreseCodigoGenerado;
-    private javax.swing.JTextField txtNombreGestionMesero;
     private javax.swing.JTextField txtNombreReporteSeleccionado;
     private javax.swing.JTextField txtUsuarioNuevoMesero;
     // End of variables declaration//GEN-END:variables
