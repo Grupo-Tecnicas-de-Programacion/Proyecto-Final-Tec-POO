@@ -8217,7 +8217,10 @@ public class JframeMesero extends javax.swing.JFrame {
     
     private void btnTotalCuentaMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa1ActionPerformed
         
-        double totalCuentaMesa = calcularCuentaMesa(pedidosMesa1, pedidosMesa1Llevar);
+        Mesa mesa1 = mesas.get(0);
+        Mesa.Cuenta cuentaMesa1 = mesa1.getCuenta();
+
+        double totalCuentaMesa = cuentaMesa1.calcularCuentaMesa(pedidosMesa1, pedidosMesa1Llevar);
         
          JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 1 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
@@ -8250,7 +8253,7 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTotalCuentaMesa3ActionPerformed
 
     private void btnTotalCuentaMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa4ActionPerformed
-         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa4, pedidosMesa4Llevar);
+        double totalCuentaMesa = calcularCuentaMesa(pedidosMesa4, pedidosMesa4Llevar);
         
          JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 4 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
@@ -8260,7 +8263,7 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTotalCuentaMesa4ActionPerformed
 
     private void btnTotalCuentaMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa5ActionPerformed
-         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa5, pedidosMesa5Llevar);
+        double totalCuentaMesa = calcularCuentaMesa(pedidosMesa5, pedidosMesa5Llevar);
         
          JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 5 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
@@ -8270,7 +8273,7 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTotalCuentaMesa5ActionPerformed
 
     private void btnTotalCuentaMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa6ActionPerformed
-         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa6, pedidosMesa6Llevar);
+        double totalCuentaMesa = calcularCuentaMesa(pedidosMesa6, pedidosMesa6Llevar);
         
          JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 6 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
@@ -8280,9 +8283,9 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTotalCuentaMesa6ActionPerformed
 
     private void btnTotalCuentaMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa7ActionPerformed
-         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa7, pedidosMesa7Llevar);
+        double totalCuentaMesa = calcularCuentaMesa(pedidosMesa7, pedidosMesa7Llevar);
         
-         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 7 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 7 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
             btnLimpiarMesa7.setEnabled(false);
@@ -8290,8 +8293,8 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTotalCuentaMesa7ActionPerformed
 
     private void btnTotalCuentaMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa8ActionPerformed
-         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa8, pedidosMesa8Llevar);
-        
+        double totalCuentaMesa = calcularCuentaMesa(pedidosMesa8, pedidosMesa8Llevar);
+       
          JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 8 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
         if (totalCuentaMesa == 0) {
@@ -8300,7 +8303,7 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTotalCuentaMesa8ActionPerformed
 
     private void btnTotalCuentaMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa9ActionPerformed
-         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa9, pedidosMesa9Llevar);
+        double totalCuentaMesa = calcularCuentaMesa(pedidosMesa9, pedidosMesa9Llevar);
         
          JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 9 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
@@ -8310,7 +8313,7 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTotalCuentaMesa9ActionPerformed
 
     private void btnTotalCuentaMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa10ActionPerformed
-         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa10, pedidosMesa10Llevar);
+        double totalCuentaMesa = calcularCuentaMesa(pedidosMesa10, pedidosMesa10Llevar);
         
          JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 10 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
@@ -8320,7 +8323,7 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTotalCuentaMesa10ActionPerformed
 
     private void btnTotalCuentaMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa11ActionPerformed
-         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa11, pedidosMesa11Llevar);
+        double totalCuentaMesa = calcularCuentaMesa(pedidosMesa11, pedidosMesa11Llevar);
         
          JOptionPane.showMessageDialog(rootPane, "El total de la cuenta de la Mesa 11 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
@@ -8330,7 +8333,7 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTotalCuentaMesa11ActionPerformed
 
     private void btnTotalCuentaMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa12ActionPerformed
-         double totalCuentaMesa = calcularCuentaMesa(pedidosMesa12, pedidosMesa12Llevar);
+        double totalCuentaMesa = calcularCuentaMesa(pedidosMesa12, pedidosMesa12Llevar);
         
          JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 12 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
         
@@ -8356,7 +8359,6 @@ public class JframeMesero extends javax.swing.JFrame {
     private void btnGenerarReciboMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa1ActionPerformed
         
         double totalCuenta = calcularCuentaMesa(pedidosMesa1, pedidosMesa1Llevar);
-
         if (totalCuenta == 0) {
             JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         } else {
