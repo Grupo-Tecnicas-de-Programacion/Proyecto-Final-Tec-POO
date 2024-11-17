@@ -29,7 +29,6 @@ public class InicioSesion extends javax.swing.JFrame {
         txtNombreUsuarioIniciarSesion = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         btnIngresarInicioSesion = new javax.swing.JButton();
-        btnCambiarNombreUsuario = new javax.swing.JButton();
         btnCambiarContrasenia = new javax.swing.JButton();
         btnVolverAtrasInicioSesion = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -64,18 +63,7 @@ public class InicioSesion extends javax.swing.JFrame {
                 btnIngresarInicioSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(btnIngresarInicioSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, -1, 30));
-
-        btnCambiarNombreUsuario.setBackground(new java.awt.Color(204, 204, 204));
-        btnCambiarNombreUsuario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnCambiarNombreUsuario.setForeground(new java.awt.Color(0, 0, 0));
-        btnCambiarNombreUsuario.setText("Cambiar nombre de usuario");
-        btnCambiarNombreUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCambiarNombreUsuarioActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnCambiarNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, -1));
+        jPanel1.add(btnIngresarInicioSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, -1, 30));
 
         btnCambiarContrasenia.setBackground(new java.awt.Color(204, 204, 204));
         btnCambiarContrasenia.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -86,7 +74,7 @@ public class InicioSesion extends javax.swing.JFrame {
                 btnCambiarContraseniaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCambiarContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 186, -1));
+        jPanel1.add(btnCambiarContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 186, 40));
 
         btnVolverAtrasInicioSesion.setFont(new java.awt.Font("Rockwell", 1, 12)); // NOI18N
         btnVolverAtrasInicioSesion.setForeground(new java.awt.Color(0, 0, 0));
@@ -96,7 +84,7 @@ public class InicioSesion extends javax.swing.JFrame {
                 btnVolverAtrasInicioSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVolverAtrasInicioSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, 54));
+        jPanel1.add(btnVolverAtrasInicioSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, -1, 54));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
@@ -159,11 +147,6 @@ public class InicioSesion extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnIngresarInicioSesionActionPerformed
 
-    private void btnCambiarNombreUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarNombreUsuarioActionPerformed
-        new CambioDeUsuario().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnCambiarNombreUsuarioActionPerformed
-
     private void btnCambiarContraseniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarContraseniaActionPerformed
         new CambiarContraseña().setVisible(true);
         this.dispose();
@@ -172,7 +155,6 @@ public class InicioSesion extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCambiarContrasenia;
-    private javax.swing.JButton btnCambiarNombreUsuario;
     private javax.swing.JButton btnIngresarInicioSesion;
     private javax.swing.JButton btnVolverAtrasInicioSesion;
     private javax.swing.JLabel jLabel1;
