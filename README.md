@@ -1,1 +1,1 @@
-# Proyecto Final del curos Técnicas de Programación Orienteda a Objetos
+# Proyecto Final del curso de Técnicas de Programación Orientada a Objetos
