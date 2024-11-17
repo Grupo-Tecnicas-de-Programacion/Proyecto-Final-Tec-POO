@@ -497,7 +497,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
         layout.show(jPanelMostrarAdmin, "panelAgregarUsuarios");
     }//GEN-LAST:event_menItemAgregarUsuarioActionPerformed
 
-    private void cargarListaDeMeseros(JList listaMeseros, JList listaMeseroActualizados, JList listaGestionMeseros) {
+    private void cargarListaDeMeseros(JList listaMeseros, JList listaMeseroActualizados) {
         DefaultListModel<String> modelo = new DefaultListModel<>();
         for (Usuario usuario : Usuario.getListaUsuarios()) {
             if (usuario.getRol().equals("MESERO")) {
@@ -506,7 +506,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
         }
         listaMeseros.setModel(modelo);
         listaMeseroActualizados.setModel(modelo);
-        listaGestionMeseros.setModel(modelo);
     }
 
     
