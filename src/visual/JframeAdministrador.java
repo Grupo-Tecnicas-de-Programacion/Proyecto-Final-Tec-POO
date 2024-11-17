@@ -19,12 +19,11 @@ public class JframeAdministrador extends javax.swing.JFrame {
         initComponents();
         jPanelMostrarAdmin.add(panelEliminarUsuarios, "panelEliminarUsuarios");
         jPanelMostrarAdmin.add(panelAgregarUsuarios, "panelAgregarUsuarios");
-        jPanelMostrarAdmin.add(panelGestionarUsuarios, "panelGestionarUsuarios");
         jPanelMostrarAdmin.add(panelReporteVentas, "panelReporteVentas");
         jPanelMostrarAdmin.add(panelCerrarSesion, "panelCerrarSesion");
         this.usuarioActual = usuarioActual;
         setTitle("Panel de Administración - " + usuarioActual.getNombreUsuario());
-        cargarListaDeMeseros(listMeseros, listMeseroActualizados, listGestionMeseros);
+        cargarListaDeMeseros(listMeseros, listMeseroActualizados);
     }
 
 
@@ -324,7 +323,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
         menuUsuarios.setText("Usuarios");
         menuUsuarios.setPreferredSize(new java.awt.Dimension(122, 50));
 
-        menItemEliminarUsuario.setText("Eliminar Usuario");
+        menItemEliminarUsuario.setText("Desactivar usuario");
         menItemEliminarUsuario.setPreferredSize(new java.awt.Dimension(180, 40));
         menItemEliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -529,7 +528,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
             if (usuario.getNombreUsuario().equals(nombreMeseroSeleccionado) && usuario.getRol().equals("MESERO")) {
                 Usuario.getListaUsuarios().remove(i);
                 JOptionPane.showMessageDialog(rootPane, "Mesero eliminado con éxito.");
-                cargarListaDeMeseros(listMeseros, listMeseroActualizados, listGestionMeseros); 
+                cargarListaDeMeseros(listMeseros, listMeseroActualizados); 
                 return;
             }
         }
@@ -570,7 +569,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
         txtContraseñaNuevoMesero.setText("");
         txtConfirmarContraseñaNuevoMesero.setText("");
 
-        cargarListaDeMeseros(listMeseros, listMeseroActualizados, listGestionMeseros);
+        cargarListaDeMeseros(listMeseros, listMeseroActualizados);
     }//GEN-LAST:event_btnAgregarMeseroActionPerformed
     
     private void txtContraseñaAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContraseñaAdministradorActionPerformed

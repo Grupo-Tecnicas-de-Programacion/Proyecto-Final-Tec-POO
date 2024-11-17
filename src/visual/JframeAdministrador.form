@@ -19,7 +19,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="menItemEliminarUsuario">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Eliminar Usuario"/>
+                <Property name="text" type="java.lang.String" value="Desactivar usuario"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[180, 40]"/>
                 </Property>
