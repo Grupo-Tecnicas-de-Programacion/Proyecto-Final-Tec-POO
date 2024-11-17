@@ -152,13 +152,24 @@ public class Mesa {
             this.estadoPago = estadoPago;
         }
 
-        public double calcularTotalCuenta() {
-            this.totalPagar = 0;
-            for (Pedido pedido : getListaPedidos()) {
-                this.totalPagar += pedido.getPrecioTotalPedido();
+        public double calcularCuentaMesa(ArrayList<Pedido> pedidosMesa, ArrayList<Pedido> pedidosMesaLlevar) {
+            double totalCuenta = 0;
+
+            for (Pedido pedido : pedidosMesa) {
+                for (Producto producto : pedido.getListaProductos()) {
+                    totalCuenta += producto.getPrecio() * producto.getCantidad();
+                }
             }
-            return this.totalPagar;
+
+            for (Pedido pedido : pedidosMesaLlevar) {
+                for (Producto producto : pedido.getListaProductos()) {
+                    totalCuenta += producto.getPrecio() * producto.getCantidad();
+                }
+            }
+
+            return totalCuenta;
         }
+
 
         public void marcarComoPagada() {
             this.estadoPago = "Pagado";
