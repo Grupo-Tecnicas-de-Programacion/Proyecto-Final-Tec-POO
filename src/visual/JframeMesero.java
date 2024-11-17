@@ -5416,12 +5416,11 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa7ActionPerformed
 
     private void btnAgregarProductoPedidoMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa8ActionPerformed
-        String nombreProductoSeleccionado = productosPedidoMesa8.getSelectedValue();
+       String nombreProductoSeleccionado = productosPedidoMesa8.getSelectedValue();
 
         if (nombreProductoSeleccionado != null) {
             String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
             Producto productoSeleccionado = null;
-
 
             for (Producto producto : productos) {
                 if (producto.getNombre().equals(nombreProducto)) {
@@ -5432,37 +5431,73 @@ public class JframeMesero extends javax.swing.JFrame {
 
             if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
 
-                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - 1);
+                while (true) {                    
+                    String inputCantidad = JOptionPane.showInputDialog(this, 
+                    "Ingresa la cantidad de platos:", 
+                    "Agregar Producto", 
+                    JOptionPane.QUESTION_MESSAGE);
+                    
+                    if (inputCantidad != null) {
+                        try {
+                            int cantidad = Integer.parseInt(inputCantidad.trim());
 
-                boolean productoYaEnPedido = false;
-                for (Producto productoEnPedido : pedidoMesa8.getListaProductos()) {
-                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
-                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + 1);
-                        productoYaEnPedido = true;
+                            if (cantidad > 0 && cantidad <= productoSeleccionado.getCantidadDisponible()) {
+
+                                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - cantidad);
+
+                                boolean productoYaEnPedido = false;
+                                for (Producto productoEnPedido : pedidoMesa8.getListaProductos()) {
+                                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
+                                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + cantidad);
+                                        productoYaEnPedido = true;
+                                        break;
+                                    }
+                                }
+
+                                if (!productoYaEnPedido) {
+                                    Producto productoParaPedido = new Producto(
+                                        productoSeleccionado.getNombre(),
+                                        productoSeleccionado.getPrecio(),
+                                        productoSeleccionado.getCategoria(),
+                                        cantidad
+                                    );
+                                    pedidoMesa8.agregarProducto(productoParaPedido);
+                                }
+
+                                actualizarListaProductosDelPedidoMesa8();
+                                mostrarProductosEnMesa(productosPedidoMesa8);
+                                
+                                break;
+                                
+                            } else {
+                                JOptionPane.showMessageDialog(this, 
+                                    "Cantidad ingresada no disponible", 
+                                    "Cantidad inválida", 
+                                    JOptionPane.WARNING_MESSAGE);
+                            }
+
+                        } catch (NumberFormatException e) {
+                            JOptionPane.showMessageDialog(this, 
+                                "Por favor, ingresa un número entero válido.", 
+                                "Error de entrada", 
+                                JOptionPane.ERROR_MESSAGE);
+                        }
+                    }else {
                         break;
-                    }
+                    } 
                 }
-
-                if (!productoYaEnPedido) {
-                    Producto productoParaPedido = new Producto(
-                        productoSeleccionado.getNombre(),
-                        productoSeleccionado.getPrecio(),
-                        productoSeleccionado.getCategoria(),
-                        1 
-                    );
-                    pedidoMesa8.agregarProducto(productoParaPedido);
-                }
-
-
-                actualizarListaProductosDelPedidoMesa8();
-                cargarProductosEnLista8();
-                mostrarProductosEnMesa(productosPedidoMesa8);
-
+                
             } else {
-                JOptionPane.showMessageDialog(this, "No hay suficiente cantidad disponible de este producto.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, 
+                    "No hay suficiente cantidad disponible de este producto.", 
+                    "Advertencia", 
+                    JOptionPane.WARNING_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, 
+                "Por favor, selecciona un producto de la lista.", 
+                "Advertencia", 
+                JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa8ActionPerformed
 
