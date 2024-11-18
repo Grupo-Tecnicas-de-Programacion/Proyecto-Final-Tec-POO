@@ -8363,7 +8363,7 @@ public class JframeMesero extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(rootPane, "Error cargando el logo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                     }
 
-                    document.add(new Paragraph("Recibo de la Mesa " + (numeroMesa + 1)).setBold().setFontSize(16));
+                    document.add(new Paragraph("Recibo Mesa " + (numeroMesa + 1)).setBold().setFontSize(16));
                     document.add(new Paragraph("Fecha: " + fechaFormateada).setFontSize(10));
                     document.add(new Paragraph("========================================"));
                     document.add(new Paragraph("Cliente: " + nombreCliente + " " + apellidoCliente));

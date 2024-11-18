@@ -41,8 +41,6 @@ public class Usuario {
         this.activo = activo;
     }
     
-    
-
     public boolean isSesionIniciada() {
         return sesionIniciada;
     }
