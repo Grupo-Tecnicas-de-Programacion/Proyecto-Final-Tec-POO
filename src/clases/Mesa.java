@@ -8,11 +8,13 @@ public class Mesa {
     private int capacidad;
     private ArrayList<Pedido> listaPedidos;
     private Cuenta cuenta;
+    private Cliente cliente;
 
     public Mesa() {
         this.listaPedidos = new ArrayList<>();
         this.cuenta = new Cuenta(); 
         this.estado = "Desocupada";
+        this.cliente = null;
     }
 
     public Mesa(int numeroMesa, int capacidad) {
@@ -21,8 +23,17 @@ public class Mesa {
         this.capacidad = capacidad;
         this.listaPedidos = new ArrayList<>();
         this.cuenta = new Cuenta(); 
+        this.cliente = null;
     }
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+    
     public Cuenta getCuenta() {
         return cuenta;
     }
@@ -82,6 +93,7 @@ public class Mesa {
         this.listaPedidos.clear();
         this.estado = "Desocupada";
         this.cuenta = new Cuenta(); 
+        this.cliente = null;
     }
 
     

@@ -1,6 +1,7 @@
 
 package visual;
 
+import clases.Cliente;
 import clases.GestionReportes;
 import java.awt.CardLayout;
 import java.io.BufferedReader;
@@ -8294,20 +8295,58 @@ public class JframeMesero extends javax.swing.JFrame {
     }
     
     private void generarRecibo(int numeroMesa, ArrayList<Pedido> pedidosEnMesa, ArrayList<Pedido> pedidosParaLlevar, JButton btnLimpiarMesa) {
+        
         double totalCuenta = mesas.get(numeroMesa).getCuenta().calcularCuentaMesa(pedidosEnMesa, pedidosParaLlevar);
 
         if (totalCuenta == 0) {
             JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         } else {
+
+            String[] opciones = {"DNI", "Pasaporte"};
+            String tipoIdentificacion = (String) JOptionPane.showInputDialog(
+                    null,
+                    "Seleccione el tipo de identificación:",
+                    "Identificación del cliente",
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[0]);
+
+            if (tipoIdentificacion == null) {
+                return;
+            }
+
+            String identificacion = JOptionPane.showInputDialog("Ingrese el número de " + tipoIdentificacion + ":");
+            
+            while (identificacion == null || identificacion.trim().isEmpty() ||
+                    (tipoIdentificacion.equals("DNI") && !identificacion.matches("\\d{8}")) ||
+                    (tipoIdentificacion.equals("Pasaporte") && !identificacion.matches("[a-zA-Z0-9]+"))) {
+                if (identificacion == null) {
+                    return;
+                }else{
+                    identificacion = JOptionPane.showInputDialog("Número de " + tipoIdentificacion + " no válido. Ingrese correctamente:");
+                }
+            }
+
             String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
             while (nombreCliente == null || nombreCliente.trim().isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
-                nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente (solo letras y espacios):");
+                if (nombreCliente == null) {
+                    return;
+                }else{
+                    nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente (solo letras y espacios):");
+                }   
             }
 
             String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
             while (apellidoCliente == null || apellidoCliente.trim().isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
-                apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente (solo letras y espacios):");
+                if (apellidoCliente == null) {
+                    return;
+                }else{
+                    apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente (solo letras y espacios):");
+                }
             }
+
+            Cliente cliente = new Cliente(tipoIdentificacion, identificacion, nombreCliente, apellidoCliente);
 
             LocalDateTime fechaActual = LocalDateTime.now();
             DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
@@ -8315,7 +8354,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
-            fileChooser.setSelectedFile(new File("Recibo_Mesa" + (numeroMesa + 1) + "_" + nombreCliente + "_" + apellidoCliente + ".pdf"));
+            fileChooser.setSelectedFile(new File("Recibo Mesa" + (numeroMesa + 1) + "_" + cliente.getNombre() + " " + cliente.getApellido() + ".pdf"));
 
             int userSelection = fileChooser.showSaveDialog(this);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
@@ -8343,7 +8382,9 @@ public class JframeMesero extends javax.swing.JFrame {
                     document.add(new Paragraph("Recibo Mesa " + (numeroMesa + 1)).setBold().setFontSize(16));
                     document.add(new Paragraph("Fecha: " + fechaFormateada).setFontSize(10));
                     document.add(new Paragraph("========================================"));
-                    document.add(new Paragraph("Cliente: " + nombreCliente + " " + apellidoCliente));
+                    document.add(new Paragraph("Cliente: " + cliente.getNombre() + " " + cliente.getApellido()));
+                    document.add(new Paragraph("Tipo de identificación: "+cliente.getTipoIdentificacion()));
+                    document.add(new Paragraph("Número de identificación: " + cliente.getIdentificacion()));
                     document.add(new Paragraph("========================================").setMarginBottom(10));
 
                     Table table = new Table(5);
@@ -8353,7 +8394,7 @@ public class JframeMesero extends javax.swing.JFrame {
                     table.addCell(new Cell().add(new Paragraph("Subtotal").setBold()));
                     table.addCell(new Cell().add(new Paragraph("Tipo Pedido").setBold()));
 
-                    for (Pedido pedido : pedidosEnMesa) {
+                   for (Pedido pedido : pedidosEnMesa) {
                         for (Producto producto : pedido.getListaProductos()) {
                             table.addCell(new Cell().add(new Paragraph(producto.getNombre())));
                             table.addCell(new Cell().add(new Paragraph(String.valueOf(producto.getCantidad()))));
@@ -8381,6 +8422,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
                     document.add(new Paragraph("========================================"));
                     document.add(new Paragraph("Total de la cuenta: S/ " + String.format("%.2f", totalCuenta)).setBold());
+
 
                     document.close();
 
