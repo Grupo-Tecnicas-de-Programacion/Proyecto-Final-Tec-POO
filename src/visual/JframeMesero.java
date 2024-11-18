@@ -20,6 +20,16 @@ import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.element.Cell;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.io.image.ImageData;
+import com.itextpdf.layout.element.Image;
+import com.itextpdf.io.image.ImageDataFactory;
+import java.io.InputStream;
 
 
 public class JframeMesero extends javax.swing.JFrame {
@@ -8364,67 +8374,97 @@ public class JframeMesero extends javax.swing.JFrame {
     private void btnGenerarReciboMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa1ActionPerformed
         
         double totalCuenta = mesas.get(0).getCuenta().calcularCuentaMesa(pedidosMesa1, pedidosMesa1Llevar);
-        
+
         if (totalCuenta == 0) {
             JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         } else {
-
             String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
-            while (nombreCliente == null || nombreCliente.isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
-                nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente:");
+            while (nombreCliente == null || nombreCliente.trim().isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
+                nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente (solo letras y espacios):");
             }
 
             String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
-            while (apellidoCliente == null || apellidoCliente.isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
-                apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente:");
+            while (apellidoCliente == null || apellidoCliente.trim().isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
+                apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente (solo letras y espacios):");
             }
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
-            fileChooser.setSelectedFile(new File("Recibo "+nombreCliente+" "+apellidoCliente+".txt")); 
+            fileChooser.setSelectedFile(new File("Recibo_" + nombreCliente + "_" + apellidoCliente + ".pdf"));
 
             int userSelection = fileChooser.showSaveDialog(this);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
                 File fileToSave = fileChooser.getSelectedFile();
 
-                try (PrintWriter writer = new PrintWriter(fileToSave)) {
-                    writer.println("Recibo de la Mesa 1");
-                    writer.println("====================");
-                    writer.println("Cliente: " + nombreCliente + " " + apellidoCliente);
-                    writer.println("====================");
+                try {
+                    PdfWriter writer = new PdfWriter(fileToSave.getAbsolutePath());
+                    PdfDocument pdfDoc = new PdfDocument(writer);
+                    Document document = new Document(pdfDoc);
+
+                    try (InputStream logoStream = getClass().getResourceAsStream("/imagenes/logo.jpg")) {
+                        if (logoStream == null) {
+                            throw new FileNotFoundException("El archivo logo.jpg no fue encontrado en /imagenes/");
+                        }
+                        ImageData data = ImageDataFactory.create(logoStream.readAllBytes());
+                        Image logo = new Image(data);
+                        logo.scaleToFit(150, 150);
+                        logo.setFixedPosition(pdfDoc.getDefaultPageSize().getWidth() - 200, pdfDoc.getDefaultPageSize().getHeight() - 150); // Esquina superior derecha
+                        document.add(logo);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        JOptionPane.showMessageDialog(rootPane, "Error cargando el logo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+
+                    document.add(new Paragraph("Recibo de la Mesa 1").setBold().setFontSize(16));
+                    document.add(new Paragraph("===================="));
+                    document.add(new Paragraph("Cliente: " + nombreCliente + " " + apellidoCliente));
+                    document.add(new Paragraph("====================").setMarginBottom(10));
+
+                    Table table = new Table(5);
+                    table.addCell(new Cell().add(new Paragraph("Producto").setBold()));
+                    table.addCell(new Cell().add(new Paragraph("Cantidad").setBold()));
+                    table.addCell(new Cell().add(new Paragraph("Precio Unitario").setBold()));
+                    table.addCell(new Cell().add(new Paragraph("Subtotal").setBold()));
+                    table.addCell(new Cell().add(new Paragraph("Tipo Pedido").setBold()));
 
                     for (Pedido pedido : pedidosMesa1) {
-                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
                         for (Producto producto : pedido.getListaProductos()) {
-                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
-
-                            registrarProductoVendido(producto);
+                            table.addCell(new Cell().add(new Paragraph(producto.getNombre())));
+                            table.addCell(new Cell().add(new Paragraph(String.valueOf(producto.getCantidad()))));
+                            table.addCell(new Cell().add(new Paragraph(String.format("S/ %.2f", producto.getPrecio()))));
+                            table.addCell(new Cell().add(new Paragraph(String.format("S/ %.2f", producto.getCantidad() * producto.getPrecio()))));
+                            table.addCell(new Cell().add(new Paragraph(pedido.getTipoPedido())));
                         }
-                        writer.println();
                     }
 
                     for (Pedido pedido : pedidosMesa1Llevar) {
-                        writer.println("Pedido #" + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
                         for (Producto producto : pedido.getListaProductos()) {
-                            writer.println("Producto: " + producto.getNombre() + ", Cantidad: " + producto.getCantidad() + ", Precio unitario: S/ " + producto.getPrecio() + ", Subtotal: S/ " + (producto.getPrecio() * producto.getCantidad()));
+                            table.addCell(new Cell().add(new Paragraph(producto.getNombre())));
+                            table.addCell(new Cell().add(new Paragraph(String.valueOf(producto.getCantidad()))));
+                            table.addCell(new Cell().add(new Paragraph(String.format("S/ %.2f", producto.getPrecio()))));
+                            table.addCell(new Cell().add(new Paragraph(String.format("S/ %.2f", producto.getCantidad() * producto.getPrecio()))));
+                            table.addCell(new Cell().add(new Paragraph(pedido.getTipoPedido())));
 
                             registrarProductoVendido(producto);
                         }
-                        writer.println();
                     }
 
-                    writer.println("====================");
-                    writer.println("Total de la cuenta: S/ " + totalCuenta);
+                    document.add(table);
+
+                    document.add(new Paragraph("===================="));
+                    document.add(new Paragraph("Total de la cuenta: S/ " + String.format("%.2f", totalCuenta)).setBold());
+
+                    document.close();
+
                     JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en " + fileToSave.getAbsolutePath(), "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
                     btnLimpiarMesa1.setEnabled(true);
-                } catch (FileNotFoundException e) {
+                } catch (Exception e) {
                     JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Guardado cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
             }
         }
-        
     }//GEN-LAST:event_btnGenerarReciboMesa1ActionPerformed
 
     private void productosPedidoMesa1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa1ValueChanged
