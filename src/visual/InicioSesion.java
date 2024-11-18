@@ -128,6 +128,13 @@ public class InicioSesion extends javax.swing.JFrame {
 
                 usuarioEncontrado = true;
 
+                
+                if (!usuario.isActivo()) {
+                    JOptionPane.showMessageDialog(rootPane, "La cuenta está desactivada. Contacte al administrador.", "Cuenta desactivada", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                
                 if (rol.equals("ADMINISTRADOR") && usuario.getRol().equals("ADMINISTRADOR")) {
                     new JframeAdministrador(usuario).setVisible(true);
                 } else if (rol.equals("MESERO") && usuario.getRol().equals("MESERO")) {
@@ -137,6 +144,7 @@ public class InicioSesion extends javax.swing.JFrame {
                     return;
                 }
 
+                
                 this.dispose();
                 break;
             }

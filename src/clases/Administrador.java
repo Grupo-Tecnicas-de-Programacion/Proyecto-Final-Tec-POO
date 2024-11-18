@@ -10,7 +10,7 @@ public class Administrador extends Usuario {
     private ArrayList<Reporte> reportes;
 
     public Administrador(String nombreUsuario, String contrasenia) {
-        super(nombreUsuario, contrasenia, "ADMINISTRADOR"); // Se agrega el rol al constructor
+        super(nombreUsuario, contrasenia, "ADMINISTRADOR");
         this.reportes = new ArrayList<>();
     }
 

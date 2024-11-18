@@ -17,13 +17,13 @@ public class JframeAdministrador extends javax.swing.JFrame {
     
     public JframeAdministrador(Usuario usuarioActual) {
         initComponents();
-        jPanelMostrarAdmin.add(panelEliminarUsuarios, "panelEliminarUsuarios");
+        jPanelMostrarAdmin.add(panelGestionMeseros, "panelEliminarUsuarios");
         jPanelMostrarAdmin.add(panelAgregarUsuarios, "panelAgregarUsuarios");
         jPanelMostrarAdmin.add(panelReporteVentas, "panelReporteVentas");
         jPanelMostrarAdmin.add(panelCerrarSesion, "panelCerrarSesion");
         this.usuarioActual = usuarioActual;
         setTitle("Panel de Administración - " + usuarioActual.getNombreUsuario());
-        cargarListaDeMeseros(listMeseros, listMeseroActualizados);
+        cargarListaDeMeseros(listaMeserosGestionar, listMeserosAgregar);
     }
 
 
@@ -32,14 +32,15 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelMostrarAdmin = new javax.swing.JPanel();
-        panelEliminarUsuarios = new javax.swing.JPanel();
+        panelGestionMeseros = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        listMeseros = new javax.swing.JList<>();
-        btnEliminarMesero = new javax.swing.JButton();
-        jLabel34 = new javax.swing.JLabel();
-        txtContraseñaAdministrador = new javax.swing.JPasswordField();
+        listaMeserosGestionar = new javax.swing.JList<>();
+        btnDesactivarCuentaMesero = new javax.swing.JButton();
         jLabel46 = new javax.swing.JLabel();
+        btnActivarCuentaMesero = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        txtEstadoCuentaMesero = new javax.swing.JTextField();
         panelAgregarUsuarios = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
@@ -49,7 +50,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
         txtUsuarioNuevoMesero = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        listMeseroActualizados = new javax.swing.JList<>();
+        listMeserosAgregar = new javax.swing.JList<>();
         txtConfirmarContraseñaNuevoMesero = new javax.swing.JPasswordField();
         txtContraseñaNuevoMesero = new javax.swing.JPasswordField();
         panelReporteVentas = new javax.swing.JPanel();
@@ -96,52 +97,62 @@ public class JframeAdministrador extends javax.swing.JFrame {
         jPanelMostrarAdmin.setPreferredSize(new java.awt.Dimension(500, 500));
         jPanelMostrarAdmin.setLayout(new java.awt.CardLayout());
 
-        panelEliminarUsuarios.setBackground(new java.awt.Color(153, 153, 153));
-        panelEliminarUsuarios.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelEliminarUsuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelGestionMeseros.setBackground(new java.awt.Color(153, 153, 153));
+        panelGestionMeseros.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panelGestionMeseros.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel28.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel28.setText("DESACTIVAR CUENTA DEL MESERO");
-        panelEliminarUsuarios.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
+        jLabel28.setText("GESTIÓN CUENTAS MESEROS");
+        panelGestionMeseros.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, -1));
 
-        listMeseros.setBackground(new java.awt.Color(204, 204, 204));
-        listMeseros.setForeground(new java.awt.Color(0, 0, 0));
-        jScrollPane7.setViewportView(listMeseros);
-
-        panelEliminarUsuarios.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 96, 197, 340));
-
-        btnEliminarMesero.setBackground(new java.awt.Color(0, 153, 0));
-        btnEliminarMesero.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnEliminarMesero.setForeground(new java.awt.Color(0, 0, 0));
-        btnEliminarMesero.setText("Desactivar cuenta mesero");
-        btnEliminarMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnEliminarMesero.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarMeseroActionPerformed(evt);
+        listaMeserosGestionar.setBackground(new java.awt.Color(204, 204, 204));
+        listaMeserosGestionar.setForeground(new java.awt.Color(0, 0, 0));
+        listaMeserosGestionar.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaMeserosGestionarValueChanged(evt);
             }
         });
-        panelEliminarUsuarios.add(btnEliminarMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 200, 60));
+        jScrollPane7.setViewportView(listaMeserosGestionar);
 
-        jLabel34.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel34.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel34.setText("Ingrese la contraseña para desactivar la cuenta :");
-        panelEliminarUsuarios.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, -1, 30));
+        panelGestionMeseros.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 197, 300));
 
-        txtContraseñaAdministrador.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtContraseñaAdministrador.addActionListener(new java.awt.event.ActionListener() {
+        btnDesactivarCuentaMesero.setBackground(new java.awt.Color(153, 0, 0));
+        btnDesactivarCuentaMesero.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnDesactivarCuentaMesero.setForeground(new java.awt.Color(0, 0, 0));
+        btnDesactivarCuentaMesero.setText("Desactivar cuenta mesero");
+        btnDesactivarCuentaMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnDesactivarCuentaMesero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtContraseñaAdministradorActionPerformed(evt);
+                btnDesactivarCuentaMeseroActionPerformed(evt);
             }
         });
-        panelEliminarUsuarios.add(txtContraseñaAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, 150, 30));
+        panelGestionMeseros.add(btnDesactivarCuentaMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 320, 200, 60));
 
         jLabel46.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(0, 0, 0));
         jLabel46.setText("Lista de meseros");
-        panelEliminarUsuarios.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 69, -1, 20));
+        panelGestionMeseros.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, -1, 20));
 
-        jPanelMostrarAdmin.add(panelEliminarUsuarios, "card6");
+        btnActivarCuentaMesero.setBackground(new java.awt.Color(0, 153, 0));
+        btnActivarCuentaMesero.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnActivarCuentaMesero.setForeground(new java.awt.Color(0, 0, 0));
+        btnActivarCuentaMesero.setText("Activar cuenta mesero");
+        btnActivarCuentaMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnActivarCuentaMesero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActivarCuentaMeseroActionPerformed(evt);
+            }
+        });
+        panelGestionMeseros.add(btnActivarCuentaMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 210, 200, 60));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Estado de cuenta");
+        panelGestionMeseros.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, -1, 30));
+        panelGestionMeseros.add(txtEstadoCuentaMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 150, 40));
+
+        jPanelMostrarAdmin.add(panelGestionMeseros, "card6");
 
         panelAgregarUsuarios.setBackground(new java.awt.Color(153, 153, 153));
         panelAgregarUsuarios.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -185,8 +196,8 @@ public class JframeAdministrador extends javax.swing.JFrame {
         jLabel45.setText("Lista de meseros");
         panelAgregarUsuarios.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 120, -1, -1));
 
-        listMeseroActualizados.setBackground(new java.awt.Color(255, 204, 51));
-        jScrollPane9.setViewportView(listMeseroActualizados);
+        listMeserosAgregar.setBackground(new java.awt.Color(255, 204, 51));
+        jScrollPane9.setViewportView(listMeserosAgregar);
 
         panelAgregarUsuarios.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(646, 151, 188, 269));
         panelAgregarUsuarios.add(txtConfirmarContraseñaNuevoMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 170, 30));
@@ -508,35 +519,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
     }
 
     
-    private void btnEliminarMeseroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMeseroActionPerformed
-        
-        String nombreMeseroSeleccionado = listMeseros.getSelectedValue();
-        if (nombreMeseroSeleccionado == null) {
-            JOptionPane.showMessageDialog(rootPane, "Seleccione un mesero de la lista para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        String contraseniaAdmin = new String(txtContraseñaAdministrador.getPassword());
-
-        if (!usuarioActual.getContrasenia().equals(contraseniaAdmin)) {
-            JOptionPane.showMessageDialog(rootPane, "Contraseña incorrecta. No se puede eliminar el mesero.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        for (int i = 0; i < Usuario.getListaUsuarios().size(); i++) {
-            Usuario usuario = Usuario.getListaUsuarios().get(i);
-            if (usuario.getNombreUsuario().equals(nombreMeseroSeleccionado) && usuario.getRol().equals("MESERO")) {
-                Usuario.getListaUsuarios().remove(i);
-                JOptionPane.showMessageDialog(rootPane, "Mesero eliminado con éxito.");
-                cargarListaDeMeseros(listMeseros, listMeseroActualizados); 
-                return;
-            }
-        }
-
-        JOptionPane.showMessageDialog(rootPane, "No se pudo encontrar el mesero para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
-        
-    }//GEN-LAST:event_btnEliminarMeseroActionPerformed
-
     private void btnAgregarMeseroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMeseroActionPerformed
         
         String nombreUsuario = txtUsuarioNuevoMesero.getText().trim();
@@ -569,13 +551,90 @@ public class JframeAdministrador extends javax.swing.JFrame {
         txtContraseñaNuevoMesero.setText("");
         txtConfirmarContraseñaNuevoMesero.setText("");
 
-        cargarListaDeMeseros(listMeseros, listMeseroActualizados);
+        cargarListaDeMeseros(listaMeserosGestionar, listMeserosAgregar);
     }//GEN-LAST:event_btnAgregarMeseroActionPerformed
-    
-    private void txtContraseñaAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContraseñaAdministradorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtContraseñaAdministradorActionPerformed
 
+    private void btnActivarCuentaMeseroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActivarCuentaMeseroActionPerformed
+        
+        String nombreMeseroSeleccionado = listaMeserosGestionar.getSelectedValue();
+        if (nombreMeseroSeleccionado == null) {
+            JOptionPane.showMessageDialog(rootPane, "Seleccione un mesero de la lista.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        for (Usuario usuario : Usuario.getListaUsuarios()) {
+            if (usuario.getNombreUsuario().equals(nombreMeseroSeleccionado) && usuario.getRol().equals("MESERO")) {
+                if (usuario.isActivo()) {
+                    JOptionPane.showMessageDialog(rootPane, "La cuenta ya está activa.", "Información", JOptionPane.INFORMATION_MESSAGE);
+                    return;
+                }
+
+                String contraseniaAdmin = JOptionPane.showInputDialog(rootPane, "Ingrese su contraseña para activar la cuenta:", "Confirmación", JOptionPane.WARNING_MESSAGE);
+
+                if (contraseniaAdmin == null || !usuarioActual.getContrasenia().equals(contraseniaAdmin)) {
+                    JOptionPane.showMessageDialog(rootPane, "Contraseña incorrecta. No se pudo activar la cuenta.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                usuario.setActivo(true);
+                JOptionPane.showMessageDialog(rootPane, "La cuenta ha sido activada con éxito.", "Información", JOptionPane.INFORMATION_MESSAGE);
+                txtEstadoCuentaMesero.setText("Activa");
+                listaMeserosGestionar.clearSelection();
+                return;
+            }
+        }
+
+        JOptionPane.showMessageDialog(rootPane, "No se encontró el mesero seleccionado.", "Error", JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_btnActivarCuentaMeseroActionPerformed
+
+    private void btnDesactivarCuentaMeseroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesactivarCuentaMeseroActionPerformed
+        
+        String nombreMeseroSeleccionado = listaMeserosGestionar.getSelectedValue();
+        if (nombreMeseroSeleccionado == null) {
+            JOptionPane.showMessageDialog(rootPane, "Seleccione un mesero de la lista.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        for (Usuario usuario : Usuario.getListaUsuarios()) {
+            if (usuario.getNombreUsuario().equals(nombreMeseroSeleccionado) && usuario.getRol().equals("MESERO")) {
+                if (!usuario.isActivo()) {
+                    JOptionPane.showMessageDialog(rootPane, "La cuenta ya está desactivada.", "Información", JOptionPane.INFORMATION_MESSAGE);
+                    return;
+                }
+
+                String contraseniaAdmin = JOptionPane.showInputDialog(rootPane, "Ingrese su contraseña para desactivar la cuenta:", "Confirmación", JOptionPane.WARNING_MESSAGE);
+
+                if (contraseniaAdmin == null || !usuarioActual.getContrasenia().equals(contraseniaAdmin)) {
+                    JOptionPane.showMessageDialog(rootPane, "Contraseña incorrecta. No se pudo desactivar la cuenta.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                usuario.setActivo(false);
+                JOptionPane.showMessageDialog(rootPane, "La cuenta ha sido desactivada con éxito.", "Información", JOptionPane.INFORMATION_MESSAGE);
+                txtEstadoCuentaMesero.setText("Inactiva");
+                listaMeserosGestionar.clearSelection();
+                return;
+            }
+        }
+
+        JOptionPane.showMessageDialog(rootPane, "No se encontró el mesero seleccionado.", "Error", JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_btnDesactivarCuentaMeseroActionPerformed
+
+    private void listaMeserosGestionarValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaMeserosGestionarValueChanged
+        String nombreMeseroSeleccionado = listaMeserosGestionar.getSelectedValue();
+        if (nombreMeseroSeleccionado == null) {
+            txtEstadoCuentaMesero.setText("");
+            return;
+        }
+
+        for (Usuario usuario : Usuario.getListaUsuarios()) {
+            if (usuario.getNombreUsuario().equals(nombreMeseroSeleccionado) && usuario.getRol().equals("MESERO")) {
+                txtEstadoCuentaMesero.setText(usuario.isActivo() ? "Activa" : "Inactiva");
+                return;
+            }
+        }
+    }//GEN-LAST:event_listaMeserosGestionarValueChanged
+    
     private Reporte buscarReportePorNombre(String nombreReporte) {
         for (Reporte reporte : GestionReportes.getListaReportes()) {
             if (reporte.getNombre().equalsIgnoreCase(nombreReporte)) {
@@ -587,15 +646,16 @@ public class JframeAdministrador extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActivarCuentaMesero;
     private javax.swing.JButton btnAgregarMesero;
     private javax.swing.JButton btnBuscarReportes;
     private javax.swing.JButton btnCerrarSesionAdmnistrador;
-    private javax.swing.JButton btnEliminarMesero;
+    private javax.swing.JButton btnDesactivarCuentaMesero;
     private javax.swing.JButton btnVerReporte;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel40;
@@ -620,8 +680,8 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JList<String> listMeseroActualizados;
-    private javax.swing.JList<String> listMeseros;
+    private javax.swing.JList<String> listMeserosAgregar;
+    private javax.swing.JList<String> listaMeserosGestionar;
     private javax.swing.JList<String> listaReportesEncontrados;
     private javax.swing.JMenuItem menItemAgregarUsuario;
     private javax.swing.JMenuItem menItemCerrarSecsion;
@@ -632,13 +692,13 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenu menuUsuarios;
     private javax.swing.JPanel panelAgregarUsuarios;
     private javax.swing.JPanel panelCerrarSesion;
-    private javax.swing.JPanel panelEliminarUsuarios;
+    private javax.swing.JPanel panelGestionMeseros;
     private javax.swing.JPanel panelReporteVentas;
     private javax.swing.JTextField txtCantidadReporteSeleccionado;
     private javax.swing.JTextField txtCodigoGenerado;
     private javax.swing.JPasswordField txtConfirmarContraseñaNuevoMesero;
-    private javax.swing.JPasswordField txtContraseñaAdministrador;
     private javax.swing.JPasswordField txtContraseñaNuevoMesero;
+    private javax.swing.JTextField txtEstadoCuentaMesero;
     private javax.swing.JTextField txtFechaFinalReporteBuscar;
     private javax.swing.JTextField txtFechaInicioReporteBuscar;
     private javax.swing.JTextField txtFechaReporteSeleccionado;

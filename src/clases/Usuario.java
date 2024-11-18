@@ -8,15 +8,19 @@ public class Usuario {
     protected String nombreUsuario;
     protected String contrasenia;
     protected boolean sesionIniciada;
+    protected boolean activo;
     protected String rol;
     
-    public Usuario() {}
+    public Usuario() {
+        this.activo = true;
+    }
 
     public Usuario(String nombreUsuario, String contrasenia, String rol) {
         this.nombreUsuario = nombreUsuario;
         this.contrasenia = contrasenia;
         this.rol = rol;
         this.sesionIniciada = false;
+        this.activo = true;
     }
     
     private static List<Usuario> listaUsuarios = new ArrayList<>();
@@ -28,6 +32,16 @@ public class Usuario {
         Usuario mesero = new Usuario("mesero", "mesero", "MESERO");
         listaUsuarios.add(mesero);
     }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+    
+    
 
     public boolean isSesionIniciada() {
         return sesionIniciada;
