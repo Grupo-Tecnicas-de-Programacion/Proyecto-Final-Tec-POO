@@ -30,6 +30,8 @@ import com.itextpdf.io.image.ImageData;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.io.image.ImageDataFactory;
 import java.io.InputStream;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 
 public class JframeMesero extends javax.swing.JFrame {
@@ -8387,6 +8389,10 @@ public class JframeMesero extends javax.swing.JFrame {
                 apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente (solo letras y espacios):");
             }
 
+            LocalDateTime fechaActual = LocalDateTime.now();
+            DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+            String fechaFormateada = fechaActual.format(formatoFecha);
+
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
             fileChooser.setSelectedFile(new File("Recibo_Mesa" + (numeroMesa + 1) + "_" + nombreCliente + "_" + apellidoCliente + ".pdf"));
@@ -8415,9 +8421,10 @@ public class JframeMesero extends javax.swing.JFrame {
                     }
 
                     document.add(new Paragraph("Recibo de la Mesa " + (numeroMesa + 1)).setBold().setFontSize(16));
-                    document.add(new Paragraph("===================="));
+                    document.add(new Paragraph("Fecha: " + fechaFormateada).setFontSize(10));
+                    document.add(new Paragraph("========================================"));
                     document.add(new Paragraph("Cliente: " + nombreCliente + " " + apellidoCliente));
-                    document.add(new Paragraph("====================").setMarginBottom(10));
+                    document.add(new Paragraph("========================================").setMarginBottom(10));
 
                     Table table = new Table(5);
                     table.addCell(new Cell().add(new Paragraph("Producto").setBold()));
@@ -8433,7 +8440,7 @@ public class JframeMesero extends javax.swing.JFrame {
                             table.addCell(new Cell().add(new Paragraph(String.format("S/ %.2f", producto.getPrecio()))));
                             table.addCell(new Cell().add(new Paragraph(String.format("S/ %.2f", producto.getCantidad() * producto.getPrecio()))));
                             table.addCell(new Cell().add(new Paragraph(pedido.getTipoPedido())));
-                            
+
                             registrarProductoVendido(producto);
                         }
                     }
@@ -8452,7 +8459,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
                     document.add(table);
 
-                    document.add(new Paragraph("===================="));
+                    document.add(new Paragraph("========================================"));
                     document.add(new Paragraph("Total de la cuenta: S/ " + String.format("%.2f", totalCuenta)).setBold());
 
                     document.close();
