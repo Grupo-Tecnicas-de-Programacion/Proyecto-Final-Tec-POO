@@ -33,3 +33,6 @@ nbproject/private/*.properties
 
 # No ignorar configuraciones necesarias para el proyecto
 !nbproject/project.properties
+
+# No ignorar los archivos en la carpeta lib
+!/lib/
