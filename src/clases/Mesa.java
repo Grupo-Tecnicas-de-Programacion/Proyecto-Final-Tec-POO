@@ -113,19 +113,13 @@ public class Mesa {
 
     public final class Cuenta {
         private double totalPagar;
-        private String tipoPago;
-        private String estadoPago;
 
         public Cuenta() {
             this.totalPagar = 0;
-            this.tipoPago = "Desconocido";
-            this.estadoPago = "Pendiente";
         }
 
         public Cuenta(String tipoPago) {
             this.totalPagar = 0;
-            this.tipoPago = tipoPago;
-            this.estadoPago = "Pendiente";
         }
 
         public double getTotalPagar() {
@@ -134,22 +128,6 @@ public class Mesa {
 
         public void setTotalPagar(double totalPagar) {
             this.totalPagar = totalPagar;
-        }
-
-        public String getTipoPago() {
-            return tipoPago;
-        }
-
-        public void setTipoPago(String tipoPago) {
-            this.tipoPago = tipoPago;
-        }
-
-        public String getEstadoPago() {
-            return estadoPago;
-        }
-
-        public void setEstadoPago(String estadoPago) {
-            this.estadoPago = estadoPago;
         }
 
         public double calcularCuentaMesa(ArrayList<Pedido> pedidosMesa, ArrayList<Pedido> pedidosMesaLlevar) {
@@ -170,16 +148,9 @@ public class Mesa {
             return totalCuenta;
         }
 
-
-        public void marcarComoPagada() {
-            this.estadoPago = "Pagado";
-        }
-
         public String mostrarInfoCuenta() {
             return "Información de la cuenta:\n" +
-                   " - Total a pagar: " + this.getTotalPagar() + "\n" +
-                   " - Tipo de pago: " + this.getTipoPago() + "\n" +
-                   " - Estado del pago: " + this.getEstadoPago();
+                   " - Total a pagar: " + this.getTotalPagar() + "\n";
         }
     }
 }

@@ -8146,29 +8146,6 @@ public class JframeMesero extends javax.swing.JFrame {
     private void listaVerPedidosLlevarMesa9ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaVerPedidosLlevarMesa9ValueChanged
         cambioSeleccionVerPedidos(listaVerPedidosLlevarMesa9, listaVerPedidosMesa9);
     }//GEN-LAST:event_listaVerPedidosLlevarMesa9ValueChanged
-
-    /*private double calcularCuentaMesa(ArrayList<Pedido> pedidosMesa, ArrayList<Pedido> pedidosMEsaLlevar){
-        
-        double totalCuenta = 0;
-        
-        for (Pedido pedido : pedidosMesa) {
-            for (Producto producto : pedido.getListaProductos()) {
-                totalCuenta += producto.getPrecio() * producto.getCantidad();
-            }
-        }
-        
-        for (Pedido pedido : pedidosMEsaLlevar) {
-            for (Producto producto : pedido.getListaProductos()) {
-                totalCuenta += producto.getPrecio() * producto.getCantidad();
-            }
-        }
-        
-        if (totalCuenta == 0) {
-            return 0;
-        }else{
-            return totalCuenta;
-        }
-    }*/
     
     private void btnTotalCuentaMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa1ActionPerformed
         
