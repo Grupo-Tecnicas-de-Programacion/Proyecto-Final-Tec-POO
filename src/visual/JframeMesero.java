@@ -29,9 +29,15 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.io.image.ImageDataFactory;
+import com.toedter.calendar.JDateChooser;
+import java.awt.BorderLayout;
 import java.io.InputStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import javax.swing.JDialog;
 
 
 public class JframeMesero extends javax.swing.JFrame {
@@ -2476,19 +2482,15 @@ public class JframeMesero extends javax.swing.JFrame {
         panelModProducto.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 146, 33));
 
         txtCantidadProductoActual.setEditable(false);
-        txtCantidadProductoActual.setText("Cantidad del producto");
         panelModProducto.add(txtCantidadProductoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 160, 30));
 
         txtNombreProductoActual.setEditable(false);
-        txtNombreProductoActual.setText("Nombre del producto");
         panelModProducto.add(txtNombreProductoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 160, 30));
 
         txtCategoriaProductoActual.setEditable(false);
-        txtCategoriaProductoActual.setText("Categoría del producto");
         panelModProducto.add(txtCategoriaProductoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 160, 30));
 
         txtPrecioProductoActual.setEditable(false);
-        txtPrecioProductoActual.setText("Precio del producto");
         panelModProducto.add(txtPrecioProductoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 160, 30));
 
         jLabel67.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -2499,39 +2501,21 @@ public class JframeMesero extends javax.swing.JFrame {
         jLabel68.setForeground(new java.awt.Color(0, 0, 0));
         jLabel68.setText("Nombre del nuevo producto");
         panelModProducto.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 170, 33));
-
-        txtNombreProductoNuevo.setText("Nombre nuevo");
         panelModProducto.add(txtNombreProductoNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 230, 160, 30));
 
         jLabel69.setForeground(new java.awt.Color(0, 0, 0));
         jLabel69.setText("Categoría del nuevo producto");
         panelModProducto.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 170, 33));
-
-        txtCategoriaProductoNuevo.setText("Categoría nueva");
         panelModProducto.add(txtCategoriaProductoNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 280, 160, 30));
 
         jLabel70.setForeground(new java.awt.Color(0, 0, 0));
         jLabel70.setText("Precio del nuevo producto");
         panelModProducto.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 170, 33));
-
-        txtPrecioProductoNuevo.setText("Precio nuevo ");
-        txtPrecioProductoNuevo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPrecioProductoNuevoActionPerformed(evt);
-            }
-        });
         panelModProducto.add(txtPrecioProductoNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, 160, 30));
 
         jLabel71.setForeground(new java.awt.Color(0, 0, 0));
         jLabel71.setText("Cantidad del nuevo producto");
         panelModProducto.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 170, 33));
-
-        txtCantidadProductoNuevo.setText("Cantidad nueva");
-        txtCantidadProductoNuevo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCantidadProductoNuevoActionPerformed(evt);
-            }
-        });
         panelModProducto.add(txtCantidadProductoNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, 160, 30));
 
         buscarProductoModificar.setBackground(new java.awt.Color(204, 204, 0));
@@ -2595,24 +2579,15 @@ public class JframeMesero extends javax.swing.JFrame {
         panelBuscProducto.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 146, 33));
 
         txtNombreProductoBuscado.setEditable(false);
-        txtNombreProductoBuscado.setText("Nombre del producto");
         panelBuscProducto.add(txtNombreProductoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 160, 30));
 
         txtCategoriaProductoBuscado.setEditable(false);
-        txtCategoriaProductoBuscado.setText("Categoría del producto");
         panelBuscProducto.add(txtCategoriaProductoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 270, 160, 30));
 
         txtPrecioProductoBuscado.setEditable(false);
-        txtPrecioProductoBuscado.setText("Precio del producto");
         panelBuscProducto.add(txtPrecioProductoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 160, 30));
 
         txtCantidadProductoBuscado.setEditable(false);
-        txtCantidadProductoBuscado.setText("Cantidad del producto");
-        txtCantidadProductoBuscado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCantidadProductoBuscadoActionPerformed(evt);
-            }
-        });
         panelBuscProducto.add(txtCantidadProductoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 370, 160, 30));
 
         btnBuscandoProducto.setBackground(new java.awt.Color(153, 153, 0));
@@ -2649,24 +2624,15 @@ public class JframeMesero extends javax.swing.JFrame {
         panelElimProducto.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 210, 30));
 
         txtNombreProductoAEliminar.setEditable(false);
-        txtNombreProductoAEliminar.setText("Nombre del producto");
         panelElimProducto.add(txtNombreProductoAEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 160, 30));
 
         txtCategoriaProductoAEliminar.setEditable(false);
-        txtCategoriaProductoAEliminar.setText("Categoría del producto");
         panelElimProducto.add(txtCategoriaProductoAEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 160, 30));
 
         txtPrecioProductoAEliminar.setEditable(false);
-        txtPrecioProductoAEliminar.setText("Precio del producto");
         panelElimProducto.add(txtPrecioProductoAEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 160, 30));
 
         txtCantidadProductoAEliminar.setEditable(false);
-        txtCantidadProductoAEliminar.setText("Cantidad del producto");
-        txtCantidadProductoAEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCantidadProductoAEliminarActionPerformed(evt);
-            }
-        });
         panelElimProducto.add(txtCantidadProductoAEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, 160, 30));
 
         jLabel80.setForeground(new java.awt.Color(0, 0, 0));
@@ -2739,7 +2705,6 @@ public class JframeMesero extends javax.swing.JFrame {
         panelProducDisponibles.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 146, 33));
 
         txtNombreProductoDisponible.setEditable(false);
-        txtNombreProductoDisponible.setText("Nombre del producto");
         panelProducDisponibles.add(txtNombreProductoDisponible, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 160, 30));
 
         jLabel89.setForeground(new java.awt.Color(0, 0, 0));
@@ -2747,7 +2712,6 @@ public class JframeMesero extends javax.swing.JFrame {
         panelProducDisponibles.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 146, 33));
 
         txtCategoriaProductoDisponible.setEditable(false);
-        txtCategoriaProductoDisponible.setText("Categoría del producto");
         panelProducDisponibles.add(txtCategoriaProductoDisponible, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 160, 30));
 
         jLabel90.setForeground(new java.awt.Color(0, 0, 0));
@@ -2755,7 +2719,6 @@ public class JframeMesero extends javax.swing.JFrame {
         panelProducDisponibles.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 146, 33));
 
         txtPrecioProductoDisponible.setEditable(false);
-        txtPrecioProductoDisponible.setText("Precio del producto");
         panelProducDisponibles.add(txtPrecioProductoDisponible, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 160, 30));
 
         jLabel91.setForeground(new java.awt.Color(0, 0, 0));
@@ -2763,12 +2726,6 @@ public class JframeMesero extends javax.swing.JFrame {
         panelProducDisponibles.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 146, 33));
 
         txtCantidadProductoDisponible.setEditable(false);
-        txtCantidadProductoDisponible.setText("Cantidad del producto");
-        txtCantidadProductoDisponible.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCantidadProductoDisponibleActionPerformed(evt);
-            }
-        });
         panelProducDisponibles.add(txtCantidadProductoDisponible, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 160, 30));
 
         jPanelMostrar.add(panelProducDisponibles, "card9");
@@ -2859,6 +2816,12 @@ public class JframeMesero extends javax.swing.JFrame {
         jLabel147.setForeground(new java.awt.Color(0, 0, 0));
         jLabel147.setText("Nombre del reporte");
         panelGenerarReporte.add(jLabel147, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 146, 33));
+
+        txtFechaGenerarReporte.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtFechaGenerarReporteMouseClicked(evt);
+            }
+        });
         panelGenerarReporte.add(txtFechaGenerarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 160, 30));
         panelGenerarReporte.add(txtNombreGenerarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 160, 30));
 
@@ -2870,7 +2833,7 @@ public class JframeMesero extends javax.swing.JFrame {
                 btnGenerarReporteDiaActionPerformed(evt);
             }
         });
-        panelGenerarReporte.add(btnGenerarReporteDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 190, 160, 130));
+        panelGenerarReporte.add(btnGenerarReporteDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 160, 130));
 
         jPanelMostrar.add(panelGenerarReporte, "card12");
 
@@ -4375,10 +4338,6 @@ public class JframeMesero extends javax.swing.JFrame {
         listaProductosAgotados.setModel(modeloProductosDisponibles);
     }//GEN-LAST:event_menItemProducDAgotadosActionPerformed
 
-    private void txtCantidadProductoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProductoNuevoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCantidadProductoNuevoActionPerformed
-
     private Producto buscarProductoPorNombre(String nombreProducto) {
         for (Producto producto : productos) {
             if (producto.getNombre().equalsIgnoreCase(nombreProducto)) {
@@ -4388,22 +4347,6 @@ public class JframeMesero extends javax.swing.JFrame {
         return null;
     }
     
-    private void txtPrecioProductoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioProductoNuevoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPrecioProductoNuevoActionPerformed
-
-    private void txtCantidadProductoBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProductoBuscadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCantidadProductoBuscadoActionPerformed
-
-    private void txtCantidadProductoAEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProductoAEliminarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCantidadProductoAEliminarActionPerformed
-
-    private void txtCantidadProductoDisponibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProductoDisponibleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCantidadProductoDisponibleActionPerformed
-
     private void mostrarProductosEnMesa(JList<String> listaProductosMesa) {
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
         for (Producto producto : productos) {
@@ -9550,30 +9493,62 @@ public class JframeMesero extends javax.swing.JFrame {
     }
     
     private void btnGenerarReporteDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteDiaActionPerformed
-        String fecha = txtFechaGenerarReporte.getText().trim();
+        String fechaTexto = txtFechaGenerarReporte.getText().trim();
         String nombre = txtNombreGenerarReporte.getText().trim();
 
-        if (!fecha.matches("\\d{2}/\\d{2}/\\d{4}")) {
-            JOptionPane.showMessageDialog(this, "La fecha debe estar en formato dd/MM/yyyy.", "Formato de fecha incorrecto", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        if (fecha.isEmpty() || nombre.isEmpty()) {
+        if (fechaTexto.isEmpty() || nombre.isEmpty()) {
             JOptionPane.showMessageDialog(rootPane, "Por favor, complete todos los campos.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        double totalGanancias = calcularTotalGananciasGlobal();
-        int cantidadProductosVendidos = calcularCantidadProductosVendidosGlobal();
+        try {
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+            Date fecha = formatoFecha.parse(fechaTexto);
 
-        Reporte nuevoReporte = new Reporte(fecha, nombre, totalGanancias, cantidadProductosVendidos);
-        GestionReportes.agregarReporte(nuevoReporte);
+            double totalGanancias = calcularTotalGananciasGlobal();
+            int cantidadProductosVendidos = calcularCantidadProductosVendidosGlobal();
 
-        JOptionPane.showMessageDialog(rootPane, "Reporte generado correctamente.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            Reporte nuevoReporte = new Reporte(fecha, nombre, totalGanancias, cantidadProductosVendidos);
+            GestionReportes.agregarReporte(nuevoReporte);
 
-        txtFechaGenerarReporte.setText("");
-        txtNombreGenerarReporte.setText("");
+            JOptionPane.showMessageDialog(rootPane, "Reporte generado correctamente.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+
+            txtFechaGenerarReporte.setText("");
+            txtNombreGenerarReporte.setText("");
+
+        } catch (ParseException e) {
+            JOptionPane.showMessageDialog(rootPane, "La fecha debe estar en formato dd/MM/yyyy.", "Formato de fecha incorrecto", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btnGenerarReporteDiaActionPerformed
+
+    private void txtFechaGenerarReporteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFechaGenerarReporteMouseClicked
+        JDateChooser dateChooser = new JDateChooser();
+        dateChooser.setDateFormatString("dd/MM/yyyy");
+
+        JDialog dialogoFecha = new JDialog(this, "Seleccionar Fecha", true);
+        dialogoFecha.setLayout(new BorderLayout());
+        dialogoFecha.add(dateChooser, BorderLayout.CENTER);
+
+        JButton btnAceptar = new JButton("Aceptar");
+        dialogoFecha.add(btnAceptar, BorderLayout.SOUTH);
+
+        btnAceptar.addActionListener(e -> {
+            
+            Date fechaSeleccionada = dateChooser.getDate();
+            if (fechaSeleccionada != null) {
+                
+                SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+                String fechaFormateada = formatoFecha.format(fechaSeleccionada);
+                
+                txtFechaGenerarReporte.setText(fechaFormateada);
+            }
+            dialogoFecha.dispose();
+        });
+
+        dialogoFecha.setSize(200, 100);
+        dialogoFecha.setLocationRelativeTo(this);
+        dialogoFecha.setVisible(true);
+    }//GEN-LAST:event_txtFechaGenerarReporteMouseClicked
     
     private void actualizarListaProductosDelPedidoMesa1() {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();

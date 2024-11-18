@@ -3,6 +3,7 @@ package clases;
 
 import clases.Pedido;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Mesero extends Usuario {
     private ArrayList<Pedido> pedidos;
@@ -30,7 +31,7 @@ public class Mesero extends Usuario {
         this.pedidos = pedidos;
     }
 
-    public Reporte generarReporte(String fecha, String nombre, double totalGanancia, int cantidadProductos) {
+    public Reporte generarReporte(Date fecha, String nombre, double totalGanancia, int cantidadProductos) {
         Reporte nuevoReporte = new Reporte(fecha, nombre, totalGanancia, cantidadProductos);
         reportes.add(nuevoReporte);
         return nuevoReporte;

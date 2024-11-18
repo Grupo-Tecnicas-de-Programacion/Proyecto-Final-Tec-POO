@@ -7,8 +7,16 @@ import javax.swing.JOptionPane;
 import clases.GestionReportes;
 import clases.Reporte;
 import clases.Usuario;
+import com.toedter.calendar.JDateChooser;
+import java.awt.BorderLayout;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JList;
+import javax.swing.JTextField;
 import javax.swing.Timer;
 
 public class JframeAdministrador extends javax.swing.JFrame {
@@ -218,29 +226,41 @@ public class JframeAdministrador extends javax.swing.JFrame {
         jLabel80.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel80.setForeground(new java.awt.Color(0, 0, 0));
         jLabel80.setText("Rango de fecha para ver los reportes");
-        panelReporteVentas.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+        panelReporteVentas.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
         jLabel81.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel81.setForeground(new java.awt.Color(0, 0, 0));
         jLabel81.setText("Desde :");
         panelReporteVentas.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
+
+        txtFechaInicioReporteBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtFechaInicioReporteBuscarMouseClicked(evt);
+            }
+        });
         panelReporteVentas.add(txtFechaInicioReporteBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 158, -1));
 
         jLabel82.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel82.setForeground(new java.awt.Color(0, 0, 0));
         jLabel82.setText("Hasta :");
         panelReporteVentas.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
+
+        txtFechaFinalReporteBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtFechaFinalReporteBuscarMouseClicked(evt);
+            }
+        });
         panelReporteVentas.add(txtFechaFinalReporteBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 158, -1));
 
         listaReportesEncontrados.setBackground(new java.awt.Color(255, 204, 51));
         jScrollPane18.setViewportView(listaReportesEncontrados);
 
-        panelReporteVentas.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 206, 240));
+        panelReporteVentas.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 206, 240));
 
         jLabel83.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel83.setForeground(new java.awt.Color(0, 0, 0));
         jLabel83.setText("Reportes encontrados");
-        panelReporteVentas.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
+        panelReporteVentas.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
 
         btnBuscarReportes.setBackground(new java.awt.Color(102, 102, 0));
         btnBuscarReportes.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -250,12 +270,12 @@ public class JframeAdministrador extends javax.swing.JFrame {
                 btnBuscarReportesActionPerformed(evt);
             }
         });
-        panelReporteVentas.add(btnBuscarReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, 60));
+        panelReporteVentas.add(btnBuscarReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, 60));
 
         jLabel85.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel85.setForeground(new java.awt.Color(0, 0, 0));
         jLabel85.setText("Visualizacion del reporte seleccionado");
-        panelReporteVentas.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, -1, -1));
+        panelReporteVentas.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, -1, -1));
 
         btnVerReporte.setBackground(new java.awt.Color(102, 102, 0));
         btnVerReporte.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -285,7 +305,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
         jPanel1.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 50, 30));
         jPanel1.add(txtNombreReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 150, 30));
 
-        panelReporteVentas.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 130, 290, 340));
+        panelReporteVentas.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 290, 340));
 
         jPanelMostrarAdmin.add(panelReporteVentas, "card11");
 
@@ -397,7 +417,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE)
+                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -452,45 +472,54 @@ public class JframeAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarSesionAdmnistradorActionPerformed
 
     private void btnBuscarReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarReportesActionPerformed
-        String fechaDesde = txtFechaInicioReporteBuscar.getText().trim();
-        String fechaHasta = txtFechaFinalReporteBuscar.getText().trim();
+        String fechaDesdeTexto = txtFechaInicioReporteBuscar.getText().trim();
+        String fechaHastaTexto = txtFechaFinalReporteBuscar.getText().trim();
 
-        if (!fechaDesde.matches("\\d{2}/\\d{2}/\\d{4}") || !fechaHasta.matches("\\d{2}/\\d{2}/\\d{4}")) {
-            JOptionPane.showMessageDialog(rootPane, "Las fechas deben estar en formato dd/MM/yyyy.", "Formato de fecha incorrecto", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        if (fechaDesde.isEmpty() || fechaHasta.isEmpty()) {
+        if (fechaDesdeTexto.isEmpty() || fechaHastaTexto.isEmpty()) {
             JOptionPane.showMessageDialog(rootPane, "Por favor, ingrese ambas fechas para buscar reportes.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        DefaultListModel<String> modeloReportes = new DefaultListModel<>();
-        for (Reporte reporte : GestionReportes.getListaReportes()) {
-            if (reporte.getFecha().compareTo(fechaDesde) >= 0 && reporte.getFecha().compareTo(fechaHasta) <= 0) {
-                modeloReportes.addElement(reporte.getNombre() + " - Fecha: " + reporte.getFecha());
+        try {
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+            Date fechaDesde = formatoFecha.parse(fechaDesdeTexto);
+            Date fechaHasta = formatoFecha.parse(fechaHastaTexto);
+
+            DefaultListModel<String> modeloReportes = new DefaultListModel<>();
+
+            for (Reporte reporte : GestionReportes.getListaReportes()) {
+                if (!reporte.getFecha().before(fechaDesde) && !reporte.getFecha().after(fechaHasta)) {
+                    modeloReportes.addElement(reporte.getNombre() + " - Fecha: " + formatoFecha.format(reporte.getFecha()));
+                }
             }
-        }
 
-        if (modeloReportes.isEmpty()) {
-            JOptionPane.showMessageDialog(rootPane, "No se encontraron reportes en el rango de fechas especificado.", "Información", JOptionPane.INFORMATION_MESSAGE);
-        }
+            if (modeloReportes.isEmpty()) {
+                JOptionPane.showMessageDialog(rootPane, "No se encontraron reportes en el rango de fechas especificado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            }
 
-        listaReportesEncontrados.setModel(modeloReportes);
+            listaReportesEncontrados.setModel(modeloReportes);
+
+        } catch (ParseException e) {
+            JOptionPane.showMessageDialog(rootPane, "Las fechas deben estar en formato dd/MM/yyyy.", "Formato de fecha incorrecto", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btnBuscarReportesActionPerformed
 
     private void btnVerReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerReporteActionPerformed
+        
         int index = listaReportesEncontrados.getSelectedIndex();
 
         if (index >= 0) {
+
             String reporteSeleccionado = listaReportesEncontrados.getSelectedValue();
-            String nombreReporte = reporteSeleccionado.split(" -")[0].trim();
+            String nombreReporte = reporteSeleccionado.split(" - Fecha:")[0].trim();
 
             Reporte reporte = buscarReportePorNombre(nombreReporte);
 
             if (reporte != null) {
+                SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+
                 txtNombreReporteSeleccionado.setText(reporte.getNombre());
-                txtFechaReporteSeleccionado.setText(reporte.getFecha());
+                txtFechaReporteSeleccionado.setText(formatoFecha.format(reporte.getFecha()));
                 txtCantidadReporteSeleccionado.setText(String.valueOf(reporte.getCantidadProductosVendidos()));
                 txtGananciaReporteSeleccionado.setText(String.format("S/ %.2f", reporte.getTotalGanancias()));
             } else {
@@ -499,7 +528,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(rootPane, "Por favor, seleccione un reporte de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
-
     }//GEN-LAST:event_btnVerReporteActionPerformed
 
     private void menItemAgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemAgregarUsuarioActionPerformed
@@ -634,6 +662,43 @@ public class JframeAdministrador extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_listaMeserosGestionarValueChanged
+
+    private void buscarFecha(JTextField txtMostrarFecha){
+        JDateChooser dateChooser = new JDateChooser();
+        dateChooser.setDateFormatString("dd/MM/yyyy");
+
+        JDialog dialogoFecha = new JDialog(this, "Seleccionar Fecha", true);
+        dialogoFecha.setLayout(new BorderLayout());
+        dialogoFecha.add(dateChooser, BorderLayout.CENTER);
+
+        JButton btnAceptar = new JButton("Aceptar");
+        dialogoFecha.add(btnAceptar, BorderLayout.SOUTH);
+
+        btnAceptar.addActionListener(e -> {
+            
+            Date fechaSeleccionada = dateChooser.getDate();
+            if (fechaSeleccionada != null) {
+                
+                SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+                String fechaFormateada = formatoFecha.format(fechaSeleccionada);
+                
+                txtMostrarFecha.setText(fechaFormateada);
+            }
+            dialogoFecha.dispose();
+        });
+
+        dialogoFecha.setSize(200, 100);
+        dialogoFecha.setLocationRelativeTo(this);
+        dialogoFecha.setVisible(true);
+    }
+    
+    private void txtFechaInicioReporteBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFechaInicioReporteBuscarMouseClicked
+        buscarFecha(txtFechaInicioReporteBuscar);
+    }//GEN-LAST:event_txtFechaInicioReporteBuscarMouseClicked
+
+    private void txtFechaFinalReporteBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFechaFinalReporteBuscarMouseClicked
+        buscarFecha(txtFechaFinalReporteBuscar);
+    }//GEN-LAST:event_txtFechaFinalReporteBuscarMouseClicked
     
     private Reporte buscarReportePorNombre(String nombreReporte) {
         for (Reporte reporte : GestionReportes.getListaReportes()) {
