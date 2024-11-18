@@ -8371,9 +8371,8 @@ public class JframeMesero extends javax.swing.JFrame {
         }
     }
     
-    private void btnGenerarReciboMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa1ActionPerformed
-        
-        double totalCuenta = mesas.get(0).getCuenta().calcularCuentaMesa(pedidosMesa1, pedidosMesa1Llevar);
+    private void generarRecibo(int numeroMesa, ArrayList<Pedido> pedidosEnMesa, ArrayList<Pedido> pedidosParaLlevar, JButton btnLimpiarMesa) {
+        double totalCuenta = mesas.get(numeroMesa).getCuenta().calcularCuentaMesa(pedidosEnMesa, pedidosParaLlevar);
 
         if (totalCuenta == 0) {
             JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -8390,7 +8389,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
-            fileChooser.setSelectedFile(new File("Recibo_" + nombreCliente + "_" + apellidoCliente + ".pdf"));
+            fileChooser.setSelectedFile(new File("Recibo_Mesa" + (numeroMesa + 1) + "_" + nombreCliente + "_" + apellidoCliente + ".pdf"));
 
             int userSelection = fileChooser.showSaveDialog(this);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
@@ -8408,14 +8407,14 @@ public class JframeMesero extends javax.swing.JFrame {
                         ImageData data = ImageDataFactory.create(logoStream.readAllBytes());
                         Image logo = new Image(data);
                         logo.scaleToFit(150, 150);
-                        logo.setFixedPosition(pdfDoc.getDefaultPageSize().getWidth() - 200, pdfDoc.getDefaultPageSize().getHeight() - 150); // Esquina superior derecha
+                        logo.setFixedPosition(pdfDoc.getDefaultPageSize().getWidth() - 200, pdfDoc.getDefaultPageSize().getHeight() - 150);
                         document.add(logo);
                     } catch (Exception e) {
                         e.printStackTrace();
                         JOptionPane.showMessageDialog(rootPane, "Error cargando el logo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                     }
 
-                    document.add(new Paragraph("Recibo de la Mesa 1").setBold().setFontSize(16));
+                    document.add(new Paragraph("Recibo de la Mesa " + (numeroMesa + 1)).setBold().setFontSize(16));
                     document.add(new Paragraph("===================="));
                     document.add(new Paragraph("Cliente: " + nombreCliente + " " + apellidoCliente));
                     document.add(new Paragraph("====================").setMarginBottom(10));
@@ -8427,7 +8426,7 @@ public class JframeMesero extends javax.swing.JFrame {
                     table.addCell(new Cell().add(new Paragraph("Subtotal").setBold()));
                     table.addCell(new Cell().add(new Paragraph("Tipo Pedido").setBold()));
 
-                    for (Pedido pedido : pedidosMesa1) {
+                    for (Pedido pedido : pedidosEnMesa) {
                         for (Producto producto : pedido.getListaProductos()) {
                             table.addCell(new Cell().add(new Paragraph(producto.getNombre())));
                             table.addCell(new Cell().add(new Paragraph(String.valueOf(producto.getCantidad()))));
@@ -8437,7 +8436,7 @@ public class JframeMesero extends javax.swing.JFrame {
                         }
                     }
 
-                    for (Pedido pedido : pedidosMesa1Llevar) {
+                    for (Pedido pedido : pedidosParaLlevar) {
                         for (Producto producto : pedido.getListaProductos()) {
                             table.addCell(new Cell().add(new Paragraph(producto.getNombre())));
                             table.addCell(new Cell().add(new Paragraph(String.valueOf(producto.getCantidad()))));
@@ -8457,7 +8456,7 @@ public class JframeMesero extends javax.swing.JFrame {
                     document.close();
 
                     JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en " + fileToSave.getAbsolutePath(), "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
-                    btnLimpiarMesa1.setEnabled(true);
+                    btnLimpiarMesa.setEnabled(true);
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                 }
@@ -8465,6 +8464,12 @@ public class JframeMesero extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Guardado cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
             }
         }
+    }
+
+    
+    private void btnGenerarReciboMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa1ActionPerformed
+        
+        generarRecibo(0, pedidosMesa1, pedidosMesa1Llevar, btnLimpiarMesa1);
     }//GEN-LAST:event_btnGenerarReciboMesa1ActionPerformed
 
     private void productosPedidoMesa1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa1ValueChanged
