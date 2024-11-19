@@ -12,6 +12,7 @@ import java.awt.BorderLayout;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -537,11 +538,12 @@ public class JframeAdministrador extends javax.swing.JFrame {
 
     private void cargarListaDeMeseros(JList listaMeseros, JList listaMeseroActualizados) {
         DefaultListModel<String> modelo = new DefaultListModel<>();
-        for (Usuario usuario : Usuario.getListaUsuarios()) {
-            if (usuario.getRol().equals("MESERO")) {
-                modelo.addElement(usuario.getNombreUsuario());
-            }
+    
+        List<String> nombresMeseros = Usuario.obtenerNombresMeseros();
+        for (String nombreMesero : nombresMeseros) {
+            modelo.addElement(nombreMesero);
         }
+
         listaMeseros.setModel(modelo);
         listaMeseroActualizados.setModel(modelo);
     }
@@ -563,26 +565,20 @@ public class JframeAdministrador extends javax.swing.JFrame {
             return;
         }
 
-        for (Usuario usuario : Usuario.getListaUsuarios()) {
-            if (usuario.getNombreUsuario().equalsIgnoreCase(nombreUsuario)) {
-                JOptionPane.showMessageDialog(rootPane, "El nombre de usuario ya existe.", "Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
+        boolean exito = Usuario.registrarUsuario(nombreUsuario, contrasenia, confirmarContrasenia, "MESERO");
+
+        if (exito) {
+            JOptionPane.showMessageDialog(rootPane, "Mesero registrado con éxito.");
+            cargarListaDeMeseros(listaMeserosGestionar, listMeserosAgregar);
+            txtUsuarioNuevoMesero.setText("");
+            txtContraseñaNuevoMesero.setText("");
+            txtConfirmarContraseñaNuevoMesero.setText("");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Error al registrar el mesero. El nombre de usuario ya existe o las contraseñas no coinciden.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-
-        Usuario nuevoMesero = new Usuario(nombreUsuario, contrasenia, "MESERO");
-        Usuario.getListaUsuarios().add(nuevoMesero);
-
-        JOptionPane.showMessageDialog(rootPane, "Mesero agregado con éxito.");
-
-        txtUsuarioNuevoMesero.setText("");
-        txtContraseñaNuevoMesero.setText("");
-        txtConfirmarContraseñaNuevoMesero.setText("");
-
-        cargarListaDeMeseros(listaMeserosGestionar, listMeserosAgregar);
     }//GEN-LAST:event_btnAgregarMeseroActionPerformed
-
-    private void btnActivarCuentaMeseroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActivarCuentaMeseroActionPerformed
+    
+    private void activardesactivarCuenta(boolean activar){
         
         String nombreMeseroSeleccionado = listaMeserosGestionar.getSelectedValue();
         if (nombreMeseroSeleccionado == null) {
@@ -590,62 +586,41 @@ public class JframeAdministrador extends javax.swing.JFrame {
             return;
         }
 
-        for (Usuario usuario : Usuario.getListaUsuarios()) {
-            if (usuario.getNombreUsuario().equals(nombreMeseroSeleccionado) && usuario.getRol().equals("MESERO")) {
-                if (usuario.isEstaActivo()) {
-                    JOptionPane.showMessageDialog(rootPane, "La cuenta ya está activa.", "Información", JOptionPane.INFORMATION_MESSAGE);
-                    return;
-                }
+        String mensajeConfirmacion = activar ? "activar" : "desactivar";
+        String contraseniaAdmin = JOptionPane.showInputDialog(rootPane, 
+            "Ingrese su contraseña para " + mensajeConfirmacion + " la cuenta:", 
+            "Confirmación", JOptionPane.WARNING_MESSAGE);
 
-                String contraseniaAdmin = JOptionPane.showInputDialog(rootPane, "Ingrese su contraseña para activar la cuenta:", "Confirmación", JOptionPane.WARNING_MESSAGE);
-
-                if (contraseniaAdmin == null || !usuarioActual.getContrasenia().equals(contraseniaAdmin)) {
-                    JOptionPane.showMessageDialog(rootPane, "Contraseña incorrecta. No se pudo activar la cuenta.", "Error", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-
-                usuario.setEstaActivo(true);
-                JOptionPane.showMessageDialog(rootPane, "La cuenta ha sido activada con éxito.", "Información", JOptionPane.INFORMATION_MESSAGE);
-                txtEstadoCuentaMesero.setText("Activa");
-                listaMeserosGestionar.clearSelection();
-                return;
-            }
+        if (contraseniaAdmin == null || contraseniaAdmin.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "Debe ingresar la contraseña del administrador.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
 
-        JOptionPane.showMessageDialog(rootPane, "No se encontró el mesero seleccionado.", "Error", JOptionPane.ERROR_MESSAGE);
+        boolean exito = Usuario.activarDesactivarCuenta(nombreMeseroSeleccionado, contraseniaAdmin, activar);
+        if (exito) {
+            if (activar) {
+                JOptionPane.showMessageDialog(rootPane, "La cuenta ha sido activada con éxito.", "Información", JOptionPane.INFORMATION_MESSAGE);
+                txtEstadoCuentaMesero.setText("Activa");
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "La cuenta ha sido desactivada con éxito.", "Información", JOptionPane.INFORMATION_MESSAGE);
+                txtEstadoCuentaMesero.setText("Inactiva");
+            }
+            listaMeserosGestionar.clearSelection();
+        } else {
+            JOptionPane.showMessageDialog(rootPane, 
+                (activar ? "No se pudo activar la cuenta." : "No se pudo desactivar la cuenta.") + " Verifique los datos.", 
+                "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    private void btnActivarCuentaMeseroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActivarCuentaMeseroActionPerformed
+        
+        activardesactivarCuenta(true);
     }//GEN-LAST:event_btnActivarCuentaMeseroActionPerformed
 
     private void btnDesactivarCuentaMeseroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesactivarCuentaMeseroActionPerformed
         
-        String nombreMeseroSeleccionado = listaMeserosGestionar.getSelectedValue();
-        if (nombreMeseroSeleccionado == null) {
-            JOptionPane.showMessageDialog(rootPane, "Seleccione un mesero de la lista.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        for (Usuario usuario : Usuario.getListaUsuarios()) {
-            if (usuario.getNombreUsuario().equals(nombreMeseroSeleccionado) && usuario.getRol().equals("MESERO")) {
-                if (!usuario.isEstaActivo()) {
-                    JOptionPane.showMessageDialog(rootPane, "La cuenta ya está desactivada.", "Información", JOptionPane.INFORMATION_MESSAGE);
-                    return;
-                }
-
-                String contraseniaAdmin = JOptionPane.showInputDialog(rootPane, "Ingrese su contraseña para desactivar la cuenta:", "Confirmación", JOptionPane.WARNING_MESSAGE);
-
-                if (contraseniaAdmin == null || !usuarioActual.getContrasenia().equals(contraseniaAdmin)) {
-                    JOptionPane.showMessageDialog(rootPane, "Contraseña incorrecta. No se pudo desactivar la cuenta.", "Error", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-
-                usuario.setEstaActivo(false);
-                JOptionPane.showMessageDialog(rootPane, "La cuenta ha sido desactivada con éxito.", "Información", JOptionPane.INFORMATION_MESSAGE);
-                txtEstadoCuentaMesero.setText("Inactiva");
-                listaMeserosGestionar.clearSelection();
-                return;
-            }
-        }
-
-        JOptionPane.showMessageDialog(rootPane, "No se encontró el mesero seleccionado.", "Error", JOptionPane.ERROR_MESSAGE);
+        activardesactivarCuenta(false);
     }//GEN-LAST:event_btnDesactivarCuentaMeseroActionPerformed
 
     private void listaMeserosGestionarValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaMeserosGestionarValueChanged
@@ -655,12 +630,8 @@ public class JframeAdministrador extends javax.swing.JFrame {
             return;
         }
 
-        for (Usuario usuario : Usuario.getListaUsuarios()) {
-            if (usuario.getNombreUsuario().equals(nombreMeseroSeleccionado) && usuario.getRol().equals("MESERO")) {
-                txtEstadoCuentaMesero.setText(usuario.isEstaActivo()? "Activa" : "Inactiva");
-                return;
-            }
-        }
+        String estado = Usuario.obtenerEstadoUsuario(nombreMeseroSeleccionado);
+        txtEstadoCuentaMesero.setText(estado);
     }//GEN-LAST:event_listaMeserosGestionarValueChanged
 
     private void buscarFecha(JTextField txtMostrarFecha){

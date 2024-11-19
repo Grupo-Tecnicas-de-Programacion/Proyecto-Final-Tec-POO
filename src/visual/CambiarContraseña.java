@@ -102,23 +102,28 @@ public class CambiarContraseña extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverAtrasActionPerformed
 
     private void btnCambiarContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarContraseñaActionPerformed
-        String nombreUsuario = txtNombreUsuarioCambiarContraseña.getText();
-        String contraseniaActual = new String(txtAntiguaContraseña.getPassword());
-        String nuevaContrasenia = new String(txtNuevaContraseña.getPassword());
+        String nombreUsuario = txtNombreUsuarioCambiarContraseña.getText().trim();
+        String contraseniaActual = new String(txtAntiguaContraseña.getPassword()).trim();
+        String nuevaContrasenia = new String(txtNuevaContraseña.getPassword()).trim();
 
-        for (Usuario usuario : Usuario.getListaUsuarios()) {
-            if (usuario.getNombreUsuario().equals(nombreUsuario)) {
-                boolean exito = usuario.cambiarContrasenia(contraseniaActual, nuevaContrasenia);
-                if (exito) {
-                    JOptionPane.showMessageDialog(rootPane, "Contraseña actualizada con éxito.");
-                } else {
-                    JOptionPane.showMessageDialog(rootPane, "Contraseña actual incorrecta. No se pudo actualizar la contraseña.", "Error", JOptionPane.ERROR_MESSAGE);
-                }
-                return;
-            }
+        if (nombreUsuario.isEmpty() || contraseniaActual.isEmpty() || nuevaContrasenia.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
 
-        JOptionPane.showMessageDialog(rootPane, "Usuario no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
+        Usuario usuario = new Usuario();
+        usuario.setNombreUsuario(nombreUsuario);
+
+        boolean exito = usuario.cambiarContrasenia(contraseniaActual, nuevaContrasenia);
+
+        if (exito) {
+            JOptionPane.showMessageDialog(this, "Contraseña actualizada con éxito.");
+            txtNombreUsuarioCambiarContraseña.setText("");
+            txtAntiguaContraseña.setText("");
+            txtNuevaContraseña.setText("");
+        } else {
+            JOptionPane.showMessageDialog(this, "Usuario no encontrado o contraseña actual incorrecta.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnCambiarContraseñaActionPerformed
 
 

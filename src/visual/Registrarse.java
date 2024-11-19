@@ -100,17 +100,17 @@ public class Registrarse extends javax.swing.JFrame {
 
     private void btnRegistrarsseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarsseActionPerformed
         
-        String nombreUsuario = txtRegistrarNombreUsuario.getText();
-        String contrasenia = new String(txtRegistrarContrasenia.getPassword());
-        String confirmarContrasenia = new String(txtRegistrarConfirmarContrasenia.getPassword());
+        String nombreUsuario = txtRegistrarNombreUsuario.getText().trim();
+        String contrasenia = new String(txtRegistrarContrasenia.getPassword()).trim();
+        String confirmarContrasenia = new String(txtRegistrarConfirmarContrasenia.getPassword()).trim();
 
         if (nombreUsuario.isEmpty() || contrasenia.isEmpty() || confirmarContrasenia.isEmpty()) {
-            JOptionPane.showMessageDialog(rootPane, "Todos los campos deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Todos los campos deben estar llenos.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         if (!contrasenia.equals(confirmarContrasenia)) {
-            JOptionPane.showMessageDialog(rootPane, "La contraseña y la confirmación deben ser iguales.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "La contraseña y la confirmación deben ser iguales.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -127,7 +127,7 @@ public class Registrarse extends javax.swing.JFrame {
         );
 
         if (seleccion == JOptionPane.CLOSED_OPTION) {
-            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar un rol para registrar al usuario.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Debe seleccionar un rol para registrar al usuario.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -136,12 +136,12 @@ public class Registrarse extends javax.swing.JFrame {
         boolean exito = Usuario.registrarUsuario(nombreUsuario, contrasenia, confirmarContrasenia, rol);
 
         if (exito) {
-            JOptionPane.showMessageDialog(rootPane, "Usuario registrado como " + rol + ".");
+            JOptionPane.showMessageDialog(this, "Usuario registrado como " + rol + " exitosamente.");
             txtRegistrarNombreUsuario.setText("");
             txtRegistrarContrasenia.setText("");
             txtRegistrarConfirmarContrasenia.setText("");
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Error al registrar el usuario. Usuario existente", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Error al registrar el usuario. El nombre de usuario ya existe o ocurrió un problema.", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
     }//GEN-LAST:event_btnRegistrarsseActionPerformed

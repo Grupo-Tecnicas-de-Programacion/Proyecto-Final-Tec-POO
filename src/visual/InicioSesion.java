@@ -120,37 +120,25 @@ public class InicioSesion extends javax.swing.JFrame {
         String nombreUsuario = txtNombreUsuarioIniciarSesion.getText();
         String contrasenia = new String(txtContraseniaIniciarSesion.getPassword());
 
-        boolean usuarioEncontrado = false;
+        Usuario usuario = Usuario.autenticarUsuario(nombreUsuario, contrasenia);
 
-        for (Usuario usuario : Usuario.getListaUsuarios()) {
-            if (usuario.getNombreUsuario().equalsIgnoreCase(nombreUsuario) && 
-                usuario.getContrasenia().equals(contrasenia)) {
-
-                usuarioEncontrado = true;
-
-                
-                if (!usuario.isEstaActivo()) {
-                    JOptionPane.showMessageDialog(rootPane, "La cuenta está desactivada. Contacte al administrador.", "Cuenta desactivada", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-
-                
-                if (rol.equals("ADMINISTRADOR") && usuario.getRol().equals("ADMINISTRADOR")) {
-                    new JframeAdministrador(usuario).setVisible(true);
-                } else if (rol.equals("MESERO") && usuario.getRol().equals("MESERO")) {
-                    new JframeMesero().setVisible(true);
-                } else {
-                    JOptionPane.showMessageDialog(rootPane, "No tienes permiso para iniciar sesión con esta cuenta", "Acceso denegado", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-
-                
-                this.dispose();
-                break;
+        if (usuario != null) {
+            if (!usuario.isEstaActivo()) {
+                JOptionPane.showMessageDialog(rootPane, "La cuenta está desactivada. Contacte al administrador.", "Cuenta desactivada", JOptionPane.ERROR_MESSAGE);
+                return;
             }
-        }
 
-        if (!usuarioEncontrado) {
+            if (rol.equals("ADMINISTRADOR") && usuario.getRol().equals("ADMINISTRADOR")) {
+                new JframeAdministrador(usuario).setVisible(true);
+            } else if (rol.equals("MESERO") && usuario.getRol().equals("MESERO")) {
+                new JframeMesero().setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "No tienes permiso para iniciar sesión con esta cuenta", "Acceso denegado", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            this.dispose();
+        } else {
             JOptionPane.showMessageDialog(rootPane, "Nombre de usuario o contraseña incorrectos", "Error de inicio de sesión", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnIngresarInicioSesionActionPerformed
