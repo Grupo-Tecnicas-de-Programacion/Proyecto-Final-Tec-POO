@@ -592,7 +592,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
 
         for (Usuario usuario : Usuario.getListaUsuarios()) {
             if (usuario.getNombreUsuario().equals(nombreMeseroSeleccionado) && usuario.getRol().equals("MESERO")) {
-                if (usuario.isActivo()) {
+                if (usuario.isEstaActivo()) {
                     JOptionPane.showMessageDialog(rootPane, "La cuenta ya está activa.", "Información", JOptionPane.INFORMATION_MESSAGE);
                     return;
                 }
@@ -604,7 +604,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
                     return;
                 }
 
-                usuario.setActivo(true);
+                usuario.setEstaActivo(true);
                 JOptionPane.showMessageDialog(rootPane, "La cuenta ha sido activada con éxito.", "Información", JOptionPane.INFORMATION_MESSAGE);
                 txtEstadoCuentaMesero.setText("Activa");
                 listaMeserosGestionar.clearSelection();
@@ -625,7 +625,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
 
         for (Usuario usuario : Usuario.getListaUsuarios()) {
             if (usuario.getNombreUsuario().equals(nombreMeseroSeleccionado) && usuario.getRol().equals("MESERO")) {
-                if (!usuario.isActivo()) {
+                if (!usuario.isEstaActivo()) {
                     JOptionPane.showMessageDialog(rootPane, "La cuenta ya está desactivada.", "Información", JOptionPane.INFORMATION_MESSAGE);
                     return;
                 }
@@ -637,7 +637,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
                     return;
                 }
 
-                usuario.setActivo(false);
+                usuario.setEstaActivo(false);
                 JOptionPane.showMessageDialog(rootPane, "La cuenta ha sido desactivada con éxito.", "Información", JOptionPane.INFORMATION_MESSAGE);
                 txtEstadoCuentaMesero.setText("Inactiva");
                 listaMeserosGestionar.clearSelection();
@@ -657,7 +657,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
 
         for (Usuario usuario : Usuario.getListaUsuarios()) {
             if (usuario.getNombreUsuario().equals(nombreMeseroSeleccionado) && usuario.getRol().equals("MESERO")) {
-                txtEstadoCuentaMesero.setText(usuario.isActivo() ? "Activa" : "Inactiva");
+                txtEstadoCuentaMesero.setText(usuario.isEstaActivo()? "Activa" : "Inactiva");
                 return;
             }
         }

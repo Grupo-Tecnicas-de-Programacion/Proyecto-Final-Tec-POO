@@ -8,11 +8,11 @@ public class Usuario {
     protected String nombreUsuario;
     protected String contrasenia;
     protected boolean sesionIniciada;
-    protected boolean activo;
+    protected boolean estaActivo;
     protected String rol;
     
     public Usuario() {
-        this.activo = true;
+        this.estaActivo = true;
     }
 
     public Usuario(String nombreUsuario, String contrasenia, String rol) {
@@ -20,7 +20,7 @@ public class Usuario {
         this.contrasenia = contrasenia;
         this.rol = rol;
         this.sesionIniciada = false;
-        this.activo = true;
+        this.estaActivo = true;
     }
     
     private static List<Usuario> listaUsuarios = new ArrayList<>();
@@ -33,12 +33,12 @@ public class Usuario {
         listaUsuarios.add(mesero);
     }
 
-    public boolean isActivo() {
-        return activo;
+    public boolean isEstaActivo() {
+        return estaActivo;
     }
 
-    public void setActivo(boolean activo) {
-        this.activo = activo;
+    public void setEstaActivo(boolean estaActivo) {
+        this.estaActivo = estaActivo;
     }
     
     public boolean isSesionIniciada() {

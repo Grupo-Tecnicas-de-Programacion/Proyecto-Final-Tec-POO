@@ -129,7 +129,7 @@ public class InicioSesion extends javax.swing.JFrame {
                 usuarioEncontrado = true;
 
                 
-                if (!usuario.isActivo()) {
+                if (!usuario.isEstaActivo()) {
                     JOptionPane.showMessageDialog(rootPane, "La cuenta está desactivada. Contacte al administrador.", "Cuenta desactivada", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
