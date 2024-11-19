@@ -130,7 +130,7 @@ public class Mesa {
             this.totalPagar = 0;
         }
 
-        public Cuenta(String tipoPago) {
+        public Cuenta(double totalPagar) {
             this.totalPagar = 0;
         }
 
