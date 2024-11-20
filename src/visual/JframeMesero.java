@@ -6769,7 +6769,6 @@ public class JframeMesero extends javax.swing.JFrame {
 
     
     private void btnGenerarReciboMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa1ActionPerformed
-        
         generarRecibo(0, pedidosMesa1, pedidosMesa1Llevar, btnLimpiarMesa1);
     }//GEN-LAST:event_btnGenerarReciboMesa1ActionPerformed
 
@@ -6781,39 +6780,50 @@ public class JframeMesero extends javax.swing.JFrame {
         cambioSeleccionVerPedidos(listaPedidosMesa1, productosPedidoMesa1);
     }//GEN-LAST:event_listaPedidosMesa1ValueChanged
 
-    private void btnBorrarProductoPedidoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa1ActionPerformed
+    private void borrarProductoDePedido(
+        JList<String> listaPedidos, 
+        Pedido pedidoMesa,
+        Runnable actualizarListaProductos, 
+        Runnable mostrarProductosEnMesa
+        ) {
+            int index = listaPedidos.getSelectedIndex();
+            if (index >= 0) {
 
-        int index = listaPedidosMesa1.getSelectedIndex(); 
-        if (index >= 0) {
-            
-            String productoTexto = listaPedidosMesa1.getSelectedValue();
-            
-            String[] partes = productoTexto.split(" - Cantidad: ");
-            if (partes.length == 2) {
-                String nombreProducto = partes[0].trim();
-                int cantidadProducto = Integer.parseInt(partes[1].trim());
+                String productoTexto = listaPedidos.getSelectedValue();
+                String[] partes = productoTexto.split(" - Cantidad: ");
+                if (partes.length == 2) {
+                    String nombreProducto = partes[0].trim();
+                    int cantidadProducto = Integer.parseInt(partes[1].trim());
 
-                
-                for (Producto producto : productos) {
-                    if (producto.getNombre().equals(nombreProducto)) {
-                        producto.setCantidadDisponible(producto.getCantidadDisponible() + cantidadProducto);
-                        break;
+                    for (Producto producto : productos) {
+                        if (producto.getNombre().equals(nombreProducto)) {
+                            producto.setCantidadDisponible(producto.getCantidadDisponible() + cantidadProducto);
+                            break;
+                        }
                     }
+
+                    pedidoMesa.getListaProductos().remove(index);
+
+                    actualizarListaProductos.run();
+                    mostrarProductosEnMesa.run();
+
+                    JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Error al parsear la cantidad del producto.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
-
-                
-                pedidoMesa1.getListaProductos().remove(index);
-
-                actualizarListaProductosDelPedido(pedidoMesa1, listaPedidosMesa1);
-                mostrarProductosEnMesa(productosPedidoMesa1);
-                
-                JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(this, "Error al parsear la cantidad del producto.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
-        } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+    }
+
+    
+    private void btnBorrarProductoPedidoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa1ActionPerformed
+        borrarProductoDePedido(
+            listaPedidosMesa1, 
+            pedidoMesa1,
+            () -> actualizarListaProductosDelPedido(pedidoMesa1, listaPedidosMesa1), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa1)
+        );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa1ActionPerformed
 
     private void limpiarMesa(
@@ -7144,377 +7154,102 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarPedidoMesa2ActionPerformed
 
     private void btnBorrarProductoPedidoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa2ActionPerformed
-        int index = listaPedidosMesa2.getSelectedIndex(); 
-        if (index >= 0) {
-            
-            String productoTexto = listaPedidosMesa2.getSelectedValue();
-            
-            String[] partes = productoTexto.split(" - Cantidad: ");
-            if (partes.length == 2) {
-                String nombreProducto = partes[0].trim();
-                int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                
-                for (Producto producto : productos) {
-                    if (producto.getNombre().equals(nombreProducto)) {
-                        producto.setCantidadDisponible(producto.getCantidadDisponible() + cantidadProducto);
-                        break;
-                    }
-                }
-
-                
-                pedidoMesa2.getListaProductos().remove(index);
-
-                actualizarListaProductosDelPedido(pedidoMesa2, listaPedidosMesa2);
-                mostrarProductosEnMesa(productosPedidoMesa2);
-                
-                JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this, "Error al parsear la cantidad del producto.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        borrarProductoDePedido(
+            listaPedidosMesa2, 
+            pedidoMesa2,
+            () -> actualizarListaProductosDelPedido(pedidoMesa2, listaPedidosMesa2), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa2)
+        );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa2ActionPerformed
 
     private void btnBorrarProductoPedidoMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa3ActionPerformed
-        int index = listaPedidosMesa3.getSelectedIndex(); 
-        if (index >= 0) {
-            
-            String productoTexto = listaPedidosMesa3.getSelectedValue();
-            
-            String[] partes = productoTexto.split(" - Cantidad: ");
-            if (partes.length == 2) {
-                String nombreProducto = partes[0].trim();
-                int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                
-                for (Producto producto : productos) {
-                    if (producto.getNombre().equals(nombreProducto)) {
-                        producto.setCantidadDisponible(producto.getCantidadDisponible() + cantidadProducto);
-                        break;
-                    }
-                }
-
-                
-                pedidoMesa3.getListaProductos().remove(index);
-
-                actualizarListaProductosDelPedido(pedidoMesa3, listaPedidosMesa3);
-                mostrarProductosEnMesa(productosPedidoMesa3);
-                
-                JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this, "Error al parsear la cantidad del producto.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        borrarProductoDePedido(
+            listaPedidosMesa3, 
+            pedidoMesa3,
+            () -> actualizarListaProductosDelPedido(pedidoMesa3, listaPedidosMesa3), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa3)
+        );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa3ActionPerformed
 
     private void btnBorrarProductoPedidoMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa4ActionPerformed
-        int index = listaPedidosMesa4.getSelectedIndex(); 
-        if (index >= 0) {
-            
-            String productoTexto = listaPedidosMesa4.getSelectedValue();
-            
-            String[] partes = productoTexto.split(" - Cantidad: ");
-            if (partes.length == 2) {
-                String nombreProducto = partes[0].trim();
-                int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                
-                for (Producto producto : productos) {
-                    if (producto.getNombre().equals(nombreProducto)) {
-                        producto.setCantidadDisponible(producto.getCantidadDisponible() + cantidadProducto);
-                        break;
-                    }
-                }
-
-                
-                pedidoMesa4.getListaProductos().remove(index);
-
-                actualizarListaProductosDelPedido(pedidoMesa4, listaPedidosMesa4);
-                mostrarProductosEnMesa(productosPedidoMesa4);
-                
-                JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this, "Error al parsear la cantidad del producto.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        borrarProductoDePedido(
+            listaPedidosMesa4, 
+            pedidoMesa4,
+            () -> actualizarListaProductosDelPedido(pedidoMesa4, listaPedidosMesa4), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa4)
+        );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa4ActionPerformed
 
     private void btnBorrarProductoPedidoMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa5ActionPerformed
-        int index = listaPedidosMesa5.getSelectedIndex(); 
-        if (index >= 0) {
-            
-            String productoTexto = listaPedidosMesa5.getSelectedValue();
-            
-            String[] partes = productoTexto.split(" - Cantidad: ");
-            if (partes.length == 2) {
-                String nombreProducto = partes[0].trim();
-                int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                
-                for (Producto producto : productos) {
-                    if (producto.getNombre().equals(nombreProducto)) {
-                        producto.setCantidadDisponible(producto.getCantidadDisponible() + cantidadProducto);
-                        break;
-                    }
-                }
-
-                
-                pedidoMesa5.getListaProductos().remove(index);
-
-                actualizarListaProductosDelPedido(pedidoMesa5, listaPedidosMesa5);
-                mostrarProductosEnMesa(productosPedidoMesa5);
-                
-                JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this, "Error al parsear la cantidad del producto.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        borrarProductoDePedido(
+            listaPedidosMesa5, 
+            pedidoMesa5,
+            () -> actualizarListaProductosDelPedido(pedidoMesa5, listaPedidosMesa5), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa5)
+        );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa5ActionPerformed
 
     private void btnBorrarProductoPedidoMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa6ActionPerformed
-        int index = listaPedidosMesa6.getSelectedIndex(); 
-        if (index >= 0) {
-            
-            String productoTexto = listaPedidosMesa6.getSelectedValue();
-            
-            String[] partes = productoTexto.split(" - Cantidad: ");
-            if (partes.length == 2) {
-                String nombreProducto = partes[0].trim();
-                int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                
-                for (Producto producto : productos) {
-                    if (producto.getNombre().equals(nombreProducto)) {
-                        producto.setCantidadDisponible(producto.getCantidadDisponible() + cantidadProducto);
-                        break;
-                    }
-                }
-
-                
-                pedidoMesa6.getListaProductos().remove(index);
-
-                actualizarListaProductosDelPedido(pedidoMesa6, listaPedidosMesa6);
-                mostrarProductosEnMesa(productosPedidoMesa6);
-                
-                JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this, "Error al parsear la cantidad del producto.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        borrarProductoDePedido(
+            listaPedidosMesa6, 
+            pedidoMesa6,
+            () -> actualizarListaProductosDelPedido(pedidoMesa6, listaPedidosMesa6), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa6)
+        );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa6ActionPerformed
 
     private void btnBorrarProductoPedidoMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa7ActionPerformed
-        int index = listaPedidosMesa7.getSelectedIndex(); 
-        if (index >= 0) {
-            
-            String productoTexto = listaPedidosMesa7.getSelectedValue();
-            
-            String[] partes = productoTexto.split(" - Cantidad: ");
-            if (partes.length == 2) {
-                String nombreProducto = partes[0].trim();
-                int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                
-                for (Producto producto : productos) {
-                    if (producto.getNombre().equals(nombreProducto)) {
-                        producto.setCantidadDisponible(producto.getCantidadDisponible() + cantidadProducto);
-                        break;
-                    }
-                }
-
-                
-                pedidoMesa7.getListaProductos().remove(index);
-
-                actualizarListaProductosDelPedido(pedidoMesa7, listaPedidosMesa7);
-                mostrarProductosEnMesa(productosPedidoMesa7);
-                
-                JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this, "Error al parsear la cantidad del producto.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        borrarProductoDePedido(
+            listaPedidosMesa7, 
+            pedidoMesa7,
+            () -> actualizarListaProductosDelPedido(pedidoMesa7, listaPedidosMesa7), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa7)
+        );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa7ActionPerformed
 
     private void btnBorrarProductoPedidoMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa8ActionPerformed
-        int index = listaPedidosMesa8.getSelectedIndex(); 
-        if (index >= 0) {
-            
-            String productoTexto = listaPedidosMesa8.getSelectedValue();
-            
-            String[] partes = productoTexto.split(" - Cantidad: ");
-            if (partes.length == 2) {
-                String nombreProducto = partes[0].trim();
-                int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                
-                for (Producto producto : productos) {
-                    if (producto.getNombre().equals(nombreProducto)) {
-                        producto.setCantidadDisponible(producto.getCantidadDisponible() + cantidadProducto);
-                        break;
-                    }
-                }
-
-                
-                pedidoMesa8.getListaProductos().remove(index);
-
-                actualizarListaProductosDelPedido(pedidoMesa8, listaPedidosMesa8);
-                mostrarProductosEnMesa(productosPedidoMesa8);
-                
-                JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this, "Error al parsear la cantidad del producto.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        borrarProductoDePedido(
+            listaPedidosMesa8, 
+            pedidoMesa8,
+            () -> actualizarListaProductosDelPedido(pedidoMesa8, listaPedidosMesa8), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa8)
+        );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa8ActionPerformed
 
     private void btnBorrarProductoPedidoMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa9ActionPerformed
-        int index = listaPedidosMesa9.getSelectedIndex(); 
-        if (index >= 0) {
-            
-            String productoTexto = listaPedidosMesa9.getSelectedValue();
-            
-            String[] partes = productoTexto.split(" - Cantidad: ");
-            if (partes.length == 2) {
-                String nombreProducto = partes[0].trim();
-                int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                
-                for (Producto producto : productos) {
-                    if (producto.getNombre().equals(nombreProducto)) {
-                        producto.setCantidadDisponible(producto.getCantidadDisponible() + cantidadProducto);
-                        break;
-                    }
-                }
-
-                
-                pedidoMesa9.getListaProductos().remove(index);
-
-                actualizarListaProductosDelPedido(pedidoMesa9, listaPedidosMesa9);
-                mostrarProductosEnMesa(productosPedidoMesa9);
-                
-                JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this, "Error al parsear la cantidad del producto.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        borrarProductoDePedido(
+            listaPedidosMesa9, 
+            pedidoMesa9,
+            () -> actualizarListaProductosDelPedido(pedidoMesa9, listaPedidosMesa9), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa9)
+        );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa9ActionPerformed
 
     private void btnBorrarProductoPedidoMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa10ActionPerformed
-        int index = listaPedidosMesa10.getSelectedIndex(); 
-        if (index >= 0) {
-            
-            String productoTexto = listaPedidosMesa10.getSelectedValue();
-            
-            String[] partes = productoTexto.split(" - Cantidad: ");
-            if (partes.length == 2) {
-                String nombreProducto = partes[0].trim();
-                int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                
-                for (Producto producto : productos) {
-                    if (producto.getNombre().equals(nombreProducto)) {
-                        producto.setCantidadDisponible(producto.getCantidadDisponible() + cantidadProducto);
-                        break;
-                    }
-                }
-
-                
-                pedidoMesa10.getListaProductos().remove(index);
-
-                actualizarListaProductosDelPedido(pedidoMesa10, listaPedidosMesa10);
-                mostrarProductosEnMesa(productosPedidoMesa10);
-                
-                JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this, "Error al parsear la cantidad del producto.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        borrarProductoDePedido(
+            listaPedidosMesa10, 
+            pedidoMesa10,
+            () -> actualizarListaProductosDelPedido(pedidoMesa10, listaPedidosMesa10), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa10)
+        );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa10ActionPerformed
 
     private void btnBorrarProductoPedidoMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa11ActionPerformed
-        int index = listaPedidosMesa11.getSelectedIndex(); 
-        if (index >= 0) {
-            
-            String productoTexto = listaPedidosMesa11.getSelectedValue();
-            
-            String[] partes = productoTexto.split(" - Cantidad: ");
-            if (partes.length == 2) {
-                String nombreProducto = partes[0].trim();
-                int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                
-                for (Producto producto : productos) {
-                    if (producto.getNombre().equals(nombreProducto)) {
-                        producto.setCantidadDisponible(producto.getCantidadDisponible() + cantidadProducto);
-                        break;
-                    }
-                }
-
-                
-                pedidoMesa11.getListaProductos().remove(index);
-
-                actualizarListaProductosDelPedido(pedidoMesa11, listaPedidosMesa11);
-                mostrarProductosEnMesa(productosPedidoMesa11);
-                
-                JOptionPane.showMessageDialog(rootPane, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(rootPane, "Error al parsear la cantidad del producto.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        borrarProductoDePedido(
+            listaPedidosMesa11, 
+            pedidoMesa11,
+            () -> actualizarListaProductosDelPedido(pedidoMesa11, listaPedidosMesa11), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa11)
+        );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa11ActionPerformed
 
     private void btnBorrarProductoPedidoMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa12ActionPerformed
-        int index = listaPedidosMesa12.getSelectedIndex(); 
-        if (index >= 0) {
-            
-            String productoTexto = listaPedidosMesa12.getSelectedValue();
-            
-            String[] partes = productoTexto.split(" - Cantidad: ");
-            if (partes.length == 2) {
-                String nombreProducto = partes[0].trim();
-                int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                
-                for (Producto producto : productos) {
-                    if (producto.getNombre().equals(nombreProducto)) {
-                        producto.setCantidadDisponible(producto.getCantidadDisponible() + cantidadProducto);
-                        break;
-                    }
-                }
-
-                
-                pedidoMesa12.getListaProductos().remove(index);
-
-                actualizarListaProductosDelPedido(pedidoMesa12, listaPedidosMesa12);
-                mostrarProductosEnMesa(productosPedidoMesa12);
-                
-                JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this, "Error al parsear la cantidad del producto.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        borrarProductoDePedido(
+            listaPedidosMesa12, 
+            pedidoMesa12,
+            () -> actualizarListaProductosDelPedido(pedidoMesa12, listaPedidosMesa12), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa12)
+        );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa12ActionPerformed
 
     private void productosPedidoMesa2ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa2ValueChanged
@@ -7606,57 +7341,46 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_listaPedidosMesa12ValueChanged
 
     private void btnGenerarReciboMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa2ActionPerformed
-        
         generarRecibo(1, pedidosMesa2, pedidosMesa2Llevar, btnLimpiarMesa2);
     }//GEN-LAST:event_btnGenerarReciboMesa2ActionPerformed
 
     private void btnGenerarReciboMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa3ActionPerformed
-     
         generarRecibo(2, pedidosMesa3, pedidosMesa3Llevar, btnLimpiarMesa3);
     }//GEN-LAST:event_btnGenerarReciboMesa3ActionPerformed
 
     private void btnGenerarReciboMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa4ActionPerformed
-        
         generarRecibo(3, pedidosMesa4, pedidosMesa4Llevar, btnLimpiarMesa4);
     }//GEN-LAST:event_btnGenerarReciboMesa4ActionPerformed
 
     private void btnGenerarReciboMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa5ActionPerformed
-        
         generarRecibo(4, pedidosMesa5, pedidosMesa5Llevar, btnLimpiarMesa5);
     }//GEN-LAST:event_btnGenerarReciboMesa5ActionPerformed
 
     private void btnGenerarReciboMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa6ActionPerformed
-        
         generarRecibo(5, pedidosMesa6, pedidosMesa6Llevar, btnLimpiarMesa6);
     }//GEN-LAST:event_btnGenerarReciboMesa6ActionPerformed
 
     private void btnGenerarReciboMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa7ActionPerformed
-        
         generarRecibo(6, pedidosMesa7, pedidosMesa7Llevar, btnLimpiarMesa7);
     }//GEN-LAST:event_btnGenerarReciboMesa7ActionPerformed
 
     private void btnGenerarReciboMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa8ActionPerformed
-        
         generarRecibo(7, pedidosMesa8, pedidosMesa8Llevar, btnLimpiarMesa8);
     }//GEN-LAST:event_btnGenerarReciboMesa8ActionPerformed
 
     private void btnGenerarReciboMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa9ActionPerformed
-        
         generarRecibo(8, pedidosMesa9, pedidosMesa9Llevar, btnLimpiarMesa9);
     }//GEN-LAST:event_btnGenerarReciboMesa9ActionPerformed
 
     private void btnGenerarReciboMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa10ActionPerformed
-        
         generarRecibo(9, pedidosMesa10, pedidosMesa10Llevar, btnLimpiarMesa10);
     }//GEN-LAST:event_btnGenerarReciboMesa10ActionPerformed
 
     private void btnGenerarReciboMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa11ActionPerformed
-        
         generarRecibo(10, pedidosMesa11, pedidosMesa11Llevar, btnLimpiarMesa11);
     }//GEN-LAST:event_btnGenerarReciboMesa11ActionPerformed
 
     private void btnGenerarReciboMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa12ActionPerformed
-        
         generarRecibo(11, pedidosMesa12, pedidosMesa12Llevar, btnLimpiarMesa12);
     }//GEN-LAST:event_btnGenerarReciboMesa12ActionPerformed
 
