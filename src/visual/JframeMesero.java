@@ -5931,172 +5931,22 @@ public class JframeMesero extends javax.swing.JFrame {
         layout.show(jPanelMostrar, "panelGenerarReporte");
     }//GEN-LAST:event_menItemGenerarReporteActionPerformed
     
-    private void actualizarListaPedidosMesa1() {
+    private void actualizarListaPedidos(ArrayList<Pedido> pedidosMesa, 
+            JList<String> listaPedidosMesa,
+            ArrayList<Pedido> pedidosLlevar,
+            JList<String> listaPedidosLlevar) 
+        {
         DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa1) {
+        for (Pedido pedido : pedidosMesa) {
             modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
         }
-        listaVerPedidosMesa1.setModel(modeloPedidosMesa);
+        listaPedidosMesa.setModel(modeloPedidosMesa);
 
         DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa1Llevar) {
+        for (Pedido pedido : pedidosLlevar) {
             modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
         }
-        listaVerPedidosLlevarMesa1.setModel(modeloPedidosLlevar); 
-    }
-    
-    private void actualizarListaPedidosMesa2() {
-        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa2) {
-            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosMesa2.setModel(modeloPedidosMesa);
-
-        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa2Llevar) {
-            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosLlevarMesa2.setModel(modeloPedidosLlevar); 
-    }
-    
-    private void actualizarListaPedidosMesa3() {
-        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa3) {
-            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosMesa3.setModel(modeloPedidosMesa);
-
-        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa3Llevar) {
-            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosLlevarMesa3.setModel(modeloPedidosLlevar); 
-    }
-    
-    private void actualizarListaPedidosMesa4() {
-        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa4) {
-            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosMesa4.setModel(modeloPedidosMesa);
-
-        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa4Llevar) {
-            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosLlevarMesa4.setModel(modeloPedidosLlevar); 
-    }
-    
-    private void actualizarListaPedidosMesa5() {
-        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa5) {
-            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosMesa5.setModel(modeloPedidosMesa);
-
-        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa5Llevar) {
-            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosLlevarMesa5.setModel(modeloPedidosLlevar); 
-    }
-    
-    private void actualizarListaPedidosMesa6() {
-        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa6) {
-            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosMesa6.setModel(modeloPedidosMesa);
-
-        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa6Llevar) {
-            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosLlevarMesa6.setModel(modeloPedidosLlevar); 
-    }
-    
-    private void actualizarListaPedidosMesa7() {
-        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa7) {
-            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosMesa7.setModel(modeloPedidosMesa);
-
-        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa7Llevar) {
-            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosLlevarMesa7.setModel(modeloPedidosLlevar); 
-    }
-    
-    private void actualizarListaPedidosMesa8() {
-        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa8) {
-            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosMesa8.setModel(modeloPedidosMesa);
-
-        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa8Llevar) {
-            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosLlevarMesa8.setModel(modeloPedidosLlevar); 
-    }
-    
-    private void actualizarListaPedidosMesa9() {
-        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa9) {
-            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosMesa9.setModel(modeloPedidosMesa);
-
-        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa9Llevar) {
-            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosLlevarMesa9.setModel(modeloPedidosLlevar); 
-    }
-    
-    private void actualizarListaPedidosMesa10() {
-        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa10) {
-            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosMesa10.setModel(modeloPedidosMesa);
-
-        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa10Llevar) {
-            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosLlevarMesa10.setModel(modeloPedidosLlevar); 
-    }
-    
-    private void actualizarListaPedidosMesa11() {
-        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa11) {
-            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosMesa11.setModel(modeloPedidosMesa);
-
-        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa11Llevar) {
-            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosLlevarMesa11.setModel(modeloPedidosLlevar); 
-    }
-    
-    private void actualizarListaPedidosMesa12() {
-        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa12) {
-            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosMesa12.setModel(modeloPedidosMesa);
-
-        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa12Llevar) {
-            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaVerPedidosLlevarMesa12.setModel(modeloPedidosLlevar); 
+        listaPedidosLlevar.setModel(modeloPedidosLlevar);
     }
 
     private void mostrarDetallePedidoMesa1(Pedido pedido) {
@@ -6195,7 +6045,7 @@ public class JframeMesero extends javax.swing.JFrame {
         detallePedidoMesa12.setModel(modeloDetalle); 
     }
     private void btnVerPedidosMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa1ActionPerformed
-        actualizarListaPedidosMesa1();
+        actualizarListaPedidos(pedidosMesa1, listaVerPedidosMesa1, pedidosMesa1Llevar, listaVerPedidosLlevarMesa1);
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "verPedidoMesa1");
     }//GEN-LAST:event_btnVerPedidosMesa1ActionPerformed
@@ -6269,67 +6119,67 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_listaVerPedidosLlevarMesa1MouseClicked
 
     private void btnVerPedidosMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa2ActionPerformed
-        actualizarListaPedidosMesa2();
+        actualizarListaPedidos(pedidosMesa2, listaVerPedidosMesa2, pedidosMesa2Llevar, listaVerPedidosLlevarMesa2);
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "verPedidoMesa2");
     }//GEN-LAST:event_btnVerPedidosMesa2ActionPerformed
 
     private void btnVerPedidosMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa3ActionPerformed
-        actualizarListaPedidosMesa3();
+        actualizarListaPedidos(pedidosMesa3, listaVerPedidosMesa3, pedidosMesa3Llevar, listaVerPedidosLlevarMesa3);
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "verPedidoMesa3");
     }//GEN-LAST:event_btnVerPedidosMesa3ActionPerformed
 
     private void btnVerPedidosMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa4ActionPerformed
-        actualizarListaPedidosMesa4();
+        actualizarListaPedidos(pedidosMesa4, listaVerPedidosMesa4, pedidosMesa4Llevar, listaVerPedidosLlevarMesa4);
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "verPedidoMesa4");
     }//GEN-LAST:event_btnVerPedidosMesa4ActionPerformed
 
     private void btnVerPedidosMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa5ActionPerformed
-        actualizarListaPedidosMesa5();
+        actualizarListaPedidos(pedidosMesa5, listaVerPedidosMesa5, pedidosMesa5Llevar, listaVerPedidosLlevarMesa5);
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "verPedidoMesa5");
     }//GEN-LAST:event_btnVerPedidosMesa5ActionPerformed
 
     private void btnVerPedidosMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa6ActionPerformed
-        actualizarListaPedidosMesa6();
+        actualizarListaPedidos(pedidosMesa6, listaVerPedidosMesa6, pedidosMesa6Llevar, listaVerPedidosLlevarMesa6);
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "verPedidoMesa6");
     }//GEN-LAST:event_btnVerPedidosMesa6ActionPerformed
 
     private void btnVerPedidosMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa7ActionPerformed
-        actualizarListaPedidosMesa7();
+        actualizarListaPedidos(pedidosMesa7, listaVerPedidosMesa7, pedidosMesa7Llevar, listaVerPedidosLlevarMesa7);
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "verPedidoMesa7");
     }//GEN-LAST:event_btnVerPedidosMesa7ActionPerformed
 
     private void btnVerPedidosMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa8ActionPerformed
-        actualizarListaPedidosMesa8();
+        actualizarListaPedidos(pedidosMesa8, listaVerPedidosMesa8, pedidosMesa8Llevar, listaVerPedidosLlevarMesa8);
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "verPedidoMesa8");
     }//GEN-LAST:event_btnVerPedidosMesa8ActionPerformed
 
     private void btnVerPedidosMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa9ActionPerformed
-        actualizarListaPedidosMesa9();
+        actualizarListaPedidos(pedidosMesa9, listaVerPedidosMesa9, pedidosMesa9Llevar, listaVerPedidosLlevarMesa9);
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "verPedidoMesa9");
     }//GEN-LAST:event_btnVerPedidosMesa9ActionPerformed
 
     private void btnVerPedidosMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa10ActionPerformed
-        actualizarListaPedidosMesa10();
+        actualizarListaPedidos(pedidosMesa10, listaVerPedidosMesa10, pedidosMesa10Llevar, listaVerPedidosLlevarMesa10);
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "verPedidoMesa10");
     }//GEN-LAST:event_btnVerPedidosMesa10ActionPerformed
 
     private void btnVerPedidosMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa11ActionPerformed
-        actualizarListaPedidosMesa11();
+        actualizarListaPedidos(pedidosMesa11, listaVerPedidosMesa11, pedidosMesa11Llevar, listaVerPedidosLlevarMesa11);
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "verPedidoMesa11");
     }//GEN-LAST:event_btnVerPedidosMesa11ActionPerformed
 
     private void btnVerPedidosMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa12ActionPerformed
-        actualizarListaPedidosMesa12();
+        actualizarListaPedidos(pedidosMesa12, listaVerPedidosMesa12, pedidosMesa12Llevar, listaVerPedidosLlevarMesa12);
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "verPedidoMesa12");
     }//GEN-LAST:event_btnVerPedidosMesa12ActionPerformed
@@ -6597,17 +6447,19 @@ public class JframeMesero extends javax.swing.JFrame {
             pedidosMesa1, 
             pedidosMesa1Llevar, 
             detallePedidoMesa1, 
-            this::actualizarListaPedidosMesa1, 
+            () -> actualizarListaPedidos(pedidosMesa1, listaVerPedidosMesa1, pedidosMesa1Llevar, listaVerPedidosLlevarMesa1), 
             () -> mostrarProductosEnMesa(productosPedidoMesa1)
         );
     }//GEN-LAST:event_cancelarPedidoMesa1ActionPerformed
 
     private void btnLimpiarMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa2ActionPerformed
-        limpiarMesa(pedidosMesa2, pedidosMesa2Llevar, btnMesa2, 1, detallePedidoMesa2, this::actualizarListaPedidosMesa2);
+        limpiarMesa(pedidosMesa2, pedidosMesa2Llevar, btnMesa2, 1, detallePedidoMesa2,
+                () -> actualizarListaPedidos(pedidosMesa2, listaVerPedidosMesa2, pedidosMesa2Llevar, listaVerPedidosLlevarMesa2));
     }//GEN-LAST:event_btnLimpiarMesa2ActionPerformed
 
     private void btnLimpiarMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa3ActionPerformed
-        limpiarMesa(pedidosMesa3, pedidosMesa3Llevar, btnMesa3, 2, detallePedidoMesa3, this::actualizarListaPedidosMesa3);
+        limpiarMesa(pedidosMesa3, pedidosMesa3Llevar, btnMesa3, 2, detallePedidoMesa3, 
+                () -> actualizarListaPedidos(pedidosMesa3, listaVerPedidosMesa3, pedidosMesa3Llevar, listaVerPedidosLlevarMesa3));
     }//GEN-LAST:event_btnLimpiarMesa3ActionPerformed
 
     private void cancelarPedidoMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa4ActionPerformed
@@ -6617,7 +6469,7 @@ public class JframeMesero extends javax.swing.JFrame {
             pedidosMesa4, 
             pedidosMesa4Llevar, 
             detallePedidoMesa4, 
-            this::actualizarListaPedidosMesa4, 
+            () -> actualizarListaPedidos(pedidosMesa4, listaVerPedidosMesa4, pedidosMesa4Llevar, listaVerPedidosLlevarMesa4), 
             () -> mostrarProductosEnMesa(productosPedidoMesa4)
         );
     }//GEN-LAST:event_cancelarPedidoMesa4ActionPerformed
@@ -6629,7 +6481,7 @@ public class JframeMesero extends javax.swing.JFrame {
             pedidosMesa5, 
             pedidosMesa5Llevar, 
             detallePedidoMesa5, 
-            this::actualizarListaPedidosMesa5, 
+            () -> actualizarListaPedidos(pedidosMesa5, listaVerPedidosMesa5, pedidosMesa5Llevar, listaVerPedidosLlevarMesa5), 
             () -> mostrarProductosEnMesa(productosPedidoMesa5)
         );
     }//GEN-LAST:event_cancelarPedidoMesa5ActionPerformed
@@ -6641,7 +6493,7 @@ public class JframeMesero extends javax.swing.JFrame {
             pedidosMesa6, 
             pedidosMesa6Llevar, 
             detallePedidoMesa6, 
-            this::actualizarListaPedidosMesa6, 
+            () -> actualizarListaPedidos(pedidosMesa6, listaVerPedidosMesa6, pedidosMesa6Llevar, listaVerPedidosLlevarMesa6), 
             () -> mostrarProductosEnMesa(productosPedidoMesa6)
         );
     }//GEN-LAST:event_cancelarPedidoMesa6ActionPerformed
@@ -6653,7 +6505,7 @@ public class JframeMesero extends javax.swing.JFrame {
             pedidosMesa7, 
             pedidosMesa7Llevar, 
             detallePedidoMesa7, 
-            this::actualizarListaPedidosMesa7, 
+            () -> actualizarListaPedidos(pedidosMesa7, listaVerPedidosMesa7, pedidosMesa7Llevar, listaVerPedidosLlevarMesa7), 
             () -> mostrarProductosEnMesa(productosPedidoMesa7)
         );
     }//GEN-LAST:event_cancelarPedidoMesa7ActionPerformed
@@ -6665,7 +6517,7 @@ public class JframeMesero extends javax.swing.JFrame {
             pedidosMesa8, 
             pedidosMesa8Llevar, 
             detallePedidoMesa8, 
-            this::actualizarListaPedidosMesa8, 
+            () -> actualizarListaPedidos(pedidosMesa8, listaVerPedidosMesa8, pedidosMesa8Llevar, listaVerPedidosLlevarMesa8), 
             () -> mostrarProductosEnMesa(productosPedidoMesa8)
         );
     }//GEN-LAST:event_cancelarPedidoMesa8ActionPerformed
@@ -6677,7 +6529,7 @@ public class JframeMesero extends javax.swing.JFrame {
             pedidosMesa9, 
             pedidosMesa9Llevar, 
             detallePedidoMesa9, 
-            this::actualizarListaPedidosMesa9, 
+            () -> actualizarListaPedidos(pedidosMesa9, listaVerPedidosMesa9, pedidosMesa9Llevar, listaVerPedidosLlevarMesa9),  
             () -> mostrarProductosEnMesa(productosPedidoMesa9)
         );
     }//GEN-LAST:event_cancelarPedidoMesa9ActionPerformed
@@ -6689,7 +6541,7 @@ public class JframeMesero extends javax.swing.JFrame {
             pedidosMesa10, 
             pedidosMesa10Llevar, 
             detallePedidoMesa10, 
-            this::actualizarListaPedidosMesa10, 
+            () -> actualizarListaPedidos(pedidosMesa10, listaVerPedidosMesa10, pedidosMesa10Llevar, listaVerPedidosLlevarMesa10),
             () -> mostrarProductosEnMesa(productosPedidoMesa10)
         );
     }//GEN-LAST:event_cancelarPedidoMesa10ActionPerformed
@@ -6701,7 +6553,7 @@ public class JframeMesero extends javax.swing.JFrame {
             pedidosMesa11, 
             pedidosMesa11Llevar, 
             detallePedidoMesa11, 
-            this::actualizarListaPedidosMesa11, 
+            () -> actualizarListaPedidos(pedidosMesa11, listaVerPedidosMesa11, pedidosMesa11Llevar, listaVerPedidosLlevarMesa11), 
             () -> mostrarProductosEnMesa(productosPedidoMesa11)
         );
     }//GEN-LAST:event_cancelarPedidoMesa11ActionPerformed
@@ -6713,7 +6565,7 @@ public class JframeMesero extends javax.swing.JFrame {
             pedidosMesa12, 
             pedidosMesa12Llevar, 
             detallePedidoMesa12, 
-            this::actualizarListaPedidosMesa12, 
+            () -> actualizarListaPedidos(pedidosMesa12, listaVerPedidosMesa12, pedidosMesa12Llevar, listaVerPedidosLlevarMesa12), 
             () -> mostrarProductosEnMesa(productosPedidoMesa12)
         );
     }//GEN-LAST:event_cancelarPedidoMesa12ActionPerformed
@@ -7185,7 +7037,8 @@ public class JframeMesero extends javax.swing.JFrame {
 
     
     private void btnLimpiarMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa1ActionPerformed
-        limpiarMesa(pedidosMesa1, pedidosMesa1Llevar, btnMesa1, 0, detallePedidoMesa1, this::actualizarListaPedidosMesa1);
+        limpiarMesa(pedidosMesa1, pedidosMesa1Llevar, btnMesa1, 0, detallePedidoMesa1,
+            () -> actualizarListaPedidos(pedidosMesa1, listaVerPedidosMesa1, pedidosMesa1Llevar, listaVerPedidosLlevarMesa1));
     }//GEN-LAST:event_btnLimpiarMesa1ActionPerformed
 
     private void btnAgregarProductoCartaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoCartaActionPerformed
@@ -7424,45 +7277,54 @@ public class JframeMesero extends javax.swing.JFrame {
             pedidosMesa3, 
             pedidosMesa3Llevar, 
             detallePedidoMesa3, 
-            this::actualizarListaPedidosMesa3, 
+            () -> actualizarListaPedidos(pedidosMesa3, listaVerPedidosMesa3, pedidosMesa3Llevar, listaVerPedidosLlevarMesa3), 
             () -> mostrarProductosEnMesa(productosPedidoMesa3)
         );
     }//GEN-LAST:event_cancelarPedidoMesa3ActionPerformed
 
     private void btnLimpiarMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa4ActionPerformed
-        limpiarMesa(pedidosMesa4, pedidosMesa4Llevar, btnMesa4, 3, detallePedidoMesa4, this::actualizarListaPedidosMesa4);
+        limpiarMesa(pedidosMesa4, pedidosMesa4Llevar, btnMesa4, 3, detallePedidoMesa4,
+            () -> actualizarListaPedidos(pedidosMesa4, listaVerPedidosMesa4, pedidosMesa4Llevar, listaVerPedidosLlevarMesa4));
     }//GEN-LAST:event_btnLimpiarMesa4ActionPerformed
 
     private void btnLimpiarMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa5ActionPerformed
-        limpiarMesa(pedidosMesa5, pedidosMesa5Llevar, btnMesa5, 4, detallePedidoMesa5, this::actualizarListaPedidosMesa5);
+        limpiarMesa(pedidosMesa5, pedidosMesa5Llevar, btnMesa5, 4, detallePedidoMesa5, 
+            () -> actualizarListaPedidos(pedidosMesa5, listaVerPedidosMesa5, pedidosMesa5Llevar, listaVerPedidosLlevarMesa5));
     }//GEN-LAST:event_btnLimpiarMesa5ActionPerformed
 
     private void btnLimpiarMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa6ActionPerformed
-        limpiarMesa(pedidosMesa6, pedidosMesa6Llevar, btnMesa6, 5, detallePedidoMesa6, this::actualizarListaPedidosMesa6);
+        limpiarMesa(pedidosMesa6, pedidosMesa6Llevar, btnMesa6, 5, detallePedidoMesa6, 
+            () -> actualizarListaPedidos(pedidosMesa6, listaVerPedidosMesa6, pedidosMesa6Llevar, listaVerPedidosLlevarMesa6));
     }//GEN-LAST:event_btnLimpiarMesa6ActionPerformed
 
     private void btnLimpiarMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa7ActionPerformed
-        limpiarMesa(pedidosMesa7, pedidosMesa7Llevar, btnMesa7, 6, detallePedidoMesa7, this::actualizarListaPedidosMesa7);
+        limpiarMesa(pedidosMesa7, pedidosMesa7Llevar, btnMesa7, 6, detallePedidoMesa7, 
+            () -> actualizarListaPedidos(pedidosMesa7, listaVerPedidosMesa7, pedidosMesa7Llevar, listaVerPedidosLlevarMesa7));
     }//GEN-LAST:event_btnLimpiarMesa7ActionPerformed
 
     private void btnLimpiarMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa8ActionPerformed
-        limpiarMesa(pedidosMesa8, pedidosMesa8Llevar, btnMesa8, 7, detallePedidoMesa8, this::actualizarListaPedidosMesa8);
+        limpiarMesa(pedidosMesa8, pedidosMesa8Llevar, btnMesa8, 7, detallePedidoMesa8, 
+            () -> actualizarListaPedidos(pedidosMesa8, listaVerPedidosMesa8, pedidosMesa8Llevar, listaVerPedidosLlevarMesa8));
     }//GEN-LAST:event_btnLimpiarMesa8ActionPerformed
 
     private void btnLimpiarMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa9ActionPerformed
-        limpiarMesa(pedidosMesa9, pedidosMesa9Llevar, btnMesa9, 8, detallePedidoMesa9, this::actualizarListaPedidosMesa9);
+        limpiarMesa(pedidosMesa9, pedidosMesa9Llevar, btnMesa9, 8, detallePedidoMesa9, 
+            () -> actualizarListaPedidos(pedidosMesa9, listaVerPedidosMesa9, pedidosMesa9Llevar, listaVerPedidosLlevarMesa9));
     }//GEN-LAST:event_btnLimpiarMesa9ActionPerformed
 
     private void btnLimpiarMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa10ActionPerformed
-        limpiarMesa(pedidosMesa10, pedidosMesa10Llevar, btnMesa10, 9, detallePedidoMesa10, this::actualizarListaPedidosMesa10);
+        limpiarMesa(pedidosMesa10, pedidosMesa10Llevar, btnMesa10, 9, detallePedidoMesa10, 
+            () -> actualizarListaPedidos(pedidosMesa10, listaVerPedidosMesa10, pedidosMesa10Llevar, listaVerPedidosLlevarMesa10));
     }//GEN-LAST:event_btnLimpiarMesa10ActionPerformed
 
     private void btnLimpiarMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa11ActionPerformed
-        limpiarMesa(pedidosMesa11, pedidosMesa11Llevar, btnMesa11, 10, detallePedidoMesa11, this::actualizarListaPedidosMesa11);
+        limpiarMesa(pedidosMesa11, pedidosMesa11Llevar, btnMesa11, 10, detallePedidoMesa11,
+            () -> actualizarListaPedidos(pedidosMesa11, listaVerPedidosMesa11, pedidosMesa11Llevar, listaVerPedidosLlevarMesa11));
     }//GEN-LAST:event_btnLimpiarMesa11ActionPerformed
 
     private void btnLimpiarMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa12ActionPerformed
-        limpiarMesa(pedidosMesa12, pedidosMesa12Llevar, btnMesa12, 11, detallePedidoMesa12, this::actualizarListaPedidosMesa12);
+        limpiarMesa(pedidosMesa12, pedidosMesa12Llevar, btnMesa12, 11, detallePedidoMesa12, 
+            () -> actualizarListaPedidos(pedidosMesa12, listaVerPedidosMesa12, pedidosMesa12Llevar, listaVerPedidosLlevarMesa12));
     }//GEN-LAST:event_btnLimpiarMesa12ActionPerformed
 
     private void cancelarPedidoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa2ActionPerformed
@@ -7472,7 +7334,7 @@ public class JframeMesero extends javax.swing.JFrame {
             pedidosMesa2, 
             pedidosMesa2Llevar, 
             detallePedidoMesa2, 
-            this::actualizarListaPedidosMesa2, 
+            () -> actualizarListaPedidos(pedidosMesa2, listaVerPedidosMesa2, pedidosMesa2Llevar, listaVerPedidosLlevarMesa2), 
             () -> mostrarProductosEnMesa(productosPedidoMesa2)
         );
     }//GEN-LAST:event_cancelarPedidoMesa2ActionPerformed
