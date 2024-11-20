@@ -6518,75 +6518,75 @@ public class JframeMesero extends javax.swing.JFrame {
         JList<String> detallePedido, 
         Runnable actualizarListaPedidos, 
         Runnable mostrarProductosEnMesa
-    ) {
-        int indexMesa = listaPedidosMesa.getSelectedIndex();
-        int indexLlevar = listaPedidosLlevar.getSelectedIndex();
+        ) {
+            int indexMesa = listaPedidosMesa.getSelectedIndex();
+            int indexLlevar = listaPedidosLlevar.getSelectedIndex();
 
-        if (indexMesa >= 0) {
-            Object[] opciones = {"Sí", "No"};
-            int confirmacion = JOptionPane.showOptionDialog(
-                this, 
-                "¿Estás seguro de que deseas cancelar el pedido para mesa?", 
-                "Confirmación de Cancelación", 
-                JOptionPane.YES_NO_OPTION, 
-                JOptionPane.QUESTION_MESSAGE, 
-                null, 
-                opciones, 
-                opciones[0]
-            );
+            if (indexMesa >= 0) {
+                Object[] opciones = {"Sí", "No"};
+                int confirmacion = JOptionPane.showOptionDialog(
+                    this, 
+                    "¿Estás seguro de que deseas cancelar el pedido para mesa?", 
+                    "Confirmación de Cancelación", 
+                    JOptionPane.YES_NO_OPTION, 
+                    JOptionPane.QUESTION_MESSAGE, 
+                    null, 
+                    opciones, 
+                    opciones[0]
+                );
 
-            if (confirmacion == JOptionPane.YES_OPTION) {
-                Pedido pedidoCancelado = pedidosMesa.get(indexMesa);
+                if (confirmacion == JOptionPane.YES_OPTION) {
+                    Pedido pedidoCancelado = pedidosMesa.get(indexMesa);
 
-                for (Producto productoCancelado : pedidoCancelado.getListaProductos()) {
-                    for (Producto producto : productos) {
-                        if (producto.getNombre().equals(productoCancelado.getNombre())) {
-                            producto.setCantidadDisponible(producto.getCantidadDisponible() + productoCancelado.getCantidad());
-                            break;
+                    for (Producto productoCancelado : pedidoCancelado.getListaProductos()) {
+                        for (Producto producto : productos) {
+                            if (producto.getNombre().equals(productoCancelado.getNombre())) {
+                                producto.setCantidadDisponible(producto.getCantidadDisponible() + productoCancelado.getCantidad());
+                                break;
+                            }
                         }
                     }
+
+                    pedidosMesa.remove(indexMesa);
+                    actualizarListaPedidos.run();
+                    mostrarProductosEnMesa.run();
+                    JOptionPane.showMessageDialog(this, "Pedido para mesa cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                    detallePedido.setModel(new DefaultListModel<>());
                 }
+            } else if (indexLlevar >= 0) {
+                Object[] opciones = {"Sí", "No"};
+                int confirmacion = JOptionPane.showOptionDialog(
+                    this, 
+                    "¿Estás seguro de que deseas cancelar el pedido para mesa?", 
+                    "Confirmación de Cancelación", 
+                    JOptionPane.YES_NO_OPTION, 
+                    JOptionPane.QUESTION_MESSAGE, 
+                    null, 
+                    opciones, 
+                    opciones[0]
+                );
 
-                pedidosMesa.remove(indexMesa);
-                actualizarListaPedidos.run();
-                mostrarProductosEnMesa.run();
-                JOptionPane.showMessageDialog(this, "Pedido para mesa cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                detallePedido.setModel(new DefaultListModel<>());
-            }
-        } else if (indexLlevar >= 0) {
-            Object[] opciones = {"Sí", "No"};
-            int confirmacion = JOptionPane.showOptionDialog(
-                this, 
-                "¿Estás seguro de que deseas cancelar el pedido para mesa?", 
-                "Confirmación de Cancelación", 
-                JOptionPane.YES_NO_OPTION, 
-                JOptionPane.QUESTION_MESSAGE, 
-                null, 
-                opciones, 
-                opciones[0]
-            );
+                if (confirmacion == JOptionPane.YES_OPTION) {
+                    Pedido pedidoCancelado = pedidosLlevar.get(indexLlevar);
 
-            if (confirmacion == JOptionPane.YES_OPTION) {
-                Pedido pedidoCancelado = pedidosLlevar.get(indexLlevar);
-
-                for (Producto productoCancelado : pedidoCancelado.getListaProductos()) {
-                    for (Producto producto : productos) {
-                        if (producto.getNombre().equals(productoCancelado.getNombre())) {
-                            producto.setCantidadDisponible(producto.getCantidadDisponible() + productoCancelado.getCantidad());
-                            break;
+                    for (Producto productoCancelado : pedidoCancelado.getListaProductos()) {
+                        for (Producto producto : productos) {
+                            if (producto.getNombre().equals(productoCancelado.getNombre())) {
+                                producto.setCantidadDisponible(producto.getCantidadDisponible() + productoCancelado.getCantidad());
+                                break;
+                            }
                         }
                     }
-                }
 
-                pedidosLlevar.remove(indexLlevar);
-                actualizarListaPedidos.run();
-                mostrarProductosEnMesa.run();
-                JOptionPane.showMessageDialog(this, "Pedido para llevar cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                detallePedido.setModel(new DefaultListModel<>());
+                    pedidosLlevar.remove(indexLlevar);
+                    actualizarListaPedidos.run();
+                    mostrarProductosEnMesa.run();
+                    JOptionPane.showMessageDialog(this, "Pedido para llevar cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                    detallePedido.setModel(new DefaultListModel<>());
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Por favor selecciona un pedido para cancelar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
-        } else {
-            JOptionPane.showMessageDialog(this, "Por favor selecciona un pedido para cancelar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
     }
 
     
@@ -6603,25 +6603,11 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarPedidoMesa1ActionPerformed
 
     private void btnLimpiarMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa2ActionPerformed
-        pedidosMesa2.clear();
-        pedidosMesa2Llevar.clear();
-        btnMesa2.setBackground(Color.green);
-        mesas.get(1).setEstado("Desocupada");
-        actualizarListaPedidosMesa2();
-        detallePedidoMesa2.setModel(new DefaultListModel<>()); 
-
-        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        limpiarMesa(pedidosMesa2, pedidosMesa2Llevar, btnMesa2, 1, detallePedidoMesa2, this::actualizarListaPedidosMesa2);
     }//GEN-LAST:event_btnLimpiarMesa2ActionPerformed
 
     private void btnLimpiarMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa3ActionPerformed
-        pedidosMesa3.clear();
-        pedidosMesa3Llevar.clear();
-        btnMesa3.setBackground(Color.green);
-        mesas.get(2).setEstado("Desocupada");
-        actualizarListaPedidosMesa3();
-        detallePedidoMesa3.setModel(new DefaultListModel<>()); 
-
-        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        limpiarMesa(pedidosMesa3, pedidosMesa3Llevar, btnMesa3, 2, detallePedidoMesa3, this::actualizarListaPedidosMesa3);
     }//GEN-LAST:event_btnLimpiarMesa3ActionPerformed
 
     private void cancelarPedidoMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa4ActionPerformed
@@ -7174,16 +7160,32 @@ public class JframeMesero extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa1ActionPerformed
 
+    private void limpiarMesa(
+        ArrayList<Pedido> pedidosMesa, 
+        ArrayList<Pedido> pedidosLlevar, 
+        JButton botonMesa, 
+        int indiceMesa, 
+        JList<String> detallePedido, 
+        Runnable actualizarListaPedidos
+        ) {
+            pedidosMesa.clear();
+            pedidosLlevar.clear();
+            botonMesa.setBackground(Color.green);
+            mesas.get(indiceMesa).setEstado("Desocupada");
+            actualizarListaPedidos.run();
+            detallePedido.setModel(new DefaultListModel<>());
+
+            JOptionPane.showMessageDialog(
+                rootPane, 
+                "Todos los pedidos han sido limpiados.", 
+                "Confirmación", 
+                JOptionPane.INFORMATION_MESSAGE
+            );
+    }
+
+    
     private void btnLimpiarMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa1ActionPerformed
-
-        pedidosMesa1.clear();
-        pedidosMesa1Llevar.clear();
-        btnMesa1.setBackground(Color.green);
-        mesas.get(0).setEstado("Desocupada");
-        actualizarListaPedidosMesa1();
-        detallePedidoMesa1.setModel(new DefaultListModel<>()); 
-
-        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        limpiarMesa(pedidosMesa1, pedidosMesa1Llevar, btnMesa1, 0, detallePedidoMesa1, this::actualizarListaPedidosMesa1);
     }//GEN-LAST:event_btnLimpiarMesa1ActionPerformed
 
     private void btnAgregarProductoCartaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoCartaActionPerformed
@@ -7428,102 +7430,39 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarPedidoMesa3ActionPerformed
 
     private void btnLimpiarMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa4ActionPerformed
-        pedidosMesa4.clear();
-        pedidosMesa4Llevar.clear();
-        btnMesa4.setBackground(Color.green);
-        mesas.get(3).setEstado("Desocupada");
-        actualizarListaPedidosMesa4();
-        detallePedidoMesa4.setModel(new DefaultListModel<>()); 
-
-        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        limpiarMesa(pedidosMesa4, pedidosMesa4Llevar, btnMesa4, 3, detallePedidoMesa4, this::actualizarListaPedidosMesa4);
     }//GEN-LAST:event_btnLimpiarMesa4ActionPerformed
 
     private void btnLimpiarMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa5ActionPerformed
-        pedidosMesa5.clear();
-        pedidosMesa5Llevar.clear();
-        btnMesa5.setBackground(Color.green);
-        mesas.get(4).setEstado("Desocupada");
-        actualizarListaPedidosMesa5();
-        detallePedidoMesa5.setModel(new DefaultListModel<>()); 
-
-        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        limpiarMesa(pedidosMesa5, pedidosMesa5Llevar, btnMesa5, 4, detallePedidoMesa5, this::actualizarListaPedidosMesa5);
     }//GEN-LAST:event_btnLimpiarMesa5ActionPerformed
 
     private void btnLimpiarMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa6ActionPerformed
-        pedidosMesa6.clear();
-        pedidosMesa6Llevar.clear();
-        btnMesa6.setBackground(Color.green);
-        mesas.get(5).setEstado("Desocupada");
-        actualizarListaPedidosMesa6();
-        detallePedidoMesa6.setModel(new DefaultListModel<>()); 
-
-        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        limpiarMesa(pedidosMesa6, pedidosMesa6Llevar, btnMesa6, 5, detallePedidoMesa6, this::actualizarListaPedidosMesa6);
     }//GEN-LAST:event_btnLimpiarMesa6ActionPerformed
 
     private void btnLimpiarMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa7ActionPerformed
-        pedidosMesa7.clear();
-        pedidosMesa7Llevar.clear();
-        btnMesa7.setBackground(Color.green);
-        mesas.get(6).setEstado("Desocupada");
-        actualizarListaPedidosMesa7();
-        detallePedidoMesa7.setModel(new DefaultListModel<>()); 
-
-        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        limpiarMesa(pedidosMesa7, pedidosMesa7Llevar, btnMesa7, 6, detallePedidoMesa7, this::actualizarListaPedidosMesa7);
     }//GEN-LAST:event_btnLimpiarMesa7ActionPerformed
 
     private void btnLimpiarMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa8ActionPerformed
-        pedidosMesa8.clear();
-        pedidosMesa8Llevar.clear();
-        btnMesa8.setBackground(Color.green);
-        mesas.get(7).setEstado("Desocupada");
-        actualizarListaPedidosMesa8();
-        detallePedidoMesa8.setModel(new DefaultListModel<>()); 
-
-        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        limpiarMesa(pedidosMesa8, pedidosMesa8Llevar, btnMesa8, 7, detallePedidoMesa8, this::actualizarListaPedidosMesa8);
     }//GEN-LAST:event_btnLimpiarMesa8ActionPerformed
 
     private void btnLimpiarMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa9ActionPerformed
-        pedidosMesa9.clear();
-        pedidosMesa9Llevar.clear();
-        btnMesa9.setBackground(Color.green);
-        mesas.get(8).setEstado("Desocupada");
-        actualizarListaPedidosMesa9();
-        detallePedidoMesa9.setModel(new DefaultListModel<>()); 
-
-        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        limpiarMesa(pedidosMesa9, pedidosMesa9Llevar, btnMesa9, 8, detallePedidoMesa9, this::actualizarListaPedidosMesa9);
     }//GEN-LAST:event_btnLimpiarMesa9ActionPerformed
 
     private void btnLimpiarMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa10ActionPerformed
-        pedidosMesa10.clear();
-        pedidosMesa10Llevar.clear();
-        btnMesa10.setBackground(Color.green);
-        mesas.get(9).setEstado("Desocupada");
-        actualizarListaPedidosMesa10();
-        detallePedidoMesa10.setModel(new DefaultListModel<>()); 
-
-        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        limpiarMesa(pedidosMesa10, pedidosMesa10Llevar, btnMesa10, 9, detallePedidoMesa10, this::actualizarListaPedidosMesa10);
     }//GEN-LAST:event_btnLimpiarMesa10ActionPerformed
 
     private void btnLimpiarMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa11ActionPerformed
-        pedidosMesa11.clear();
-        pedidosMesa11Llevar.clear();
-        btnMesa11.setBackground(Color.green);
-        mesas.get(10).setEstado("Desocupada");
-        actualizarListaPedidosMesa11();
-        detallePedidoMesa11.setModel(new DefaultListModel<>()); 
-
-        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        limpiarMesa(pedidosMesa11, pedidosMesa11Llevar, btnMesa11, 10, detallePedidoMesa11, this::actualizarListaPedidosMesa11);
     }//GEN-LAST:event_btnLimpiarMesa11ActionPerformed
 
     private void btnLimpiarMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa12ActionPerformed
-        pedidosMesa12.clear();
-        pedidosMesa12Llevar.clear();
-        btnMesa12.setBackground(Color.green);
-        mesas.get(11).setEstado("Desocupada");
-        actualizarListaPedidosMesa12();
-        detallePedidoMesa12.setModel(new DefaultListModel<>()); 
-
-        JOptionPane.showMessageDialog(rootPane, "Todos los pedidos han sido limpiados.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        limpiarMesa(pedidosMesa12, pedidosMesa12Llevar, btnMesa12, 11, detallePedidoMesa12, this::actualizarListaPedidosMesa12);
     }//GEN-LAST:event_btnLimpiarMesa12ActionPerformed
 
     private void cancelarPedidoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa2ActionPerformed
