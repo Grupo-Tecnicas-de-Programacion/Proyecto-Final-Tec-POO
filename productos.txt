@@ -1,0 +1,18 @@
+Pollo a la brasa, 45.00, Principal, 10
+Pechuga de pollo a la plancha, 18.00, Principal, 10
+Alitas de pollo BBQ, 25.00, Entradas, 40
+Medio pollo a la brasa, 25.00, Principal, 60
+Cuarto de pollo a la brasa, 15.00, Principal, 80
+Ensalada mixta, 8.00, Acompañamiento, 100
+Papas fritas grandes, 10.00, Acompañamiento, 150
+Papas fritas medianas, 7.00, Acompañamiento, 20
+Chicha morada (1 litro), 6.00, Bebida, 20
+Chicha morada (500 ml), 3.50, Bebida, 180
+Arroz chaufa de pollo, 20.00, Principal, 70
+Anticuchos de pollo, 12.00, Entradas, 90
+Sopa de pollo, 10.00, Entradas, 60
+Pollo broaster (pieza), 5.00, Principal, 140
+Salchipapas, 12.00, Acompañamiento, 110
+Empanadas de pollo, 4.00, Entradas, 75
+Hamburguesa de pollo, 15.00, Principal, 50
+Nuggets de pollo, 8.00, Entradas, 130
