@@ -4350,17 +4350,17 @@ public class JframeMesero extends javax.swing.JFrame {
         return null;
     }
     
+    private void showPanel(String panelName) {
+        CardLayout layout = (CardLayout) jPanelMostrarMesa.getLayout();
+        layout.show(jPanelMostrarMesa, panelName);
+    }
+    
     private void mostrarProductosEnMesa(JList<String> listaProductosMesa) {
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
         for (Producto producto : productos) {
             modeloLista.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible()+ " - Precio: " + producto.getPrecio());
         }
         listaProductosMesa.setModel(modeloLista);
-    }
-    
-    private void showPanel(String panelName) {
-        CardLayout layout = (CardLayout) jPanelMostrarMesa.getLayout();
-        layout.show(jPanelMostrarMesa, panelName);
     }
     
     private void btnMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa1ActionPerformed
@@ -4467,7 +4467,6 @@ public class JframeMesero extends javax.swing.JFrame {
     }
 
     private void btnCargarMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarMesasActionPerformed
-        
         if (archivoSeleccionado != null) {
             boolean exito = Mesa.cargarMesasDesdeArchivo(archivoSeleccionado);
             if (exito) {
@@ -4482,13 +4481,16 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCargarMesasActionPerformed
 
     private void btnCargarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarProductosActionPerformed
-        if (archivoSeleccionadoProductos != null && validarArchivoProductos(archivoSeleccionadoProductos)) {
-            cargarProductosDesdeArchivo(archivoSeleccionadoProductos);
-            JOptionPane.showMessageDialog(this, "Se cargaron correctamente los productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        if (archivoSeleccionadoProductos != null) {
+            boolean exito = Producto.cargarProductosDesdeArchivo(archivoSeleccionadoProductos);
+            if (exito) {
+                JOptionPane.showMessageDialog(this, "Productos cargados correctamente.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Hubo un error al cargar los productos.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         } else {
             JOptionPane.showMessageDialog(this, "Archivo no válido o no seleccionado.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-
     }//GEN-LAST:event_btnCargarProductosActionPerformed
 
     private void btnBuscarRutaMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarRutaMesasActionPerformed

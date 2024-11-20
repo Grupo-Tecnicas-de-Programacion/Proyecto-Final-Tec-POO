@@ -114,7 +114,7 @@ public class Mesa {
         String consultaEliminarMesas = "DELETE FROM mesas";
         String consultaInsertarMesas = "INSERT INTO mesas (numero_mesa, estado, capacidad) VALUES (?, ?, ?)";
 
-        try (BufferedReader br = new BufferedReader(new FileReader(archivo));
+        try (BufferedReader leer = new BufferedReader(new FileReader(archivo));
             Connection conexion = ConexionDB.conectar();
             PreparedStatement sentenciaEliminar = conexion.prepareStatement(consultaEliminarMesas);
             PreparedStatement sentenciaInsertar = conexion.prepareStatement(consultaInsertarMesas)) {
@@ -122,7 +122,7 @@ public class Mesa {
             sentenciaEliminar.executeUpdate();
 
             String linea;
-            while ((linea = br.readLine()) != null) {
+            while ((linea = leer.readLine()) != null) {
                 String[] partes = linea.split(", ");
                 if (partes.length != 3) {
                     System.out.println("Formato incorrecto en la línea: " + linea);
