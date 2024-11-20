@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.ResultSet;
 
 public class Mesa {
     private int numeroMesa;
@@ -152,6 +153,32 @@ public class Mesa {
             return false;
         }
     }
+    
+    public static String obtenerInformacionMesaBD(int numeroMesa) {
+        String query = "SELECT numero_mesa, estado, capacidad FROM mesas WHERE numero_mesa = ?";
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentencia = conexion.prepareStatement(query)) {
+
+            sentencia.setInt(1, numeroMesa);
+            ResultSet resultado = sentencia.executeQuery();
+
+            if (resultado.next()) {
+                int numero = resultado.getInt("numero_mesa");
+                String estado = resultado.getString("estado");
+                int capacidad = resultado.getInt("capacidad");
+
+                return "Número de mesa: " + numero + "\n" +
+                       "Estado: " + estado + "\n" +
+                       "Capacidad: " + capacidad + "\n";
+            } else {
+                return "La mesa no se encontró en la base de datos.";
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "Error al consultar la base de datos: " + e.getMessage();
+        }
+    }
+
 
     public final class Cuenta {
         private double totalPagar;

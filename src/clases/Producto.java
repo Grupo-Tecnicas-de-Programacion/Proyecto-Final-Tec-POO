@@ -92,38 +92,38 @@ public class Producto {
              PreparedStatement sentenciaEliminar = conexion.prepareStatement(consultaEliminarProductos);
              PreparedStatement sentenciaInsertar = conexion.prepareStatement(consultaInsertarProductos)) {
 
-            sentenciaEliminar.executeUpdate();
+                sentenciaEliminar.executeUpdate();
 
-            String linea;
-            while ((linea = leer.readLine()) != null) {
-                String[] partes = linea.split(",");
-                if (partes.length != 4) {
-                    System.out.println("Formato incorrecto en la línea: " + linea);
-                    continue;
+                String linea;
+                while ((linea = leer.readLine()) != null) {
+                    String[] partes = linea.split(",");
+                    if (partes.length != 4) {
+                        System.out.println("Formato incorrecto en la línea: " + linea);
+                        continue;
+                    }
+
+                    String nombre = partes[0].trim();
+                    double precio;
+                    int cantidadDisponible;
+                    try {
+                        precio = Double.parseDouble(partes[1].trim());
+                        cantidadDisponible = Integer.parseInt(partes[3].trim());
+                    } catch (NumberFormatException e) {
+                        System.out.println("Error en los valores numéricos de la línea: " + linea);
+                        continue;
+                    }
+                    String categoria = partes[2].trim();
+
+                    sentenciaInsertar.setString(1, nombre);
+                    sentenciaInsertar.setDouble(2, precio);
+                    sentenciaInsertar.setString(3, categoria);
+                    sentenciaInsertar.setInt(4, cantidadDisponible);
+                    sentenciaInsertar.addBatch();
                 }
 
-                String nombre = partes[0].trim();
-                double precio;
-                int cantidadDisponible;
-                try {
-                    precio = Double.parseDouble(partes[1].trim());
-                    cantidadDisponible = Integer.parseInt(partes[3].trim());
-                } catch (NumberFormatException e) {
-                    System.out.println("Error en los valores numéricos de la línea: " + linea);
-                    continue;
-                }
-                String categoria = partes[2].trim();
-
-                sentenciaInsertar.setString(1, nombre);
-                sentenciaInsertar.setDouble(2, precio);
-                sentenciaInsertar.setString(3, categoria);
-                sentenciaInsertar.setInt(4, cantidadDisponible);
-                sentenciaInsertar.addBatch();
-            }
-
-            sentenciaInsertar.executeBatch();
-            System.out.println("Productos cargados correctamente.");
-            return true;
+                sentenciaInsertar.executeBatch();
+                System.out.println("Productos cargados correctamente.");
+                return true;
 
         } catch (IOException e) {
             System.err.println("Error al leer el archivo: " + e.getMessage());
@@ -140,16 +140,16 @@ public class Producto {
         String consultaProducto = "SELECT * FROM productos WHERE nombre = ?";
         try (Connection conexion = ConexionDB.conectar();
              PreparedStatement sentenciaConsulta = conexion.prepareStatement(consultaProducto)) {
-            sentenciaConsulta.setString(1, nombreProducto);
-            ResultSet resultado = sentenciaConsulta.executeQuery();
-            if (resultado.next()) {
-                return new Producto(
-                    resultado.getString("nombre"),
-                    resultado.getDouble("precio"),
-                    resultado.getString("categoria"),
-                    resultado.getInt("cantidad_disponible")
-                );
-            }
+                sentenciaConsulta.setString(1, nombreProducto);
+                ResultSet resultado = sentenciaConsulta.executeQuery();
+                if (resultado.next()) {
+                    return new Producto(
+                        resultado.getString("nombre"),
+                        resultado.getDouble("precio"),
+                        resultado.getString("categoria"),
+                        resultado.getInt("cantidad_disponible")
+                    );
+                }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -160,10 +160,10 @@ public class Producto {
         String conultaCantidad = "UPDATE productos SET cantidad_disponible = cantidad_disponible + ? WHERE nombre = ?";
         try (Connection conexion = ConexionDB.conectar();
              PreparedStatement sentenciaConsulta = conexion.prepareStatement(conultaCantidad)) {
-            sentenciaConsulta.setInt(1, cantidad);
-            sentenciaConsulta.setString(2, nombreProducto);
-            int filasAfectadas = sentenciaConsulta.executeUpdate();
-            return filasAfectadas > 0;
+                sentenciaConsulta.setInt(1, cantidad);
+                sentenciaConsulta.setString(2, nombreProducto);
+                int filasAfectadas = sentenciaConsulta.executeUpdate();
+                return filasAfectadas > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         }

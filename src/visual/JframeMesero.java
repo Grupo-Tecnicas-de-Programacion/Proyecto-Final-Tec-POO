@@ -4591,11 +4591,7 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
     
     private void mostrarInformacionMesa(int numeroMesa) {
-        Mesa mesaSeleccionada = mesas.get(numeroMesa - 1); 
-        String infoMesa = "Número de mesa: " + mesaSeleccionada.getNumeroMesa() + "\n" +
-                          "Estado: " + mesaSeleccionada.getEstado() + "\n" +
-                          "Capacidad: " + mesaSeleccionada.getCapacidad() + "\n";
-
+        String infoMesa = Mesa.obtenerInformacionMesaBD(numeroMesa);
         JOptionPane.showMessageDialog(this, infoMesa, "Información de la Mesa", JOptionPane.INFORMATION_MESSAGE);
     }
     
