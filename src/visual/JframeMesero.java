@@ -4767,9 +4767,13 @@ public class JframeMesero extends javax.swing.JFrame {
         productosPedidoMesa12.setModel(modeloProductosMesa12);
     }
     
-    private void btnAgregarProductoPedidoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa1ActionPerformed
-
-        String nombreProductoSeleccionado = productosPedidoMesa1.getSelectedValue();
+    private void agregarProductoAPedido(
+        JList<String> listaProductos,
+        Pedido pedidoMesa,
+        Runnable actualizarListaProductos,
+        Runnable mostrarProductosEnMesa
+    ) {
+        String nombreProductoSeleccionado = listaProductos.getSelectedValue();
 
         if (nombreProductoSeleccionado != null) {
             String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
@@ -4783,23 +4787,21 @@ public class JframeMesero extends javax.swing.JFrame {
             }
 
             if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
-
-                while (true) {                    
+                while (true) {
                     String inputCantidad = JOptionPane.showInputDialog(this, 
-                    "Ingresa la cantidad de platos:", 
-                    "Agregar Producto", 
-                    JOptionPane.QUESTION_MESSAGE);
-                    
+                        "Ingresa la cantidad de platos:", 
+                        "Agregar Producto", 
+                        JOptionPane.QUESTION_MESSAGE);
+
                     if (inputCantidad != null) {
                         try {
                             int cantidad = Integer.parseInt(inputCantidad.trim());
 
                             if (cantidad > 0 && cantidad <= productoSeleccionado.getCantidadDisponible()) {
-
                                 productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - cantidad);
 
                                 boolean productoYaEnPedido = false;
-                                for (Producto productoEnPedido : pedidoMesa1.getListaProductos()) {
+                                for (Producto productoEnPedido : pedidoMesa.getListaProductos()) {
                                     if (productoEnPedido.getNombre().equals(nombreProducto)) {
                                         productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + cantidad);
                                         productoYaEnPedido = true;
@@ -4814,32 +4816,28 @@ public class JframeMesero extends javax.swing.JFrame {
                                         productoSeleccionado.getCategoria(),
                                         cantidad
                                     );
-                                    pedidoMesa1.agregarProducto(productoParaPedido);
+                                    pedidoMesa.agregarProducto(productoParaPedido);
                                 }
 
-                                actualizarListaProductosDelPedidoMesa1();
-                                mostrarProductosEnMesa(productosPedidoMesa1);
-                                
+                                actualizarListaProductos.run();
+                                mostrarProductosEnMesa.run();
                                 break;
-                                
                             } else {
                                 JOptionPane.showMessageDialog(this, 
                                     "Cantidad ingresada no disponible", 
                                     "Cantidad inválida", 
                                     JOptionPane.WARNING_MESSAGE);
                             }
-
                         } catch (NumberFormatException e) {
                             JOptionPane.showMessageDialog(this, 
                                 "Por favor, ingresa un número entero válido.", 
                                 "Error de entrada", 
                                 JOptionPane.ERROR_MESSAGE);
                         }
-                    }else {
+                    } else {
                         break;
-                    } 
+                    }
                 }
-                
             } else {
                 JOptionPane.showMessageDialog(this, 
                     "No hay suficiente cantidad disponible de este producto.", 
@@ -4852,953 +4850,115 @@ public class JframeMesero extends javax.swing.JFrame {
                 "Advertencia", 
                 JOptionPane.WARNING_MESSAGE);
         }
+    }
+
+    
+    private void btnAgregarProductoPedidoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa1ActionPerformed
+        agregarProductoAPedido(
+            productosPedidoMesa1,
+            pedidoMesa1,
+            () -> actualizarListaProductosDelPedido(pedidoMesa1, listaPedidosMesa1),
+            () -> mostrarProductosEnMesa(productosPedidoMesa1)
+        );
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa1ActionPerformed
     
     private void btnAgregarProductoPedidoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa2ActionPerformed
-        
-        String nombreProductoSeleccionado = productosPedidoMesa2.getSelectedValue();
-
-        if (nombreProductoSeleccionado != null) {
-            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
-            Producto productoSeleccionado = null;
-
-            for (Producto producto : productos) {
-                if (producto.getNombre().equals(nombreProducto)) {
-                    productoSeleccionado = producto;
-                    break;
-                }
-            }
-
-            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
-
-                while (true) {                    
-                    String inputCantidad = JOptionPane.showInputDialog(this, 
-                    "Ingresa la cantidad de platos:", 
-                    "Agregar Producto", 
-                    JOptionPane.QUESTION_MESSAGE);
-                    
-                    if (inputCantidad != null) {
-                        try {
-                            int cantidad = Integer.parseInt(inputCantidad.trim());
-
-                            if (cantidad > 0 && cantidad <= productoSeleccionado.getCantidadDisponible()) {
-
-                                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - cantidad);
-
-                                boolean productoYaEnPedido = false;
-                                for (Producto productoEnPedido : pedidoMesa2.getListaProductos()) {
-                                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
-                                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + cantidad);
-                                        productoYaEnPedido = true;
-                                        break;
-                                    }
-                                }
-
-                                if (!productoYaEnPedido) {
-                                    Producto productoParaPedido = new Producto(
-                                        productoSeleccionado.getNombre(),
-                                        productoSeleccionado.getPrecio(),
-                                        productoSeleccionado.getCategoria(),
-                                        cantidad
-                                    );
-                                    pedidoMesa2.agregarProducto(productoParaPedido);
-                                }
-
-                                actualizarListaProductosDelPedidoMesa2();
-                                mostrarProductosEnMesa(productosPedidoMesa2);
-                                
-                                break;
-                                
-                            } else {
-                                JOptionPane.showMessageDialog(this, 
-                                    "Cantidad ingresada no disponible", 
-                                    "Cantidad inválida", 
-                                    JOptionPane.WARNING_MESSAGE);
-                            }
-
-                        } catch (NumberFormatException e) {
-                            JOptionPane.showMessageDialog(this, 
-                                "Por favor, ingresa un número entero válido.", 
-                                "Error de entrada", 
-                                JOptionPane.ERROR_MESSAGE);
-                        }
-                    }else {
-                        break;
-                    } 
-                }
-                
-            } else {
-                JOptionPane.showMessageDialog(this, 
-                    "No hay suficiente cantidad disponible de este producto.", 
-                    "Advertencia", 
-                    JOptionPane.WARNING_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, 
-                "Por favor, selecciona un producto de la lista.", 
-                "Advertencia", 
-                JOptionPane.WARNING_MESSAGE);
-        }
+        agregarProductoAPedido(
+            productosPedidoMesa2,
+            pedidoMesa2,
+            () -> actualizarListaProductosDelPedido(pedidoMesa2, listaPedidosMesa2), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa2)
+        );
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa2ActionPerformed
     
     private void btnAgregarProductoPedidoMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa3ActionPerformed
-        String nombreProductoSeleccionado = productosPedidoMesa3.getSelectedValue();
-
-        if (nombreProductoSeleccionado != null) {
-            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
-            Producto productoSeleccionado = null;
-
-            for (Producto producto : productos) {
-                if (producto.getNombre().equals(nombreProducto)) {
-                    productoSeleccionado = producto;
-                    break;
-                }
-            }
-
-            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
-
-                while (true) {                    
-                    String inputCantidad = JOptionPane.showInputDialog(this, 
-                    "Ingresa la cantidad de platos:", 
-                    "Agregar Producto", 
-                    JOptionPane.QUESTION_MESSAGE);
-                    
-                    if (inputCantidad != null) {
-                        try {
-                            int cantidad = Integer.parseInt(inputCantidad.trim());
-
-                            if (cantidad > 0 && cantidad <= productoSeleccionado.getCantidadDisponible()) {
-
-                                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - cantidad);
-
-                                boolean productoYaEnPedido = false;
-                                for (Producto productoEnPedido : pedidoMesa3.getListaProductos()) {
-                                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
-                                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + cantidad);
-                                        productoYaEnPedido = true;
-                                        break;
-                                    }
-                                }
-
-                                if (!productoYaEnPedido) {
-                                    Producto productoParaPedido = new Producto(
-                                        productoSeleccionado.getNombre(),
-                                        productoSeleccionado.getPrecio(),
-                                        productoSeleccionado.getCategoria(),
-                                        cantidad
-                                    );
-                                    pedidoMesa3.agregarProducto(productoParaPedido);
-                                }
-
-                                actualizarListaProductosDelPedidoMesa3();
-                                mostrarProductosEnMesa(productosPedidoMesa3);
-                                
-                                break;
-                                
-                            } else {
-                                JOptionPane.showMessageDialog(this, 
-                                    "Cantidad ingresada no disponible", 
-                                    "Cantidad inválida", 
-                                    JOptionPane.WARNING_MESSAGE);
-                            }
-
-                        } catch (NumberFormatException e) {
-                            JOptionPane.showMessageDialog(this, 
-                                "Por favor, ingresa un número entero válido.", 
-                                "Error de entrada", 
-                                JOptionPane.ERROR_MESSAGE);
-                        }
-                    }else {
-                        break;
-                    } 
-                }
-                
-            } else {
-                JOptionPane.showMessageDialog(this, 
-                    "No hay suficiente cantidad disponible de este producto.", 
-                    "Advertencia", 
-                    JOptionPane.WARNING_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, 
-                "Por favor, selecciona un producto de la lista.", 
-                "Advertencia", 
-                JOptionPane.WARNING_MESSAGE);
-        }
+        agregarProductoAPedido(
+            productosPedidoMesa3,
+            pedidoMesa3,
+            () -> actualizarListaProductosDelPedido(pedidoMesa3, listaPedidosMesa3), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa3)
+        );
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa3ActionPerformed
 
     private void btnAgregarProductoPedidoMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa4ActionPerformed
-        String nombreProductoSeleccionado = productosPedidoMesa4.getSelectedValue();
-
-        if (nombreProductoSeleccionado != null) {
-            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
-            Producto productoSeleccionado = null;
-
-            for (Producto producto : productos) {
-                if (producto.getNombre().equals(nombreProducto)) {
-                    productoSeleccionado = producto;
-                    break;
-                }
-            }
-
-            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
-
-                while (true) {                    
-                    String inputCantidad = JOptionPane.showInputDialog(this, 
-                    "Ingresa la cantidad de platos:", 
-                    "Agregar Producto", 
-                    JOptionPane.QUESTION_MESSAGE);
-                    
-                    if (inputCantidad != null) {
-                        try {
-                            int cantidad = Integer.parseInt(inputCantidad.trim());
-
-                            if (cantidad > 0 && cantidad <= productoSeleccionado.getCantidadDisponible()) {
-
-                                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - cantidad);
-
-                                boolean productoYaEnPedido = false;
-                                for (Producto productoEnPedido : pedidoMesa4.getListaProductos()) {
-                                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
-                                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + cantidad);
-                                        productoYaEnPedido = true;
-                                        break;
-                                    }
-                                }
-
-                                if (!productoYaEnPedido) {
-                                    Producto productoParaPedido = new Producto(
-                                        productoSeleccionado.getNombre(),
-                                        productoSeleccionado.getPrecio(),
-                                        productoSeleccionado.getCategoria(),
-                                        cantidad
-                                    );
-                                    pedidoMesa4.agregarProducto(productoParaPedido);
-                                }
-
-                                actualizarListaProductosDelPedidoMesa4();
-                                mostrarProductosEnMesa(productosPedidoMesa4);
-                                
-                                break;
-                                
-                            } else {
-                                JOptionPane.showMessageDialog(this, 
-                                    "Cantidad ingresada no disponible", 
-                                    "Cantidad inválida", 
-                                    JOptionPane.WARNING_MESSAGE);
-                            }
-
-                        } catch (NumberFormatException e) {
-                            JOptionPane.showMessageDialog(this, 
-                                "Por favor, ingresa un número entero válido.", 
-                                "Error de entrada", 
-                                JOptionPane.ERROR_MESSAGE);
-                        }
-                    }else {
-                        break;
-                    } 
-                }
-                
-            } else {
-                JOptionPane.showMessageDialog(this, 
-                    "No hay suficiente cantidad disponible de este producto.", 
-                    "Advertencia", 
-                    JOptionPane.WARNING_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, 
-                "Por favor, selecciona un producto de la lista.", 
-                "Advertencia", 
-                JOptionPane.WARNING_MESSAGE);
-        }
+        agregarProductoAPedido(
+            productosPedidoMesa4,
+            pedidoMesa4,
+            () -> actualizarListaProductosDelPedido(pedidoMesa4, listaPedidosMesa4), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa4)
+        );
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa4ActionPerformed
 
     private void btnAgregarProductoPedidoMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa5ActionPerformed
-        String nombreProductoSeleccionado = productosPedidoMesa5.getSelectedValue();
-
-        if (nombreProductoSeleccionado != null) {
-            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
-            Producto productoSeleccionado = null;
-
-            for (Producto producto : productos) {
-                if (producto.getNombre().equals(nombreProducto)) {
-                    productoSeleccionado = producto;
-                    break;
-                }
-            }
-
-            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
-
-                while (true) {                    
-                    String inputCantidad = JOptionPane.showInputDialog(this, 
-                    "Ingresa la cantidad de platos:", 
-                    "Agregar Producto", 
-                    JOptionPane.QUESTION_MESSAGE);
-                    
-                    if (inputCantidad != null) {
-                        try {
-                            int cantidad = Integer.parseInt(inputCantidad.trim());
-
-                            if (cantidad > 0 && cantidad <= productoSeleccionado.getCantidadDisponible()) {
-
-                                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - cantidad);
-
-                                boolean productoYaEnPedido = false;
-                                for (Producto productoEnPedido : pedidoMesa5.getListaProductos()) {
-                                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
-                                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + cantidad);
-                                        productoYaEnPedido = true;
-                                        break;
-                                    }
-                                }
-
-                                if (!productoYaEnPedido) {
-                                    Producto productoParaPedido = new Producto(
-                                        productoSeleccionado.getNombre(),
-                                        productoSeleccionado.getPrecio(),
-                                        productoSeleccionado.getCategoria(),
-                                        cantidad
-                                    );
-                                    pedidoMesa5.agregarProducto(productoParaPedido);
-                                }
-
-                                actualizarListaProductosDelPedidoMesa5();
-                                mostrarProductosEnMesa(productosPedidoMesa5);
-                                
-                                break;
-                                
-                            } else {
-                                JOptionPane.showMessageDialog(this, 
-                                    "Cantidad ingresada no disponible", 
-                                    "Cantidad inválida", 
-                                    JOptionPane.WARNING_MESSAGE);
-                            }
-
-                        } catch (NumberFormatException e) {
-                            JOptionPane.showMessageDialog(this, 
-                                "Por favor, ingresa un número entero válido.", 
-                                "Error de entrada", 
-                                JOptionPane.ERROR_MESSAGE);
-                        }
-                    }else {
-                        break;
-                    } 
-                }
-                
-            } else {
-                JOptionPane.showMessageDialog(this, 
-                    "No hay suficiente cantidad disponible de este producto.", 
-                    "Advertencia", 
-                    JOptionPane.WARNING_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, 
-                "Por favor, selecciona un producto de la lista.", 
-                "Advertencia", 
-                JOptionPane.WARNING_MESSAGE);
-        }
+        agregarProductoAPedido(
+            productosPedidoMesa5,
+            pedidoMesa5,
+            () -> actualizarListaProductosDelPedido(pedidoMesa5, listaPedidosMesa5), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa5)
+        );
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa5ActionPerformed
 
     private void btnAgregarProductoPedidoMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa6ActionPerformed
-        String nombreProductoSeleccionado = productosPedidoMesa6.getSelectedValue();
-
-        if (nombreProductoSeleccionado != null) {
-            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
-            Producto productoSeleccionado = null;
-
-            for (Producto producto : productos) {
-                if (producto.getNombre().equals(nombreProducto)) {
-                    productoSeleccionado = producto;
-                    break;
-                }
-            }
-
-            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
-
-                while (true) {                    
-                    String inputCantidad = JOptionPane.showInputDialog(this, 
-                    "Ingresa la cantidad de platos:", 
-                    "Agregar Producto", 
-                    JOptionPane.QUESTION_MESSAGE);
-                    
-                    if (inputCantidad != null) {
-                        try {
-                            int cantidad = Integer.parseInt(inputCantidad.trim());
-
-                            if (cantidad > 0 && cantidad <= productoSeleccionado.getCantidadDisponible()) {
-
-                                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - cantidad);
-
-                                boolean productoYaEnPedido = false;
-                                for (Producto productoEnPedido : pedidoMesa6.getListaProductos()) {
-                                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
-                                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + cantidad);
-                                        productoYaEnPedido = true;
-                                        break;
-                                    }
-                                }
-
-                                if (!productoYaEnPedido) {
-                                    Producto productoParaPedido = new Producto(
-                                        productoSeleccionado.getNombre(),
-                                        productoSeleccionado.getPrecio(),
-                                        productoSeleccionado.getCategoria(),
-                                        cantidad
-                                    );
-                                    pedidoMesa6.agregarProducto(productoParaPedido);
-                                }
-
-                                actualizarListaProductosDelPedidoMesa6();
-                                mostrarProductosEnMesa(productosPedidoMesa6);
-                                
-                                break;
-                                
-                            } else {
-                                JOptionPane.showMessageDialog(this, 
-                                    "Cantidad ingresada no disponible", 
-                                    "Cantidad inválida", 
-                                    JOptionPane.WARNING_MESSAGE);
-                            }
-
-                        } catch (NumberFormatException e) {
-                            JOptionPane.showMessageDialog(this, 
-                                "Por favor, ingresa un número entero válido.", 
-                                "Error de entrada", 
-                                JOptionPane.ERROR_MESSAGE);
-                        }
-                    }else {
-                        break;
-                    } 
-                }
-                
-            } else {
-                JOptionPane.showMessageDialog(this, 
-                    "No hay suficiente cantidad disponible de este producto.", 
-                    "Advertencia", 
-                    JOptionPane.WARNING_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, 
-                "Por favor, selecciona un producto de la lista.", 
-                "Advertencia", 
-                JOptionPane.WARNING_MESSAGE);
-        }
+        agregarProductoAPedido(
+            productosPedidoMesa6,
+            pedidoMesa6,
+            () -> actualizarListaProductosDelPedido(pedidoMesa6, listaPedidosMesa6), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa6)
+        );
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa6ActionPerformed
 
     private void btnAgregarProductoPedidoMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa7ActionPerformed
-        String nombreProductoSeleccionado = productosPedidoMesa7.getSelectedValue();
-
-        if (nombreProductoSeleccionado != null) {
-            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
-            Producto productoSeleccionado = null;
-
-            for (Producto producto : productos) {
-                if (producto.getNombre().equals(nombreProducto)) {
-                    productoSeleccionado = producto;
-                    break;
-                }
-            }
-
-            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
-
-                while (true) {                    
-                    String inputCantidad = JOptionPane.showInputDialog(this, 
-                    "Ingresa la cantidad de platos:", 
-                    "Agregar Producto", 
-                    JOptionPane.QUESTION_MESSAGE);
-                    
-                    if (inputCantidad != null) {
-                        try {
-                            int cantidad = Integer.parseInt(inputCantidad.trim());
-
-                            if (cantidad > 0 && cantidad <= productoSeleccionado.getCantidadDisponible()) {
-
-                                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - cantidad);
-
-                                boolean productoYaEnPedido = false;
-                                for (Producto productoEnPedido : pedidoMesa7.getListaProductos()) {
-                                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
-                                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + cantidad);
-                                        productoYaEnPedido = true;
-                                        break;
-                                    }
-                                }
-
-                                if (!productoYaEnPedido) {
-                                    Producto productoParaPedido = new Producto(
-                                        productoSeleccionado.getNombre(),
-                                        productoSeleccionado.getPrecio(),
-                                        productoSeleccionado.getCategoria(),
-                                        cantidad
-                                    );
-                                    pedidoMesa7.agregarProducto(productoParaPedido);
-                                }
-
-                                actualizarListaProductosDelPedidoMesa7();
-                                mostrarProductosEnMesa(productosPedidoMesa7);
-                                
-                                break;
-                                
-                            } else {
-                                JOptionPane.showMessageDialog(this, 
-                                    "Cantidad ingresada no disponible", 
-                                    "Cantidad inválida", 
-                                    JOptionPane.WARNING_MESSAGE);
-                            }
-
-                        } catch (NumberFormatException e) {
-                            JOptionPane.showMessageDialog(this, 
-                                "Por favor, ingresa un número entero válido.", 
-                                "Error de entrada", 
-                                JOptionPane.ERROR_MESSAGE);
-                        }
-                    }else {
-                        break;
-                    } 
-                }
-                
-            } else {
-                JOptionPane.showMessageDialog(this, 
-                    "No hay suficiente cantidad disponible de este producto.", 
-                    "Advertencia", 
-                    JOptionPane.WARNING_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, 
-                "Por favor, selecciona un producto de la lista.", 
-                "Advertencia", 
-                JOptionPane.WARNING_MESSAGE);
-        }
+        agregarProductoAPedido(
+            productosPedidoMesa7,
+            pedidoMesa7,
+            () -> actualizarListaProductosDelPedido(pedidoMesa7, listaPedidosMesa7), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa7)
+        );
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa7ActionPerformed
 
     private void btnAgregarProductoPedidoMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa8ActionPerformed
-       String nombreProductoSeleccionado = productosPedidoMesa8.getSelectedValue();
-
-        if (nombreProductoSeleccionado != null) {
-            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
-            Producto productoSeleccionado = null;
-
-            for (Producto producto : productos) {
-                if (producto.getNombre().equals(nombreProducto)) {
-                    productoSeleccionado = producto;
-                    break;
-                }
-            }
-
-            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
-
-                while (true) {                    
-                    String inputCantidad = JOptionPane.showInputDialog(this, 
-                    "Ingresa la cantidad de platos:", 
-                    "Agregar Producto", 
-                    JOptionPane.QUESTION_MESSAGE);
-                    
-                    if (inputCantidad != null) {
-                        try {
-                            int cantidad = Integer.parseInt(inputCantidad.trim());
-
-                            if (cantidad > 0 && cantidad <= productoSeleccionado.getCantidadDisponible()) {
-
-                                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - cantidad);
-
-                                boolean productoYaEnPedido = false;
-                                for (Producto productoEnPedido : pedidoMesa8.getListaProductos()) {
-                                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
-                                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + cantidad);
-                                        productoYaEnPedido = true;
-                                        break;
-                                    }
-                                }
-
-                                if (!productoYaEnPedido) {
-                                    Producto productoParaPedido = new Producto(
-                                        productoSeleccionado.getNombre(),
-                                        productoSeleccionado.getPrecio(),
-                                        productoSeleccionado.getCategoria(),
-                                        cantidad
-                                    );
-                                    pedidoMesa8.agregarProducto(productoParaPedido);
-                                }
-
-                                actualizarListaProductosDelPedidoMesa8();
-                                mostrarProductosEnMesa(productosPedidoMesa8);
-                                
-                                break;
-                                
-                            } else {
-                                JOptionPane.showMessageDialog(this, 
-                                    "Cantidad ingresada no disponible", 
-                                    "Cantidad inválida", 
-                                    JOptionPane.WARNING_MESSAGE);
-                            }
-
-                        } catch (NumberFormatException e) {
-                            JOptionPane.showMessageDialog(this, 
-                                "Por favor, ingresa un número entero válido.", 
-                                "Error de entrada", 
-                                JOptionPane.ERROR_MESSAGE);
-                        }
-                    }else {
-                        break;
-                    } 
-                }
-                
-            } else {
-                JOptionPane.showMessageDialog(this, 
-                    "No hay suficiente cantidad disponible de este producto.", 
-                    "Advertencia", 
-                    JOptionPane.WARNING_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, 
-                "Por favor, selecciona un producto de la lista.", 
-                "Advertencia", 
-                JOptionPane.WARNING_MESSAGE);
-        }
+        agregarProductoAPedido(
+            productosPedidoMesa8,
+            pedidoMesa8,
+            () -> actualizarListaProductosDelPedido(pedidoMesa8, listaPedidosMesa8), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa8)
+        );
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa8ActionPerformed
 
     private void btnAgregarProductoPedidoMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa9ActionPerformed
-        String nombreProductoSeleccionado = productosPedidoMesa9.getSelectedValue();
-
-        if (nombreProductoSeleccionado != null) {
-            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
-            Producto productoSeleccionado = null;
-
-            for (Producto producto : productos) {
-                if (producto.getNombre().equals(nombreProducto)) {
-                    productoSeleccionado = producto;
-                    break;
-                }
-            }
-
-            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
-
-                while (true) {                    
-                    String inputCantidad = JOptionPane.showInputDialog(this, 
-                    "Ingresa la cantidad de platos:", 
-                    "Agregar Producto", 
-                    JOptionPane.QUESTION_MESSAGE);
-                    
-                    if (inputCantidad != null) {
-                        try {
-                            int cantidad = Integer.parseInt(inputCantidad.trim());
-
-                            if (cantidad > 0 && cantidad <= productoSeleccionado.getCantidadDisponible()) {
-
-                                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - cantidad);
-
-                                boolean productoYaEnPedido = false;
-                                for (Producto productoEnPedido : pedidoMesa9.getListaProductos()) {
-                                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
-                                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + cantidad);
-                                        productoYaEnPedido = true;
-                                        break;
-                                    }
-                                }
-
-                                if (!productoYaEnPedido) {
-                                    Producto productoParaPedido = new Producto(
-                                        productoSeleccionado.getNombre(),
-                                        productoSeleccionado.getPrecio(),
-                                        productoSeleccionado.getCategoria(),
-                                        cantidad
-                                    );
-                                    pedidoMesa9.agregarProducto(productoParaPedido);
-                                }
-
-                                actualizarListaProductosDelPedidoMesa9();
-                                mostrarProductosEnMesa(productosPedidoMesa9);
-                                
-                                break;
-                                
-                            } else {
-                                JOptionPane.showMessageDialog(this, 
-                                    "Cantidad ingresada no disponible", 
-                                    "Cantidad inválida", 
-                                    JOptionPane.WARNING_MESSAGE);
-                            }
-
-                        } catch (NumberFormatException e) {
-                            JOptionPane.showMessageDialog(this, 
-                                "Por favor, ingresa un número entero válido.", 
-                                "Error de entrada", 
-                                JOptionPane.ERROR_MESSAGE);
-                        }
-                    }else {
-                        break;
-                    } 
-                }
-                
-            } else {
-                JOptionPane.showMessageDialog(this, 
-                    "No hay suficiente cantidad disponible de este producto.", 
-                    "Advertencia", 
-                    JOptionPane.WARNING_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, 
-                "Por favor, selecciona un producto de la lista.", 
-                "Advertencia", 
-                JOptionPane.WARNING_MESSAGE);
-        }
+        agregarProductoAPedido(
+            productosPedidoMesa9,
+            pedidoMesa9,
+            () -> actualizarListaProductosDelPedido(pedidoMesa9, listaPedidosMesa9), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa9)
+        );
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa9ActionPerformed
 
     private void btnAgregarProductoPedidoMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa10ActionPerformed
-        String nombreProductoSeleccionado = productosPedidoMesa10.getSelectedValue();
-
-        if (nombreProductoSeleccionado != null) {
-            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
-            Producto productoSeleccionado = null;
-
-            for (Producto producto : productos) {
-                if (producto.getNombre().equals(nombreProducto)) {
-                    productoSeleccionado = producto;
-                    break;
-                }
-            }
-
-            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
-
-                while (true) {                    
-                    String inputCantidad = JOptionPane.showInputDialog(this, 
-                    "Ingresa la cantidad de platos:", 
-                    "Agregar Producto", 
-                    JOptionPane.QUESTION_MESSAGE);
-                    
-                    if (inputCantidad != null) {
-                        try {
-                            int cantidad = Integer.parseInt(inputCantidad.trim());
-
-                            if (cantidad > 0 && cantidad <= productoSeleccionado.getCantidadDisponible()) {
-
-                                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - cantidad);
-
-                                boolean productoYaEnPedido = false;
-                                for (Producto productoEnPedido : pedidoMesa10.getListaProductos()) {
-                                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
-                                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + cantidad);
-                                        productoYaEnPedido = true;
-                                        break;
-                                    }
-                                }
-
-                                if (!productoYaEnPedido) {
-                                    Producto productoParaPedido = new Producto(
-                                        productoSeleccionado.getNombre(),
-                                        productoSeleccionado.getPrecio(),
-                                        productoSeleccionado.getCategoria(),
-                                        cantidad
-                                    );
-                                    pedidoMesa10.agregarProducto(productoParaPedido);
-                                }
-
-                                actualizarListaProductosDelPedidoMesa10();
-                                mostrarProductosEnMesa(productosPedidoMesa10);
-                                
-                                break;
-                                
-                            } else {
-                                JOptionPane.showMessageDialog(this, 
-                                    "Cantidad ingresada no disponible", 
-                                    "Cantidad inválida", 
-                                    JOptionPane.WARNING_MESSAGE);
-                            }
-
-                        } catch (NumberFormatException e) {
-                            JOptionPane.showMessageDialog(this, 
-                                "Por favor, ingresa un número entero válido.", 
-                                "Error de entrada", 
-                                JOptionPane.ERROR_MESSAGE);
-                        }
-                    }else {
-                        break;
-                    } 
-                }
-                
-            } else {
-                JOptionPane.showMessageDialog(this, 
-                    "No hay suficiente cantidad disponible de este producto.", 
-                    "Advertencia", 
-                    JOptionPane.WARNING_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, 
-                "Por favor, selecciona un producto de la lista.", 
-                "Advertencia", 
-                JOptionPane.WARNING_MESSAGE);
-        }
+        agregarProductoAPedido(
+            productosPedidoMesa10,
+            pedidoMesa10,
+            () -> actualizarListaProductosDelPedido(pedidoMesa10, listaPedidosMesa10), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa10)
+        );
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa10ActionPerformed
 
     private void btnAgregarProductoPedidoMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa11ActionPerformed
-        String nombreProductoSeleccionado = productosPedidoMesa11.getSelectedValue();
-
-        if (nombreProductoSeleccionado != null) {
-            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
-            Producto productoSeleccionado = null;
-
-            for (Producto producto : productos) {
-                if (producto.getNombre().equals(nombreProducto)) {
-                    productoSeleccionado = producto;
-                    break;
-                }
-            }
-
-            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
-
-                while (true) {                    
-                    String inputCantidad = JOptionPane.showInputDialog(this, 
-                    "Ingresa la cantidad de platos:", 
-                    "Agregar Producto", 
-                    JOptionPane.QUESTION_MESSAGE);
-                    
-                    if (inputCantidad != null) {
-                        try {
-                            int cantidad = Integer.parseInt(inputCantidad.trim());
-
-                            if (cantidad > 0 && cantidad <= productoSeleccionado.getCantidadDisponible()) {
-
-                                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - cantidad);
-
-                                boolean productoYaEnPedido = false;
-                                for (Producto productoEnPedido : pedidoMesa11.getListaProductos()) {
-                                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
-                                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + cantidad);
-                                        productoYaEnPedido = true;
-                                        break;
-                                    }
-                                }
-
-                                if (!productoYaEnPedido) {
-                                    Producto productoParaPedido = new Producto(
-                                        productoSeleccionado.getNombre(),
-                                        productoSeleccionado.getPrecio(),
-                                        productoSeleccionado.getCategoria(),
-                                        cantidad
-                                    );
-                                    pedidoMesa11.agregarProducto(productoParaPedido);
-                                }
-
-                                actualizarListaProductosDelPedidoMesa11();
-                                mostrarProductosEnMesa(productosPedidoMesa11);
-                                
-                                break;
-                                
-                            } else {
-                                JOptionPane.showMessageDialog(this, 
-                                    "Cantidad ingresada no disponible", 
-                                    "Cantidad inválida", 
-                                    JOptionPane.WARNING_MESSAGE);
-                            }
-
-                        } catch (NumberFormatException e) {
-                            JOptionPane.showMessageDialog(this, 
-                                "Por favor, ingresa un número entero válido.", 
-                                "Error de entrada", 
-                                JOptionPane.ERROR_MESSAGE);
-                        }
-                    }else {
-                        break;
-                    } 
-                }
-                
-            } else {
-                JOptionPane.showMessageDialog(this, 
-                    "No hay suficiente cantidad disponible de este producto.", 
-                    "Advertencia", 
-                    JOptionPane.WARNING_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, 
-                "Por favor, selecciona un producto de la lista.", 
-                "Advertencia", 
-                JOptionPane.WARNING_MESSAGE);
-        }
+        agregarProductoAPedido(
+            productosPedidoMesa11,
+            pedidoMesa11,
+            () -> actualizarListaProductosDelPedido(pedidoMesa11, listaPedidosMesa11), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa11)
+        );
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa11ActionPerformed
 
     private void btnAgregarProductoPedidoMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa12ActionPerformed
-        String nombreProductoSeleccionado = productosPedidoMesa12.getSelectedValue();
-
-        if (nombreProductoSeleccionado != null) {
-            String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
-            Producto productoSeleccionado = null;
-
-            for (Producto producto : productos) {
-                if (producto.getNombre().equals(nombreProducto)) {
-                    productoSeleccionado = producto;
-                    break;
-                }
-            }
-
-            if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
-
-                while (true) {                    
-                    String inputCantidad = JOptionPane.showInputDialog(this, 
-                    "Ingresa la cantidad de platos:", 
-                    "Agregar Producto", 
-                    JOptionPane.QUESTION_MESSAGE);
-                    
-                    if (inputCantidad != null) {
-                        try {
-                            int cantidad = Integer.parseInt(inputCantidad.trim());
-
-                            if (cantidad > 0 && cantidad <= productoSeleccionado.getCantidadDisponible()) {
-
-                                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - cantidad);
-
-                                boolean productoYaEnPedido = false;
-                                for (Producto productoEnPedido : pedidoMesa12.getListaProductos()) {
-                                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
-                                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + cantidad);
-                                        productoYaEnPedido = true;
-                                        break;
-                                    }
-                                }
-
-                                if (!productoYaEnPedido) {
-                                    Producto productoParaPedido = new Producto(
-                                        productoSeleccionado.getNombre(),
-                                        productoSeleccionado.getPrecio(),
-                                        productoSeleccionado.getCategoria(),
-                                        cantidad
-                                    );
-                                    pedidoMesa12.agregarProducto(productoParaPedido);
-                                }
-
-                                actualizarListaProductosDelPedidoMesa12();
-                                mostrarProductosEnMesa(productosPedidoMesa12);
-                                
-                                break;
-                                
-                            } else {
-                                JOptionPane.showMessageDialog(this, 
-                                    "Cantidad ingresada no disponible", 
-                                    "Cantidad inválida", 
-                                    JOptionPane.WARNING_MESSAGE);
-                            }
-
-                        } catch (NumberFormatException e) {
-                            JOptionPane.showMessageDialog(this, 
-                                "Por favor, ingresa un número entero válido.", 
-                                "Error de entrada", 
-                                JOptionPane.ERROR_MESSAGE);
-                        }
-                    }else {
-                        break;
-                    } 
-                }
-                
-            } else {
-                JOptionPane.showMessageDialog(this, 
-                    "No hay suficiente cantidad disponible de este producto.", 
-                    "Advertencia", 
-                    JOptionPane.WARNING_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, 
-                "Por favor, selecciona un producto de la lista.", 
-                "Advertencia", 
-                JOptionPane.WARNING_MESSAGE);
-        }
+        agregarProductoAPedido(
+            productosPedidoMesa12,
+            pedidoMesa12,
+            () -> actualizarListaProductosDelPedido(pedidoMesa12, listaPedidosMesa12), 
+            () -> mostrarProductosEnMesa(productosPedidoMesa12)
+        );
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa12ActionPerformed
 
     int contadorPedidosMesa1 = 1;
@@ -5870,7 +5030,7 @@ public class JframeMesero extends javax.swing.JFrame {
             }
 
             pedidoMesa1 = new Pedido();
-            actualizarListaProductosDelPedidoMesa1();
+            actualizarListaProductosDelPedido(pedidoMesa1,listaPedidosMesa1);
             mesas.get(0).setEstado("Ocupada");
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -5946,7 +5106,7 @@ public class JframeMesero extends javax.swing.JFrame {
             }
 
             pedidoMesa2 = new Pedido();
-            actualizarListaProductosDelPedidoMesa2();
+            actualizarListaProductosDelPedido(pedidoMesa2, listaPedidosMesa2);
             mesas.get(1).setEstado("Ocupada");
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -6023,7 +5183,7 @@ public class JframeMesero extends javax.swing.JFrame {
             }
 
             pedidoMesa3 = new Pedido();
-            actualizarListaProductosDelPedidoMesa3();
+            actualizarListaProductosDelPedido(pedidoMesa3, listaPedidosMesa3);
             mesas.get(2).setEstado("Ocupada");
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -8474,7 +7634,7 @@ public class JframeMesero extends javax.swing.JFrame {
                 
                 pedidoMesa1.getListaProductos().remove(index);
 
-                actualizarListaProductosDelPedidoMesa1();
+                actualizarListaProductosDelPedido(pedidoMesa1, listaPedidosMesa2);
                 cargarProductosEnLista1();
                 mostrarProductosEnMesa(productosPedidoMesa1);
                 
@@ -8983,7 +8143,7 @@ public class JframeMesero extends javax.swing.JFrame {
                 
                 pedidoMesa2.getListaProductos().remove(index);
 
-                actualizarListaProductosDelPedidoMesa2();
+                actualizarListaProductosDelPedido(pedidoMesa2, listaPedidosMesa2);
                 cargarProductosEnLista2();
                 mostrarProductosEnMesa(productosPedidoMesa2);
                 
@@ -9018,7 +8178,7 @@ public class JframeMesero extends javax.swing.JFrame {
                 
                 pedidoMesa3.getListaProductos().remove(index);
 
-                actualizarListaProductosDelPedidoMesa3();
+                actualizarListaProductosDelPedido(pedidoMesa3, listaPedidosMesa3);
                 cargarProductosEnLista3();
                 mostrarProductosEnMesa(productosPedidoMesa3);
                 
@@ -9569,28 +8729,12 @@ public class JframeMesero extends javax.swing.JFrame {
         dialogoFecha.setVisible(true);
     }//GEN-LAST:event_txtFechaGenerarReporteMouseClicked
     
-    private void actualizarListaProductosDelPedidoMesa1() {
+    private void actualizarListaProductosDelPedido(Pedido pedidoMesa, JList<String> listaPedidosMesa) {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
-        for (Producto producto : pedidoMesa1.getListaProductos()) {
+        for (Producto producto : pedidoMesa.getListaProductos()) {
             modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
         }
-        listaPedidosMesa1.setModel(modeloPedido);
-    }
-    
-    private void actualizarListaProductosDelPedidoMesa2() {
-        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
-        for (Producto producto : pedidoMesa2.getListaProductos()) {
-            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        listaPedidosMesa2.setModel(modeloPedido);
-    }
-
-    private void actualizarListaProductosDelPedidoMesa3() {
-        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
-        for (Producto producto : pedidoMesa3.getListaProductos()) {
-            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        listaPedidosMesa3.setModel(modeloPedido);
+        listaPedidosMesa.setModel(modeloPedido);
     }
     
     private void actualizarListaProductosDelPedidoMesa4() {
