@@ -5968,19 +5968,18 @@ public class JframeMesero extends javax.swing.JFrame {
                     String nombreProducto = partes[0].trim();
                     int cantidadProducto = Integer.parseInt(partes[1].trim());
 
-                    for (Producto producto : productos) {
-                        if (producto.getNombre().equals(nombreProducto)) {
-                            producto.setCantidadDisponible(producto.getCantidadDisponible() + cantidadProducto);
-                            break;
-                        }
+                    boolean exito = Producto.actualizarCantidadDisponibleProducto(nombreProducto, cantidadProducto);
+
+                    if (exito) {
+                        pedidoMesa.getListaProductos().remove(index);
+
+                        actualizarListaProductos.run();
+                        mostrarProductosEnMesa.run();
+
+                        JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(this, "No se pudo actualizar la cantidad del producto en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
                     }
-
-                    pedidoMesa.getListaProductos().remove(index);
-
-                    actualizarListaProductos.run();
-                    mostrarProductosEnMesa.run();
-
-                    JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(this, "Error al parsear la cantidad del producto.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
