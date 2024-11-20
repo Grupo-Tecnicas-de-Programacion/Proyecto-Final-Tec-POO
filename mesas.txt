@@ -8,5 +8,5 @@
 8, Desocupada, 4
 9, Desocupada, 5
 10, Desocupada, 4
-11, Ocupada, 4
-12, Ocupada, 4
+11, No disponible, 4
+12, No disponible, 4
