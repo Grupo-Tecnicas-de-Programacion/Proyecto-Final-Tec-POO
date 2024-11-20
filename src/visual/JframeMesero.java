@@ -4659,114 +4659,6 @@ public class JframeMesero extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnBuscarRutaProductosActionPerformed
 
-    DefaultListModel<String> modeloProductosMesa1 = new DefaultListModel<>();
-    private void cargarProductosEnLista1() {
-        modeloProductosMesa1.clear();
-        for (Producto producto : productos) {
-            modeloProductosMesa1.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        productosPedidoMesa1.setModel(modeloProductosMesa1);
-    }
-    
-    DefaultListModel<String> modeloProductosMesa2 = new DefaultListModel<>();
-    private void cargarProductosEnLista2() {
-        modeloProductosMesa2.clear();
-        for (Producto producto : productos) {
-            modeloProductosMesa2.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        productosPedidoMesa2.setModel(modeloProductosMesa2);
-    }
-    
-    DefaultListModel<String> modeloProductosMesa3 = new DefaultListModel<>();
-    private void cargarProductosEnLista3() {
-        modeloProductosMesa3.clear();
-        for (Producto producto : productos) {
-            modeloProductosMesa3.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        productosPedidoMesa3.setModel(modeloProductosMesa3);
-    }
-    
-    DefaultListModel<String> modeloProductosMesa4 = new DefaultListModel<>();
-    private void cargarProductosEnLista4() {
-        modeloProductosMesa4.clear();
-        for (Producto producto : productos) {
-            modeloProductosMesa4.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        productosPedidoMesa4.setModel(modeloProductosMesa4);
-    }
-    
-    DefaultListModel<String> modeloProductosMesa5 = new DefaultListModel<>();
-    private void cargarProductosEnLista5() {
-        modeloProductosMesa5.clear();
-        for (Producto producto : productos) {
-            modeloProductosMesa5.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        productosPedidoMesa5.setModel(modeloProductosMesa5);
-    }
-    
-    DefaultListModel<String> modeloProductosMesa6 = new DefaultListModel<>();
-    private void cargarProductosEnLista6() {
-        modeloProductosMesa6.clear();
-        for (Producto producto : productos) {
-            modeloProductosMesa6.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        productosPedidoMesa6.setModel(modeloProductosMesa6);
-    }
-    
-    DefaultListModel<String> modeloProductosMesa7 = new DefaultListModel<>();
-    private void cargarProductosEnLista7() {
-        modeloProductosMesa7.clear();
-        for (Producto producto : productos) {
-            modeloProductosMesa7.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        productosPedidoMesa7.setModel(modeloProductosMesa7);
-    }
-    
-    DefaultListModel<String> modeloProductosMesa8 = new DefaultListModel<>();
-    private void cargarProductosEnLista8() {
-        modeloProductosMesa8.clear();
-        for (Producto producto : productos) {
-            modeloProductosMesa8.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        productosPedidoMesa8.setModel(modeloProductosMesa8);
-    }
-    
-    DefaultListModel<String> modeloProductosMesa9 = new DefaultListModel<>();
-    private void cargarProductosEnLista9() {
-        modeloProductosMesa9.clear();
-        for (Producto producto : productos) {
-            modeloProductosMesa9.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        productosPedidoMesa9.setModel(modeloProductosMesa9);
-    }
-    
-    DefaultListModel<String> modeloProductosMesa10 = new DefaultListModel<>();
-    private void cargarProductosEnLista10() {
-        modeloProductosMesa10.clear();
-        for (Producto producto : productos) {
-            modeloProductosMesa10.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        productosPedidoMesa10.setModel(modeloProductosMesa10);
-    }
-    
-    DefaultListModel<String> modeloProductosMesa11 = new DefaultListModel<>();
-    private void cargarProductosEnLista11() {
-        modeloProductosMesa11.clear();
-        for (Producto producto : productos) {
-            modeloProductosMesa11.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        productosPedidoMesa11.setModel(modeloProductosMesa11);
-    }
-    
-    DefaultListModel<String> modeloProductosMesa12 = new DefaultListModel<>();
-    private void cargarProductosEnLista12() {
-        modeloProductosMesa12.clear();
-        for (Producto producto : productos) {
-            modeloProductosMesa12.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        productosPedidoMesa12.setModel(modeloProductosMesa12);
-    }
-    
     private void agregarProductoAPedido(
         JList<String> listaProductos,
         Pedido pedidoMesa,
@@ -5949,101 +5841,14 @@ public class JframeMesero extends javax.swing.JFrame {
         listaPedidosLlevar.setModel(modeloPedidosLlevar);
     }
 
-    private void mostrarDetallePedidoMesa1(Pedido pedido) {
+    private void mostrarDetallePedido(Pedido pedido, JList<String> detallePedido) {
         DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
         for (Producto producto : pedido.getListaProductos()) {
             modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
         }
-        detallePedidoMesa1.setModel(modeloDetalle); 
+        detallePedido.setModel(modeloDetalle); 
     }
     
-    private void mostrarDetallePedidoMesa2(Pedido pedido) {
-        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
-        for (Producto producto : pedido.getListaProductos()) {
-            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
-        }
-        detallePedidoMesa2.setModel(modeloDetalle); 
-    }
-
-    private void mostrarDetallePedidoMesa3(Pedido pedido) {
-        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
-        for (Producto producto : pedido.getListaProductos()) {
-            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
-        }
-        detallePedidoMesa3.setModel(modeloDetalle); 
-    }
-    
-    private void mostrarDetallePedidoMesa4(Pedido pedido) {
-        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
-        for (Producto producto : pedido.getListaProductos()) {
-            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
-        }
-        detallePedidoMesa4.setModel(modeloDetalle); 
-    }
-    
-    private void mostrarDetallePedidoMesa5(Pedido pedido) {
-        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
-        for (Producto producto : pedido.getListaProductos()) {
-            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
-        }
-        detallePedidoMesa5.setModel(modeloDetalle); 
-    }
-    
-    private void mostrarDetallePedidoMesa6(Pedido pedido) {
-        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
-        for (Producto producto : pedido.getListaProductos()) {
-            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
-        }
-        detallePedidoMesa6.setModel(modeloDetalle); 
-    }
-    
-    private void mostrarDetallePedidoMesa7(Pedido pedido) {
-        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
-        for (Producto producto : pedido.getListaProductos()) {
-            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
-        }
-        detallePedidoMesa7.setModel(modeloDetalle); 
-    }
-    
-    private void mostrarDetallePedidoMesa8(Pedido pedido) {
-        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
-        for (Producto producto : pedido.getListaProductos()) {
-            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
-        }
-        detallePedidoMesa8.setModel(modeloDetalle); 
-    }
-    
-    private void mostrarDetallePedidoMesa9(Pedido pedido) {
-        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
-        for (Producto producto : pedido.getListaProductos()) {
-            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
-        }
-        detallePedidoMesa9.setModel(modeloDetalle); 
-    }
-    
-    private void mostrarDetallePedidoMesa10(Pedido pedido) {
-        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
-        for (Producto producto : pedido.getListaProductos()) {
-            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
-        }
-        detallePedidoMesa10.setModel(modeloDetalle); 
-    }
-    
-    private void mostrarDetallePedidoMesa11(Pedido pedido) {
-        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
-        for (Producto producto : pedido.getListaProductos()) {
-            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
-        }
-        detallePedidoMesa11.setModel(modeloDetalle); 
-    }
-    
-    private void mostrarDetallePedidoMesa12(Pedido pedido) {
-        DefaultListModel<String> modeloDetalle = new DefaultListModel<>();
-        for (Producto producto : pedido.getListaProductos()) {
-            modeloDetalle.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
-        }
-        detallePedidoMesa12.setModel(modeloDetalle); 
-    }
     private void btnVerPedidosMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPedidosMesa1ActionPerformed
         actualizarListaPedidos(pedidosMesa1, listaVerPedidosMesa1, pedidosMesa1Llevar, listaVerPedidosLlevarMesa1);
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
@@ -6106,7 +5911,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosMesa1.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa1.get(index);
-            mostrarDetallePedidoMesa1(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa1);
         }
     }//GEN-LAST:event_listaVerPedidosMesa1MouseClicked
 
@@ -6114,7 +5919,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosLlevarMesa1.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa1Llevar.get(index);
-            mostrarDetallePedidoMesa1(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa1);
         }
     }//GEN-LAST:event_listaVerPedidosLlevarMesa1MouseClicked
 
@@ -6188,7 +5993,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosMesa2.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa2.get(index);
-            mostrarDetallePedidoMesa2(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa2);
         }
     }//GEN-LAST:event_listaVerPedidosMesa2MouseClicked
 
@@ -6196,7 +6001,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosLlevarMesa2.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa2Llevar.get(index);
-            mostrarDetallePedidoMesa2(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa2);
         }
     }//GEN-LAST:event_listaVerPedidosLlevarMesa2MouseClicked
 
@@ -6204,7 +6009,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosMesa3.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa3.get(index);
-            mostrarDetallePedidoMesa3(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa3);
         }
     }//GEN-LAST:event_listaVerPedidosMesa3MouseClicked
 
@@ -6212,7 +6017,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosLlevarMesa3.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa3Llevar.get(index);
-            mostrarDetallePedidoMesa3(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa3);
         }
     }//GEN-LAST:event_listaVerPedidosLlevarMesa3MouseClicked
 
@@ -6220,7 +6025,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosMesa4.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa4.get(index);
-            mostrarDetallePedidoMesa4(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa4);
         }
     }//GEN-LAST:event_listaVerPedidosMesa4MouseClicked
 
@@ -6228,7 +6033,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosLlevarMesa4.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa4Llevar.get(index);
-            mostrarDetallePedidoMesa4(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa4);
         }
     }//GEN-LAST:event_listaVerPedidosLlevarMesa4MouseClicked
 
@@ -6236,7 +6041,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosMesa5.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa5.get(index);
-            mostrarDetallePedidoMesa5(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa5);
         }
     }//GEN-LAST:event_listaVerPedidosMesa5MouseClicked
 
@@ -6244,7 +6049,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosLlevarMesa5.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa5Llevar.get(index);
-            mostrarDetallePedidoMesa5(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa5);
         }
     }//GEN-LAST:event_listaVerPedidosLlevarMesa5MouseClicked
 
@@ -6252,7 +6057,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosMesa6.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa6.get(index);
-            mostrarDetallePedidoMesa6(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa6);
         }
     }//GEN-LAST:event_listaVerPedidosMesa6MouseClicked
 
@@ -6260,7 +6065,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosLlevarMesa6.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa6Llevar.get(index);
-            mostrarDetallePedidoMesa6(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa6);
         }
     }//GEN-LAST:event_listaVerPedidosLlevarMesa6MouseClicked
 
@@ -6268,7 +6073,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosMesa7.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa7.get(index);
-            mostrarDetallePedidoMesa7(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa7);
         }
     }//GEN-LAST:event_listaVerPedidosMesa7MouseClicked
 
@@ -6276,7 +6081,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosLlevarMesa7.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa7Llevar.get(index);
-            mostrarDetallePedidoMesa7(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa7);
         }
     }//GEN-LAST:event_listaVerPedidosLlevarMesa7MouseClicked
 
@@ -6284,7 +6089,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosMesa8.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa8.get(index);
-            mostrarDetallePedidoMesa8(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa8);
         }
     }//GEN-LAST:event_listaVerPedidosMesa8MouseClicked
 
@@ -6292,7 +6097,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosLlevarMesa8.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa8Llevar.get(index);
-            mostrarDetallePedidoMesa8(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa8);
         }
     }//GEN-LAST:event_listaVerPedidosLlevarMesa8MouseClicked
 
@@ -6300,7 +6105,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosMesa9.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa9.get(index);
-            mostrarDetallePedidoMesa9(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa9);
         }
     }//GEN-LAST:event_listaVerPedidosMesa9MouseClicked
 
@@ -6308,7 +6113,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosLlevarMesa9.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa9Llevar.get(index);
-            mostrarDetallePedidoMesa9(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa9);
         }
     }//GEN-LAST:event_listaVerPedidosLlevarMesa9MouseClicked
 
@@ -6316,7 +6121,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosMesa10.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa10.get(index);
-            mostrarDetallePedidoMesa10(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa10);
         }
     }//GEN-LAST:event_listaVerPedidosMesa10MouseClicked
 
@@ -6324,7 +6129,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosLlevarMesa10.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa10Llevar.get(index);
-            mostrarDetallePedidoMesa10(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa10);
         }
     }//GEN-LAST:event_listaVerPedidosLlevarMesa10MouseClicked
 
@@ -6332,7 +6137,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosMesa11.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa11.get(index);
-            mostrarDetallePedidoMesa11(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa11);
         }
     }//GEN-LAST:event_listaVerPedidosMesa11MouseClicked
 
@@ -6340,7 +6145,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosLlevarMesa11.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa11Llevar.get(index);
-            mostrarDetallePedidoMesa11(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa11);
         }
     }//GEN-LAST:event_listaVerPedidosLlevarMesa11MouseClicked
 
@@ -6348,7 +6153,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosMesa12.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa12.get(index);
-            mostrarDetallePedidoMesa12(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa12);
         }
     }//GEN-LAST:event_listaVerPedidosMesa12MouseClicked
 
@@ -6356,7 +6161,7 @@ public class JframeMesero extends javax.swing.JFrame {
         int index = listaVerPedidosLlevarMesa12.getSelectedIndex();
         if (index >= 0) {
             Pedido pedidoSeleccionado = pedidosMesa12Llevar.get(index);
-            mostrarDetallePedidoMesa12(pedidoSeleccionado);
+            mostrarDetallePedido(pedidoSeleccionado, detallePedidoMesa12);
         }
     }//GEN-LAST:event_listaVerPedidosLlevarMesa12MouseClicked
 
@@ -6999,8 +6804,7 @@ public class JframeMesero extends javax.swing.JFrame {
                 
                 pedidoMesa1.getListaProductos().remove(index);
 
-                actualizarListaProductosDelPedido(pedidoMesa1, listaPedidosMesa2);
-                cargarProductosEnLista1();
+                actualizarListaProductosDelPedido(pedidoMesa1, listaPedidosMesa1);
                 mostrarProductosEnMesa(productosPedidoMesa1);
                 
                 JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
@@ -7362,7 +7166,6 @@ public class JframeMesero extends javax.swing.JFrame {
                 pedidoMesa2.getListaProductos().remove(index);
 
                 actualizarListaProductosDelPedido(pedidoMesa2, listaPedidosMesa2);
-                cargarProductosEnLista2();
                 mostrarProductosEnMesa(productosPedidoMesa2);
                 
                 JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
@@ -7397,7 +7200,6 @@ public class JframeMesero extends javax.swing.JFrame {
                 pedidoMesa3.getListaProductos().remove(index);
 
                 actualizarListaProductosDelPedido(pedidoMesa3, listaPedidosMesa3);
-                cargarProductosEnLista3();
                 mostrarProductosEnMesa(productosPedidoMesa3);
                 
                 JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
@@ -7432,7 +7234,6 @@ public class JframeMesero extends javax.swing.JFrame {
                 pedidoMesa4.getListaProductos().remove(index);
 
                 actualizarListaProductosDelPedido(pedidoMesa4, listaPedidosMesa4);
-                cargarProductosEnLista4();
                 mostrarProductosEnMesa(productosPedidoMesa4);
                 
                 JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
@@ -7467,7 +7268,6 @@ public class JframeMesero extends javax.swing.JFrame {
                 pedidoMesa5.getListaProductos().remove(index);
 
                 actualizarListaProductosDelPedido(pedidoMesa5, listaPedidosMesa5);
-                cargarProductosEnLista5();
                 mostrarProductosEnMesa(productosPedidoMesa5);
                 
                 JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
@@ -7502,7 +7302,6 @@ public class JframeMesero extends javax.swing.JFrame {
                 pedidoMesa6.getListaProductos().remove(index);
 
                 actualizarListaProductosDelPedido(pedidoMesa6, listaPedidosMesa6);
-                cargarProductosEnLista6();
                 mostrarProductosEnMesa(productosPedidoMesa6);
                 
                 JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
@@ -7537,7 +7336,6 @@ public class JframeMesero extends javax.swing.JFrame {
                 pedidoMesa7.getListaProductos().remove(index);
 
                 actualizarListaProductosDelPedido(pedidoMesa7, listaPedidosMesa7);
-                cargarProductosEnLista7();
                 mostrarProductosEnMesa(productosPedidoMesa7);
                 
                 JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
@@ -7572,7 +7370,6 @@ public class JframeMesero extends javax.swing.JFrame {
                 pedidoMesa8.getListaProductos().remove(index);
 
                 actualizarListaProductosDelPedido(pedidoMesa8, listaPedidosMesa8);
-                cargarProductosEnLista8();
                 mostrarProductosEnMesa(productosPedidoMesa8);
                 
                 JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
@@ -7607,7 +7404,6 @@ public class JframeMesero extends javax.swing.JFrame {
                 pedidoMesa9.getListaProductos().remove(index);
 
                 actualizarListaProductosDelPedido(pedidoMesa9, listaPedidosMesa9);
-                cargarProductosEnLista9();
                 mostrarProductosEnMesa(productosPedidoMesa9);
                 
                 JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
@@ -7642,7 +7438,6 @@ public class JframeMesero extends javax.swing.JFrame {
                 pedidoMesa10.getListaProductos().remove(index);
 
                 actualizarListaProductosDelPedido(pedidoMesa10, listaPedidosMesa10);
-                cargarProductosEnLista10();
                 mostrarProductosEnMesa(productosPedidoMesa10);
                 
                 JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
@@ -7677,7 +7472,6 @@ public class JframeMesero extends javax.swing.JFrame {
                 pedidoMesa11.getListaProductos().remove(index);
 
                 actualizarListaProductosDelPedido(pedidoMesa11, listaPedidosMesa11);
-                cargarProductosEnLista11();
                 mostrarProductosEnMesa(productosPedidoMesa11);
                 
                 JOptionPane.showMessageDialog(rootPane, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
@@ -7712,7 +7506,6 @@ public class JframeMesero extends javax.swing.JFrame {
                 pedidoMesa12.getListaProductos().remove(index);
 
                 actualizarListaProductosDelPedido(pedidoMesa12, listaPedidosMesa12);
-                cargarProductosEnLista12();
                 mostrarProductosEnMesa(productosPedidoMesa12);
                 
                 JOptionPane.showMessageDialog(this, "Producto eliminado del pedido y cantidad devuelta a la lista de productos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
