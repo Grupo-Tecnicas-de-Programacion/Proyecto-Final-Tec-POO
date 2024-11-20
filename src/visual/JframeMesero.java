@@ -5260,7 +5260,7 @@ public class JframeMesero extends javax.swing.JFrame {
             }
 
             pedidoMesa4 = new Pedido();
-            actualizarListaProductosDelPedidoMesa4();
+            actualizarListaProductosDelPedido(pedidoMesa4, listaPedidosMesa4);
             mesas.get(3).setEstado("Ocupada");
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -5336,7 +5336,7 @@ public class JframeMesero extends javax.swing.JFrame {
             }
 
             pedidoMesa5 = new Pedido();
-            actualizarListaProductosDelPedidoMesa5();
+            actualizarListaProductosDelPedido(pedidoMesa5, listaPedidosMesa5);
             mesas.get(4).setEstado("Ocupada");
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -5412,7 +5412,7 @@ public class JframeMesero extends javax.swing.JFrame {
             }
 
             pedidoMesa6 = new Pedido();
-            actualizarListaProductosDelPedidoMesa6();
+            actualizarListaProductosDelPedido(pedidoMesa6, listaPedidosMesa6);
             mesas.get(5).setEstado("Ocupada");
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -5488,7 +5488,7 @@ public class JframeMesero extends javax.swing.JFrame {
             }
 
             pedidoMesa7 = new Pedido();
-            actualizarListaProductosDelPedidoMesa7();
+            actualizarListaProductosDelPedido(pedidoMesa7, listaPedidosMesa7);
             mesas.get(6).setEstado("Ocupada");
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -5564,7 +5564,7 @@ public class JframeMesero extends javax.swing.JFrame {
             }
 
             pedidoMesa8 = new Pedido();
-            actualizarListaProductosDelPedidoMesa8();
+            actualizarListaProductosDelPedido(pedidoMesa8, listaPedidosMesa8);
             mesas.get(7).setEstado("Ocupada");
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -5640,7 +5640,7 @@ public class JframeMesero extends javax.swing.JFrame {
             }
 
             pedidoMesa9 = new Pedido();
-            actualizarListaProductosDelPedidoMesa9();
+            actualizarListaProductosDelPedido(pedidoMesa9, listaPedidosMesa9);
             mesas.get(8).setEstado("Ocupada");
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -5716,7 +5716,7 @@ public class JframeMesero extends javax.swing.JFrame {
             }
 
             pedidoMesa10 = new Pedido();
-            actualizarListaProductosDelPedidoMesa10();
+            actualizarListaProductosDelPedido(pedidoMesa10, listaPedidosMesa10);
             mesas.get(9).setEstado("Ocupada");
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -5792,7 +5792,7 @@ public class JframeMesero extends javax.swing.JFrame {
             }
 
             pedidoMesa11 = new Pedido();
-            actualizarListaProductosDelPedidoMesa11();
+            actualizarListaProductosDelPedido(pedidoMesa11, listaPedidosMesa11);
             mesas.get(10).setEstado("Ocupada");
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -5868,7 +5868,7 @@ public class JframeMesero extends javax.swing.JFrame {
             }
 
             pedidoMesa12 = new Pedido();
-            actualizarListaProductosDelPedidoMesa12();
+            actualizarListaProductosDelPedido(pedidoMesa12, listaPedidosMesa12);
             mesas.get(11).setEstado("Ocupada");
         } else {
             JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -8213,7 +8213,7 @@ public class JframeMesero extends javax.swing.JFrame {
                 
                 pedidoMesa4.getListaProductos().remove(index);
 
-                actualizarListaProductosDelPedidoMesa4();
+                actualizarListaProductosDelPedido(pedidoMesa4, listaPedidosMesa4);
                 cargarProductosEnLista4();
                 mostrarProductosEnMesa(productosPedidoMesa4);
                 
@@ -8248,7 +8248,7 @@ public class JframeMesero extends javax.swing.JFrame {
                 
                 pedidoMesa5.getListaProductos().remove(index);
 
-                actualizarListaProductosDelPedidoMesa5();
+                actualizarListaProductosDelPedido(pedidoMesa5, listaPedidosMesa5);
                 cargarProductosEnLista5();
                 mostrarProductosEnMesa(productosPedidoMesa5);
                 
@@ -8283,7 +8283,7 @@ public class JframeMesero extends javax.swing.JFrame {
                 
                 pedidoMesa6.getListaProductos().remove(index);
 
-                actualizarListaProductosDelPedidoMesa6();
+                actualizarListaProductosDelPedido(pedidoMesa6, listaPedidosMesa6);
                 cargarProductosEnLista6();
                 mostrarProductosEnMesa(productosPedidoMesa6);
                 
@@ -8318,7 +8318,7 @@ public class JframeMesero extends javax.swing.JFrame {
                 
                 pedidoMesa7.getListaProductos().remove(index);
 
-                actualizarListaProductosDelPedidoMesa7();
+                actualizarListaProductosDelPedido(pedidoMesa7, listaPedidosMesa7);
                 cargarProductosEnLista7();
                 mostrarProductosEnMesa(productosPedidoMesa7);
                 
@@ -8353,7 +8353,7 @@ public class JframeMesero extends javax.swing.JFrame {
                 
                 pedidoMesa8.getListaProductos().remove(index);
 
-                actualizarListaProductosDelPedidoMesa8();
+                actualizarListaProductosDelPedido(pedidoMesa8, listaPedidosMesa8);
                 cargarProductosEnLista8();
                 mostrarProductosEnMesa(productosPedidoMesa8);
                 
@@ -8388,7 +8388,7 @@ public class JframeMesero extends javax.swing.JFrame {
                 
                 pedidoMesa9.getListaProductos().remove(index);
 
-                actualizarListaProductosDelPedidoMesa9();
+                actualizarListaProductosDelPedido(pedidoMesa9, listaPedidosMesa9);
                 cargarProductosEnLista9();
                 mostrarProductosEnMesa(productosPedidoMesa9);
                 
@@ -8423,7 +8423,7 @@ public class JframeMesero extends javax.swing.JFrame {
                 
                 pedidoMesa10.getListaProductos().remove(index);
 
-                actualizarListaProductosDelPedidoMesa10();
+                actualizarListaProductosDelPedido(pedidoMesa10, listaPedidosMesa10);
                 cargarProductosEnLista10();
                 mostrarProductosEnMesa(productosPedidoMesa10);
                 
@@ -8458,7 +8458,7 @@ public class JframeMesero extends javax.swing.JFrame {
                 
                 pedidoMesa11.getListaProductos().remove(index);
 
-                actualizarListaProductosDelPedidoMesa11();
+                actualizarListaProductosDelPedido(pedidoMesa11, listaPedidosMesa11);
                 cargarProductosEnLista11();
                 mostrarProductosEnMesa(productosPedidoMesa11);
                 
@@ -8493,7 +8493,7 @@ public class JframeMesero extends javax.swing.JFrame {
                 
                 pedidoMesa12.getListaProductos().remove(index);
 
-                actualizarListaProductosDelPedidoMesa12();
+                actualizarListaProductosDelPedido(pedidoMesa12, listaPedidosMesa12);
                 cargarProductosEnLista12();
                 mostrarProductosEnMesa(productosPedidoMesa12);
                 
@@ -8735,78 +8735,6 @@ public class JframeMesero extends javax.swing.JFrame {
             modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
         }
         listaPedidosMesa.setModel(modeloPedido);
-    }
-    
-    private void actualizarListaProductosDelPedidoMesa4() {
-        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
-        for (Producto producto : pedidoMesa4.getListaProductos()) {
-            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        listaPedidosMesa4.setModel(modeloPedido);
-    }
-    
-    private void actualizarListaProductosDelPedidoMesa5() {
-        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
-        for (Producto producto : pedidoMesa5.getListaProductos()) {
-            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        listaPedidosMesa5.setModel(modeloPedido);
-    }
-    
-    private void actualizarListaProductosDelPedidoMesa6() {
-        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
-        for (Producto producto : pedidoMesa6.getListaProductos()) {
-            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        listaPedidosMesa6.setModel(modeloPedido);
-    }
-    
-    private void actualizarListaProductosDelPedidoMesa7() {
-        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
-        for (Producto producto : pedidoMesa7.getListaProductos()) {
-            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        listaPedidosMesa7.setModel(modeloPedido);
-    }
-    
-    private void actualizarListaProductosDelPedidoMesa8() {
-        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
-        for (Producto producto : pedidoMesa8.getListaProductos()) {
-            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        listaPedidosMesa8.setModel(modeloPedido);
-    }
-    
-    private void actualizarListaProductosDelPedidoMesa9() {
-        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
-        for (Producto producto : pedidoMesa9.getListaProductos()) {
-            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        listaPedidosMesa9.setModel(modeloPedido);
-    }
-    
-    private void actualizarListaProductosDelPedidoMesa10() {
-        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
-        for (Producto producto : pedidoMesa10.getListaProductos()) {
-            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        listaPedidosMesa10.setModel(modeloPedido);
-    }
-    
-    private void actualizarListaProductosDelPedidoMesa11() {
-        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
-        for (Producto producto : pedidoMesa11.getListaProductos()) {
-            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        listaPedidosMesa11.setModel(modeloPedido);
-    }
-    
-    private void actualizarListaProductosDelPedidoMesa12() {
-        DefaultListModel<String> modeloPedido = new DefaultListModel<>();
-        for (Producto producto : pedidoMesa12.getListaProductos()) {
-            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
-        }
-        listaPedidosMesa12.setModel(modeloPedido);
     }
     
     private void cargarProductosDesdeArchivo(File archivo) {
