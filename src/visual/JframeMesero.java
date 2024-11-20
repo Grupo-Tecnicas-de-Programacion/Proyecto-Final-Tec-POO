@@ -4357,9 +4357,25 @@ public class JframeMesero extends javax.swing.JFrame {
     
     private void mostrarProductosEnMesa(JList<String> listaProductosMesa) {
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
-        for (Producto producto : productos) {
-            modeloLista.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible()+ " - Precio: " + producto.getPrecio());
+
+        String consulta = "SELECT nombre, cantidad_disponible, precio FROM productos WHERE cantidad_disponible > 0";
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentenciaConsulta = conexion.prepareStatement(consulta);
+             ResultSet resultado = sentenciaConsulta.executeQuery()) {
+
+            while (resultado.next()) {
+                String nombre = resultado.getString("nombre");
+                int cantidadDisponible = resultado.getInt("cantidad_disponible");
+                double precio = resultado.getDouble("precio");
+
+                modeloLista.addElement(nombre + " - Cantidad: " + cantidadDisponible + " - Precio: " + precio);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Error al consultar productos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
         }
+
         listaProductosMesa.setModel(modeloLista);
     }
     
