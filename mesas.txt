@@ -1,0 +1,12 @@
+1, Desocupada, 4
+2, Desocupada, 4
+3, Desocupada, 5
+4, Desocupada, 4
+5, Desocupada, 4
+6, Desocupada, 4
+7, Desocupada, 4
+8, Desocupada, 4
+9, Desocupada, 5
+10, Desocupada, 4
+11, Ocupada, 4
+12, Ocupada, 4
