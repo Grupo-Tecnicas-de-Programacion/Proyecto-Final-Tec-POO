@@ -116,9 +116,9 @@ public class Mesa {
         String consultaInsertarMesas = "INSERT INTO mesas (numero_mesa, estado, capacidad) VALUES (?, ?, ?)";
 
         try (BufferedReader leer = new BufferedReader(new FileReader(archivo));
-            Connection conexion = ConexionDB.conectar();
-            PreparedStatement sentenciaEliminar = conexion.prepareStatement(consultaEliminarMesas);
-            PreparedStatement sentenciaInsertar = conexion.prepareStatement(consultaInsertarMesas)) {
+             Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentenciaEliminar = conexion.prepareStatement(consultaEliminarMesas);
+             PreparedStatement sentenciaInsertar = conexion.prepareStatement(consultaInsertarMesas)) {
 
             sentenciaEliminar.executeUpdate();
 
@@ -130,14 +130,24 @@ public class Mesa {
                     continue;
                 }
 
-                int numeroMesa = Integer.parseInt(partes[0].trim());
-                String estado = partes[1].trim().toUpperCase();
-                int capacidad = Integer.parseInt(partes[2].trim());
+                try {
+                    int numeroMesa = Integer.parseInt(partes[0].trim());
+                    String estado = partes[1].trim().toUpperCase();
+                    int capacidad = Integer.parseInt(partes[2].trim());
 
-                sentenciaInsertar.setInt(1, numeroMesa);
-                sentenciaInsertar.setString(2, estado);
-                sentenciaInsertar.setInt(3, capacidad);
-                sentenciaInsertar.addBatch();
+                    if (!estado.equals("DESOCUPADA") && !estado.equals("OCUPADA") && !estado.equals("NO DISPONIBLE")) {
+                        System.out.println("Estado inválido en la línea: " + linea);
+                        continue;
+                    }
+
+                    sentenciaInsertar.setInt(1, numeroMesa);
+                    sentenciaInsertar.setString(2, estado);
+                    sentenciaInsertar.setInt(3, capacidad);
+                    sentenciaInsertar.addBatch();
+
+                } catch (NumberFormatException e) {
+                    System.out.println("Error en los valores numéricos de la línea: " + linea);
+                }
             }
 
             sentenciaInsertar.executeBatch();
@@ -153,6 +163,8 @@ public class Mesa {
             return false;
         }
     }
+
+    
     
     public static String obtenerInformacionMesaBD(int numeroMesa) {
         String query = "SELECT numero_mesa, estado, capacidad FROM mesas WHERE numero_mesa = ?";
@@ -176,6 +188,21 @@ public class Mesa {
         } catch (SQLException e) {
             e.printStackTrace();
             return "Error al consultar la base de datos: " + e.getMessage();
+        }
+    }
+
+    public static boolean actualizarEstadoMesaEnBaseDatos(int numeroMesa, String nuevoEstado) {
+        String query = "UPDATE mesas SET estado = ? WHERE numero_mesa = ?";
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement stmt = conexion.prepareStatement(query)) {
+
+            stmt.setString(1, nuevoEstado);
+            stmt.setInt(2, numeroMesa);
+
+            return stmt.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
         }
     }
 
@@ -217,9 +244,5 @@ public class Mesa {
             return totalCuenta;
         }
 
-        public String mostrarInfoCuenta() {
-            return "Información de la cuenta:\n" +
-                   " - Total a pagar: " + this.getTotalPagar() + "\n";
-        }
     }
 }

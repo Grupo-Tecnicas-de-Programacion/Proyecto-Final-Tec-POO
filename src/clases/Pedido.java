@@ -1,8 +1,13 @@
 package clases;
 
-
-import clases.Mesa;
+import conexion.ConexionDB;
 import java.util.ArrayList;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 
 public class Pedido {
     private int numPedido;
@@ -90,33 +95,84 @@ public class Pedido {
         this.cantidadTotalProductos += producto.getCantidad();
         this.recalcularTotal();
     }
+    
+    public boolean registrarPedidoEnBaseDatos() {
+        String insertarPedido = "INSERT INTO pedidos (num_pedido, tipo_pedido, cantidad_total, precio_total) VALUES (?, ?, ?, ?)";
 
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentenciaPedidos = conexion.prepareStatement(insertarPedido, Statement.RETURN_GENERATED_KEYS)) {
 
-    public void eliminarProducto(Producto producto) {
-        if (this.listaProductos.contains(producto)) {
-            this.listaProductos.remove(producto);
-            this.cantidadTotalProductos--;
-            recalcularTotal();
-        } else {
-            System.out.println("El producto no está en la lista.");
+            sentenciaPedidos.setInt(1, this.numPedido);
+            sentenciaPedidos.setString(2, this.tipoPedido.toUpperCase());
+            sentenciaPedidos.setInt(3, this.cantidadTotalProductos);
+            sentenciaPedidos.setDouble(4, this.precioTotalPedido);
+
+            int filasAfectadas = sentenciaPedidos.executeUpdate();
+            if (filasAfectadas > 0) {
+                try (ResultSet generatedKeys = sentenciaPedidos.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        int idPedido = generatedKeys.getInt(1);
+                        return registrarProductosDelPedido(idPedido);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+        return false;
     }
 
-    public void mostrarInfoPedido() {
-        recalcularTotal();
-        System.out.println("Información del pedido:");
-        System.out.println("Número de pedido: " + this.getNumPedido());
-        System.out.println("Tipo de pedido: " + this.getTipoPedido());
-        System.out.println("Precio total del pedido: " + this.getPrecioTotalPedido());
+    private boolean registrarProductosDelPedido(int idPedido) {
+        String insertarProductos = "INSERT INTO pedido_productos (id_pedido, id_producto, cantidad) VALUES (?, ?, ?)";
 
-        System.out.println("Productos en el pedido:");
-        for (Producto producto : this.getListaProductos()) {
-            System.out.println("- " + producto.getNombre() + " | Precio: " + producto.getPrecio());
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentenciaRegistroProductos = conexion.prepareStatement(insertarProductos)) {
+
+            for (Producto producto : this.listaProductos) {
+                sentenciaRegistroProductos.setInt(1, idPedido);
+                sentenciaRegistroProductos.setInt(2, obtenerIdProducto(producto.getNombre()));
+                sentenciaRegistroProductos.setInt(3, producto.getCantidad());
+                sentenciaRegistroProductos.addBatch();
+            }
+            sentenciaRegistroProductos.executeBatch();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+        return false;
     }
 
-    @Override
-    public String toString() {
-        return "Pedido #" + numPedido + " - Tipo: " + tipoPedido + " - Total: S/ " + precioTotalPedido;
+    private int obtenerIdProducto(String nombreProducto) {
+        String consulta = "SELECT id FROM productos WHERE nombre = ?";
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentenciaConsulta = conexion.prepareStatement(consulta)) {
+
+            sentenciaConsulta.setString(1, nombreProducto);
+            try (ResultSet resultado = sentenciaConsulta.executeQuery()) {
+                if (resultado.next()) {
+                    return resultado.getInt("id");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
     }
+
+    public static int generarNumeroPedido() {
+        String consulta = "SELECT IFNULL(MAX(num_pedido), 0) + 1 AS siguiente_pedido FROM pedidos";
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentenciaConsulta = conexion.prepareStatement(consulta);
+             ResultSet resultado = sentenciaConsulta.executeQuery()) {
+
+            if (resultado.next()) {
+                return resultado.getInt("siguiente_pedido");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 1;
+    }
+
+    
 }

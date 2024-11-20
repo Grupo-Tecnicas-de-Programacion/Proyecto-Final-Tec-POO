@@ -46,7 +46,7 @@ CREATE TABLE pedido_productos (
 CREATE TABLE mesas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     numero_mesa INT NOT NULL UNIQUE,
-    estado ENUM('OCUPADA', 'DESOCUPADA') NOT NULL DEFAULT 'DESOCUPADA',
+    estado ENUM('OCUPADA', 'DESOCUPADA', 'NO DISPONIBLE') NOT NULL DEFAULT 'DESOCUPADA',
     capacidad INT NOT NULL,
     id_cliente INT,
     FOREIGN KEY (id_cliente) REFERENCES clientes(id)

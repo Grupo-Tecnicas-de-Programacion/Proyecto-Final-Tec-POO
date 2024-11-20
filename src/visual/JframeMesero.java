@@ -4454,32 +4454,39 @@ public class JframeMesero extends javax.swing.JFrame {
     
     private void actualizarBotonesMesasDesdeBD() {
         try (Connection conexion = ConexionDB.conectar();
-             PreparedStatement sentencia = conexion.prepareStatement("SELECT numero_mesa, estado FROM mesas");
-             ResultSet resultado = sentencia.executeQuery()) {
+            PreparedStatement sentencia = conexion.prepareStatement("SELECT numero_mesa, estado FROM mesas");
+            ResultSet resultado = sentencia.executeQuery()) {
 
-            while (resultado.next()) {
-                int numeroMesa = resultado.getInt("numero_mesa") - 1;
-                String estado = resultado.getString("estado");
+           while (resultado.next()) {
+               int numeroMesa = resultado.getInt("numero_mesa") - 1;
+               String estado = resultado.getString("estado");
 
-                if (numeroMesa >= 0 && numeroMesa < botonMesas.length) {
-                    JButton boton = botonMesas[numeroMesa];
+               if (numeroMesa >= 0 && numeroMesa < botonMesas.length) {
+                   JButton boton = botonMesas[numeroMesa];
 
-                    if (estado.equalsIgnoreCase("Desocupada")) {
-                        boton.setBackground(Color.GREEN);
-                        boton.setEnabled(true);
-                    } else {
-                        boton.setEnabled(false);
-                    }
-                }
-            }
+                   switch (estado.toUpperCase()) {
+                       case "DESOCUPADA":
+                           boton.setBackground(Color.GREEN);
+                           boton.setEnabled(true);
+                           break;
+                       case "OCUPADA":
+                           boton.setBackground(Color.RED);
+                           boton.setEnabled(true);
+                           break;
+                       case "NO DISPONIBLE":
+                           boton.setEnabled(false);
+                           break;
+                   }
+               }
+           }
 
-            panelGestionarMesas.revalidate();
-            panelGestionarMesas.repaint();
+           panelGestionarMesas.revalidate();
+           panelGestionarMesas.repaint();
 
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(this, "Error al obtener las mesas de la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            e.printStackTrace();
-        }
+       } catch (SQLException e) {
+           JOptionPane.showMessageDialog(this, "Error al obtener las mesas de la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+           e.printStackTrace();
+       }
     }
 
     private void btnCargarMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarMesasActionPerformed
@@ -4865,202 +4872,109 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa12ActionPerformed
 
     private void realizarPedido(
-        Pedido pedidoActual, ArrayList<Pedido> pedidosMesa, ArrayList<Pedido> pedidosLlevar, 
-        JList<String> listaPedidos, JButton btnMesa, int indiceMesa, int[] contadoresPedidos
+            Pedido pedidoActual, 
+            JList<String> listaPedidos, 
+            JButton btnMesa, 
+            int numeroMesa
         ) {
-            if (!pedidoActual.getListaProductos().isEmpty()) {
-                Object[] opciones = {"Para mesa", "Para llevar"};
-                int seleccion = JOptionPane.showOptionDialog(
-                    this,
-                    "¿Este pedido es para mesa o para llevar?",
-                    "Confirmar tipo de pedido",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE,
-                    null,
-                    opciones,
-                    opciones[0]
-                );
-
-                Pedido nuevoPedido = new Pedido(pedidoActual.getNumPedido(), pedidoActual.getTipoPedido());
-                for (int i = 0; i < listaPedidos.getModel().getSize(); i++) {
-                    String productoTexto = listaPedidos.getModel().getElementAt(i);
-
-                    String[] partes = productoTexto.split(" - Cantidad: ");
-                    if (partes.length == 2) {
-                        String nombreProducto = partes[0].trim();
-                        int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                        Producto productoOriginal = null;
-                        for (Producto producto : productos) {
-                            if (producto.getNombre().equals(nombreProducto)) {
-                                productoOriginal = producto;
-                                break;
-                            }
-                        }
-
-                        if (productoOriginal != null) {
-                            Producto producto = new Producto(
-                                nombreProducto,
-                                productoOriginal.getPrecio(),
-                                cantidadProducto
-                            );
-                            nuevoPedido.agregarProducto(producto);
-                        }
-                    }
-                }
-
-                if (seleccion == JOptionPane.YES_OPTION) {
-                    nuevoPedido.setNumPedido(contadoresPedidos[0]);
-                    nuevoPedido.setTipoPedido("Mesa");
-
-                    pedidosMesa.add(nuevoPedido);
-                    JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                    btnMesa.setBackground(Color.red);
-                    contadoresPedidos[0]++;
-                } else if (seleccion == JOptionPane.NO_OPTION) {
-                    nuevoPedido.setNumPedido(contadoresPedidos[1]);
-                    nuevoPedido.setTipoPedido("Llevar");
-
-                    pedidosLlevar.add(nuevoPedido);
-                    JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                    btnMesa.setBackground(Color.red);
-                    contadoresPedidos[1]++;
-                } else {
-                    JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-                    return;
-                }
-
-                pedidoActual.getListaProductos().clear();
-                actualizarListaProductosDelPedido(pedidoActual, listaPedidos);
-                mesas.get(indiceMesa).setEstado("Ocupada");
-            } else {
-                JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            if (pedidoActual.getListaProductos().isEmpty()) {
+                JOptionPane.showMessageDialog(rootPane, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
             }
+
+            Object[] opciones = {"Para mesa", "Para llevar"};
+            int seleccion = JOptionPane.showOptionDialog(
+                rootPane,
+                "¿Este pedido es para mesa o para llevar?",
+                "Confirmar tipo de pedido",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                opciones,
+                opciones[0]
+            );
+
+            if (seleccion == JOptionPane.CLOSED_OPTION) {
+                JOptionPane.showMessageDialog(rootPane, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            pedidoActual.setTipoPedido(seleccion == JOptionPane.YES_OPTION ? "Mesa" : "Llevar");
+            pedidoActual.setNumPedido(Pedido.generarNumeroPedido());
+
+            boolean exito = pedidoActual.registrarPedidoEnBaseDatos();
+            if (!exito) {
+                JOptionPane.showMessageDialog(rootPane, "Error al registrar el pedido en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            if ("Mesa".equals(pedidoActual.getTipoPedido())) {
+                boolean estadoActualizado = Mesa.actualizarEstadoMesaEnBaseDatos(numeroMesa, "OCUPADA");
+                if (estadoActualizado) {
+                    btnMesa.setBackground(Color.RED);
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Error al actualizar el estado de la mesa.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+
+            pedidoActual.getListaProductos().clear();
+            actualizarListaProductosDelPedido(pedidoActual, listaPedidos);
+
+            JOptionPane.showMessageDialog(
+                rootPane, 
+                "Pedido realizado exitosamente como: " + pedidoActual.getTipoPedido(), 
+                "Confirmación", 
+                JOptionPane.INFORMATION_MESSAGE
+            );
     }
 
-    
-    private int[] contadoresMesa1 = {1, 1};
-    private void realizarPedidoMesa1() {
-        realizarPedido(pedidoMesa1, pedidosMesa1, pedidosMesa1Llevar,
-            listaPedidosMesa1, btnMesa1, 0, contadoresMesa1);
-    }
-
-    private int[] contadoresMesa2 = {1, 1};
-    private void realizarPedidoMesa2() {
-        realizarPedido(pedidoMesa2, pedidosMesa2, pedidosMesa2Llevar,
-            listaPedidosMesa2, btnMesa2, 1, contadoresMesa2);
-    }
-    
-    private int[] contadoresMesa3 = {1, 1};
-    private void realizarPedidoMesa3() {
-        realizarPedido(pedidoMesa3, pedidosMesa3, pedidosMesa3Llevar,
-            listaPedidosMesa3, btnMesa3, 2, contadoresMesa3);
-    }
-    
-    private int[] contadoresMesa4 = {1, 1};
-    private void realizarPedidoMesa4() {
-        realizarPedido(pedidoMesa4, pedidosMesa4, pedidosMesa4Llevar,
-            listaPedidosMesa4, btnMesa4, 3, contadoresMesa4);
-    }
-    
-    private int[] contadoresMesa5 = {1, 1};
-    private void realizarPedidoMesa5() {
-        realizarPedido(pedidoMesa5, pedidosMesa5, pedidosMesa5Llevar,
-            listaPedidosMesa5, btnMesa5, 4, contadoresMesa5);
-    }
-    
-    private int[] contadoresMesa6 = {1, 1};
-    private void realizarPedidoMesa6() {
-        realizarPedido(pedidoMesa6, pedidosMesa6, pedidosMesa6Llevar,
-            listaPedidosMesa6, btnMesa6, 5, contadoresMesa6);
-    }
-    
-    private int[] contadoresMesa7 = {1, 1};
-    private void realizarPedidoMesa7() {
-        realizarPedido(pedidoMesa7, pedidosMesa7, pedidosMesa7Llevar,
-            listaPedidosMesa7, btnMesa7, 6, contadoresMesa7);
-    }
-    
-    private int[] contadoresMesa8 = {1, 1};
-    private void realizarPedidoMesa8() {
-        realizarPedido(pedidoMesa8, pedidosMesa8, pedidosMesa8Llevar,
-            listaPedidosMesa8, btnMesa8, 7, contadoresMesa8);
-    }
-    
-    private int[] contadoresMesa9 = {1, 1};
-    private void realizarPedidoMesa9() {
-        realizarPedido(pedidoMesa9, pedidosMesa9, pedidosMesa9Llevar,
-            listaPedidosMesa9, btnMesa9, 8, contadoresMesa9);
-    }
-    
-    private int[] contadoresMesa10 = {1, 1};
-    private void realizarPedidoMesa10() {
-        realizarPedido(pedidoMesa10, pedidosMesa10, pedidosMesa10Llevar,
-            listaPedidosMesa10, btnMesa10, 9, contadoresMesa10);
-    }
-    
-    private int[] contadoresMesa11 = {1, 1};
-    private void realizarPedidoMesa11() {
-        realizarPedido(pedidoMesa11, pedidosMesa11, pedidosMesa11Llevar,
-            listaPedidosMesa11, btnMesa11, 10, contadoresMesa11);
-    }
-    
-    private int[] contadoresMesa12 = {1, 1};
-    private void realizarPedidoMesa12() {
-        realizarPedido(pedidoMesa12, pedidosMesa12, pedidosMesa12Llevar,
-            listaPedidosMesa12, btnMesa12, 11, contadoresMesa12);
-    }
-    
     private void btnRealizarPedidoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa1ActionPerformed
-        realizarPedidoMesa1();
-        
+        realizarPedido(pedidoMesa1, listaPedidosMesa1, btnMesa1, 1);
     }//GEN-LAST:event_btnRealizarPedidoMesa1ActionPerformed
 
     private void btnRealizarPedidoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa2ActionPerformed
-        realizarPedidoMesa2();
+        realizarPedido(pedidoMesa2, listaPedidosMesa2, btnMesa2, 2);
     }//GEN-LAST:event_btnRealizarPedidoMesa2ActionPerformed
 
     private void btnRealizarPedidoMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa3ActionPerformed
-        realizarPedidoMesa3();
+        realizarPedido(pedidoMesa3, listaPedidosMesa3, btnMesa3, 3);
     }//GEN-LAST:event_btnRealizarPedidoMesa3ActionPerformed
 
     private void btnRealizarPedidoMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa4ActionPerformed
-        realizarPedidoMesa4();
+        realizarPedido(pedidoMesa4, listaPedidosMesa4, btnMesa4, 4);
     }//GEN-LAST:event_btnRealizarPedidoMesa4ActionPerformed
 
     private void btnRealizarPedidoMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa5ActionPerformed
-        realizarPedidoMesa5();
+        realizarPedido(pedidoMesa5, listaPedidosMesa5, btnMesa5, 5);
     }//GEN-LAST:event_btnRealizarPedidoMesa5ActionPerformed
 
     private void btnRealizarPedidoMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa6ActionPerformed
-        realizarPedidoMesa6();
+        realizarPedido(pedidoMesa6, listaPedidosMesa6, btnMesa6, 6);
     }//GEN-LAST:event_btnRealizarPedidoMesa6ActionPerformed
 
     private void btnRealizarPedidoMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa7ActionPerformed
-        realizarPedidoMesa7();
+        realizarPedido(pedidoMesa7, listaPedidosMesa7, btnMesa7, 7);
     }//GEN-LAST:event_btnRealizarPedidoMesa7ActionPerformed
 
     private void btnRealizarPedidoMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa8ActionPerformed
-        realizarPedidoMesa8();
+        realizarPedido(pedidoMesa8, listaPedidosMesa8, btnMesa8, 8);
     }//GEN-LAST:event_btnRealizarPedidoMesa8ActionPerformed
 
     private void btnRealizarPedidoMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa9ActionPerformed
-        realizarPedidoMesa9();
+        realizarPedido(pedidoMesa9, listaPedidosMesa9, btnMesa9, 9);
     }//GEN-LAST:event_btnRealizarPedidoMesa9ActionPerformed
 
     private void btnRealizarPedidoMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa10ActionPerformed
-        realizarPedidoMesa10();
+        realizarPedido(pedidoMesa10, listaPedidosMesa10, btnMesa10, 10);
     }//GEN-LAST:event_btnRealizarPedidoMesa10ActionPerformed
 
     private void btnRealizarPedidoMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa11ActionPerformed
-        realizarPedidoMesa11();
+        realizarPedido(pedidoMesa11, listaPedidosMesa11, btnMesa11, 11);
     }//GEN-LAST:event_btnRealizarPedidoMesa11ActionPerformed
 
     private void btnRealizarPedidoMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa12ActionPerformed
-        realizarPedidoMesa12();
-        
+        realizarPedido(pedidoMesa12, listaPedidosMesa12, btnMesa12, 12);
     }//GEN-LAST:event_btnRealizarPedidoMesa12ActionPerformed
-
     
     private void menItemGenerarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemGenerarReporteActionPerformed
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
