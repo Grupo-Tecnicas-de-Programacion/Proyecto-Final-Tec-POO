@@ -1,6 +1,15 @@
 package clases;
 
+import com.mysql.cj.jdbc.result.ResultSetImpl;
+import conexion.ConexionDB;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class Mesa {
     private int numeroMesa;
@@ -95,32 +104,53 @@ public class Mesa {
         this.cuenta = new Cuenta(); 
         this.cliente = null;
     }
-
     
-    
-    public String mostrarInfoMesa() {
-        StringBuilder info = new StringBuilder();
-        info.append("Información de la mesa:\n");
-        info.append("Mesa número: ").append(this.getNumeroMesa()).append("\n");
-        info.append("Estado: ").append(this.getEstado()).append("\n");
-
-        info.append(" -- Pedidos asociados a la mesa:\n");
-        if (this.listaPedidos.isEmpty()) {
-            info.append("No hay pedidos asociados a esta mesa.\n");
-        } else {
-            for (Pedido pedido : this.getListaPedidos()) {
-                info.append("Número de pedido: ").append(pedido.getNumPedido())
-                    .append(" | Tipo de pedido: ").append(pedido.getTipoPedido()).append("\n");
-                info.append("Productos en el pedido:\n");
-                for (Producto producto : pedido.getListaProductos()) {
-                    info.append("- Nombre de producto: ").append(producto.getNombre())
-                        .append(" | Precio del producto: ").append(producto.getPrecio()).append("\n");
-                }
-                double total = pedido.getPrecioTotalPedido();
-                info.append("Precio total del pedido: ").append(total).append("\n");
-            }
+    public static boolean cargarMesasDesdeArchivo(File archivo) {
+        if (archivo == null || !archivo.exists()) {
+            System.out.println("El archivo no existe o no es válido.");
+            return false;
         }
-        return info.toString();
+
+        String consultaEliminarMesas = "DELETE FROM mesas";
+        String consultaInsertarMesas = "INSERT INTO mesas (numero_mesa, estado, capacidad) VALUES (?, ?, ?)";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(archivo));
+            Connection conexion = ConexionDB.conectar();
+            PreparedStatement sentenciaEliminar = conexion.prepareStatement(consultaEliminarMesas);
+            PreparedStatement sentenciaInsertar = conexion.prepareStatement(consultaInsertarMesas)) {
+
+            sentenciaEliminar.executeUpdate();
+
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] partes = linea.split(", ");
+                if (partes.length != 3) {
+                    System.out.println("Formato incorrecto en la línea: " + linea);
+                    continue;
+                }
+
+                int numeroMesa = Integer.parseInt(partes[0].trim());
+                String estado = partes[1].trim().toUpperCase();
+                int capacidad = Integer.parseInt(partes[2].trim());
+
+                sentenciaInsertar.setInt(1, numeroMesa);
+                sentenciaInsertar.setString(2, estado);
+                sentenciaInsertar.setInt(3, capacidad);
+                sentenciaInsertar.addBatch();
+            }
+
+            sentenciaInsertar.executeBatch();
+            return true;
+
+        } catch (IOException e) {
+            System.err.println("Error al leer el archivo: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        } catch (SQLException e) {
+            System.err.println("Error al interactuar con la base de datos: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public final class Cuenta {

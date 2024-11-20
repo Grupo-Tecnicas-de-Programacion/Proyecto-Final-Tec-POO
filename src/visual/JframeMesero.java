@@ -31,6 +31,7 @@ import com.itextpdf.io.image.ImageData;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.io.image.ImageDataFactory;
 import com.toedter.calendar.JDateChooser;
+import conexion.ConexionDB;
 import java.awt.BorderLayout;
 import java.io.InputStream;
 import java.text.ParseException;
@@ -39,6 +40,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import javax.swing.JDialog;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 
 public class JframeMesero extends javax.swing.JFrame {
@@ -691,7 +697,7 @@ public class JframeMesero extends javax.swing.JFrame {
                 btnCargarMesasActionPerformed(evt);
             }
         });
-        panelCargarMesas.add(btnCargarMesas, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 160, 70));
+        panelCargarMesas.add(btnCargarMesas, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 160, 70));
 
         jPanelMostrar.add(panelCargarMesas, "card2");
 
@@ -2762,11 +2768,6 @@ public class JframeMesero extends javax.swing.JFrame {
 
         txtCantidadProductoAgotado.setEditable(false);
         txtCantidadProductoAgotado.setText("Cantidad del producto");
-        txtCantidadProductoAgotado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCantidadProductoAgotadoActionPerformed(evt);
-            }
-        });
         panelProducAgotados.add(txtCantidadProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 160, 30));
 
         txtPrecioProductoAgotado.setEditable(false);
@@ -4309,6 +4310,7 @@ public class JframeMesero extends javax.swing.JFrame {
     private void menItemGestionarMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemGestionarMesasActionPerformed
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "panelGestionarMesas");
+        actualizarBotonesMesasDesdeBD();
     }//GEN-LAST:event_menItemGestionarMesasActionPerformed
 
     private void menItemModProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemModProductoActionPerformed
@@ -4426,46 +4428,31 @@ public class JframeMesero extends javax.swing.JFrame {
         layout.show(jPanelMostrar, "panelAgreProducto");
     }//GEN-LAST:event_menItemAgreProductoActionPerformed
 
-    private void txtCantidadProductoAgotadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadProductoAgotadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCantidadProductoAgotadoActionPerformed
-
     private void inicializarMesas(){
         botonMesas = new JButton[] {
             btnMesa1, btnMesa2, btnMesa3, btnMesa4, btnMesa5, btnMesa6,
             btnMesa7, btnMesa8, btnMesa9, btnMesa10, btnMesa11, btnMesa12
         };
         
-        for (JButton boton : botonMesas) {
-            boton.setBackground(Color.RED);
-            boton.setEnabled(false);
-        }
     }    
     
-    private void cargarMesasDesdeArchivo(File file) {
-        mesas.clear(); 
+    private void actualizarBotonesMesasDesdeBD() {
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentencia = conexion.prepareStatement("SELECT numero_mesa, estado FROM mesas");
+             ResultSet resultado = sentencia.executeQuery()) {
 
-        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-            String linea;
-            while ((linea = br.readLine()) != null) {
-                String[] partes = linea.split(", ");
-                int numeroMesa = Integer.parseInt(partes[0].trim()) - 1; 
-                String estado = partes[1].trim();
-                int capacidad = Integer.parseInt(partes[2].trim());
+            while (resultado.next()) {
+                int numeroMesa = resultado.getInt("numero_mesa") - 1;
+                String estado = resultado.getString("estado");
 
-                
-                Mesa mesa = new Mesa(numeroMesa + 1, capacidad);
-                mesa.setEstado(estado);
-                mesas.add(mesa);
-
-               
                 if (numeroMesa >= 0 && numeroMesa < botonMesas.length) {
+                    JButton boton = botonMesas[numeroMesa];
+
                     if (estado.equalsIgnoreCase("Desocupada")) {
-                        botonMesas[numeroMesa].setBackground(Color.GREEN);
-                        botonMesas[numeroMesa].setEnabled(true);
+                        boton.setBackground(Color.GREEN);
+                        boton.setEnabled(true);
                     } else {
-                        botonMesas[numeroMesa].setBackground(Color.RED);
-                        botonMesas[numeroMesa].setEnabled(false);
+                        boton.setEnabled(false);
                     }
                 }
             }
@@ -4473,18 +4460,24 @@ public class JframeMesero extends javax.swing.JFrame {
             panelGestionarMesas.revalidate();
             panelGestionarMesas.repaint();
 
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "Error al leer el archivo de mesas", "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Error al obtener las mesas de la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
         }
     }
-    
+
     private void btnCargarMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarMesasActionPerformed
         
-        if (archivoSeleccionado != null && validarArchivo(archivoSeleccionado)) {
-            cargarMesasDesdeArchivo(archivoSeleccionado);
-            JOptionPane.showMessageDialog(null, "Se cargaron correctamente las mesas.", "Confirmacion", JOptionPane.INFORMATION_MESSAGE);
+        if (archivoSeleccionado != null) {
+            boolean exito = Mesa.cargarMesasDesdeArchivo(archivoSeleccionado);
+            if (exito) {
+                JOptionPane.showMessageDialog(this, "Mesas cargadas correctamente en la base de datos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                actualizarBotonesMesasDesdeBD();
+            } else {
+                JOptionPane.showMessageDialog(this, "Error al cargar las mesas. Revise el archivo y la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         } else {
-            JOptionPane.showMessageDialog(null, "Archivo no válido o no seleccionado.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Seleccione un archivo válido.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnCargarMesasActionPerformed
 
