@@ -6478,136 +6478,65 @@ public class JframeMesero extends javax.swing.JFrame {
         cambioSeleccionVerPedidos(listaVerPedidosLlevarMesa9, listaVerPedidosMesa9);
     }//GEN-LAST:event_listaVerPedidosLlevarMesa9ValueChanged
     
+    private void mostrarTotalCuentaMesa(
+        int indiceMesa, ArrayList<Pedido> pedidosMesa, ArrayList<Pedido> pedidosLlevar, JButton btnLimpiarMesa
+        ) {
+            double totalCuentaMesa = mesas.get(indiceMesa).getCuenta().calcularCuentaMesa(pedidosMesa, pedidosLlevar);
+
+            JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa " + (indiceMesa + 1) + " es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+
+            if (totalCuentaMesa == 0) {
+                btnLimpiarMesa.setEnabled(false);
+            }
+    }
+
+    
     private void btnTotalCuentaMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa1ActionPerformed
-        
-        double totalCuentaMesa = mesas.get(0).getCuenta().calcularCuentaMesa(pedidosMesa1, pedidosMesa1Llevar);
-        
-        JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 1 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
-        
-        if (totalCuentaMesa == 0) {
-            btnLimpiarMesa1.setEnabled(false);
-        }
+        mostrarTotalCuentaMesa(0, pedidosMesa1, pedidosMesa1Llevar, btnLimpiarMesa1);
     }//GEN-LAST:event_btnTotalCuentaMesa1ActionPerformed
 
     private void btnTotalCuentaMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa2ActionPerformed
-
-        double totalCuentaMesa = mesas.get(1).getCuenta().calcularCuentaMesa(pedidosMesa2, pedidosMesa2Llevar);
-        
-        JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 2 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
-        
-        if (totalCuentaMesa == 0) {
-            btnLimpiarMesa2.setEnabled(false);
-        }
+        mostrarTotalCuentaMesa(1, pedidosMesa2, pedidosMesa2Llevar, btnLimpiarMesa2);
     }//GEN-LAST:event_btnTotalCuentaMesa2ActionPerformed
 
     private void btnTotalCuentaMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa3ActionPerformed
-
-        double totalCuentaMesa = mesas.get(2).getCuenta().calcularCuentaMesa(pedidosMesa3, pedidosMesa3Llevar);
-        
-        JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 3 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
-        
-        if (totalCuentaMesa == 0) {
-            btnLimpiarMesa3.setEnabled(false);
-        }
+        mostrarTotalCuentaMesa(2, pedidosMesa3, pedidosMesa3Llevar, btnLimpiarMesa3);
     }//GEN-LAST:event_btnTotalCuentaMesa3ActionPerformed
 
     private void btnTotalCuentaMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa4ActionPerformed
-       
-        double totalCuentaMesa = mesas.get(3).getCuenta().calcularCuentaMesa(pedidosMesa4, pedidosMesa4Llevar);
-        
-        JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 4 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
-        
-        if (totalCuentaMesa == 0) {
-            btnLimpiarMesa4.setEnabled(false);
-        }
+        mostrarTotalCuentaMesa(3, pedidosMesa4, pedidosMesa4Llevar, btnLimpiarMesa4);
     }//GEN-LAST:event_btnTotalCuentaMesa4ActionPerformed
 
     private void btnTotalCuentaMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa5ActionPerformed
-        
-        double totalCuentaMesa = mesas.get(4).getCuenta().calcularCuentaMesa(pedidosMesa5, pedidosMesa5Llevar);
-        
-        JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 5 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
-        
-        if (totalCuentaMesa == 0) {
-            btnLimpiarMesa5.setEnabled(false);
-        }
+        mostrarTotalCuentaMesa(4, pedidosMesa5, pedidosMesa5Llevar, btnLimpiarMesa5);
     }//GEN-LAST:event_btnTotalCuentaMesa5ActionPerformed
 
     private void btnTotalCuentaMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa6ActionPerformed
-        
-        double totalCuentaMesa = mesas.get(5).getCuenta().calcularCuentaMesa(pedidosMesa6, pedidosMesa6Llevar);
-        
-         JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 6 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
-        
-        if (totalCuentaMesa == 0) {
-            btnLimpiarMesa6.setEnabled(false);
-        }
+        mostrarTotalCuentaMesa(5, pedidosMesa6, pedidosMesa6Llevar, btnLimpiarMesa6);
     }//GEN-LAST:event_btnTotalCuentaMesa6ActionPerformed
 
     private void btnTotalCuentaMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa7ActionPerformed
-        
-        double totalCuentaMesa = mesas.get(6).getCuenta().calcularCuentaMesa(pedidosMesa7, pedidosMesa7Llevar);
-        
-        JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 7 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
-        
-        if (totalCuentaMesa == 0) {
-            btnLimpiarMesa7.setEnabled(false);
-        }
+        mostrarTotalCuentaMesa(6, pedidosMesa7, pedidosMesa7Llevar, btnLimpiarMesa7);
     }//GEN-LAST:event_btnTotalCuentaMesa7ActionPerformed
 
     private void btnTotalCuentaMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa8ActionPerformed
-        
-        double totalCuentaMesa = mesas.get(7).getCuenta().calcularCuentaMesa(pedidosMesa8, pedidosMesa8Llevar);
-       
-        JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 8 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
-        
-        if (totalCuentaMesa == 0) {
-            btnLimpiarMesa8.setEnabled(false);
-        }
+        mostrarTotalCuentaMesa(7, pedidosMesa8, pedidosMesa8Llevar, btnLimpiarMesa8);
     }//GEN-LAST:event_btnTotalCuentaMesa8ActionPerformed
 
     private void btnTotalCuentaMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa9ActionPerformed
-        
-        double totalCuentaMesa = mesas.get(8).getCuenta().calcularCuentaMesa(pedidosMesa9, pedidosMesa9Llevar);
-        
-        JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 9 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
-        
-        if (totalCuentaMesa == 0) {
-            btnLimpiarMesa9.setEnabled(false);
-        }
+        mostrarTotalCuentaMesa(8, pedidosMesa9, pedidosMesa9Llevar, btnLimpiarMesa9);
     }//GEN-LAST:event_btnTotalCuentaMesa9ActionPerformed
 
     private void btnTotalCuentaMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa10ActionPerformed
-        
-        double totalCuentaMesa = mesas.get(9).getCuenta().calcularCuentaMesa(pedidosMesa10, pedidosMesa10Llevar);
-        
-        JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 10 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
-        
-        if (totalCuentaMesa == 0) {
-            btnLimpiarMesa10.setEnabled(false);
-        }
+        mostrarTotalCuentaMesa(9, pedidosMesa10, pedidosMesa10Llevar, btnLimpiarMesa10);
     }//GEN-LAST:event_btnTotalCuentaMesa10ActionPerformed
 
     private void btnTotalCuentaMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa11ActionPerformed
-        
-        double totalCuentaMesa = mesas.get(10).getCuenta().calcularCuentaMesa(pedidosMesa11, pedidosMesa11Llevar);
-        
-        JOptionPane.showMessageDialog(rootPane, "El total de la cuenta de la Mesa 11 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
-        
-        if (totalCuentaMesa == 0) {
-            btnLimpiarMesa11.setEnabled(false);
-        }
+        mostrarTotalCuentaMesa(10, pedidosMesa11, pedidosMesa11Llevar, btnLimpiarMesa11);
     }//GEN-LAST:event_btnTotalCuentaMesa11ActionPerformed
 
     private void btnTotalCuentaMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa12ActionPerformed
-        
-        double totalCuentaMesa = mesas.get(11).getCuenta().calcularCuentaMesa(pedidosMesa12, pedidosMesa12Llevar);
-        
-        JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa 12 es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
-        
-        if (totalCuentaMesa == 0) {
-            btnLimpiarMesa12.setEnabled(false);
-        }
+        mostrarTotalCuentaMesa(11, pedidosMesa12, pedidosMesa12Llevar, btnLimpiarMesa12);
     }//GEN-LAST:event_btnTotalCuentaMesa12ActionPerformed
 
     private void registrarProductoVendido(Producto producto) {
