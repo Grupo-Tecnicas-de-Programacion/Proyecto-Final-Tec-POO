@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.ResultSet;
 
 public class Producto {
     private String nombre;
@@ -134,5 +135,40 @@ public class Producto {
             return false;
         }
     }
+
+    public static Producto obtenerProductoDesdeBaseDatos(String nombreProducto) {
+        String consultaProducto = "SELECT * FROM productos WHERE nombre = ?";
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentenciaConsulta = conexion.prepareStatement(consultaProducto)) {
+            sentenciaConsulta.setString(1, nombreProducto);
+            ResultSet resultado = sentenciaConsulta.executeQuery();
+            if (resultado.next()) {
+                return new Producto(
+                    resultado.getString("nombre"),
+                    resultado.getDouble("precio"),
+                    resultado.getString("categoria"),
+                    resultado.getInt("cantidad_disponible")
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    
+    public static boolean actualizarCantidadDisponibleProducto(String nombreProducto, int cantidad) {
+        String conultaCantidad = "UPDATE productos SET cantidad_disponible = cantidad_disponible + ? WHERE nombre = ?";
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentenciaConsulta = conexion.prepareStatement(conultaCantidad)) {
+            sentenciaConsulta.setInt(1, cantidad);
+            sentenciaConsulta.setString(2, nombreProducto);
+            int filasAfectadas = sentenciaConsulta.executeUpdate();
+            return filasAfectadas > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 
 }

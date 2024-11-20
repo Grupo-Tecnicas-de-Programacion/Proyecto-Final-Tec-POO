@@ -4680,14 +4680,8 @@ public class JframeMesero extends javax.swing.JFrame {
 
         if (nombreProductoSeleccionado != null) {
             String nombreProducto = nombreProductoSeleccionado.split(" -")[0].trim();
-            Producto productoSeleccionado = null;
 
-            for (Producto producto : productos) {
-                if (producto.getNombre().equals(nombreProducto)) {
-                    productoSeleccionado = producto;
-                    break;
-                }
-            }
+            Producto productoSeleccionado = Producto.obtenerProductoDesdeBaseDatos(nombreProducto);
 
             if (productoSeleccionado != null && productoSeleccionado.getCantidadDisponible() > 0) {
                 while (true) {
@@ -4701,30 +4695,41 @@ public class JframeMesero extends javax.swing.JFrame {
                             int cantidad = Integer.parseInt(inputCantidad.trim());
 
                             if (cantidad > 0 && cantidad <= productoSeleccionado.getCantidadDisponible()) {
-                                productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - cantidad);
 
-                                boolean productoYaEnPedido = false;
-                                for (Producto productoEnPedido : pedidoMesa.getListaProductos()) {
-                                    if (productoEnPedido.getNombre().equals(nombreProducto)) {
-                                        productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + cantidad);
-                                        productoYaEnPedido = true;
-                                        break;
+                                boolean exito = Producto.actualizarCantidadDisponibleProducto(nombreProducto, -cantidad);
+
+                                if (exito) {
+                                    productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - cantidad);
+
+                                    boolean productoYaEnPedido = false;
+                                    for (Producto productoEnPedido : pedidoMesa.getListaProductos()) {
+                                        if (productoEnPedido.getNombre().equals(nombreProducto)) {
+                                            productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + cantidad);
+                                            productoYaEnPedido = true;
+                                            break;
+                                        }
                                     }
-                                }
 
-                                if (!productoYaEnPedido) {
-                                    Producto productoParaPedido = new Producto(
-                                        productoSeleccionado.getNombre(),
-                                        productoSeleccionado.getPrecio(),
-                                        productoSeleccionado.getCategoria(),
-                                        cantidad
-                                    );
-                                    pedidoMesa.agregarProducto(productoParaPedido);
-                                }
+                                    if (!productoYaEnPedido) {
+                                        Producto productoParaPedido = new Producto(
+                                            productoSeleccionado.getNombre(),
+                                            productoSeleccionado.getPrecio(),
+                                            productoSeleccionado.getCategoria(),
+                                            cantidad
+                                        );
+                                        pedidoMesa.agregarProducto(productoParaPedido);
+                                    }
 
-                                actualizarListaProductos.run();
-                                mostrarProductosEnMesa.run();
-                                break;
+                                    actualizarListaProductos.run();
+                                    mostrarProductosEnMesa.run();
+                                    break;
+                                } else {
+                                    JOptionPane.showMessageDialog(this, 
+                                        "No se pudo actualizar la base de datos. Inténtalo de nuevo.", 
+                                        "Error", 
+                                        JOptionPane.ERROR_MESSAGE);
+                                    break;
+                                }
                             } else {
                                 JOptionPane.showMessageDialog(this, 
                                     "Cantidad ingresada no disponible", 
@@ -4755,7 +4760,6 @@ public class JframeMesero extends javax.swing.JFrame {
         }
     }
 
-    
     private void btnAgregarProductoPedidoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa1ActionPerformed
         agregarProductoAPedido(
             productosPedidoMesa1,
@@ -4864,918 +4868,151 @@ public class JframeMesero extends javax.swing.JFrame {
         );
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa12ActionPerformed
 
-    int contadorPedidosMesa1 = 1;
-    int contadorPedidosMesa1Llevar = 1;
+    private void realizarPedido(
+        Pedido pedidoActual, ArrayList<Pedido> pedidosMesa, ArrayList<Pedido> pedidosLlevar, 
+        JList<String> listaPedidos, JButton btnMesa, int indiceMesa, int[] contadoresPedidos
+        ) {
+            if (!pedidoActual.getListaProductos().isEmpty()) {
+                Object[] opciones = {"Para mesa", "Para llevar"};
+                int seleccion = JOptionPane.showOptionDialog(
+                    this,
+                    "¿Este pedido es para mesa o para llevar?",
+                    "Confirmar tipo de pedido",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[0]
+                );
+
+                Pedido nuevoPedido = new Pedido(pedidoActual.getNumPedido(), pedidoActual.getTipoPedido());
+                for (int i = 0; i < listaPedidos.getModel().getSize(); i++) {
+                    String productoTexto = listaPedidos.getModel().getElementAt(i);
+
+                    String[] partes = productoTexto.split(" - Cantidad: ");
+                    if (partes.length == 2) {
+                        String nombreProducto = partes[0].trim();
+                        int cantidadProducto = Integer.parseInt(partes[1].trim());
+
+                        Producto productoOriginal = null;
+                        for (Producto producto : productos) {
+                            if (producto.getNombre().equals(nombreProducto)) {
+                                productoOriginal = producto;
+                                break;
+                            }
+                        }
+
+                        if (productoOriginal != null) {
+                            Producto producto = new Producto(
+                                nombreProducto,
+                                productoOriginal.getPrecio(),
+                                cantidadProducto
+                            );
+                            nuevoPedido.agregarProducto(producto);
+                        }
+                    }
+                }
+
+                if (seleccion == JOptionPane.YES_OPTION) {
+                    nuevoPedido.setNumPedido(contadoresPedidos[0]);
+                    nuevoPedido.setTipoPedido("Mesa");
+
+                    pedidosMesa.add(nuevoPedido);
+                    JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                    btnMesa.setBackground(Color.red);
+                    contadoresPedidos[0]++;
+                } else if (seleccion == JOptionPane.NO_OPTION) {
+                    nuevoPedido.setNumPedido(contadoresPedidos[1]);
+                    nuevoPedido.setTipoPedido("Llevar");
+
+                    pedidosLlevar.add(nuevoPedido);
+                    JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                    btnMesa.setBackground(Color.red);
+                    contadoresPedidos[1]++;
+                } else {
+                    JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+
+                pedidoActual.getListaProductos().clear();
+                actualizarListaProductosDelPedido(pedidoActual, listaPedidos);
+                mesas.get(indiceMesa).setEstado("Ocupada");
+            } else {
+                JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
+    }
+
+    
+    private int[] contadoresMesa1 = {1, 1};
     private void realizarPedidoMesa1() {
-        
-        if (!pedidoMesa1.getListaProductos().isEmpty()) {
-
-            Object[] opciones = {"Para mesa", "Para llevar"};
-            int seleccion = JOptionPane.showOptionDialog(
-                    this,
-                    "¿Este pedido es para mesa o para llevar?",
-                    "Confirmar tipo de pedido",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE,
-                    null,
-                    opciones,
-                    opciones[0]
-            );
-
-            Pedido nuevoPedido = new Pedido(pedidoMesa1.getNumPedido(), pedidoMesa1.getTipoPedido());
-            for (int i = 0; i < listaPedidosMesa1.getModel().getSize(); i++) {
-                String productoTexto = listaPedidosMesa1.getModel().getElementAt(i);
-
-                String[] partes = productoTexto.split(" - Cantidad: ");
-                if (partes.length == 2) {
-                    String nombreProducto = partes[0].trim();
-                    int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                    Producto productoOriginal = null;
-                    for (Producto producto : productos) {
-                        if (producto.getNombre().equals(nombreProducto)) {
-                            productoOriginal = producto;
-                            break;
-                        }
-                    }
-
-                    if (productoOriginal != null) {
-
-                        Producto producto = new Producto(
-                            nombreProducto,
-                            productoOriginal.getPrecio(), 
-                            cantidadProducto
-                        );
-                        nuevoPedido.agregarProducto(producto);
-                    }
-                }
-            }
-
-            if (seleccion == JOptionPane.YES_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa1);
-                nuevoPedido.setTipoPedido("Mesa");
-                
-                pedidosMesa1.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa1.setBackground(Color.red);
-                contadorPedidosMesa1++;
-            } else if (seleccion == JOptionPane.NO_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa1Llevar);
-                nuevoPedido.setTipoPedido("Llevar");
-
-                pedidosMesa1Llevar.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa1.setBackground(Color.red);
-                contadorPedidosMesa1Llevar++;
-            } else {
-                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
-            pedidoMesa1 = new Pedido();
-            actualizarListaProductosDelPedido(pedidoMesa1,listaPedidosMesa1);
-            mesas.get(0).setEstado("Ocupada");
-        } else {
-            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        realizarPedido(pedidoMesa1, pedidosMesa1, pedidosMesa1Llevar,
+            listaPedidosMesa1, btnMesa1, 0, contadoresMesa1);
     }
 
-    int contadorPedidosMesa2 = 1;
-    int contadorPedidosMesa2Llevar = 1;
+    private int[] contadoresMesa2 = {1, 1};
     private void realizarPedidoMesa2() {
-
-        if (!pedidoMesa2.getListaProductos().isEmpty()) {
-
-            Object[] opciones = {"Para mesa", "Para llevar"};
-            int seleccion = JOptionPane.showOptionDialog(
-                    this,
-                    "¿Este pedido es para mesa o para llevar?",
-                    "Confirmar tipo de pedido",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE,
-                    null,
-                    opciones,
-                    opciones[0]
-            );
-
-            Pedido nuevoPedido = new Pedido(pedidoMesa2.getNumPedido(), pedidoMesa2.getTipoPedido());
-            for (int i = 0; i < listaPedidosMesa2.getModel().getSize(); i++) {
-                String productoTexto = listaPedidosMesa2.getModel().getElementAt(i);
-
-                String[] partes = productoTexto.split(" - Cantidad: ");
-                if (partes.length == 2) {
-                    String nombreProducto = partes[0].trim();
-                    int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                    Producto productoOriginal = null;
-                    for (Producto producto : productos) {
-                        if (producto.getNombre().equals(nombreProducto)) {
-                            productoOriginal = producto;
-                            break;
-                        }
-                    }
-
-                    if (productoOriginal != null) {
-
-                        Producto producto = new Producto(
-                            nombreProducto,
-                            productoOriginal.getPrecio(), 
-                            cantidadProducto
-                        );
-                        nuevoPedido.agregarProducto(producto);
-                    }
-                }
-            }
-
-            if (seleccion == JOptionPane.YES_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa2);
-                nuevoPedido.setTipoPedido("Mesa");
-                
-                pedidosMesa2.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa2.setBackground(Color.red);
-                contadorPedidosMesa2++;
-            } else if (seleccion == JOptionPane.NO_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa2Llevar);
-                nuevoPedido.setTipoPedido("Llevar");
-
-                pedidosMesa2Llevar.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa2.setBackground(Color.red);
-                contadorPedidosMesa2Llevar++;
-            } else {
-                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
-            pedidoMesa2 = new Pedido();
-            actualizarListaProductosDelPedido(pedidoMesa2, listaPedidosMesa2);
-            mesas.get(1).setEstado("Ocupada");
-        } else {
-            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        realizarPedido(pedidoMesa2, pedidosMesa2, pedidosMesa2Llevar,
+            listaPedidosMesa2, btnMesa2, 1, contadoresMesa2);
     }
     
-    int contadorPedidosMesa3 = 1;
-    int contadorPedidosMesa3Llevar = 1;
-    
+    private int[] contadoresMesa3 = {1, 1};
     private void realizarPedidoMesa3() {
-
-        if (!pedidoMesa3.getListaProductos().isEmpty()) {
-
-            Object[] opciones = {"Para mesa", "Para llevar"};
-            int seleccion = JOptionPane.showOptionDialog(
-                    this,
-                    "¿Este pedido es para mesa o para llevar?",
-                    "Confirmar tipo de pedido",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE,
-                    null,
-                    opciones,
-                    opciones[0]
-            );
-
-            Pedido nuevoPedido = new Pedido(pedidoMesa3.getNumPedido(), pedidoMesa3.getTipoPedido());
-            for (int i = 0; i < listaPedidosMesa3.getModel().getSize(); i++) {
-                String productoTexto = listaPedidosMesa3.getModel().getElementAt(i);
-
-                String[] partes = productoTexto.split(" - Cantidad: ");
-                if (partes.length == 2) {
-                    String nombreProducto = partes[0].trim();
-                    int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                    Producto productoOriginal = null;
-                    for (Producto producto : productos) {
-                        if (producto.getNombre().equals(nombreProducto)) {
-                            productoOriginal = producto;
-                            break;
-                        }
-                    }
-
-                    if (productoOriginal != null) {
-
-                        Producto producto = new Producto(
-                            nombreProducto,
-                            productoOriginal.getPrecio(), 
-                            cantidadProducto
-                        );
-                        nuevoPedido.agregarProducto(producto);
-                    }
-                }
-            }
-
-            if (seleccion == JOptionPane.YES_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa3);
-                nuevoPedido.setTipoPedido("Mesa");
-                
-                pedidosMesa3.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa3.setBackground(Color.red);
-                contadorPedidosMesa3++;
-            } else if (seleccion == JOptionPane.NO_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa3Llevar);
-                nuevoPedido.setTipoPedido("Llevar");
-
-                pedidosMesa3Llevar.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa3.setBackground(Color.red);
-                contadorPedidosMesa3Llevar++;
-            } else {
-                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
-            pedidoMesa3 = new Pedido();
-            actualizarListaProductosDelPedido(pedidoMesa3, listaPedidosMesa3);
-            mesas.get(2).setEstado("Ocupada");
-        } else {
-            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
-        
+        realizarPedido(pedidoMesa3, pedidosMesa3, pedidosMesa3Llevar,
+            listaPedidosMesa3, btnMesa3, 2, contadoresMesa3);
     }
     
-    int contadorPedidosMesa4 = 1;
-    int contadorPedidosMesa4Llevar = 1;
+    private int[] contadoresMesa4 = {1, 1};
     private void realizarPedidoMesa4() {
-
-        if (!pedidoMesa4.getListaProductos().isEmpty()) {
-
-            Object[] opciones = {"Para mesa", "Para llevar"};
-            int seleccion = JOptionPane.showOptionDialog(
-                    this,
-                    "¿Este pedido es para mesa o para llevar?",
-                    "Confirmar tipo de pedido",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE,
-                    null,
-                    opciones,
-                    opciones[0]
-            );
-
-            Pedido nuevoPedido = new Pedido(pedidoMesa4.getNumPedido(), pedidoMesa4.getTipoPedido());
-            for (int i = 0; i < listaPedidosMesa4.getModel().getSize(); i++) {
-                String productoTexto = listaPedidosMesa4.getModel().getElementAt(i);
-
-                String[] partes = productoTexto.split(" - Cantidad: ");
-                if (partes.length == 2) {
-                    String nombreProducto = partes[0].trim();
-                    int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                    Producto productoOriginal = null;
-                    for (Producto producto : productos) {
-                        if (producto.getNombre().equals(nombreProducto)) {
-                            productoOriginal = producto;
-                            break;
-                        }
-                    }
-
-                    if (productoOriginal != null) {
-
-                        Producto producto = new Producto(
-                            nombreProducto,
-                            productoOriginal.getPrecio(), 
-                            cantidadProducto
-                        );
-                        nuevoPedido.agregarProducto(producto);
-                    }
-                }
-            }
-
-            if (seleccion == JOptionPane.YES_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa4);
-                nuevoPedido.setTipoPedido("Mesa");
-                
-                pedidosMesa4.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa4.setBackground(Color.red);
-                contadorPedidosMesa4++;
-            } else if (seleccion == JOptionPane.NO_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa4Llevar);
-                nuevoPedido.setTipoPedido("Llevar");
-
-                pedidosMesa4Llevar.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa4.setBackground(Color.red);
-                contadorPedidosMesa4Llevar++;
-            } else {
-                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
-            pedidoMesa4 = new Pedido();
-            actualizarListaProductosDelPedido(pedidoMesa4, listaPedidosMesa4);
-            mesas.get(3).setEstado("Ocupada");
-        } else {
-            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        realizarPedido(pedidoMesa4, pedidosMesa4, pedidosMesa4Llevar,
+            listaPedidosMesa4, btnMesa4, 3, contadoresMesa4);
     }
     
-    int contadorPedidosMesa5 = 1;
-    int contadorPedidosMesa5Llevar = 1;
+    private int[] contadoresMesa5 = {1, 1};
     private void realizarPedidoMesa5() {
-
-        if (!pedidoMesa5.getListaProductos().isEmpty()) {
-
-            Object[] opciones = {"Para mesa", "Para llevar"};
-            int seleccion = JOptionPane.showOptionDialog(
-                    this,
-                    "¿Este pedido es para mesa o para llevar?",
-                    "Confirmar tipo de pedido",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE,
-                    null,
-                    opciones,
-                    opciones[0]
-            );
-
-            Pedido nuevoPedido = new Pedido(pedidoMesa5.getNumPedido(), pedidoMesa5.getTipoPedido());
-            for (int i = 0; i < listaPedidosMesa5.getModel().getSize(); i++) {
-                String productoTexto = listaPedidosMesa5.getModel().getElementAt(i);
-
-                String[] partes = productoTexto.split(" - Cantidad: ");
-                if (partes.length == 2) {
-                    String nombreProducto = partes[0].trim();
-                    int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                    Producto productoOriginal = null;
-                    for (Producto producto : productos) {
-                        if (producto.getNombre().equals(nombreProducto)) {
-                            productoOriginal = producto;
-                            break;
-                        }
-                    }
-
-                    if (productoOriginal != null) {
-
-                        Producto producto = new Producto(
-                            nombreProducto,
-                            productoOriginal.getPrecio(), 
-                            cantidadProducto
-                        );
-                        nuevoPedido.agregarProducto(producto);
-                    }
-                }
-            }
-
-            if (seleccion == JOptionPane.YES_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa5);
-                nuevoPedido.setTipoPedido("Mesa");
-                
-                pedidosMesa5.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa5.setBackground(Color.red);
-                contadorPedidosMesa5++;
-            } else if (seleccion == JOptionPane.NO_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa5Llevar);
-                nuevoPedido.setTipoPedido("Llevar");
-
-                pedidosMesa5Llevar.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa5.setBackground(Color.red);
-                contadorPedidosMesa5Llevar++;
-            } else {
-                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
-            pedidoMesa5 = new Pedido();
-            actualizarListaProductosDelPedido(pedidoMesa5, listaPedidosMesa5);
-            mesas.get(4).setEstado("Ocupada");
-        } else {
-            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        realizarPedido(pedidoMesa5, pedidosMesa5, pedidosMesa5Llevar,
+            listaPedidosMesa5, btnMesa5, 4, contadoresMesa5);
     }
     
-    int contadorPedidosMesa6 = 1;
-    int contadorPedidosMesa6Llevar = 1;
+    private int[] contadoresMesa6 = {1, 1};
     private void realizarPedidoMesa6() {
-
-        if (!pedidoMesa6.getListaProductos().isEmpty()) {
-
-            Object[] opciones = {"Para mesa", "Para llevar"};
-            int seleccion = JOptionPane.showOptionDialog(
-                    this,
-                    "¿Este pedido es para mesa o para llevar?",
-                    "Confirmar tipo de pedido",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE,
-                    null,
-                    opciones,
-                    opciones[0]
-            );
-
-            Pedido nuevoPedido = new Pedido(pedidoMesa6.getNumPedido(), pedidoMesa6.getTipoPedido());
-            for (int i = 0; i < listaPedidosMesa6.getModel().getSize(); i++) {
-                String productoTexto = listaPedidosMesa6.getModel().getElementAt(i);
-
-                String[] partes = productoTexto.split(" - Cantidad: ");
-                if (partes.length == 2) {
-                    String nombreProducto = partes[0].trim();
-                    int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                    Producto productoOriginal = null;
-                    for (Producto producto : productos) {
-                        if (producto.getNombre().equals(nombreProducto)) {
-                            productoOriginal = producto;
-                            break;
-                        }
-                    }
-
-                    if (productoOriginal != null) {
-
-                        Producto producto = new Producto(
-                            nombreProducto,
-                            productoOriginal.getPrecio(), 
-                            cantidadProducto
-                        );
-                        nuevoPedido.agregarProducto(producto);
-                    }
-                }
-            }
-
-            if (seleccion == JOptionPane.YES_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa6);
-                nuevoPedido.setTipoPedido("Mesa");
-                
-                pedidosMesa6.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa6.setBackground(Color.red);
-                contadorPedidosMesa6++;
-            } else if (seleccion == JOptionPane.NO_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa6Llevar);
-                nuevoPedido.setTipoPedido("Llevar");
-
-                pedidosMesa6Llevar.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa6.setBackground(Color.red);
-                contadorPedidosMesa6Llevar++;
-            } else {
-                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
-            pedidoMesa6 = new Pedido();
-            actualizarListaProductosDelPedido(pedidoMesa6, listaPedidosMesa6);
-            mesas.get(5).setEstado("Ocupada");
-        } else {
-            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        realizarPedido(pedidoMesa6, pedidosMesa6, pedidosMesa6Llevar,
+            listaPedidosMesa6, btnMesa6, 5, contadoresMesa6);
     }
     
-    int contadorPedidosMesa7 = 1;
-    int contadorPedidosMesa7Llevar = 1;
+    private int[] contadoresMesa7 = {1, 1};
     private void realizarPedidoMesa7() {
-
-        if (!pedidoMesa7.getListaProductos().isEmpty()) {
-
-            Object[] opciones = {"Para mesa", "Para llevar"};
-            int seleccion = JOptionPane.showOptionDialog(
-                    this,
-                    "¿Este pedido es para mesa o para llevar?",
-                    "Confirmar tipo de pedido",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE,
-                    null,
-                    opciones,
-                    opciones[0]
-            );
-
-            Pedido nuevoPedido = new Pedido(pedidoMesa7.getNumPedido(), pedidoMesa7.getTipoPedido());
-            for (int i = 0; i < listaPedidosMesa7.getModel().getSize(); i++) {
-                String productoTexto = listaPedidosMesa7.getModel().getElementAt(i);
-
-                String[] partes = productoTexto.split(" - Cantidad: ");
-                if (partes.length == 2) {
-                    String nombreProducto = partes[0].trim();
-                    int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                    Producto productoOriginal = null;
-                    for (Producto producto : productos) {
-                        if (producto.getNombre().equals(nombreProducto)) {
-                            productoOriginal = producto;
-                            break;
-                        }
-                    }
-
-                    if (productoOriginal != null) {
-
-                        Producto producto = new Producto(
-                            nombreProducto,
-                            productoOriginal.getPrecio(), 
-                            cantidadProducto
-                        );
-                        nuevoPedido.agregarProducto(producto);
-                    }
-                }
-            }
-
-            if (seleccion == JOptionPane.YES_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa7);
-                nuevoPedido.setTipoPedido("Mesa");
-                
-                pedidosMesa7.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa7.setBackground(Color.red);
-                contadorPedidosMesa7++;
-            } else if (seleccion == JOptionPane.NO_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa7Llevar);
-                nuevoPedido.setTipoPedido("Llevar");
-
-                pedidosMesa7Llevar.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa7.setBackground(Color.red);
-                contadorPedidosMesa7Llevar++;
-            } else {
-                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
-            pedidoMesa7 = new Pedido();
-            actualizarListaProductosDelPedido(pedidoMesa7, listaPedidosMesa7);
-            mesas.get(6).setEstado("Ocupada");
-        } else {
-            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        realizarPedido(pedidoMesa7, pedidosMesa7, pedidosMesa7Llevar,
+            listaPedidosMesa7, btnMesa7, 6, contadoresMesa7);
     }
     
-    int contadorPedidosMesa8 = 1;
-    int contadorPedidosMesa8Llevar = 1;
+    private int[] contadoresMesa8 = {1, 1};
     private void realizarPedidoMesa8() {
-
-        if (!pedidoMesa8.getListaProductos().isEmpty()) {
-
-            Object[] opciones = {"Para mesa", "Para llevar"};
-            int seleccion = JOptionPane.showOptionDialog(
-                    this,
-                    "¿Este pedido es para mesa o para llevar?",
-                    "Confirmar tipo de pedido",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE,
-                    null,
-                    opciones,
-                    opciones[0]
-            );
-
-            Pedido nuevoPedido = new Pedido(pedidoMesa8.getNumPedido(), pedidoMesa8.getTipoPedido());
-            for (int i = 0; i < listaPedidosMesa8.getModel().getSize(); i++) {
-                String productoTexto = listaPedidosMesa8.getModel().getElementAt(i);
-
-                String[] partes = productoTexto.split(" - Cantidad: ");
-                if (partes.length == 2) {
-                    String nombreProducto = partes[0].trim();
-                    int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                    Producto productoOriginal = null;
-                    for (Producto producto : productos) {
-                        if (producto.getNombre().equals(nombreProducto)) {
-                            productoOriginal = producto;
-                            break;
-                        }
-                    }
-
-                    if (productoOriginal != null) {
-
-                        Producto producto = new Producto(
-                            nombreProducto,
-                            productoOriginal.getPrecio(), 
-                            cantidadProducto
-                        );
-                        nuevoPedido.agregarProducto(producto);
-                    }
-                }
-            }
-
-            if (seleccion == JOptionPane.YES_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa8);
-                nuevoPedido.setTipoPedido("Mesa");
-                
-                pedidosMesa8.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa8.setBackground(Color.red);
-                contadorPedidosMesa8++;
-            } else if (seleccion == JOptionPane.NO_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa8Llevar);
-                nuevoPedido.setTipoPedido("Llevar");
-
-                pedidosMesa8Llevar.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa8.setBackground(Color.red);
-                contadorPedidosMesa8Llevar++;
-            } else {
-                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
-            pedidoMesa8 = new Pedido();
-            actualizarListaProductosDelPedido(pedidoMesa8, listaPedidosMesa8);
-            mesas.get(7).setEstado("Ocupada");
-        } else {
-            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        realizarPedido(pedidoMesa8, pedidosMesa8, pedidosMesa8Llevar,
+            listaPedidosMesa8, btnMesa8, 7, contadoresMesa8);
     }
     
-    int contadorPedidosMesa9 = 1;
-    int contadorPedidosMesa9Llevar = 1;
+    private int[] contadoresMesa9 = {1, 1};
     private void realizarPedidoMesa9() {
-
-        if (!pedidoMesa9.getListaProductos().isEmpty()) {
-
-            Object[] opciones = {"Para mesa", "Para llevar"};
-            int seleccion = JOptionPane.showOptionDialog(
-                    this,
-                    "¿Este pedido es para mesa o para llevar?",
-                    "Confirmar tipo de pedido",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE,
-                    null,
-                    opciones,
-                    opciones[0]
-            );
-
-            Pedido nuevoPedido = new Pedido(pedidoMesa9.getNumPedido(), pedidoMesa9.getTipoPedido());
-            for (int i = 0; i < listaPedidosMesa9.getModel().getSize(); i++) {
-                String productoTexto = listaPedidosMesa9.getModel().getElementAt(i);
-
-                String[] partes = productoTexto.split(" - Cantidad: ");
-                if (partes.length == 2) {
-                    String nombreProducto = partes[0].trim();
-                    int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                    Producto productoOriginal = null;
-                    for (Producto producto : productos) {
-                        if (producto.getNombre().equals(nombreProducto)) {
-                            productoOriginal = producto;
-                            break;
-                        }
-                    }
-
-                    if (productoOriginal != null) {
-
-                        Producto producto = new Producto(
-                            nombreProducto,
-                            productoOriginal.getPrecio(), 
-                            cantidadProducto
-                        );
-                        nuevoPedido.agregarProducto(producto);
-                    }
-                }
-            }
-
-            if (seleccion == JOptionPane.YES_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa9);
-                nuevoPedido.setTipoPedido("Mesa");
-                
-                pedidosMesa9.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa9.setBackground(Color.red);
-                contadorPedidosMesa9++;
-            } else if (seleccion == JOptionPane.NO_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa9Llevar);
-                nuevoPedido.setTipoPedido("Llevar");
-
-                pedidosMesa9Llevar.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa9.setBackground(Color.red);
-                contadorPedidosMesa9Llevar++;
-            } else {
-                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
-            pedidoMesa9 = new Pedido();
-            actualizarListaProductosDelPedido(pedidoMesa9, listaPedidosMesa9);
-            mesas.get(8).setEstado("Ocupada");
-        } else {
-            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        realizarPedido(pedidoMesa9, pedidosMesa9, pedidosMesa9Llevar,
+            listaPedidosMesa9, btnMesa9, 8, contadoresMesa9);
     }
     
-    int contadorPedidosMesa10 = 1;
-    int contadorPedidosMesa10Llevar = 1;
+    private int[] contadoresMesa10 = {1, 1};
     private void realizarPedidoMesa10() {
-
-        if (!pedidoMesa10.getListaProductos().isEmpty()) {
-
-            Object[] opciones = {"Para mesa", "Para llevar"};
-            int seleccion = JOptionPane.showOptionDialog(
-                    this,
-                    "¿Este pedido es para mesa o para llevar?",
-                    "Confirmar tipo de pedido",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE,
-                    null,
-                    opciones,
-                    opciones[0]
-            );
-
-            Pedido nuevoPedido = new Pedido(pedidoMesa10.getNumPedido(), pedidoMesa10.getTipoPedido());
-            for (int i = 0; i < listaPedidosMesa10.getModel().getSize(); i++) {
-                String productoTexto = listaPedidosMesa10.getModel().getElementAt(i);
-
-                String[] partes = productoTexto.split(" - Cantidad: ");
-                if (partes.length == 2) {
-                    String nombreProducto = partes[0].trim();
-                    int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                    Producto productoOriginal = null;
-                    for (Producto producto : productos) {
-                        if (producto.getNombre().equals(nombreProducto)) {
-                            productoOriginal = producto;
-                            break;
-                        }
-                    }
-
-                    if (productoOriginal != null) {
-
-                        Producto producto = new Producto(
-                            nombreProducto,
-                            productoOriginal.getPrecio(), 
-                            cantidadProducto
-                        );
-                        nuevoPedido.agregarProducto(producto);
-                    }
-                }
-            }
-
-            if (seleccion == JOptionPane.YES_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa10);
-                nuevoPedido.setTipoPedido("Mesa");
-                
-                pedidosMesa10.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa10.setBackground(Color.red);
-                contadorPedidosMesa10++;
-            } else if (seleccion == JOptionPane.NO_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa10Llevar);
-                nuevoPedido.setTipoPedido("Llevar");
-
-                pedidosMesa10Llevar.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa10.setBackground(Color.red);
-                contadorPedidosMesa10Llevar++;
-            } else {
-                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
-            pedidoMesa10 = new Pedido();
-            actualizarListaProductosDelPedido(pedidoMesa10, listaPedidosMesa10);
-            mesas.get(9).setEstado("Ocupada");
-        } else {
-            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        realizarPedido(pedidoMesa10, pedidosMesa10, pedidosMesa10Llevar,
+            listaPedidosMesa10, btnMesa10, 9, contadoresMesa10);
     }
     
-    int contadorPedidosMesa11 = 1;
-    int contadorPedidosMesa11Llevar = 1;
+    private int[] contadoresMesa11 = {1, 1};
     private void realizarPedidoMesa11() {
-
-        if (!pedidoMesa11.getListaProductos().isEmpty()) {
-
-            Object[] opciones = {"Para mesa", "Para llevar"};
-            int seleccion = JOptionPane.showOptionDialog(
-                    this,
-                    "¿Este pedido es para mesa o para llevar?",
-                    "Confirmar tipo de pedido",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE,
-                    null,
-                    opciones,
-                    opciones[0]
-            );
-
-            Pedido nuevoPedido = new Pedido(pedidoMesa11.getNumPedido(), pedidoMesa11.getTipoPedido());
-            for (int i = 0; i < listaPedidosMesa11.getModel().getSize(); i++) {
-                String productoTexto = listaPedidosMesa11.getModel().getElementAt(i);
-
-                String[] partes = productoTexto.split(" - Cantidad: ");
-                if (partes.length == 2) {
-                    String nombreProducto = partes[0].trim();
-                    int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                    Producto productoOriginal = null;
-                    for (Producto producto : productos) {
-                        if (producto.getNombre().equals(nombreProducto)) {
-                            productoOriginal = producto;
-                            break;
-                        }
-                    }
-
-                    if (productoOriginal != null) {
-
-                        Producto producto = new Producto(
-                            nombreProducto,
-                            productoOriginal.getPrecio(), 
-                            cantidadProducto
-                        );
-                        nuevoPedido.agregarProducto(producto);
-                    }
-                }
-            }
-
-            if (seleccion == JOptionPane.YES_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa11);
-                nuevoPedido.setTipoPedido("Mesa");
-                
-                pedidosMesa11.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa11.setBackground(Color.red);
-                contadorPedidosMesa11++;
-            } else if (seleccion == JOptionPane.NO_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa11Llevar);
-                nuevoPedido.setTipoPedido("Llevar");
-
-                pedidosMesa11Llevar.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa11.setBackground(Color.red);
-                contadorPedidosMesa11Llevar++;
-            } else {
-                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
-            pedidoMesa11 = new Pedido();
-            actualizarListaProductosDelPedido(pedidoMesa11, listaPedidosMesa11);
-            mesas.get(10).setEstado("Ocupada");
-        } else {
-            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        realizarPedido(pedidoMesa11, pedidosMesa11, pedidosMesa11Llevar,
+            listaPedidosMesa11, btnMesa11, 10, contadoresMesa11);
     }
     
-    int contadorPedidosMesa12 = 1;
-    int contadorPedidosMesa12Llevar = 1;
+    private int[] contadoresMesa12 = {1, 1};
     private void realizarPedidoMesa12() {
-
-        if (!pedidoMesa12.getListaProductos().isEmpty()) {
-
-            Object[] opciones = {"Para mesa", "Para llevar"};
-            int seleccion = JOptionPane.showOptionDialog(
-                    this,
-                    "¿Este pedido es para mesa o para llevar?",
-                    "Confirmar tipo de pedido",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE,
-                    null,
-                    opciones,
-                    opciones[0]
-            );
-
-            Pedido nuevoPedido = new Pedido(pedidoMesa12.getNumPedido(), pedidoMesa12.getTipoPedido());
-            for (int i = 0; i < listaPedidosMesa12.getModel().getSize(); i++) {
-                String productoTexto = listaPedidosMesa12.getModel().getElementAt(i);
-
-                String[] partes = productoTexto.split(" - Cantidad: ");
-                if (partes.length == 2) {
-                    String nombreProducto = partes[0].trim();
-                    int cantidadProducto = Integer.parseInt(partes[1].trim());
-
-                    Producto productoOriginal = null;
-                    for (Producto producto : productos) {
-                        if (producto.getNombre().equals(nombreProducto)) {
-                            productoOriginal = producto;
-                            break;
-                        }
-                    }
-
-                    if (productoOriginal != null) {
-
-                        Producto producto = new Producto(
-                            nombreProducto,
-                            productoOriginal.getPrecio(), 
-                            cantidadProducto
-                        );
-                        nuevoPedido.agregarProducto(producto);
-                    }
-                }
-            }
-
-            if (seleccion == JOptionPane.YES_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa12);
-                nuevoPedido.setTipoPedido("Mesa");
-                
-                pedidosMesa12.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para mesa realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa12.setBackground(Color.red);
-                contadorPedidosMesa12++;
-            } else if (seleccion == JOptionPane.NO_OPTION) {
-                nuevoPedido.setNumPedido(contadorPedidosMesa12Llevar);
-                nuevoPedido.setTipoPedido("Llevar");
-
-                pedidosMesa12Llevar.add(nuevoPedido);
-                JOptionPane.showMessageDialog(this, "Pedido para llevar realizado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                btnMesa12.setBackground(Color.red);
-                contadorPedidosMesa12Llevar++;
-            } else {
-                JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
-            pedidoMesa12 = new Pedido();
-            actualizarListaProductosDelPedido(pedidoMesa12, listaPedidosMesa12);
-            mesas.get(11).setEstado("Ocupada");
-        } else {
-            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+        realizarPedido(pedidoMesa12, pedidosMesa12, pedidosMesa12Llevar,
+            listaPedidosMesa12, btnMesa12, 11, contadoresMesa12);
     }
     
     private void btnRealizarPedidoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa1ActionPerformed
@@ -7410,26 +6647,6 @@ public class JframeMesero extends javax.swing.JFrame {
             modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
         }
         listaPedidosMesa.setModel(modeloPedido);
-    }
-    
-    private void cargarProductosDesdeArchivo(File archivo) {
-        productos.clear(); 
-
-        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
-            String linea;
-            while ((linea = br.readLine()) != null) {
-                String[] partes = linea.split(",");
-                String nombre = partes[0].trim();
-                double precio = Double.parseDouble(partes[1].trim());
-                String categoria = partes[2].trim();
-                int cantidadDisponible = Integer.parseInt(partes[3].trim());
-
-                Producto producto = new Producto(nombre, precio, categoria,cantidadDisponible);
-                productos.add(producto);
-            }
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(rootPane, "Error al leer el archivo de productos", "Error", JOptionPane.ERROR_MESSAGE);
-        }
     }
     
     private boolean validarArchivoProductos(File archivo) {
