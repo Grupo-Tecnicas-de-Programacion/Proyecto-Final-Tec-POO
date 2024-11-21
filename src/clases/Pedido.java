@@ -7,19 +7,21 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.*;
+import java.util.List;
+import javax.swing.JList;
 
 
 public class Pedido {
     private int numPedido;
     private ArrayList<Producto> listaProductos;
-    private int cantidadTotalProductos;
     private double precioTotalPedido;
     private String tipoPedido;
+    private Timestamp fechaHora;
 
     public Pedido() {
         this.listaProductos = new ArrayList<>();
         this.precioTotalPedido = 0;
-        this.cantidadTotalProductos = 0;
     }
 
     public Pedido(int numPedido, String tipoPedido) {
@@ -27,7 +29,6 @@ public class Pedido {
         this.tipoPedido = tipoPedido;
         this.listaProductos = new ArrayList<>();
         this.precioTotalPedido = 0;
-        this.cantidadTotalProductos = 0;
     }
 
     public int getNumPedido() {
@@ -47,14 +48,6 @@ public class Pedido {
         recalcularTotal();
     }
 
-    public int getCantidadTotalProductos() {
-        return cantidadTotalProductos;
-    }
-
-    public void setCantidadTotalProductos(int cantidadTotalProductos) {
-        this.cantidadTotalProductos = cantidadTotalProductos;
-    }
-
     public double getPrecioTotalPedido() {
         return precioTotalPedido;
     }
@@ -71,15 +64,21 @@ public class Pedido {
         this.tipoPedido = tipoPedido;
     }
 
-    public double recalcularTotal() {
+    public Timestamp getFechaHora() {
+        return fechaHora;
+    }
+
+    public void setFechaHora(Timestamp fechaHora) {
+        this.fechaHora = fechaHora;
+    }
+
+    public void recalcularTotal() {
         this.precioTotalPedido = 0;
         for (Producto producto : this.listaProductos) {
-            this.precioTotalPedido += producto.getPrecio();
+            this.precioTotalPedido += producto.getPrecio() * producto.getCantidad();
         }
-        
-        return precioTotalPedido;
     }
-    
+
     public void agregarProducto(Producto producto) {
         boolean productoExistente = false;
         for (Producto product : this.listaProductos) {
@@ -92,27 +91,26 @@ public class Pedido {
         if (!productoExistente) {
             this.listaProductos.add(producto);
         }
-        this.cantidadTotalProductos += producto.getCantidad();
         this.recalcularTotal();
     }
     
-    public boolean registrarPedidoEnBaseDatos() {
-        String insertarPedido = "INSERT INTO pedidos (num_pedido, tipo_pedido, cantidad_total, precio_total) VALUES (?, ?, ?, ?)";
+    public boolean registrarPedidoEnBaseDatos(int numeroMesa, List<Producto> productos) {
+        String insertarPedido = "INSERT INTO pedidos (num_pedido, tipo_pedido, precio_total, id_mesa) VALUES (?, ?, ?, ?)";
 
         try (Connection conexion = ConexionDB.conectar();
              PreparedStatement sentenciaPedidos = conexion.prepareStatement(insertarPedido, Statement.RETURN_GENERATED_KEYS)) {
 
             sentenciaPedidos.setInt(1, this.numPedido);
             sentenciaPedidos.setString(2, this.tipoPedido.toUpperCase());
-            sentenciaPedidos.setInt(3, this.cantidadTotalProductos);
-            sentenciaPedidos.setDouble(4, this.precioTotalPedido);
+            sentenciaPedidos.setDouble(3, this.precioTotalPedido);
+            sentenciaPedidos.setInt(4, numeroMesa);
 
             int filasAfectadas = sentenciaPedidos.executeUpdate();
             if (filasAfectadas > 0) {
                 try (ResultSet generatedKeys = sentenciaPedidos.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
                         int idPedido = generatedKeys.getInt(1);
-                        return registrarProductosDelPedido(idPedido);
+                        return registrarProductosDelPedido(idPedido, productos);
                     }
                 }
             }
@@ -121,42 +119,39 @@ public class Pedido {
         }
         return false;
     }
-
-    private boolean registrarProductosDelPedido(int idPedido) {
+    
+    private boolean registrarProductosDelPedido(int idPedido, List<Producto> productos) {
         String insertarProductos = "INSERT INTO pedido_productos (id_pedido, id_producto, cantidad) VALUES (?, ?, ?)";
 
         try (Connection conexion = ConexionDB.conectar();
              PreparedStatement sentenciaRegistroProductos = conexion.prepareStatement(insertarProductos)) {
 
-            for (Producto producto : this.listaProductos) {
+            for (Producto producto : productos) {
+                int idProducto = Producto.obtenerIdProductoDesdeBaseDatos(producto.getNombre());
+                if (idProducto == -1) {
+                    System.err.println("Producto no encontrado: " + producto.getNombre());
+                    continue;
+                }
+
                 sentenciaRegistroProductos.setInt(1, idPedido);
-                sentenciaRegistroProductos.setInt(2, obtenerIdProducto(producto.getNombre()));
+                sentenciaRegistroProductos.setInt(2, idProducto);
                 sentenciaRegistroProductos.setInt(3, producto.getCantidad());
                 sentenciaRegistroProductos.addBatch();
             }
-            sentenciaRegistroProductos.executeBatch();
-            return true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
 
-    private int obtenerIdProducto(String nombreProducto) {
-        String consulta = "SELECT id FROM productos WHERE nombre = ?";
-        try (Connection conexion = ConexionDB.conectar();
-             PreparedStatement sentenciaConsulta = conexion.prepareStatement(consulta)) {
-
-            sentenciaConsulta.setString(1, nombreProducto);
-            try (ResultSet resultado = sentenciaConsulta.executeQuery()) {
-                if (resultado.next()) {
-                    return resultado.getInt("id");
+            int[] resultados = sentenciaRegistroProductos.executeBatch();
+            for (int resultado : resultados) {
+                if (resultado == PreparedStatement.EXECUTE_FAILED) {
+                    System.err.println("Error al registrar un producto del pedido.");
+                    return false;
                 }
             }
+            return true;
+
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
-        return -1;
     }
 
     public static int generarNumeroPedido() {
@@ -173,6 +168,4 @@ public class Pedido {
         }
         return 1;
     }
-
-    
 }

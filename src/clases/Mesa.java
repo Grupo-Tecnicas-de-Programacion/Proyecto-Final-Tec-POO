@@ -85,27 +85,6 @@ public class Mesa {
         this.estado = !listaPedidos.isEmpty() ? "Ocupada" : "Desocupada";
     }
 
-    public void asignarPedido(Pedido pedido) {
-        this.listaPedidos.add(pedido);
-        this.estado = "Ocupada";
-        actualizarEstadoMesa();
-    }
-    
-    public void actualizarEstadoMesa() {
-        if (listaPedidos.isEmpty()) {
-            this.estado = "Desocupada";
-        } else {
-            this.estado = "Ocupada";
-        }
-    }
-
-    public void liberarMesa() {
-        this.listaPedidos.clear();
-        this.estado = "Desocupada";
-        this.cuenta = new Cuenta(); 
-        this.cliente = null;
-    }
-    
     public static boolean cargarMesasDesdeArchivo(File archivo) {
         if (archivo == null || !archivo.exists()) {
             System.out.println("El archivo no existe o no es válido.");
@@ -113,14 +92,18 @@ public class Mesa {
         }
 
         String consultaEliminarMesas = "DELETE FROM mesas";
+        String consultaResetAutoIncrement = "ALTER TABLE mesas AUTO_INCREMENT = 1";
         String consultaInsertarMesas = "INSERT INTO mesas (numero_mesa, estado, capacidad) VALUES (?, ?, ?)";
 
         try (BufferedReader leer = new BufferedReader(new FileReader(archivo));
              Connection conexion = ConexionDB.conectar();
              PreparedStatement sentenciaEliminar = conexion.prepareStatement(consultaEliminarMesas);
+             PreparedStatement sentenciaResetAI = conexion.prepareStatement(consultaResetAutoIncrement);
              PreparedStatement sentenciaInsertar = conexion.prepareStatement(consultaInsertarMesas)) {
 
             sentenciaEliminar.executeUpdate();
+
+            sentenciaResetAI.executeUpdate();
 
             String linea;
             while ((linea = leer.readLine()) != null) {
@@ -164,8 +147,6 @@ public class Mesa {
         }
     }
 
-    
-    
     public static String obtenerInformacionMesaBD(int numeroMesa) {
         String query = "SELECT numero_mesa, estado, capacidad FROM mesas WHERE numero_mesa = ?";
         try (Connection conexion = ConexionDB.conectar();
@@ -205,7 +186,108 @@ public class Mesa {
             return false;
         }
     }
+    
+    public ArrayList<Pedido> obtenerPedidosDeMesa(int numeroMesa) {
+        ArrayList<Pedido> pedidos = new ArrayList<>();
+        String query = "SELECT * FROM pedidos WHERE id_mesa = ?";
 
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentencia = conexion.prepareStatement(query)) {
+
+            sentencia.setInt(1, numeroMesa);
+            ResultSet resultado = sentencia.executeQuery();
+
+            while (resultado.next()) {
+                Pedido pedido = new Pedido();
+                pedido.setNumPedido(resultado.getInt("num_pedido"));
+                pedido.setTipoPedido(resultado.getString("tipo_pedido"));
+                pedido.setPrecioTotalPedido(resultado.getDouble("precio_total"));
+                pedido.setFechaHora(resultado.getTimestamp("fecha_hora"));
+                pedido.setListaProductos(obtenerProductosDePedido(pedido.getNumPedido()));
+                pedidos.add(pedido);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return pedidos;
+    }
+
+    public static Mesa obtenerMesaPorNumero(int numeroMesa) {
+        Mesa mesa = null;
+        String queryMesa = "SELECT * FROM mesas WHERE numero_mesa = ?";
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement stmtMesa = conexion.prepareStatement(queryMesa)) {
+
+            stmtMesa.setInt(1, numeroMesa);
+            try (ResultSet resultadoMesa = stmtMesa.executeQuery()) {
+                if (resultadoMesa.next()) {
+                    mesa = new Mesa();
+                    mesa.setNumeroMesa(resultadoMesa.getInt("numero_mesa"));
+                    mesa.setEstado(resultadoMesa.getString("estado"));
+                    mesa.setCapacidad(resultadoMesa.getInt("capacidad"));
+                    mesa.setListaPedidos(mesa.obtenerPedidosDeMesa(numeroMesa));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return mesa;
+    }
+
+    private static ArrayList<Producto> obtenerProductosDePedido(int idPedido) {
+        ArrayList<Producto> productos = new ArrayList<>();
+        String query = "SELECT pp.cantidad, p.nombre, p.precio " +
+                       "FROM pedido_productos pp " +
+                       "JOIN productos p ON pp.id_producto = p.id " +
+                       "WHERE pp.id_pedido = ?";
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement stmt = conexion.prepareStatement(query)) {
+
+            stmt.setInt(1, idPedido);
+            try (ResultSet resultado = stmt.executeQuery()) {
+                while (resultado.next()) {
+                    Producto producto = new Producto();
+                    producto.setNombre(resultado.getString("nombre"));
+                    producto.setCantidad(resultado.getInt("cantidad"));
+                    producto.setPrecio(resultado.getDouble("precio"));
+                    productos.add(producto);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return productos;
+    }
+    
+    public static double calcularTotalCuentaMesaDesdeDB(int numeroMesa) {
+        double totalCuenta = 0;
+
+        String queryPedidos = "SELECT p.id AS id_pedido, pp.cantidad, prod.precio " +
+                              "FROM pedidos p " +
+                              "JOIN pedido_productos pp ON p.id = pp.id_pedido " +
+                              "JOIN productos prod ON pp.id_producto = prod.id " +
+                              "WHERE p.id_mesa = ?";
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentencia = conexion.prepareStatement(queryPedidos)) {
+
+            sentencia.setInt(1, numeroMesa);
+            ResultSet resultado = sentencia.executeQuery();
+
+            while (resultado.next()) {
+                int cantidad = resultado.getInt("cantidad");
+                double precio = resultado.getDouble("precio");
+                totalCuenta += cantidad * precio;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return totalCuenta;
+    }
 
     public final class Cuenta {
         private double totalPagar;

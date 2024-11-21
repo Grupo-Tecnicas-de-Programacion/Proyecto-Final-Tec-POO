@@ -45,6 +45,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 
 public class JframeMesero extends javax.swing.JFrame {
@@ -4672,13 +4673,11 @@ public class JframeMesero extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnBuscarRutaProductosActionPerformed
+    
+    private void agregarProductoAPedido(JList<String> listaProductos, Pedido pedidoMesa,
+            Runnable actualizarListaProductos,
+            Runnable mostrarProductosEnMesa) {
 
-    private void agregarProductoAPedido(
-        JList<String> listaProductos,
-        Pedido pedidoMesa,
-        Runnable actualizarListaProductos,
-        Runnable mostrarProductosEnMesa
-    ) {
         String nombreProductoSeleccionado = listaProductos.getSelectedValue();
 
         if (nombreProductoSeleccionado != null) {
@@ -4698,30 +4697,17 @@ public class JframeMesero extends javax.swing.JFrame {
                             int cantidad = Integer.parseInt(inputCantidad.trim());
 
                             if (cantidad > 0 && cantidad <= productoSeleccionado.getCantidadDisponible()) {
-
                                 boolean exito = Producto.actualizarCantidadDisponibleProducto(nombreProducto, -cantidad);
 
                                 if (exito) {
-                                    productoSeleccionado.setCantidadDisponible(productoSeleccionado.getCantidadDisponible() - cantidad);
+                                    Producto productoParaPedido = new Producto(
+                                        productoSeleccionado.getNombre(),
+                                        productoSeleccionado.getPrecio(),
+                                        productoSeleccionado.getCategoria(),
+                                        cantidad
+                                    );
 
-                                    boolean productoYaEnPedido = false;
-                                    for (Producto productoEnPedido : pedidoMesa.getListaProductos()) {
-                                        if (productoEnPedido.getNombre().equals(nombreProducto)) {
-                                            productoEnPedido.setCantidadDisponible(productoEnPedido.getCantidadDisponible() + cantidad);
-                                            productoYaEnPedido = true;
-                                            break;
-                                        }
-                                    }
-
-                                    if (!productoYaEnPedido) {
-                                        Producto productoParaPedido = new Producto(
-                                            productoSeleccionado.getNombre(),
-                                            productoSeleccionado.getPrecio(),
-                                            productoSeleccionado.getCategoria(),
-                                            cantidad
-                                        );
-                                        pedidoMesa.agregarProducto(productoParaPedido);
-                                    }
+                                    pedidoMesa.agregarProducto(productoParaPedido);
 
                                     actualizarListaProductos.run();
                                     mostrarProductosEnMesa.run();
@@ -4763,6 +4749,7 @@ public class JframeMesero extends javax.swing.JFrame {
         }
     }
 
+    
     private void btnAgregarProductoPedidoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa1ActionPerformed
         agregarProductoAPedido(
             productosPedidoMesa1,
@@ -4871,63 +4858,92 @@ public class JframeMesero extends javax.swing.JFrame {
         );
     }//GEN-LAST:event_btnAgregarProductoPedidoMesa12ActionPerformed
 
-    private void realizarPedido(
-            Pedido pedidoActual, 
-            JList<String> listaPedidos, 
-            JButton btnMesa, 
-            int numeroMesa
-        ) {
-            if (pedidoActual.getListaProductos().isEmpty()) {
-                JOptionPane.showMessageDialog(rootPane, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-                return;
+    private List<Producto> extraerProductosDeJList(JList<String> listaPedidos) {
+        List<Producto> productos = new ArrayList<>();
+
+        for (int i = 0; i < listaPedidos.getModel().getSize(); i++) {
+            String item = listaPedidos.getModel().getElementAt(i); // Ejemplo: "Pollo a la brasa - Cantidad: 5"
+            String[] partes = item.split(" - Cantidad: ");
+            if (partes.length != 2) {
+                System.err.println("Formato incorrecto en el JList: " + item);
+                continue;
             }
 
-            Object[] opciones = {"Para mesa", "Para llevar"};
-            int seleccion = JOptionPane.showOptionDialog(
-                rootPane,
-                "¿Este pedido es para mesa o para llevar?",
-                "Confirmar tipo de pedido",
-                JOptionPane.YES_NO_OPTION,
-                JOptionPane.QUESTION_MESSAGE,
-                null,
-                opciones,
-                opciones[0]
-            );
-
-            if (seleccion == JOptionPane.CLOSED_OPTION) {
-                JOptionPane.showMessageDialog(rootPane, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-                return;
+            String nombreProducto = partes[0].trim();
+            int cantidad;
+            try {
+                cantidad = Integer.parseInt(partes[1].trim());
+            } catch (NumberFormatException e) {
+                System.err.println("Cantidad no válida: " + partes[1]);
+                continue;
             }
 
-            pedidoActual.setTipoPedido(seleccion == JOptionPane.YES_OPTION ? "Mesa" : "Llevar");
-            pedidoActual.setNumPedido(Pedido.generarNumeroPedido());
-
-            boolean exito = pedidoActual.registrarPedidoEnBaseDatos();
-            if (!exito) {
-                JOptionPane.showMessageDialog(rootPane, "Error al registrar el pedido en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
-                return;
+            Producto producto = Producto.obtenerProductoDesdeBaseDatos(nombreProducto);
+            if (producto != null) {
+                producto.setCantidad(cantidad);
+                productos.add(producto);
+            } else {
+                System.err.println("Producto no encontrado: " + nombreProducto);
             }
-
-            if ("Mesa".equals(pedidoActual.getTipoPedido())) {
-                boolean estadoActualizado = Mesa.actualizarEstadoMesaEnBaseDatos(numeroMesa, "OCUPADA");
-                if (estadoActualizado) {
-                    btnMesa.setBackground(Color.RED);
-                } else {
-                    JOptionPane.showMessageDialog(rootPane, "Error al actualizar el estado de la mesa.", "Error", JOptionPane.ERROR_MESSAGE);
-                }
-            }
-
-            pedidoActual.getListaProductos().clear();
-            actualizarListaProductosDelPedido(pedidoActual, listaPedidos);
-
-            JOptionPane.showMessageDialog(
-                rootPane, 
-                "Pedido realizado exitosamente como: " + pedidoActual.getTipoPedido(), 
-                "Confirmación", 
-                JOptionPane.INFORMATION_MESSAGE
-            );
+        }
+        DefaultListModel model = (DefaultListModel)listaPedidos.getModel();
+        model.clear();
+        return productos;
     }
 
+    private void realizarPedido(Pedido pedidoActual, JList<String> listaPedidos, JButton btnMesa, int numeroMesa) {
+        if (listaPedidos.getModel().getSize() == 0) {
+            JOptionPane.showMessageDialog(this, "No hay productos en el pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        Object[] opciones = {"Para mesa", "Para llevar"};
+        int seleccion = JOptionPane.showOptionDialog(
+            this,
+            "¿Este pedido es para mesa o para llevar?",
+            "Confirmar tipo de pedido",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE,
+            null,
+            opciones,
+            opciones[0]
+        );
+
+        if (seleccion == JOptionPane.CLOSED_OPTION) {
+            JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de pedido.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        pedidoActual.setTipoPedido(seleccion == JOptionPane.YES_OPTION ? "Mesa" : "Llevar");
+        pedidoActual.setNumPedido(Pedido.generarNumeroPedido());
+
+        List<Producto> productos = extraerProductosDeJList(listaPedidos);
+
+        boolean exito = pedidoActual.registrarPedidoEnBaseDatos(numeroMesa, productos);
+        if (!exito) {
+            JOptionPane.showMessageDialog(this, "Error al registrar el pedido en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        boolean estadoActualizado = Mesa.actualizarEstadoMesaEnBaseDatos(numeroMesa, "OCUPADA");
+        if (estadoActualizado) {
+            btnMesa.setBackground(Color.RED);
+        } else {
+            JOptionPane.showMessageDialog(this, "Error al actualizar el estado de la mesa.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        pedidoActual.getListaProductos().clear();
+        DefaultListModel model = (DefaultListModel) listaPedidos.getModel();
+        model.clear();
+
+        JOptionPane.showMessageDialog(
+            this,
+            "Pedido realizado exitosamente como: " + pedidoActual.getTipoPedido(),
+            "Confirmación",
+            JOptionPane.INFORMATION_MESSAGE
+        );
+    }
+    
     private void btnRealizarPedidoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoMesa1ActionPerformed
         realizarPedido(pedidoMesa1, listaPedidosMesa1, btnMesa1, 1);
     }//GEN-LAST:event_btnRealizarPedidoMesa1ActionPerformed
@@ -5636,65 +5652,70 @@ public class JframeMesero extends javax.swing.JFrame {
         cambioSeleccionVerPedidos(listaVerPedidosLlevarMesa9, listaVerPedidosMesa9);
     }//GEN-LAST:event_listaVerPedidosLlevarMesa9ValueChanged
     
-    private void mostrarTotalCuentaMesa(
-        int indiceMesa, ArrayList<Pedido> pedidosMesa, ArrayList<Pedido> pedidosLlevar, JButton btnLimpiarMesa
-        ) {
-            double totalCuentaMesa = mesas.get(indiceMesa).getCuenta().calcularCuentaMesa(pedidosMesa, pedidosLlevar);
+    private void mostrarTotalCuentaMesa(int numeroMesa, JButton btnLimpiarMesa) {
+        double totalCuentaMesa = Mesa.calcularTotalCuentaMesaDesdeDB(numeroMesa);
 
-            JOptionPane.showMessageDialog(this, "El total de la cuenta de la Mesa " + (indiceMesa + 1) + " es: S/ " + totalCuentaMesa, "Total de la Cuenta", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(
+            this,
+            "El total de la cuenta de la Mesa " + numeroMesa + " es: S/ " + totalCuentaMesa,
+            "Total de la Cuenta",
+            JOptionPane.INFORMATION_MESSAGE
+        );
 
-            if (totalCuentaMesa == 0) {
-                btnLimpiarMesa.setEnabled(false);
-            }
+        if (totalCuentaMesa == 0) {
+            btnLimpiarMesa.setEnabled(false);
+        } else {
+            btnLimpiarMesa.setEnabled(true);
+        }
     }
 
     
     private void btnTotalCuentaMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa1ActionPerformed
-        mostrarTotalCuentaMesa(0, pedidosMesa1, pedidosMesa1Llevar, btnLimpiarMesa1);
+        mostrarTotalCuentaMesa(1, btnLimpiarMesa1);
     }//GEN-LAST:event_btnTotalCuentaMesa1ActionPerformed
 
     private void btnTotalCuentaMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa2ActionPerformed
-        mostrarTotalCuentaMesa(1, pedidosMesa2, pedidosMesa2Llevar, btnLimpiarMesa2);
+        mostrarTotalCuentaMesa(2, btnLimpiarMesa2);
     }//GEN-LAST:event_btnTotalCuentaMesa2ActionPerformed
 
     private void btnTotalCuentaMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa3ActionPerformed
-        mostrarTotalCuentaMesa(2, pedidosMesa3, pedidosMesa3Llevar, btnLimpiarMesa3);
+        mostrarTotalCuentaMesa(3, btnLimpiarMesa3);
     }//GEN-LAST:event_btnTotalCuentaMesa3ActionPerformed
 
     private void btnTotalCuentaMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa4ActionPerformed
-        mostrarTotalCuentaMesa(3, pedidosMesa4, pedidosMesa4Llevar, btnLimpiarMesa4);
+        mostrarTotalCuentaMesa(4, btnLimpiarMesa4);
     }//GEN-LAST:event_btnTotalCuentaMesa4ActionPerformed
 
     private void btnTotalCuentaMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa5ActionPerformed
-        mostrarTotalCuentaMesa(4, pedidosMesa5, pedidosMesa5Llevar, btnLimpiarMesa5);
+        mostrarTotalCuentaMesa(5, btnLimpiarMesa5);
     }//GEN-LAST:event_btnTotalCuentaMesa5ActionPerformed
 
     private void btnTotalCuentaMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa6ActionPerformed
-        mostrarTotalCuentaMesa(5, pedidosMesa6, pedidosMesa6Llevar, btnLimpiarMesa6);
+        mostrarTotalCuentaMesa(6, btnLimpiarMesa6);
     }//GEN-LAST:event_btnTotalCuentaMesa6ActionPerformed
 
     private void btnTotalCuentaMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa7ActionPerformed
-        mostrarTotalCuentaMesa(6, pedidosMesa7, pedidosMesa7Llevar, btnLimpiarMesa7);
+        mostrarTotalCuentaMesa(7, btnLimpiarMesa7);
     }//GEN-LAST:event_btnTotalCuentaMesa7ActionPerformed
 
     private void btnTotalCuentaMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa8ActionPerformed
-        mostrarTotalCuentaMesa(7, pedidosMesa8, pedidosMesa8Llevar, btnLimpiarMesa8);
+        mostrarTotalCuentaMesa(8, btnLimpiarMesa8);
     }//GEN-LAST:event_btnTotalCuentaMesa8ActionPerformed
 
     private void btnTotalCuentaMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa9ActionPerformed
-        mostrarTotalCuentaMesa(8, pedidosMesa9, pedidosMesa9Llevar, btnLimpiarMesa9);
+        mostrarTotalCuentaMesa(9, btnLimpiarMesa9);
     }//GEN-LAST:event_btnTotalCuentaMesa9ActionPerformed
 
     private void btnTotalCuentaMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa10ActionPerformed
-        mostrarTotalCuentaMesa(9, pedidosMesa10, pedidosMesa10Llevar, btnLimpiarMesa10);
+        mostrarTotalCuentaMesa(10, btnLimpiarMesa10);
     }//GEN-LAST:event_btnTotalCuentaMesa10ActionPerformed
 
     private void btnTotalCuentaMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa11ActionPerformed
-        mostrarTotalCuentaMesa(10, pedidosMesa11, pedidosMesa11Llevar, btnLimpiarMesa11);
+        mostrarTotalCuentaMesa(11, btnLimpiarMesa11);
     }//GEN-LAST:event_btnTotalCuentaMesa11ActionPerformed
 
     private void btnTotalCuentaMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa12ActionPerformed
-        mostrarTotalCuentaMesa(11, pedidosMesa12, pedidosMesa12Llevar, btnLimpiarMesa12);
+        mostrarTotalCuentaMesa(12, btnLimpiarMesa12);
     }//GEN-LAST:event_btnTotalCuentaMesa12ActionPerformed
 
     private void registrarProductoVendido(Producto producto) {

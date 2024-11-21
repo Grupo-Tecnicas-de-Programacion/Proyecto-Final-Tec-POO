@@ -17,6 +17,8 @@ public class Producto {
     private int cantidadDisponible;
     private int cantidad; 
 
+    public Producto() {
+    }
 
     public Producto(String nombre, double precio, String categoria, int cantidadDisponible) {
         this.nombre = nombre;
@@ -155,6 +157,27 @@ public class Producto {
         }
         return null;
     }
+    
+    public static int obtenerIdProductoDesdeBaseDatos(String nombreProducto) {
+        String consulta = "SELECT id FROM productos WHERE nombre = ?";
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentenciaConsulta = conexion.prepareStatement(consulta)) {
+
+            sentenciaConsulta.setString(1, nombreProducto);
+
+            try (ResultSet resultado = sentenciaConsulta.executeQuery()) {
+                if (resultado.next()) {
+                    return resultado.getInt("id");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return -1;
+    }
+
     
     public static boolean actualizarCantidadDisponibleProducto(String nombreProducto, int cantidad) {
         String conultaCantidad = "UPDATE productos SET cantidad_disponible = cantidad_disponible + ? WHERE nombre = ?";
