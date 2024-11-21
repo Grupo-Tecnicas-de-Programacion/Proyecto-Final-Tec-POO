@@ -203,27 +203,7 @@ public class Producto {
         }
         return false;
     }
-    
-    public static int obtenerIdProductoDesdeBaseDatos(String nombreProducto) {
-        String consulta = "SELECT id FROM productos WHERE nombre = ?";
-
-        try (Connection conexion = ConexionDB.conectar();
-             PreparedStatement sentenciaConsulta = conexion.prepareStatement(consulta)) {
-
-            sentenciaConsulta.setString(1, nombreProducto);
-
-            try (ResultSet resultado = sentenciaConsulta.executeQuery()) {
-                if (resultado.next()) {
-                    return resultado.getInt("id");
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return -1;
-    }
-    
+        
     public static boolean registrarProductosEnHistorial(int idPedido, List<Producto> productos, Date fecha) {
         String insertarHistorial = "INSERT INTO historial_pedidos (id_pedido, id_producto, cantidad, precio_unitario, fecha) VALUES (?, ?, ?, ?, ?)";
 
@@ -285,6 +265,74 @@ public class Producto {
         }
     }
     
+    public static boolean actualizarProductoEnBaseDeDatos(int idProducto, String nuevoNombre, String nuevaCategoria, double nuevoPrecio, int nuevaCantidad) {
+        String consulta = "UPDATE productos SET nombre = ?, categoria = ?, precio = ?, cantidad_disponible = ? WHERE id = ?";
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentencia = conexion.prepareStatement(consulta)) {
+
+            sentencia.setString(1, nuevoNombre);
+            sentencia.setString(2, nuevaCategoria);
+            sentencia.setDouble(3, nuevoPrecio);
+            sentencia.setInt(4, nuevaCantidad);
+            sentencia.setInt(5, idProducto);
+
+            int filasAfectadas = sentencia.executeUpdate();
+
+            return filasAfectadas > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println("Error al actualizar el producto en la base de datos: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public static Producto obtenerProductoPorIdDesdeBaseDeDatos(int idProducto) {
+        String consulta = "SELECT nombre, categoria, precio, cantidad_disponible FROM productos WHERE id = ?";
+        Producto producto = null;
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentencia = conexion.prepareStatement(consulta)) {
+
+            sentencia.setInt(1, idProducto);
+
+            try (ResultSet resultado = sentencia.executeQuery()) {
+                if (resultado.next()) {
+                    String nombre = resultado.getString("nombre");
+                    String categoria = resultado.getString("categoria");
+                    double precio = resultado.getDouble("precio");
+                    int cantidad = resultado.getInt("cantidad_disponible");
+                    
+                    producto = new Producto(nombre, precio, categoria, cantidad);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println("Error al obtener el producto desde la base de datos: " + e.getMessage());
+        }
+
+        return producto;
+    }
     
+    public static int obtenerIdProductoDesdeBaseDatos(String nombreProducto) {
+        String consulta = "SELECT id FROM productos WHERE nombre = ?";
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentenciaConsulta = conexion.prepareStatement(consulta)) {
+
+            sentenciaConsulta.setString(1, nombreProducto);
+
+            try (ResultSet resultado = sentenciaConsulta.executeQuery()) {
+                if (resultado.next()) {
+                    return resultado.getInt("id");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return -1;
+    }
 
 }

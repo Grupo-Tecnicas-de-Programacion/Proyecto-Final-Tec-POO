@@ -5994,6 +5994,16 @@ public class JframeMesero extends javax.swing.JFrame {
         }
 
         try {
+            int idProductoExistente = Producto.obtenerIdProductoDesdeBaseDatos(nombre);
+            if (idProductoExistente != -1) {
+                JOptionPane.showMessageDialog(rootPane, "El producto ya existe.", "Producto Existente", JOptionPane.WARNING_MESSAGE);
+                txtNombreNuevoProducto.setText("");
+                txtCategoriaNuevoProducto.setText("");
+                txtPrecioNuevoProducto.setText("");
+                txtCantidadNuevoProducto.setText("");
+                return;
+            }
+
             double precio = Double.parseDouble(precioTexto);
             int cantidad = Integer.parseInt(cantidadTexto);
 
@@ -6023,10 +6033,9 @@ public class JframeMesero extends javax.swing.JFrame {
             return;
         }
 
-        Producto productoEncontrado = buscarProductoPorNombre(nombreProductoActual);
+        int idProducto = Producto.obtenerIdProductoDesdeBaseDatos(nombreProductoActual);
 
-        if (productoEncontrado != null) {
-
+        if (idProducto != -1) {
             String nuevoNombre = txtNombreProductoNuevo.getText().trim();
             String nuevaCategoria = txtCategoriaProductoNuevo.getText().trim();
             String nuevoPrecioTexto = txtPrecioProductoNuevo.getText().trim();
@@ -6041,31 +6050,29 @@ public class JframeMesero extends javax.swing.JFrame {
                 double nuevoPrecio = Double.parseDouble(nuevoPrecioTexto);
                 int nuevaCantidad = Integer.parseInt(nuevaCantidadTexto);
 
-                productoEncontrado.setNombre(nuevoNombre);
-                productoEncontrado.setCategoria(nuevaCategoria);
-                productoEncontrado.setPrecio(nuevoPrecio);
-                productoEncontrado.setCantidadDisponible(nuevaCantidad);
+                boolean actualizado = Producto.actualizarProductoEnBaseDeDatos(idProducto, nuevoNombre, nuevaCategoria, nuevoPrecio, nuevaCantidad);
 
-                JOptionPane.showMessageDialog(this, "Producto modificado correctamente.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                mostrarProductosEnMesa(productosPedidoMesa1);
-                
-                txtNombreProductoModificar.setText("");
-                txtNombreProductoNuevo.setText("");
-                txtCategoriaProductoNuevo.setText("");
-                txtCantidadProductoNuevo.setText("");
-                txtPrecioProductoNuevo.setText("");
-                txtNombreProductoActual.setText("");
-                txtCategoriaProductoActual.setText("");
-                txtPrecioProductoActual.setText("");
-                txtCantidadProductoActual.setText("");
+                if (actualizado) {
+                    JOptionPane.showMessageDialog(this, "Producto modificado correctamente.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
 
+                    txtNombreProductoModificar.setText("");
+                    txtNombreProductoNuevo.setText("");
+                    txtCategoriaProductoNuevo.setText("");
+                    txtCantidadProductoNuevo.setText("");
+                    txtPrecioProductoNuevo.setText("");
+                    txtNombreProductoActual.setText("");
+                    txtCategoriaProductoActual.setText("");
+                    txtPrecioProductoActual.setText("");
+                    txtCantidadProductoActual.setText("");
+                } else {
+                    JOptionPane.showMessageDialog(this, "Error al modificar el producto en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(this, "El precio y la cantidad deben ser valores numéricos.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } else {
             JOptionPane.showMessageDialog(this, "Producto no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
     }//GEN-LAST:event_btnModificarProductoActionPerformed
 
     private void buscarProductoModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarProductoModificarActionPerformed
@@ -6076,42 +6083,61 @@ public class JframeMesero extends javax.swing.JFrame {
             return;
         }
 
-        Producto productoEncontrado = buscarProductoPorNombre(nombreProductoBuscado);
+        int idProducto = Producto.obtenerIdProductoDesdeBaseDatos(nombreProductoBuscado);
+
+        if (idProducto == -1) {
+            JOptionPane.showMessageDialog(this, "Producto no encontrado. Verifica el nombre ingresado.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        Producto productoEncontrado = Producto.obtenerProductoPorIdDesdeBaseDeDatos(idProducto);
 
         if (productoEncontrado != null) {
-            
             txtNombreProductoActual.setText(productoEncontrado.getNombre());
             txtCategoriaProductoActual.setText(productoEncontrado.getCategoria());
             txtPrecioProductoActual.setText(String.valueOf(productoEncontrado.getPrecio()));
             txtCantidadProductoActual.setText(String.valueOf(productoEncontrado.getCantidadDisponible()));
 
-            JOptionPane.showMessageDialog(rootPane, "Producto encontrado. Puedes proceder a modificarlo.", "Producto Encontrado", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Producto encontrado. Puedes proceder a modificarlo.", "Producto Encontrado", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Producto no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Error al obtener los detalles del producto.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_buscarProductoModificarActionPerformed
 
     private void btnBuscandoProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscandoProductoActionPerformed
+        
         String nombreProductoBuscado = txtNombreProductoBuscar.getText().trim();
-
+        
         if (nombreProductoBuscado.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, ingrese el nombre del producto a buscar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        Producto productoEncontrado = buscarProductoPorNombre(nombreProductoBuscado);
+        int idProducto = Producto.obtenerIdProductoDesdeBaseDatos(nombreProductoBuscado);
+
+        if (idProducto == -1) {
+            JOptionPane.showMessageDialog(this, "Producto no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
+            txtNombreProductoBuscado.setText("");
+            txtCategoriaProductoBuscado.setText("");
+            txtPrecioProductoBuscado.setText("");
+            txtCantidadProductoBuscado.setText("");
+            return;
+        }
+
+        Producto productoEncontrado = Producto.obtenerProductoPorIdDesdeBaseDeDatos(idProducto);
 
         if (productoEncontrado != null) {
-            
             txtNombreProductoBuscado.setText(productoEncontrado.getNombre());
-            txtCantidadProductoBuscado.setText(productoEncontrado.getCategoria());
+            txtCategoriaProductoBuscado.setText(productoEncontrado.getCategoria());
             txtPrecioProductoBuscado.setText(String.valueOf(productoEncontrado.getPrecio()));
             txtCantidadProductoBuscado.setText(String.valueOf(productoEncontrado.getCantidadDisponible()));
 
-            JOptionPane.showMessageDialog(rootPane, "Producto encontrado.", "Producto Encontrado", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Producto encontrado.", "Producto Encontrado", JOptionPane.INFORMATION_MESSAGE);
+            
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Producto no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "No se pudo obtener los datos del producto.", "Error", JOptionPane.ERROR_MESSAGE);
         }
+        
     }//GEN-LAST:event_btnBuscandoProductoActionPerformed
 
     private void btnBuscarProductoEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProductoEliminarActionPerformed
