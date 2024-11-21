@@ -171,4 +171,59 @@ public class Pedido {
         }
         return 1;
     }
+    
+    public static List<String> obtenerPedidosDesdeBaseDatos(String tipoPedido, int numeroMesa) {
+        List<String> pedidos = new ArrayList<>();
+        String consulta = "SELECT num_pedido, tipo_pedido FROM pedidos WHERE tipo_pedido = ? AND id_mesa = ?";
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentencia = conexion.prepareStatement(consulta)) {
+
+            sentencia.setString(1, tipoPedido.toUpperCase());
+            sentencia.setInt(2, numeroMesa);
+
+            try (ResultSet resultado = sentencia.executeQuery()) {
+                while (resultado.next()) {
+                    int numPedido = resultado.getInt("num_pedido");
+                    String tipo = resultado.getString("tipo_pedido");
+                    pedidos.add("Pedido " + numPedido + " - " + tipo);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return pedidos;
+    }
+    
+    public static List<Producto> obtenerProductosDePedidoDesdeBaseDatos(int numPedido) {
+        List<Producto> productos = new ArrayList<>();
+        String consulta = 
+            "SELECT p.nombre, p.precio, pp.cantidad " +
+            "FROM pedido_productos pp " +
+            "JOIN productos p ON pp.id_producto = p.id " +
+            "JOIN pedidos pe ON pp.id_pedido = pe.id " +
+            "WHERE pe.num_pedido = ?";
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentencia = conexion.prepareStatement(consulta)) {
+
+            sentencia.setInt(1, numPedido);
+            try (ResultSet resultado = sentencia.executeQuery()) {
+                while (resultado.next()) {
+                    String nombre = resultado.getString("nombre");
+                    double precio = resultado.getDouble("precio");
+                    int cantidad = resultado.getInt("cantidad");
+
+                    Producto producto = new Producto(nombre, precio, cantidad);
+                    productos.add(producto);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return productos;
+    }
+
+
 }
