@@ -2,7 +2,6 @@
 package visual;
 
 import clases.Cliente;
-import clases.GestionReportes;
 import java.awt.CardLayout;
 import java.io.BufferedReader;
 import java.io.File;
@@ -6496,31 +6495,84 @@ public class JframeMesero extends javax.swing.JFrame {
     }
     
     private void btnGenerarReporteDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteDiaActionPerformed
+        
         String fechaTexto = txtFechaGenerarReporte.getText().trim();
         String nombre = txtNombreGenerarReporte.getText().trim();
 
         if (fechaTexto.isEmpty() || nombre.isEmpty()) {
-            JOptionPane.showMessageDialog(rootPane, "Por favor, complete todos los campos.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(
+                rootPane,
+                "Por favor, complete todos los campos.",
+                "Advertencia",
+                JOptionPane.WARNING_MESSAGE
+            );
             return;
         }
 
         try {
-            SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
-            Date fecha = formatoFecha.parse(fechaTexto);
+            SimpleDateFormat formatoEntrada = new SimpleDateFormat("dd/MM/yyyy");
+            Date fecha = formatoEntrada.parse(fechaTexto);
 
-            double totalGanancias = calcularTotalGananciasGlobal();
-            int cantidadProductosVendidos = calcularCantidadProductosVendidosGlobal();
+            SimpleDateFormat formatoMySQL = new SimpleDateFormat("yyyy-MM-dd");
+            String fechaFormateadaMySQL = formatoMySQL.format(fecha);
 
-            Reporte nuevoReporte = new Reporte(fecha, nombre, totalGanancias, cantidadProductosVendidos);
-            GestionReportes.agregarReporte(nuevoReporte);
+            double totalGanancias = Reporte.calcularTotalGananciasDesdeBD();
+            int cantidadProductosVendidos = Reporte.calcularCantidadProductosVendidosDesdeBD();
 
-            JOptionPane.showMessageDialog(rootPane, "Reporte generado correctamente.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            if (totalGanancias == 0 && cantidadProductosVendidos == 0) {
+                JOptionPane.showMessageDialog(
+                    rootPane,
+                    "No hay datos para generar el reporte en el historial.",
+                    "Sin datos",
+                    JOptionPane.WARNING_MESSAGE
+                );
+                return;
+            }
 
-            txtFechaGenerarReporte.setText("");
-            txtNombreGenerarReporte.setText("");
+            Reporte nuevoReporte = new Reporte(
+                formatoMySQL.parse(fechaFormateadaMySQL),
+                nombre,
+                totalGanancias,
+                cantidadProductosVendidos
+            );
 
+            boolean reporteGuardado = Reporte.guardarReporteEnBaseDeDatos(nuevoReporte);
+
+            if (reporteGuardado) {
+                JOptionPane.showMessageDialog(
+                    rootPane,
+                    "Reporte generado correctamente.",
+                    "Confirmación",
+                    JOptionPane.INFORMATION_MESSAGE
+                );
+
+                txtFechaGenerarReporte.setText("");
+                txtNombreGenerarReporte.setText("");
+
+                boolean historialLimpiado = Reporte.limpiarHistorialPedidos();
+                if (!historialLimpiado) {
+                    JOptionPane.showMessageDialog(
+                        rootPane,
+                        "Error al limpiar el historial de pedidos.",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE
+                    );
+                }
+            } else {
+                JOptionPane.showMessageDialog(
+                    rootPane,
+                    "Hubo un problema al guardar el reporte en la base de datos.",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
+                );
+            }
         } catch (ParseException e) {
-            JOptionPane.showMessageDialog(rootPane, "La fecha debe estar en formato dd/MM/yyyy.", "Formato de fecha incorrecto", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(
+                rootPane,
+                "La fecha debe estar en formato dd/MM/yyyy.",
+                "Formato de fecha incorrecto",
+                JOptionPane.WARNING_MESSAGE
+            );
         }
     }//GEN-LAST:event_btnGenerarReporteDiaActionPerformed
 

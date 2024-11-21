@@ -1,10 +1,8 @@
 
 package visual;
 
-
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
-import clases.GestionReportes;
 import clases.Reporte;
 import clases.Usuario;
 import com.toedter.calendar.JDateChooser;
@@ -286,7 +284,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
                 btnVerReporteActionPerformed(evt);
             }
         });
-        panelReporteVentas.add(btnVerReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 110, 50));
+        panelReporteVentas.add(btnVerReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 110, 50));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -473,35 +471,54 @@ public class JframeAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarSesionAdmnistradorActionPerformed
 
     private void btnBuscarReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarReportesActionPerformed
+        // Obtener las fechas ingresadas por el usuario
         String fechaDesdeTexto = txtFechaInicioReporteBuscar.getText().trim();
         String fechaHastaTexto = txtFechaFinalReporteBuscar.getText().trim();
 
+        // Validar que ambas fechas sean ingresadas
         if (fechaDesdeTexto.isEmpty() || fechaHastaTexto.isEmpty()) {
-            JOptionPane.showMessageDialog(rootPane, "Por favor, ingrese ambas fechas para buscar reportes.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(
+                rootPane,
+                "Por favor, ingrese ambas fechas para buscar reportes.",
+                "Advertencia",
+                JOptionPane.WARNING_MESSAGE
+            );
             return;
         }
 
         try {
-            SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
-            Date fechaDesde = formatoFecha.parse(fechaDesdeTexto);
-            Date fechaHasta = formatoFecha.parse(fechaHastaTexto);
+            // Convertir las fechas ingresadas de dd/MM/yyyy a Date
+            SimpleDateFormat formatoEntrada = new SimpleDateFormat("dd/MM/yyyy");
+            Date fechaDesde = formatoEntrada.parse(fechaDesdeTexto);
+            Date fechaHasta = formatoEntrada.parse(fechaHastaTexto);
 
+            // Obtener los reportes desde la base de datos por rango de fechas
+            List<Reporte> reportes = Reporte.obtenerReportesPorRangoDeFechas(fechaDesde, fechaHasta);
+
+            // Actualizar la lista de reportes encontrados en la interfaz
             DefaultListModel<String> modeloReportes = new DefaultListModel<>();
-
-            for (Reporte reporte : GestionReportes.getListaReportes()) {
-                if (!reporte.getFecha().before(fechaDesde) && !reporte.getFecha().after(fechaHasta)) {
-                    modeloReportes.addElement(reporte.getNombre() + " - Fecha: " + formatoFecha.format(reporte.getFecha()));
-                }
+            for (Reporte reporte : reportes) {
+                modeloReportes.addElement(reporte.getNombre() + " - Fecha: " + formatoEntrada.format(reporte.getFecha()));
             }
 
             if (modeloReportes.isEmpty()) {
-                JOptionPane.showMessageDialog(rootPane, "No se encontraron reportes en el rango de fechas especificado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(
+                    rootPane,
+                    "No se encontraron reportes en el rango de fechas especificado.",
+                    "Información",
+                    JOptionPane.INFORMATION_MESSAGE
+                );
             }
 
             listaReportesEncontrados.setModel(modeloReportes);
 
         } catch (ParseException e) {
-            JOptionPane.showMessageDialog(rootPane, "Las fechas deben estar en formato dd/MM/yyyy.", "Formato de fecha incorrecto", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(
+                rootPane,
+                "Las fechas deben estar en formato dd/MM/yyyy.",
+                "Formato de fecha incorrecto",
+                JOptionPane.WARNING_MESSAGE
+            );
         }
     }//GEN-LAST:event_btnBuscarReportesActionPerformed
 
@@ -510,11 +527,10 @@ public class JframeAdministrador extends javax.swing.JFrame {
         int index = listaReportesEncontrados.getSelectedIndex();
 
         if (index >= 0) {
-
             String reporteSeleccionado = listaReportesEncontrados.getSelectedValue();
             String nombreReporte = reporteSeleccionado.split(" - Fecha:")[0].trim();
 
-            Reporte reporte = buscarReportePorNombre(nombreReporte);
+            Reporte reporte = Reporte.obtenerReportePorNombre(nombreReporte);
 
             if (reporte != null) {
                 SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
@@ -524,11 +540,22 @@ public class JframeAdministrador extends javax.swing.JFrame {
                 txtCantidadReporteSeleccionado.setText(String.valueOf(reporte.getCantidadProductosVendidos()));
                 txtGananciaReporteSeleccionado.setText(String.format("S/ %.2f", reporte.getTotalGanancias()));
             } else {
-                JOptionPane.showMessageDialog(rootPane, "Error al cargar el reporte.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(
+                    rootPane,
+                    "Error al cargar el reporte. No se encontró en la base de datos.",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
+                );
             }
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Por favor, seleccione un reporte de la lista.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(
+                rootPane,
+                "Por favor, seleccione un reporte de la lista.",
+                "Advertencia",
+                JOptionPane.WARNING_MESSAGE
+            );
         }
+        
     }//GEN-LAST:event_btnVerReporteActionPerformed
 
     private void menItemAgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemAgregarUsuarioActionPerformed
@@ -670,15 +697,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private void txtFechaFinalReporteBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFechaFinalReporteBuscarMouseClicked
         buscarFecha(txtFechaFinalReporteBuscar);
     }//GEN-LAST:event_txtFechaFinalReporteBuscarMouseClicked
-    
-    private Reporte buscarReportePorNombre(String nombreReporte) {
-        for (Reporte reporte : GestionReportes.getListaReportes()) {
-            if (reporte.getNombre().equalsIgnoreCase(nombreReporte)) {
-                return reporte;
-            }
-        }
-        return null;
-    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
