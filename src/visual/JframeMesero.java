@@ -4673,7 +4673,7 @@ public class JframeMesero extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnBuscarRutaProductosActionPerformed
-    
+   
     private void agregarProductoAPedido(JList<String> listaProductos, Pedido pedidoMesa,
             Runnable actualizarListaProductos,
             Runnable mostrarProductosEnMesa) {
@@ -4700,15 +4700,21 @@ public class JframeMesero extends javax.swing.JFrame {
                                 boolean exito = Producto.actualizarCantidadDisponibleProducto(nombreProducto, -cantidad);
 
                                 if (exito) {
-                                    Producto productoParaPedido = new Producto(
-                                        productoSeleccionado.getNombre(),
-                                        productoSeleccionado.getPrecio(),
-                                        productoSeleccionado.getCategoria(),
-                                        cantidad
-                                    );
+                                    boolean productoYaEnPedido = false;
+                                    for (Producto productoEnPedido : pedidoMesa.getListaProductos()) {
+                                        if (productoEnPedido.getNombre().equals(nombreProducto)) {
+                                            productoEnPedido.setCantidad(productoEnPedido.getCantidad() + cantidad);
+                                            productoYaEnPedido = true;
+                                            break;
+                                        }
+                                    }
 
-                                    pedidoMesa.agregarProducto(productoParaPedido);
-
+                                    if (!productoYaEnPedido) {
+                                        Producto productoParaPedido = new Producto(productoSeleccionado.getNombre(), productoSeleccionado.getPrecio(), cantidad);
+                                        
+                                        pedidoMesa.agregarProducto(productoParaPedido);
+                                    }
+                                    
                                     actualizarListaProductos.run();
                                     mostrarProductosEnMesa.run();
                                     break;
@@ -4748,7 +4754,6 @@ public class JframeMesero extends javax.swing.JFrame {
                 JOptionPane.WARNING_MESSAGE);
         }
     }
-
     
     private void btnAgregarProductoPedidoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoPedidoMesa1ActionPerformed
         agregarProductoAPedido(
@@ -6574,10 +6579,11 @@ public class JframeMesero extends javax.swing.JFrame {
     private void actualizarListaProductosDelPedido(Pedido pedidoMesa, JList<String> listaPedidosMesa) {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
         for (Producto producto : pedidoMesa.getListaProductos()) {
-            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidadDisponible());
+            modeloPedido.addElement(producto.getNombre() + " - Cantidad: " + producto.getCantidad());
         }
         listaPedidosMesa.setModel(modeloPedido);
     }
+
     
     private boolean validarArchivoProductos(File archivo) {
         try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {

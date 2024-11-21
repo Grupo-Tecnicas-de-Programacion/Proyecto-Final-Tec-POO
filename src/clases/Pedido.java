@@ -78,12 +78,12 @@ public class Pedido {
             this.precioTotalPedido += producto.getPrecio() * producto.getCantidad();
         }
     }
-
+    
     public void agregarProducto(Producto producto) {
         boolean productoExistente = false;
-        for (Producto product : this.listaProductos) {
-            if (product.getNombre().equals(producto.getNombre())) {
-                product.setCantidad(product.getCantidad() + producto.getCantidad());
+        for (Producto productoEnPedido : this.listaProductos) {
+            if (productoEnPedido.getNombre().equals(producto.getNombre())) {
+                productoEnPedido.setCantidad(productoEnPedido.getCantidad() + producto.getCantidad());
                 productoExistente = true;
                 break;
             }
