@@ -29,9 +29,7 @@ CREATE TABLE mesas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     numero_mesa INT NOT NULL UNIQUE,
     estado ENUM('OCUPADA', 'DESOCUPADA', 'NO DISPONIBLE') NOT NULL DEFAULT 'DESOCUPADA',
-    capacidad INT NOT NULL,
-    id_cliente INT DEFAULT NULL,
-    FOREIGN KEY (id_cliente) REFERENCES clientes(id)
+    capacidad INT NOT NULL
 );
 
 CREATE TABLE pedidos (
@@ -58,14 +56,16 @@ CREATE TABLE reportes (
     fecha DATE NOT NULL,
     nombre VARCHAR(100) NOT NULL,
     total_ganancias DECIMAL(10, 2) NOT NULL,
-    cantidad_productos_vendidos INT NOT NULL,
-    id_usuario INT NOT NULL,
-    FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+    cantidad_productos_vendidos INT NOT NULL
 );
 
-CREATE TABLE cuentas (
+CREATE TABLE historial_pedidos (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    total_pagar DECIMAL(10, 2) NOT NULL,
-    id_mesa INT NOT NULL,
-    FOREIGN KEY (id_mesa) REFERENCES mesas(id)
+    id_pedido INT NOT NULL,
+    id_producto INT NOT NULL,
+    cantidad INT NOT NULL,
+    precio_unitario DECIMAL(10, 2) NOT NULL,
+    fecha DATE NOT NULL,
+    FOREIGN KEY (id_producto) REFERENCES productos(id),
+    FOREIGN KEY (id_pedido) REFERENCES pedidos(id)
 );
