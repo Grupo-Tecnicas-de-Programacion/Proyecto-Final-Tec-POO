@@ -5988,7 +5988,6 @@ public class JframeMesero extends javax.swing.JFrame {
         String precioTexto = txtPrecioNuevoProducto.getText().trim();
         String cantidadTexto = txtCantidadNuevoProducto.getText().trim();
 
-
         if (nombre.isEmpty() || categoria.isEmpty() || precioTexto.isEmpty() || cantidadTexto.isEmpty()) {
             JOptionPane.showMessageDialog(rootPane, "Por favor, complete todos los campos.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             return;
@@ -5998,17 +5997,18 @@ public class JframeMesero extends javax.swing.JFrame {
             double precio = Double.parseDouble(precioTexto);
             int cantidad = Integer.parseInt(cantidadTexto);
 
-            Producto nuevoProducto = new Producto(nombre, precio, categoria, cantidad);
+            boolean productoAgregado = Producto.agregarProductoEnBaseDeDatos(nombre, precio, categoria, cantidad);
 
-            productos.add(nuevoProducto);
-            mostrarProductosEnMesa(productosPedidoMesa1);
-            JOptionPane.showMessageDialog(rootPane, "Producto agregado correctamente.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            if (productoAgregado) {
+                JOptionPane.showMessageDialog(rootPane, "Producto agregado correctamente.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
 
-            txtNombreNuevoProducto.setText("");
-            txtCategoriaNuevoProducto.setText("");
-            txtPrecioNuevoProducto.setText("");
-            txtCantidadNuevoProducto.setText("");
-
+                txtNombreNuevoProducto.setText("");
+                txtCategoriaNuevoProducto.setText("");
+                txtPrecioNuevoProducto.setText("");
+                txtCantidadNuevoProducto.setText("");
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "No se pudo agregar el producto. Verifique los datos.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(rootPane, "El precio y la cantidad deben ser valores numéricos.", "Error", JOptionPane.ERROR_MESSAGE);
         }

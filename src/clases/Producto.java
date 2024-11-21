@@ -264,4 +264,27 @@ public class Producto {
         }
     }
 
+    public static boolean agregarProductoEnBaseDeDatos(String nombre, double precio, String categoria, int cantidad) {
+        String query = "INSERT INTO productos (nombre, precio, categoria, cantidad_disponible) VALUES (?, ?, ?, ?)";
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentencia = conexion.prepareStatement(query)) {
+
+            sentencia.setString(1, nombre);
+            sentencia.setDouble(2, precio);
+            sentencia.setString(3, categoria);
+            sentencia.setInt(4, cantidad);
+
+            int filasAfectadas = sentencia.executeUpdate();
+            return filasAfectadas > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println("Error al agregar producto a la base de datos: " + e.getMessage());
+            return false;
+        }
+    }
+    
+    
+
 }
