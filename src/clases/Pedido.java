@@ -225,5 +225,54 @@ public class Pedido {
         return productos;
     }
 
+    public static boolean revertirProductosPedido(int numPedido) throws SQLException {
+        String consultaProductos = "SELECT id_producto, cantidad FROM pedido_productos WHERE id_pedido = (SELECT id FROM pedidos WHERE num_pedido = ?)";
+        String actualizarProductos = "UPDATE productos SET cantidad_disponible = cantidad_disponible + ? WHERE id = ?";
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement senetnciaProductos = conexion.prepareStatement(consultaProductos);
+             PreparedStatement sentenciaActualizar = conexion.prepareStatement(actualizarProductos)) {
+
+            senetnciaProductos.setInt(1, numPedido);
+            ResultSet rs = senetnciaProductos.executeQuery();
+
+            while (rs.next()) {
+                int idProducto = rs.getInt("id_producto");
+                int cantidad = rs.getInt("cantidad");
+
+                sentenciaActualizar.setInt(1, cantidad);
+                sentenciaActualizar.setInt(2, idProducto);
+                sentenciaActualizar.addBatch();
+            }
+
+            int[] resultados = sentenciaActualizar.executeBatch();
+            for (int resultado : resultados) {
+                if (resultado == PreparedStatement.EXECUTE_FAILED) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    }
+    
+    public static boolean eliminarPedidoDesdeBaseDatos(int numPedido) throws SQLException {
+        String borrarPedidoProductos = "DELETE FROM pedido_productos WHERE id_pedido = (SELECT id FROM pedidos WHERE num_pedido = ?)";
+        String borrarPedidos = "DELETE FROM pedidos WHERE num_pedido = ?";
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentenciaPedidoProductos = conexion.prepareStatement(borrarPedidoProductos);
+             PreparedStatement stmtPedido = conexion.prepareStatement(borrarPedidos)) {
+
+            sentenciaPedidoProductos.setInt(1, numPedido);
+            sentenciaPedidoProductos.executeUpdate();
+
+            stmtPedido.setInt(1, numPedido);
+            int filasAfectadas = stmtPedido.executeUpdate();
+
+            return filasAfectadas > 0;
+        }
+    }
+
 
 }

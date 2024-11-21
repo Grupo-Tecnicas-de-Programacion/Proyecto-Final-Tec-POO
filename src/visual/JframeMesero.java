@@ -5419,93 +5419,93 @@ public class JframeMesero extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_listaVerPedidosLlevarMesa12MouseClicked
 
-    private void cancelarPedido(
-        JList<String> listaPedidosMesa, 
-        JList<String> listaPedidosLlevar,
-        ArrayList<Pedido> pedidosMesa, 
-        ArrayList<Pedido> pedidosLlevar, 
-        JList<String> detallePedido, 
-        Runnable actualizarListaPedidos, 
-        Runnable mostrarProductosEnMesa
-        ) {
-            int indexMesa = listaPedidosMesa.getSelectedIndex();
-            int indexLlevar = listaPedidosLlevar.getSelectedIndex();
+    
+    private void cancelarPedido(JList<String> listaPedidosMesa, JList<String> listaPedidosLlevar, JList<String> detallePedido,
+        Runnable actualizarListaPedidos,Runnable mostrarProductosEnMesa) {
 
-            if (indexMesa >= 0) {
-                Object[] opciones = {"Sí", "No"};
-                int confirmacion = JOptionPane.showOptionDialog(
-                    this, 
-                    "¿Estás seguro de que deseas cancelar el pedido para mesa?", 
-                    "Confirmación de Cancelación", 
-                    JOptionPane.YES_NO_OPTION, 
-                    JOptionPane.QUESTION_MESSAGE, 
-                    null, 
-                    opciones, 
-                    opciones[0]
-                );
+        int indexMesa = listaPedidosMesa.getSelectedIndex();
+        int indexLlevar = listaPedidosLlevar.getSelectedIndex();
 
-                if (confirmacion == JOptionPane.YES_OPTION) {
-                    Pedido pedidoCancelado = pedidosMesa.get(indexMesa);
+        if (indexMesa >= 0) {
+            int confirmacion = JOptionPane.showConfirmDialog(
+                this,
+                "¿Estás seguro de que deseas cancelar el pedido para mesa?",
+                "Confirmación de Cancelación",
+                JOptionPane.YES_NO_OPTION
+            );
 
-                    for (Producto productoCancelado : pedidoCancelado.getListaProductos()) {
-                        for (Producto producto : productos) {
-                            if (producto.getNombre().equals(productoCancelado.getNombre())) {
-                                producto.setCantidadDisponible(producto.getCantidadDisponible() + productoCancelado.getCantidad());
-                                break;
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                String textoPedido = listaPedidosMesa.getSelectedValue();
+                int numeroPedido = extraerNumeroPedido(textoPedido);
+
+                if (numeroPedido != -1) {
+                    try {
+                        if (Pedido.revertirProductosPedido(numeroPedido)) {
+                            if (Pedido.eliminarPedidoDesdeBaseDatos(numeroPedido)) {
+                                JOptionPane.showMessageDialog(this, "Pedido para mesa cancelado exitosamente.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+
+                                actualizarListaPedidos.run();
+                                mostrarProductosEnMesa.run();
+                                
+                                detallePedido.setModel(new DefaultListModel<>());
+                            } else {
+                                JOptionPane.showMessageDialog(this, "Error al eliminar el pedido de la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
                             }
+                        } else {
+                            JOptionPane.showMessageDialog(this, "Error al revertir las cantidades de los productos.", "Error", JOptionPane.ERROR_MESSAGE);
                         }
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                        JOptionPane.showMessageDialog(this, "Error en la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                     }
-
-                    pedidosMesa.remove(indexMesa);
-                    actualizarListaPedidos.run();
-                    mostrarProductosEnMesa.run();
-                    JOptionPane.showMessageDialog(this, "Pedido para mesa cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                    detallePedido.setModel(new DefaultListModel<>());
+                } else {
+                    JOptionPane.showMessageDialog(this, "No se pudo identificar el número del pedido.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
-            } else if (indexLlevar >= 0) {
-                Object[] opciones = {"Sí", "No"};
-                int confirmacion = JOptionPane.showOptionDialog(
-                    this, 
-                    "¿Estás seguro de que deseas cancelar el pedido para mesa?", 
-                    "Confirmación de Cancelación", 
-                    JOptionPane.YES_NO_OPTION, 
-                    JOptionPane.QUESTION_MESSAGE, 
-                    null, 
-                    opciones, 
-                    opciones[0]
-                );
-
-                if (confirmacion == JOptionPane.YES_OPTION) {
-                    Pedido pedidoCancelado = pedidosLlevar.get(indexLlevar);
-
-                    for (Producto productoCancelado : pedidoCancelado.getListaProductos()) {
-                        for (Producto producto : productos) {
-                            if (producto.getNombre().equals(productoCancelado.getNombre())) {
-                                producto.setCantidadDisponible(producto.getCantidadDisponible() + productoCancelado.getCantidad());
-                                break;
-                            }
-                        }
-                    }
-
-                    pedidosLlevar.remove(indexLlevar);
-                    actualizarListaPedidos.run();
-                    mostrarProductosEnMesa.run();
-                    JOptionPane.showMessageDialog(this, "Pedido para llevar cancelado.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-                    detallePedido.setModel(new DefaultListModel<>());
-                }
-            } else {
-                JOptionPane.showMessageDialog(this, "Por favor selecciona un pedido para cancelar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
+        }
+        else if (indexLlevar >= 0) {
+            int confirmacion = JOptionPane.showConfirmDialog(
+                this,
+                "¿Estás seguro de que deseas cancelar el pedido para llevar?",
+                "Confirmación de Cancelación",
+                JOptionPane.YES_NO_OPTION
+            );
+
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                String textoPedido = listaPedidosLlevar.getSelectedValue();
+                int numeroPedido = extraerNumeroPedido(textoPedido);
+
+                if (numeroPedido != -1) {
+                    try {
+                        if (Pedido.revertirProductosPedido(numeroPedido)) {
+                            if (Pedido.eliminarPedidoDesdeBaseDatos(numeroPedido)) {
+                                JOptionPane.showMessageDialog(this, "Pedido para llevar cancelado exitosamente.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+
+                                actualizarListaPedidos.run();
+                                mostrarProductosEnMesa.run();
+                                
+                                detallePedido.setModel(new DefaultListModel<>());
+                            } else {
+                                JOptionPane.showMessageDialog(this, "Error al eliminar el pedido de la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(this, "Error al revertir las cantidades de los productos.", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                        JOptionPane.showMessageDialog(this, "Error en la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "No se pudo identificar el número del pedido.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor selecciona un pedido para cancelar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
     }
 
-    
     private void cancelarPedidoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa1ActionPerformed
-        cancelarPedido(
-            listaVerPedidosMesa1, 
-            listaVerPedidosLlevarMesa1, 
-            pedidosMesa1, 
-            pedidosMesa1Llevar, 
-            detallePedidoMesa1, 
+        cancelarPedido(listaVerPedidosMesa1,listaVerPedidosLlevarMesa1,detallePedidoMesa1, 
             () -> actualizarListaPedidos(1, listaVerPedidosMesa1, listaVerPedidosLlevarMesa1), 
             () -> mostrarProductosEnMesa(productosPedidoMesa1)
         );
@@ -5522,108 +5522,63 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimpiarMesa3ActionPerformed
 
     private void cancelarPedidoMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa4ActionPerformed
-        cancelarPedido(
-            listaVerPedidosMesa4, 
-            listaVerPedidosLlevarMesa4, 
-            pedidosMesa4, 
-            pedidosMesa4Llevar, 
-            detallePedidoMesa4, 
+        cancelarPedido(listaVerPedidosMesa4,listaVerPedidosLlevarMesa4,detallePedidoMesa4, 
             () -> actualizarListaPedidos(4, listaVerPedidosMesa4, listaVerPedidosLlevarMesa4), 
             () -> mostrarProductosEnMesa(productosPedidoMesa4)
         );
     }//GEN-LAST:event_cancelarPedidoMesa4ActionPerformed
 
     private void cancelarPedidoMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa5ActionPerformed
-        cancelarPedido(
-            listaVerPedidosMesa5, 
-            listaVerPedidosLlevarMesa5, 
-            pedidosMesa5, 
-            pedidosMesa5Llevar, 
-            detallePedidoMesa5, 
+        cancelarPedido(listaVerPedidosMesa5,listaVerPedidosLlevarMesa5,detallePedidoMesa5, 
             () -> actualizarListaPedidos(5, listaVerPedidosMesa5, listaVerPedidosLlevarMesa5), 
             () -> mostrarProductosEnMesa(productosPedidoMesa5)
         );
     }//GEN-LAST:event_cancelarPedidoMesa5ActionPerformed
 
     private void cancelarPedidoMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa6ActionPerformed
-        cancelarPedido(
-            listaVerPedidosMesa6, 
-            listaVerPedidosLlevarMesa6, 
-            pedidosMesa6, 
-            pedidosMesa6Llevar, 
-            detallePedidoMesa6, 
+        cancelarPedido(listaVerPedidosMesa6, listaVerPedidosLlevarMesa6, detallePedidoMesa6, 
             () -> actualizarListaPedidos(6, listaVerPedidosMesa6, listaVerPedidosLlevarMesa6), 
             () -> mostrarProductosEnMesa(productosPedidoMesa6)
         );
     }//GEN-LAST:event_cancelarPedidoMesa6ActionPerformed
 
     private void cancelarPedidoMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa7ActionPerformed
-        cancelarPedido(
-            listaVerPedidosMesa7, 
-            listaVerPedidosLlevarMesa7, 
-            pedidosMesa7, 
-            pedidosMesa7Llevar, 
-            detallePedidoMesa7, 
+        cancelarPedido(listaVerPedidosMesa7, listaVerPedidosLlevarMesa7, detallePedidoMesa7, 
             () -> actualizarListaPedidos(7, listaVerPedidosMesa7, listaVerPedidosLlevarMesa7), 
             () -> mostrarProductosEnMesa(productosPedidoMesa7)
         );
     }//GEN-LAST:event_cancelarPedidoMesa7ActionPerformed
 
     private void cancelarPedidoMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa8ActionPerformed
-        cancelarPedido(
-            listaVerPedidosMesa8, 
-            listaVerPedidosLlevarMesa8, 
-            pedidosMesa8, 
-            pedidosMesa8Llevar, 
-            detallePedidoMesa8, 
+        cancelarPedido( listaVerPedidosMesa8, listaVerPedidosLlevarMesa8, detallePedidoMesa8, 
             () -> actualizarListaPedidos(8, listaVerPedidosMesa8, listaVerPedidosLlevarMesa8), 
             () -> mostrarProductosEnMesa(productosPedidoMesa8)
         );
     }//GEN-LAST:event_cancelarPedidoMesa8ActionPerformed
 
     private void cancelarPedidoMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa9ActionPerformed
-        cancelarPedido(
-            listaVerPedidosMesa9, 
-            listaVerPedidosLlevarMesa9, 
-            pedidosMesa9, 
-            pedidosMesa9Llevar, 
-            detallePedidoMesa9, 
+        cancelarPedido(listaVerPedidosMesa9, listaVerPedidosLlevarMesa9, detallePedidoMesa9, 
             () -> actualizarListaPedidos(9, listaVerPedidosMesa9, listaVerPedidosLlevarMesa9),  
             () -> mostrarProductosEnMesa(productosPedidoMesa9)
         );
     }//GEN-LAST:event_cancelarPedidoMesa9ActionPerformed
 
     private void cancelarPedidoMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa10ActionPerformed
-        cancelarPedido(
-            listaVerPedidosMesa10, 
-            listaVerPedidosLlevarMesa10, 
-            pedidosMesa10, 
-            pedidosMesa10Llevar, 
-            detallePedidoMesa10, 
+        cancelarPedido(listaVerPedidosMesa10, listaVerPedidosLlevarMesa10, detallePedidoMesa10, 
             () -> actualizarListaPedidos(10, listaVerPedidosMesa10, listaVerPedidosLlevarMesa10),
             () -> mostrarProductosEnMesa(productosPedidoMesa10)
         );
     }//GEN-LAST:event_cancelarPedidoMesa10ActionPerformed
 
     private void cancelarPedidoMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa11ActionPerformed
-        cancelarPedido(
-            listaVerPedidosMesa11, 
-            listaVerPedidosLlevarMesa11, 
-            pedidosMesa11, 
-            pedidosMesa11Llevar, 
-            detallePedidoMesa11, 
+        cancelarPedido(listaVerPedidosMesa11, listaVerPedidosLlevarMesa11, detallePedidoMesa11, 
             () -> actualizarListaPedidos(11, listaVerPedidosMesa11, listaVerPedidosLlevarMesa11), 
             () -> mostrarProductosEnMesa(productosPedidoMesa11)
         );
     }//GEN-LAST:event_cancelarPedidoMesa11ActionPerformed
 
     private void cancelarPedidoMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa12ActionPerformed
-        cancelarPedido(
-            listaVerPedidosMesa12, 
-            listaVerPedidosLlevarMesa12, 
-            pedidosMesa12, 
-            pedidosMesa12Llevar, 
-            detallePedidoMesa12, 
+        cancelarPedido(listaVerPedidosMesa12, listaVerPedidosLlevarMesa12, detallePedidoMesa12, 
             () -> actualizarListaPedidos(12, listaVerPedidosMesa12, listaVerPedidosLlevarMesa12), 
             () -> mostrarProductosEnMesa(productosPedidoMesa12)
         );
@@ -5634,7 +5589,6 @@ public class JframeMesero extends javax.swing.JFrame {
             listaOpuesta.clearSelection();
         }
     }
-
     
     private void listaVerPedidosMesa1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaVerPedidosMesa1ValueChanged
         cambioSeleccionVerPedidos(listaVerPedidosMesa1, listaVerPedidosLlevarMesa1);
@@ -6274,9 +6228,7 @@ public class JframeMesero extends javax.swing.JFrame {
     private void cancelarPedidoMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa3ActionPerformed
         cancelarPedido(
             listaVerPedidosMesa3, 
-            listaVerPedidosLlevarMesa3, 
-            pedidosMesa3, 
-            pedidosMesa3Llevar, 
+            listaVerPedidosLlevarMesa3,
             detallePedidoMesa3, 
             () -> actualizarListaPedidos(3, listaVerPedidosMesa3, listaVerPedidosLlevarMesa3), 
             () -> mostrarProductosEnMesa(productosPedidoMesa3)
@@ -6332,8 +6284,6 @@ public class JframeMesero extends javax.swing.JFrame {
         cancelarPedido(
             listaVerPedidosMesa2, 
             listaVerPedidosLlevarMesa2, 
-            pedidosMesa2, 
-            pedidosMesa2Llevar, 
             detallePedidoMesa2, 
             () -> actualizarListaPedidos(2, listaVerPedidosMesa2, listaVerPedidosLlevarMesa2), 
             () -> mostrarProductosEnMesa(productosPedidoMesa2)
