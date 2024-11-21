@@ -5512,13 +5512,11 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarPedidoMesa1ActionPerformed
 
     private void btnLimpiarMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa2ActionPerformed
-        limpiarMesa(pedidosMesa2, pedidosMesa2Llevar, btnMesa2, 1, detallePedidoMesa2,
-                () -> actualizarListaPedidos(2, listaVerPedidosMesa2, listaVerPedidosLlevarMesa2));
+        limpiarMesa(btnMesa2, 2, detallePedidoMesa2, () -> actualizarListaPedidos(2, listaVerPedidosMesa2, listaVerPedidosLlevarMesa2));
     }//GEN-LAST:event_btnLimpiarMesa2ActionPerformed
 
     private void btnLimpiarMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa3ActionPerformed
-        limpiarMesa(pedidosMesa3, pedidosMesa3Llevar, btnMesa3, 2, detallePedidoMesa3, 
-                () -> actualizarListaPedidos(3, listaVerPedidosMesa3, listaVerPedidosLlevarMesa3));
+        limpiarMesa(btnMesa3, 3, detallePedidoMesa3, () -> actualizarListaPedidos(3, listaVerPedidosMesa3, listaVerPedidosLlevarMesa3));
     }//GEN-LAST:event_btnLimpiarMesa3ActionPerformed
 
     private void cancelarPedidoMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa4ActionPerformed
@@ -5967,7 +5965,43 @@ public class JframeMesero extends javax.swing.JFrame {
         );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa1ActionPerformed
 
-    private void limpiarMesa(
+    private void limpiarMesa(JButton botonMesa, int numeroMesa, JList<String> detallePedido, Runnable actualizarListaPedidos) {
+
+        int confirmacion = JOptionPane.showConfirmDialog(
+            this,
+            "¿Estás seguro de que deseas limpiar la mesa? Esto no eliminará los pedidos.",
+            "Confirmación de limpieza",
+            JOptionPane.YES_NO_OPTION
+        );
+
+        if (confirmacion == JOptionPane.YES_OPTION) {
+            boolean estadoActualizado = Mesa.actualizarEstadoMesaEnBaseDatos(numeroMesa, "DESOCUPADA");
+            
+            if (estadoActualizado) {
+                botonMesa.setBackground(Color.GREEN);
+                DefaultListModel<String> modeloVacio = new DefaultListModel<>();
+                detallePedido.setModel(modeloVacio);
+                actualizarListaPedidos.run();
+
+                JOptionPane.showMessageDialog(
+                    this,
+                    "La mesa ha sido limpiada y está disponible nuevamente.",
+                    "Confirmación",
+                    JOptionPane.INFORMATION_MESSAGE
+                );
+            } else {
+                JOptionPane.showMessageDialog(
+                    this,
+                    "No se pudo actualizar el estado de la mesa en la base de datos.",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
+                );
+            }
+        }
+    }
+
+    
+    /*private void limpiarMesa(
         ArrayList<Pedido> pedidosMesa, 
         ArrayList<Pedido> pedidosLlevar, 
         JButton botonMesa, 
@@ -5988,12 +6022,11 @@ public class JframeMesero extends javax.swing.JFrame {
                 "Confirmación", 
                 JOptionPane.INFORMATION_MESSAGE
             );
-    }
+    }*/
 
     
     private void btnLimpiarMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa1ActionPerformed
-        limpiarMesa(pedidosMesa1, pedidosMesa1Llevar, btnMesa1, 0, detallePedidoMesa1,
-            () -> actualizarListaPedidos(1, listaVerPedidosMesa1, listaVerPedidosLlevarMesa1));
+        limpiarMesa(btnMesa1, 1, detallePedidoMesa1, () -> actualizarListaPedidos(1, listaVerPedidosMesa1, listaVerPedidosLlevarMesa1));
     }//GEN-LAST:event_btnLimpiarMesa1ActionPerformed
 
     private void btnAgregarProductoCartaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoCartaActionPerformed
@@ -6236,154 +6269,120 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarPedidoMesa3ActionPerformed
 
     private void btnLimpiarMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa4ActionPerformed
-        limpiarMesa(pedidosMesa4, pedidosMesa4Llevar, btnMesa4, 3, detallePedidoMesa4,
-            () -> actualizarListaPedidos(4, listaVerPedidosMesa4, listaVerPedidosLlevarMesa4));
+        limpiarMesa(btnMesa4, 4, detallePedidoMesa4, () -> actualizarListaPedidos(4, listaVerPedidosMesa4, listaVerPedidosLlevarMesa4));
     }//GEN-LAST:event_btnLimpiarMesa4ActionPerformed
 
     private void btnLimpiarMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa5ActionPerformed
-        limpiarMesa(pedidosMesa5, pedidosMesa5Llevar, btnMesa5, 4, detallePedidoMesa5, 
-            () -> actualizarListaPedidos(5, listaVerPedidosMesa5, listaVerPedidosLlevarMesa5));
+        limpiarMesa(btnMesa5, 5, detallePedidoMesa5, () -> actualizarListaPedidos(5, listaVerPedidosMesa5, listaVerPedidosLlevarMesa5));
     }//GEN-LAST:event_btnLimpiarMesa5ActionPerformed
 
     private void btnLimpiarMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa6ActionPerformed
-        limpiarMesa(pedidosMesa6, pedidosMesa6Llevar, btnMesa6, 5, detallePedidoMesa6, 
-            () -> actualizarListaPedidos(6, listaVerPedidosMesa6, listaVerPedidosLlevarMesa6));
+        limpiarMesa(btnMesa6, 6, detallePedidoMesa6, () -> actualizarListaPedidos(6, listaVerPedidosMesa6, listaVerPedidosLlevarMesa6));
     }//GEN-LAST:event_btnLimpiarMesa6ActionPerformed
 
     private void btnLimpiarMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa7ActionPerformed
-        limpiarMesa(pedidosMesa7, pedidosMesa7Llevar, btnMesa7, 6, detallePedidoMesa7, 
-            () -> actualizarListaPedidos(7, listaVerPedidosMesa7, listaVerPedidosLlevarMesa7));
+        limpiarMesa(btnMesa7, 7, detallePedidoMesa7, () -> actualizarListaPedidos(7, listaVerPedidosMesa7, listaVerPedidosLlevarMesa7));
     }//GEN-LAST:event_btnLimpiarMesa7ActionPerformed
 
     private void btnLimpiarMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa8ActionPerformed
-        limpiarMesa(pedidosMesa8, pedidosMesa8Llevar, btnMesa8, 7, detallePedidoMesa8, 
-            () -> actualizarListaPedidos(8, listaVerPedidosMesa8, listaVerPedidosLlevarMesa8));
+        limpiarMesa(btnMesa8, 8, detallePedidoMesa8,() -> actualizarListaPedidos(8, listaVerPedidosMesa8, listaVerPedidosLlevarMesa8));
     }//GEN-LAST:event_btnLimpiarMesa8ActionPerformed
 
     private void btnLimpiarMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa9ActionPerformed
-        limpiarMesa(pedidosMesa9, pedidosMesa9Llevar, btnMesa9, 8, detallePedidoMesa9, 
-            () -> actualizarListaPedidos(9, listaVerPedidosMesa9, listaVerPedidosLlevarMesa9));
+        limpiarMesa(btnMesa9, 9, detallePedidoMesa9, () -> actualizarListaPedidos(9, listaVerPedidosMesa9, listaVerPedidosLlevarMesa9));
     }//GEN-LAST:event_btnLimpiarMesa9ActionPerformed
 
     private void btnLimpiarMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa10ActionPerformed
-        limpiarMesa(pedidosMesa10, pedidosMesa10Llevar, btnMesa10, 9, detallePedidoMesa10, 
-            () -> actualizarListaPedidos(10, listaVerPedidosMesa10, listaVerPedidosLlevarMesa10));
+        limpiarMesa(btnMesa10, 10, detallePedidoMesa10, () -> actualizarListaPedidos(10, listaVerPedidosMesa10, listaVerPedidosLlevarMesa10));
     }//GEN-LAST:event_btnLimpiarMesa10ActionPerformed
 
     private void btnLimpiarMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa11ActionPerformed
-        limpiarMesa(pedidosMesa11, pedidosMesa11Llevar, btnMesa11, 10, detallePedidoMesa11,
-            () -> actualizarListaPedidos(11, listaVerPedidosMesa11, listaVerPedidosLlevarMesa11));
+        limpiarMesa(btnMesa11, 11, detallePedidoMesa11, () -> actualizarListaPedidos(11, listaVerPedidosMesa11, listaVerPedidosLlevarMesa11));
     }//GEN-LAST:event_btnLimpiarMesa11ActionPerformed
 
     private void btnLimpiarMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa12ActionPerformed
-        limpiarMesa(pedidosMesa12, pedidosMesa12Llevar, btnMesa12, 11, detallePedidoMesa12, 
-            () -> actualizarListaPedidos(12, listaVerPedidosMesa12, listaVerPedidosLlevarMesa12));
+        limpiarMesa(btnMesa12, 12, detallePedidoMesa12, () -> actualizarListaPedidos(12, listaVerPedidosMesa12, listaVerPedidosLlevarMesa12));
     }//GEN-LAST:event_btnLimpiarMesa12ActionPerformed
 
     private void cancelarPedidoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa2ActionPerformed
-        cancelarPedido(
-            listaVerPedidosMesa2, 
-            listaVerPedidosLlevarMesa2, 
-            detallePedidoMesa2, 
+        cancelarPedido(listaVerPedidosMesa2, listaVerPedidosLlevarMesa2, detallePedidoMesa2, 
             () -> actualizarListaPedidos(2, listaVerPedidosMesa2, listaVerPedidosLlevarMesa2), 
             () -> mostrarProductosEnMesa(productosPedidoMesa2)
         );
     }//GEN-LAST:event_cancelarPedidoMesa2ActionPerformed
 
     private void btnBorrarProductoPedidoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa2ActionPerformed
-        borrarProductoDePedido(
-            listaPedidosMesa2, 
-            pedidoMesa2,
+        borrarProductoDePedido(listaPedidosMesa2, pedidoMesa2,
             () -> actualizarListaProductosDelPedido(pedidoMesa2, listaPedidosMesa2), 
             () -> mostrarProductosEnMesa(productosPedidoMesa2)
         );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa2ActionPerformed
 
     private void btnBorrarProductoPedidoMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa3ActionPerformed
-        borrarProductoDePedido(
-            listaPedidosMesa3, 
-            pedidoMesa3,
+        borrarProductoDePedido(listaPedidosMesa3, pedidoMesa3,
             () -> actualizarListaProductosDelPedido(pedidoMesa3, listaPedidosMesa3), 
             () -> mostrarProductosEnMesa(productosPedidoMesa3)
         );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa3ActionPerformed
 
     private void btnBorrarProductoPedidoMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa4ActionPerformed
-        borrarProductoDePedido(
-            listaPedidosMesa4, 
-            pedidoMesa4,
+        borrarProductoDePedido(listaPedidosMesa4, pedidoMesa4,
             () -> actualizarListaProductosDelPedido(pedidoMesa4, listaPedidosMesa4), 
             () -> mostrarProductosEnMesa(productosPedidoMesa4)
         );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa4ActionPerformed
 
     private void btnBorrarProductoPedidoMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa5ActionPerformed
-        borrarProductoDePedido(
-            listaPedidosMesa5, 
-            pedidoMesa5,
+        borrarProductoDePedido(listaPedidosMesa5, pedidoMesa5,
             () -> actualizarListaProductosDelPedido(pedidoMesa5, listaPedidosMesa5), 
             () -> mostrarProductosEnMesa(productosPedidoMesa5)
         );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa5ActionPerformed
 
     private void btnBorrarProductoPedidoMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa6ActionPerformed
-        borrarProductoDePedido(
-            listaPedidosMesa6, 
-            pedidoMesa6,
+        borrarProductoDePedido(listaPedidosMesa6, pedidoMesa6,
             () -> actualizarListaProductosDelPedido(pedidoMesa6, listaPedidosMesa6), 
             () -> mostrarProductosEnMesa(productosPedidoMesa6)
         );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa6ActionPerformed
 
     private void btnBorrarProductoPedidoMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa7ActionPerformed
-        borrarProductoDePedido(
-            listaPedidosMesa7, 
-            pedidoMesa7,
+        borrarProductoDePedido(listaPedidosMesa7, pedidoMesa7,
             () -> actualizarListaProductosDelPedido(pedidoMesa7, listaPedidosMesa7), 
             () -> mostrarProductosEnMesa(productosPedidoMesa7)
         );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa7ActionPerformed
 
     private void btnBorrarProductoPedidoMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa8ActionPerformed
-        borrarProductoDePedido(
-            listaPedidosMesa8, 
-            pedidoMesa8,
+        borrarProductoDePedido(listaPedidosMesa8, pedidoMesa8,
             () -> actualizarListaProductosDelPedido(pedidoMesa8, listaPedidosMesa8), 
             () -> mostrarProductosEnMesa(productosPedidoMesa8)
         );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa8ActionPerformed
 
     private void btnBorrarProductoPedidoMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa9ActionPerformed
-        borrarProductoDePedido(
-            listaPedidosMesa9, 
-            pedidoMesa9,
+        borrarProductoDePedido(listaPedidosMesa9, pedidoMesa9,
             () -> actualizarListaProductosDelPedido(pedidoMesa9, listaPedidosMesa9), 
             () -> mostrarProductosEnMesa(productosPedidoMesa9)
         );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa9ActionPerformed
 
     private void btnBorrarProductoPedidoMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa10ActionPerformed
-        borrarProductoDePedido(
-            listaPedidosMesa10, 
-            pedidoMesa10,
+        borrarProductoDePedido(listaPedidosMesa10, pedidoMesa10,
             () -> actualizarListaProductosDelPedido(pedidoMesa10, listaPedidosMesa10), 
             () -> mostrarProductosEnMesa(productosPedidoMesa10)
         );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa10ActionPerformed
 
     private void btnBorrarProductoPedidoMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa11ActionPerformed
-        borrarProductoDePedido(
-            listaPedidosMesa11, 
-            pedidoMesa11,
+        borrarProductoDePedido(listaPedidosMesa11, pedidoMesa11,
             () -> actualizarListaProductosDelPedido(pedidoMesa11, listaPedidosMesa11), 
             () -> mostrarProductosEnMesa(productosPedidoMesa11)
         );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa11ActionPerformed
 
     private void btnBorrarProductoPedidoMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProductoPedidoMesa12ActionPerformed
-        borrarProductoDePedido(
-            listaPedidosMesa12, 
-            pedidoMesa12,
+        borrarProductoDePedido(listaPedidosMesa12, pedidoMesa12,
             () -> actualizarListaProductosDelPedido(pedidoMesa12, listaPedidosMesa12), 
             () -> mostrarProductosEnMesa(productosPedidoMesa12)
         );
