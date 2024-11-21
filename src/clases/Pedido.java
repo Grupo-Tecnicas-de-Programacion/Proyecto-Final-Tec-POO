@@ -95,8 +95,11 @@ public class Pedido {
     }
     
     public boolean registrarPedidoEnBaseDatos(int numeroMesa, List<Producto> productos) {
+        this.setListaProductos(new ArrayList<>(productos));
+        this.recalcularTotal();
+        
         String insertarPedido = "INSERT INTO pedidos (num_pedido, tipo_pedido, precio_total, id_mesa) VALUES (?, ?, ?, ?)";
-
+        
         try (Connection conexion = ConexionDB.conectar();
              PreparedStatement sentenciaPedidos = conexion.prepareStatement(insertarPedido, Statement.RETURN_GENERATED_KEYS)) {
 
