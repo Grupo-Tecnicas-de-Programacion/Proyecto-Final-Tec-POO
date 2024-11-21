@@ -289,6 +289,33 @@ public class Mesa {
         return totalCuenta;
     }
     
+    public static boolean eliminarPedidosDeMesaDesdeDB(int numeroMesa) {
+        String consultaEliminarPedidos = "DELETE pp FROM pedido_productos pp " +
+                                         "JOIN pedidos p ON pp.id_pedido = p.id " +
+                                         "WHERE p.id_mesa = ?";
+
+        String consultaEliminarPedidosTabla = "DELETE FROM pedidos WHERE id_mesa = ?";
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement eliminarProductos = conexion.prepareStatement(consultaEliminarPedidos);
+             PreparedStatement eliminarPedidos = conexion.prepareStatement(consultaEliminarPedidosTabla)) {
+
+            eliminarProductos.setInt(1, numeroMesa);
+            eliminarProductos.executeUpdate();
+
+            eliminarPedidos.setInt(1, numeroMesa);
+            int filasAfectadas = eliminarPedidos.executeUpdate();
+
+            return filasAfectadas > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println("Error al eliminar los pedidos de la mesa: " + e.getMessage());
+            return false;
+        }
+    }
+
+    
     public final class Cuenta {
         private double totalPagar;
 

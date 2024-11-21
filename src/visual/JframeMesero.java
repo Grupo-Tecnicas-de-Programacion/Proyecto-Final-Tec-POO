@@ -5512,11 +5512,11 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarPedidoMesa1ActionPerformed
 
     private void btnLimpiarMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa2ActionPerformed
-        limpiarMesa(btnMesa2, 2, detallePedidoMesa2);
+        limpiarMesa(btnMesa2, 2, detallePedidoMesa2, listaVerPedidosMesa2, listaVerPedidosLlevarMesa2);
     }//GEN-LAST:event_btnLimpiarMesa2ActionPerformed
 
     private void btnLimpiarMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa3ActionPerformed
-        limpiarMesa(btnMesa3, 3, detallePedidoMesa3);
+        limpiarMesa(btnMesa3, 3, detallePedidoMesa3, listaVerPedidosMesa3, listaVerPedidosLlevarMesa3);
     }//GEN-LAST:event_btnLimpiarMesa3ActionPerformed
 
     private void cancelarPedidoMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa4ActionPerformed
@@ -5939,25 +5939,30 @@ public class JframeMesero extends javax.swing.JFrame {
         );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa1ActionPerformed
 
-    private void limpiarMesa(JButton botonMesa, int numeroMesa, JList<String> detallePedido) {
+    private void limpiarMesa(JButton botonMesa, int numeroMesa, JList<String> detallePedido, JList<String> listaPedidosMesa, JList<String> listaPedidosLlevar) {
 
-        boolean estadoActualizado = Mesa.actualizarEstadoMesaEnBaseDatos(numeroMesa, "DESOCUPADA"); 
-        
-        if (estadoActualizado) {
+        boolean pedidosEliminados = Mesa.eliminarPedidosDeMesaDesdeDB(numeroMesa);
+
+        boolean estadoActualizado = Mesa.actualizarEstadoMesaEnBaseDatos(numeroMesa, "DESOCUPADA");
+
+        if (pedidosEliminados && estadoActualizado) {
             botonMesa.setBackground(Color.GREEN);
+
             DefaultListModel<String> modeloVacio = new DefaultListModel<>();
             detallePedido.setModel(modeloVacio);
+            listaPedidosMesa.setModel(modeloVacio);
+            listaPedidosLlevar.setModel(modeloVacio);
 
             JOptionPane.showMessageDialog(
                 this,
-                "Todos los pedidos han sido limpiados.",
+                "La mesa ha sido limpiada. Todos los pedidos asociados han sido eliminados.",
                 "Confirmación",
                 JOptionPane.INFORMATION_MESSAGE
             );
         } else {
             JOptionPane.showMessageDialog(
                 this,
-                "No se pudo actualizar el estado de la mesa en la base de datos.",
+                "No se pudo limpiar completamente la mesa en la base de datos.",
                 "Error",
                 JOptionPane.ERROR_MESSAGE
             );
@@ -5965,7 +5970,7 @@ public class JframeMesero extends javax.swing.JFrame {
     }
    
     private void btnLimpiarMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa1ActionPerformed
-        limpiarMesa(btnMesa1, 1, detallePedidoMesa1);
+        limpiarMesa(btnMesa1, 1, detallePedidoMesa1, listaVerPedidosMesa1, listaVerPedidosLlevarMesa1);
     }//GEN-LAST:event_btnLimpiarMesa1ActionPerformed
 
     private void btnAgregarProductoCartaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoCartaActionPerformed
@@ -6208,39 +6213,39 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarPedidoMesa3ActionPerformed
 
     private void btnLimpiarMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa4ActionPerformed
-        limpiarMesa(btnMesa4, 4, detallePedidoMesa4);
+        limpiarMesa(btnMesa4, 4, detallePedidoMesa4, listaVerPedidosMesa4, listaVerPedidosLlevarMesa4);
     }//GEN-LAST:event_btnLimpiarMesa4ActionPerformed
 
     private void btnLimpiarMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa5ActionPerformed
-        limpiarMesa(btnMesa5, 5, detallePedidoMesa5);
+        limpiarMesa(btnMesa5, 5, detallePedidoMesa5, listaVerPedidosMesa5, listaVerPedidosLlevarMesa5);
     }//GEN-LAST:event_btnLimpiarMesa5ActionPerformed
 
     private void btnLimpiarMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa6ActionPerformed
-        limpiarMesa(btnMesa6, 6, detallePedidoMesa6);
+        limpiarMesa(btnMesa6, 6, detallePedidoMesa6, listaVerPedidosMesa6, listaVerPedidosLlevarMesa6);
     }//GEN-LAST:event_btnLimpiarMesa6ActionPerformed
 
     private void btnLimpiarMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa7ActionPerformed
-        limpiarMesa(btnMesa7, 7, detallePedidoMesa7);
+        limpiarMesa(btnMesa7, 7, detallePedidoMesa7, listaVerPedidosMesa7, listaVerPedidosLlevarMesa7);
     }//GEN-LAST:event_btnLimpiarMesa7ActionPerformed
 
     private void btnLimpiarMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa8ActionPerformed
-        limpiarMesa(btnMesa8, 8, detallePedidoMesa8);
+        limpiarMesa(btnMesa8, 8, detallePedidoMesa8, listaVerPedidosMesa8, listaVerPedidosLlevarMesa8);
     }//GEN-LAST:event_btnLimpiarMesa8ActionPerformed
 
     private void btnLimpiarMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa9ActionPerformed
-        limpiarMesa(btnMesa9, 9, detallePedidoMesa9);
+        limpiarMesa(btnMesa9, 9, detallePedidoMesa9, listaVerPedidosMesa9, listaVerPedidosLlevarMesa9);
     }//GEN-LAST:event_btnLimpiarMesa9ActionPerformed
 
     private void btnLimpiarMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa10ActionPerformed
-        limpiarMesa(btnMesa10, 10, detallePedidoMesa10);
+        limpiarMesa(btnMesa10, 10, detallePedidoMesa10, listaVerPedidosMesa10, listaVerPedidosLlevarMesa10);
     }//GEN-LAST:event_btnLimpiarMesa10ActionPerformed
 
     private void btnLimpiarMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa11ActionPerformed
-        limpiarMesa(btnMesa11, 11, detallePedidoMesa11);
+        limpiarMesa(btnMesa11, 11, detallePedidoMesa11, listaVerPedidosMesa11, listaVerPedidosLlevarMesa11);
     }//GEN-LAST:event_btnLimpiarMesa11ActionPerformed
 
     private void btnLimpiarMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa12ActionPerformed
-        limpiarMesa(btnMesa12, 12, detallePedidoMesa12);
+        limpiarMesa(btnMesa12, 12, detallePedidoMesa12, listaVerPedidosMesa12, listaVerPedidosLlevarMesa12);
     }//GEN-LAST:event_btnLimpiarMesa12ActionPerformed
 
     private void cancelarPedidoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa2ActionPerformed
