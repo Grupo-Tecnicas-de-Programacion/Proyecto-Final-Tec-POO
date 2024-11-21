@@ -32,6 +32,8 @@ public class Pedido {
         this.precioTotalPedido = 0;
     }
 
+    
+    
     public int getId() {
         return id;
     }
@@ -340,4 +342,48 @@ public class Pedido {
             return filasAfectadas > 0;
         }
     }
+    
+    public static boolean registrarPedidoEnHistorialPorNumero(int numPedido) {
+        String queryPedido = "SELECT id, precio_total, fecha_hora FROM pedidos WHERE num_pedido = ?";
+        String queryProductos = 
+            "SELECT p.nombre, pp.cantidad, p.precio " +
+            "FROM pedido_productos pp " +
+            "JOIN productos p ON pp.id_producto = p.id " +
+            "JOIN pedidos pe ON pp.id_pedido = pe.id " +
+            "WHERE pe.num_pedido = ?";
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement stmtPedido = conexion.prepareStatement(queryPedido);
+             PreparedStatement stmtProductos = conexion.prepareStatement(queryProductos)) {
+
+            stmtPedido.setInt(1, numPedido);
+            ResultSet rsPedido = stmtPedido.executeQuery();
+
+            if (rsPedido.next()) {
+                int idPedido = rsPedido.getInt("id");
+                Timestamp fechaHora = rsPedido.getTimestamp("fecha_hora");
+
+                stmtProductos.setInt(1, numPedido);
+                ResultSet rsProductos = stmtProductos.executeQuery();
+
+                List<Producto> productos = new ArrayList<>();
+                while (rsProductos.next()) {
+                    Producto producto = new Producto();
+                    producto.setNombre(rsProductos.getString("nombre")); // Obtener el nombre del producto
+                    producto.setCantidad(rsProductos.getInt("cantidad"));
+                    producto.setPrecio(rsProductos.getDouble("precio"));
+                    productos.add(producto);
+                }
+
+                return Producto.registrarProductosEnHistorial(idPedido, productos, new Date(fechaHora.getTime()));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
+    
 }

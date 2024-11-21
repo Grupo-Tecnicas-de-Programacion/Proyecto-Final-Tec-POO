@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Producto {
@@ -189,6 +190,20 @@ public class Producto {
         return listaProductos;
     }
     
+    public static boolean actualizarCantidadDisponibleProducto(String nombreProducto, int cantidad) {
+        String conultaCantidad = "UPDATE productos SET cantidad_disponible = cantidad_disponible + ? WHERE nombre = ?";
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentenciaConsulta = conexion.prepareStatement(conultaCantidad)) {
+                sentenciaConsulta.setInt(1, cantidad);
+                sentenciaConsulta.setString(2, nombreProducto);
+                int filasAfectadas = sentenciaConsulta.executeUpdate();
+                return filasAfectadas > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    
     public static int obtenerIdProductoDesdeBaseDatos(String nombreProducto) {
         String consulta = "SELECT id FROM productos WHERE nombre = ?";
 
@@ -208,20 +223,45 @@ public class Producto {
 
         return -1;
     }
-
     
-    public static boolean actualizarCantidadDisponibleProducto(String nombreProducto, int cantidad) {
-        String conultaCantidad = "UPDATE productos SET cantidad_disponible = cantidad_disponible + ? WHERE nombre = ?";
+    public static boolean registrarProductosEnHistorial(int idPedido, List<Producto> productos, Date fecha) {
+        String insertarHistorial = "INSERT INTO historial_pedidos (id_pedido, id_producto, cantidad, precio_unitario, fecha) VALUES (?, ?, ?, ?, ?)";
+
         try (Connection conexion = ConexionDB.conectar();
-             PreparedStatement sentenciaConsulta = conexion.prepareStatement(conultaCantidad)) {
-                sentenciaConsulta.setInt(1, cantidad);
-                sentenciaConsulta.setString(2, nombreProducto);
-                int filasAfectadas = sentenciaConsulta.executeUpdate();
-                return filasAfectadas > 0;
+             PreparedStatement sentenciaHistorial = conexion.prepareStatement(insertarHistorial)) {
+
+            for (Producto producto : productos) {
+
+                int idProducto = obtenerIdProductoDesdeBaseDatos(producto.getNombre());
+
+                if (idProducto == -1) {
+                    System.err.println("No se encontró el ID del producto con nombre: " + producto.getNombre());
+                    return false;
+                }
+
+                sentenciaHistorial.setInt(1, idPedido);
+                sentenciaHistorial.setInt(2, idProducto);
+                sentenciaHistorial.setInt(3, producto.getCantidad());
+                sentenciaHistorial.setDouble(4, producto.getPrecio());
+                sentenciaHistorial.setDate(5, new java.sql.Date(fecha.getTime()));
+
+                sentenciaHistorial.addBatch();
+            }
+
+            int[] resultados = sentenciaHistorial.executeBatch();
+            for (int resultado : resultados) {
+                if (resultado == PreparedStatement.EXECUTE_FAILED) {
+                    System.err.println("Error al registrar un producto en el historial.");
+                    return false;
+                }
+            }
+            return true;
+
         } catch (SQLException e) {
             e.printStackTrace();
+            System.err.println("Error al registrar productos en el historial: " + e.getMessage());
+            return false;
         }
-        return false;
     }
 
 }

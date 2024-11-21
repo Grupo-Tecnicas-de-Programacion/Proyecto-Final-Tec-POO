@@ -17,12 +17,10 @@ public class Mesa {
     private String estado;
     private int capacidad;
     private ArrayList<Pedido> listaPedidos;
-    private Cuenta cuenta;
     private Cliente cliente;
 
     public Mesa() {
         this.listaPedidos = new ArrayList<>();
-        this.cuenta = new Cuenta(); 
         this.estado = "Desocupada";
         this.cliente = null;
     }
@@ -32,7 +30,6 @@ public class Mesa {
         this.estado = "Desocupada";
         this.capacidad = capacidad;
         this.listaPedidos = new ArrayList<>();
-        this.cuenta = new Cuenta(); 
         this.cliente = null;
     }
 
@@ -42,14 +39,6 @@ public class Mesa {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
-    }
-    
-    public Cuenta getCuenta() {
-        return cuenta;
-    }
-
-    public void setCuenta(Cuenta cuenta) {
-        this.cuenta = cuenta;
     }
 
     public int getNumeroMesa() {
@@ -313,45 +302,5 @@ public class Mesa {
             System.err.println("Error al eliminar los pedidos de la mesa: " + e.getMessage());
             return false;
         }
-    }
-
-    
-    public final class Cuenta {
-        private double totalPagar;
-
-        public Cuenta() {
-            this.totalPagar = 0;
-        }
-
-        public Cuenta(double totalPagar) {
-            this.totalPagar = 0;
-        }
-
-        public double getTotalPagar() {
-            return totalPagar;
-        }
-
-        public void setTotalPagar(double totalPagar) {
-            this.totalPagar = totalPagar;
-        }
-
-        public double calcularCuentaMesa(ArrayList<Pedido> pedidosMesa, ArrayList<Pedido> pedidosMesaLlevar) {
-            double totalCuenta = 0;
-
-            for (Pedido pedido : pedidosMesa) {
-                for (Producto producto : pedido.getListaProductos()) {
-                    totalCuenta += producto.getPrecio() * producto.getCantidad();
-                }
-            }
-
-            for (Pedido pedido : pedidosMesaLlevar) {
-                for (Producto producto : pedido.getListaProductos()) {
-                    totalCuenta += producto.getPrecio() * producto.getCantidad();
-                }
-            }
-
-            return totalCuenta;
-        }
-
     }
 }

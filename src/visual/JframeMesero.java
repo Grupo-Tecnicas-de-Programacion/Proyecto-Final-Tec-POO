@@ -5684,7 +5684,7 @@ public class JframeMesero extends javax.swing.JFrame {
         cambioSeleccionVerPedidos(listaVerPedidosLlevarMesa9, listaVerPedidosMesa9);
     }//GEN-LAST:event_listaVerPedidosLlevarMesa9ValueChanged
     
-    private void mostrarTotalCuentaMesa(int numeroMesa, JButton btnLimpiarMesa) {
+    private void mostrarTotalCuentaMesa(int numeroMesa, JButton btnLimpiarMesa, JButton botonMesa) {
         double totalCuentaMesa = Mesa.calcularTotalCuentaMesaDesdeDB(numeroMesa);
 
         JOptionPane.showMessageDialog(
@@ -5696,6 +5696,8 @@ public class JframeMesero extends javax.swing.JFrame {
 
         if (totalCuentaMesa == 0) {
             btnLimpiarMesa.setEnabled(false);
+            botonMesa.setBackground(Color.GREEN);
+            
         } else {
             btnLimpiarMesa.setEnabled(true);
         }
@@ -5703,51 +5705,51 @@ public class JframeMesero extends javax.swing.JFrame {
 
     
     private void btnTotalCuentaMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa1ActionPerformed
-        mostrarTotalCuentaMesa(1, btnLimpiarMesa1);
+        mostrarTotalCuentaMesa(1, btnLimpiarMesa1, btnMesa1);
     }//GEN-LAST:event_btnTotalCuentaMesa1ActionPerformed
 
     private void btnTotalCuentaMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa2ActionPerformed
-        mostrarTotalCuentaMesa(2, btnLimpiarMesa2);
+        mostrarTotalCuentaMesa(2, btnLimpiarMesa2, btnMesa2);
     }//GEN-LAST:event_btnTotalCuentaMesa2ActionPerformed
 
     private void btnTotalCuentaMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa3ActionPerformed
-        mostrarTotalCuentaMesa(3, btnLimpiarMesa3);
+        mostrarTotalCuentaMesa(3, btnLimpiarMesa3, btnMesa3);
     }//GEN-LAST:event_btnTotalCuentaMesa3ActionPerformed
 
     private void btnTotalCuentaMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa4ActionPerformed
-        mostrarTotalCuentaMesa(4, btnLimpiarMesa4);
+        mostrarTotalCuentaMesa(4, btnLimpiarMesa4, btnMesa4);
     }//GEN-LAST:event_btnTotalCuentaMesa4ActionPerformed
 
     private void btnTotalCuentaMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa5ActionPerformed
-        mostrarTotalCuentaMesa(5, btnLimpiarMesa5);
+        mostrarTotalCuentaMesa(5, btnLimpiarMesa5, btnMesa5);
     }//GEN-LAST:event_btnTotalCuentaMesa5ActionPerformed
 
     private void btnTotalCuentaMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa6ActionPerformed
-        mostrarTotalCuentaMesa(6, btnLimpiarMesa6);
+        mostrarTotalCuentaMesa(6, btnLimpiarMesa6, btnMesa6);
     }//GEN-LAST:event_btnTotalCuentaMesa6ActionPerformed
 
     private void btnTotalCuentaMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa7ActionPerformed
-        mostrarTotalCuentaMesa(7, btnLimpiarMesa7);
+        mostrarTotalCuentaMesa(7, btnLimpiarMesa7, btnMesa7);
     }//GEN-LAST:event_btnTotalCuentaMesa7ActionPerformed
 
     private void btnTotalCuentaMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa8ActionPerformed
-        mostrarTotalCuentaMesa(8, btnLimpiarMesa8);
+        mostrarTotalCuentaMesa(8, btnLimpiarMesa8, btnMesa8);
     }//GEN-LAST:event_btnTotalCuentaMesa8ActionPerformed
 
     private void btnTotalCuentaMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa9ActionPerformed
-        mostrarTotalCuentaMesa(9, btnLimpiarMesa9);
+        mostrarTotalCuentaMesa(9, btnLimpiarMesa9, btnMesa9);
     }//GEN-LAST:event_btnTotalCuentaMesa9ActionPerformed
 
     private void btnTotalCuentaMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa10ActionPerformed
-        mostrarTotalCuentaMesa(10, btnLimpiarMesa10);
+        mostrarTotalCuentaMesa(10, btnLimpiarMesa10, btnMesa10);
     }//GEN-LAST:event_btnTotalCuentaMesa10ActionPerformed
 
     private void btnTotalCuentaMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa11ActionPerformed
-        mostrarTotalCuentaMesa(11, btnLimpiarMesa11);
+        mostrarTotalCuentaMesa(11, btnLimpiarMesa11, btnMesa11);
     }//GEN-LAST:event_btnTotalCuentaMesa11ActionPerformed
 
     private void btnTotalCuentaMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalCuentaMesa12ActionPerformed
-        mostrarTotalCuentaMesa(12, btnLimpiarMesa12);
+        mostrarTotalCuentaMesa(12, btnLimpiarMesa12, btnMesa12);
     }//GEN-LAST:event_btnTotalCuentaMesa12ActionPerformed
 
     private void generarRecibo(int numeroMesa, JButton btnLimpiarMesa) {
@@ -5804,7 +5806,14 @@ public class JframeMesero extends javax.swing.JFrame {
                 cliente = new Cliente(tipoIdentificacion, identificacion, nombreCliente, apellidoCliente);
                 Cliente.registrarClienteEnBaseDatos(cliente);
             }
-
+            
+            for (Pedido pedido : pedidosMesa) {
+                Pedido.registrarPedidoEnHistorialPorNumero(pedido.getNumPedido());
+            }
+            for (Pedido pedido : pedidosLlevar) {
+                Pedido.registrarPedidoEnHistorialPorNumero(pedido.getNumPedido());
+            }
+            
             LocalDateTime fechaActual = LocalDateTime.now();
             DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
             String fechaFormateada = fechaActual.format(formatoFecha);
@@ -5869,7 +5878,7 @@ public class JframeMesero extends javax.swing.JFrame {
                     document.close();
 
                     JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en " + fileToSave.getAbsolutePath(), "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
-
+                    btnLimpiarMesa.setEnabled(true);
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                 }

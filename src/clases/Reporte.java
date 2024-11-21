@@ -50,15 +50,7 @@ public class Reporte {
     public int getCantidadProductosVendidos() {
         return cantidadProductosVendidos;
     }
-
-    @Override
-    public String toString() {
-        return "Reporte{" +
-                "fecha='" + fecha + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", totalGanancias=" + totalGanancias +
-                ", cantidadProductosVendidos=" + cantidadProductosVendidos +
-                '}';
-    }
+    
+    
 }
 
