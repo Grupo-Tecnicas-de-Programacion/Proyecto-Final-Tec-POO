@@ -13,8 +13,9 @@ import javax.swing.JList;
 
 
 public class Pedido {
+    private int id;
     private int numPedido;
-    private ArrayList<Producto> listaProductos;
+    private List<Producto> listaProductos;
     private double precioTotalPedido;
     private String tipoPedido;
     private Timestamp fechaHora;
@@ -31,6 +32,14 @@ public class Pedido {
         this.precioTotalPedido = 0;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public int getNumPedido() {
         return numPedido;
     }
@@ -39,11 +48,11 @@ public class Pedido {
         this.numPedido = numPedido;
     }
 
-    public ArrayList<Producto> getListaProductos() {
+    public List<Producto> getListaProductos() {
         return listaProductos;
     }
 
-    public void setListaProductos(ArrayList<Producto> listaProductos) {
+    public void setListaProductos(List<Producto> listaProductos) {
         this.listaProductos = listaProductos;
         recalcularTotal();
     }
@@ -92,6 +101,64 @@ public class Pedido {
             this.listaProductos.add(producto);
         }
         this.recalcularTotal();
+    }
+    
+    public static double calcularCuenta(int numeroMesa) {
+        String consulta = "SELECT SUM(precio_total) AS total_cuenta FROM pedidos WHERE id_mesa = ?";
+        double totalCuenta = 0;
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentencia = conexion.prepareStatement(consulta)) {
+
+            sentencia.setInt(1, numeroMesa);
+
+            try (ResultSet resultado = sentencia.executeQuery()) {
+                if (resultado.next()) {
+                    totalCuenta = resultado.getDouble("total_cuenta");
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println("Error al calcular la cuenta de la mesa: " + e.getMessage());
+        }
+
+        return totalCuenta;
+    }
+
+    public static List<Pedido> obtenerPedidosDesdeBaseDatos(int numeroMesa, String tipoPedido) {
+        String consulta = "SELECT p.id, p.num_pedido, p.tipo_pedido, p.precio_total, p.fecha_hora " +
+                          "FROM pedidos p " +
+                          "INNER JOIN mesas m ON p.id_mesa = m.id " +
+                          "WHERE m.numero_mesa = ? AND p.tipo_pedido = ?";
+        List<Pedido> listaPedidos = new ArrayList<>();
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentencia = conexion.prepareStatement(consulta)) {
+
+            sentencia.setInt(1, numeroMesa);
+            sentencia.setString(2, tipoPedido.toUpperCase());
+
+            try (ResultSet resultado = sentencia.executeQuery()) {
+                while (resultado.next()) {
+                    Pedido pedido = new Pedido();
+                    pedido.setId(resultado.getInt("id"));
+                    pedido.setNumPedido(resultado.getInt("num_pedido"));
+                    pedido.setTipoPedido(resultado.getString("tipo_pedido"));
+                    pedido.setPrecioTotalPedido(resultado.getDouble("precio_total"));
+                    pedido.setFechaHora(resultado.getTimestamp("fecha_hora"));
+
+                    pedido.setListaProductos(Producto.obtenerProductosDePedido(pedido.getId()));
+
+                    listaPedidos.add(pedido);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println("Error al obtener pedidos desde la base de datos: " + e.getMessage());
+        }
+
+        return listaPedidos;
     }
     
     public boolean registrarPedidoEnBaseDatos(int numeroMesa, List<Producto> productos) {
@@ -273,6 +340,4 @@ public class Pedido {
             return filasAfectadas > 0;
         }
     }
-
-
 }

@@ -5512,11 +5512,11 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarPedidoMesa1ActionPerformed
 
     private void btnLimpiarMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa2ActionPerformed
-        limpiarMesa(btnMesa2, 2, detallePedidoMesa2, () -> actualizarListaPedidos(2, listaVerPedidosMesa2, listaVerPedidosLlevarMesa2));
+        limpiarMesa(btnMesa2, 2, detallePedidoMesa2);
     }//GEN-LAST:event_btnLimpiarMesa2ActionPerformed
 
     private void btnLimpiarMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa3ActionPerformed
-        limpiarMesa(btnMesa3, 3, detallePedidoMesa3, () -> actualizarListaPedidos(3, listaVerPedidosMesa3, listaVerPedidosLlevarMesa3));
+        limpiarMesa(btnMesa3, 3, detallePedidoMesa3);
     }//GEN-LAST:event_btnLimpiarMesa3ActionPerformed
 
     private void cancelarPedidoMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa4ActionPerformed
@@ -5750,27 +5750,21 @@ public class JframeMesero extends javax.swing.JFrame {
         mostrarTotalCuentaMesa(12, btnLimpiarMesa12);
     }//GEN-LAST:event_btnTotalCuentaMesa12ActionPerformed
 
-    private void registrarProductoVendido(Producto producto) {
-        boolean productoExistente = false;
-        for (Producto p : productosVendidos) {
-            if (p.getNombre().equals(producto.getNombre())) {
-                p.setCantidad(p.getCantidad() + producto.getCantidad());
-                productoExistente = true;
-                break;
-            }
-        }
-        if (!productoExistente) {
-            productosVendidos.add(new Producto(producto.getNombre(), producto.getPrecio(), producto.getCantidad()));
-        }
-    }
-    
-    private void generarRecibo(int numeroMesa, ArrayList<Pedido> pedidosEnMesa, ArrayList<Pedido> pedidosParaLlevar, JButton btnLimpiarMesa) {
-        
-        double totalCuenta = mesas.get(numeroMesa).getCuenta().calcularCuentaMesa(pedidosEnMesa, pedidosParaLlevar);
+    private void generarRecibo(int numeroMesa, JButton btnLimpiarMesa) {
+        try {
+            List<Pedido> pedidosMesa = Pedido.obtenerPedidosDesdeBaseDatos(numeroMesa, "MESA");
+            List<Pedido> pedidosLlevar = Pedido.obtenerPedidosDesdeBaseDatos(numeroMesa, "LLEVAR");
 
-        if (totalCuenta == 0) {
-            JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        } else {
+            if (pedidosMesa.isEmpty() && pedidosLlevar.isEmpty()) {
+                JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. No hay pedidos para esta mesa.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            double totalCuenta = Pedido.calcularCuenta(numeroMesa);
+            if (totalCuenta == 0) {
+                JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
 
             String[] opciones = {"DNI", "Pasaporte"};
             String tipoIdentificacion = (String) JOptionPane.showInputDialog(
@@ -5782,41 +5776,34 @@ public class JframeMesero extends javax.swing.JFrame {
                     opciones,
                     opciones[0]);
 
-            if (tipoIdentificacion == null) {
-                return;
-            }
+            if (tipoIdentificacion == null) return;
 
             String identificacion = JOptionPane.showInputDialog("Ingrese el número de " + tipoIdentificacion + ":");
-            
             while (identificacion == null || identificacion.trim().isEmpty() ||
                     (tipoIdentificacion.equals("DNI") && !identificacion.matches("\\d{8}")) ||
                     (tipoIdentificacion.equals("Pasaporte") && !identificacion.matches("[a-zA-Z0-9]+"))) {
-                if (identificacion == null) {
-                    return;
-                }else{
-                    identificacion = JOptionPane.showInputDialog("Número de " + tipoIdentificacion + " no válido. Ingrese correctamente:");
-                }
+                identificacion = JOptionPane.showInputDialog("Número de " + tipoIdentificacion + " no válido. Ingrese correctamente:");
+                if (identificacion == null) return;
             }
 
-            String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
-            while (nombreCliente == null || nombreCliente.trim().isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
-                if (nombreCliente == null) {
-                    return;
-                }else{
+            Cliente cliente = Cliente.obtenerClienteDesdeBaseDatos(identificacion);
+            if (cliente == null) {
+                
+                String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
+                while (nombreCliente == null || nombreCliente.trim().isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
                     nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente (solo letras y espacios):");
-                }   
-            }
-
-            String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
-            while (apellidoCliente == null || apellidoCliente.trim().isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
-                if (apellidoCliente == null) {
-                    return;
-                }else{
-                    apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente (solo letras y espacios):");
+                    if (nombreCliente == null) return;
                 }
-            }
 
-            Cliente cliente = new Cliente(tipoIdentificacion, identificacion, nombreCliente, apellidoCliente);
+                String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
+                while (apellidoCliente == null || apellidoCliente.trim().isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
+                    apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente (solo letras y espacios):");
+                    if (apellidoCliente == null) return;
+                }
+
+                cliente = new Cliente(tipoIdentificacion, identificacion, nombreCliente, apellidoCliente);
+                Cliente.registrarClienteEnBaseDatos(cliente);
+            }
 
             LocalDateTime fechaActual = LocalDateTime.now();
             DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
@@ -5824,7 +5811,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
-            fileChooser.setSelectedFile(new File("Recibo Mesa" + (numeroMesa + 1) + "_" + cliente.getNombre() + " " + cliente.getApellido() + ".pdf"));
+            fileChooser.setSelectedFile(new File("Recibo_Mesa_" + numeroMesa + "_" + cliente.getNombre() + "_" + cliente.getApellido() + ".pdf"));
 
             int userSelection = fileChooser.showSaveDialog(this);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
@@ -5836,24 +5823,16 @@ public class JframeMesero extends javax.swing.JFrame {
                     Document document = new Document(pdfDoc);
 
                     try (InputStream logoStream = getClass().getResourceAsStream("/imagenes/logo.jpg")) {
-                        if (logoStream == null) {
-                            throw new FileNotFoundException("El archivo logo.jpg no fue encontrado en /imagenes/");
-                        }
                         ImageData data = ImageDataFactory.create(logoStream.readAllBytes());
-                        Image logo = new Image(data);
-                        logo.scaleToFit(150, 150);
-                        logo.setFixedPosition(pdfDoc.getDefaultPageSize().getWidth() - 200, pdfDoc.getDefaultPageSize().getHeight() - 150);
+                        Image logo = new Image(data).scaleToFit(150, 150).setFixedPosition(pdfDoc.getDefaultPageSize().getWidth() - 200, pdfDoc.getDefaultPageSize().getHeight() - 150);
                         document.add(logo);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        JOptionPane.showMessageDialog(rootPane, "Error cargando el logo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                     }
 
-                    document.add(new Paragraph("Recibo Mesa " + (numeroMesa + 1)).setBold().setFontSize(16));
+                    document.add(new Paragraph("Recibo Mesa " + numeroMesa).setBold().setFontSize(16));
                     document.add(new Paragraph("Fecha: " + fechaFormateada).setFontSize(10));
                     document.add(new Paragraph("========================================"));
                     document.add(new Paragraph("Cliente: " + cliente.getNombre() + " " + cliente.getApellido()));
-                    document.add(new Paragraph("Tipo de identificación: "+cliente.getTipoIdentificacion()));
+                    document.add(new Paragraph("Tipo de identificación: " + cliente.getTipoIdentificacion()));
                     document.add(new Paragraph("Número de identificación: " + cliente.getIdentificacion()));
                     document.add(new Paragraph("========================================").setMarginBottom(10));
 
@@ -5864,52 +5843,47 @@ public class JframeMesero extends javax.swing.JFrame {
                     table.addCell(new Cell().add(new Paragraph("Subtotal").setBold()));
                     table.addCell(new Cell().add(new Paragraph("Tipo Pedido").setBold()));
 
-                   for (Pedido pedido : pedidosEnMesa) {
+                    for (Pedido pedido : pedidosMesa) {
                         for (Producto producto : pedido.getListaProductos()) {
-                            table.addCell(new Cell().add(new Paragraph(producto.getNombre())));
-                            table.addCell(new Cell().add(new Paragraph(String.valueOf(producto.getCantidad()))));
-                            table.addCell(new Cell().add(new Paragraph(String.format("S/ %.2f", producto.getPrecio()))));
-                            table.addCell(new Cell().add(new Paragraph(String.format("S/ %.2f", producto.getCantidad() * producto.getPrecio()))));
-                            table.addCell(new Cell().add(new Paragraph(pedido.getTipoPedido())));
-
-                            registrarProductoVendido(producto);
+                            table.addCell(producto.getNombre());
+                            table.addCell(String.valueOf(producto.getCantidad()));
+                            table.addCell(String.format("S/ %.2f", producto.getPrecio()));
+                            table.addCell(String.format("S/ %.2f", producto.getCantidad() * producto.getPrecio()));
+                            table.addCell(pedido.getTipoPedido());
                         }
                     }
 
-                    for (Pedido pedido : pedidosParaLlevar) {
+                    for (Pedido pedido : pedidosLlevar) {
                         for (Producto producto : pedido.getListaProductos()) {
-                            table.addCell(new Cell().add(new Paragraph(producto.getNombre())));
-                            table.addCell(new Cell().add(new Paragraph(String.valueOf(producto.getCantidad()))));
-                            table.addCell(new Cell().add(new Paragraph(String.format("S/ %.2f", producto.getPrecio()))));
-                            table.addCell(new Cell().add(new Paragraph(String.format("S/ %.2f", producto.getCantidad() * producto.getPrecio()))));
-                            table.addCell(new Cell().add(new Paragraph(pedido.getTipoPedido())));
-
-                            registrarProductoVendido(producto);
+                            table.addCell(producto.getNombre());
+                            table.addCell(String.valueOf(producto.getCantidad()));
+                            table.addCell(String.format("S/ %.2f", producto.getPrecio()));
+                            table.addCell(String.format("S/ %.2f", producto.getCantidad() * producto.getPrecio()));
+                            table.addCell(pedido.getTipoPedido());
                         }
                     }
 
                     document.add(table);
-
                     document.add(new Paragraph("========================================"));
                     document.add(new Paragraph("Total de la cuenta: S/ " + String.format("%.2f", totalCuenta)).setBold());
-
-
                     document.close();
 
                     JOptionPane.showMessageDialog(rootPane, "Recibo generado correctamente en " + fileToSave.getAbsolutePath(), "Recibo Generado", JOptionPane.INFORMATION_MESSAGE);
-                    btnLimpiarMesa.setEnabled(true);
+
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(rootPane, "Error al generar el recibo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                 }
-            } else {
-                JOptionPane.showMessageDialog(rootPane, "Guardado cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
             }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
         }
     }
 
     
     private void btnGenerarReciboMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa1ActionPerformed
-        generarRecibo(0, pedidosMesa1, pedidosMesa1Llevar, btnLimpiarMesa1);
+        generarRecibo(1, btnLimpiarMesa1);
     }//GEN-LAST:event_btnGenerarReciboMesa1ActionPerformed
 
     private void productosPedidoMesa1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa1ValueChanged
@@ -5965,68 +5939,33 @@ public class JframeMesero extends javax.swing.JFrame {
         );
     }//GEN-LAST:event_btnBorrarProductoPedidoMesa1ActionPerformed
 
-    private void limpiarMesa(JButton botonMesa, int numeroMesa, JList<String> detallePedido, Runnable actualizarListaPedidos) {
+    private void limpiarMesa(JButton botonMesa, int numeroMesa, JList<String> detallePedido) {
 
-        int confirmacion = JOptionPane.showConfirmDialog(
-            this,
-            "¿Estás seguro de que deseas limpiar la mesa? Esto no eliminará los pedidos.",
-            "Confirmación de limpieza",
-            JOptionPane.YES_NO_OPTION
-        );
-
-        if (confirmacion == JOptionPane.YES_OPTION) {
-            boolean estadoActualizado = Mesa.actualizarEstadoMesaEnBaseDatos(numeroMesa, "DESOCUPADA");
-            
-            if (estadoActualizado) {
-                botonMesa.setBackground(Color.GREEN);
-                DefaultListModel<String> modeloVacio = new DefaultListModel<>();
-                detallePedido.setModel(modeloVacio);
-                actualizarListaPedidos.run();
-
-                JOptionPane.showMessageDialog(
-                    this,
-                    "La mesa ha sido limpiada y está disponible nuevamente.",
-                    "Confirmación",
-                    JOptionPane.INFORMATION_MESSAGE
-                );
-            } else {
-                JOptionPane.showMessageDialog(
-                    this,
-                    "No se pudo actualizar el estado de la mesa en la base de datos.",
-                    "Error",
-                    JOptionPane.ERROR_MESSAGE
-                );
-            }
-        }
-    }
-
-    
-    /*private void limpiarMesa(
-        ArrayList<Pedido> pedidosMesa, 
-        ArrayList<Pedido> pedidosLlevar, 
-        JButton botonMesa, 
-        int indiceMesa, 
-        JList<String> detallePedido, 
-        Runnable actualizarListaPedidos
-        ) {
-            pedidosMesa.clear();
-            pedidosLlevar.clear();
-            botonMesa.setBackground(Color.green);
-            mesas.get(indiceMesa).setEstado("Desocupada");
-            actualizarListaPedidos.run();
-            detallePedido.setModel(new DefaultListModel<>());
+        boolean estadoActualizado = Mesa.actualizarEstadoMesaEnBaseDatos(numeroMesa, "DESOCUPADA"); 
+        
+        if (estadoActualizado) {
+            botonMesa.setBackground(Color.GREEN);
+            DefaultListModel<String> modeloVacio = new DefaultListModel<>();
+            detallePedido.setModel(modeloVacio);
 
             JOptionPane.showMessageDialog(
-                rootPane, 
-                "Todos los pedidos han sido limpiados.", 
-                "Confirmación", 
+                this,
+                "Todos los pedidos han sido limpiados.",
+                "Confirmación",
                 JOptionPane.INFORMATION_MESSAGE
             );
-    }*/
-
-    
+        } else {
+            JOptionPane.showMessageDialog(
+                this,
+                "No se pudo actualizar el estado de la mesa en la base de datos.",
+                "Error",
+                JOptionPane.ERROR_MESSAGE
+            );
+        }
+    }
+   
     private void btnLimpiarMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa1ActionPerformed
-        limpiarMesa(btnMesa1, 1, detallePedidoMesa1, () -> actualizarListaPedidos(1, listaVerPedidosMesa1, listaVerPedidosLlevarMesa1));
+        limpiarMesa(btnMesa1, 1, detallePedidoMesa1);
     }//GEN-LAST:event_btnLimpiarMesa1ActionPerformed
 
     private void btnAgregarProductoCartaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoCartaActionPerformed
@@ -6269,39 +6208,39 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarPedidoMesa3ActionPerformed
 
     private void btnLimpiarMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa4ActionPerformed
-        limpiarMesa(btnMesa4, 4, detallePedidoMesa4, () -> actualizarListaPedidos(4, listaVerPedidosMesa4, listaVerPedidosLlevarMesa4));
+        limpiarMesa(btnMesa4, 4, detallePedidoMesa4);
     }//GEN-LAST:event_btnLimpiarMesa4ActionPerformed
 
     private void btnLimpiarMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa5ActionPerformed
-        limpiarMesa(btnMesa5, 5, detallePedidoMesa5, () -> actualizarListaPedidos(5, listaVerPedidosMesa5, listaVerPedidosLlevarMesa5));
+        limpiarMesa(btnMesa5, 5, detallePedidoMesa5);
     }//GEN-LAST:event_btnLimpiarMesa5ActionPerformed
 
     private void btnLimpiarMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa6ActionPerformed
-        limpiarMesa(btnMesa6, 6, detallePedidoMesa6, () -> actualizarListaPedidos(6, listaVerPedidosMesa6, listaVerPedidosLlevarMesa6));
+        limpiarMesa(btnMesa6, 6, detallePedidoMesa6);
     }//GEN-LAST:event_btnLimpiarMesa6ActionPerformed
 
     private void btnLimpiarMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa7ActionPerformed
-        limpiarMesa(btnMesa7, 7, detallePedidoMesa7, () -> actualizarListaPedidos(7, listaVerPedidosMesa7, listaVerPedidosLlevarMesa7));
+        limpiarMesa(btnMesa7, 7, detallePedidoMesa7);
     }//GEN-LAST:event_btnLimpiarMesa7ActionPerformed
 
     private void btnLimpiarMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa8ActionPerformed
-        limpiarMesa(btnMesa8, 8, detallePedidoMesa8,() -> actualizarListaPedidos(8, listaVerPedidosMesa8, listaVerPedidosLlevarMesa8));
+        limpiarMesa(btnMesa8, 8, detallePedidoMesa8);
     }//GEN-LAST:event_btnLimpiarMesa8ActionPerformed
 
     private void btnLimpiarMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa9ActionPerformed
-        limpiarMesa(btnMesa9, 9, detallePedidoMesa9, () -> actualizarListaPedidos(9, listaVerPedidosMesa9, listaVerPedidosLlevarMesa9));
+        limpiarMesa(btnMesa9, 9, detallePedidoMesa9);
     }//GEN-LAST:event_btnLimpiarMesa9ActionPerformed
 
     private void btnLimpiarMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa10ActionPerformed
-        limpiarMesa(btnMesa10, 10, detallePedidoMesa10, () -> actualizarListaPedidos(10, listaVerPedidosMesa10, listaVerPedidosLlevarMesa10));
+        limpiarMesa(btnMesa10, 10, detallePedidoMesa10);
     }//GEN-LAST:event_btnLimpiarMesa10ActionPerformed
 
     private void btnLimpiarMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa11ActionPerformed
-        limpiarMesa(btnMesa11, 11, detallePedidoMesa11, () -> actualizarListaPedidos(11, listaVerPedidosMesa11, listaVerPedidosLlevarMesa11));
+        limpiarMesa(btnMesa11, 11, detallePedidoMesa11);
     }//GEN-LAST:event_btnLimpiarMesa11ActionPerformed
 
     private void btnLimpiarMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarMesa12ActionPerformed
-        limpiarMesa(btnMesa12, 12, detallePedidoMesa12, () -> actualizarListaPedidos(12, listaVerPedidosMesa12, listaVerPedidosLlevarMesa12));
+        limpiarMesa(btnMesa12, 12, detallePedidoMesa12);
     }//GEN-LAST:event_btnLimpiarMesa12ActionPerformed
 
     private void cancelarPedidoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPedidoMesa2ActionPerformed
@@ -6477,47 +6416,47 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_listaPedidosMesa12ValueChanged
 
     private void btnGenerarReciboMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa2ActionPerformed
-        generarRecibo(1, pedidosMesa2, pedidosMesa2Llevar, btnLimpiarMesa2);
+        generarRecibo(2, btnLimpiarMesa2);
     }//GEN-LAST:event_btnGenerarReciboMesa2ActionPerformed
 
     private void btnGenerarReciboMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa3ActionPerformed
-        generarRecibo(2, pedidosMesa3, pedidosMesa3Llevar, btnLimpiarMesa3);
+        generarRecibo(3, btnLimpiarMesa3);
     }//GEN-LAST:event_btnGenerarReciboMesa3ActionPerformed
 
     private void btnGenerarReciboMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa4ActionPerformed
-        generarRecibo(3, pedidosMesa4, pedidosMesa4Llevar, btnLimpiarMesa4);
+        generarRecibo(4, btnLimpiarMesa4);
     }//GEN-LAST:event_btnGenerarReciboMesa4ActionPerformed
 
     private void btnGenerarReciboMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa5ActionPerformed
-        generarRecibo(4, pedidosMesa5, pedidosMesa5Llevar, btnLimpiarMesa5);
+        generarRecibo(5, btnLimpiarMesa5);
     }//GEN-LAST:event_btnGenerarReciboMesa5ActionPerformed
 
     private void btnGenerarReciboMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa6ActionPerformed
-        generarRecibo(5, pedidosMesa6, pedidosMesa6Llevar, btnLimpiarMesa6);
+        generarRecibo(6, btnLimpiarMesa6);
     }//GEN-LAST:event_btnGenerarReciboMesa6ActionPerformed
 
     private void btnGenerarReciboMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa7ActionPerformed
-        generarRecibo(6, pedidosMesa7, pedidosMesa7Llevar, btnLimpiarMesa7);
+        generarRecibo(7, btnLimpiarMesa7);
     }//GEN-LAST:event_btnGenerarReciboMesa7ActionPerformed
 
     private void btnGenerarReciboMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa8ActionPerformed
-        generarRecibo(7, pedidosMesa8, pedidosMesa8Llevar, btnLimpiarMesa8);
+        generarRecibo(8, btnLimpiarMesa8);
     }//GEN-LAST:event_btnGenerarReciboMesa8ActionPerformed
 
     private void btnGenerarReciboMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa9ActionPerformed
-        generarRecibo(8, pedidosMesa9, pedidosMesa9Llevar, btnLimpiarMesa9);
+        generarRecibo(9, btnLimpiarMesa9);
     }//GEN-LAST:event_btnGenerarReciboMesa9ActionPerformed
 
     private void btnGenerarReciboMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa10ActionPerformed
-        generarRecibo(9, pedidosMesa10, pedidosMesa10Llevar, btnLimpiarMesa10);
+        generarRecibo(10, btnLimpiarMesa10);
     }//GEN-LAST:event_btnGenerarReciboMesa10ActionPerformed
 
     private void btnGenerarReciboMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa11ActionPerformed
-        generarRecibo(10, pedidosMesa11, pedidosMesa11Llevar, btnLimpiarMesa11);
+        generarRecibo(11, btnLimpiarMesa11);
     }//GEN-LAST:event_btnGenerarReciboMesa11ActionPerformed
 
     private void btnGenerarReciboMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa12ActionPerformed
-        generarRecibo(11, pedidosMesa12, pedidosMesa12Llevar, btnLimpiarMesa12);
+        generarRecibo(12, btnLimpiarMesa12);
     }//GEN-LAST:event_btnGenerarReciboMesa12ActionPerformed
 
     private double calcularTotalGananciasGlobal() {

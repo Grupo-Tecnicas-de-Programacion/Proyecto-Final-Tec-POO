@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Producto {
     private String nombre;
@@ -156,6 +158,35 @@ public class Producto {
             e.printStackTrace();
         }
         return null;
+    }
+    
+    public static List<Producto> obtenerProductosDePedido(int idPedido) {
+        String consulta = "SELECT pr.nombre, pr.precio, pp.cantidad " +
+                          "FROM pedido_productos pp " +
+                          "INNER JOIN productos pr ON pp.id_producto = pr.id " +
+                          "WHERE pp.id_pedido = ?";
+        List<Producto> listaProductos = new ArrayList<>();
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentencia = conexion.prepareStatement(consulta)) {
+
+            sentencia.setInt(1, idPedido);
+
+            try (ResultSet resultado = sentencia.executeQuery()) {
+                while (resultado.next()) {
+                    Producto producto = new Producto(
+                        resultado.getString("nombre"),
+                        resultado.getDouble("precio"),
+                        resultado.getInt("cantidad")
+                    );
+                    listaProductos.add(producto);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listaProductos;
     }
     
     public static int obtenerIdProductoDesdeBaseDatos(String nombreProducto) {
