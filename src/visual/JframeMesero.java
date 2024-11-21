@@ -6141,7 +6141,7 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscandoProductoActionPerformed
 
     private void btnBuscarProductoEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProductoEliminarActionPerformed
-        
+   
         String nombreProductoBuscado = txtNombreProductoEliminar.getText().trim();
 
         if (nombreProductoBuscado.isEmpty()) {
@@ -6149,19 +6149,30 @@ public class JframeMesero extends javax.swing.JFrame {
             return;
         }
 
-        Producto productoEncontrado = buscarProductoPorNombre(nombreProductoBuscado);
+        int idProducto = Producto.obtenerIdProductoDesdeBaseDatos(nombreProductoBuscado);
 
+        if (idProducto == -1) {
+            JOptionPane.showMessageDialog(this, "Producto no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
+            txtNombreProductoAEliminar.setText("");
+            txtCategoriaProductoAEliminar.setText("");
+            txtPrecioProductoAEliminar.setText("");
+            txtCantidadProductoAEliminar.setText("");
+            return;
+        }
+        
+        Producto productoEncontrado = Producto.obtenerProductoPorIdDesdeBaseDeDatos(idProducto);
+        
         if (productoEncontrado != null) {
-            
             txtNombreProductoAEliminar.setText(productoEncontrado.getNombre());
-            txtCantidadProductoAEliminar.setText(productoEncontrado.getCategoria());
+            txtCategoriaProductoAEliminar.setText(productoEncontrado.getCategoria());
             txtPrecioProductoAEliminar.setText(String.valueOf(productoEncontrado.getPrecio()));
             txtCantidadProductoAEliminar.setText(String.valueOf(productoEncontrado.getCantidadDisponible()));
 
-            JOptionPane.showMessageDialog(rootPane, "Producto encontrado.", "Producto Encontrado", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Producto encontrado.", "Producto Encontrado", JOptionPane.INFORMATION_MESSAGE);
+            
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Producto no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+            JOptionPane.showMessageDialog(this, "No se pudo obtener los datos del producto.", "Error", JOptionPane.ERROR_MESSAGE);
+        } 
     }//GEN-LAST:event_btnBuscarProductoEliminarActionPerformed
 
     private void btnEliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProductoActionPerformed
@@ -6173,29 +6184,34 @@ public class JframeMesero extends javax.swing.JFrame {
             return;
         }
 
-        Producto productoEncontrado = buscarProductoPorNombre(nombreProductoBuscado);
+        int idProducto = Producto.obtenerIdProductoDesdeBaseDatos(nombreProductoBuscado);
 
-        if (productoEncontrado != null) {
-            int confirmacion = JOptionPane.showConfirmDialog(
-                    this, 
-                    "¿Está seguro de que desea eliminar el producto: " + productoEncontrado.getNombre() + "?", 
-                    "Confirmación de Eliminación", 
-                    JOptionPane.YES_NO_OPTION
-            );
+        if (idProducto == -1) {
+            JOptionPane.showMessageDialog(this, "Producto no encontrado en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-            if (confirmacion == JOptionPane.YES_OPTION) {
-                productos.remove(productoEncontrado); 
-                mostrarProductosEnMesa(productosPedidoMesa1); 
+        int confirmacion = JOptionPane.showConfirmDialog(
+                this,
+                "¿Está seguro de que desea eliminar el producto: " + nombreProductoBuscado + "?",
+                "Confirmación de Eliminación",
+                JOptionPane.YES_NO_OPTION
+        );
+
+        if (confirmacion == JOptionPane.YES_OPTION) {
+            boolean productoEliminado = Producto.eliminarProductoDeBaseDeDatos(idProducto);
+
+            if (productoEliminado) {
+                JOptionPane.showMessageDialog(this, "Producto eliminado correctamente.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+
                 txtNombreProductoAEliminar.setText("");
                 txtCategoriaProductoAEliminar.setText("");
                 txtPrecioProductoAEliminar.setText("");
                 txtCantidadProductoAEliminar.setText("");
                 txtNombreProductoEliminar.setText("");
-
-                JOptionPane.showMessageDialog(this, "Producto eliminado correctamente.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "No se pudo eliminar el producto. Intente nuevamente.", "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } else {
-            JOptionPane.showMessageDialog(this, "Producto no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
     }//GEN-LAST:event_btnEliminarProductoActionPerformed

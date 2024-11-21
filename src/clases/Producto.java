@@ -335,4 +335,22 @@ public class Producto {
         return -1;
     }
 
+    public static boolean eliminarProductoDeBaseDeDatos(int idProducto) {
+        String consulta = "DELETE FROM productos WHERE id = ?";
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentencia = conexion.prepareStatement(consulta)) {
+
+            sentencia.setInt(1, idProducto);
+
+            int filasAfectadas = sentencia.executeUpdate();
+            return filasAfectadas > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println("Error al eliminar el producto de la base de datos: " + e.getMessage());
+            return false;
+        }
+    }
+
 }
