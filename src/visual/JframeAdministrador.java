@@ -127,6 +127,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
         btnDesactivarCuentaMesero.setForeground(new java.awt.Color(255, 255, 255));
         btnDesactivarCuentaMesero.setText("Desactivar cuenta mesero");
         btnDesactivarCuentaMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnDesactivarCuentaMesero.setBorderPainted(false);
         btnDesactivarCuentaMesero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDesactivarCuentaMeseroActionPerformed(evt);
@@ -144,6 +145,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
         btnActivarCuentaMesero.setForeground(new java.awt.Color(255, 255, 255));
         btnActivarCuentaMesero.setText("Activar cuenta mesero");
         btnActivarCuentaMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnActivarCuentaMesero.setBorderPainted(false);
         btnActivarCuentaMesero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActivarCuentaMeseroActionPerformed(evt);
@@ -190,6 +192,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
         btnAgregarMesero.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregarMesero.setText("Agregar mesero");
         btnAgregarMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnAgregarMesero.setBorderPainted(false);
         btnAgregarMesero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarMeseroActionPerformed(evt);
@@ -350,6 +353,8 @@ public class JframeAdministrador extends javax.swing.JFrame {
         jLabel43.setForeground(new java.awt.Color(0, 0, 0));
         jLabel43.setText("Ingresar codigo");
         panelCerrarSesion.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 190, 50));
+
+        txtIngreseCodigoGenerado.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         panelCerrarSesion.add(txtIngreseCodigoGenerado, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 230, 50));
 
         btnCerrarSesionAdmnistrador.setBackground(new java.awt.Color(107, 36, 12));
@@ -357,6 +362,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
         btnCerrarSesionAdmnistrador.setForeground(new java.awt.Color(255, 255, 255));
         btnCerrarSesionAdmnistrador.setText("Cerrar sesion");
         btnCerrarSesionAdmnistrador.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCerrarSesionAdmnistrador.setBorderPainted(false);
         btnCerrarSesionAdmnistrador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarSesionAdmnistradorActionPerformed(evt);
