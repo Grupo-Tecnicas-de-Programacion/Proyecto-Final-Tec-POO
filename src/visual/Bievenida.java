@@ -1,12 +1,19 @@
 
 package visual;
 
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+
 public class Bievenida extends javax.swing.JFrame {
 
     public Bievenida() {
         this.setUndecorated(true);
         initComponents();
         this.setLocationRelativeTo(null);
+        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -14,71 +21,76 @@ public class Bievenida extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        labelBienvenida = new javax.swing.JLabel();
         btnIniciarSesionAdministrador = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        labelEresNuevo = new javax.swing.JLabel();
         btnIniciarSesionMesero = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
         btnRegistrar = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        labelTituloPolleria = new javax.swing.JLabel();
         btnSalirPrincipal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("BIENVENIDO A");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 28, 101, 33));
+        labelBienvenida.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        labelBienvenida.setForeground(new java.awt.Color(31, 69, 41));
+        labelBienvenida.setText("BIENVENIDO A");
+        jPanel1.add(labelBienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 190, 50));
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Iniciar sesión como:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 141, 159, -1));
-
-        btnIniciarSesionAdministrador.setForeground(new java.awt.Color(0, 0, 0));
+        btnIniciarSesionAdministrador.setBackground(new java.awt.Color(0, 113, 45));
+        btnIniciarSesionAdministrador.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnIniciarSesionAdministrador.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarSesionAdministrador.setText("ADMINISTRADOR");
+        btnIniciarSesionAdministrador.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        btnIniciarSesionAdministrador.setBorderPainted(false);
         btnIniciarSesionAdministrador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciarSesionAdministradorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnIniciarSesionAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 169, -1, -1));
+        jPanel1.add(btnIniciarSesionAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 190, 50));
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("\"¿Eres nuevo?\"");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 204, 86, -1));
+        labelEresNuevo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        labelEresNuevo.setForeground(new java.awt.Color(0, 0, 0));
+        labelEresNuevo.setText("\"¿Eres nuevo?\"");
+        jPanel1.add(labelEresNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 110, -1));
 
-        btnIniciarSesionMesero.setForeground(new java.awt.Color(0, 0, 0));
+        btnIniciarSesionMesero.setBackground(new java.awt.Color(0, 113, 45));
+        btnIniciarSesionMesero.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnIniciarSesionMesero.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarSesionMesero.setText("MESERO");
+        btnIniciarSesionMesero.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        btnIniciarSesionMesero.setBorderPainted(false);
         btnIniciarSesionMesero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciarSesionMeseroActionPerformed(evt);
             }
         });
-        jPanel1.add(btnIniciarSesionMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 169, -1, -1));
+        jPanel1.add(btnIniciarSesionMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 190, 50));
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Haz click en el siguiente botón para registrarte");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 232, -1, -1));
-
-        btnRegistrar.setForeground(new java.awt.Color(0, 0, 0));
-        btnRegistrar.setText("REGISTRARSE");
+        btnRegistrar.setBackground(new java.awt.Color(61, 83, 0));
+        btnRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrar.setText("REGISTRATE");
+        btnRegistrar.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        btnRegistrar.setBorderPainted(false);
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 255, -1, -1));
+        jPanel1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 160, 50));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("POLLOS Y PARILLAS \" EL GRAN RANCHO\"");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 67, 256, 56));
+        labelTituloPolleria.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelTituloPolleria.setForeground(new java.awt.Color(71, 102, 59));
+        labelTituloPolleria.setText("POLLOS Y PARILLAS  \"EL GRAN RANCHO\"");
+        jPanel1.add(labelTituloPolleria, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 370, 30));
 
-        btnSalirPrincipal.setBackground(new java.awt.Color(153, 0, 0));
+        btnSalirPrincipal.setBackground(new java.awt.Color(61, 3, 1));
         btnSalirPrincipal.setFont(new java.awt.Font("OCR A Extended", 1, 36)); // NOI18N
         btnSalirPrincipal.setForeground(new java.awt.Color(255, 255, 255));
         btnSalirPrincipal.setText("X");
@@ -87,26 +99,14 @@ public class Bievenida extends javax.swing.JFrame {
                 btnSalirPrincipalActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalirPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 70, 60));
+        jPanel1.add(btnSalirPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, 70, 60));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void btnIniciarSesionAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionAdministradorActionPerformed
         InicioSesion inicioSesion = new InicioSesion("ADMINISTRADOR");
         inicioSesion.setVisible(true);
@@ -167,11 +167,9 @@ public class Bievenida extends javax.swing.JFrame {
     private javax.swing.JButton btnIniciarSesionMesero;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnSalirPrincipal;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel labelBienvenida;
+    private javax.swing.JLabel labelEresNuevo;
+    private javax.swing.JLabel labelTituloPolleria;
     // End of variables declaration//GEN-END:variables
 }

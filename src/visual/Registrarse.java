@@ -20,7 +20,6 @@ public class Registrarse extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel72 = new javax.swing.JLabel();
-        jLabel74 = new javax.swing.JLabel();
         jLabel75 = new javax.swing.JLabel();
         jLabel76 = new javax.swing.JLabel();
         btnRegistrarsse = new javax.swing.JButton();
@@ -38,57 +37,63 @@ public class Registrarse extends javax.swing.JFrame {
         jLabel72.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel72.setForeground(new java.awt.Color(0, 0, 0));
         jLabel72.setText("REGISTRATE");
-        jPanel1.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 170, 40));
+        jPanel1.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 170, 40));
 
-        jLabel74.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel74.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel74.setText("Ingresa tus datos");
-        jPanel1.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 140, 30));
-
+        jLabel75.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel75.setForeground(new java.awt.Color(0, 0, 0));
         jLabel75.setText("Nombre de usaurio");
-        jPanel1.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 146, 40));
+        jPanel1.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 150, 30));
 
+        jLabel76.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel76.setForeground(new java.awt.Color(0, 0, 0));
         jLabel76.setText("Confirmar contraseña");
-        jPanel1.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 146, 40));
+        jPanel1.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 170, 30));
 
-        btnRegistrarsse.setBackground(new java.awt.Color(153, 153, 0));
+        btnRegistrarsse.setBackground(new java.awt.Color(31, 69, 41));
         btnRegistrarsse.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnRegistrarsse.setForeground(new java.awt.Color(0, 0, 0));
+        btnRegistrarsse.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarsse.setText("Registrarme");
+        btnRegistrarsse.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        btnRegistrarsse.setBorderPainted(false);
         btnRegistrarsse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarsseActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegistrarsse, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 160, 100));
+        jPanel1.add(btnRegistrarsse, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 160, 100));
 
+        jLabel77.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel77.setForeground(new java.awt.Color(0, 0, 0));
         jLabel77.setText("Contraseña");
-        jPanel1.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 243, 146, 40));
-        jPanel1.add(txtRegistrarNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 160, -1));
+        jPanel1.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 243, 110, 30));
 
-        btnVolverAtras.setBackground(new java.awt.Color(153, 153, 0));
+        txtRegistrarNombreUsuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel1.add(txtRegistrarNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 160, 40));
+
+        btnVolverAtras.setBackground(new java.awt.Color(31, 69, 41));
         btnVolverAtras.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnVolverAtras.setForeground(new java.awt.Color(0, 0, 0));
+        btnVolverAtras.setForeground(new java.awt.Color(255, 255, 255));
         btnVolverAtras.setText("Volver atrás");
+        btnVolverAtras.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        btnVolverAtras.setBorderPainted(false);
         btnVolverAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVolverAtrasActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVolverAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 160, 40));
-        jPanel1.add(txtRegistrarContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 160, -1));
-        jPanel1.add(txtRegistrarConfirmarContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, 160, -1));
+        jPanel1.add(btnVolverAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, 160, 40));
+
+        txtRegistrarContrasenia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel1.add(txtRegistrarContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 160, 40));
+
+        txtRegistrarConfirmarContrasenia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel1.add(txtRegistrarConfirmarContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 160, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,7 +163,6 @@ public class Registrarse extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistrarsse;
     private javax.swing.JButton btnVolverAtras;
     private javax.swing.JLabel jLabel72;
-    private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
