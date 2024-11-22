@@ -191,8 +191,6 @@ public class JframeMesero extends javax.swing.JFrame {
         panelMesa3 = new javax.swing.JPanel();
         jLabel92 = new javax.swing.JLabel();
         jLabel94 = new javax.swing.JLabel();
-        jScrollPane26 = new javax.swing.JScrollPane();
-        productosPedidoMesa3 = new javax.swing.JList<>();
         btnAgregarProductoPedidoMesa3 = new javax.swing.JButton();
         btnRealizarPedidoMesa3 = new javax.swing.JButton();
         jScrollPane28 = new javax.swing.JScrollPane();
@@ -203,6 +201,8 @@ public class JframeMesero extends javax.swing.JFrame {
         btnTotalCuentaMesa3 = new javax.swing.JButton();
         btnGenerarReciboMesa3 = new javax.swing.JButton();
         btnVerInfoMesa3 = new javax.swing.JButton();
+        jScrollPane26 = new javax.swing.JScrollPane();
+        productosPedidoMesa3 = new javax.swing.JList<>();
         panelMesa4 = new javax.swing.JPanel();
         jLabel96 = new javax.swing.JLabel();
         jLabel110 = new javax.swing.JLabel();
@@ -1084,6 +1084,7 @@ public class JframeMesero extends javax.swing.JFrame {
         jLabel19.setText("Productos de la carta");
         panelMesa2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 210, 20));
 
+        productosPedidoMesa2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         productosPedidoMesa2.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -1120,8 +1121,9 @@ public class JframeMesero extends javax.swing.JFrame {
         });
         panelMesa2.add(btnRealizarPedidoMesa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 150, 40));
 
+        listaPedidosMesa2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         listaPedidosMesa2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = {};
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -1200,16 +1202,114 @@ public class JframeMesero extends javax.swing.JFrame {
         panelMesa3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         panelMesa3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel92.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel92.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel92.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel92.setForeground(new java.awt.Color(0, 0, 0));
         jLabel92.setText("Mesa 3");
-        panelMesa3.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 90, 40));
+        panelMesa3.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 90, 30));
 
-        jLabel94.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel94.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel94.setForeground(new java.awt.Color(0, 0, 0));
         jLabel94.setText("Productos de la carta");
-        panelMesa3.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 159, -1));
+        panelMesa3.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 210, 20));
 
+        btnAgregarProductoPedidoMesa3.setBackground(new java.awt.Color(107, 36, 12));
+        btnAgregarProductoPedidoMesa3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnAgregarProductoPedidoMesa3.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregarProductoPedidoMesa3.setText("Agregar producto al pedido");
+        btnAgregarProductoPedidoMesa3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProductoPedidoMesa3ActionPerformed(evt);
+            }
+        });
+        panelMesa3.add(btnAgregarProductoPedidoMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 240, 40));
+
+        btnRealizarPedidoMesa3.setBackground(new java.awt.Color(107, 36, 12));
+        btnRealizarPedidoMesa3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnRealizarPedidoMesa3.setForeground(new java.awt.Color(255, 255, 255));
+        btnRealizarPedidoMesa3.setText("Realizar pedido");
+        btnRealizarPedidoMesa3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRealizarPedidoMesa3ActionPerformed(evt);
+            }
+        });
+        panelMesa3.add(btnRealizarPedidoMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 150, 40));
+
+        listaPedidosMesa3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        listaPedidosMesa3.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = {};
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaPedidosMesa3.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaPedidosMesa3ValueChanged(evt);
+            }
+        });
+        jScrollPane28.setViewportView(listaPedidosMesa3);
+
+        panelMesa3.add(jScrollPane28, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, 240, 290));
+
+        jLabel95.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel95.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel95.setText("Productos del pedido");
+        panelMesa3.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 190, 20));
+
+        btnVerPedidosMesa3.setBackground(new java.awt.Color(177, 116, 87));
+        btnVerPedidosMesa3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnVerPedidosMesa3.setForeground(new java.awt.Color(255, 255, 255));
+        btnVerPedidosMesa3.setText("Ver pedidos");
+        btnVerPedidosMesa3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerPedidosMesa3ActionPerformed(evt);
+            }
+        });
+        panelMesa3.add(btnVerPedidosMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 150, 50));
+
+        btnBorrarProductoPedidoMesa3.setBackground(new java.awt.Color(177, 116, 87));
+        btnBorrarProductoPedidoMesa3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBorrarProductoPedidoMesa3.setForeground(new java.awt.Color(255, 255, 255));
+        btnBorrarProductoPedidoMesa3.setText("Borrar producto");
+        btnBorrarProductoPedidoMesa3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarProductoPedidoMesa3ActionPerformed(evt);
+            }
+        });
+        panelMesa3.add(btnBorrarProductoPedidoMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 150, 50));
+
+        btnTotalCuentaMesa3.setBackground(new java.awt.Color(177, 116, 87));
+        btnTotalCuentaMesa3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnTotalCuentaMesa3.setForeground(new java.awt.Color(255, 255, 255));
+        btnTotalCuentaMesa3.setText("Total cuenta");
+        btnTotalCuentaMesa3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTotalCuentaMesa3ActionPerformed(evt);
+            }
+        });
+        panelMesa3.add(btnTotalCuentaMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, 150, 50));
+
+        btnGenerarReciboMesa3.setBackground(new java.awt.Color(177, 116, 87));
+        btnGenerarReciboMesa3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnGenerarReciboMesa3.setForeground(new java.awt.Color(255, 255, 255));
+        btnGenerarReciboMesa3.setText("Generar recibo");
+        btnGenerarReciboMesa3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReciboMesa3ActionPerformed(evt);
+            }
+        });
+        panelMesa3.add(btnGenerarReciboMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 320, 150, 50));
+
+        btnVerInfoMesa3.setBackground(new java.awt.Color(74, 73, 71));
+        btnVerInfoMesa3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnVerInfoMesa3.setForeground(new java.awt.Color(255, 255, 255));
+        btnVerInfoMesa3.setText("Información mesa");
+        btnVerInfoMesa3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerInfoMesa3ActionPerformed(evt);
+            }
+        });
+        panelMesa3.add(btnVerInfoMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, 170, 50));
+
+        productosPedidoMesa3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         productosPedidoMesa3.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -1222,100 +1322,7 @@ public class JframeMesero extends javax.swing.JFrame {
         });
         jScrollPane26.setViewportView(productosPedidoMesa3);
 
-        panelMesa3.add(jScrollPane26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 200, 200));
-
-        btnAgregarProductoPedidoMesa3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnAgregarProductoPedidoMesa3.setForeground(new java.awt.Color(0, 0, 0));
-        btnAgregarProductoPedidoMesa3.setText("Agregar producto al pedido");
-        btnAgregarProductoPedidoMesa3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarProductoPedidoMesa3ActionPerformed(evt);
-            }
-        });
-        panelMesa3.add(btnAgregarProductoPedidoMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 200, 40));
-
-        btnRealizarPedidoMesa3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnRealizarPedidoMesa3.setForeground(new java.awt.Color(0, 0, 0));
-        btnRealizarPedidoMesa3.setText("Realizar pedido");
-        btnRealizarPedidoMesa3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRealizarPedidoMesa3ActionPerformed(evt);
-            }
-        });
-        panelMesa3.add(btnRealizarPedidoMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 130, 40));
-
-        listaPedidosMesa3.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        listaPedidosMesa3.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                listaPedidosMesa3ValueChanged(evt);
-            }
-        });
-        jScrollPane28.setViewportView(listaPedidosMesa3);
-
-        panelMesa3.add(jScrollPane28, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 100, 200, 200));
-
-        jLabel95.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel95.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel95.setText("Productos del pedido");
-        panelMesa3.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 130, 20));
-
-        btnVerPedidosMesa3.setBackground(new java.awt.Color(204, 204, 0));
-        btnVerPedidosMesa3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnVerPedidosMesa3.setForeground(new java.awt.Color(0, 0, 0));
-        btnVerPedidosMesa3.setText("Ver pedidos");
-        btnVerPedidosMesa3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVerPedidosMesa3ActionPerformed(evt);
-            }
-        });
-        panelMesa3.add(btnVerPedidosMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 120, 40));
-
-        btnBorrarProductoPedidoMesa3.setBackground(new java.awt.Color(204, 204, 0));
-        btnBorrarProductoPedidoMesa3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnBorrarProductoPedidoMesa3.setForeground(new java.awt.Color(0, 0, 0));
-        btnBorrarProductoPedidoMesa3.setText("Borrar producto");
-        btnBorrarProductoPedidoMesa3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBorrarProductoPedidoMesa3ActionPerformed(evt);
-            }
-        });
-        panelMesa3.add(btnBorrarProductoPedidoMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 120, 40));
-
-        btnTotalCuentaMesa3.setBackground(new java.awt.Color(204, 204, 0));
-        btnTotalCuentaMesa3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnTotalCuentaMesa3.setForeground(new java.awt.Color(0, 0, 0));
-        btnTotalCuentaMesa3.setText("Total cuenta");
-        btnTotalCuentaMesa3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTotalCuentaMesa3ActionPerformed(evt);
-            }
-        });
-        panelMesa3.add(btnTotalCuentaMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, 120, 40));
-
-        btnGenerarReciboMesa3.setBackground(new java.awt.Color(204, 204, 0));
-        btnGenerarReciboMesa3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnGenerarReciboMesa3.setForeground(new java.awt.Color(0, 0, 0));
-        btnGenerarReciboMesa3.setText("Generar recibo");
-        btnGenerarReciboMesa3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGenerarReciboMesa3ActionPerformed(evt);
-            }
-        });
-        panelMesa3.add(btnGenerarReciboMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 120, 40));
-
-        btnVerInfoMesa3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnVerInfoMesa3.setForeground(new java.awt.Color(0, 0, 0));
-        btnVerInfoMesa3.setText("Información mesa");
-        btnVerInfoMesa3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVerInfoMesa3ActionPerformed(evt);
-            }
-        });
-        panelMesa3.add(btnVerInfoMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 140, 30));
+        panelMesa3.add(jScrollPane26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 340, 290));
 
         jPanelMostrarMesa.add(panelMesa3, "card4");
 
@@ -6416,10 +6423,6 @@ public class JframeMesero extends javax.swing.JFrame {
         cambioSeleccionVerPedidos(listaPedidosMesa2, productosPedidoMesa2);
     }//GEN-LAST:event_listaPedidosMesa2ValueChanged
 
-    private void productosPedidoMesa3ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa3ValueChanged
-        cambioSeleccionVerPedidos(productosPedidoMesa3, listaPedidosMesa3);
-    }//GEN-LAST:event_productosPedidoMesa3ValueChanged
-
     private void listaPedidosMesa3ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaPedidosMesa3ValueChanged
         cambioSeleccionVerPedidos(listaPedidosMesa3, productosPedidoMesa3);
     }//GEN-LAST:event_listaPedidosMesa3ValueChanged
@@ -6650,6 +6653,10 @@ public class JframeMesero extends javax.swing.JFrame {
         dialogoFecha.setLocationRelativeTo(this);
         dialogoFecha.setVisible(true);
     }//GEN-LAST:event_txtFechaGenerarReporteMouseClicked
+
+    private void productosPedidoMesa3ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa3ValueChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_productosPedidoMesa3ValueChanged
     
     private void actualizarListaProductosDelPedido(Pedido pedidoMesa, JList<String> listaPedidosMesa) {
         DefaultListModel<String> modeloPedido = new DefaultListModel<>();
