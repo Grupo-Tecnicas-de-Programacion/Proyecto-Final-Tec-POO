@@ -4,8 +4,8 @@ package visual;
 public class Bievenida extends javax.swing.JFrame {
 
     public Bievenida() {
+        this.setUndecorated(true);
         initComponents();
-        setTitle("BIEVENIDO");
         this.setLocationRelativeTo(null);
     }
 
@@ -22,10 +22,11 @@ public class Bievenida extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         btnRegistrar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        btnSalirPrincipal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -77,6 +78,17 @@ public class Bievenida extends javax.swing.JFrame {
         jLabel6.setText("POLLOS Y PARILLAS \" EL GRAN RANCHO\"");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 67, 256, 56));
 
+        btnSalirPrincipal.setBackground(new java.awt.Color(153, 0, 0));
+        btnSalirPrincipal.setFont(new java.awt.Font("OCR A Extended", 1, 36)); // NOI18N
+        btnSalirPrincipal.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalirPrincipal.setText("X");
+        btnSalirPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirPrincipalActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSalirPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 70, 60));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -111,6 +123,10 @@ public class Bievenida extends javax.swing.JFrame {
         new Registrarse().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void btnSalirPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirPrincipalActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnSalirPrincipalActionPerformed
 
 
     public static void main(String args[]) {
@@ -150,6 +166,7 @@ public class Bievenida extends javax.swing.JFrame {
     private javax.swing.JButton btnIniciarSesionAdministrador;
     private javax.swing.JButton btnIniciarSesionMesero;
     private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnSalirPrincipal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
