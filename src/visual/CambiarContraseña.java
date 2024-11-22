@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 public class CambiarContraseña extends javax.swing.JFrame {
 
     public CambiarContraseña() {
+        this.setUndecorated(true);
         initComponents();
         this.setLocationRelativeTo(null);
     }

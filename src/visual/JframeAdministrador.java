@@ -20,16 +20,13 @@ import javax.swing.Timer;
 
 public class JframeAdministrador extends javax.swing.JFrame {
 
-    private Usuario usuarioActual;
-    
-    public JframeAdministrador(Usuario usuarioActual) {
+    public JframeAdministrador() {
+        this.setUndecorated(true);
         initComponents();
         jPanelMostrarAdmin.add(panelGestionMeseros, "panelEliminarUsuarios");
         jPanelMostrarAdmin.add(panelAgregarUsuarios, "panelAgregarUsuarios");
         jPanelMostrarAdmin.add(panelReporteVentas, "panelReporteVentas");
         jPanelMostrarAdmin.add(panelCerrarSesion, "panelCerrarSesion");
-        this.usuarioActual = usuarioActual;
-        setTitle("Panel de Administración - " + usuarioActual.getNombreUsuario());
         cargarListaDeMeseros(listaMeserosGestionar, listMeserosAgregar);
         this.setLocationRelativeTo(null);
     }

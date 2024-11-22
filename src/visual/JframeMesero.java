@@ -67,6 +67,7 @@ public class JframeMesero extends javax.swing.JFrame {
     private ArrayList<Producto> productosVendidos = new ArrayList<>();
     
     public JframeMesero() {
+        this.setUndecorated(true);
         initComponents();
         jPanelMostrar.add(panelCargarMesas, "panelCargarMesas");
         jPanelMostrar.add(panelCargarProductos, "panelCargarProductos");

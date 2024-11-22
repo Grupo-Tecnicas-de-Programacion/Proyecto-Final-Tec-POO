@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 public class Registrarse extends javax.swing.JFrame {
 
     public Registrarse() {
+        this.setUndecorated(true);
         initComponents();
         this.setLocationRelativeTo(null);
     }

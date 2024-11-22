@@ -2,8 +2,8 @@
 package visual;
 
 import clases.Usuario;
-import clases.Mesero;
-import clases.Administrador;
+//import clases.Mesero;
+//import clases.Administrador;
 import javax.swing.JOptionPane;
 
 public class InicioSesion extends javax.swing.JFrame {
@@ -11,14 +11,11 @@ public class InicioSesion extends javax.swing.JFrame {
     private String rol;
     
     public InicioSesion(String rol) {
+        this.setUndecorated(true);
         initComponents();
         this.rol = rol;
-        setTitle("Inicio de sesión - " + rol);
         this.setLocationRelativeTo(null);
-    }
-    
-    public InicioSesion(){
-        initComponents();
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -130,7 +127,7 @@ public class InicioSesion extends javax.swing.JFrame {
             }
 
             if (rol.equals("ADMINISTRADOR") && usuario.getRol().equals("ADMINISTRADOR")) {
-                new JframeAdministrador(usuario).setVisible(true);
+                new JframeAdministrador().setVisible(true);
             } else if (rol.equals("MESERO") && usuario.getRol().equals("MESERO")) {
                 new JframeMesero().setVisible(true);
             } else {
