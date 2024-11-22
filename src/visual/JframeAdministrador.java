@@ -99,10 +99,11 @@ public class JframeAdministrador extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanelMostrarAdmin.setBackground(new java.awt.Color(255, 255, 255));
         jPanelMostrarAdmin.setPreferredSize(new java.awt.Dimension(500, 500));
         jPanelMostrarAdmin.setLayout(new java.awt.CardLayout());
 
-        panelGestionMeseros.setBackground(new java.awt.Color(153, 153, 153));
+        panelGestionMeseros.setBackground(new java.awt.Color(255, 255, 255));
         panelGestionMeseros.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         panelGestionMeseros.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -159,7 +160,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
 
         jPanelMostrarAdmin.add(panelGestionMeseros, "card6");
 
-        panelAgregarUsuarios.setBackground(new java.awt.Color(153, 153, 153));
+        panelAgregarUsuarios.setBackground(new java.awt.Color(255, 255, 255));
         panelAgregarUsuarios.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         panelAgregarUsuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -210,7 +211,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
 
         jPanelMostrarAdmin.add(panelAgregarUsuarios, "card7");
 
-        panelReporteVentas.setBackground(new java.awt.Color(153, 153, 153));
+        panelReporteVentas.setBackground(new java.awt.Color(255, 255, 255));
         panelReporteVentas.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         panelReporteVentas.setPreferredSize(new java.awt.Dimension(850, 500));
         panelReporteVentas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -306,7 +307,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
 
         jPanelMostrarAdmin.add(panelReporteVentas, "card11");
 
-        panelCerrarSesion.setBackground(new java.awt.Color(102, 102, 102));
+        panelCerrarSesion.setBackground(new java.awt.Color(255, 255, 255));
         panelCerrarSesion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         panelCerrarSesion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

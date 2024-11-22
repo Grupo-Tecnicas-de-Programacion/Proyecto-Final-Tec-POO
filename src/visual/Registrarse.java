@@ -31,7 +31,7 @@ public class Registrarse extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel72.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
@@ -49,7 +49,7 @@ public class Registrarse extends javax.swing.JFrame {
         jLabel76.setText("Confirmar contraseña");
         jPanel1.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 170, 30));
 
-        btnRegistrarsse.setBackground(new java.awt.Color(31, 69, 41));
+        btnRegistrarsse.setBackground(new java.awt.Color(107, 36, 12));
         btnRegistrarsse.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnRegistrarsse.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarsse.setText("Registrarme");
@@ -70,7 +70,7 @@ public class Registrarse extends javax.swing.JFrame {
         txtRegistrarNombreUsuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jPanel1.add(txtRegistrarNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 160, 40));
 
-        btnVolverAtras.setBackground(new java.awt.Color(31, 69, 41));
+        btnVolverAtras.setBackground(new java.awt.Color(153, 77, 28));
         btnVolverAtras.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnVolverAtras.setForeground(new java.awt.Color(255, 255, 255));
         btnVolverAtras.setText("Volver atrás");

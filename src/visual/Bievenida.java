@@ -36,12 +36,13 @@ public class Bievenida extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        labelBienvenida.setBackground(new java.awt.Color(145, 9, 30));
         labelBienvenida.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        labelBienvenida.setForeground(new java.awt.Color(31, 69, 41));
+        labelBienvenida.setForeground(new java.awt.Color(107, 36, 12));
         labelBienvenida.setText("BIENVENIDO A");
         jPanel1.add(labelBienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 190, 50));
 
-        btnIniciarSesionAdministrador.setBackground(new java.awt.Color(0, 113, 45));
+        btnIniciarSesionAdministrador.setBackground(new java.awt.Color(134, 43, 13));
         btnIniciarSesionAdministrador.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnIniciarSesionAdministrador.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarSesionAdministrador.setText("ADMINISTRADOR");
@@ -54,12 +55,12 @@ public class Bievenida extends javax.swing.JFrame {
         });
         jPanel1.add(btnIniciarSesionAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 190, 50));
 
-        labelEresNuevo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        labelEresNuevo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         labelEresNuevo.setForeground(new java.awt.Color(0, 0, 0));
         labelEresNuevo.setText("\"¿Eres nuevo?\"");
-        jPanel1.add(labelEresNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 110, -1));
+        jPanel1.add(labelEresNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 130, -1));
 
-        btnIniciarSesionMesero.setBackground(new java.awt.Color(0, 113, 45));
+        btnIniciarSesionMesero.setBackground(new java.awt.Color(134, 43, 13));
         btnIniciarSesionMesero.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnIniciarSesionMesero.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarSesionMesero.setText("MESERO");
@@ -72,7 +73,7 @@ public class Bievenida extends javax.swing.JFrame {
         });
         jPanel1.add(btnIniciarSesionMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 190, 50));
 
-        btnRegistrar.setBackground(new java.awt.Color(61, 83, 0));
+        btnRegistrar.setBackground(new java.awt.Color(153, 77, 28));
         btnRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrar.setText("REGISTRATE");
@@ -85,10 +86,10 @@ public class Bievenida extends javax.swing.JFrame {
         });
         jPanel1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 160, 50));
 
-        labelTituloPolleria.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        labelTituloPolleria.setForeground(new java.awt.Color(71, 102, 59));
+        labelTituloPolleria.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        labelTituloPolleria.setForeground(new java.awt.Color(145, 9, 30));
         labelTituloPolleria.setText("POLLOS Y PARILLAS  \"EL GRAN RANCHO\"");
-        jPanel1.add(labelTituloPolleria, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 370, 30));
+        jPanel1.add(labelTituloPolleria, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 410, 30));
 
         btnSalirPrincipal.setBackground(new java.awt.Color(61, 3, 1));
         btnSalirPrincipal.setFont(new java.awt.Font("OCR A Extended", 1, 36)); // NOI18N
