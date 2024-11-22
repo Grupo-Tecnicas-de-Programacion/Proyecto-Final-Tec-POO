@@ -6655,7 +6655,7 @@ public class JframeMesero extends javax.swing.JFrame {
     }//GEN-LAST:event_txtFechaGenerarReporteMouseClicked
 
     private void productosPedidoMesa3ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_productosPedidoMesa3ValueChanged
-        // TODO add your handling code here:
+        cambioSeleccionVerPedidos(productosPedidoMesa3, listaPedidosMesa3);
     }//GEN-LAST:event_productosPedidoMesa3ValueChanged
     
     private void actualizarListaProductosDelPedido(Pedido pedidoMesa, JList<String> listaPedidosMesa) {
