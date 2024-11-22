@@ -21,13 +21,13 @@ public class Bievenida extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        labelBienvenida = new javax.swing.JLabel();
         btnIniciarSesionAdministrador = new javax.swing.JButton();
         labelEresNuevo = new javax.swing.JLabel();
         btnIniciarSesionMesero = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
         labelTituloPolleria = new javax.swing.JLabel();
         btnSalirPrincipal = new javax.swing.JButton();
+        labelTituloPolleria1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -36,14 +36,8 @@ public class Bievenida extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        labelBienvenida.setBackground(new java.awt.Color(145, 9, 30));
-        labelBienvenida.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        labelBienvenida.setForeground(new java.awt.Color(107, 36, 12));
-        labelBienvenida.setText("BIENVENIDO A");
-        jPanel1.add(labelBienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 190, 50));
-
         btnIniciarSesionAdministrador.setBackground(new java.awt.Color(134, 43, 13));
-        btnIniciarSesionAdministrador.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnIniciarSesionAdministrador.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnIniciarSesionAdministrador.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarSesionAdministrador.setText("ADMINISTRADOR");
         btnIniciarSesionAdministrador.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -53,15 +47,15 @@ public class Bievenida extends javax.swing.JFrame {
                 btnIniciarSesionAdministradorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnIniciarSesionAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 190, 50));
+        jPanel1.add(btnIniciarSesionAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 190, 50));
 
         labelEresNuevo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         labelEresNuevo.setForeground(new java.awt.Color(0, 0, 0));
         labelEresNuevo.setText("\"¿Eres nuevo?\"");
-        jPanel1.add(labelEresNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 130, -1));
+        jPanel1.add(labelEresNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 130, -1));
 
         btnIniciarSesionMesero.setBackground(new java.awt.Color(134, 43, 13));
-        btnIniciarSesionMesero.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnIniciarSesionMesero.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnIniciarSesionMesero.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarSesionMesero.setText("MESERO");
         btnIniciarSesionMesero.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -71,10 +65,10 @@ public class Bievenida extends javax.swing.JFrame {
                 btnIniciarSesionMeseroActionPerformed(evt);
             }
         });
-        jPanel1.add(btnIniciarSesionMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 190, 50));
+        jPanel1.add(btnIniciarSesionMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 190, 50));
 
         btnRegistrar.setBackground(new java.awt.Color(153, 77, 28));
-        btnRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrar.setText("REGISTRATE");
         btnRegistrar.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -84,12 +78,12 @@ public class Bievenida extends javax.swing.JFrame {
                 btnRegistrarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 160, 50));
+        jPanel1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 160, 50));
 
-        labelTituloPolleria.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        labelTituloPolleria.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         labelTituloPolleria.setForeground(new java.awt.Color(145, 9, 30));
-        labelTituloPolleria.setText("POLLOS Y PARILLAS  \"EL GRAN RANCHO\"");
-        jPanel1.add(labelTituloPolleria, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 410, 30));
+        labelTituloPolleria.setText("\"EL GRAN RANCHO\"");
+        jPanel1.add(labelTituloPolleria, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 260, 40));
 
         btnSalirPrincipal.setBackground(new java.awt.Color(61, 3, 1));
         btnSalirPrincipal.setFont(new java.awt.Font("OCR A Extended", 1, 36)); // NOI18N
@@ -101,6 +95,11 @@ public class Bievenida extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSalirPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, 70, 60));
+
+        labelTituloPolleria1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        labelTituloPolleria1.setForeground(new java.awt.Color(145, 9, 30));
+        labelTituloPolleria1.setText("---- POLLOS Y PARILLAS ----");
+        jPanel1.add(labelTituloPolleria1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 350, 60));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 460));
 
@@ -169,8 +168,8 @@ public class Bievenida extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnSalirPrincipal;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel labelBienvenida;
     private javax.swing.JLabel labelEresNuevo;
     private javax.swing.JLabel labelTituloPolleria;
+    private javax.swing.JLabel labelTituloPolleria1;
     // End of variables declaration//GEN-END:variables
 }

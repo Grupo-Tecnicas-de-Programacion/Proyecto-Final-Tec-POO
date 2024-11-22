@@ -4606,51 +4606,62 @@ public class JframeMesero extends javax.swing.JFrame {
     
     private void btnVerInfoMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa1ActionPerformed
         mostrarInformacionMesa(1);
-        
+        btnLimpiarMesa1.setEnabled(true);
     }//GEN-LAST:event_btnVerInfoMesa1ActionPerformed
 
     private void btnVerInfoMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa2ActionPerformed
         mostrarInformacionMesa(2);
+        btnLimpiarMesa2.setEnabled(true);
     }//GEN-LAST:event_btnVerInfoMesa2ActionPerformed
 
     private void btnVerInfoMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa3ActionPerformed
         mostrarInformacionMesa(3);
+        btnLimpiarMesa3.setEnabled(true);
     }//GEN-LAST:event_btnVerInfoMesa3ActionPerformed
 
     private void btnVerInfoMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa4ActionPerformed
         mostrarInformacionMesa(4);
+        btnLimpiarMesa4.setEnabled(true);
     }//GEN-LAST:event_btnVerInfoMesa4ActionPerformed
 
     private void btnVerInfoMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa5ActionPerformed
         mostrarInformacionMesa(5);
+        btnLimpiarMesa5.setEnabled(true);
     }//GEN-LAST:event_btnVerInfoMesa5ActionPerformed
 
     private void btnVerInfoMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa6ActionPerformed
         mostrarInformacionMesa(6);
+        btnLimpiarMesa6.setEnabled(true);
     }//GEN-LAST:event_btnVerInfoMesa6ActionPerformed
 
     private void btnVerInfoMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa7ActionPerformed
         mostrarInformacionMesa(7);
+        btnLimpiarMesa7.setEnabled(true);
     }//GEN-LAST:event_btnVerInfoMesa7ActionPerformed
 
     private void btnVerInfoMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa8ActionPerformed
         mostrarInformacionMesa(8);
+        btnLimpiarMesa8.setEnabled(true);
     }//GEN-LAST:event_btnVerInfoMesa8ActionPerformed
 
     private void btnVerInfoMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa9ActionPerformed
         mostrarInformacionMesa(9);
+        btnLimpiarMesa9.setEnabled(true);
     }//GEN-LAST:event_btnVerInfoMesa9ActionPerformed
 
     private void btnVerInfoMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa10ActionPerformed
         mostrarInformacionMesa(10);
+        btnLimpiarMesa10.setEnabled(true);
     }//GEN-LAST:event_btnVerInfoMesa10ActionPerformed
 
     private void btnVerInfoMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa11ActionPerformed
         mostrarInformacionMesa(11);
+        btnLimpiarMesa11.setEnabled(true);
     }//GEN-LAST:event_btnVerInfoMesa11ActionPerformed
 
     private void btnVerInfoMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInfoMesa12ActionPerformed
         mostrarInformacionMesa(12);
+        btnLimpiarMesa12.setEnabled(true);
     }//GEN-LAST:event_btnVerInfoMesa12ActionPerformed
 
     private void btnBuscarRutaProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarRutaProductosActionPerformed
@@ -5002,24 +5013,6 @@ public class JframeMesero extends javax.swing.JFrame {
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "panelGenerarReporte");
     }//GEN-LAST:event_menItemGenerarReporteActionPerformed
-    
-    /*private void actualizarListaPedidos(ArrayList<Pedido> pedidosMesa, 
-            JList<String> listaPedidosMesa,
-            ArrayList<Pedido> pedidosLlevar,
-            JList<String> listaPedidosLlevar) 
-        {
-        DefaultListModel<String> modeloPedidosMesa = new DefaultListModel<>();
-        for (Pedido pedido : pedidosMesa) {
-            modeloPedidosMesa.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaPedidosMesa.setModel(modeloPedidosMesa);
-
-        DefaultListModel<String> modeloPedidosLlevar = new DefaultListModel<>();
-        for (Pedido pedido : pedidosLlevar) {
-            modeloPedidosLlevar.addElement("Pedido " + pedido.getNumPedido() + " - " + pedido.getTipoPedido());
-        }
-        listaPedidosLlevar.setModel(modeloPedidosLlevar);
-    }*/
 
     private void actualizarListaPedidos(int numeroMesa, JList<String> listaPedidosMesa, JList<String> listaPedidosLlevar) {
         List<String> pedidosMesa = Pedido.obtenerPedidosDesdeBaseDatos("MESA", numeroMesa);
@@ -5428,11 +5421,16 @@ public class JframeMesero extends javax.swing.JFrame {
         int indexLlevar = listaPedidosLlevar.getSelectedIndex();
 
         if (indexMesa >= 0) {
-            int confirmacion = JOptionPane.showConfirmDialog(
+            Object[] opciones = {"Sí", "No"};
+            int confirmacion = JOptionPane.showOptionDialog(
                 this,
                 "¿Estás seguro de que deseas cancelar el pedido para mesa?",
                 "Confirmación de Cancelación",
-                JOptionPane.YES_NO_OPTION
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                opciones,
+                opciones[0]
             );
 
             if (confirmacion == JOptionPane.YES_OPTION) {
@@ -5465,11 +5463,16 @@ public class JframeMesero extends javax.swing.JFrame {
             }
         }
         else if (indexLlevar >= 0) {
-            int confirmacion = JOptionPane.showConfirmDialog(
+            Object[] opciones = {"Sí", "No"};
+            int confirmacion = JOptionPane.showOptionDialog(
                 this,
-                "¿Estás seguro de que deseas cancelar el pedido para llevar?",
+                "¿Estás seguro de que deseas cancelar el pedido para mesa?",
                 "Confirmación de Cancelación",
-                JOptionPane.YES_NO_OPTION
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                opciones,
+                opciones[0]
             );
 
             if (confirmacion == JOptionPane.YES_OPTION) {
@@ -5698,9 +5701,6 @@ public class JframeMesero extends javax.swing.JFrame {
         if (totalCuentaMesa == 0) {
             btnLimpiarMesa.setEnabled(false);
             botonMesa.setBackground(Color.GREEN);
-            
-        } else {
-            btnLimpiarMesa.setEnabled(true);
         }
     }
 
@@ -5815,7 +5815,7 @@ public class JframeMesero extends javax.swing.JFrame {
 
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar recibo");
-            fileChooser.setSelectedFile(new File("Recibo_Mesa_" + numeroMesa + "_" + cliente.getNombre() + "_" + cliente.getApellido() + ".pdf"));
+            fileChooser.setSelectedFile(new File("Recibo Mesa " + numeroMesa + "_" + cliente.getNombre() + " " + cliente.getApellido() + ".pdf"));
 
             int userSelection = fileChooser.showSaveDialog(this);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
@@ -6190,11 +6190,16 @@ public class JframeMesero extends javax.swing.JFrame {
             return;
         }
 
-        int confirmacion = JOptionPane.showConfirmDialog(
-                this,
-                "¿Está seguro de que desea eliminar el producto: " + nombreProductoBuscado + "?",
-                "Confirmación de Eliminación",
-                JOptionPane.YES_NO_OPTION
+        Object[] opciones = {"Sí", "No"};
+        int confirmacion = JOptionPane.showOptionDialog(
+            this,
+            "¿Estás seguro de que deseas cancelar el pedido para mesa?",
+            "Confirmación de Cancelación",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE,
+            null,
+            opciones,
+            opciones[0]
         );
 
         if (confirmacion == JOptionPane.YES_OPTION) {
