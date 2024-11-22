@@ -5717,11 +5717,6 @@ public class JframeMesero extends javax.swing.JFrame {
             List<Pedido> pedidosMesa = Pedido.obtenerPedidosDesdeBaseDatos(numeroMesa, "MESA");
             List<Pedido> pedidosLlevar = Pedido.obtenerPedidosDesdeBaseDatos(numeroMesa, "LLEVAR");
 
-            if (pedidosMesa.isEmpty() && pedidosLlevar.isEmpty()) {
-                JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. No hay pedidos para esta mesa.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
             double totalCuenta = Pedido.calcularCuenta(numeroMesa);
             if (totalCuenta == 0) {
                 JOptionPane.showMessageDialog(rootPane, "No se puede generar un recibo. La cuenta total es 0.", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -5750,7 +5745,6 @@ public class JframeMesero extends javax.swing.JFrame {
 
             Cliente cliente = Cliente.obtenerClienteDesdeBaseDatos(identificacion);
             if (cliente == null) {
-                
                 String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
                 while (nombreCliente == null || nombreCliente.trim().isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
                     nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente (solo letras y espacios):");
@@ -5766,14 +5760,14 @@ public class JframeMesero extends javax.swing.JFrame {
                 cliente = new Cliente(tipoIdentificacion, identificacion, nombreCliente, apellidoCliente);
                 Cliente.registrarClienteEnBaseDatos(cliente);
             }
-            
+
             for (Pedido pedido : pedidosMesa) {
                 Pedido.registrarPedidoEnHistorialPorNumero(pedido.getNumPedido());
             }
             for (Pedido pedido : pedidosLlevar) {
                 Pedido.registrarPedidoEnHistorialPorNumero(pedido.getNumPedido());
             }
-            
+
             LocalDateTime fechaActual = LocalDateTime.now();
             DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
             String fechaFormateada = fechaActual.format(formatoFecha);
@@ -5792,9 +5786,13 @@ public class JframeMesero extends javax.swing.JFrame {
                     Document document = new Document(pdfDoc);
 
                     try (InputStream logoStream = getClass().getResourceAsStream("/imagenes/logo.jpg")) {
-                        ImageData data = ImageDataFactory.create(logoStream.readAllBytes());
-                        Image logo = new Image(data).scaleToFit(150, 150).setFixedPosition(pdfDoc.getDefaultPageSize().getWidth() - 200, pdfDoc.getDefaultPageSize().getHeight() - 150);
-                        document.add(logo);
+                        if (logoStream != null) {
+                            ImageData data = ImageDataFactory.create(logoStream.readAllBytes());
+                            Image logo = new Image(data).scaleToFit(150, 150).setFixedPosition(pdfDoc.getDefaultPageSize().getWidth() - 200, pdfDoc.getDefaultPageSize().getHeight() - 150);
+                            document.add(logo);
+                        }
+                    } catch (Exception e) {
+                        System.err.println("No se pudo cargar la imagen del logo: " + e.getMessage());
                     }
 
                     document.add(new Paragraph("Recibo Mesa " + numeroMesa).setBold().setFontSize(16));
@@ -5849,7 +5847,6 @@ public class JframeMesero extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-
     
     private void btnGenerarReciboMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReciboMesa1ActionPerformed
         generarRecibo(1, btnLimpiarMesa1);
