@@ -60,7 +60,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
         txtContraseñaNuevoMesero = new javax.swing.JPasswordField();
         panelReporteVentas = new javax.swing.JPanel();
         jLabel79 = new javax.swing.JLabel();
-        jLabel80 = new javax.swing.JLabel();
         jLabel81 = new javax.swing.JLabel();
         txtFechaInicioReporteBuscar = new javax.swing.JTextField();
         jLabel82 = new javax.swing.JLabel();
@@ -107,8 +106,8 @@ public class JframeAdministrador extends javax.swing.JFrame {
         panelGestionMeseros.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         panelGestionMeseros.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel28.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel28.setFont(new java.awt.Font("Segoe UI Black", 1, 30)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(107, 36, 12));
         jLabel28.setText("GESTIÓN CUENTAS MESEROS");
         panelGestionMeseros.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, -1));
 
@@ -121,11 +120,11 @@ public class JframeAdministrador extends javax.swing.JFrame {
         });
         jScrollPane7.setViewportView(listaMeserosGestionar);
 
-        panelGestionMeseros.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 197, 300));
+        panelGestionMeseros.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 197, 300));
 
         btnDesactivarCuentaMesero.setBackground(new java.awt.Color(153, 0, 0));
-        btnDesactivarCuentaMesero.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnDesactivarCuentaMesero.setForeground(new java.awt.Color(0, 0, 0));
+        btnDesactivarCuentaMesero.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnDesactivarCuentaMesero.setForeground(new java.awt.Color(255, 255, 255));
         btnDesactivarCuentaMesero.setText("Desactivar cuenta mesero");
         btnDesactivarCuentaMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnDesactivarCuentaMesero.addActionListener(new java.awt.event.ActionListener() {
@@ -133,16 +132,16 @@ public class JframeAdministrador extends javax.swing.JFrame {
                 btnDesactivarCuentaMeseroActionPerformed(evt);
             }
         });
-        panelGestionMeseros.add(btnDesactivarCuentaMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 320, 200, 60));
+        panelGestionMeseros.add(btnDesactivarCuentaMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 320, 230, 80));
 
-        jLabel46.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel46.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(0, 0, 0));
         jLabel46.setText("Lista de meseros");
-        panelGestionMeseros.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, -1, 20));
+        panelGestionMeseros.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 200, 30));
 
         btnActivarCuentaMesero.setBackground(new java.awt.Color(0, 153, 0));
-        btnActivarCuentaMesero.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnActivarCuentaMesero.setForeground(new java.awt.Color(0, 0, 0));
+        btnActivarCuentaMesero.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnActivarCuentaMesero.setForeground(new java.awt.Color(255, 255, 255));
         btnActivarCuentaMesero.setText("Activar cuenta mesero");
         btnActivarCuentaMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnActivarCuentaMesero.addActionListener(new java.awt.event.ActionListener() {
@@ -150,13 +149,15 @@ public class JframeAdministrador extends javax.swing.JFrame {
                 btnActivarCuentaMeseroActionPerformed(evt);
             }
         });
-        panelGestionMeseros.add(btnActivarCuentaMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 210, 200, 60));
+        panelGestionMeseros.add(btnActivarCuentaMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 210, 230, 80));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Estado de cuenta");
-        panelGestionMeseros.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, -1, 30));
-        panelGestionMeseros.add(txtEstadoCuentaMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 150, 40));
+        panelGestionMeseros.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 200, 40));
+
+        txtEstadoCuentaMesero.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        panelGestionMeseros.add(txtEstadoCuentaMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 190, 50));
 
         jPanelMostrarAdmin.add(panelGestionMeseros, "card6");
 
@@ -164,29 +165,29 @@ public class JframeAdministrador extends javax.swing.JFrame {
         panelAgregarUsuarios.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         panelAgregarUsuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel35.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel35.setFont(new java.awt.Font("Segoe UI Black", 1, 30)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(107, 36, 12));
         jLabel35.setText("AGREGAR MESERO");
         panelAgregarUsuarios.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, -1, -1));
 
-        jLabel39.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel39.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(0, 0, 0));
         jLabel39.setText("Nombre de usuario ");
-        panelAgregarUsuarios.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
+        panelAgregarUsuarios.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, -1));
 
-        jLabel40.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel40.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(0, 0, 0));
         jLabel40.setText("Contraseña ");
-        panelAgregarUsuarios.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, -1, -1));
+        panelAgregarUsuarios.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, -1, -1));
 
-        jLabel41.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel41.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(0, 0, 0));
         jLabel41.setText("Confirmacion de contraseña ");
-        panelAgregarUsuarios.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, -1, -1));
+        panelAgregarUsuarios.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, -1, -1));
 
         btnAgregarMesero.setBackground(new java.awt.Color(0, 153, 0));
-        btnAgregarMesero.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnAgregarMesero.setForeground(new java.awt.Color(0, 0, 0));
+        btnAgregarMesero.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnAgregarMesero.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregarMesero.setText("Agregar mesero");
         btnAgregarMesero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnAgregarMesero.addActionListener(new java.awt.event.ActionListener() {
@@ -194,20 +195,26 @@ public class JframeAdministrador extends javax.swing.JFrame {
                 btnAgregarMeseroActionPerformed(evt);
             }
         });
-        panelAgregarUsuarios.add(btnAgregarMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 150, 50));
-        panelAgregarUsuarios.add(txtUsuarioNuevoMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 233, -1));
+        panelAgregarUsuarios.add(btnAgregarMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, 200, 80));
 
-        jLabel45.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        txtUsuarioNuevoMesero.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        panelAgregarUsuarios.add(txtUsuarioNuevoMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 270, 40));
+
+        jLabel45.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(0, 0, 0));
         jLabel45.setText("Lista de meseros");
-        panelAgregarUsuarios.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 120, -1, -1));
+        panelAgregarUsuarios.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 130, -1, -1));
 
         listMeserosAgregar.setBackground(new java.awt.Color(255, 204, 51));
         jScrollPane9.setViewportView(listMeserosAgregar);
 
-        panelAgregarUsuarios.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(646, 151, 188, 269));
-        panelAgregarUsuarios.add(txtConfirmarContraseñaNuevoMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 170, 30));
-        panelAgregarUsuarios.add(txtContraseñaNuevoMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 170, 30));
+        panelAgregarUsuarios.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 190, 210, 310));
+
+        txtConfirmarContraseñaNuevoMesero.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        panelAgregarUsuarios.add(txtConfirmarContraseñaNuevoMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, 210, 40));
+
+        txtContraseñaNuevoMesero.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        panelAgregarUsuarios.add(txtContraseñaNuevoMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 210, 40));
 
         jPanelMostrarAdmin.add(panelAgregarUsuarios, "card7");
 
@@ -216,94 +223,107 @@ public class JframeAdministrador extends javax.swing.JFrame {
         panelReporteVentas.setPreferredSize(new java.awt.Dimension(850, 500));
         panelReporteVentas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel79.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
-        jLabel79.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel79.setFont(new java.awt.Font("Segoe UI Black", 1, 30)); // NOI18N
+        jLabel79.setForeground(new java.awt.Color(107, 36, 12));
         jLabel79.setText("REPORTE DE VENTAS");
-        panelReporteVentas.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 24, 293, -1));
+        panelReporteVentas.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 24, 350, -1));
 
-        jLabel80.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel80.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel80.setText("Rango de fecha para ver los reportes");
-        panelReporteVentas.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
-
-        jLabel81.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel81.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel81.setForeground(new java.awt.Color(0, 0, 0));
         jLabel81.setText("Desde :");
-        panelReporteVentas.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
+        panelReporteVentas.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 80, 40));
 
         txtFechaInicioReporteBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtFechaInicioReporteBuscarMouseClicked(evt);
             }
         });
-        panelReporteVentas.add(txtFechaInicioReporteBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 158, -1));
+        panelReporteVentas.add(txtFechaInicioReporteBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 210, 40));
 
-        jLabel82.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel82.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel82.setForeground(new java.awt.Color(0, 0, 0));
         jLabel82.setText("Hasta :");
-        panelReporteVentas.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
+        panelReporteVentas.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 185, 100, 30));
 
         txtFechaFinalReporteBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtFechaFinalReporteBuscarMouseClicked(evt);
             }
         });
-        panelReporteVentas.add(txtFechaFinalReporteBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 158, -1));
+        panelReporteVentas.add(txtFechaFinalReporteBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 210, 40));
 
         listaReportesEncontrados.setBackground(new java.awt.Color(255, 204, 51));
         jScrollPane18.setViewportView(listaReportesEncontrados);
 
-        panelReporteVentas.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 206, 240));
+        panelReporteVentas.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 220, 260));
 
-        jLabel83.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel83.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel83.setForeground(new java.awt.Color(0, 0, 0));
         jLabel83.setText("Reportes encontrados");
-        panelReporteVentas.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
+        panelReporteVentas.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, -1, -1));
 
-        btnBuscarReportes.setBackground(new java.awt.Color(102, 102, 0));
-        btnBuscarReportes.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnBuscarReportes.setBackground(new java.awt.Color(107, 36, 12));
+        btnBuscarReportes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnBuscarReportes.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscarReportes.setText("Buscar reportes");
         btnBuscarReportes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarReportesActionPerformed(evt);
             }
         });
-        panelReporteVentas.add(btnBuscarReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, 60));
+        panelReporteVentas.add(btnBuscarReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, 180, 70));
 
-        jLabel85.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel85.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel85.setForeground(new java.awt.Color(0, 0, 0));
         jLabel85.setText("Visualizacion del reporte seleccionado");
-        panelReporteVentas.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, -1, -1));
+        panelReporteVentas.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 90, -1, -1));
 
-        btnVerReporte.setBackground(new java.awt.Color(102, 102, 0));
-        btnVerReporte.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnVerReporte.setBackground(new java.awt.Color(107, 36, 12));
+        btnVerReporte.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnVerReporte.setForeground(new java.awt.Color(255, 255, 255));
         btnVerReporte.setText("Ver reporte");
         btnVerReporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerReporteActionPerformed(evt);
             }
         });
-        panelReporteVentas.add(btnVerReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 110, 50));
+        panelReporteVentas.add(btnVerReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 130, 60));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel51.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(255, 255, 255));
         jLabel51.setText("Cantidad de productos vendidos");
-        jPanel1.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 170, 30));
-        jPanel1.add(txtGananciaReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 150, 30));
+        jPanel1.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 240, 40));
 
+        txtGananciaReporteSeleccionado.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(txtGananciaReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 250, 40));
+
+        jLabel52.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(255, 255, 255));
         jLabel52.setText("Fecha del reporte");
-        jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 108, 30));
-        jPanel1.add(txtFechaReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 150, 30));
+        jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 130, 40));
 
+        txtFechaReporteSeleccionado.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(txtFechaReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 250, 40));
+
+        jLabel59.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(255, 255, 255));
         jLabel59.setText("Total ganancia");
-        jPanel1.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, 30));
-        jPanel1.add(txtCantidadReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 150, 30));
+        jPanel1.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 120, 40));
 
+        txtCantidadReporteSeleccionado.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(txtCantidadReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 250, 40));
+
+        jLabel62.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(255, 255, 255));
         jLabel62.setText("Nombre");
-        jPanel1.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 50, 30));
-        jPanel1.add(txtNombreReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 150, 30));
+        jPanel1.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 70, 40));
 
-        panelReporteVentas.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 290, 340));
+        txtNombreReporteSeleccionado.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(txtNombreReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 250, 40));
+
+        panelReporteVentas.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 370, 420));
 
         jPanelMostrarAdmin.add(panelReporteVentas, "card11");
 
@@ -311,28 +331,30 @@ public class JframeAdministrador extends javax.swing.JFrame {
         panelCerrarSesion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         panelCerrarSesion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel86.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
-        jLabel86.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel86.setFont(new java.awt.Font("Segoe UI Black", 1, 30)); // NOI18N
+        jLabel86.setForeground(new java.awt.Color(107, 36, 12));
         jLabel86.setText("CERRAR SESION");
-        panelCerrarSesion.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 44, -1, -1));
+        panelCerrarSesion.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, -1, -1));
 
-        jLabel29.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel29.setText("Ingresar el codigo generado :");
-        panelCerrarSesion.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 113, -1, -1));
+        jLabel29.setText("Ingresar el codigo generado ");
+        panelCerrarSesion.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 330, 40));
 
-        jLabel31.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel31.setText("Codigo generado :");
-        panelCerrarSesion.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 150, -1, -1));
+        jLabel31.setText("Codigo generado");
+        panelCerrarSesion.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 200, 50));
 
-        jLabel43.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel43.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel43.setText("Ingresar codigo :");
-        panelCerrarSesion.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 209, 136, -1));
-        panelCerrarSesion.add(txtIngreseCodigoGenerado, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 233, 202, -1));
+        jLabel43.setText("Ingresar codigo");
+        panelCerrarSesion.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 190, 50));
+        panelCerrarSesion.add(txtIngreseCodigoGenerado, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 230, 50));
 
-        btnCerrarSesionAdmnistrador.setBackground(new java.awt.Color(204, 0, 0));
+        btnCerrarSesionAdmnistrador.setBackground(new java.awt.Color(107, 36, 12));
+        btnCerrarSesionAdmnistrador.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        btnCerrarSesionAdmnistrador.setForeground(new java.awt.Color(255, 255, 255));
         btnCerrarSesionAdmnistrador.setText("Cerrar sesion");
         btnCerrarSesionAdmnistrador.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnCerrarSesionAdmnistrador.addActionListener(new java.awt.event.ActionListener() {
@@ -340,10 +362,11 @@ public class JframeAdministrador extends javax.swing.JFrame {
                 btnCerrarSesionAdmnistradorActionPerformed(evt);
             }
         });
-        panelCerrarSesion.add(btnCerrarSesionAdmnistrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(634, 175, 113, 64));
+        panelCerrarSesion.add(btnCerrarSesionAdmnistrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 270, 210, 120));
 
-        txtCodigoGenerado.setFont(new java.awt.Font("Segoe UI Black", 3, 18)); // NOI18N
-        panelCerrarSesion.add(txtCodigoGenerado, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 175, 202, -1));
+        txtCodigoGenerado.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        txtCodigoGenerado.setEnabled(false);
+        panelCerrarSesion.add(txtCodigoGenerado, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 230, 50));
 
         jPanelMostrarAdmin.add(panelCerrarSesion, "card13");
 
@@ -352,7 +375,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
         menuUsuarios.setText("Usuarios");
         menuUsuarios.setPreferredSize(new java.awt.Dimension(122, 50));
 
-        menItemEliminarUsuario.setText("Desactivar usuario");
+        menItemEliminarUsuario.setText("Gestionar cuentas");
         menItemEliminarUsuario.setPreferredSize(new java.awt.Dimension(180, 40));
         menItemEliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -406,17 +429,11 @@ public class JframeAdministrador extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 887, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 1054, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanelMostrarAdmin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
         );
 
         pack();
@@ -718,7 +735,6 @@ public class JframeAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel79;
-    private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
