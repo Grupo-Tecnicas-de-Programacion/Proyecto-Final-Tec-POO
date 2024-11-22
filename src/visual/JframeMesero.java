@@ -1591,16 +1591,17 @@ public class JframeMesero extends javax.swing.JFrame {
         panelMesa6.setToolTipText("");
         panelMesa6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel116.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel116.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel116.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel116.setForeground(new java.awt.Color(0, 0, 0));
         jLabel116.setText("Mesa 6");
-        panelMesa6.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 90, 40));
+        panelMesa6.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 90, 30));
 
-        jLabel118.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel118.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel118.setForeground(new java.awt.Color(0, 0, 0));
         jLabel118.setText("Productos de la carta");
-        panelMesa6.add(jLabel118, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 159, -1));
+        panelMesa6.add(jLabel118, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 210, 20));
 
+        productosPedidoMesa6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         productosPedidoMesa6.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -1613,30 +1614,33 @@ public class JframeMesero extends javax.swing.JFrame {
         });
         jScrollPane33.setViewportView(productosPedidoMesa6);
 
-        panelMesa6.add(jScrollPane33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 200, 200));
+        panelMesa6.add(jScrollPane33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 340, 290));
 
-        btnAgregarProductoPedidoMesa6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnAgregarProductoPedidoMesa6.setForeground(new java.awt.Color(0, 0, 0));
+        btnAgregarProductoPedidoMesa6.setBackground(new java.awt.Color(107, 36, 12));
+        btnAgregarProductoPedidoMesa6.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnAgregarProductoPedidoMesa6.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregarProductoPedidoMesa6.setText("Agregar producto al pedido");
         btnAgregarProductoPedidoMesa6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarProductoPedidoMesa6ActionPerformed(evt);
             }
         });
-        panelMesa6.add(btnAgregarProductoPedidoMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 200, 40));
+        panelMesa6.add(btnAgregarProductoPedidoMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 240, 40));
 
-        btnRealizarPedidoMesa6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnRealizarPedidoMesa6.setForeground(new java.awt.Color(0, 0, 0));
+        btnRealizarPedidoMesa6.setBackground(new java.awt.Color(107, 36, 12));
+        btnRealizarPedidoMesa6.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnRealizarPedidoMesa6.setForeground(new java.awt.Color(255, 255, 255));
         btnRealizarPedidoMesa6.setText("Realizar pedido");
         btnRealizarPedidoMesa6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRealizarPedidoMesa6ActionPerformed(evt);
             }
         });
-        panelMesa6.add(btnRealizarPedidoMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 130, 40));
+        panelMesa6.add(btnRealizarPedidoMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 150, 40));
 
+        listaPedidosMesa6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         listaPedidosMesa6.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = {};
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -1647,66 +1651,67 @@ public class JframeMesero extends javax.swing.JFrame {
         });
         jScrollPane34.setViewportView(listaPedidosMesa6);
 
-        panelMesa6.add(jScrollPane34, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 100, 200, 200));
+        panelMesa6.add(jScrollPane34, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, 240, 290));
 
-        jLabel119.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel119.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel119.setForeground(new java.awt.Color(0, 0, 0));
         jLabel119.setText("Productos del pedido");
-        panelMesa6.add(jLabel119, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 130, 20));
+        panelMesa6.add(jLabel119, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 190, 20));
 
-        btnVerPedidosMesa6.setBackground(new java.awt.Color(204, 204, 0));
-        btnVerPedidosMesa6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnVerPedidosMesa6.setForeground(new java.awt.Color(0, 0, 0));
+        btnVerPedidosMesa6.setBackground(new java.awt.Color(177, 116, 87));
+        btnVerPedidosMesa6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnVerPedidosMesa6.setForeground(new java.awt.Color(255, 255, 255));
         btnVerPedidosMesa6.setText("Ver pedidos");
         btnVerPedidosMesa6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerPedidosMesa6ActionPerformed(evt);
             }
         });
-        panelMesa6.add(btnVerPedidosMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 120, 40));
+        panelMesa6.add(btnVerPedidosMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 150, 50));
 
-        btnBorrarProductoPedidoMesa6.setBackground(new java.awt.Color(204, 204, 0));
-        btnBorrarProductoPedidoMesa6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnBorrarProductoPedidoMesa6.setForeground(new java.awt.Color(0, 0, 0));
+        btnBorrarProductoPedidoMesa6.setBackground(new java.awt.Color(177, 116, 87));
+        btnBorrarProductoPedidoMesa6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBorrarProductoPedidoMesa6.setForeground(new java.awt.Color(255, 255, 255));
         btnBorrarProductoPedidoMesa6.setText("Borrar producto");
         btnBorrarProductoPedidoMesa6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBorrarProductoPedidoMesa6ActionPerformed(evt);
             }
         });
-        panelMesa6.add(btnBorrarProductoPedidoMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 120, 40));
+        panelMesa6.add(btnBorrarProductoPedidoMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 150, 50));
 
-        btnTotalCuentaMesa6.setBackground(new java.awt.Color(204, 204, 0));
-        btnTotalCuentaMesa6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnTotalCuentaMesa6.setForeground(new java.awt.Color(0, 0, 0));
+        btnTotalCuentaMesa6.setBackground(new java.awt.Color(177, 116, 87));
+        btnTotalCuentaMesa6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnTotalCuentaMesa6.setForeground(new java.awt.Color(255, 255, 255));
         btnTotalCuentaMesa6.setText("Total cuenta");
         btnTotalCuentaMesa6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTotalCuentaMesa6ActionPerformed(evt);
             }
         });
-        panelMesa6.add(btnTotalCuentaMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, 120, 40));
+        panelMesa6.add(btnTotalCuentaMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, 150, 50));
 
-        btnGenerarReciboMesa6.setBackground(new java.awt.Color(204, 204, 0));
-        btnGenerarReciboMesa6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnGenerarReciboMesa6.setForeground(new java.awt.Color(0, 0, 0));
+        btnGenerarReciboMesa6.setBackground(new java.awt.Color(177, 116, 87));
+        btnGenerarReciboMesa6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnGenerarReciboMesa6.setForeground(new java.awt.Color(255, 255, 255));
         btnGenerarReciboMesa6.setText("Generar recibo");
         btnGenerarReciboMesa6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGenerarReciboMesa6ActionPerformed(evt);
             }
         });
-        panelMesa6.add(btnGenerarReciboMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 120, 40));
+        panelMesa6.add(btnGenerarReciboMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 320, 150, 50));
 
-        btnVerInfoMesa6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnVerInfoMesa6.setForeground(new java.awt.Color(0, 0, 0));
+        btnVerInfoMesa6.setBackground(new java.awt.Color(74, 73, 71));
+        btnVerInfoMesa6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnVerInfoMesa6.setForeground(new java.awt.Color(255, 255, 255));
         btnVerInfoMesa6.setText("Información mesa");
         btnVerInfoMesa6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerInfoMesa6ActionPerformed(evt);
             }
         });
-        panelMesa6.add(btnVerInfoMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 140, 30));
+        panelMesa6.add(btnVerInfoMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, 170, 50));
 
         jPanelMostrarMesa.add(panelMesa6, "card7");
 
