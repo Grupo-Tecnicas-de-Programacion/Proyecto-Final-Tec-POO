@@ -2674,125 +2674,147 @@ public class JframeMesero extends javax.swing.JFrame {
         jLabel72.setForeground(new java.awt.Color(145, 9, 30));
         jLabel72.setText("BUSCAR PRODUCTO");
         panelBuscProducto.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 330, 60));
-        panelBuscProducto.add(txtNombreProductoBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 290, -1));
 
+        txtNombreProductoBuscar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        panelBuscProducto.add(txtNombreProductoBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, 350, 40));
+
+        jLabel73.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel73.setForeground(new java.awt.Color(0, 0, 0));
         jLabel73.setText("Ingresar nombre del producto");
-        panelBuscProducto.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, 184, 35));
+        panelBuscProducto.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 260, 35));
 
-        jLabel74.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel74.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel74.setForeground(new java.awt.Color(0, 0, 0));
         jLabel74.setText("Datos del producto");
-        panelBuscProducto.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 300, 140, 30));
+        panelBuscProducto.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, 230, 30));
 
+        jLabel75.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel75.setForeground(new java.awt.Color(0, 0, 0));
         jLabel75.setText("Nombre del producto");
-        panelBuscProducto.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 146, 33));
+        panelBuscProducto.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 210, 40));
 
+        jLabel76.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel76.setForeground(new java.awt.Color(0, 0, 0));
         jLabel76.setText("Categoría del producto");
-        panelBuscProducto.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, 146, 33));
+        panelBuscProducto.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, 210, 40));
 
+        jLabel77.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel77.setForeground(new java.awt.Color(0, 0, 0));
         jLabel77.setText("Precio del producto");
-        panelBuscProducto.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 450, 146, 33));
+        panelBuscProducto.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 450, 210, 40));
 
+        jLabel78.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel78.setForeground(new java.awt.Color(0, 0, 0));
         jLabel78.setText("Cantidad del producto");
-        panelBuscProducto.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 500, 146, 33));
+        panelBuscProducto.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 510, 210, 40));
 
         txtNombreProductoBuscado.setEditable(false);
-        panelBuscProducto.add(txtNombreProductoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 350, 160, 30));
+        txtNombreProductoBuscado.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        panelBuscProducto.add(txtNombreProductoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, 240, 40));
 
         txtCategoriaProductoBuscado.setEditable(false);
-        panelBuscProducto.add(txtCategoriaProductoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 400, 160, 30));
+        txtCategoriaProductoBuscado.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        panelBuscProducto.add(txtCategoriaProductoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 390, 240, 40));
 
         txtPrecioProductoBuscado.setEditable(false);
-        panelBuscProducto.add(txtPrecioProductoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 450, 160, 30));
+        txtPrecioProductoBuscado.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        panelBuscProducto.add(txtPrecioProductoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 450, 240, 40));
 
         txtCantidadProductoBuscado.setEditable(false);
-        panelBuscProducto.add(txtCantidadProductoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 500, 160, 30));
+        txtCantidadProductoBuscado.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        panelBuscProducto.add(txtCantidadProductoBuscado, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 510, 240, 40));
 
-        btnBuscandoProducto.setBackground(new java.awt.Color(153, 153, 0));
-        btnBuscandoProducto.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnBuscandoProducto.setForeground(new java.awt.Color(0, 0, 0));
+        btnBuscandoProducto.setBackground(new java.awt.Color(107, 36, 12));
+        btnBuscandoProducto.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnBuscandoProducto.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscandoProducto.setText("Buscar producto");
         btnBuscandoProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscandoProductoActionPerformed(evt);
             }
         });
-        panelBuscProducto.add(btnBuscandoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 210, 160, 70));
+        panelBuscProducto.add(btnBuscandoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 160, 210, 70));
 
         jPanelMostrar.add(panelBuscProducto, "card7");
 
         panelElimProducto.setBackground(new java.awt.Color(255, 255, 255));
         panelElimProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnEliminarProducto.setBackground(new java.awt.Color(255, 0, 0));
-        btnEliminarProducto.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnEliminarProducto.setForeground(new java.awt.Color(0, 0, 0));
+        btnEliminarProducto.setBackground(new java.awt.Color(107, 36, 12));
+        btnEliminarProducto.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnEliminarProducto.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminarProducto.setText("Eliminar producto");
         btnEliminarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarProductoActionPerformed(evt);
             }
         });
-        panelElimProducto.add(btnEliminarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 400, 160, 70));
-        panelElimProducto.add(txtNombreProductoEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 290, -1));
+        panelElimProducto.add(btnEliminarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 360, 200, 80));
 
-        jLabel79.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtNombreProductoEliminar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        panelElimProducto.add(txtNombreProductoEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 340, 50));
+
+        jLabel79.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel79.setForeground(new java.awt.Color(0, 0, 0));
         jLabel79.setText("Datos del producto a eliminar");
-        panelElimProducto.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 210, 30));
+        panelElimProducto.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 350, 50));
 
         txtNombreProductoAEliminar.setEditable(false);
-        panelElimProducto.add(txtNombreProductoAEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, 160, 30));
+        txtNombreProductoAEliminar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        panelElimProducto.add(txtNombreProductoAEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, 210, 50));
 
         txtCategoriaProductoAEliminar.setEditable(false);
-        panelElimProducto.add(txtCategoriaProductoAEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 410, 160, 30));
+        txtCategoriaProductoAEliminar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        panelElimProducto.add(txtCategoriaProductoAEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 210, 50));
 
         txtPrecioProductoAEliminar.setEditable(false);
-        panelElimProducto.add(txtPrecioProductoAEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 460, 160, 30));
+        txtPrecioProductoAEliminar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        panelElimProducto.add(txtPrecioProductoAEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 440, 210, 50));
 
         txtCantidadProductoAEliminar.setEditable(false);
-        panelElimProducto.add(txtCantidadProductoAEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 510, 160, 30));
+        txtCantidadProductoAEliminar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        panelElimProducto.add(txtCantidadProductoAEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 510, 210, 50));
 
+        jLabel80.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel80.setForeground(new java.awt.Color(0, 0, 0));
         jLabel80.setText("Cantidad del producto");
-        panelElimProducto.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 510, 146, 33));
+        panelElimProducto.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 510, 200, 50));
 
+        jLabel81.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel81.setForeground(new java.awt.Color(0, 0, 0));
         jLabel81.setText("Precio del producto");
-        panelElimProducto.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 460, 146, 33));
+        panelElimProducto.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 200, 50));
 
+        jLabel82.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel82.setForeground(new java.awt.Color(0, 0, 0));
         jLabel82.setText("Categoría del producto");
-        panelElimProducto.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 146, 33));
+        panelElimProducto.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, 200, 50));
 
+        jLabel83.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel83.setForeground(new java.awt.Color(0, 0, 0));
         jLabel83.setText("Nombre del producto");
-        panelElimProducto.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 146, 33));
+        panelElimProducto.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 200, 50));
 
+        jLabel84.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel84.setForeground(new java.awt.Color(0, 0, 0));
         jLabel84.setText("Ingresar nombre del producto");
-        panelElimProducto.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 184, 20));
+        panelElimProducto.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 260, 50));
 
         jLabel85.setFont(new java.awt.Font("Segoe UI Black", 1, 30)); // NOI18N
         jLabel85.setForeground(new java.awt.Color(145, 9, 30));
         jLabel85.setText("ELIMINAR PRODUCTO");
-        panelElimProducto.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 380, 60));
+        panelElimProducto.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, 370, 60));
 
-        btnBuscarProductoEliminar.setBackground(new java.awt.Color(153, 153, 153));
-        btnBuscarProductoEliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnBuscarProductoEliminar.setForeground(new java.awt.Color(0, 0, 0));
+        btnBuscarProductoEliminar.setBackground(new java.awt.Color(107, 36, 12));
+        btnBuscarProductoEliminar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnBuscarProductoEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscarProductoEliminar.setText("Buscar producto a eliminar");
         btnBuscarProductoEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarProductoEliminarActionPerformed(evt);
             }
         });
-        panelElimProducto.add(btnBuscarProductoEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 240, 220, 50));
+        panelElimProducto.add(btnBuscarProductoEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 140, -1, 70));
 
         jPanelMostrar.add(panelElimProducto, "card8");
 
