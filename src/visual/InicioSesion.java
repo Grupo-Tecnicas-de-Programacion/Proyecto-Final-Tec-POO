@@ -39,74 +39,79 @@ public class InicioSesion extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblNombreUsuario.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        lblNombreUsuario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblNombreUsuario.setForeground(new java.awt.Color(0, 0, 0));
         lblNombreUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNombreUsuario.setText("Nombre de usuario");
-        jPanel1.add(lblNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 150, 26));
+        jPanel1.add(lblNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 170, 26));
 
-        txtNombreUsuarioIniciarSesion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPanel1.add(txtNombreUsuarioIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 315, 30));
+        txtNombreUsuarioIniciarSesion.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jPanel1.add(txtNombreUsuarioIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 315, 40));
 
-        jLabel2.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Contraseña");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 150, 26));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 150, 26));
 
-        btnIngresarInicioSesion.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-        btnIngresarInicioSesion.setForeground(new java.awt.Color(0, 0, 0));
+        btnIngresarInicioSesion.setBackground(new java.awt.Color(134, 43, 13));
+        btnIngresarInicioSesion.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnIngresarInicioSesion.setForeground(new java.awt.Color(255, 255, 255));
         btnIngresarInicioSesion.setText("Ingresar");
         btnIngresarInicioSesion.setToolTipText("");
+        btnIngresarInicioSesion.setBorderPainted(false);
         btnIngresarInicioSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIngresarInicioSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(btnIngresarInicioSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 140, 50));
+        jPanel1.add(btnIngresarInicioSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 140, 60));
 
-        btnCambiarContrasenia.setBackground(new java.awt.Color(204, 204, 204));
-        btnCambiarContrasenia.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-        btnCambiarContrasenia.setForeground(new java.awt.Color(0, 0, 0));
+        btnCambiarContrasenia.setBackground(new java.awt.Color(153, 77, 28));
+        btnCambiarContrasenia.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnCambiarContrasenia.setForeground(new java.awt.Color(255, 255, 255));
         btnCambiarContrasenia.setText("Cambiar contraseña");
+        btnCambiarContrasenia.setBorderPainted(false);
         btnCambiarContrasenia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCambiarContraseniaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCambiarContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 186, 40));
+        jPanel1.add(btnCambiarContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 210, 50));
 
-        btnVolverAtrasInicioSesion.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-        btnVolverAtrasInicioSesion.setForeground(new java.awt.Color(0, 0, 0));
+        btnVolverAtrasInicioSesion.setBackground(new java.awt.Color(228, 143, 69));
+        btnVolverAtrasInicioSesion.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnVolverAtrasInicioSesion.setForeground(new java.awt.Color(255, 255, 255));
         btnVolverAtrasInicioSesion.setText("Volver atras");
+        btnVolverAtrasInicioSesion.setBorderPainted(false);
         btnVolverAtrasInicioSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVolverAtrasInicioSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVolverAtrasInicioSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, -1, 54));
+        jPanel1.add(btnVolverAtrasInicioSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 450, -1, 40));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 30)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(107, 36, 12));
         jLabel1.setText("INICIO DE SESIÓN");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, -1));
 
-        txtContraseniaIniciarSesion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPanel1.add(txtContraseniaIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 310, 30));
+        txtContraseniaIniciarSesion.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jPanel1.add(txtContraseniaIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 310, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
