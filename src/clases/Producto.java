@@ -353,4 +353,53 @@ public class Producto {
         }
     }
 
+    public static List<Producto> obtenerProductosDisponiblesDesdeBaseDeDatos() {
+        String consulta = "SELECT nombre, categoria, precio, cantidad_disponible FROM productos WHERE cantidad_disponible > 0";
+        List<Producto> productosDisponibles = new ArrayList<>();
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentencia = conexion.prepareStatement(consulta);
+             ResultSet resultado = sentencia.executeQuery()) {
+
+            while (resultado.next()) {
+                String nombre = resultado.getString("nombre");
+                String categoria = resultado.getString("categoria");
+                double precio = resultado.getDouble("precio");
+                int cantidadDisponible = resultado.getInt("cantidad_disponible");
+
+                Producto producto = new Producto(nombre, precio, categoria, cantidadDisponible);
+                productosDisponibles.add(producto);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println("Error al obtener productos disponibles desde la base de datos: " + e.getMessage());
+        }
+
+        return productosDisponibles;
+    }
+
+    public static List<Producto> obtenerProductosAgotadosDesdeBaseDeDatos() {
+        String consulta = "SELECT nombre, categoria, precio, cantidad_disponible FROM productos WHERE cantidad_disponible = 0";
+        List<Producto> productosDisponibles = new ArrayList<>();
+
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentencia = conexion.prepareStatement(consulta);
+             ResultSet resultado = sentencia.executeQuery()) {
+
+            while (resultado.next()) {
+                String nombre = resultado.getString("nombre");
+                String categoria = resultado.getString("categoria");
+                double precio = resultado.getDouble("precio");
+                int cantidadDisponible = resultado.getInt("cantidad_disponible");
+
+                Producto producto = new Producto(nombre, precio, categoria, cantidadDisponible);
+                productosDisponibles.add(producto);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println("Error al obtener productos disponibles desde la base de datos: " + e.getMessage());
+        }
+
+        return productosDisponibles;
+    }
 }

@@ -12,9 +12,7 @@ import clases.Pedido;
 import clases.Producto;
 import clases.Reporte;
 import java.awt.Color;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -40,11 +38,11 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import javax.swing.JDialog;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import javax.swing.JTextField;
 
 
 public class JframeMesero extends javax.swing.JFrame {
@@ -66,30 +64,6 @@ public class JframeMesero extends javax.swing.JFrame {
     private Pedido pedidoMesa10 = new Pedido();
     private Pedido pedidoMesa11 = new Pedido();
     private Pedido pedidoMesa12 = new Pedido();
-    private ArrayList<Pedido> pedidosMesa1 = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa1Llevar = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa2 = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa2Llevar = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa3 = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa3Llevar = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa4 = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa4Llevar = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa5 = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa5Llevar = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa6 = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa6Llevar = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa7 = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa7Llevar = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa8 = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa8Llevar = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa9 = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa9Llevar = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa10 = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa10Llevar = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa11 = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa11Llevar = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa12 = new ArrayList<>();
-    private ArrayList<Pedido> pedidosMesa12Llevar = new ArrayList<>();
     private ArrayList<Producto> productosVendidos = new ArrayList<>();
     
     public JframeMesero() {
@@ -2767,19 +2741,15 @@ public class JframeMesero extends javax.swing.JFrame {
         panelProducAgotados.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 146, 33));
 
         txtCantidadProductoAgotado.setEditable(false);
-        txtCantidadProductoAgotado.setText("Cantidad del producto");
         panelProducAgotados.add(txtCantidadProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 160, 30));
 
         txtPrecioProductoAgotado.setEditable(false);
-        txtPrecioProductoAgotado.setText("Precio del producto");
         panelProducAgotados.add(txtPrecioProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 160, 30));
 
         txtCategoriaProductoAgotado.setEditable(false);
-        txtCategoriaProductoAgotado.setText("Categoría del producto");
         panelProducAgotados.add(txtCategoriaProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 160, 30));
 
         txtNombreProductoAgotado.setEditable(false);
-        txtNombreProductoAgotado.setText("Nombre del producto");
         panelProducAgotados.add(txtNombreProductoAgotado, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 160, 30));
 
         listaProductosAgotados.setModel(new javax.swing.AbstractListModel<String>() {
@@ -4278,12 +4248,12 @@ public class JframeMesero extends javax.swing.JFrame {
     private void menItemProducDisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemProducDisponiblesActionPerformed
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "panelProducDisponibles");
-        
+
+        List<Producto> productosDisponibles = Producto.obtenerProductosDisponiblesDesdeBaseDeDatos();
+
         DefaultListModel<String> modeloProductosDisponibles = new DefaultListModel<>();
-        for (Producto producto : productos) {
-            if (producto.getCantidadDisponible() > 0) {
-                modeloProductosDisponibles.addElement(producto.getNombre());
-            }
+        for (Producto producto : productosDisponibles) {
+            modeloProductosDisponibles.addElement(producto.getNombre());
         }
         listaProductosDisponibles.setModel(modeloProductosDisponibles);
     }//GEN-LAST:event_menItemProducDisponiblesActionPerformed
@@ -4332,24 +4302,15 @@ public class JframeMesero extends javax.swing.JFrame {
         CardLayout layout = (CardLayout) jPanelMostrar.getLayout();
         layout.show(jPanelMostrar, "panelProducAgotados");
 
+        List<Producto> productosAgotados = Producto.obtenerProductosAgotadosDesdeBaseDeDatos();
+        
         DefaultListModel<String> modeloProductosDisponibles = new DefaultListModel<>();
-        for (Producto producto : productos) {
-            if (producto.getCantidadDisponible() == 0) {
-                modeloProductosDisponibles.addElement(producto.getNombre());
-            }
+        for (Producto producto : productosAgotados) {
+            modeloProductosDisponibles.addElement(producto.getNombre());
         }
         listaProductosAgotados.setModel(modeloProductosDisponibles);
     }//GEN-LAST:event_menItemProducDAgotadosActionPerformed
 
-    private Producto buscarProductoPorNombre(String nombreProducto) {
-        for (Producto producto : productos) {
-            if (producto.getNombre().equalsIgnoreCase(nombreProducto)) {
-                return producto;
-            }
-        }
-        return null;
-    }
-    
     private void showPanel(String panelName) {
         CardLayout layout = (CardLayout) jPanelMostrarMesa.getLayout();
         layout.show(jPanelMostrarMesa, panelName);
@@ -4866,7 +4827,7 @@ public class JframeMesero extends javax.swing.JFrame {
         List<Producto> productos = new ArrayList<>();
 
         for (int i = 0; i < listaPedidos.getModel().getSize(); i++) {
-            String item = listaPedidos.getModel().getElementAt(i); // Ejemplo: "Pollo a la brasa - Cantidad: 5"
+            String item = listaPedidos.getModel().getElementAt(i);
             String[] partes = item.split(" - Cantidad: ");
             if (partes.length != 2) {
                 System.err.println("Formato incorrecto en el JList: " + item);
@@ -6216,39 +6177,40 @@ public class JframeMesero extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnEliminarProductoActionPerformed
 
-    private void listaProductosDisponiblesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaProductosDisponiblesValueChanged
-        
-        if (!evt.getValueIsAdjusting()) { 
-            int index = listaProductosDisponibles.getSelectedIndex();
-            if (index >= 0) {
-                String nombreProductoSeleccionado = listaProductosDisponibles.getSelectedValue();
-                Producto productoSeleccionado = buscarProductoPorNombre(nombreProductoSeleccionado);
+    private void mostrarDetallesProducto(JList<String> listaProductos, JTextField txtNombre, JTextField txtCategoria, JTextField txtPrecio, JTextField txtCantidad) {
+        int index = listaProductos.getSelectedIndex();
+        if (index >= 0) {
+            String nombreProductoSeleccionado = listaProductos.getSelectedValue();
+            int idProducto = Producto.obtenerIdProductoDesdeBaseDatos(nombreProductoSeleccionado);
+
+            if (idProducto != -1) {
+                Producto productoSeleccionado = Producto.obtenerProductoPorIdDesdeBaseDeDatos(idProducto);
 
                 if (productoSeleccionado != null) {
-                    txtNombreProductoDisponible.setText(productoSeleccionado.getNombre());
-                    txtCategoriaProductoDisponible.setText(productoSeleccionado.getCategoria());
-                    txtPrecioProductoDisponible.setText(String.valueOf(productoSeleccionado.getPrecio()));
-                    txtCantidadProductoDisponible.setText(String.valueOf(productoSeleccionado.getCantidadDisponible()));
+                    txtNombre.setText(productoSeleccionado.getNombre());
+                    txtCategoria.setText(productoSeleccionado.getCategoria());
+                    txtPrecio.setText(String.valueOf(productoSeleccionado.getPrecio()));
+                    txtCantidad.setText(String.valueOf(productoSeleccionado.getCantidadDisponible()));
                 }
+            } else {
+                JOptionPane.showMessageDialog(null, "No se encontró el producto en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
             }
+        }
+    }
+
+    
+    
+    private void listaProductosDisponiblesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaProductosDisponiblesValueChanged
+        
+        if (!evt.getValueIsAdjusting()) {
+            mostrarDetallesProducto(listaProductosDisponibles, txtNombreProductoDisponible, txtCategoriaProductoDisponible, txtPrecioProductoDisponible, txtCantidadProductoDisponible);
         }
         
     }//GEN-LAST:event_listaProductosDisponiblesValueChanged
 
     private void listaProductosAgotadosValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaProductosAgotadosValueChanged
-        if (!evt.getValueIsAdjusting()) { 
-            int index = listaProductosAgotados.getSelectedIndex();
-            if (index >= 0) {
-                String nombreProductoSeleccionado = listaProductosAgotados.getSelectedValue();
-                Producto productoSeleccionado = buscarProductoPorNombre(nombreProductoSeleccionado);
-
-                if (productoSeleccionado != null) {
-                    txtNombreProductoAgotado.setText(productoSeleccionado.getNombre());
-                    txtCategoriaProductoAgotado.setText(productoSeleccionado.getCategoria());
-                    txtPrecioProductoAgotado.setText(String.valueOf(productoSeleccionado.getPrecio()));
-                    txtCantidadProductoAgotado.setText(String.valueOf(productoSeleccionado.getCantidadDisponible()));
-                }
-            }
+        if (!evt.getValueIsAdjusting()) {
+            mostrarDetallesProducto(listaProductosAgotados, txtNombreProductoAgotado, txtCategoriaProductoAgotado, txtPrecioProductoAgotado, txtCantidadProductoAgotado);
         }
     }//GEN-LAST:event_listaProductosAgotadosValueChanged
 
@@ -6514,28 +6476,6 @@ public class JframeMesero extends javax.swing.JFrame {
         generarRecibo(12, btnLimpiarMesa12);
     }//GEN-LAST:event_btnGenerarReciboMesa12ActionPerformed
 
-    private double calcularTotalGananciasGlobal() {
-        double total = 0;
-        
-        for (Producto producto : productosVendidos) {
-            total += producto.getCantidad() * producto.getPrecio();
-        }
-        
-        return total;
-    }
-
-    private int calcularCantidadProductosVendidosGlobal() {
-
-        int totalCantidad = 0;
-
-        for (Producto producto : productosVendidos) {
-            totalCantidad += producto.getCantidad();
-        }
-
-        return totalCantidad;
-
-    }
-    
     private void btnGenerarReporteDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteDiaActionPerformed
         
         String fechaTexto = txtFechaGenerarReporte.getText().trim();
