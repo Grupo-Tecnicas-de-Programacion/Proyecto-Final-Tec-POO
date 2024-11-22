@@ -104,6 +104,7 @@ public class JframeMesero extends javax.swing.JFrame {
         jPanelMostrarMesa.add(panelMesa11, "panelMesa11");
         jPanelMostrarMesa.add(panelMesa12, "panelMesa12");
         inicializarMesas();
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")

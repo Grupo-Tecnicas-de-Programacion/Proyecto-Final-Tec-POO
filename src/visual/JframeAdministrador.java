@@ -31,6 +31,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
         this.usuarioActual = usuarioActual;
         setTitle("Panel de Administración - " + usuarioActual.getNombreUsuario());
         cargarListaDeMeseros(listaMeserosGestionar, listMeserosAgregar);
+        this.setLocationRelativeTo(null);
     }
 
 
@@ -471,11 +472,10 @@ public class JframeAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarSesionAdmnistradorActionPerformed
 
     private void btnBuscarReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarReportesActionPerformed
-        // Obtener las fechas ingresadas por el usuario
+
         String fechaDesdeTexto = txtFechaInicioReporteBuscar.getText().trim();
         String fechaHastaTexto = txtFechaFinalReporteBuscar.getText().trim();
 
-        // Validar que ambas fechas sean ingresadas
         if (fechaDesdeTexto.isEmpty() || fechaHastaTexto.isEmpty()) {
             JOptionPane.showMessageDialog(
                 rootPane,
@@ -487,15 +487,13 @@ public class JframeAdministrador extends javax.swing.JFrame {
         }
 
         try {
-            // Convertir las fechas ingresadas de dd/MM/yyyy a Date
+
             SimpleDateFormat formatoEntrada = new SimpleDateFormat("dd/MM/yyyy");
             Date fechaDesde = formatoEntrada.parse(fechaDesdeTexto);
             Date fechaHasta = formatoEntrada.parse(fechaHastaTexto);
 
-            // Obtener los reportes desde la base de datos por rango de fechas
             List<Reporte> reportes = Reporte.obtenerReportesPorRangoDeFechas(fechaDesde, fechaHasta);
 
-            // Actualizar la lista de reportes encontrados en la interfaz
             DefaultListModel<String> modeloReportes = new DefaultListModel<>();
             for (Reporte reporte : reportes) {
                 modeloReportes.addElement(reporte.getNombre() + " - Fecha: " + formatoEntrada.format(reporte.getFecha()));

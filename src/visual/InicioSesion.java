@@ -14,6 +14,7 @@ public class InicioSesion extends javax.swing.JFrame {
         initComponents();
         this.rol = rol;
         setTitle("Inicio de sesión - " + rol);
+        this.setLocationRelativeTo(null);
     }
     
     public InicioSesion(){

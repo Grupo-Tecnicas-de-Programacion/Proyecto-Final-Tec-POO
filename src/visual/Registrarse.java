@@ -9,6 +9,7 @@ public class Registrarse extends javax.swing.JFrame {
 
     public Registrarse() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     
