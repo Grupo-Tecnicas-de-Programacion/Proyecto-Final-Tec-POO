@@ -3146,36 +3146,36 @@ public class JframeMesero extends javax.swing.JFrame {
         verPedidoMesa3.setBackground(new java.awt.Color(255, 255, 255));
         verPedidoMesa3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel35.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel35.setFont(new java.awt.Font("Segoe UI Black", 1, 30)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(0, 0, 0));
         jLabel35.setText("Pedidos mesa 3");
-        verPedidoMesa3.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 200, 25));
+        verPedidoMesa3.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 270, 50));
 
-        volverAtrasMesa3.setBackground(new java.awt.Color(204, 204, 0));
-        volverAtrasMesa3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        volverAtrasMesa3.setForeground(new java.awt.Color(0, 0, 0));
+        volverAtrasMesa3.setBackground(new java.awt.Color(107, 36, 12));
+        volverAtrasMesa3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        volverAtrasMesa3.setForeground(new java.awt.Color(255, 255, 255));
         volverAtrasMesa3.setText("Volver atrás");
         volverAtrasMesa3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 volverAtrasMesa3ActionPerformed(evt);
             }
         });
-        verPedidoMesa3.add(volverAtrasMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(811, 20, 120, 46));
+        verPedidoMesa3.add(volverAtrasMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 200, 160, 80));
 
-        jLabel36.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel36.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(0, 0, 0));
         jLabel36.setText("Pedidos llevar");
-        verPedidoMesa3.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 150, 25));
+        verPedidoMesa3.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, 200, 40));
 
-        jLabel37.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel37.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(0, 0, 0));
         jLabel37.setText("Detalle pedido");
-        verPedidoMesa3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 150, 25));
+        verPedidoMesa3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 200, 40));
 
-        jLabel38.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel38.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(0, 0, 0));
         jLabel38.setText("Pedidos mesa");
-        verPedidoMesa3.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 140, 25));
+        verPedidoMesa3.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 190, 40));
 
         listaVerPedidosMesa3.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -3194,7 +3194,7 @@ public class JframeMesero extends javax.swing.JFrame {
         });
         jScrollPane11.setViewportView(listaVerPedidosMesa3);
 
-        verPedidoMesa3.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 220, 240));
+        verPedidoMesa3.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 250, 300));
 
         detallePedidoMesa3.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -3204,7 +3204,7 @@ public class JframeMesero extends javax.swing.JFrame {
         detallePedidoMesa3.setEnabled(false);
         jScrollPane12.setViewportView(detallePedidoMesa3);
 
-        verPedidoMesa3.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 220, 240));
+        verPedidoMesa3.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 250, 300));
 
         listaVerPedidosLlevarMesa3.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -3223,11 +3223,11 @@ public class JframeMesero extends javax.swing.JFrame {
         });
         jScrollPane13.setViewportView(listaVerPedidosLlevarMesa3);
 
-        verPedidoMesa3.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, 220, 240));
+        verPedidoMesa3.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 230, 250, 300));
 
-        btnLimpiarMesa3.setBackground(new java.awt.Color(204, 204, 0));
-        btnLimpiarMesa3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnLimpiarMesa3.setForeground(new java.awt.Color(0, 0, 0));
+        btnLimpiarMesa3.setBackground(new java.awt.Color(177, 116, 87));
+        btnLimpiarMesa3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnLimpiarMesa3.setForeground(new java.awt.Color(255, 255, 255));
         btnLimpiarMesa3.setText("Limpiar");
         btnLimpiarMesa3.setEnabled(false);
         btnLimpiarMesa3.addActionListener(new java.awt.event.ActionListener() {
@@ -3235,54 +3235,54 @@ public class JframeMesero extends javax.swing.JFrame {
                 btnLimpiarMesa3ActionPerformed(evt);
             }
         });
-        verPedidoMesa3.add(btnLimpiarMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 140, 120, 46));
+        verPedidoMesa3.add(btnLimpiarMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 440, 160, 80));
 
-        cancelarPedidoMesa3.setBackground(new java.awt.Color(204, 204, 0));
-        cancelarPedidoMesa3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        cancelarPedidoMesa3.setForeground(new java.awt.Color(0, 0, 0));
+        cancelarPedidoMesa3.setBackground(new java.awt.Color(107, 36, 12));
+        cancelarPedidoMesa3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        cancelarPedidoMesa3.setForeground(new java.awt.Color(255, 255, 255));
         cancelarPedidoMesa3.setText("Cancelar pedido");
         cancelarPedidoMesa3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelarPedidoMesa3ActionPerformed(evt);
             }
         });
-        verPedidoMesa3.add(cancelarPedidoMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(811, 80, 120, 46));
+        verPedidoMesa3.add(cancelarPedidoMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 320, 160, 80));
 
         jPanelMostrar.add(verPedidoMesa3, "card15");
 
         verPedidoMesa4.setBackground(new java.awt.Color(255, 255, 255));
         verPedidoMesa4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel39.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel39.setFont(new java.awt.Font("Segoe UI Black", 1, 30)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(0, 0, 0));
         jLabel39.setText("Pedidos mesa 4");
-        verPedidoMesa4.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 200, 25));
+        verPedidoMesa4.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 270, 50));
 
-        volverAtrasMesa4.setBackground(new java.awt.Color(204, 204, 0));
-        volverAtrasMesa4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        volverAtrasMesa4.setForeground(new java.awt.Color(0, 0, 0));
+        volverAtrasMesa4.setBackground(new java.awt.Color(107, 36, 12));
+        volverAtrasMesa4.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        volverAtrasMesa4.setForeground(new java.awt.Color(255, 255, 255));
         volverAtrasMesa4.setText("Volver atrás");
         volverAtrasMesa4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 volverAtrasMesa4ActionPerformed(evt);
             }
         });
-        verPedidoMesa4.add(volverAtrasMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(811, 20, 120, 46));
+        verPedidoMesa4.add(volverAtrasMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 200, 160, 80));
 
-        jLabel40.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel40.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(0, 0, 0));
         jLabel40.setText("Pedidos llevar");
-        verPedidoMesa4.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 150, 25));
+        verPedidoMesa4.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, 200, 40));
 
-        jLabel41.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel41.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(0, 0, 0));
         jLabel41.setText("Detalle pedido");
-        verPedidoMesa4.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 150, 25));
+        verPedidoMesa4.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 200, 40));
 
-        jLabel42.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel42.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(0, 0, 0));
         jLabel42.setText("Pedidos mesa");
-        verPedidoMesa4.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 140, 25));
+        verPedidoMesa4.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 190, 40));
 
         listaVerPedidosMesa4.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -3301,7 +3301,7 @@ public class JframeMesero extends javax.swing.JFrame {
         });
         jScrollPane14.setViewportView(listaVerPedidosMesa4);
 
-        verPedidoMesa4.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 220, 240));
+        verPedidoMesa4.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 250, 300));
 
         detallePedidoMesa4.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -3311,7 +3311,7 @@ public class JframeMesero extends javax.swing.JFrame {
         detallePedidoMesa4.setEnabled(false);
         jScrollPane15.setViewportView(detallePedidoMesa4);
 
-        verPedidoMesa4.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 220, 240));
+        verPedidoMesa4.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 250, 300));
 
         listaVerPedidosLlevarMesa4.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -3330,22 +3330,22 @@ public class JframeMesero extends javax.swing.JFrame {
         });
         jScrollPane16.setViewportView(listaVerPedidosLlevarMesa4);
 
-        verPedidoMesa4.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, 220, 240));
+        verPedidoMesa4.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 230, 250, 300));
 
-        cancelarPedidoMesa4.setBackground(new java.awt.Color(204, 204, 0));
-        cancelarPedidoMesa4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        cancelarPedidoMesa4.setForeground(new java.awt.Color(0, 0, 0));
+        cancelarPedidoMesa4.setBackground(new java.awt.Color(107, 36, 12));
+        cancelarPedidoMesa4.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        cancelarPedidoMesa4.setForeground(new java.awt.Color(255, 255, 255));
         cancelarPedidoMesa4.setText("Cancelar pedido");
         cancelarPedidoMesa4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelarPedidoMesa4ActionPerformed(evt);
             }
         });
-        verPedidoMesa4.add(cancelarPedidoMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 80, 120, 46));
+        verPedidoMesa4.add(cancelarPedidoMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 320, 160, 80));
 
-        btnLimpiarMesa4.setBackground(new java.awt.Color(204, 204, 0));
-        btnLimpiarMesa4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnLimpiarMesa4.setForeground(new java.awt.Color(0, 0, 0));
+        btnLimpiarMesa4.setBackground(new java.awt.Color(177, 116, 87));
+        btnLimpiarMesa4.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnLimpiarMesa4.setForeground(new java.awt.Color(255, 255, 255));
         btnLimpiarMesa4.setText("Limpiar");
         btnLimpiarMesa4.setEnabled(false);
         btnLimpiarMesa4.addActionListener(new java.awt.event.ActionListener() {
@@ -3353,7 +3353,7 @@ public class JframeMesero extends javax.swing.JFrame {
                 btnLimpiarMesa4ActionPerformed(evt);
             }
         });
-        verPedidoMesa4.add(btnLimpiarMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 140, 120, 46));
+        verPedidoMesa4.add(btnLimpiarMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 440, 160, 80));
 
         jPanelMostrar.add(verPedidoMesa4, "card16");
 
@@ -4358,7 +4358,7 @@ public class JframeMesero extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(jPanelMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
