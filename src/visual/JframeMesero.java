@@ -928,11 +928,11 @@ public class JframeMesero extends javax.swing.JFrame {
         mNoDisponible.setEnabled(false);
         panelGestionarMesas.add(mNoDisponible, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 540, 40, 30));
 
-        jPanelMostrarMesa.setBackground(new java.awt.Color(255, 251, 230));
-        jPanelMostrarMesa.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanelMostrarMesa.setBackground(new java.awt.Color(250, 247, 240));
         jPanelMostrarMesa.setLayout(new java.awt.CardLayout());
 
-        panelMesa1.setBackground(new java.awt.Color(251, 251, 251));
+        panelMesa1.setBackground(new java.awt.Color(250, 247, 240));
+        panelMesa1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
         panelMesa1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
