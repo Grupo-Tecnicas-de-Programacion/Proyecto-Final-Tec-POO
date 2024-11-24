@@ -4652,10 +4652,10 @@ public class JframeMesero extends javax.swing.JFrame {
         if (archivoSeleccionado != null) {
             boolean exito = Mesa.cargarMesasDesdeArchivo(archivoSeleccionado);
             if (exito) {
-                JOptionPane.showMessageDialog(this, "Mesas cargadas correctamente en la base de datos.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Se cargaron correctamente las mesas.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                 actualizarBotonesMesasDesdeBD();
             } else {
-                JOptionPane.showMessageDialog(this, "Error al cargar las mesas. Revise el archivo y la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Error al cargar las mesas. Revise el archivo.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } else {
             JOptionPane.showMessageDialog(this, "Seleccione un archivo válido.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -5623,7 +5623,7 @@ public class JframeMesero extends javax.swing.JFrame {
             Object[] opciones = {"Sí", "No"};
             int confirmacion = JOptionPane.showOptionDialog(
                 this,
-                "¿Estás seguro de que deseas cancelar el pedido para mesa?",
+                "¿Estás seguro de que deseas cancelar el pedido para llevar?",
                 "Confirmación de Cancelación",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
@@ -5647,7 +5647,7 @@ public class JframeMesero extends javax.swing.JFrame {
                                 
                                 detallePedido.setModel(new DefaultListModel<>());
                             } else {
-                                JOptionPane.showMessageDialog(this, "Error al eliminar el pedido de la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+                                JOptionPane.showMessageDialog(this, "Error al eliminar el pedido.", "Error", JOptionPane.ERROR_MESSAGE);
                             }
                         } else {
                             JOptionPane.showMessageDialog(this, "Error al revertir las cantidades de los productos.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -5945,13 +5945,13 @@ public class JframeMesero extends javax.swing.JFrame {
             if (cliente == null) {
                 String nombreCliente = JOptionPane.showInputDialog("Ingrese el nombre del cliente:");
                 while (nombreCliente == null || nombreCliente.trim().isEmpty() || !nombreCliente.matches("[a-zA-Z\\s]+")) {
-                    nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente (solo letras y espacios):");
+                    nombreCliente = JOptionPane.showInputDialog("Nombre no válido. Ingrese el nombre del cliente correctamente:");
                     if (nombreCliente == null) return;
                 }
 
                 String apellidoCliente = JOptionPane.showInputDialog("Ingrese el apellido del cliente:");
                 while (apellidoCliente == null || apellidoCliente.trim().isEmpty() || !apellidoCliente.matches("[a-zA-Z\\s]+")) {
-                    apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente (solo letras y espacios):");
+                    apellidoCliente = JOptionPane.showInputDialog("Apellido no válido. Ingrese el apellido del cliente correctamente:");
                     if (apellidoCliente == null) return;
                 }
 
@@ -6119,14 +6119,14 @@ public class JframeMesero extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(
                 this,
-                "La mesa ha sido limpiada. Todos los pedidos asociados han sido eliminados.",
+                "La mesa ha sido limpiada.",
                 "Confirmación",
                 JOptionPane.INFORMATION_MESSAGE
             );
         } else {
             JOptionPane.showMessageDialog(
                 this,
-                "No se pudo limpiar completamente la mesa en la base de datos.",
+                "No se pudo limpiar completamente la mesa.",
                 "Error",
                 JOptionPane.ERROR_MESSAGE
             );
@@ -6343,14 +6343,14 @@ public class JframeMesero extends javax.swing.JFrame {
         int idProducto = Producto.obtenerIdProductoDesdeBaseDatos(nombreProductoBuscado);
 
         if (idProducto == -1) {
-            JOptionPane.showMessageDialog(this, "Producto no encontrado en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Producto no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         Object[] opciones = {"Sí", "No"};
         int confirmacion = JOptionPane.showOptionDialog(
             this,
-            "¿Estás seguro de que deseas cancelar el pedido para mesa?",
+            "¿Estás seguro de que deseas eliminar el producto?",
             "Confirmación de Cancelación",
             JOptionPane.YES_NO_OPTION,
             JOptionPane.QUESTION_MESSAGE,
