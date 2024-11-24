@@ -4358,7 +4358,7 @@ public class JframeMesero extends javax.swing.JFrame {
         menuProductos.add(menItemModProducto);
 
         menItemBuscProducto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        menItemBuscProducto.setText("BuscarProducto");
+        menItemBuscProducto.setText("Buscar producto");
         menItemBuscProducto.setPreferredSize(new java.awt.Dimension(180, 40));
         menItemBuscProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
