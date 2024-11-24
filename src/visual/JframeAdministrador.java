@@ -292,6 +292,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
         });
         panelReporteVentas.add(btnVerReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 130, 60));
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel51.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -299,7 +300,8 @@ public class JframeAdministrador extends javax.swing.JFrame {
         jLabel51.setText("Cantidad de productos vendidos");
         jPanel1.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 240, 40));
 
-        txtGananciaReporteSeleccionado.setForeground(new java.awt.Color(255, 255, 255));
+        txtGananciaReporteSeleccionado.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        txtGananciaReporteSeleccionado.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(txtGananciaReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 250, 40));
 
         jLabel52.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -307,7 +309,8 @@ public class JframeAdministrador extends javax.swing.JFrame {
         jLabel52.setText("Fecha del reporte");
         jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 130, 40));
 
-        txtFechaReporteSeleccionado.setForeground(new java.awt.Color(255, 255, 255));
+        txtFechaReporteSeleccionado.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        txtFechaReporteSeleccionado.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(txtFechaReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 250, 40));
 
         jLabel59.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -315,7 +318,8 @@ public class JframeAdministrador extends javax.swing.JFrame {
         jLabel59.setText("Total ganancia");
         jPanel1.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 120, 40));
 
-        txtCantidadReporteSeleccionado.setForeground(new java.awt.Color(255, 255, 255));
+        txtCantidadReporteSeleccionado.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        txtCantidadReporteSeleccionado.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(txtCantidadReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 250, 40));
 
         jLabel62.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -323,7 +327,8 @@ public class JframeAdministrador extends javax.swing.JFrame {
         jLabel62.setText("Nombre");
         jPanel1.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 70, 40));
 
-        txtNombreReporteSeleccionado.setForeground(new java.awt.Color(255, 255, 255));
+        txtNombreReporteSeleccionado.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        txtNombreReporteSeleccionado.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(txtNombreReporteSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 250, 40));
 
         panelReporteVentas.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 370, 420));
