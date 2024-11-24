@@ -178,16 +178,17 @@ public class Usuario {
         return nombresMeseros;
     }
 
-    public static boolean activarDesactivarCuenta(String nombreUsuario, String contraseniaAdmin, boolean activar) {
+    public static boolean activarDesactivarCuenta(String nombreMesero, String nombreUsuarioAdmin, String contraseniaAdmin, boolean activar) {
         String consultaAdministrador = "SELECT * FROM usuarios WHERE nombre_usuario = ? AND contrasenia = ? AND rol = 'ADMINISTRADOR'";
         try (Connection conexion = ConexionDB.conectar();
              PreparedStatement sentenciaAdministrador = conexion.prepareStatement(consultaAdministrador)) {
 
-            sentenciaAdministrador.setString(1, "administrador");
+            sentenciaAdministrador.setString(1, nombreUsuarioAdmin);
             sentenciaAdministrador.setString(2, contraseniaAdmin);
 
             ResultSet resultadoAdmin = sentenciaAdministrador.executeQuery();
             if (!resultadoAdmin.next()) {
+                System.out.println("Error: Usuario o contrasenia de administrador incorrectos.");
                 return false;
             }
         } catch (SQLException e) {
@@ -200,7 +201,7 @@ public class Usuario {
              PreparedStatement sentenciaActualizar = conexion.prepareStatement(consultaActualizar)) {
 
             sentenciaActualizar.setBoolean(1, activar);
-            sentenciaActualizar.setString(2, nombreUsuario);
+            sentenciaActualizar.setString(2, nombreMesero);
 
             int filasAfectadas = sentenciaActualizar.executeUpdate();
             return filasAfectadas > 0;

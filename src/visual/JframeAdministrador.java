@@ -633,6 +633,16 @@ public class JframeAdministrador extends javax.swing.JFrame {
         }
 
         String mensajeConfirmacion = activar ? "activar" : "desactivar";
+
+        String nombreUsuarioAdmin = JOptionPane.showInputDialog(rootPane, 
+            "Ingrese su nombre de usuario para " + mensajeConfirmacion + " la cuenta:", 
+            "Confirmación", JOptionPane.WARNING_MESSAGE);
+
+        if (nombreUsuarioAdmin == null || nombreUsuarioAdmin.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "Debe ingresar el nombre de usuario del administrador.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         String contraseniaAdmin = JOptionPane.showInputDialog(rootPane, 
             "Ingrese su contraseña para " + mensajeConfirmacion + " la cuenta:", 
             "Confirmación", JOptionPane.WARNING_MESSAGE);
@@ -642,7 +652,8 @@ public class JframeAdministrador extends javax.swing.JFrame {
             return;
         }
 
-        boolean exito = Usuario.activarDesactivarCuenta(nombreMeseroSeleccionado, contraseniaAdmin, activar);
+        boolean exito = Usuario.activarDesactivarCuenta(nombreMeseroSeleccionado, nombreUsuarioAdmin, contraseniaAdmin, activar);
+
         if (exito) {
             if (activar) {
                 JOptionPane.showMessageDialog(rootPane, "La cuenta ha sido activada con éxito.", "Información", JOptionPane.INFORMATION_MESSAGE);
@@ -657,6 +668,7 @@ public class JframeAdministrador extends javax.swing.JFrame {
                 (activar ? "No se pudo activar la cuenta." : "No se pudo desactivar la cuenta.") + " Verifique los datos.", 
                 "Error", JOptionPane.ERROR_MESSAGE);
         }
+        
     }
     
     private void btnActivarCuentaMeseroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActivarCuentaMeseroActionPerformed
